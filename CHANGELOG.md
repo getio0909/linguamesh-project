@@ -66,8 +66,9 @@ All notable project-wide changes will be documented here. This project follows s
 - Central compatibility and release records now pin the loopback-provider Linux checkpoint; the
   coordination workflow passed on Linux and Windows PowerShell.
 - Linux now publishes a pinned Flatpak packaging scaffold with generated Cargo sources, GNOME 48
-  runtime metadata, desktop/AppStream metadata, an icon, constrained runtime permissions, and
-  static metadata validation; SDK/sandbox smoke and distributable artifacts remain open.
+  runtime metadata, desktop/AppStream metadata, an icon, constrained runtime permissions, and a
+  remotely verified GNOME 48 SDK CI bundle (`29606612834`); sandbox/portal smoke and distributable
+  artifacts remain open.
 
 ### Fixed
 

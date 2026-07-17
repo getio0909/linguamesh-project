@@ -416,6 +416,17 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   source-hash validation passed locally; SDK/sandbox smoke and distributable artifacts remain open.
 - 2026-07-17: Coordination run `29605424763` passed after the packaging checkpoint on Linux job
   `87967368496` and PowerShell job `87967368478`; no release artifact was produced.
+- 2026-07-17: Flatpak Linux run `29605863496` failed because the GNOME 48 build sandbox lacked
+  Cargo; run `29606146197` then exposed the Rust 1.89 extension being older than the workspace's
+  Rust 1.92/1.93 requirements, and run `29606402301` exposed Flatpak debug extraction corrupting
+  the temporary Rust toolchain. These failures were retained as boundary evidence and fixed in the
+  manifest with the Rust stable SDK extension, a pinned Rust 1.93.0 toolchain module, and
+  `no-debuginfo` for that build-only module.
+- 2026-07-17: Linux packaging revision `fd1f400058f4c68b47a9bd0823e790c6d9cef263` passed
+  `Flatpak Linux` run `29606612834` (job `87971271146`), built the optimized GTK application from
+  pinned sources, and uploaded prerelease artifact `linguamesh-linux-x86_64-x86_64.flatpak` as
+  artifact `8417198959` (2,390,377 bytes). Sandbox launch, portal/notification delivery, signing,
+  and distributable release remain open; no release artifact was added to the manifest.
 
 ## Checkpoint update protocol
 
