@@ -454,6 +454,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   recorded the Linux notification transport evidence, preserved `unreleased` status and empty
   artifact lists, and passed coordination run `29610616057` with Linux job `87984136976` and
   PowerShell job `87984136992`.
+- 2026-07-17: Follow-up manifest sync `94f9e12df9797b025f46d4021e7dc365e5c1ba10` preserved the
+  same unreleased release posture and passed coordination run `29610693933` with Linux job
+  `87984393628` and PowerShell job `87984393633`.
 
 ## Checkpoint update protocol
 
