@@ -277,6 +277,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   native build. Evidence head `2eadf06e5e63eec5b7a512a53a2741f4f2c77704` passed Foundation run
   `29586802183` (job `87905686613`) and Native Linux run `29586802067` (job `87905686187`). Secret
   Service and broader storage-fault coverage remain open.
+- 2026-07-17: Central integration revision `04c0e07ccb769a9e67e80ee76042d6c568a7f8d4`
+  pinned the verified Linux runtime-storage functional source and recorded its exact fault-test
+  boundary while preserving the Core pin, `unreleased` status, six empty artifact lists, and
+  incomplete secure-provider and acceptance-scenario claims. Coordination run `29587437567`
+  passed Linux job `87907811474` and Windows PowerShell job `87907811494`.
 
 ## Checkpoint update protocol
 
