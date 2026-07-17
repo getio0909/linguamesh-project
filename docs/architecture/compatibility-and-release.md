@@ -10,13 +10,14 @@ A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings,
 
 The current unreleased matrix pins Core functional revision
 `fbf3e9b5927049dccaa19f8c36013495ffebba12` and Linux functional revision
-`1dfe2bcac684696ee55f56e625fcf89ffcb1a6dd`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
-Linux evidence head `bc827d55118199e2e64e063a106da281f8a8bdf1` adds only evidence documentation
+`07b89f36269155469a488ab830e8f485b3a1323b`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+Linux evidence head `a7554e81c40b7d92d29a0eb8ab4fa22b1517648f` adds only evidence documentation
 relative to that functional source. Native CI verifies the current GTK flow under X11/Xvfb and
 forced Wayland/headless Weston plus real post-startup `ENOSPC` rollback for persistent connection,
 model-update, and deletion transactions. The same GTK test verifies baseline roles, named
 multi-line editors, label/mnemonic relations, focusability, hidden empty errors, and Busy/reset
-semantics using GTK 4.10 APIs. The GIO Secret Service adapter is present, but the CI environment
+semantics using GTK 4.10 APIs. Completed translations emit a generic desktop notification without
+source or translated content; notification-server delivery and packaging remain open. The GIO Secret Service adapter is present, but the CI environment
 does not provide a real desktop keyring service, so CRUD, locked/prompted behavior, and cleanup
 remain unverified. Runtime catalog switching currently covers the Translate and Stop labels, not
 the complete UI. This does not prove every database or storage failure, AT-SPI/Orca,

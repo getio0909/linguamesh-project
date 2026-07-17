@@ -31,6 +31,9 @@ All notable project-wide changes will be documented here. This project follows s
 - Linux runtime PO catalog loading for English and Simplified Chinese action labels. Locale changes
   update Translate and Stop without losing active text; uncovered UI strings retain explicit English
   fallback while complete gettext coverage remains open.
+- Linux completion notifications now use the registered `GApplication` path with fixed generic text;
+  source and translated content are excluded from notification payloads, while desktop delivery
+  and packaging remain release-gate work.
 
 ### Fixed
 

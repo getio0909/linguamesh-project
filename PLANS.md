@@ -325,6 +325,13 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   switching and its coverage boundary, and preserved `unreleased` status and empty artifact lists.
   Coordination run `29594286528` passed Linux job `87930776189` and Windows PowerShell job
   `87930776107`.
+- 2026-07-17: Linux functional revision `07b89f36269155469a488ab830e8f485b3a1323b` added a
+  registered `GApplication` completion notification with fixed generic text that excludes source
+  and translated content. Native Linux run `29594795691` (job `87932451631`) and foundation run
+  `29594795681` (job `87932451692`) passed the functional slice; evidence head
+  `a7554e81c40b7d92d29a0eb8ab4fa22b1517648f` passed Native Linux run `29594948933` (job
+  `87932966303`) and foundation `29594948857` (job `87932965793`). Notification-server delivery,
+  packaging, and full localization coverage remain open.
 
 ## Checkpoint update protocol
 

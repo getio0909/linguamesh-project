@@ -23,6 +23,17 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
+Linux notification functional revision `07b89f36269155469a488ab830e8f485b3a1323b` passed Native
+Linux run `29594795691` (job `87932451631`) and repository-foundation run `29594795681` (job
+`87932451692`). The native job passed 68 GUI-enabled library tests with one intentional ignore,
+the real GTK flow, the exact storage-fault gate, both X11/Xvfb and forced Wayland/headless Weston
+passes, strict Clippy, and the native build. The completed-translation notification path sends
+fixed generic English text without source or translated content; desktop notification-server
+delivery and packaging remain unverified.
+
+Evidence head `a7554e81c40b7d92d29a0eb8ab4fa22b1517648f` passed Native Linux run `29594948933`
+(job `87932966303`) and repository-foundation run `29594948857` (job `87932965793`).
+
 Runtime localization validation revision `1dfe2bcac684696ee55f56e625fcf89ffcb1a6dd` passed 71
 GUI-enabled library tests with one intentional ignore, the same real GTK binary flow under
 X11/Xvfb and forced Wayland/headless Weston, the native build, an exact real-`ENOSPC` regression,
