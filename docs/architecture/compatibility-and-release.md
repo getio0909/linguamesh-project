@@ -24,7 +24,9 @@ The GIO Secret Service adapter sends a valid single-layer plain-string OpenSessi
 isolated real-daemon fixture verifies default-collection CRUD, resolution, cleanup, persistent
 daemon-restart restoration, locked-item fail-closed lookup, and secure persistent-credential
 onboarding through both worker and GTK paths. The no-credential OpenAI-compatible loopback path is
-also covered. Prompted interactive flows remain unverified. Runtime catalog switching currently covers the Translate and Stop labels, not
+also covered. A pinned Flatpak manifest, generated Cargo source set, desktop metadata, and icon pass
+static validation; SDK/sandbox smoke and distributable artifacts remain unverified. Prompted
+interactive flows remain unverified. Runtime catalog switching currently covers the Translate and Stop labels, not
 the complete UI. This does not prove every database or storage failure, AT-SPI/Orca,
 physical keyboard traversal, or a complete desktop accessibility matrix.
 Their CI evidence publishes no artifact. Linux multi-profile/session onboarding, next-request

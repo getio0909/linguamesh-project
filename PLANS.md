@@ -410,6 +410,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   loopback-provider Linux functional source and evidence head, preserved unreleased status with
   empty artifact lists, and passed coordination run `29604649153` with Linux job `87964871597` and
   PowerShell job `87964871588`.
+- 2026-07-17: Linux packaging revision `302ba8c` added a pinned Flatpak scaffold with GNOME 48
+  runtime metadata, immutable Core/Linux source pins, generated Cargo sources, desktop/AppStream
+  metadata, icon, and constrained runtime permissions. Static JSON, desktop-file, AppStream, and
+  source-hash validation passed locally; SDK/sandbox smoke and distributable artifacts remain open.
 
 ## Checkpoint update protocol
 
