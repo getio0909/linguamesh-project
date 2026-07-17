@@ -343,6 +343,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   evidence head `1553841dc527f1f3bc9556ce5f88650f28221d85` passed Native Linux run `29596239167`
   (job `87937214530`) and foundation `29596239653` (job `87937215981`). Portal leases,
   interactive file selection, drag-and-drop, and document codecs remain open.
+- 2026-07-17: Central integration revision `b4d8b3c40b49f0ba327beb979d1b4b9fdbf6fdda` pinned the
+  Linux text-import functional revision and recorded its 4 MiB/UTF-8 and portal boundary. The
+  coordination run `29596541373` passed Linux job `87938213706` and Windows PowerShell job
+  `87938213592`.
 
 ## Checkpoint update protocol
 
