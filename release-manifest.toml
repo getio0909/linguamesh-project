@@ -4,7 +4,7 @@ status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
   "No compatible stable native-client release has been produced.",
-  "Linux 0.1.0-alpha.2 is an unreleased non-secret profile persistence checkpoint; credentials remain session-only, and Secret Service-backed credentials plus the multiple saved-profile lifecycle remain unavailable.",
+  "Linux 0.1.0-alpha.2 is an unreleased non-secret multi-profile checkpoint; create, update, activate, switch, and delete are CI-verified, but credentials remain session-only and Secret Service-backed credential lifecycle plus complete onboarding remain unavailable.",
   "Localization 0.1.0 is a development bundle whose non-English packs remain unreviewed machine-generated drafts.",
   "Only mandatory acceptance Scenario 1 has local evidence; no scenario has stable-release evidence."
 ]
@@ -53,6 +53,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "c58a54c2479045773358bd9c456b45a958e98e1e"
+source_revision = "c88d37a5de2f03c2ae5d2940c4d25e5d998c301d"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

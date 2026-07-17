@@ -13,7 +13,8 @@ All notable project-wide changes will be documented here. This project follows s
   host-secret brokerage, one-shot session credentials, explicit provider/model selection,
   cancellation, atomic provider-switch rollback, and native GTK/D-Bus/Xvfb CI evidence.
 - Core Linux default-VFS SQLite no-follow hardening and Linux explicit credential-free
-  profile/model persistence, disconnected restart restoration, private XDG storage, unsafe-path
-  rejection, and persistence rollback evidence. Credentials remain session-only, and persistent
-  secret references fail closed; Secret Service and multiple saved-profile management remain
-  unimplemented.
+  multi-profile create/update/activate/switch/delete, disconnected full-list/default restart
+  restoration, per-profile models, connected-row session continuation, private XDG storage,
+  unsafe-path rejection, credential isolation, and persistence rollback evidence. Credentials
+  remain session-only, and persistent secret references fail closed; Secret Service and complete
+  onboarding remain unimplemented.

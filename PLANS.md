@@ -38,6 +38,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Deliver and remotely verify the first native Linux GTK text-translation checkpoint with
   session-only local-provider switching, real streamed output, cancellation, rollback, and a
   serialized D-Bus/Xvfb button test.
+- [x] Deliver and remotely verify Linux non-secret multi-profile create, update, switch, delete,
+  restart restoration, exact-ID state handling, and credential-isolation behavior.
 - [ ] Complete the active Linux-first secure-provider checkpoint described below.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
@@ -83,12 +85,15 @@ Checkpoint evidence:
   connection and model selection, resolves one-shot session secrets, streams and cancels loopback
   translation, preserves the active provider after a failed switch, persists only non-secret
   profile/model state, and never persists plaintext.
-- [x] Linux functional revision `c58a54c2479045773358bd9c456b45a958e98e1e` passed 29 no-default
-  tests, 50 demo-provider tests, strict all-feature Clippy, the real GTK test, and the native
-  all-target build in Native Linux run `29574265570`.
+- [x] Linux functional revision `c88d37a5de2f03c2ae5d2940c4d25e5d998c301d` passed 38 no-default
+  tests, 62 demo-provider tests, strict all-feature Clippy, the real GTK multi-profile test, and
+  the native all-target build in Native Linux run `29577918335` (job `87876528763`).
 - [ ] Implement and review a native Secret Service backend before accepting persistent credential
   references.
-- [ ] Implement onboarding, create/update/delete, and active switching for multiple saved profiles.
+- [ ] Implement complete secure-provider onboarding.
+- [x] Implement create/update/delete and deliberate Connect-based activation and switching for
+  multiple credential-free saved profiles, including independent model preferences and
+  connected-row session continuation.
 - [x] Persist a non-secret profile/model preference, restore it after restart without
   auto-connection, and verify switching, cancellation rollback, path hardening, and redacted
   diagnostics in native CI.
@@ -202,6 +207,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   rejection. Foundation run `29574265553` and Native Linux run `29574265570` passed. Native Secret
   Service and complete saved-profile management remain required, so
   `LM-CHANGE-2026-07-LINUX-SECURE-PROVIDER-1` stays open.
+- 2026-07-17: Linux functional revision
+  `c88d37a5de2f03c2ae5d2940c4d25e5d998c301d` added exact-ID multi-profile
+  create/update/switch/delete, full-list/default restart restoration, per-profile model updates,
+  two-credential isolation, and connected-row deletion with session continuation. Foundation run
+  `29577918346` and Native Linux run `29577918335` (job `87876528763`) passed 62 library tests,
+  the real GTK multi-profile test, strict Clippy, and the all-feature build. Evidence head
+  `7ba8909bd05a168e328af027e1308d23f257f0f9` passed Foundation run `29578055430` and Native Linux
+  run `29578055393` (job `87876964652`). Secret Service and complete onboarding remain required,
+  so `LM-CHANGE-2026-07-LINUX-SECURE-PROVIDER-1` stays open.
 
 ## Checkpoint update protocol
 
