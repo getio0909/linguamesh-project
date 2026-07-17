@@ -465,6 +465,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   run `29611867060` (job `87988152626`), Foundation run `29611866929`, and Flatpak run
   `29611866969`; interactive file-chooser gestures and desktop-shell notification rendering
   remain open.
+- 2026-07-17: Central integration revision `3ff3d1141f73ae1fbdb6529d94a1c4b4a87ff476`
+  recorded the document-portal lease evidence, preserved the unreleased status and empty artifact
+  lists, and passed coordination run `29612315893` with Linux job `87989566351` and PowerShell
+  job `87989566349`.
 
 ## Checkpoint update protocol
 
