@@ -502,6 +502,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Dunst desktop-shell window verification to the notification fixture. Native run `29619961909`,
   Foundation run `29619962316`, and Flatpak run `29619961877` passed; physical compositor/GPU
   rendering and release artifacts remain open.
+- 2026-07-17: Central integration revision `b65e690` recorded the desktop-shell rendering evidence,
+  preserved `unreleased` status and empty artifact lists, and passed coordination run `29620258790`
+  with Linux job `88013724889` and PowerShell job `88013724860`.
 
 ## Checkpoint update protocol
 
