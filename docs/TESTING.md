@@ -23,8 +23,8 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
-Central integration revision `acdf43cde6a7a971d1cb27e0c6a672b6b86cbc21` passed coordination run
-`29601473308`, including Linux job `87954353885` and Windows PowerShell job `87954353964`.
+Central integration revision `b842ffd238cc648b0a22b45db0a8b300b5e9b455` passed coordination run
+`29602906399`, including Linux job `87959070945` and Windows PowerShell job `87959071022`.
 
 Linux Secret Service wire-shape fix revision `9bcd8d9ca30d109f5c7c9c20e6f72f6a77df078d` passed
 Native Linux run `29598255988` (job `87943844854`) and repository-foundation run `29598255993`

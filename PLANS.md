@@ -385,6 +385,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   deletion, and cleanup in Native Linux run `29602287284` (job `87957053225`) with Foundation
   run `29602287281`; secure persistent-credential onboarding and prompted interactive flows remain
   open.
+- 2026-07-17: Central integration revision `b842ffd238cc648b0a22b45db0a8b300b5e9b455` pinned
+  the verified Linux persistent-lifecycle functional source and evidence head, preserved unreleased
+  status with empty artifact lists, and passed coordination run `29602906399` with Linux job
+  `87959070945` and PowerShell job `87959071022`.
 
 ## Checkpoint update protocol
 

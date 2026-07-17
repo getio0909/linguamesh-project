@@ -53,6 +53,9 @@ All notable project-wide changes will be documented here. This project follows s
   validation passed.
 - Central compatibility and release records now pin the Linux Secret Service CRUD functional
   revision and evidence head; coordination run `29601473308` passed on Linux and PowerShell.
+- Central compatibility and release records now pin the persistent Secret Service lifecycle
+  functional revision and evidence head; coordination run `29602906399` passed on Linux and
+  PowerShell.
 
 ### Fixed
 
