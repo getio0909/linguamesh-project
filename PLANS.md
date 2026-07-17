@@ -53,6 +53,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Verify Linux completion-notification transport through a private
   `org.freedesktop.Notifications` service with fixed generic payloads and no source/translated
   content; desktop-shell rendering remains an explicit boundary.
+- [x] Verify headless Linux notification delivery to a real `dunst` daemon under Xvfb, including
+  service-name acquisition, GTK `Notify` delivery, and generic-payload privacy assertions; physical
+  desktop-shell rendering remains an explicit boundary.
 - [x] Verify the Linux XDG document-portal lease lifecycle against real portal services, including
   file-descriptor add, host-path mapping, application permission grant/revoke, and deletion;
   interactive file-chooser and drag/drop gestures remain explicit boundaries.
@@ -469,6 +472,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   recorded the document-portal lease evidence, preserved the unreleased status and empty artifact
   lists, and passed coordination run `29612315893` with Linux job `87989566351` and PowerShell
   job `87989566349`.
+- 2026-07-17: Linux evidence revision `20433c9f0f6f70c561093e96dc1fa35731617b36` added the real
+  `dunst` notification-daemon delivery fixture. Native run `29613020196` (job `87990400327`),
+  Foundation run `29613020145`, and Flatpak run `29613020144` passed; the fixture proves headless
+  daemon delivery and generic payload privacy, while physical desktop-shell rendering remains open.
 
 ## Checkpoint update protocol
 

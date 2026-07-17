@@ -74,7 +74,10 @@ All notable project-wide changes will be documented here. This project follows s
   translated content. Desktop-shell rendering, portal leases, and release artifacts remain open.
 - Linux native CI now verifies the real XDG document-portal lease lifecycle: add through a file
   descriptor, host-path mapping, application permission grant/revoke, and deletion. Interactive
-  file-chooser portal gestures, desktop-shell rendering, and release artifacts remain open.
+  file-chooser portal gestures, physical desktop-shell rendering, and release artifacts remain open.
+- Linux native CI now starts the real `dunst` notification daemon under Xvfb and verifies the
+  completion `Notify` payload is delivered with generic text only; physical desktop-shell rendering
+  and release artifacts remain open.
 
 ### Fixed
 
