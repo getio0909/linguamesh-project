@@ -406,6 +406,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   and request-count evidence. Native Linux run `29604269568` (job `87963611054`) and Foundation
   run `29604269516` passed; evidence head `a255b039ce37bcb2b362cfeb3d34a6283ed2aad5` passed its
   documentation gates in the same workflow.
+- 2026-07-17: Central integration revision `a7ca1f84eef3f98647a4383dc931c11049171b63` pinned the
+  loopback-provider Linux functional source and evidence head, preserved unreleased status with
+  empty artifact lists, and passed coordination run `29604649153` with Linux job `87964871597` and
+  PowerShell job `87964871588`.
 
 ## Checkpoint update protocol
 
