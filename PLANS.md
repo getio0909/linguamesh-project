@@ -495,6 +495,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   application-level GTK FileDialog callback and a real XTest source-editor URI-list drag/drop
   gesture. Native run `29619390971`, Foundation run `29619390964`, and Flatpak run `29619390913`
   passed; prompted flows, physical desktop-shell rendering, and release artifacts remain open.
+- 2026-07-17: Central integration revision `0de200a` recorded the application-level GTK evidence,
+  preserved `unreleased` status and empty artifact lists, and passed coordination run `29619564326`
+  with Linux job `88011719149` and PowerShell job `88011719080`.
 
 ## Checkpoint update protocol
 
