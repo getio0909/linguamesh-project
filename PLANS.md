@@ -437,6 +437,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   run `29608245156` (job `87976563401`) uploaded artifact `8417803048` (2,395,628 bytes), installed
   it with the GNOME 49 runtime, and passed bounded startup under Xvfb/private D-Bus. Portal and
   notification delivery, signing, and distributable release remain open.
+- 2026-07-17: Central evidence sync commit `f2bc443` recorded the GNOME 49 packaging and sandbox
+  smoke result, preserved unreleased status with empty artifact lists, and passed coordination run
+  `29608669489` with Linux job `87977918468` and PowerShell job `87977918397`.
 
 ## Checkpoint update protocol
 
