@@ -20,4 +20,3 @@ The production design embeds the core as a native library. A daemon, localhost A
 Credentials cross a just-in-time host-service boundary as one-operation secrets and are never normal domain data. Large document bodies cross through a versioned `FileLease`, not protocol-message buffers. Provider and document input is untrusted and bounded.
 
 See the linked architecture documents for contract details. Durable changes require an ADR, and compatibility-breaking proposals require an RFC before implementation.
-

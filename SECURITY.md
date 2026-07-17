@@ -20,4 +20,3 @@ See [`docs/security/threat-model.md`](docs/security/threat-model.md), [`docs/sec
 ## Supported versions
 
 No stable release exists yet. Security fixes target the latest prerelease line recorded in `release-manifest.toml`; support policy will be versioned before 1.0.
-

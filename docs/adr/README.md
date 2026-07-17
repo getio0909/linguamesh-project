@@ -16,4 +16,3 @@ Date: YYYY-MM-DD
 ## Alternatives considered
 ## Compatibility and rollback
 ```
-

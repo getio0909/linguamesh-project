@@ -10,4 +10,3 @@
 8. Verify public artifact checksums, repository tags, default branches, release notes, and rollback references after publication.
 
 A stable train requires all mandatory acceptance scenarios and compatible stable versions of core, localization, Android, Windows, macOS, and Linux.
-

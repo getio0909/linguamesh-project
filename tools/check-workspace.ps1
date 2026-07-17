@@ -38,4 +38,3 @@ if (Get-Command git -ErrorAction SilentlyContinue) {
         }
     }
 }
-

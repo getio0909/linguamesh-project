@@ -15,4 +15,3 @@ Implement inspect, extract, reconstruct, and validate independently of inference
 ## Add a locale
 
 Contribute data-only messages in `linguamesh-l10n` with a BCP 47 tag, direction, plural rules, descriptions, typed placeholders, source revision, and compatibility metadata. Generate and validate Android, Windows, macOS, and Linux resources; test fallback, runtime switching, RTL where applicable, pseudo-localization, formatting, and accessibility. Machine-generated drafts must be labeled and never described as reviewed.
-

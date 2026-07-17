@@ -15,4 +15,3 @@ Describe the smallest implemented vertical slice without claiming planned behavi
 ## Limitations and next action
 
 List missing behavior, unavailable platform checks, compatibility risk, and the next verifiable action.
-

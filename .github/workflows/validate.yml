@@ -29,4 +29,3 @@ jobs:
       - name: Validate manifests and credential hygiene
         shell: pwsh
         run: ./tools/check-workspace.ps1
-

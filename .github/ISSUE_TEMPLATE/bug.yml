@@ -48,4 +48,3 @@ body:
       description: List deterministic steps, platform, and commands without sensitive data.
     validations:
       required: true
-

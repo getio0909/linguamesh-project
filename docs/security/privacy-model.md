@@ -20,4 +20,3 @@ Users can choose local-only routing, disable history and memory, clear each data
 ## Data-flow review
 
 Each feature review records the source, destination, purpose, retention, deletion path, provider identity, failure behavior, and whether data can cross a new trust boundary. No telemetry or hosted service is assumed.
-

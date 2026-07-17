@@ -11,4 +11,3 @@ Routing modes are manual, ordered, or opt-in automatic. Decisions record eligibl
 Remote endpoints require HTTPS. Loopback HTTP is permitted for local models; other plaintext endpoints require a warning and explicit confirmation. Authorization is never forwarded across an origin-changing redirect, and TLS verification cannot be globally disabled.
 
 To add a preset or adapter, follow [`extensions.md`](extensions.md) and include schema, contract, error, streaming, cancellation, security, attribution, and fake-provider tests.
-

@@ -7,4 +7,3 @@ Commands and events carry protocol version, operation ID, correlation ID, messag
 The conceptual lifecycle is create, query version, submit, poll event, send host response, cancel, shut down, destroy, and free buffers. Every operation emits exactly one completed, cancelled, or failed terminal event. Cancellation retains and labels partial output; malformed or truncated streams fail.
 
 All pointers, lengths, protocol versions, ownership transitions, shutdown races, and panic paths require tests. Kotlin, C++, and Swift wrappers provide automatic ownership. Startup rejects unknown ABI majors and displays an actionable compatibility error.
-

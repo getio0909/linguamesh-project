@@ -23,4 +23,3 @@ Keep commits focused and use an imperative subject with an optional scope, for e
 Do not commit credentials, translation content, local `.codex` state, generated secrets, or unreviewed third-party code. New production dependencies require maintenance and license review.
 
 By participating, contributors agree to follow [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
-

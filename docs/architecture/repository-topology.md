@@ -18,4 +18,3 @@ linguamesh-workspace/
 Cross-repository changes use a central change identifier, define the compatibility transition, update core contracts first, validate generated SDKs and clients, and update `release-manifest.toml` only after conformance evidence exists. Every code repository pins the global-goal revision it implements.
 
 Run `tools/bootstrap.sh` to clone missing siblings without replacing existing directories. Run `tools/check-workspace.sh --require-repositories` when validating a complete local workspace.
-

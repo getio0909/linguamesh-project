@@ -32,4 +32,3 @@ body:
       description: State the observable scenarios and validation needed.
     validations:
       required: true
-

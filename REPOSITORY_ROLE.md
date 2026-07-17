@@ -10,4 +10,3 @@
 It does not own production provider adapters, document codecs, native SDK implementations, localization data, or platform UI code. Those changes belong in the corresponding sibling repository.
 
 Before project work, read `AGENTS.md`, `PROJECT_GOAL.md`, `PLANS.md`, and `IMPLEMENTATION_STATUS.md`; preserve unrelated changes; and update manifests only with evidence from compatible revisions.
-

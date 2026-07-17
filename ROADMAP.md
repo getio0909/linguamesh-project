@@ -30,4 +30,3 @@ Roadmap status is evidence-based. Dates are intentionally omitted until toolchai
 - Threat and privacy reviews, fuzzing, migrations, performance baselines, packaging, SBOMs, checksums, conformance CI, and all mandatory acceptance scenarios.
 
 Only versions with reproducible compatibility evidence may enter a stable release train.
-

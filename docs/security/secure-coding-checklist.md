@@ -13,4 +13,3 @@ Use this checklist in implementation and review:
 - [ ] CI with untrusted changes has no production credentials or privileged release permissions.
 - [ ] Dependencies and assets have maintenance, vulnerability, provenance, and license review.
 - [ ] Tests include adversarial fixtures, redaction assertions, and safe failure paths.
-

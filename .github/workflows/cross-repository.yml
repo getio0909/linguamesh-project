@@ -25,4 +25,3 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GITHUB_OWNER: ${{ github.repository_owner }}
         run: bash tools/bootstrap.sh --owner "$GITHUB_OWNER"
-

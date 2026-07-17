@@ -21,4 +21,3 @@ Before transmission, the client displays the selected provider and model. The co
 Documents enter through a platform-granted lease. Extraction and reconstruction remain local; only eligible segment content and approved context reach the provider. Output is built at a temporary destination, structurally validated, and finalized under a collision-safe name without replacing the source.
 
 Logs, diagnostics, release metadata, and default telemetry receive neither credential values nor unnecessary content. Incognito mode bypasses history and translation-memory persistence.
-

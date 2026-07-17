@@ -9,4 +9,3 @@
 7. Record a content-free post-incident review covering cause, detection gap, corrective controls, and follow-up owners.
 
 Never claim a credential was rotated, an artifact withdrawn, or a user notified without direct evidence.
-

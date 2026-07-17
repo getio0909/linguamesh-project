@@ -20,4 +20,3 @@ List exact commands, runner platforms, revisions, results, artifact checksums, a
 ## User-visible changes
 
 Include native screenshots or accessibility evidence when applicable, and document limitations honestly.
-

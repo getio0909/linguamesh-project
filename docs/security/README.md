@@ -8,4 +8,3 @@
 - [`incident-response.md`](incident-response.md): coordinated response and disclosure process
 
 Public vulnerability reporting instructions are in [`../../SECURITY.md`](../../SECURITY.md).
-

@@ -15,4 +15,3 @@ Credentials are resolved just in time from Android Keystore-backed storage, Wind
 Document inputs remain unchanged by default. Outputs are finalized under a distinct name only after reconstruction and validation. Temporary resources must be private, bounded, and cleaned after success, failure, or cancellation.
 
 See [`docs/security/privacy-model.md`](docs/security/privacy-model.md) for trust boundaries and retention controls.
-

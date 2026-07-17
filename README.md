@@ -45,4 +45,3 @@ Bootstrap preserves existing sibling directories and clones only missing reposit
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) contains the development and review workflow.
 
 LinguaMesh is licensed under the [MIT License](LICENSE). No provider endorsement is implied.
-

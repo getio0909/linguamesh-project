@@ -42,4 +42,3 @@ Recommended descriptions:
 | `linguamesh-linux` | LinguaMesh native Linux client |
 
 Before every creation, repeat the remote lookup and local status checks. Never create an empty remote when a prepared local repository can be pushed. Do not force-push, rewrite history, delete a repository, or publish releases from this procedure.
-

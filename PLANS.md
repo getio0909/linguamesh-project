@@ -1,7 +1,7 @@
 # LinguaMesh Execution Plan
 
-Status: Active  
-Started: 2026-07-17  
+Status: Active
+Started: 2026-07-17
 Authority: `PROJECT_GOAL.md` and the active user goal
 
 ## Objective

@@ -16,4 +16,3 @@ LinguaMesh contributors commit to a welcoming, respectful, and harassment-free c
 Report conduct concerns privately to the maintainers through the repository owner's published contact channel. Maintainers will protect reporter privacy where possible, investigate consistently, and may edit or remove content, warn participants, restrict participation, or impose a permanent ban. Retaliation against a reporter is prohibited.
 
 This policy applies in project spaces and when representing the project publicly.
-

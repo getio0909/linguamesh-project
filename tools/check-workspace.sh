@@ -22,4 +22,3 @@ fi
 if git -C "$PROJECT_ROOT" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   git -C "$PROJECT_ROOT" diff --check
 fi
-
