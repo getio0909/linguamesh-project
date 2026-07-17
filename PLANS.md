@@ -58,10 +58,11 @@ Assumption: Planned files and commands are not evidence until they exist and com
   desktop-shell rendering remains an explicit boundary.
 - [x] Verify the Linux XDG document-portal lease lifecycle against real portal services, including
   file-descriptor add, host-path mapping, application permission grant/revoke, and deletion;
-  interactive file-chooser and drag/drop gestures remain explicit boundaries.
+  interactive application callbacks are covered by the dedicated GTK fixture below.
 - [x] Verify the real `xdg-desktop-portal-gtk` FileChooser backend under Xvfb with an actual
   `FileChooser.OpenFile` request, visible chooser selection, returned URI, and UTF-8 contents;
-  application-level GTK FileDialog callbacks and drag/drop portal gestures remain explicit boundaries.
+  verify the application-level GTK FileDialog callback and a real source-editor URI-list drag/drop
+  gesture with the native GTK fixtures.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — secure provider foundation
@@ -490,6 +491,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-17: Central integration revision `6d433bc` recorded the interactive portal chooser
   evidence, preserved `unreleased` status and empty artifact lists, and passed coordination run
   `29616044432` with Linux job `88001278364` and PowerShell job `88001278398`.
+- 2026-07-17: Linux evidence revision `d2fb3abe6c1505385850cd2a1053a7f64dbd7d0e` verified the
+  application-level GTK FileDialog callback and a real XTest source-editor URI-list drag/drop
+  gesture. Native run `29619390971`, Foundation run `29619390964`, and Flatpak run `29619390913`
+  passed; prompted flows, physical desktop-shell rendering, and release artifacts remain open.
 
 ## Checkpoint update protocol
 
