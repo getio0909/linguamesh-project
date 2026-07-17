@@ -72,6 +72,9 @@ All notable project-wide changes will be documented here. This project follows s
 - Linux native CI now runs a private `org.freedesktop.Notifications` fixture service, captures the
   real `Notify` transport call, and verifies fixed generic title/body text without source or
   translated content. Desktop-shell rendering, portal leases, and release artifacts remain open.
+- Linux native CI now verifies the real XDG document-portal lease lifecycle: add through a file
+  descriptor, host-path mapping, application permission grant/revoke, and deletion. Interactive
+  file-chooser portal gestures, desktop-shell rendering, and release artifacts remain open.
 
 ### Fixed
 

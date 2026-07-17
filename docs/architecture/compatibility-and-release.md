@@ -20,14 +20,15 @@ semantics using GTK 4.10 APIs. Completed translations emit a generic desktop not
 source or translated content; private notification-service transport is verified, while desktop-shell
 delivery and packaging remain open. Native text
 import uses a bounded UTF-8 GTK FileDialog/GIO path and a single-file source-editor DropTarget;
-portal leases remain open.
+the real document-portal lease lifecycle is verified, while interactive file chooser and drag/drop
+portal gestures remain open.
 The GIO Secret Service adapter sends a valid single-layer plain-string OpenSession Variant, and an
 isolated real-daemon fixture verifies default-collection CRUD, resolution, cleanup, persistent
 daemon-restart restoration, locked-item fail-closed lookup, and secure persistent-credential
 onboarding through both worker and GTK paths. The no-credential OpenAI-compatible loopback path is
 also covered. A pinned Flatpak manifest, generated Cargo source set, desktop metadata, and icon pass
 static validation; the GNOME 49 SDK workflow built a prerelease CI bundle and passed bounded sandbox
-startup smoke, while portal leases, desktop-shell notification delivery, signing, and distributable artifacts remain
+startup smoke, while interactive file-chooser portal leases, desktop-shell notification delivery, signing, and distributable artifacts remain
 unverified. Prompted
 interactive flows remain unverified. Runtime catalog switching currently covers the Translate and Stop labels, not
 the complete UI. This does not prove every database or storage failure, AT-SPI/Orca,

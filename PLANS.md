@@ -53,6 +53,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Verify Linux completion-notification transport through a private
   `org.freedesktop.Notifications` service with fixed generic payloads and no source/translated
   content; desktop-shell rendering remains an explicit boundary.
+- [x] Verify the Linux XDG document-portal lease lifecycle against real portal services, including
+  file-descriptor add, host-path mapping, application permission grant/revoke, and deletion;
+  interactive file-chooser and drag/drop gestures remain explicit boundaries.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — secure provider foundation
@@ -457,6 +460,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-17: Follow-up manifest sync `94f9e12df9797b025f46d4021e7dc365e5c1ba10` preserved the
   same unreleased release posture and passed coordination run `29610693933` with Linux job
   `87984393628` and PowerShell job `87984393633`.
+- 2026-07-17: Linux document-portal revision `7fbd65f08ebffa55777e0d7804d270fe683ca6c6`
+  added the real XDG document-portal lease fixture. Evidence head `9897f10` passed Native Linux
+  run `29611867060` (job `87988152626`), Foundation run `29611866929`, and Flatpak run
+  `29611866969`; interactive file-chooser gestures and desktop-shell notification rendering
+  remain open.
 
 ## Checkpoint update protocol
 
