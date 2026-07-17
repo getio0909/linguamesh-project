@@ -314,6 +314,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   records for the GIO adapter and its evidence boundary, and preserved `unreleased` status and
   empty artifact lists. Coordination run `29593038301` passed Linux job `87926604854` and
   Windows PowerShell job `87926604724`.
+- 2026-07-17: Linux functional revision `1dfe2bcac684696ee55f56e625fcf89ffcb1a6dd` added runtime
+  PO catalog loading for English and Simplified Chinese action labels without losing active text.
+  Validation run `29593874961` (job `87929412911`) and evidence head `bc827d55118199e2e64e063a106da281f8a8bdf1`
+  run `29594014033` (job `87929863334`) passed Native Linux; Foundation runs `29593874763` and
+  `29594014184` also passed. Complete UI gettext coverage and human review of non-English drafts
+  remain open.
 
 ## Checkpoint update protocol
 

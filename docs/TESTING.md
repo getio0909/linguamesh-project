@@ -23,16 +23,18 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
-Linux Secret Service validation revision `81be457fc6cefcaebff6c6afd61408d6eb6900b3` passed 68
-library tests with one intentional ignore, the same real GTK binary flow under X11/Xvfb and forced
-Wayland/headless Weston, the native build, an exact real-`ENOSPC` regression, and baseline GTK
-accessibility assertions in Native Linux run `29592319844` (job `87924169888`).
-Repository-foundation run `29592320055` (job `87924170620`) also passed. The dedicated test passed
-once with zero ignored tests through Ubuntu's controlled mount fallback. The CI environment does
-not provide a desktop Secret Service implementation; these runs verify GIO integration and
-fail-closed behavior, not real keyring CRUD or cleanup.
-Evidence head `3623350bc4538affb59daf956ac26d909a0aff6c` reran the same gates in Native Linux run
-`29592545963` (job `87924933377`); repository-foundation run `29592545668` also passed. The GTK
+Runtime localization validation revision `1dfe2bcac684696ee55f56e625fcf89ffcb1a6dd` passed 71
+GUI-enabled library tests with one intentional ignore, the same real GTK binary flow under
+X11/Xvfb and forced Wayland/headless Weston, the native build, an exact real-`ENOSPC` regression,
+baseline GTK accessibility assertions, and catalog-backed Translate/Stop label switching in Native
+Linux run `29593874961` (job `87929412911`). Repository-foundation run `29593874763` (job
+`87929412298`) also passed. The dedicated test passed once with zero ignored tests through Ubuntu's
+controlled mount fallback. The CI environment does not provide a desktop Secret Service
+implementation; these runs verify GIO integration and fail-closed behavior, not real keyring CRUD
+or cleanup.
+Evidence head `bc827d55118199e2e64e063a106da281f8a8bdf1` reran the same gates in Native Linux run
+`29594014033` (job `87929863334`); repository-foundation run `29594014184` (job `87929863882`) also
+passed. The GTK
 assertions cover roles, named multi-line editors, visible-label relations and mnemonics, focusability,
 hidden empty errors, and Busy/reset semantics using GTK 4.10 APIs. This is transaction, protocol,
 backend, and semantic-widget evidence for the current slice, not evidence for every storage fault,

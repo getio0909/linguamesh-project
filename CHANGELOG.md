@@ -28,6 +28,9 @@ All notable project-wide changes will be documented here. This project follows s
   paths, with unavailable, locked, or interactive keyrings failing closed and an explicitly
   labeled session-only fallback. Native CI records the integration boundary; real desktop keyring
   CRUD, cleanup, and secure persistent-credential onboarding remain open.
+- Linux runtime PO catalog loading for English and Simplified Chinese action labels. Locale changes
+  update Translate and Stop without losing active text; uncovered UI strings retain explicit English
+  fallback while complete gettext coverage remains open.
 
 ### Fixed
 

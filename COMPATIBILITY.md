@@ -14,7 +14,7 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 | Windows client | `0.0.0-dev` | No SDK selected | Unreleased |
 | macOS client | `0.0.0-dev` | No SDK selected | Unreleased |
-| Linux client | `0.1.0-alpha.2` | Exact Core `0.1.0-alpha.2`; ABI `1`; wire protocol 1; multi-profile/model persistence; derived onboarding; session credentials; GIO Secret Service adapter with session-only fallback; post-startup storage degradation; baseline GTK accessibility semantics on GTK 4.10+ | Functional source `73c60e751beed475aade1ea6e6ffa7c8b3e7164b` passed native CI, unreleased |
+| Linux client | `0.1.0-alpha.2` | Exact Core `0.1.0-alpha.2`; ABI `1`; wire protocol 1; multi-profile/model persistence; derived onboarding; session credentials; GIO Secret Service adapter with session-only fallback; runtime English/Simplified Chinese PO action labels; post-startup storage degradation; baseline GTK accessibility semantics on GTK 4.10+ | Functional source `1dfe2bcac684696ee55f56e625fcf89ffcb1a6dd` passed native CI, unreleased |
 
 The Linux client uses a GIO D-Bus Secret Service adapter for persistent SecretRef values and fails
 closed when the service is unavailable, locked, or requests interaction. It can create, update,
@@ -29,8 +29,10 @@ stored, never credential values or session references, and nothing falls back to
 and deletion transactions reject before success, preserve the prior session, and restore only
 pre-fault state. The GTK flow also exposes baseline roles, named multi-line editors, visible-label
 mnemonics, focusable controls, hidden empty errors, and translation Busy/reset semantics on GTK
-4.10+. It does not cover every database or storage failure. Real desktop keyring CRUD/cleanup,
-secure persistent-credential onboarding, and Scenarios 3 and 5 remain incomplete. Stable clients must pin
+4.10+. Runtime switching currently covers catalog-backed Translate and Stop labels, with explicit
+English fallback for uncovered UI keys. It does not cover every database or storage failure. Real
+desktop keyring CRUD/cleanup, complete UI gettext coverage, secure persistent-credential onboarding,
+and Scenarios 3 and 5 remain incomplete. Stable clients must pin
 a released core and reject an unknown ABI major. Every release-train update must include source
 revisions, artifact checksums, minimum compatible versions, known limitations, and cross-repository
 conformance evidence. Development placeholders and the alpha.2 source checkpoints are not
