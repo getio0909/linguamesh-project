@@ -51,6 +51,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Complete the active Linux-first secure-provider checkpoint described below, including the
   isolated prompted store/delete fail-closed fixture; end-user Secret Service prompt approval
   remains a later Linux boundary.
+- [x] Expose all twelve official Linux PO packs through runtime locale switching, preserve active
+  state during action-label changes, and apply Arabic RTL root direction; complete visible-string
+  gettext coverage remains a later Linux slice.
 - [x] Verify Linux completion-notification transport through a private
   `org.freedesktop.Notifications` service with fixed generic payloads and no source/translated
   content; desktop-shell rendering remains an explicit boundary.
@@ -513,6 +516,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   prompt approval, physical compositor/GPU rendering, and release artifacts remain open.
 - 2026-07-17: Central integration revision `1298a11` recorded the prompted-flow evidence and
   passed coordination run `29621166248` with Linux job `88016352833` and PowerShell job `88016352805`.
+- 2026-07-17: Linux evidence revision `7a40c222a00ea7d3d31125507a01c600948a5b94` exposed all
+  twelve official PO packs, added Arabic RTL root-direction switching, and passed Native run
+  `29621513205` (job `88017339094`), Foundation run `29621513199` (job `88017339159`), and Flatpak
+  run `29621513202` (job `88017339097`). Full visible-string gettext coverage remains open.
 
 ## Checkpoint update protocol
 
