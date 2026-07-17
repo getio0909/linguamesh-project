@@ -17,7 +17,8 @@ forced Wayland/headless Weston plus real post-startup `ENOSPC` rollback for pers
 model-update, and deletion transactions. The same GTK test verifies baseline roles, named
 multi-line editors, label/mnemonic relations, focusability, hidden empty errors, and Busy/reset
 semantics using GTK 4.10 APIs. Completed translations emit a generic desktop notification without
-source or translated content; notification-server delivery and packaging remain open. Native text
+source or translated content; private notification-service transport is verified, while desktop-shell
+delivery and packaging remain open. Native text
 import uses a bounded UTF-8 GTK FileDialog/GIO path and a single-file source-editor DropTarget;
 portal leases remain open.
 The GIO Secret Service adapter sends a valid single-layer plain-string OpenSession Variant, and an
@@ -26,7 +27,7 @@ daemon-restart restoration, locked-item fail-closed lookup, and secure persisten
 onboarding through both worker and GTK paths. The no-credential OpenAI-compatible loopback path is
 also covered. A pinned Flatpak manifest, generated Cargo source set, desktop metadata, and icon pass
 static validation; the GNOME 49 SDK workflow built a prerelease CI bundle and passed bounded sandbox
-startup smoke, while portal/notification delivery, signing, and distributable artifacts remain
+startup smoke, while portal leases, desktop-shell notification delivery, signing, and distributable artifacts remain
 unverified. Prompted
 interactive flows remain unverified. Runtime catalog switching currently covers the Translate and Stop labels, not
 the complete UI. This does not prove every database or storage failure, AT-SPI/Orca,

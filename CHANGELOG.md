@@ -69,6 +69,9 @@ All notable project-wide changes will be documented here. This project follows s
   runtime metadata, desktop/AppStream metadata, an icon, constrained runtime permissions, a
   remotely verified GNOME 49 SDK CI bundle (`29608245156`), and bounded Xvfb/private-D-Bus sandbox
   startup smoke; portal smoke and distributable artifacts remain open.
+- Linux native CI now runs a private `org.freedesktop.Notifications` fixture service, captures the
+  real `Notify` transport call, and verifies fixed generic title/body text without source or
+  translated content. Desktop-shell rendering, portal leases, and release artifacts remain open.
 
 ### Fixed
 

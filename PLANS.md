@@ -50,6 +50,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
   4.10+ boundary, including roles, labels, relations, focusability, hidden errors, and Busy reset.
 - [x] Complete the active Linux-first secure-provider checkpoint described below; prompted
   interactive Secret Service flows remain an explicit fail-closed boundary for a later Linux pass.
+- [x] Verify Linux completion-notification transport through a private
+  `org.freedesktop.Notifications` service with fixed generic payloads and no source/translated
+  content; desktop-shell rendering remains an explicit boundary.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — secure provider foundation
@@ -440,6 +443,13 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-17: Central evidence sync commit `f2bc443` recorded the GNOME 49 packaging and sandbox
   smoke result, preserved unreleased status with empty artifact lists, and passed coordination run
   `29608669489` with Linux job `87977918468` and PowerShell job `87977918397`.
+- 2026-07-17: Linux notification transport revision `bf751479c3826ae1529d0d9c33effbc5212cd75f`
+  added a private `org.freedesktop.Notifications` fixture and fixed generic payload assertions.
+  Evidence head `ae44102ae90f70d543c001869557a8965dba2074` passed Foundation run `29610044117`
+  (job `87982316925`), Native Linux run `29610044120` (job `87982316767`), and Flatpak run
+  `29610044088` (job `87982316819`). Earlier fixture runs `29609357351` and `29609497086` remain
+  retained failures because the first lacked a private D-Bus session and the second had no
+  notification service. Desktop-shell rendering and portal leases remain open.
 
 ## Checkpoint update protocol
 
