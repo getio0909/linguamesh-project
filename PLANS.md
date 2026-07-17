@@ -433,6 +433,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   and `Flatpak Linux` run `29607653864` (job `87974679904`) passed. The GNOME 49 build uploaded
   prerelease artifact `8417588673` (2,396,371 bytes); sandbox launch, portal/notification delivery,
   signing, and distributable release remain open.
+- 2026-07-17: Linux packaging commit `f24a2fd` added `tools/run-flatpak-smoke.sh`. `Flatpak Linux`
+  run `29608245156` (job `87976563401`) uploaded artifact `8417803048` (2,395,628 bytes), installed
+  it with the GNOME 49 runtime, and passed bounded startup under Xvfb/private D-Bus. Portal and
+  notification delivery, signing, and distributable release remain open.
 
 ## Checkpoint update protocol
 

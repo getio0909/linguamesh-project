@@ -25,8 +25,9 @@ isolated real-daemon fixture verifies default-collection CRUD, resolution, clean
 daemon-restart restoration, locked-item fail-closed lookup, and secure persistent-credential
 onboarding through both worker and GTK paths. The no-credential OpenAI-compatible loopback path is
 also covered. A pinned Flatpak manifest, generated Cargo source set, desktop metadata, and icon pass
-static validation; the GNOME 49 SDK workflow built a prerelease CI bundle, while sandbox smoke,
-portal/notification delivery, signing, and distributable artifacts remain unverified. Prompted
+static validation; the GNOME 49 SDK workflow built a prerelease CI bundle and passed bounded sandbox
+startup smoke, while portal/notification delivery, signing, and distributable artifacts remain
+unverified. Prompted
 interactive flows remain unverified. Runtime catalog switching currently covers the Translate and Stop labels, not
 the complete UI. This does not prove every database or storage failure, AT-SPI/Orca,
 physical keyboard traversal, or a complete desktop accessibility matrix.
