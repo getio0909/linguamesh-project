@@ -78,6 +78,10 @@ All notable project-wide changes will be documented here. This project follows s
 - Linux native CI now starts the real `dunst` notification daemon under Xvfb and verifies the
   completion `Notify` payload is delivered with generic text only; physical desktop-shell rendering
   and release artifacts remain open.
+- Linux native CI now starts the real `xdg-desktop-portal-gtk` FileChooser backend under Xvfb,
+  drives an actual `FileChooser.OpenFile` request, and verifies the selected UTF-8 fixture URI and
+  contents. Application-level GTK FileDialog callbacks, drag/drop portal gestures, physical
+  desktop-shell rendering, and release artifacts remain open.
 
 ### Fixed
 
