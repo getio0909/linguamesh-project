@@ -520,6 +520,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   twelve official PO packs, added Arabic RTL root-direction switching, and passed Native run
   `29621513205` (job `88017339094`), Foundation run `29621513199` (job `88017339159`), and Flatpak
   run `29621513202` (job `88017339097`). Full visible-string gettext coverage remains open.
+- 2026-07-17: Central integration revision `54c36d4` recorded the official locale-pack evidence
+  and passed coordination run `29621850718` with Linux job `88018313045` and PowerShell job
+  `88018313060`.
 
 ## Checkpoint update protocol
 
