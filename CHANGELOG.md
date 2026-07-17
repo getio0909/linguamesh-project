@@ -37,6 +37,9 @@ All notable project-wide changes will be documented here. This project follows s
 - Linux now offers bounded native TXT/Markdown import through GTK `FileDialog` and asynchronous GIO
   reads, with UTF-8/BOM validation and a 4 MiB limit; a single GIO file can also be dropped onto
   the source editor through the same validation path, while portal leases remain open.
+- Central release and compatibility records now pin the verified Linux source-drop checkpoint and
+  retain unreleased status with empty artifact lists; coordination validation passed on Linux and
+  Windows PowerShell.
 
 ### Fixed
 

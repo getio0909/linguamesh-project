@@ -353,6 +353,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   (job `87939785643`) passed; evidence head `cdc711320c284eae1f1376635e0d84234d8863a` passed
   Native Linux run `29597182692` (job `87940328074`) and foundation `29597182729` (job
   `87940328419`). Portal leases and interactive gestures remain open.
+- 2026-07-17: Central integration revision `18fc69e0eea5431bf82c767b8d90ce48fef38d01` pinned the
+  Linux source-drop functional revision, recorded the evidence head, and kept the train unreleased
+  with empty artifacts. Coordination run `29597565696` passed Linux job `87941565049` and
+  PowerShell job `87941565102`.
 
 ## Checkpoint update protocol
 
