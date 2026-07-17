@@ -363,6 +363,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   foundation `29598255993` (job `87943844922`) passed; evidence head `0e86e6fb47a11dbf16fd9689795592da648c9eb3`
   passed Native Linux run `29598405209` (job `87944328685`) and foundation `29598405197` (job
   `87944328254`). Real desktop keyring lifecycle evidence remains open.
+- 2026-07-17: Central integration revision `62231504584e8ae9e51111651ac26d7f5c30b1a1` pinned the
+  Linux Secret Service wire-fix functional revision, recorded the evidence head, and preserved
+  unreleased status with empty artifacts. Coordination run `29598784566` passed Linux job
+  `87945581898` and PowerShell job `87945582009`.
 
 ## Checkpoint update protocol
 

@@ -42,6 +42,9 @@ All notable project-wide changes will be documented here. This project follows s
   Windows PowerShell.
 - Linux Secret Service session setup now uses the required single-layer plain-string Variant;
   the wire-shape regression is covered while real desktop keyring lifecycle evidence remains open.
+- Central compatibility and release records now pin the Secret Service wire-fix checkpoint and
+  retain unreleased status with empty artifact lists; Linux and Windows PowerShell coordination
+  validation passed.
 
 ### Fixed
 
