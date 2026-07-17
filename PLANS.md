@@ -253,6 +253,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `87891382469`) passed 65 library tests and one real GTK test on each display backend; evidence-head
   Foundation run `29582714711` and Native Linux run `29582714651` (job `87892044520`) also passed.
   The release manifest continues to pin the unchanged Linux functional source.
+- 2026-07-17: Central integration revision `4945769e4aac00926348c3f757c7910bcc610c9e`
+  recorded the Linux verification head and dual-backend evidence while preserving the functional
+  source pin, `unreleased` status, six empty artifact lists, and incomplete secure-provider and
+  acceptance-scenario claims. Coordination run `29583121429` passed Linux job `87893397751` and
+  Windows PowerShell job `87893397798`.
 
 ## Checkpoint update protocol
 
