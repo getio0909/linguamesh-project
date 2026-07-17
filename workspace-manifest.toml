@@ -1,6 +1,7 @@
 schema_version = 1
 workspace_layout = "federated-polyrepository"
 default_branch = "main"
+github_owner = "getio0909"
 global_goal_file = "linguamesh-project/PROJECT_GOAL.md"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 
@@ -8,40 +9,47 @@ global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19
 name = "linguamesh-project"
 path = "linguamesh-project"
 role = "coordination"
+remote = "https://github.com/getio0909/linguamesh-project.git"
 required = true
 
 [[repositories]]
 name = "linguamesh-core"
 path = "linguamesh-core"
 role = "shared-core"
+remote = "https://github.com/getio0909/linguamesh-core.git"
 required = true
 
 [[repositories]]
 name = "linguamesh-l10n"
 path = "linguamesh-l10n"
 role = "localization"
+remote = "https://github.com/getio0909/linguamesh-l10n.git"
 required = true
 
 [[repositories]]
 name = "linguamesh-android"
 path = "linguamesh-android"
 role = "android-client"
+remote = "https://github.com/getio0909/linguamesh-android.git"
 required = true
 
 [[repositories]]
 name = "linguamesh-windows"
 path = "linguamesh-windows"
 role = "windows-client"
+remote = "https://github.com/getio0909/linguamesh-windows.git"
 required = true
 
 [[repositories]]
 name = "linguamesh-macos"
 path = "linguamesh-macos"
 role = "macos-client"
+remote = "https://github.com/getio0909/linguamesh-macos.git"
 required = true
 
 [[repositories]]
 name = "linguamesh-linux"
 path = "linguamesh-linux"
 role = "linux-client"
+remote = "https://github.com/getio0909/linguamesh-linux.git"
 required = true

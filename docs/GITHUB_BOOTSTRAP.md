@@ -1,6 +1,6 @@
-# Proposed GitHub Bootstrap
+# GitHub Bootstrap
 
-These commands are a reviewed proposal, not evidence that repositories exist. Run only with an authenticated GitHub CLI session and explicit authorization. They intentionally resolve the owner at runtime and never embed a credential.
+These commands are the reviewed bootstrap procedure. Repository existence and publication evidence belongs in `IMPLEMENTATION_STATUS.md`; do not infer current remote state from this procedure alone. Run writes only with an authenticated GitHub CLI session and explicit authorization. The commands resolve the owner at runtime and never embed a credential.
 
 ```sh
 gh auth status

@@ -98,6 +98,7 @@ def main() -> int:
     repositories = workspace.get("repositories", [])
     names = [entry.get("name") for entry in repositories]
     paths = [entry.get("path") for entry in repositories]
+    github_owner = workspace.get("github_owner")
     if names != canonical:
         errors.append(f"Workspace repository order or set is invalid: {names}")
     if paths != canonical:
@@ -106,6 +107,15 @@ def main() -> int:
         errors.append("Workspace repository names must be unique.")
     if any(entry.get("required") is not True for entry in repositories):
         errors.append("Every canonical repository must be required.")
+    if not isinstance(github_owner, str) or not github_owner:
+        errors.append("Workspace GitHub owner must be recorded.")
+    else:
+        expected_remotes = [
+            f"https://github.com/{github_owner}/{repository}.git" for repository in canonical
+        ]
+        remotes = [entry.get("remote") for entry in repositories]
+        if remotes != expected_remotes:
+            errors.append(f"Workspace repository remotes are invalid: {remotes}")
 
     goal_digest = hashlib.sha256((project_root / "PROJECT_GOAL.md").read_bytes()).hexdigest()
     goal_revision = f"sha256:{goal_digest}"
