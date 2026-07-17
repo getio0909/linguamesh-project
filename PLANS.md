@@ -487,6 +487,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   (job `88000113663`), Foundation run `29615670336`, and Flatpak run `29615670344` passed; the
   fixture proves portal-backend UI/lease behavior, while application-level GTK FileDialog
   callbacks, drag/drop portal gestures, and physical desktop-shell rendering remain open.
+- 2026-07-17: Central integration revision `6d433bc` recorded the interactive portal chooser
+  evidence, preserved `unreleased` status and empty artifact lists, and passed coordination run
+  `29616044432` with Linux job `88001278364` and PowerShell job `88001278398`.
 
 ## Checkpoint update protocol
 
