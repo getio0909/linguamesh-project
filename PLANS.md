@@ -236,6 +236,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `e9a7591867c9300fcbff9a568a867aacc45195d3` passed Foundation run `29580595045` and Native Linux
   run `29580595042` (job `87885096648`). Secret Service and secure persistent-credential onboarding
   remain open, so neither the checkpoint nor global Scenario 5 is complete.
+- 2026-07-17: Central integration revision `f7df9ef3675b218ebc94df74ba26f2256db6fa34`
+  pinned the verified Linux onboarding functional source while preserving `unreleased` status,
+  empty artifact lists, and partial-only Scenario 3/5 claims. Coordination run `29581079831` passed
+  Linux job `87886675010` and Windows PowerShell job `87886675039`.
 
 ## Checkpoint update protocol
 
