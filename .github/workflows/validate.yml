@@ -12,10 +12,12 @@ permissions:
 jobs:
   linux:
     name: Linux validation
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      # 固定 actions/checkout v7.0.0。
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      # 固定 actions/setup-python v6.3.0。
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
         with:
           python-version: "3.12"
       - name: Validate manifests, documentation, and credential hygiene
@@ -23,9 +25,10 @@ jobs:
 
   windows:
     name: PowerShell validation
-    runs-on: windows-latest
+    runs-on: windows-2022
     steps:
-      - uses: actions/checkout@v4
+      # 固定 actions/checkout v7.0.0。
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - name: Validate manifests and credential hygiene
         shell: pwsh
         run: ./tools/check-workspace.ps1
