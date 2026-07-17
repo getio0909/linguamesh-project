@@ -33,7 +33,7 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Create, validate, and locally commit the central, localization, Android, Windows, macOS, and Linux repository foundations.
 - [x] Implement, validate, and locally commit the first Rust core/CLI checkpoint.
 - [x] Complete Checkpoint 0 and publish verified repository foundations to all seven public repositories.
-- [ ] Obtain GitHub Actions evidence for the published Rust CLI vertical slice.
+- [x] Obtain GitHub Actions evidence for the published Rust CLI vertical slice and all repository foundations.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Checkpoint 0 — Project and repository foundation
@@ -124,6 +124,7 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-17: Rust 1.93.0, Clippy, rustfmt, GCC, CMake, Ninja, Protobuf, and SQLite development libraries are available for the core. Apple and Windows toolchains, Android NDK/Rust targets, and GTK/libadwaita development headers are unavailable locally.
 - 2026-07-17: All seven canonical local repositories now exist on `main`; every repository has a clean verified local checkpoint commit.
 - 2026-07-17: Core revision `e5fb2311b3e699db83084ce96240b79d482ad896` passed formatting, strict Clippy, 18 tests, locked build, dependency/advisory/license/source policy, credential-signature scan, real streamed completion, and timed cancellation with partial output retained.
+- 2026-07-17: GitHub Actions run `29551581397` passed the published Core checkpoint. Foundation workflows passed for l10n, Android, Windows, macOS, and Linux. Central run `29551747796` passed Bash and Windows PowerShell validation after line-ending-independent goal-digest validation was added.
 
 ## Checkpoint update protocol
 
