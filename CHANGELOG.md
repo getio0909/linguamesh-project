@@ -48,6 +48,8 @@ All notable project-wide changes will be documented here. This project follows s
 - Central compatibility and release records now pin the Secret Service wire-fix checkpoint and
   retain unreleased status with empty artifact lists; Linux and Windows PowerShell coordination
   validation passed.
+- Central compatibility and release records now pin the Linux Secret Service CRUD functional
+  revision and evidence head; coordination run `29601473308` passed on Linux and PowerShell.
 
 ### Fixed
 

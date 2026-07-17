@@ -375,6 +375,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29600898977` passed; evidence head `93f40456a53074ad437e4ee74634348c35afc049` passed Native
   Linux run `29601110914` (job `87953169459`) and foundation run `29601110906`. Persistent desktop
   restoration, locked/prompted behavior, and secure persistent-credential onboarding remain open.
+- 2026-07-17: Central integration revision `acdf43cde6a7a971d1cb27e0c6a672b6b86cbc21` pinned the
+  verified Linux Secret Service CRUD functional revision and evidence head, preserved unreleased
+  status with empty artifact lists, and passed coordination run `29601473308` with Linux job
+  `87954353885` and PowerShell job `87954353964`.
 
 ## Checkpoint update protocol
 

@@ -23,6 +23,9 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
+Central integration revision `acdf43cde6a7a971d1cb27e0c6a672b6b86cbc21` passed coordination run
+`29601473308`, including Linux job `87954353885` and Windows PowerShell job `87954353964`.
+
 Linux Secret Service wire-shape fix revision `9bcd8d9ca30d109f5c7c9c20e6f72f6a77df078d` passed
 Native Linux run `29598255988` (job `87943844854`) and repository-foundation run `29598255993`
 (job `87943844922`). The native job passed strict Clippy, the GTK-enabled suite, both display
