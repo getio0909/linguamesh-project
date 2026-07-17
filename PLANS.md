@@ -427,6 +427,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   pinned sources, and uploaded prerelease artifact `linguamesh-linux-x86_64-x86_64.flatpak` as
   artifact `8417198959` (2,390,377 bytes). Sandbox launch, portal/notification delivery, signing,
   and distributable release remain open; no release artifact was added to the manifest.
+- 2026-07-17: Linux packaging revision `fd1f400058f4c68b47a9bd0823e790c6d9cef263` migrated the
+  Flatpak manifest and CI image from the GNOME 48 runtime, which the CI image reported EOL, to GNOME
+  49. Local metadata validation passed; Native Linux run `29607653918`, Foundation run `29607653880`,
+  and `Flatpak Linux` run `29607653864` (job `87974679904`) passed. The GNOME 49 build uploaded
+  prerelease artifact `8417588673` (2,396,371 bytes); sandbox launch, portal/notification delivery,
+  signing, and distributable release remain open.
 
 ## Checkpoint update protocol
 
