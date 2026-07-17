@@ -35,7 +35,8 @@ All notable project-wide changes will be documented here. This project follows s
   source and translated content are excluded from notification payloads, while desktop delivery
   and packaging remain release-gate work.
 - Linux now offers bounded native TXT/Markdown import through GTK `FileDialog` and asynchronous GIO
-  reads, with UTF-8/BOM validation and a 4 MiB limit; portal leases and drag-and-drop remain open.
+  reads, with UTF-8/BOM validation and a 4 MiB limit; a single GIO file can also be dropped onto
+  the source editor through the same validation path, while portal leases remain open.
 
 ### Fixed
 

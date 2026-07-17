@@ -347,6 +347,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Linux text-import functional revision and recorded its 4 MiB/UTF-8 and portal boundary. The
   coordination run `29596541373` passed Linux job `87938213706` and Windows PowerShell job
   `87938213592`.
+- 2026-07-17: Linux functional revision `b0da3819d97ae24f8c85147da5e7e1c65fe2d6fc` added a
+  single-file GTK `DropTarget` on the source editor, reusing the bounded GIO UTF-8/4 MiB import
+  path. Native Linux run `29597016894` (job `87939785693`) and foundation run `29597016893`
+  (job `87939785643`) passed; evidence head `cdc711320c284eae1f1376635e0d84234d8863a` passed
+  Native Linux run `29597182692` (job `87940328074`) and foundation `29597182729` (job
+  `87940328419`). Portal leases and interactive gestures remain open.
 
 ## Checkpoint update protocol
 

@@ -14,7 +14,7 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 | Windows client | `0.0.0-dev` | No SDK selected | Unreleased |
 | macOS client | `0.0.0-dev` | No SDK selected | Unreleased |
-| Linux client | `0.1.0-alpha.2` | Exact Core `0.1.0-alpha.2`; ABI `1`; wire protocol 1; multi-profile/model persistence; derived onboarding; session credentials; GIO Secret Service adapter with session-only fallback; runtime English/Simplified Chinese PO action labels; generic completion desktop notification without source/translated content; bounded native UTF-8 TXT/Markdown import up to 4 MiB; post-startup storage degradation; baseline GTK accessibility semantics on GTK 4.10+ | Functional source `96d34a5448d0f718fd87c68e88129c05fed43ee5` passed native CI, unreleased |
+| Linux client | `0.1.0-alpha.2` | Exact Core `0.1.0-alpha.2`; ABI `1`; wire protocol 1; multi-profile/model persistence; derived onboarding; session credentials; GIO Secret Service adapter with session-only fallback; runtime English/Simplified Chinese PO action labels; generic completion desktop notification without source/translated content; bounded native UTF-8 TXT/Markdown import up to 4 MiB through FileDialog or single-file source-editor drag-and-drop; post-startup storage degradation; baseline GTK accessibility semantics on GTK 4.10+ | Functional source `b0da3819d97ae24f8c85147da5e7e1c65fe2d6fc` passed native CI, unreleased |
 
 The Linux client uses a GIO D-Bus Secret Service adapter for persistent SecretRef values and fails
 closed when the service is unavailable, locked, or requests interaction. It can create, update,
@@ -32,8 +32,9 @@ mnemonics, focusable controls, hidden empty errors, and translation Busy/reset s
 4.10+. Runtime switching currently covers catalog-backed Translate and Stop labels, with explicit
 English fallback for uncovered UI keys. Completed translations send a generic desktop notification
 without source or translated content; notification-server delivery and packaging remain runtime
-boundaries. Native Open text file import accepts bounded UTF-8 TXT/Markdown content; interactive
-portal leases and drag-and-drop remain open. It does not cover every database or storage failure. Real
+boundaries. Native Open text file import accepts bounded UTF-8 TXT/Markdown content, and a single
+GIO file can be dropped onto the source editor through the same validation path; interactive portal
+leases remain open. It does not cover every database or storage failure. Real
 desktop keyring CRUD/cleanup, complete UI gettext coverage, secure persistent-credential onboarding,
 and Scenarios 3 and 5 remain incomplete. Stable clients must pin
 a released core and reject an unknown ABI major. Every release-train update must include source

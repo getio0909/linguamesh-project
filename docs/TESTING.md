@@ -23,15 +23,16 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
-Linux text-import functional revision `96d34a5448d0f718fd87c68e88129c05fed43ee5` passed Native
-Linux run `29596052224` (job `87936587342`) and repository-foundation run `29596052213` (job
-`87936587361`). The native job passed 70 GUI-enabled library tests with one intentional ignore,
+Linux drag-and-drop functional revision `b0da3819d97ae24f8c85147da5e7e1c65fe2d6fc` passed Native
+Linux run `29597016894` (job `87939785693`) and repository-foundation run `29597016893` (job
+`87939785643`). The native job passed 71 GUI-enabled library tests with one intentional ignore,
 the bounded UTF-8 decoder tests, the real GTK flow including the focusable Open text file control
-and worker-loss disablement, the exact storage-fault gate, both display gates, strict Clippy, and
-the native build. Interactive file selection, portal leases, and drag-and-drop are not claimed.
+and single-file source-editor `DropTarget`, worker-loss disablement, the exact storage-fault gate,
+both display gates, strict Clippy, and the native build. Interactive file selection, drag/drop
+gestures, and portal leases remain manual boundaries.
 
-Evidence head `1553841dc527f1f3bc9556ce5f88650f28221d85` passed Native Linux run `29596239167`
-(job `87937214530`) and repository-foundation run `29596239653` (job `87937215981`).
+Evidence head `cdc711320c284eae1f1376635e0d84234d8863a` passed Native Linux run `29597182692`
+(job `87940328074`) and repository-foundation run `29597182729` (job `87940328419`).
 
 Linux notification functional revision `07b89f36269155469a488ab830e8f485b3a1323b` passed Native
 Linux run `29594795691` (job `87932451631`) and repository-foundation run `29594795681` (job
