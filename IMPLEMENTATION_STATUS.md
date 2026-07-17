@@ -4,7 +4,7 @@ Last updated: 2026-07-17
 
 ## Current checkpoint
 
-Milestone 0 and the first Rust core/CLI checkpoint are implemented, committed, locally validated, published to the canonical public repositories owned by `getio0909`, and verified by GitHub Actions. No stable product release, completed native client, SDK artifact, or supported document codec is claimed here.
+Milestone 0, the first Rust core/CLI checkpoint, and localization development bundle `0.1.0` are implemented, committed, locally validated, published to the canonical public repositories owned by `getio0909`, and verified by GitHub Actions. No stable product release, completed native client, released SDK artifact, or supported document codec is claimed here.
 
 ## Evidence
 
@@ -18,7 +18,8 @@ Milestone 0 and the first Rust core/CLI checkpoint are implemented, committed, l
 | GitHub metadata | Validated | The repository Python 3.13 environment parsed all workflow and issue-template YAML files successfully; remote run evidence is listed below. |
 | Canonical sibling repositories | Layout validated | `bash tools/check-workspace.sh --require-repositories` found all seven canonical directories and their minimum policy files. This does not verify sibling application behavior. |
 | Rust core checkpoint | Validated locally | Core revision `e5fb2311b3e699db83084ce96240b79d482ad896` passed rustfmt, strict Clippy, 18 tests, locked build, cargo-deny policy, credential-signature scan, and workflow YAML parsing. |
-| GitHub Actions | Passed | Core run `29551581397` passed. Central run `29551747796` passed Linux and Windows validation. Initial foundation runs passed for l10n (`29551584940`), Android (`29551588891`), Windows (`29551592425`), macOS (`29551595832`), and Linux (`29551599044`). |
+| Localization bundle | Validated locally and remotely | l10n revision `4b36889116eba037721cb31827342409e8836168` contains 41 canonical messages, 12 official locale packs, two pseudo-locales, 45 generated artifacts, 25 passing tests, platform-format checks, and deterministic bundle SHA-256 `47bc84bd7562fb6ada7f88fd07490e79843c5c4e9d9b747f87a206dbecd0394a`. Non-English packs remain explicitly unreviewed drafts. |
+| GitHub Actions | Passed | Core run `29551581397` passed. Central runs `29551747796` and `29552361617` passed Linux and Windows validation. l10n runs `29553012283` and `29553012269` passed; the downloaded CI bundle passed its embedded checksum and matched the local reproducible hash. Initial foundation runs passed for Android (`29551588891`), Windows (`29551592425`), macOS (`29551595832`), and Linux (`29551599044`). |
 | Acceptance Scenario 1 | Passed locally | The reference CLI discovered and selected a fake model, streamed `你好，LinguaMesh！` over loopback HTTP/SSE, and completed without a key. A separate slow-stream run retained `你好` and emitted cancellation. |
 | Remaining acceptance scenarios | Not started | Scenarios 2–20 do not yet have reproducible passing evidence. |
 

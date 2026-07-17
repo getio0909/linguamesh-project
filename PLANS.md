@@ -34,6 +34,7 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Implement, validate, and locally commit the first Rust core/CLI checkpoint.
 - [x] Complete Checkpoint 0 and publish verified repository foundations to all seven public repositories.
 - [x] Obtain GitHub Actions evidence for the published Rust CLI vertical slice and all repository foundations.
+- [x] Publish and remotely verify the localization `0.1.0` development bundle, generated native resources, pseudo-locales, and deterministic checksum.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Checkpoint 0 — Project and repository foundation
@@ -125,6 +126,7 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-17: All seven canonical local repositories now exist on `main`; every repository has a clean verified local checkpoint commit.
 - 2026-07-17: Core revision `e5fb2311b3e699db83084ce96240b79d482ad896` passed formatting, strict Clippy, 18 tests, locked build, dependency/advisory/license/source policy, credential-signature scan, real streamed completion, and timed cancellation with partial output retained.
 - 2026-07-17: GitHub Actions run `29551581397` passed the published Core checkpoint. Foundation workflows passed for l10n, Android, Windows, macOS, and Linux. Central run `29551747796` passed Bash and Windows PowerShell validation after line-ending-independent goal-digest validation was added.
+- 2026-07-17: Localization revision `4b36889116eba037721cb31827342409e8836168` passed foundation and localization workflows. Downloaded CI artifact `linguamesh-l10n-0.1.0` matched the locally reproducible SHA-256 `47bc84bd7562fb6ada7f88fd07490e79843c5c4e9d9b747f87a206dbecd0394a`; it remains an unreleased development bundle with unreviewed non-English drafts.
 
 ## Checkpoint update protocol
 

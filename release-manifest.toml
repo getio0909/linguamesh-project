@@ -3,7 +3,8 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
-  "No compatible core or native-client release has been produced.",
+  "No compatible native-client release has been produced.",
+  "Localization 0.1.0 is a development bundle whose non-English packs remain unreviewed machine-generated drafts.",
   "No mandatory acceptance scenario has verified release evidence."
 ]
 
@@ -11,7 +12,7 @@ known_limitations = [
 abi_major = 0
 protocol_schema_version = "0.1.0"
 provider_catalog_version = "0.1.0"
-localization_schema_version = "0.0.0-dev"
+localization_schema_version = "1.0.0"
 
 [components.core]
 repository = "linguamesh-core"
@@ -22,9 +23,9 @@ artifacts = []
 
 [components.localization]
 repository = "linguamesh-l10n"
-version = "0.0.0-dev"
-source_revision = "unreleased"
-minimum_compatible_version = "0.0.0-dev"
+version = "0.1.0"
+source_revision = "4b36889116eba037721cb31827342409e8836168"
+minimum_compatible_version = "0.1.0"
 artifacts = []
 
 [components.android]
