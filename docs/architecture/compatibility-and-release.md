@@ -10,8 +10,8 @@ A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings,
 
 The current unreleased matrix pins Core functional revision
 `fbf3e9b5927049dccaa19f8c36013495ffebba12` and Linux functional revision
-`726508f8412727f8b14e32d27407487491f5e4cd`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
-Linux evidence head `93f40456a53074ad437e4ee74634348c35afc049` adds only evidence documentation
+`f58388a8e58341a8630088dc8b1782f61ab63a7c`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+Linux evidence head `2ef165e0b99a11e3d57e512285d8f49edd9e297a` adds only evidence documentation
 relative to that functional source. Native CI verifies the current GTK flow under X11/Xvfb and
 forced Wayland/headless Weston plus real post-startup `ENOSPC` rollback for persistent connection,
 model-update, and deletion transactions. The same GTK test verifies baseline roles, named
@@ -21,8 +21,9 @@ source or translated content; notification-server delivery and packaging remain 
 import uses a bounded UTF-8 GTK FileDialog/GIO path and a single-file source-editor DropTarget;
 portal leases remain open.
 The GIO Secret Service adapter sends a valid single-layer plain-string OpenSession Variant, and an
-isolated real-daemon fixture verifies default-collection CRUD, resolution, and cleanup. Persistent
-desktop restoration and locked/prompted behavior remain unverified. Runtime catalog switching currently covers the Translate and Stop labels, not
+isolated real-daemon fixture verifies default-collection CRUD, resolution, cleanup, persistent
+daemon-restart restoration, and locked-item fail-closed lookup. Prompted interactive flows and
+secure persistent-credential onboarding remain unverified. Runtime catalog switching currently covers the Translate and Stop labels, not
 the complete UI. This does not prove every database or storage failure, AT-SPI/Orca,
 physical keyboard traversal, or a complete desktop accessibility matrix.
 Their CI evidence publishes no artifact. Linux multi-profile/session onboarding, next-request

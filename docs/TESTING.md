@@ -42,6 +42,13 @@ store/resolve/delete fixture, and the all-target native build. Evidence head
 (job `87953169459`); repository-foundation run `29601110906` also passed. Persistent desktop
 restoration and locked/prompted behavior remain separate lifecycle gates.
 
+Linux Secret Service persistent-lifecycle revision `f58388a8e58341a8630088dc8b1782f61ab63a7c`
+passed Native Linux run `29602287284` (job `87957053225`) and repository-foundation run
+`29602287281`. The native fixture stored a persistent item in the `login` collection, verified
+resolution, locked the collection and checked fail-closed lookup, restarted the daemon, resolved
+and deleted the item, and reran cleanup. Prompted interactive flows and secure persistent-credential
+onboarding remain separate gates.
+
 Linux drag-and-drop functional revision `b0da3819d97ae24f8c85147da5e7e1c65fe2d6fc` passed Native
 Linux run `29597016894` (job `87939785693`) and repository-foundation run `29597016893` (job
 `87939785643`). The native job passed 71 GUI-enabled library tests with one intentional ignore,

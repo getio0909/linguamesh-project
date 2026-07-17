@@ -45,6 +45,9 @@ All notable project-wide changes will be documented here. This project follows s
 - Linux now verifies Secret Service default-collection store/resolve/delete and cleanup against an
   isolated real `gnome-keyring` daemon in Ubuntu 24.04 Native CI; persistent desktop restoration
   and locked/prompted lifecycle behavior remain open.
+- Linux native CI now verifies persistent Secret Service restoration across daemon restart and
+  locked-item fail-closed resolution in the isolated `login` collection fixture; prompted
+  interactive flows and secure persistent-credential onboarding remain open.
 - Central compatibility and release records now pin the Secret Service wire-fix checkpoint and
   retain unreleased status with empty artifact lists; Linux and Windows PowerShell coordination
   validation passed.
