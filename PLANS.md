@@ -336,6 +336,13 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Linux notification functional revision, recorded its privacy and delivery boundary, and kept
   `unreleased` status with empty artifact lists. Coordination run `29595318912` passed Linux job
   `87934171311` and Windows PowerShell job `87934171416`.
+- 2026-07-17: Linux functional revision `96d34a5448d0f718fd87c68e88129c05fed43ee5` added a
+  native GTK FileDialog action with bounded asynchronous GIO partial reads for UTF-8 TXT/Markdown
+  input, UTF-8 BOM removal, invalid-text rejection, and a 4 MiB limit. Native Linux run
+  `29596052224` (job `87936587342`) and foundation run `29596052213` (job `87936587361`) passed;
+  evidence head `1553841dc527f1f3bc9556ce5f88650f28221d85` passed Native Linux run `29596239167`
+  (job `87937214530`) and foundation `29596239653` (job `87937215981`). Portal leases,
+  interactive file selection, drag-and-drop, and document codecs remain open.
 
 ## Checkpoint update protocol
 

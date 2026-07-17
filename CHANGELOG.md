@@ -34,6 +34,8 @@ All notable project-wide changes will be documented here. This project follows s
 - Linux completion notifications now use the registered `GApplication` path with fixed generic text;
   source and translated content are excluded from notification payloads, while desktop delivery
   and packaging remain release-gate work.
+- Linux now offers bounded native TXT/Markdown import through GTK `FileDialog` and asynchronous GIO
+  reads, with UTF-8/BOM validation and a 4 MiB limit; portal leases and drag-and-drop remain open.
 
 ### Fixed
 
