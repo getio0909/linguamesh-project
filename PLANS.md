@@ -216,6 +216,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `7ba8909bd05a168e328af027e1308d23f257f0f9` passed Foundation run `29578055430` and Native Linux
   run `29578055393` (job `87876964652`). Secret Service and complete onboarding remain required,
   so `LM-CHANGE-2026-07-LINUX-SECURE-PROVIDER-1` stays open.
+- 2026-07-17: Central integration revision `f2c3a5532fed81ebe056c0d6de33d81b404b15cf`
+  pinned the CI-verified Linux functional revision while preserving `unreleased` status and empty
+  artifact lists. Coordination run `29578424525` passed Linux job `87878121729` and Windows
+  PowerShell job `87878121792`.
 
 ## Checkpoint update protocol
 
