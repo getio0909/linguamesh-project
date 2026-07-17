@@ -35,11 +35,16 @@ request; browsing another row does not activate it. A saved model is revalidated
 reconnection, and credential re-entry remains mandatory. Failed persistent changes, session
 switches, and cancellation before the persistence commit preserve every saved row and default.
 Exact-ID deletion commits storage before success becomes visible. Deleting a connected saved row
-keeps its validated runtime/model as session-only without recreating the row. Persistent secret
-references fail closed because no native Secret Service backend is implemented, and the client
-never falls back to plaintext. Authenticated fake providers A/B and real request counters verify
-that a remembered-model reconnect routes the next request only to the newly confirmed provider and
-that a failed credential switch preserves the previous provider/model without crossover. This is
-Linux-side partial Scenario 5 evidence, not a completed scenario. The checkpoint and Acceptance
-Scenarios 3 and 5 remain incomplete until Secret Service-backed credential lifecycle and secure
-persistent-credential onboarding are implemented.
+keeps its validated runtime/model as session-only without recreating the row. If an already-open
+database returns `Persistence` during persistent Connect, model update, or deletion, the exact
+operation is rejected before storage-unavailable is reported. The worker drops its storage handle
+and active saved marker while preserving the prior engine/model for session-only use; restart sees
+only pre-fault commits. A real Linux `ENOSPC` regression verifies this transaction boundary, not
+corruption, read-only media, power loss, or every VFS failure. Persistent secret references fail
+closed because no native Secret Service backend is implemented, and the client never falls back to
+plaintext. Authenticated fake providers A/B and real request counters verify that a remembered-model
+reconnect routes the next request only to the newly confirmed provider and that a failed credential
+switch preserves the previous provider/model without crossover. This is Linux-side partial Scenario
+5 evidence, not a completed scenario. The checkpoint and Acceptance Scenarios 3 and 5 remain
+incomplete until Secret Service-backed credential lifecycle and secure persistent-credential
+onboarding are implemented.

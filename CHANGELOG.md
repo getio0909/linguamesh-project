@@ -21,3 +21,9 @@ All notable project-wide changes will be documented here. This project follows s
   identity, persistent session-only degradation warnings, worker-loss command blocking, and
   authenticated A/B request-counter evidence for remembered model switching. Secret Service and
   secure persistent-credential onboarding remain unimplemented.
+
+### Fixed
+
+- Linux persistent Connect, model-update, and profile-deletion transactions now reject real
+  post-startup `ENOSPC` failures before success, degrade the active connection to session-only,
+  preserve the prior validated engine/model, and restore only pre-fault state after restart.

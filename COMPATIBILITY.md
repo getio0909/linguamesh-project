@@ -14,7 +14,7 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 | Windows client | `0.0.0-dev` | No SDK selected | Unreleased |
 | macOS client | `0.0.0-dev` | No SDK selected | Unreleased |
-| Linux client | `0.1.0-alpha.2` | Exact Core `0.1.0-alpha.2`; ABI `1`; wire protocol 1; non-secret multi-profile/model persistence; derived session onboarding; session credentials | Functional source `9729b23ce1a4280ebb434339e880010103b4859d` passed native CI, unreleased |
+| Linux client | `0.1.0-alpha.2` | Exact Core `0.1.0-alpha.2`; ABI `1`; wire protocol 1; non-secret multi-profile/model persistence; derived session onboarding; session credentials; post-startup storage degradation | Functional source `c37702c76c3b1a2f9cec805cf9e219721ef7b5ce` passed native CI, unreleased |
 
 The Linux client fails closed for persistent secrets because a native Secret Service backend is not
 implemented. It can create, update, switch, and delete multiple credential-free provider profiles,
@@ -24,8 +24,11 @@ session-only. Its derived setup card identifies the stable provider/model for th
 retains storage-degradation warnings, and disables commands after worker loss. Authenticated A/B
 request counters verify Linux-side remembered model routing and failed-switch isolation. Credential
 re-entry remains required, and no credential or secret reference is persisted or allowed to fall
-back to plaintext. Secret Service, secure persistent-credential onboarding, and Scenarios 3 and 5
-remain incomplete. Stable clients must pin a released core and reject an unknown ABI major. Every
-release-train update must include source revisions, artifact checksums, minimum compatible versions,
-known limitations, and cross-repository conformance evidence. Development placeholders and the
-alpha.2 source checkpoints are not consumable releases.
+back to plaintext. A real Linux `ENOSPC` gate verifies that failed persistent Connect, model-update,
+and deletion transactions reject before success, preserve the prior session, and restore only
+pre-fault state. It does not cover every database or storage failure. Secret Service, secure
+persistent-credential onboarding, and Scenarios 3 and 5 remain incomplete. Stable clients must pin
+a released core and reject an unknown ABI major. Every release-train update must include source
+revisions, artifact checksums, minimum compatible versions, known limitations, and cross-repository
+conformance evidence. Development placeholders and the alpha.2 source checkpoints are not
+consumable releases.

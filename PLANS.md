@@ -44,6 +44,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   and Linux-side authenticated A/B next-request routing for remembered model switches.
 - [x] Run the same real Linux GTK flow under both X11/Xvfb and forced Wayland/headless Weston,
   with bounded compositor startup and cleanup and no X11 fallback in the Wayland gate.
+- [x] Reject real post-startup Linux `ENOSPC` persistence failures before false success, preserve
+  the prior validated session in memory, and verify restart recovery of only pre-fault state.
 - [ ] Complete the active Linux-first secure-provider checkpoint described below.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
@@ -61,6 +63,9 @@ be added without a separate maintenance, security, and license review.
 
 Assumption: the existing untracked central RFC and ADR drafts are unrelated user work and must
 remain untouched unless their owner explicitly incorporates them into this checkpoint.
+
+Assumption: exhausting a private Linux tmpfs to `ENOSPC` verifies the implemented SQLite
+transaction-failure boundary, not corruption, read-only media, power loss, or every VFS failure.
 
 Deliver the prerequisite Core contract before wiring the native Linux host service:
 
@@ -97,6 +102,12 @@ Checkpoint evidence:
   and reran the same GTK binary test under forced Wayland/headless Weston. Functional run
   `29582513061` (job `87891382469`) and evidence-head run `29582714651` (job `87892044520`) passed;
   physical compositor, GPU, and assistive-technology coverage remain open.
+- [x] Linux functional revision `c37702c76c3b1a2f9cec805cf9e219721ef7b5ce` rejects persistent
+  Connect, model-update, and deletion `ENOSPC` failures before success, degrades to session-only,
+  preserves the prior engine/model, and restores only pre-fault state. Foundation run `29586531915`
+  (job `87904787120`) and Native Linux run `29586532049` (job `87904787338`) passed; evidence head
+  `2eadf06e5e63eec5b7a512a53a2741f4f2c77704` reran the native gates in run `29586802067` (job
+  `87905686187`).
 - [ ] Implement and review a native Secret Service backend before accepting persistent credential
   references.
 - [ ] Implement secure persistent-credential onboarding.
@@ -258,6 +269,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   source pin, `unreleased` status, six empty artifact lists, and incomplete secure-provider and
   acceptance-scenario claims. Coordination run `29583121429` passed Linux job `87893397751` and
   Windows PowerShell job `87893397798`.
+- 2026-07-17: Linux functional revision `c37702c76c3b1a2f9cec805cf9e219721ef7b5ce`
+  implemented fail-closed post-startup persistence degradation and a real private-tmpfs `ENOSPC`
+  gate for persistent Connect, model update, and deletion. Foundation run `29586531915` (job
+  `87904787120`) and Native Linux run `29586532049` (job `87904787338`) passed 66 ordinary library
+  tests, one exact fault test, the real GTK flow on X11 and forced Wayland, strict Clippy, and the
+  native build. Evidence head `2eadf06e5e63eec5b7a512a53a2741f4f2c77704` passed Foundation run
+  `29586802183` (job `87905686613`) and Native Linux run `29586802067` (job `87905686187`). Secret
+  Service and broader storage-fault coverage remain open.
 
 ## Checkpoint update protocol
 
