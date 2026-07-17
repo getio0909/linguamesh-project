@@ -49,6 +49,14 @@ resolution, locked the collection and checked fail-closed lookup, restarted the 
 and deleted the item, and reran cleanup. Prompted interactive flows and secure persistent-credential
 onboarding remain separate gates.
 
+Linux secure persistent-credential onboarding revision `6654a46b378d68c2c6012ccf2f30e24ae564dc7c`
+passed Native Linux run `29603486498` (job `87960961963`) and repository-foundation run
+`29603486477`; documentation head `3f4ba2f2c0bd0e48c5990f1640cd39b637907769` passed Native Linux
+run `29603706638` (job `87961679587`) and foundation run `29603706640`. The fixture verified worker
+connect/translate/restart without credential re-entry and the GTK Remember/clear-form path with
+SecretRef-only SQLite persistence and an authenticated loopback provider. Prompted interactive flows
+remain separate.
+
 Linux drag-and-drop functional revision `b0da3819d97ae24f8c85147da5e7e1c65fe2d6fc` passed Native
 Linux run `29597016894` (job `87939785693`) and repository-foundation run `29597016893` (job
 `87939785643`). The native job passed 71 GUI-enabled library tests with one intentional ignore,

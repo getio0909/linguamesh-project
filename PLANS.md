@@ -119,9 +119,9 @@ Checkpoint evidence:
   update, resolution, and deletion; unavailable, locked, and interactive keyring paths fail closed.
 - [x] Verify Secret Service default-collection store/resolve/delete and cleanup against an
   isolated real `gnome-keyring` daemon in native Linux CI.
-- [x] Verify persistent desktop keyring restoration and locked-item fail-closed behavior under a
-  real daemon lifecycle; prompted interactive flows and secure persistent-credential onboarding
-  remain open.
+- [x] Verify persistent desktop keyring restoration, locked-item fail-closed behavior, and secure
+  persistent-credential onboarding under a real daemon lifecycle; prompted interactive flows remain
+  open.
 - [x] Implement create/update/delete and deliberate Connect-based activation and switching for
   multiple credential-free saved profiles, including independent model preferences and
   connected-row session continuation.
@@ -389,6 +389,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   the verified Linux persistent-lifecycle functional source and evidence head, preserved unreleased
   status with empty artifact lists, and passed coordination run `29602906399` with Linux job
   `87959070945` and PowerShell job `87959071022`.
+- 2026-07-17: Linux functional revision `6654a46b378d68c2c6012ccf2f30e24ae564dc7c` verified
+  secure persistent-credential onboarding through worker and GTK paths, including form clearing,
+  SecretRef-only persistence, authenticated translation, and restart reconnect. Native Linux run
+  `29603486498` (job `87960961963`) and Foundation run `29603486477` passed; evidence head
+  `3f4ba2f2c0bd0e48c5990f1640cd39b637907769` passed Native Linux run `29603706638` (job
+  `87961679587`) and Foundation run `29603706640`.
 
 ## Checkpoint update protocol
 

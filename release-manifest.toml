@@ -4,7 +4,7 @@ status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
   "No compatible stable native-client release has been produced.",
-  "Linux 0.1.0-alpha.2 is an unreleased multi-profile and session-onboarding checkpoint; create, update, activate, switch, delete, next-request routing, post-startup ENOSPC rollback, baseline GTK accessibility semantics, runtime PO catalog action labels, bounded text import with source-editor drag-and-drop, and the current GTK flow under X11 and headless Wayland are CI-verified with GTK 4.10-or-newer APIs. The GIO Secret Service adapter now sends a valid single-layer plain-string OpenSession Variant and passes isolated real-daemon CRUD/cleanup plus persistent daemon-restart and locked-item fail-closed lifecycle checks, while complete UI gettext coverage, prompted interactive flows, and secure persistent-credential onboarding remain open.",
+  "Linux 0.1.0-alpha.2 is an unreleased multi-profile and session-onboarding checkpoint; create, update, activate, switch, delete, next-request routing, post-startup ENOSPC rollback, baseline GTK accessibility semantics, runtime PO catalog action labels, bounded text import with source-editor drag-and-drop, and the current GTK flow under X11 and headless Wayland are CI-verified with GTK 4.10-or-newer APIs. The GIO Secret Service adapter now sends a valid single-layer plain-string OpenSession Variant and passes isolated real-daemon CRUD/cleanup, persistent daemon-restart and locked-item fail-closed lifecycle checks, and secure persistent-credential onboarding; complete UI gettext coverage and prompted interactive flows remain open.",
   "Localization 0.1.0 is a development bundle whose non-English packs remain unreviewed machine-generated drafts.",
   "Only mandatory acceptance Scenario 1 has complete local evidence; Linux Scenario 5 has partial client-side evidence only, and no scenario has stable-release evidence."
 ]
@@ -53,6 +53,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "f58388a8e58341a8630088dc8b1782f61ab63a7c"
+source_revision = "6654a46b378d68c2c6012ccf2f30e24ae564dc7c"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

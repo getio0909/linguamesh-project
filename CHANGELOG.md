@@ -56,6 +56,9 @@ All notable project-wide changes will be documented here. This project follows s
 - Central compatibility and release records now pin the persistent Secret Service lifecycle
   functional revision and evidence head; coordination run `29602906399` passed on Linux and
   PowerShell.
+- Linux now verifies secure persistent-credential onboarding end to end: the worker resolves a
+  SecretRef across restart, and the GTK Remember path clears the form, persists only the SecretRef,
+  authenticates a loopback provider, and confirms the credential canary is absent from SQLite.
 
 ### Fixed
 
