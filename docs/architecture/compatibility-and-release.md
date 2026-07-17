@@ -10,8 +10,8 @@ A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings,
 
 The current unreleased matrix pins Core functional revision
 `fbf3e9b5927049dccaa19f8c36013495ffebba12` and Linux functional revision
-`b0da3819d97ae24f8c85147da5e7e1c65fe2d6fc`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
-Linux evidence head `cdc711320c284eae1f1376635e0d84234d8863a` adds only evidence documentation
+`9bcd8d9ca30d109f5c7c9c20e6f72f6a77df078d`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+Linux evidence head `0e86e6fb47a11dbf16fd9689795592da648c9eb3` adds only evidence documentation
 relative to that functional source. Native CI verifies the current GTK flow under X11/Xvfb and
 forced Wayland/headless Weston plus real post-startup `ENOSPC` rollback for persistent connection,
 model-update, and deletion transactions. The same GTK test verifies baseline roles, named
@@ -20,7 +20,7 @@ semantics using GTK 4.10 APIs. Completed translations emit a generic desktop not
 source or translated content; notification-server delivery and packaging remain open. Native text
 import uses a bounded UTF-8 GTK FileDialog/GIO path and a single-file source-editor DropTarget;
 portal leases remain open.
-The GIO Secret Service adapter is present, but the CI environment
+The GIO Secret Service adapter sends a valid single-layer plain-string OpenSession Variant, but the CI environment
 does not provide a real desktop keyring service, so CRUD, locked/prompted behavior, and cleanup
 remain unverified. Runtime catalog switching currently covers the Translate and Stop labels, not
 the complete UI. This does not prove every database or storage failure, AT-SPI/Orca,

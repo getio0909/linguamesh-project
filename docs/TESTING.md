@@ -23,6 +23,13 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
+Linux Secret Service wire-shape fix revision `9bcd8d9ca30d109f5c7c9c20e6f72f6a77df078d` passed
+Native Linux run `29598255988` (job `87943844854`) and repository-foundation run `29598255993`
+(job `87943844922`). The native job passed strict Clippy, the GTK-enabled suite, both display
+gates, the storage-fault test, and the all-target build after the `(sv)` plain-string regression
+test was added. Real desktop keyring CRUD, locked/prompted behavior, and cleanup remain unverified
+because the CI session has no unlocked desktop keyring.
+
 Linux drag-and-drop functional revision `b0da3819d97ae24f8c85147da5e7e1c65fe2d6fc` passed Native
 Linux run `29597016894` (job `87939785693`) and repository-foundation run `29597016893` (job
 `87939785643`). The native job passed 71 GUI-enabled library tests with one intentional ignore,
@@ -33,6 +40,9 @@ gestures, and portal leases remain manual boundaries.
 
 Evidence head `cdc711320c284eae1f1376635e0d84234d8863a` passed Native Linux run `29597182692`
 (job `87940328074`) and repository-foundation run `29597182729` (job `87940328419`).
+
+Evidence head `0e86e6fb47a11dbf16fd9689795592da648c9eb3` passed Native Linux run `29598405209`
+(job `87944328685`) and repository-foundation run `29598405197` (job `87944328254`).
 
 Linux notification functional revision `07b89f36269155469a488ab830e8f485b3a1323b` passed Native
 Linux run `29594795691` (job `87932451631`) and repository-foundation run `29594795681` (job

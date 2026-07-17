@@ -40,6 +40,8 @@ All notable project-wide changes will be documented here. This project follows s
 - Central release and compatibility records now pin the verified Linux source-drop checkpoint and
   retain unreleased status with empty artifact lists; coordination validation passed on Linux and
   Windows PowerShell.
+- Linux Secret Service session setup now uses the required single-layer plain-string Variant;
+  the wire-shape regression is covered while real desktop keyring lifecycle evidence remains open.
 
 ### Fixed
 

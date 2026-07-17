@@ -357,6 +357,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Linux source-drop functional revision, recorded the evidence head, and kept the train unreleased
   with empty artifacts. Coordination run `29597565696` passed Linux job `87941565049` and
   PowerShell job `87941565102`.
+- 2026-07-17: Linux functional revision `9bcd8d9ca30d109f5c7c9c20e6f72f6a77df078d` corrected the
+  Secret Service `OpenSession` `(sv)` payload from a double-wrapped Variant to a plain-string
+  Variant and added a regression test. Native Linux run `29598255988` (job `87943844854`) and
+  foundation `29598255993` (job `87943844922`) passed; evidence head `0e86e6fb47a11dbf16fd9689795592da648c9eb3`
+  passed Native Linux run `29598405209` (job `87944328685`) and foundation `29598405197` (job
+  `87944328254`). Real desktop keyring lifecycle evidence remains open.
 
 ## Checkpoint update protocol
 
