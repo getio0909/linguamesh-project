@@ -332,6 +332,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `a7554e81c40b7d92d29a0eb8ab4fa22b1517648f` passed Native Linux run `29594948933` (job
   `87932966303`) and foundation `29594948857` (job `87932965793`). Notification-server delivery,
   packaging, and full localization coverage remain open.
+- 2026-07-17: Central integration revision `78ba57398ce93a164ca2b932a85046e5ddb0b363` pinned the
+  Linux notification functional revision, recorded its privacy and delivery boundary, and kept
+  `unreleased` status with empty artifact lists. Coordination run `29595318912` passed Linux job
+  `87934171311` and Windows PowerShell job `87934171416`.
 
 ## Checkpoint update protocol
 
