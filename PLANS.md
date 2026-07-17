@@ -320,6 +320,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   run `29594014033` (job `87929863334`) passed Native Linux; Foundation runs `29593874763` and
   `29594014184` also passed. Complete UI gettext coverage and human review of non-English drafts
   remain open.
+- 2026-07-17: Central integration revision `a964ac060c51665793ed455763137ee30bd22a26` pinned Linux
+  functional revision `1dfe2bcac684696ee55f56e625fcf89ffcb1a6dd`, recorded runtime catalog
+  switching and its coverage boundary, and preserved `unreleased` status and empty artifact lists.
+  Coordination run `29594286528` passed Linux job `87930776189` and Windows PowerShell job
+  `87930776107`.
 
 ## Checkpoint update protocol
 
