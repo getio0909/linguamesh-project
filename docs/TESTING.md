@@ -23,13 +23,16 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
-Linux functional revision `d6bd2bd06ccdf04f3aead0c7f1da5ba74f84c550` passed 66 ordinary library
-tests, the same real GTK binary flow under X11/Xvfb and forced Wayland/headless Weston, the native
-build, an exact real-`ENOSPC` regression, and baseline GTK accessibility assertions in Native Linux
-run `29589043315` (job `87913221576`).
-The dedicated test passed once with zero ignored tests through Ubuntu's controlled mount fallback.
-Evidence head `07d0b4daddf04d369768893a531276d507292356` reran the same gates in Native Linux run
-`29589332282` (job `87914189125`); repository-foundation run `29589332132` also passed. The GTK
+Linux Secret Service validation revision `81be457fc6cefcaebff6c6afd61408d6eb6900b3` passed 68
+library tests with one intentional ignore, the same real GTK binary flow under X11/Xvfb and forced
+Wayland/headless Weston, the native build, an exact real-`ENOSPC` regression, and baseline GTK
+accessibility assertions in Native Linux run `29592319844` (job `87924169888`).
+Repository-foundation run `29592320055` (job `87924170620`) also passed. The dedicated test passed
+once with zero ignored tests through Ubuntu's controlled mount fallback. The CI environment does
+not provide a desktop Secret Service implementation; these runs verify GIO integration and
+fail-closed behavior, not real keyring CRUD or cleanup.
+Evidence head `3623350bc4538affb59daf956ac26d909a0aff6c` reran the same gates in Native Linux run
+`29592545963` (job `87924933377`); repository-foundation run `29592545668` also passed. The GTK
 assertions cover roles, named multi-line editors, visible-label relations and mnemonics, focusability,
 hidden empty errors, and Busy/reset semantics using GTK 4.10 APIs. This is transaction, protocol,
 backend, and semantic-widget evidence for the current slice, not evidence for every storage fault,

@@ -86,9 +86,9 @@ Deliver the prerequisite Core contract before wiring the native Linux host servi
    never contain the secret value;
 5. test incompatible-version rejection, schema migration from the prior version, on-disk reopen,
    secret canaries, request correlation, cancellation, and one-terminal-event behavior;
-6. integrate the reviewed Core revision into Linux, resolve persistent credentials through Secret
-   Service, offer an explicitly labeled in-memory session fallback when secure storage is
-   unavailable, and never fall back to plaintext;
+6. integrate the reviewed Core revision into Linux, resolve persistent credentials through the
+   existing GIO Secret Service adapter, offer an explicitly labeled in-memory session fallback
+   when secure storage is unavailable, and never fall back to plaintext;
 7. verify save, restart restoration, secret resolution, provider switching, translation,
    cancellation, and redacted diagnostics under the native Linux CI environment.
 
@@ -115,9 +115,10 @@ Checkpoint evidence:
   (job `87904787120`) and Native Linux run `29586532049` (job `87904787338`) passed; evidence head
   `2eadf06e5e63eec5b7a512a53a2741f4f2c77704` reran the native gates in run `29586802067` (job
   `87905686187`).
-- [ ] Implement and review a native Secret Service backend before accepting persistent credential
-  references.
-- [ ] Implement secure persistent-credential onboarding.
+- [x] Implement the Linux GIO Secret Service adapter for persistent SecretRef search, create,
+  update, resolution, and deletion; unavailable, locked, and interactive keyring paths fail closed.
+- [ ] Verify real desktop keyring CRUD, locked/prompted behavior, cleanup, and secure
+  persistent-credential onboarding under native Linux CI.
 - [x] Implement create/update/delete and deliberate Connect-based activation and switching for
   multiple credential-free saved profiles, including independent model preferences and
   connected-row session continuation.
@@ -301,6 +302,13 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Linux accessibility functional source, recorded its GTK semantics and open desktop boundaries,
   and preserved `unreleased` status with empty artifact lists. Coordination run `29589860768`
   passed Linux job `87915946902` and Windows PowerShell job `87915946857`.
+- 2026-07-17: Linux functional revision `73c60e751beed475aade1ea6e6ffa7c8b3e7164b` added the
+  GIO D-Bus Secret Service adapter and fail-closed persistent SecretRef resolution. Validation
+  head `81be457fc6cefcaebff6c6afd61408d6eb6900b3` passed Foundation run `29592320055` (job
+  `87924170620`) and Native Linux run `29592319844` (job `87924169888`); evidence head
+  `3623350bc4538affb59daf956ac26d909a0aff6c` passed Foundation run `29592545668` and Native
+  Linux run `29592545963` (job `87924933377`). The CI environment has no desktop keyring service,
+  so real Secret Service CRUD, cleanup, and secure persistent-credential onboarding remain open.
 
 ## Checkpoint update protocol
 

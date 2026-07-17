@@ -28,7 +28,9 @@ the next request, keeps storage-degradation warnings visible, and becomes Unavai
 controls disabled when the worker stops or its event channel disconnects. The Linux host enforces a
 private `0700` application directory, a regular single-link `0600` database, unsafe-path rejection,
 and Core's Linux default-VFS no-follow prerequisite. Runtime session references are stripped before
-storage.
+storage. Persistent SecretRef values are resolved through the existing GIO D-Bus Secret Service
+adapter; unavailable, locked, or interactive keyring requests fail closed, while an explicitly
+labeled session-only fallback remains available.
 
 Startup restores the complete list and persisted default without connecting or making a provider
 request; browsing another row does not activate it. A saved model is revalidated during explicit
@@ -40,14 +42,15 @@ database returns `Persistence` during persistent Connect, model update, or delet
 operation is rejected before storage-unavailable is reported. The worker drops its storage handle
 and active saved marker while preserving the prior engine/model for session-only use; restart sees
 only pre-fault commits. A real Linux `ENOSPC` regression verifies this transaction boundary, not
-corruption, read-only media, power loss, or every VFS failure. Persistent secret references fail
-closed because no native Secret Service backend is implemented, and the client never falls back to
-plaintext. Authenticated fake providers A/B and real request counters verify that a remembered-model
+corruption, read-only media, power loss, or every VFS failure. The current native CI does not host
+a real desktop keyring service, so Secret Service CRUD, locked/prompted behavior, cleanup, and
+secure persistent onboarding remain unverified; the client never falls back to plaintext.
+Authenticated fake providers A/B and real request counters verify that a remembered-model
 reconnect routes the next request only to the newly confirmed provider and that a failed credential
 switch preserves the previous provider/model without crossover. This is Linux-side partial Scenario
 5 evidence, not a completed scenario. The checkpoint and Acceptance Scenarios 3 and 5 remain
-incomplete until Secret Service-backed credential lifecycle and secure persistent-credential
-onboarding are implemented.
+incomplete until real Secret Service lifecycle evidence and secure persistent-credential onboarding
+are complete.
 
 The Linux GTK boundary also exposes baseline accessibility semantics using the existing GTK
 4.10+ API surface: `Main`, `Heading`, `Status`, and `Alert` roles; named multi-line source and

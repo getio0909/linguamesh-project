@@ -24,6 +24,10 @@ All notable project-wide changes will be documented here. This project follows s
 - Baseline Linux GTK accessibility semantics on GTK 4.10+: named roles and editors, label
   mnemonics and `LabelledBy` relations, focusable controls/actions, hidden empty errors, and
   Busy/reset state handling. AT-SPI/Orca and physical-keyboard coverage remain unverified.
+- Linux GIO D-Bus Secret Service adapter for persistent SecretRef create/update/resolve/delete
+  paths, with unavailable, locked, or interactive keyrings failing closed and an explicitly
+  labeled session-only fallback. Native CI records the integration boundary; real desktop keyring
+  CRUD, cleanup, and secure persistent-credential onboarding remain open.
 
 ### Fixed
 
