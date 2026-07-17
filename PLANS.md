@@ -476,6 +476,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `dunst` notification-daemon delivery fixture. Native run `29613020196` (job `87990400327`),
   Foundation run `29613020145`, and Flatpak run `29613020144` passed; the fixture proves headless
   daemon delivery and generic payload privacy, while physical desktop-shell rendering remains open.
+- 2026-07-17: Central integration revision `782f5b2` recorded the Linux notification-daemon
+  evidence, preserved `unreleased` status and empty artifact lists, and passed coordination run
+  `29613487659` with Linux job `87993296419` and PowerShell job `87993296429`.
 
 ## Checkpoint update protocol
 
