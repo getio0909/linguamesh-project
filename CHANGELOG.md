@@ -59,6 +59,8 @@ All notable project-wide changes will be documented here. This project follows s
 - Linux now verifies secure persistent-credential onboarding end to end: the worker resolves a
   SecretRef across restart, and the GTK Remember path clears the form, persists only the SecretRef,
   authenticates a loopback provider, and confirms the credential canary is absent from SQLite.
+- Central compatibility and release records now pin the secure-onboarding Linux checkpoint; the
+  coordination workflow passed on Linux and Windows PowerShell.
 
 ### Fixed
 
