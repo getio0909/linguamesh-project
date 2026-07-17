@@ -1,0 +1,28 @@
+name: Cross-repository status
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 8 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  workspace:
+    name: Validate canonical workspace
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: linguamesh-project
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Clone public siblings and validate goal pins
+        working-directory: linguamesh-project
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_OWNER: ${{ github.repository_owner }}
+        run: bash tools/bootstrap.sh --owner "$GITHUB_OWNER"
+

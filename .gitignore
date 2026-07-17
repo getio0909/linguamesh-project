@@ -1,0 +1,11 @@
+.codex/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.tmp
+*.log
+dist/
+build/
+

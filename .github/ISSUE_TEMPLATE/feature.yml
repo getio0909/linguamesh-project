@@ -1,0 +1,35 @@
+name: Feature proposal
+description: Propose a scoped capability or project-wide change
+title: "feature: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Explain the need without prescribing an implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and repositories
+      description: Identify affected repositories, native platforms, and compatibility contracts.
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: Security, privacy, and data flow
+      description: Describe new inputs, outputs, storage, providers, permissions, or trust boundaries.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance evidence
+      description: State the observable scenarios and validation needed.
+    validations:
+      required: true
+

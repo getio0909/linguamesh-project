@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:linguamesh:release-manifest:v1",
+  "title": "LinguaMesh release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "release_train",
+    "status",
+    "global_goal_revision",
+    "known_limitations",
+    "contracts",
+    "components"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "release_train": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["unreleased", "prerelease", "stable", "withdrawn"] },
+    "global_goal_revision": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "known_limitations": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "contracts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["abi_major", "protocol_schema_version", "provider_catalog_version", "localization_schema_version"],
+      "properties": {
+        "abi_major": { "type": "integer", "minimum": 0 },
+        "protocol_schema_version": { "$ref": "#/$defs/version" },
+        "provider_catalog_version": { "$ref": "#/$defs/version" },
+        "localization_schema_version": { "$ref": "#/$defs/version" }
+      }
+    },
+    "components": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["core", "localization", "android", "windows", "macos", "linux"],
+      "properties": {
+        "core": { "$ref": "#/$defs/baseComponent" },
+        "localization": { "$ref": "#/$defs/baseComponent" },
+        "android": { "$ref": "#/$defs/clientComponent" },
+        "windows": { "$ref": "#/$defs/clientComponent" },
+        "macos": { "$ref": "#/$defs/clientComponent" },
+        "linux": { "$ref": "#/$defs/clientComponent" }
+      }
+    }
+  },
+  "$defs": {
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "url", "sha256"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "baseComponent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "version", "source_revision", "minimum_compatible_version", "artifacts"],
+      "properties": {
+        "repository": { "type": "string", "pattern": "^linguamesh-[a-z0-9-]+$" },
+        "version": { "$ref": "#/$defs/version" },
+        "source_revision": { "type": "string", "minLength": 1 },
+        "minimum_compatible_version": { "$ref": "#/$defs/version" },
+        "artifacts": { "type": "array", "items": { "$ref": "#/$defs/artifact" } }
+      }
+    },
+    "clientComponent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "version", "source_revision", "minimum_compatible_core", "artifacts"],
+      "properties": {
+        "repository": { "type": "string", "pattern": "^linguamesh-[a-z0-9-]+$" },
+        "version": { "$ref": "#/$defs/version" },
+        "source_revision": { "type": "string", "minLength": 1 },
+        "minimum_compatible_core": { "$ref": "#/$defs/version" },
+        "artifacts": { "type": "array", "items": { "$ref": "#/$defs/artifact" } }
+      }
+    }
+  }
+}

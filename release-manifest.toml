@@ -1,0 +1,56 @@
+schema_version = 1
+release_train = "bootstrap"
+status = "unreleased"
+global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
+known_limitations = [
+  "No compatible core or native-client release has been produced.",
+  "No mandatory acceptance scenario has verified release evidence."
+]
+
+[contracts]
+abi_major = 0
+protocol_schema_version = "0.0.0-dev"
+provider_catalog_version = "0.0.0-dev"
+localization_schema_version = "0.0.0-dev"
+
+[components.core]
+repository = "linguamesh-core"
+version = "0.0.0-dev"
+source_revision = "unreleased"
+minimum_compatible_version = "0.0.0-dev"
+artifacts = []
+
+[components.localization]
+repository = "linguamesh-l10n"
+version = "0.0.0-dev"
+source_revision = "unreleased"
+minimum_compatible_version = "0.0.0-dev"
+artifacts = []
+
+[components.android]
+repository = "linguamesh-android"
+version = "0.0.0-dev"
+source_revision = "unreleased"
+minimum_compatible_core = "0.0.0-dev"
+artifacts = []
+
+[components.windows]
+repository = "linguamesh-windows"
+version = "0.0.0-dev"
+source_revision = "unreleased"
+minimum_compatible_core = "0.0.0-dev"
+artifacts = []
+
+[components.macos]
+repository = "linguamesh-macos"
+version = "0.0.0-dev"
+source_revision = "unreleased"
+minimum_compatible_core = "0.0.0-dev"
+artifacts = []
+
+[components.linux]
+repository = "linguamesh-linux"
+version = "0.0.0-dev"
+source_revision = "unreleased"
+minimum_compatible_core = "0.0.0-dev"
+artifacts = []
