@@ -42,6 +42,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   restart restoration, exact-ID state handling, and credential-isolation behavior.
 - [x] Deliver and remotely verify derived Linux provider setup, safe worker/storage degradation,
   and Linux-side authenticated A/B next-request routing for remembered model switches.
+- [x] Run the same real Linux GTK flow under both X11/Xvfb and forced Wayland/headless Weston,
+  with bounded compositor startup and cleanup and no X11 fallback in the Wayland gate.
 - [ ] Complete the active Linux-first secure-provider checkpoint described below.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
@@ -91,6 +93,10 @@ Checkpoint evidence:
   tests, 65 demo-provider tests, strict all-feature Clippy, the real GTK provider-setup and
   multi-profile test, and the native all-target build in Native Linux run `29580444723` (job
   `87884607879`).
+- [x] Linux verification revision `53837eeb5bc3f3b5a3f9ab4241488679500f523a` retained the X11 gate
+  and reran the same GTK binary test under forced Wayland/headless Weston. Functional run
+  `29582513061` (job `87891382469`) and evidence-head run `29582714651` (job `87892044520`) passed;
+  physical compositor, GPU, and assistive-technology coverage remain open.
 - [ ] Implement and review a native Secret Service backend before accepting persistent credential
   references.
 - [ ] Implement secure persistent-credential onboarding.
@@ -240,6 +246,13 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   pinned the verified Linux onboarding functional source while preserving `unreleased` status,
   empty artifact lists, and partial-only Scenario 3/5 claims. Coordination run `29581079831` passed
   Linux job `87886675010` and Windows PowerShell job `87886675039`.
+- 2026-07-17: Linux verification revision
+  `53837eeb5bc3f3b5a3f9ab4241488679500f523a` added a test-only headless Weston runner with a private
+  runtime directory, bounded readiness, forced Wayland, and cleanup traps while retaining the
+  X11/Xvfb gate. Functional Foundation run `29582513073` and Native Linux run `29582513061` (job
+  `87891382469`) passed 65 library tests and one real GTK test on each display backend; evidence-head
+  Foundation run `29582714711` and Native Linux run `29582714651` (job `87892044520`) also passed.
+  The release manifest continues to pin the unchanged Linux functional source.
 
 ## Checkpoint update protocol
 

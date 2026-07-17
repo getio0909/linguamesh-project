@@ -23,4 +23,9 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
+Linux verification head `53837eeb5bc3f3b5a3f9ab4241488679500f523a` passed the same real GTK
+binary flow under X11/Xvfb and forced Wayland/headless Weston in Native Linux run `29582714651`
+(job `87892044520`). This is protocol/backend evidence for the current widget slice, not evidence
+for a physical compositor, GPU rendering, accessibility, packaging, or a complete desktop matrix.
+
 The scheduled and manually dispatched `cross-repository.yml` workflow clones public canonical siblings using the runtime repository owner and runs strict validation. It has read-only contents permission and is not triggered by untrusted pull requests.
