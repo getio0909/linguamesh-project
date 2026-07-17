@@ -22,10 +22,13 @@ confirmed model preference through Core schema-2 SQLite storage at the XDG user-
 saved-profile UI now creates, updates, activates, switches, and deletes multiple exact-ID rows with
 independent model preferences. Selecting a row only prefills the form; explicit Connect performs
 activation. Model updates target the connected profile ID even when another row is being browsed.
-The Linux host
-enforces a private `0700` application directory, a regular single-link `0600` database, unsafe-path
-rejection, and Core's Linux default-VFS no-follow prerequisite. Runtime session references are
-stripped before storage.
+The derived Provider setup card advances from startup through configuration, connection, model
+confirmation, and Ready without persisting a wizard flag. It displays the stable provider/model for
+the next request, keeps storage-degradation warnings visible, and becomes Unavailable with command
+controls disabled when the worker stops or its event channel disconnects. The Linux host enforces a
+private `0700` application directory, a regular single-link `0600` database, unsafe-path rejection,
+and Core's Linux default-VFS no-follow prerequisite. Runtime session references are stripped before
+storage.
 
 Startup restores the complete list and persisted default without connecting or making a provider
 request; browsing another row does not activate it. A saved model is revalidated during explicit
@@ -34,5 +37,9 @@ switches, and cancellation before the persistence commit preserve every saved ro
 Exact-ID deletion commits storage before success becomes visible. Deleting a connected saved row
 keeps its validated runtime/model as session-only without recreating the row. Persistent secret
 references fail closed because no native Secret Service backend is implemented, and the client
-never falls back to plaintext. This checkpoint and Acceptance Scenarios 3 and 5 remain incomplete
-until Secret Service-backed credential lifecycle and complete onboarding are implemented.
+never falls back to plaintext. Authenticated fake providers A/B and real request counters verify
+that a remembered-model reconnect routes the next request only to the newly confirmed provider and
+that a failed credential switch preserves the previous provider/model without crossover. This is
+Linux-side partial Scenario 5 evidence, not a completed scenario. The checkpoint and Acceptance
+Scenarios 3 and 5 remain incomplete until Secret Service-backed credential lifecycle and secure
+persistent-credential onboarding are implemented.

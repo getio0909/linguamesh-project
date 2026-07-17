@@ -40,6 +40,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   serialized D-Bus/Xvfb button test.
 - [x] Deliver and remotely verify Linux non-secret multi-profile create, update, switch, delete,
   restart restoration, exact-ID state handling, and credential-isolation behavior.
+- [x] Deliver and remotely verify derived Linux provider setup, safe worker/storage degradation,
+  and Linux-side authenticated A/B next-request routing for remembered model switches.
 - [ ] Complete the active Linux-first secure-provider checkpoint described below.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
@@ -85,18 +87,24 @@ Checkpoint evidence:
   connection and model selection, resolves one-shot session secrets, streams and cancels loopback
   translation, preserves the active provider after a failed switch, persists only non-secret
   profile/model state, and never persists plaintext.
-- [x] Linux functional revision `c88d37a5de2f03c2ae5d2940c4d25e5d998c301d` passed 38 no-default
-  tests, 62 demo-provider tests, strict all-feature Clippy, the real GTK multi-profile test, and
-  the native all-target build in Native Linux run `29577918335` (job `87876528763`).
+- [x] Linux functional revision `9729b23ce1a4280ebb434339e880010103b4859d` passed 40 no-default
+  tests, 65 demo-provider tests, strict all-feature Clippy, the real GTK provider-setup and
+  multi-profile test, and the native all-target build in Native Linux run `29580444723` (job
+  `87884607879`).
 - [ ] Implement and review a native Secret Service backend before accepting persistent credential
   references.
-- [ ] Implement complete secure-provider onboarding.
+- [ ] Implement secure persistent-credential onboarding.
 - [x] Implement create/update/delete and deliberate Connect-based activation and switching for
   multiple credential-free saved profiles, including independent model preferences and
   connected-row session continuation.
 - [x] Persist a non-secret profile/model preference, restore it after restart without
   auto-connection, and verify switching, cancellation rollback, path hardening, and redacted
   diagnostics in native CI.
+- [x] Derive session onboarding from authoritative state without a completion flag; keep model
+  confirmation out of Ready, identify the stable next-request provider/model, fail closed when the
+  worker stops, and retain storage-degradation warnings. Linux-side Scenario 5 regression evidence
+  uses authenticated fake providers A/B and real request counters, but does not complete the global
+  scenario without persistent secure credentials and stable-release evidence.
 
 This checkpoint may remain prerelease. It does not authorize a stable release or a claim that the
 complete Provider Hub, all provider protocols, or every Linux milestone is finished.
@@ -214,12 +222,20 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29577918346` and Native Linux run `29577918335` (job `87876528763`) passed 62 library tests,
   the real GTK multi-profile test, strict Clippy, and the all-feature build. Evidence head
   `7ba8909bd05a168e328af027e1308d23f257f0f9` passed Foundation run `29578055430` and Native Linux
-  run `29578055393` (job `87876964652`). Secret Service and complete onboarding remain required,
-  so `LM-CHANGE-2026-07-LINUX-SECURE-PROVIDER-1` stays open.
+  run `29578055393` (job `87876964652`). Secret Service and secure persistent-credential onboarding
+  remain required, so `LM-CHANGE-2026-07-LINUX-SECURE-PROVIDER-1` stays open.
 - 2026-07-17: Central integration revision `f2c3a5532fed81ebe056c0d6de33d81b404b15cf`
   pinned the CI-verified Linux functional revision while preserving `unreleased` status and empty
   artifact lists. Coordination run `29578424525` passed Linux job `87878121729` and Windows
   PowerShell job `87878121792`.
+- 2026-07-17: Linux functional revision
+  `9729b23ce1a4280ebb434339e880010103b4859d` added derived provider setup, stable next-request
+  identity, safe worker/storage degradation, and authenticated A/B one-Connect routing evidence.
+  Foundation run `29580444697` and Native Linux run `29580444723` (job `87884607879`) passed 65
+  library tests, the real GTK test, strict Clippy, and the native build. Evidence head
+  `e9a7591867c9300fcbff9a568a867aacc45195d3` passed Foundation run `29580595045` and Native Linux
+  run `29580595042` (job `87885096648`). Secret Service and secure persistent-credential onboarding
+  remain open, so neither the checkpoint nor global Scenario 5 is complete.
 
 ## Checkpoint update protocol
 

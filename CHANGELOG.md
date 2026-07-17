@@ -16,5 +16,8 @@ All notable project-wide changes will be documented here. This project follows s
   multi-profile create/update/activate/switch/delete, disconnected full-list/default restart
   restoration, per-profile models, connected-row session continuation, private XDG storage,
   unsafe-path rejection, credential isolation, and persistence rollback evidence. Credentials
-  remain session-only, and persistent secret references fail closed; Secret Service and complete
-  onboarding remain unimplemented.
+  remain session-only, and persistent secret references fail closed.
+- Linux derived provider setup through Ready/Unavailable, stable next-request provider/model
+  identity, persistent session-only degradation warnings, worker-loss command blocking, and
+  authenticated A/B request-counter evidence for remembered model switching. Secret Service and
+  secure persistent-credential onboarding remain unimplemented.

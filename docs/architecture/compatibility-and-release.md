@@ -10,8 +10,8 @@ A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings,
 
 The current unreleased matrix pins Core functional revision
 `fbf3e9b5927049dccaa19f8c36013495ffebba12` and Linux functional revision
-`c88d37a5de2f03c2ae5d2940c4d25e5d998c301d`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
-Their source-only CI evidence publishes no artifact. Linux credential-free multi-profile
-persistence is not evidence of completed secure credential storage. Values such as `0.0.0-dev`,
-prerelease source checkpoints, empty artifact lists, and `unreleased` remain explicit
-non-releases.
+`9729b23ce1a4280ebb434339e880010103b4859d`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+Their source-only CI evidence publishes no artifact. Linux credential-free multi-profile/session
+onboarding and next-request routing are not evidence of completed secure credential storage or a
+complete acceptance scenario. Values such as `0.0.0-dev`, prerelease source checkpoints, empty
+artifact lists, and `unreleased` remain explicit non-releases.
