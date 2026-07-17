@@ -309,6 +309,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `3623350bc4538affb59daf956ac26d909a0aff6c` passed Foundation run `29592545668` and Native
   Linux run `29592545963` (job `87924933377`). The CI environment has no desktop keyring service,
   so real Secret Service CRUD, cleanup, and secure persistent-credential onboarding remain open.
+- 2026-07-17: Central integration revision `b00bc4d45e60ba7bea1ff6bd633150e28c6c68c5` pinned Linux
+  functional revision `73c60e751beed475aade1ea6e6ffa7c8b3e7164b`, updated compatibility/release
+  records for the GIO adapter and its evidence boundary, and preserved `unreleased` status and
+  empty artifact lists. Coordination run `29593038301` passed Linux job `87926604854` and
+  Windows PowerShell job `87926604724`.
 
 ## Checkpoint update protocol
 
