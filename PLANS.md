@@ -450,6 +450,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29610044088` (job `87982316819`). Earlier fixture runs `29609357351` and `29609497086` remain
   retained failures because the first lacked a private D-Bus session and the second had no
   notification service. Desktop-shell rendering and portal leases remain open.
+- 2026-07-17: Central integration revision `5ea07ebf3024668f3b50ed2b57637e6e6ca0f8d3`
+  recorded the Linux notification transport evidence, preserved `unreleased` status and empty
+  artifact lists, and passed coordination run `29610616057` with Linux job `87984136976` and
+  PowerShell job `87984136992`.
 
 ## Checkpoint update protocol
 
