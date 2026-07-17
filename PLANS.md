@@ -35,7 +35,60 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Complete Checkpoint 0 and publish verified repository foundations to all seven public repositories.
 - [x] Obtain GitHub Actions evidence for the published Rust CLI vertical slice and all repository foundations.
 - [x] Publish and remotely verify the localization `0.1.0` development bundle, generated native resources, pseudo-locales, and deterministic checksum.
+- [x] Deliver and remotely verify the first native Linux GTK text-translation checkpoint with
+  session-only local-provider switching, real streamed output, cancellation, rollback, and a
+  serialized D-Bus/Xvfb button test.
+- [ ] Complete the active Linux-first secure-provider checkpoint described below.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
+
+## Active Linux-first checkpoint — secure provider foundation
+
+Change identifier: `LM-CHANGE-2026-07-LINUX-SECURE-PROVIDER-1`
+
+The user's latest explicit priority is Linux. Android, Windows, and macOS implementation work is
+frozen for this checkpoint. Shared Core changes are in scope only when the Linux client cannot
+correctly own the behavior itself.
+
+Assumption: adding dependencies between existing first-party LinguaMesh workspace crates is a
+contract change, not a new third-party production dependency. No new third-party dependency will
+be added without a separate maintenance, security, and license review.
+
+Assumption: the existing untracked central RFC and ADR drafts are unrelated user work and must
+remain untouched unless their owner explicitly incorporates them into this checkpoint.
+
+Deliver the prerequisite Core contract before wiring the native Linux host service:
+
+1. expose one typed compatibility description containing the Core semantic version, ABI major,
+   protocol version, provider-catalog version, and enabled feature identifiers;
+2. define canonical non-secret `SecretRef` and `ProviderProfile` domain types instead of retaining
+   a Linux-only profile model;
+3. add an explicit SQLite migration chain, transactional provider-profile CRUD, active-profile
+   selection, and per-profile last-model persistence without any credential value column;
+4. implement a bounded, typed host-secret request/response flow whose diagnostics and persistence
+   never contain the secret value;
+5. test incompatible-version rejection, schema migration from the prior version, on-disk reopen,
+   secret canaries, request correlation, cancellation, and one-terminal-event behavior;
+6. integrate the reviewed Core revision into Linux, resolve persistent credentials through Secret
+   Service, offer an explicitly labeled in-memory session fallback when secure storage is
+   unavailable, and never fall back to plaintext;
+7. verify save, restart restoration, secret resolution, provider switching, translation,
+   cancellation, and redacted diagnostics under the native Linux CI environment.
+
+Checkpoint evidence:
+
+- [x] Core steps 1–5 are implemented in functional revision
+  `c9a96da52e10554c8458f4d49600ec9336ea651b`; 56 tests and the Core/Native SDK workflows passed.
+- [x] Linux integrates the exact Core alpha.2 contract, begins disconnected, requires explicit
+  connection and model selection, resolves one-shot session secrets, streams and cancels loopback
+  translation, preserves the active provider after a failed switch, and never persists plaintext.
+- [x] Linux functional revision `0455baf8f258c6280d66d1d568fd6a01fdad8486` passed 23 no-default
+  tests, 35 demo-provider tests, strict Clippy, and native GTK/D-Bus/Xvfb CI.
+- [ ] Implement and review a native Secret Service backend before accepting persistent intent.
+- [ ] Persist non-secret profiles/model preferences, restore them after restart, and verify secure
+  provider switching plus redacted diagnostics in native CI.
+
+This checkpoint may remain prerelease. It does not authorize a stable release or a claim that the
+complete Provider Hub, all provider protocols, or every Linux milestone is finished.
 
 ## Checkpoint 0 — Project and repository foundation
 
@@ -127,6 +180,13 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-17: Core revision `e5fb2311b3e699db83084ce96240b79d482ad896` passed formatting, strict Clippy, 18 tests, locked build, dependency/advisory/license/source policy, credential-signature scan, real streamed completion, and timed cancellation with partial output retained.
 - 2026-07-17: GitHub Actions run `29551581397` passed the published Core checkpoint. Foundation workflows passed for l10n, Android, Windows, macOS, and Linux. Central run `29551747796` passed Bash and Windows PowerShell validation after line-ending-independent goal-digest validation was added.
 - 2026-07-17: Localization revision `4b36889116eba037721cb31827342409e8836168` passed foundation and localization workflows. Downloaded CI artifact `linguamesh-l10n-0.1.0` matched the locally reproducible SHA-256 `47bc84bd7562fb6ada7f88fd07490e79843c5c4e9d9b747f87a206dbecd0394a`; it remains an unreleased development bundle with unreviewed non-English drafts.
+- 2026-07-17: Core alpha.2 functional revision
+  `c9a96da52e10554c8458f4d49600ec9336ea651b` completed the Linux secure-provider prerequisites
+  and passed Core run `29564543164` plus Native SDK run `29564543160`.
+- 2026-07-17: Linux alpha.2 functional revision
+  `0455baf8f258c6280d66d1d568fd6a01fdad8486` passed foundation run `29569227294` and Native
+  Linux run `29569227256`. The slice is session-only; Secret Service and restart persistence remain
+  required, so `LM-CHANGE-2026-07-LINUX-SECURE-PROVIDER-1` stays open.
 
 ## Checkpoint update protocol
 

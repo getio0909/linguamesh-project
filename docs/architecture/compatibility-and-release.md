@@ -8,4 +8,6 @@ At startup, each client queries the core semantic version, ABI version, protocol
 
 A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings, migration guidance, client changes, conformance tests, and an updated release train. Release promotion requires source and artifact provenance, license and third-party notices, checksums, SBOMs where practical, platform build evidence, rollback instructions, and acceptance-scenario evidence.
 
-Bootstrap values such as `0.0.0-dev`, ABI `0`, or `unreleased` are explicit non-releases.
+The current unreleased matrix pins Core and Linux `0.1.0-alpha.2` at ABI 1 without publishing an
+artifact. Values such as `0.0.0-dev`, prerelease source checkpoints, empty artifact lists, and
+`unreleased` remain explicit non-releases.

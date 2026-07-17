@@ -11,3 +11,13 @@ Routing modes are manual, ordered, or opt-in automatic. Decisions record eligibl
 Remote endpoints require HTTPS. Loopback HTTP is permitted for local models; other plaintext endpoints require a warning and explicit confirmation. Authorization is never forwarded across an origin-changing redirect, and TLS verification cannot be globally disabled.
 
 To add a preset or adapter, follow [`extensions.md`](extensions.md) and include schema, contract, error, streaming, cancellation, security, attribution, and fake-provider tests.
+
+## Current Linux checkpoint
+
+Linux `0.1.0-alpha.2` uses Core's typed host-secret broker and canonical non-secret profile types.
+It starts disconnected, requires explicit provider connection and model selection, accepts a
+one-shot in-memory session credential, and clears the credential widget immediately after command
+submission. Persistent intent and persistent secret references fail closed because no native
+Secret Service backend is implemented; the client does not persist profiles or silently fall back
+to plaintext. This checkpoint validates the host boundary but does not complete secure profile
+persistence or restart restoration.
