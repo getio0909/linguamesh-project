@@ -414,6 +414,8 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   runtime metadata, immutable Core/Linux source pins, generated Cargo sources, desktop/AppStream
   metadata, icon, and constrained runtime permissions. Static JSON, desktop-file, AppStream, and
   source-hash validation passed locally; SDK/sandbox smoke and distributable artifacts remain open.
+- 2026-07-17: Coordination run `29605424763` passed after the packaging checkpoint on Linux job
+  `87967368496` and PowerShell job `87967368478`; no release artifact was produced.
 
 ## Checkpoint update protocol
 
