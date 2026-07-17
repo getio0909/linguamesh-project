@@ -48,3 +48,11 @@ switch preserves the previous provider/model without crossover. This is Linux-si
 5 evidence, not a completed scenario. The checkpoint and Acceptance Scenarios 3 and 5 remain
 incomplete until Secret Service-backed credential lifecycle and secure persistent-credential
 onboarding are implemented.
+
+The Linux GTK boundary also exposes baseline accessibility semantics using the existing GTK
+4.10+ API surface: `Main`, `Heading`, `Status`, and `Alert` roles; named multi-line source and
+output `TextBox` editors with output read-only state; visible-label mnemonics and `LabelledBy`
+relations; explicitly focusable controls and actions; a labelled Stop action; hidden empty errors;
+and `Busy` state during translation/cancellation with reset on terminal states. These are semantic
+bindings and native test assertions only; AT-SPI/Orca, physical-keyboard traversal, and full
+desktop accessibility remain outside this checkpoint.

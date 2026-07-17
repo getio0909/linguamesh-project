@@ -21,6 +21,9 @@ All notable project-wide changes will be documented here. This project follows s
   identity, persistent session-only degradation warnings, worker-loss command blocking, and
   authenticated A/B request-counter evidence for remembered model switching. Secret Service and
   secure persistent-credential onboarding remain unimplemented.
+- Baseline Linux GTK accessibility semantics on GTK 4.10+: named roles and editors, label
+  mnemonics and `LabelledBy` relations, focusable controls/actions, hidden empty errors, and
+  Busy/reset state handling. AT-SPI/Orca and physical-keyboard coverage remain unverified.
 
 ### Fixed
 

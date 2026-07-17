@@ -46,6 +46,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   with bounded compositor startup and cleanup and no X11 fallback in the Wayland gate.
 - [x] Reject real post-startup Linux `ENOSPC` persistence failures before false success, preserve
   the prior validated session in memory, and verify restart recovery of only pre-fault state.
+- [x] Deliver and remotely verify baseline Linux GTK accessibility semantics on the existing GTK
+  4.10+ boundary, including roles, labels, relations, focusability, hidden errors, and Busy reset.
 - [ ] Complete the active Linux-first secure-provider checkpoint described below.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
@@ -66,6 +68,11 @@ remain untouched unless their owner explicitly incorporates them into this check
 
 Assumption: exhausting a private Linux tmpfs to `ENOSPC` verifies the implemented SQLite
 transaction-failure boundary, not corruption, read-only media, power loss, or every VFS failure.
+
+Assumption: the existing optional gtk-rs `v4_10` feature is the compatibility boundary for these
+baseline semantics; no new accessibility crate or runtime catalog dependency is added. Ubuntu
+24.04 native CI is authoritative for the GTK path, while AT-SPI/Orca and physical-keyboard
+behavior remain separately unverified.
 
 Deliver the prerequisite Core contract before wiring the native Linux host service:
 
@@ -282,6 +289,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   boundary while preserving the Core pin, `unreleased` status, six empty artifact lists, and
   incomplete secure-provider and acceptance-scenario claims. Coordination run `29587437567`
   passed Linux job `87907811474` and Windows PowerShell job `87907811494`.
+- 2026-07-17: Linux functional revision `d6bd2bd06ccdf04f3aead0c7f1da5ba74f84c550` added GTK
+  4.10 baseline accessibility semantics. The first revision `e483ad8b9ff0fb9e35fd531e69959c1eb81e7e34`
+  exposed a native focusability failure because dropdowns defaulted non-focusable; the fix made
+  all labelled controls and actions explicitly focusable. Foundation run `29589043314` (job
+  `87913221612`) and Native Linux run `29589043315` (job `87913221576`) passed. Evidence head
+  `07d0b4daddf04d369768893a531276d507292356` passed Foundation run `29589332132` and Native Linux
+  run `29589332282` (job `87914189125`). AT-SPI/Orca, physical keyboard, and full desktop
+  accessibility remain open.
 
 ## Checkpoint update protocol
 
