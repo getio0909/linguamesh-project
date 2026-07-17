@@ -511,6 +511,8 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   and `Delete`; the adapter rejected both with `SecureStorageUnavailable`. Native run `29620808496`
   (job `88015342381`), Foundation run `29620808409`, and Flatpak run `29620808411` passed; end-user
   prompt approval, physical compositor/GPU rendering, and release artifacts remain open.
+- 2026-07-17: Central integration revision `1298a11` recorded the prompted-flow evidence and
+  passed coordination run `29621166248` with Linux job `88016352833` and PowerShell job `88016352805`.
 
 ## Checkpoint update protocol
 
