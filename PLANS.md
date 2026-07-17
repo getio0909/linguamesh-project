@@ -297,6 +297,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `07d0b4daddf04d369768893a531276d507292356` passed Foundation run `29589332132` and Native Linux
   run `29589332282` (job `87914189125`). AT-SPI/Orca, physical keyboard, and full desktop
   accessibility remain open.
+- 2026-07-17: Central integration revision `409e25716c36f94777fea5a2a6e9b1e9b13ce076` pinned the
+  Linux accessibility functional source, recorded its GTK semantics and open desktop boundaries,
+  and preserved `unreleased` status with empty artifact lists. Coordination run `29589860768`
+  passed Linux job `87915946902` and Windows PowerShell job `87915946857`.
 
 ## Checkpoint update protocol
 
