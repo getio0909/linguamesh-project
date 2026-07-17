@@ -6,6 +6,8 @@ All notable project-wide changes will be documented here. This project follows s
 
 ### Added
 
+- Linux native CI now verifies Secret Service `CreateItem` and `Delete` prompt paths fail closed with
+  `SecureStorageUnavailable`; end-user prompt approval remains outside the automated gate.
 - Linux native CI now verifies the application-level GTK `FileDialog` callback and asynchronous
   GIO read, then performs a real XTest URI-list drag through the source editor. The checkpoint
   remains unreleased; prompted flows, physical desktop-shell rendering, and artifacts remain open.

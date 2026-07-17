@@ -48,8 +48,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
   the prior validated session in memory, and verify restart recovery of only pre-fault state.
 - [x] Deliver and remotely verify baseline Linux GTK accessibility semantics on the existing GTK
   4.10+ boundary, including roles, labels, relations, focusability, hidden errors, and Busy reset.
-- [x] Complete the active Linux-first secure-provider checkpoint described below; prompted
-  interactive Secret Service flows remain an explicit fail-closed boundary for a later Linux pass.
+- [x] Complete the active Linux-first secure-provider checkpoint described below, including the
+  isolated prompted store/delete fail-closed fixture; end-user Secret Service prompt approval
+  remains a later Linux boundary.
 - [x] Verify Linux completion-notification transport through a private
   `org.freedesktop.Notifications` service with fixed generic payloads and no source/translated
   content; desktop-shell rendering remains an explicit boundary.
@@ -505,6 +506,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-17: Central integration revision `b65e690` recorded the desktop-shell rendering evidence,
   preserved `unreleased` status and empty artifact lists, and passed coordination run `29620258790`
   with Linux job `88013724889` and PowerShell job `88013724860`.
+- 2026-07-17: Linux evidence revision `259a7bf2c8c9fbd4ad0b7c7bb0f2792e78a881ba` added an
+  isolated Python D-Bus Secret Service fixture that returns non-root prompt paths for `CreateItem`
+  and `Delete`; the adapter rejected both with `SecureStorageUnavailable`. Native run `29620808496`
+  (job `88015342381`), Foundation run `29620808409`, and Flatpak run `29620808411` passed; end-user
+  prompt approval, physical compositor/GPU rendering, and release artifacts remain open.
 
 ## Checkpoint update protocol
 

@@ -11,7 +11,8 @@ A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings,
 The current unreleased matrix pins Core functional revision
 `fbf3e9b5927049dccaa19f8c36013495ffebba12` and Linux functional revision
 `7d7eba9960b657f0460fb0daaaaebaaa609f39b1`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
-Linux evidence head `0f8585e773f471e435e30020b0153025aabd7987` adds notification-daemon, portal,
+Linux evidence head `259a7bf2c8c9fbd4ad0b7c7bb0f2792e78a881ba` adds Secret Service prompted-flow,
+notification-daemon, portal,
 interactive FileChooser backend, application FileDialog callback, and source-editor drag/drop
 evidence documentation
 relative to that functional source. Native CI verifies the current GTK flow under X11/Xvfb and
@@ -32,8 +33,8 @@ onboarding through both worker and GTK paths. The no-credential OpenAI-compatibl
 also covered. A pinned Flatpak manifest, generated Cargo source set, desktop metadata, and icon pass
 static validation; the GNOME 49 SDK workflow built a prerelease CI bundle and passed bounded sandbox
 startup smoke, while physical compositor/GPU rendering, signing, and distributable artifacts remain
-unverified. Prompted
-interactive flows remain unverified. Runtime catalog switching currently covers the Translate and Stop labels, not
+unverified. End-user prompt approval remains unverified; the adapter's store/delete prompt paths are
+verified to fail closed. Runtime catalog switching currently covers the Translate and Stop labels, not
 the complete UI. This does not prove every database or storage failure, AT-SPI/Orca,
 physical keyboard traversal, or a complete desktop accessibility matrix.
 Their CI evidence publishes no artifact. Linux multi-profile/session onboarding, next-request
