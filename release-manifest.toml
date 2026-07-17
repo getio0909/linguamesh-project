@@ -9,15 +9,15 @@ known_limitations = [
 
 [contracts]
 abi_major = 0
-protocol_schema_version = "0.0.0-dev"
-provider_catalog_version = "0.0.0-dev"
+protocol_schema_version = "0.1.0"
+provider_catalog_version = "0.1.0"
 localization_schema_version = "0.0.0-dev"
 
 [components.core]
 repository = "linguamesh-core"
-version = "0.0.0-dev"
-source_revision = "unreleased"
-minimum_compatible_version = "0.0.0-dev"
+version = "0.1.0-alpha.1"
+source_revision = "e5fb2311b3e699db83084ce96240b79d482ad896"
+minimum_compatible_version = "0.1.0-alpha.1"
 artifacts = []
 
 [components.localization]

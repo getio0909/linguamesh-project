@@ -27,10 +27,13 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Read the active goal attachment, `AGENTS.md`, and `PROJECT_GOAL.md` completely.
 - [x] Confirm that `PLANS.md` was absent before creating this plan.
 - [x] Confirm that `linguamesh-project` initially contained only `PROJECT_GOAL.md`, `AGENTS.md`, and ignored local Codex configuration, with no Git repository.
-- [ ] Resolve the GitHub owner and audit all canonical local and remote repository names.
-- [ ] Record host toolchains and unavailable-platform constraints.
+- [x] Audit all canonical local repository names and public candidates under the only non-authoritative owner hint.
+- [ ] Resolve the authenticated GitHub owner; `gh` currently has no authenticated host or runtime token.
+- [x] Record host toolchains and unavailable-platform constraints.
+- [x] Create, validate, and locally commit the central, localization, Android, Windows, macOS, and Linux repository foundations.
+- [x] Implement, validate, and locally commit the first Rust core/CLI checkpoint.
 - [ ] Complete Checkpoint 0 and publish verified repository foundations.
-- [ ] Complete Checkpoint 1 and publish the verified Rust CLI vertical slice.
+- [ ] Publish Checkpoint 1 and obtain GitHub Actions evidence for the verified Rust CLI vertical slice.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Checkpoint 0 — Project and repository foundation
@@ -117,6 +120,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-17: Use a federated polyrepository workspace without Git submodules, coordinated by versioned workspace and release manifests.
 - 2026-07-17: Treat the CLI fake-provider path as the first executable proof; scaffolds and mock-only clients do not satisfy a checkpoint.
 - 2026-07-17: Keep `.codex/` local-only because repository-local integration configuration may contain workstation-specific or sensitive values.
+- 2026-07-17: `gh auth status` found no authenticated GitHub host and the supported runtime token variables are unset. Exact owner resolution, remote creation, push, and Actions evidence remain pending; no inferred owner will be used.
+- 2026-07-17: Rust 1.93.0, Clippy, rustfmt, GCC, CMake, Ninja, Protobuf, and SQLite development libraries are available for the core. Apple and Windows toolchains, Android NDK/Rust targets, and GTK/libadwaita development headers are unavailable locally.
+- 2026-07-17: All seven canonical local repositories now exist on `main`; every repository has a clean verified local checkpoint commit.
+- 2026-07-17: Core revision `e5fb2311b3e699db83084ce96240b79d482ad896` passed formatting, strict Clippy, 18 tests, locked build, dependency/advisory/license/source policy, credential-signature scan, real streamed completion, and timed cancellation with partial output retained.
 
 ## Checkpoint update protocol
 
