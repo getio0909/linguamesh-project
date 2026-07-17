@@ -61,6 +61,8 @@ All notable project-wide changes will be documented here. This project follows s
   authenticates a loopback provider, and confirms the credential canary is absent from SQLite.
 - Central compatibility and release records now pin the secure-onboarding Linux checkpoint; the
   coordination workflow passed on Linux and Windows PowerShell.
+- Linux worker coverage now explicitly verifies a no-credential OpenAI-compatible loopback provider
+  connection, manual model selection, streamed translation, and request-count isolation.
 
 ### Fixed
 

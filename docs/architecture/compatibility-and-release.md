@@ -10,8 +10,8 @@ A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings,
 
 The current unreleased matrix pins Core functional revision
 `fbf3e9b5927049dccaa19f8c36013495ffebba12` and Linux functional revision
-`6654a46b378d68c2c6012ccf2f30e24ae564dc7c`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
-Linux evidence head `3f4ba2f2c0bd0e48c5990f1640cd39b637907769` adds only evidence documentation
+`7d7eba9960b657f0460fb0daaaaebaaa609f39b1`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+Linux evidence head `a255b039ce37bcb2b362cfeb3d34a6283ed2aad5` adds only evidence documentation
 relative to that functional source. Native CI verifies the current GTK flow under X11/Xvfb and
 forced Wayland/headless Weston plus real post-startup `ENOSPC` rollback for persistent connection,
 model-update, and deletion transactions. The same GTK test verifies baseline roles, named
@@ -23,7 +23,8 @@ portal leases remain open.
 The GIO Secret Service adapter sends a valid single-layer plain-string OpenSession Variant, and an
 isolated real-daemon fixture verifies default-collection CRUD, resolution, cleanup, persistent
 daemon-restart restoration, locked-item fail-closed lookup, and secure persistent-credential
-onboarding through both worker and GTK paths. Prompted interactive flows remain unverified. Runtime catalog switching currently covers the Translate and Stop labels, not
+onboarding through both worker and GTK paths. The no-credential OpenAI-compatible loopback path is
+also covered. Prompted interactive flows remain unverified. Runtime catalog switching currently covers the Translate and Stop labels, not
 the complete UI. This does not prove every database or storage failure, AT-SPI/Orca,
 physical keyboard traversal, or a complete desktop accessibility matrix.
 Their CI evidence publishes no artifact. Linux multi-profile/session onboarding, next-request

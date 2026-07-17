@@ -401,6 +401,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   the secure-onboarding Linux functional source and evidence head, preserved unreleased status
   with empty artifact lists, and passed coordination run `29603927123` with Linux job `87962420732`
   and PowerShell job `87962420692`.
+- 2026-07-17: Linux functional revision `7d7eba9960b657f0460fb0daaaaebaaa609f39b1` added explicit
+  no-credential OpenAI-compatible loopback connection, manual model selection, streamed translation,
+  and request-count evidence. Native Linux run `29604269568` (job `87963611054`) and Foundation
+  run `29604269516` passed; evidence head `a255b039ce37bcb2b362cfeb3d34a6283ed2aad5` passed its
+  documentation gates in the same workflow.
 
 ## Checkpoint update protocol
 

@@ -57,6 +57,11 @@ connect/translate/restart without credential re-entry and the GTK Remember/clear
 SecretRef-only SQLite persistence and an authenticated loopback provider. Prompted interactive flows
 remain separate.
 
+Linux loopback-provider revision `7d7eba9960b657f0460fb0daaaaebaaa609f39b1` passed Native Linux
+run `29604269568` (job `87963611054`) and repository-foundation run `29604269516`; the ordinary
+worker suite now explicitly connects to an OpenAI-compatible loopback endpoint without a credential,
+selects a model, streams the fake translation, and asserts one chat request.
+
 Linux drag-and-drop functional revision `b0da3819d97ae24f8c85147da5e7e1c65fe2d6fc` passed Native
 Linux run `29597016894` (job `87939785693`) and repository-foundation run `29597016893` (job
 `87939785643`). The native job passed 71 GUI-enabled library tests with one intentional ignore,
