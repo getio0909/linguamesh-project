@@ -27,8 +27,17 @@ Linux Secret Service wire-shape fix revision `9bcd8d9ca30d109f5c7c9c20e6f72f6a77
 Native Linux run `29598255988` (job `87943844854`) and repository-foundation run `29598255993`
 (job `87943844922`). The native job passed strict Clippy, the GTK-enabled suite, both display
 gates, the storage-fault test, and the all-target build after the `(sv)` plain-string regression
-test was added. Real desktop keyring CRUD, locked/prompted behavior, and cleanup remain unverified
-because the CI session has no unlocked desktop keyring.
+test was added. Persistent desktop keyring restoration and locked/prompted behavior remain
+unverified because the CI session has no unlocked desktop keyring.
+
+Linux Secret Service CRUD functional revision `726508f8412727f8b14e32d27407487491f5e4cd` passed
+Native Linux run `29600898951` (job `87952473459`) and repository-foundation run `29600898977`.
+The native job passed 75 library tests with 2 intentional ignores, the real GTK binary test under
+X11/Xvfb and forced Wayland/headless Weston, the exact storage-fault gate, the isolated real-daemon
+store/resolve/delete fixture, and the all-target native build. Evidence head
+`93f40456a53074ad437e4ee74634348c35afc049` reran the same native gates in run `29601110914`
+(job `87953169459`); repository-foundation run `29601110906` also passed. Persistent desktop
+restoration and locked/prompted behavior remain separate lifecycle gates.
 
 Linux drag-and-drop functional revision `b0da3819d97ae24f8c85147da5e7e1c65fe2d6fc` passed Native
 Linux run `29597016894` (job `87939785693`) and repository-foundation run `29597016893` (job

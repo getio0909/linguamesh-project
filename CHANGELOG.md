@@ -26,8 +26,8 @@ All notable project-wide changes will be documented here. This project follows s
   Busy/reset state handling. AT-SPI/Orca and physical-keyboard coverage remain unverified.
 - Linux GIO D-Bus Secret Service adapter for persistent SecretRef create/update/resolve/delete
   paths, with unavailable, locked, or interactive keyrings failing closed and an explicitly
-  labeled session-only fallback. Native CI records the integration boundary; real desktop keyring
-  CRUD, cleanup, and secure persistent-credential onboarding remain open.
+  labeled session-only fallback. Native CI records isolated real-daemon CRUD and cleanup; persistent
+  desktop restoration, locked/prompted behavior, and secure persistent-credential onboarding remain open.
 - Linux runtime PO catalog loading for English and Simplified Chinese action labels. Locale changes
   update Translate and Stop without losing active text; uncovered UI strings retain explicit English
   fallback while complete gettext coverage remains open.
@@ -42,6 +42,9 @@ All notable project-wide changes will be documented here. This project follows s
   Windows PowerShell.
 - Linux Secret Service session setup now uses the required single-layer plain-string Variant;
   the wire-shape regression is covered while real desktop keyring lifecycle evidence remains open.
+- Linux now verifies Secret Service default-collection store/resolve/delete and cleanup against an
+  isolated real `gnome-keyring` daemon in Ubuntu 24.04 Native CI; persistent desktop restoration
+  and locked/prompted lifecycle behavior remain open.
 - Central compatibility and release records now pin the Secret Service wire-fix checkpoint and
   retain unreleased status with empty artifact lists; Linux and Windows PowerShell coordination
   validation passed.

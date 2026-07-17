@@ -117,8 +117,10 @@ Checkpoint evidence:
   `87905686187`).
 - [x] Implement the Linux GIO Secret Service adapter for persistent SecretRef search, create,
   update, resolution, and deletion; unavailable, locked, and interactive keyring paths fail closed.
-- [ ] Verify real desktop keyring CRUD, locked/prompted behavior, cleanup, and secure
-  persistent-credential onboarding under native Linux CI.
+- [x] Verify Secret Service default-collection store/resolve/delete and cleanup against an
+  isolated real `gnome-keyring` daemon in native Linux CI.
+- [ ] Verify persistent desktop keyring restoration, locked/prompted behavior, and secure
+  persistent-credential onboarding under a real desktop lifecycle.
 - [x] Implement create/update/delete and deliberate Connect-based activation and switching for
   multiple credential-free saved profiles, including independent model preferences and
   connected-row session continuation.
@@ -367,6 +369,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Linux Secret Service wire-fix functional revision, recorded the evidence head, and preserved
   unreleased status with empty artifacts. Coordination run `29598784566` passed Linux job
   `87945581898` and PowerShell job `87945582009`.
+- 2026-07-17: Linux functional revision `726508f8412727f8b14e32d27407487491f5e4cd` completed the
+  Secret Service default-collection store/resolve/delete path and cleanup against an isolated real
+  `gnome-keyring` daemon. Native Linux run `29600898951` (job `87952473459`) and foundation run
+  `29600898977` passed; evidence head `93f40456a53074ad437e4ee74634348c35afc049` passed Native
+  Linux run `29601110914` (job `87953169459`) and foundation run `29601110906`. Persistent desktop
+  restoration, locked/prompted behavior, and secure persistent-credential onboarding remain open.
 
 ## Checkpoint update protocol
 
