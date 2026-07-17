@@ -8,6 +8,9 @@ At startup, each client queries the core semantic version, ABI version, protocol
 
 A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings, migration guidance, client changes, conformance tests, and an updated release train. Release promotion requires source and artifact provenance, license and third-party notices, checksums, SBOMs where practical, platform build evidence, rollback instructions, and acceptance-scenario evidence.
 
-The current unreleased matrix pins Core and Linux `0.1.0-alpha.2` at ABI 1 without publishing an
-artifact. Values such as `0.0.0-dev`, prerelease source checkpoints, empty artifact lists, and
-`unreleased` remain explicit non-releases.
+The current unreleased matrix pins Core functional revision
+`fbf3e9b5927049dccaa19f8c36013495ffebba12` and Linux functional revision
+`c58a54c2479045773358bd9c456b45a958e98e1e`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+Their source-only CI evidence publishes no artifact. Linux credential-free profile persistence is
+not evidence of completed secure credential storage. Values such as `0.0.0-dev`, prerelease source
+checkpoints, empty artifact lists, and `unreleased` remain explicit non-releases.

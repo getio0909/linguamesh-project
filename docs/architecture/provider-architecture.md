@@ -17,7 +17,16 @@ To add a preset or adapter, follow [`extensions.md`](extensions.md) and include 
 Linux `0.1.0-alpha.2` uses Core's typed host-secret broker and canonical non-secret profile types.
 It starts disconnected, requires explicit provider connection and model selection, accepts a
 one-shot in-memory session credential, and clears the credential widget immediately after command
-submission. Persistent intent and persistent secret references fail closed because no native
-Secret Service backend is implemented; the client does not persist profiles or silently fall back
-to plaintext. This checkpoint validates the host boundary but does not complete secure profile
-persistence or restart restoration.
+submission. An explicit remember choice persists one credential-free profile and confirmed model
+preference through Core schema-2 SQLite storage at the XDG user-data path. The Linux host enforces a
+private `0700` application directory, a regular single-link `0600` database, unsafe-path rejection,
+and Core's Linux default-VFS no-follow prerequisite. Runtime session references are stripped before
+storage.
+
+Startup restores the form without connecting or making a provider request. A saved model is
+revalidated during explicit reconnection, and credential re-entry remains mandatory. Failed
+persistent changes, session switches, and cancellation before the persistence commit preserve the
+last confirmed restart profile. Persistent secret references fail closed because no native Secret
+Service backend is implemented, and the client never falls back to plaintext. This checkpoint and
+Acceptance Scenario 3 remain incomplete until Secret Service-backed credential lifecycle and
+multiple saved-profile management are implemented.

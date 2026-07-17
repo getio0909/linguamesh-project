@@ -77,15 +77,21 @@ Deliver the prerequisite Core contract before wiring the native Linux host servi
 Checkpoint evidence:
 
 - [x] Core steps 1–5 are implemented in functional revision
-  `c9a96da52e10554c8458f4d49600ec9336ea651b`; 56 tests and the Core/Native SDK workflows passed.
+  `fbf3e9b5927049dccaa19f8c36013495ffebba12`; 57 tests, the Core/Native SDK workflows, and the
+  Linux default-VFS no-follow prerequisite passed.
 - [x] Linux integrates the exact Core alpha.2 contract, begins disconnected, requires explicit
   connection and model selection, resolves one-shot session secrets, streams and cancels loopback
-  translation, preserves the active provider after a failed switch, and never persists plaintext.
-- [x] Linux functional revision `0455baf8f258c6280d66d1d568fd6a01fdad8486` passed 23 no-default
-  tests, 35 demo-provider tests, strict Clippy, and native GTK/D-Bus/Xvfb CI.
-- [ ] Implement and review a native Secret Service backend before accepting persistent intent.
-- [ ] Persist non-secret profiles/model preferences, restore them after restart, and verify secure
-  provider switching plus redacted diagnostics in native CI.
+  translation, preserves the active provider after a failed switch, persists only non-secret
+  profile/model state, and never persists plaintext.
+- [x] Linux functional revision `c58a54c2479045773358bd9c456b45a958e98e1e` passed 29 no-default
+  tests, 50 demo-provider tests, strict all-feature Clippy, the real GTK test, and the native
+  all-target build in Native Linux run `29574265570`.
+- [ ] Implement and review a native Secret Service backend before accepting persistent credential
+  references.
+- [ ] Implement onboarding, create/update/delete, and active switching for multiple saved profiles.
+- [x] Persist a non-secret profile/model preference, restore it after restart without
+  auto-connection, and verify switching, cancellation rollback, path hardening, and redacted
+  diagnostics in native CI.
 
 This checkpoint may remain prerelease. It does not authorize a stable release or a claim that the
 complete Provider Hub, all provider protocols, or every Linux milestone is finished.
@@ -187,6 +193,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `0455baf8f258c6280d66d1d568fd6a01fdad8486` passed foundation run `29569227294` and Native
   Linux run `29569227256`. The slice is session-only; Secret Service and restart persistence remain
   required, so `LM-CHANGE-2026-07-LINUX-SECURE-PROVIDER-1` stays open.
+- 2026-07-17: Core functional revision
+  `fbf3e9b5927049dccaa19f8c36013495ffebba12` added Linux default-VFS no-follow storage protection;
+  Core run `29572377637` and Native SDK run `29572377631` passed.
+- 2026-07-17: Linux functional revision
+  `c58a54c2479045773358bd9c456b45a958e98e1e` added credential-free profile/model persistence,
+  disconnected restart restoration, startup race prevention, selection rollback, and unsafe-path
+  rejection. Foundation run `29574265553` and Native Linux run `29574265570` passed. Native Secret
+  Service and complete saved-profile management remain required, so
+  `LM-CHANGE-2026-07-LINUX-SECURE-PROVIDER-1` stays open.
 
 ## Checkpoint update protocol
 
