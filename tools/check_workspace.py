@@ -117,7 +117,8 @@ def main() -> int:
         if remotes != expected_remotes:
             errors.append(f"Workspace repository remotes are invalid: {remotes}")
 
-    goal_digest = hashlib.sha256((project_root / "PROJECT_GOAL.md").read_bytes()).hexdigest()
+    goal_text = (project_root / "PROJECT_GOAL.md").read_text(encoding="utf-8")
+    goal_digest = hashlib.sha256(goal_text.encode("utf-8")).hexdigest()
     goal_revision = f"sha256:{goal_digest}"
     if workspace.get("global_goal_revision") != goal_revision:
         errors.append("Workspace manifest global-goal revision does not match PROJECT_GOAL.md.")
