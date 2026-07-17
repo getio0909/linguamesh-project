@@ -11,7 +11,7 @@ A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings,
 The current unreleased matrix pins Core functional revision
 `fbf3e9b5927049dccaa19f8c36013495ffebba12` and Linux functional revision
 `7d7eba9960b657f0460fb0daaaaebaaa609f39b1`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
-Linux evidence head `d2fb3abe6c1505385850cd2a1053a7f64dbd7d0e` adds notification-daemon, portal,
+Linux evidence head `0f8585e773f471e435e30020b0153025aabd7987` adds notification-daemon, portal,
 interactive FileChooser backend, application FileDialog callback, and source-editor drag/drop
 evidence documentation
 relative to that functional source. Native CI verifies the current GTK flow under X11/Xvfb and
@@ -20,7 +20,7 @@ model-update, and deletion transactions. The same GTK test verifies baseline rol
 multi-line editors, label/mnemonic relations, focusability, hidden empty errors, and Busy/reset
 semantics using GTK 4.10 APIs. Completed translations emit a generic desktop notification without
 source or translated content; private notification-service transport and headless delivery to a real
-`dunst` daemon are verified, while physical desktop-shell rendering and packaging remain open. Native text
+`dunst` daemon and a visible viewable Dunst window are verified, while physical compositor/GPU rendering and packaging remain open. Native text
 import uses a bounded UTF-8 GTK FileDialog/GIO path and a URI-list/GIO source-editor DropTarget;
 the real document-portal lease lifecycle, direct interactive `xdg-desktop-portal-gtk` FileChooser
 backend, application FileDialog callback, and source-editor drag/drop gesture are verified under
@@ -31,8 +31,8 @@ daemon-restart restoration, locked-item fail-closed lookup, and secure persisten
 onboarding through both worker and GTK paths. The no-credential OpenAI-compatible loopback path is
 also covered. A pinned Flatpak manifest, generated Cargo source set, desktop metadata, and icon pass
 static validation; the GNOME 49 SDK workflow built a prerelease CI bundle and passed bounded sandbox
-startup smoke, while physical desktop-shell notification rendering, signing, and distributable
-artifacts remain unverified. Prompted
+startup smoke, while physical compositor/GPU rendering, signing, and distributable artifacts remain
+unverified. Prompted
 interactive flows remain unverified. Runtime catalog switching currently covers the Translate and Stop labels, not
 the complete UI. This does not prove every database or storage failure, AT-SPI/Orca,
 physical keyboard traversal, or a complete desktop accessibility matrix.

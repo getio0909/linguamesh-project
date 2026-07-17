@@ -54,8 +54,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `org.freedesktop.Notifications` service with fixed generic payloads and no source/translated
   content; desktop-shell rendering remains an explicit boundary.
 - [x] Verify headless Linux notification delivery to a real `dunst` daemon under Xvfb, including
-  service-name acquisition, GTK `Notify` delivery, and generic-payload privacy assertions; physical
-  desktop-shell rendering remains an explicit boundary.
+  service-name acquisition, GTK `Notify` delivery, generic-payload privacy assertions, and a visible
+  viewable Dunst desktop-shell window; physical compositor/GPU rendering remains an explicit boundary.
 - [x] Verify the Linux XDG document-portal lease lifecycle against real portal services, including
   file-descriptor add, host-path mapping, application permission grant/revoke, and deletion;
   interactive application callbacks are covered by the dedicated GTK fixture below.
@@ -498,6 +498,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-17: Central integration revision `0de200a` recorded the application-level GTK evidence,
   preserved `unreleased` status and empty artifact lists, and passed coordination run `29619564326`
   with Linux job `88011719149` and PowerShell job `88011719080`.
+- 2026-07-17: Linux evidence revision `0f8585e773f471e435e30020b0153025aabd7987` added visible
+  Dunst desktop-shell window verification to the notification fixture. Native run `29619961909`,
+  Foundation run `29619962316`, and Flatpak run `29619961877` passed; physical compositor/GPU
+  rendering and release artifacts remain open.
 
 ## Checkpoint update protocol
 
