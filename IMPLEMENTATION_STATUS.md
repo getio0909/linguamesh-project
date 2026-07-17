@@ -10,10 +10,9 @@ adapter, runtime PO action-label slice, generic completion desktop notification,
 native text-file import are
 implemented, committed, published to the canonical public repositories owned by `getio0909`, and
 verified by applicable local and GitHub Actions gates. The same real GTK flow passes under
-X11/Xvfb and forced Wayland/headless Weston. The active Linux secure-provider checkpoint remains
-incomplete because prompted interactive flows are not complete, although persistent daemon-restart
-restoration, locked-item fail-closed behavior, and secure persistent-credential onboarding are now
-verified. No stable product release, completed native
+X11/Xvfb and forced Wayland/headless Weston. The active Linux secure-provider checkpoint is complete;
+prompted interactive flows remain a separately documented fail-closed boundary. No stable product
+release, completed native
 client, released SDK artifact, or supported document codec is claimed here.
 
 ## Evidence

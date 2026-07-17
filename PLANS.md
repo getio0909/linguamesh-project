@@ -48,7 +48,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   the prior validated session in memory, and verify restart recovery of only pre-fault state.
 - [x] Deliver and remotely verify baseline Linux GTK accessibility semantics on the existing GTK
   4.10+ boundary, including roles, labels, relations, focusability, hidden errors, and Busy reset.
-- [ ] Complete the active Linux-first secure-provider checkpoint described below.
+- [x] Complete the active Linux-first secure-provider checkpoint described below; prompted
+  interactive Secret Service flows remain an explicit fail-closed boundary for a later Linux pass.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — secure provider foundation
@@ -134,8 +135,9 @@ Checkpoint evidence:
   uses authenticated fake providers A/B and real request counters, but does not complete the global
   scenario without persistent secure credentials and stable-release evidence.
 
-This checkpoint may remain prerelease. It does not authorize a stable release or a claim that the
-complete Provider Hub, all provider protocols, or every Linux milestone is finished.
+This checkpoint remains prerelease. It does not authorize a stable release or a claim that the
+complete Provider Hub, all provider protocols, or every Linux milestone is finished. Prompted
+interactive Secret Service flows fail closed and remain a separately documented boundary.
 
 ## Checkpoint 0 — Project and repository foundation
 
