@@ -567,6 +567,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central integration revision `2b670c3` recorded the Linux status-summary/partial-output
   localization and l10n revision update, passing coordination run `29624893274` with Linux job
   `88027207327` and PowerShell job `88027207325`.
+- 2026-07-18: Localization revision `14a4d6bcd556d735dee2d7ed022650fbcc8593b8` added five
+  Linux-only text-import controls (`Open`, `Open text file`, the UTF-8 text filter, dialog title,
+  and tooltip). Its Localization and Foundation workflows passed as runs `29624998218` and
+  `29624998224`; the deterministic bundle checksum is
+  `40655730a4d07d522901e3b9ac0a76978d3208d379bad0bf219623ac3a04ae06`.
+- 2026-07-18: Linux evidence revision `d563bc28ef6a08fd90c7a4eba3bf71ae8b07d57b` wired those
+  catalog keys through the native GTK file-import controls and pinned the updated l10n revision.
+  Native run `29625054878` (job `88027678296`), Foundation run `29625054875`, and Flatpak run
+  `29625054911` (job `88027678198`) passed; the native gate also asserted Simplified Chinese
+  status and Open text-file labels and Arabic RTL switching with source-buffer preservation.
 
 ## Checkpoint update protocol
 
