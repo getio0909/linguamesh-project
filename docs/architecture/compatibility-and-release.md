@@ -9,8 +9,8 @@ At startup, each client queries the core semantic version, ABI version, protocol
 A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings, migration guidance, client changes, conformance tests, and an updated release train. Release promotion requires source and artifact provenance, license and third-party notices, checksums, SBOMs where practical, platform build evidence, rollback instructions, and acceptance-scenario evidence.
 
 The current unreleased matrix pins Core functional revision
-`5feaa3700764e3f174a69a4b490ae67b2d5cd8c9` and Linux functional revision
-`f198aa539d51f21e2e29b8e366884013ea436360`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+`ae8e437ff51fb045a6961604db6a19ebe488e0ba` and Linux functional revision
+`3f6d7e577afacb3aa3b7ad8c9825a243c9a0f13f`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
 Linux evidence head `029e7f21322f3d0f3619a8f3a0158e7157972e30` adds official locale-pack switching,
 Arabic RTL direction, Secret Service prompted-flow,
 notification-daemon, portal,
@@ -23,7 +23,7 @@ multi-line editors, label/mnemonic relations, focusability, hidden empty errors,
 semantics using GTK 4.10 APIs. Completed translations emit a generic desktop notification without
 source or translated content; private notification-service transport and headless delivery to a real
 `dunst` daemon and a visible viewable Dunst window are verified, while physical compositor/GPU rendering and packaging remain open. Native text
-import uses a bounded UTF-8 GTK FileDialog/GIO path and a URI-list/GIO source-editor DropTarget;
+import uses a bounded UTF-8 GTK FileDialog/GIO path for TXT/Markdown/CSV/JSON/SRT/WebVTT and a URI-list/GIO source-editor DropTarget;
 the real document-portal lease lifecycle, direct interactive `xdg-desktop-portal-gtk` FileChooser
 backend, application FileDialog callback, and source-editor drag/drop gesture are verified under
 Xvfb.

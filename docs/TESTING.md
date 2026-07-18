@@ -23,18 +23,18 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
-The current Linux-first TXT/Markdown/CSV/SRT/WebVTT document slice is pinned to Core
-`5feaa3700764e3f174a69a4b490ae67b2d5cd8c9`, l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and
-Linux `f198aa539d51f21e2e29b8e366884013ea436360`. Core CI `29646915419` passed; Native SDK
-`29646915403` (job `88086598093`), Linux Native `29646944712` (job `88086670113`), Foundation
-`29646944681`, and Flatpak `29646944737` (job `88086670157`) passed. The l10n Localization `29640108992` and Foundation
+The current Linux-first TXT/Markdown/CSV/JSON/SRT/WebVTT document slice is pinned to Core
+`ae8e437ff51fb045a6961604db6a19ebe488e0ba`, l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and
+Linux `3f6d7e577afacb3aa3b7ad8c9825a243c9a0f13f`. Core CI `29647639604` passed; Native SDK
+`29647639577`, Linux Native `29647794016` (job `88088841342`), Foundation
+`29647793982`, and Flatpak `29647794021` (job `88088841323`) passed. The l10n Localization `29640108992` and Foundation
 `29640108969` passed with the 262-message bundle checksum
 `a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
 restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
 escaped UTF-8 TSV export, the bounded Core TXT/Markdown/CSV/SRT/WebVTT document contract with BOM,
 line-ending, cue-ID, header, timestamp, subtitle-structure, CSV delimiter/quote, variable-width row,
-and selected-column preservation, schema-9 job bounds/options, segment updates, and restart
+and selected-column preservation, JSON path selection, primitive/key protection, escaping, schema-9 job bounds/options, segment updates, and restart
 recovery of pending/running/paused jobs without paths or credentials; pause/resume/retry worker
 and GTK control regressions, including restart reuse, are covered by the Linux library suite.
 Central coordination run `29647276810` passed Linux validation job `88087516774` and PowerShell
