@@ -728,6 +728,18 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   the 208-message l10n bundle, Linux runtime/storage error evidence, release-manifest pins, and
   the final Linux evidence head. Coordination run `29632016228` passed with Linux job
   `88047478552` and PowerShell job `88047478559`.
+- 2026-07-18: Core functional revision `031b20cd6f4ddc7635057d1b2d949db4ac7d1f39` added
+  automatic protection and streamed restoration for common URLs, email addresses, Markdown code,
+  and placeholders, with typed fail-closed marker validation. Local Core checks passed; the
+  functional revision's Native SDK run `29632398136` passed. A test-only descendant
+  `c1406eb60c56cc4bebdf130f0cc6ee6602046c83` made the loopback HTTP regression case-insensitive
+  for `Content-Length`; its CI run `29632565728` and Native SDK run `29632565726` passed all jobs.
+- 2026-07-18: Linux revision `79de8d9e01bebdb4be666ef7a1aed6309ef25970` negotiated
+  `protected_spans_v1`, pinned Core `031b20cd6f4ddc7635057d1b2d949db4ac7d1f39`, and documented
+  the Linux boundary and automatic protection assumption. Native run `29632530497` (job
+  `88048916214`), Foundation run `29632530524` (job `88048916265`), and Flatpak run
+  `29632530485` (job `88048916150`) passed. Central manifests and compatibility records now pin
+  this Linux revision while other clients remain deferred.
 
 ## Checkpoint update protocol
 
