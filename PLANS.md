@@ -908,7 +908,8 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Core revision `31e7d3d06abbbf32199432bdedfcaf9a46dbed38` added schema-8 validated
   non-secret document options; Linux revision `d5e9bb13e75e172e8698d5227e4ac27a7e70dd35` added
   exact provider/model matching and worker-restart reuse. Native `29644639413` (job `88080730976`)
-  and Foundation `29644639392` (job `88080730938`) passed; Flatpak `29644639396` remains running.
+  and Foundation `29644639392` (job `88080730938`) passed; Flatpak `29644639396` (job `88080730937`)
+  also passed.
   Core CI `29644499145` and Native SDK `29644499158` passed. The Linux-first scope still leaves
   multi-job selection, archive codecs, Android, Windows, and macOS open.
 

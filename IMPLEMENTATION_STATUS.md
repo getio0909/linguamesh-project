@@ -141,7 +141,7 @@ adds validated non-secret document translation options on top of transactional p
 Linux (`d5e9bb13e75e172e8698d5227e4ac27a7e70dd35`) reuses those options after restart only when the
 active provider/model match. Local Core workspace tests and Linux 94-test library suite pass; Core
 CI `29644499145`, Native SDK `29644499158`, Linux Native `29644639413`, Foundation `29644639392`,
-and Flatpak `29644639396` (still running) are the current remote evidence.
+and Flatpak `29644639396` are the current remote evidence.
 No stable release or cross-platform completion claim is made.
 
 ## Evidence

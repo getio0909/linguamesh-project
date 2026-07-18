@@ -29,8 +29,8 @@ Core CI `29644499145` and Native SDK `29644499158` passed; l10n Localization `29
 Foundation `29640108969` passed with the 262-message bundle checksum
 `a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux Native `29644639413` (job `88080730976`)
 passed all GTK, storage, portal, notification, X11, and forced-Wayland gates; Foundation
-`29644639392` (job `88080730938`) passed the repository-wide checks; Flatpak `29644639396` remains
-in progress. Local Core storage tests
+`29644639392` (job `88080730938`) passed the repository-wide checks; Flatpak `29644639396` (job
+`88080730937`) passed the packaging checks. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
 restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
 escaped UTF-8 TSV export, the bounded Core TXT/Markdown document contract with BOM/line-ending
