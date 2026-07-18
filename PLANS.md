@@ -782,6 +782,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `ce2b2ab6afa32cb6bbdd45c716fcad8baae00d29`, Linux `4adaae2cadbce5b19a38d6f133f4c8b843fd870d`,
   and l10n `2e5e3033f453aa2882cf71217f9514dce8501269`; Linux remains the prioritized client while
   Android, Windows, and macOS stay deferred. Stable release status remains unreleased.
+- 2026-07-18: Central revision `df262726d2f0727ff51a69d9d62701cc6504a86c` passed coordination run
+  `29634540903` with Linux job `88054421542` and PowerShell job `88054421575` after recording the
+  Core/Linux long-text pins, compatibility boundary, and unreleased release posture.
 
 ## Checkpoint update protocol
 
