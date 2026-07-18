@@ -724,6 +724,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Linux evidence documentation revision `2277ffd1a358237cb55bde3aeaf570a94706306e`
   recorded those remote gates. Its Native run `29631828307`, Foundation run `29631828314`, and
   Flatpak run `29631828312` (job `88046930820`) passed after the evidence-only update.
+- 2026-07-18: Central integration revision `30cb91557d96fbff82bea242ae8a9a722f93f9eb` recorded
+  the 208-message l10n bundle, Linux runtime/storage error evidence, release-manifest pins, and
+  the final Linux evidence head. Coordination run `29632016228` passed with Linux job
+  `88047478552` and PowerShell job `88047478559`.
 
 ## Checkpoint update protocol
 
