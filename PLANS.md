@@ -1093,7 +1093,7 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29663597809` (job `88130256318`), and Flatpak `29663597831` (job `88130256370`) passed; local format, strict
   Clippy, 61-library-test suite, shell syntax, and diff checks passed. Screen-reader narration,
   physical desktop review, OCR, other clients, and stable-release evidence remain open. Central
-  coordination run `29663509326` (job `88130035321`) also passed.
+  coordination run `29663798879` (job `88130763937`) also passed.
 
 ## Checkpoint update protocol
 
