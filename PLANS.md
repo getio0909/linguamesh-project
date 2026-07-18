@@ -85,7 +85,13 @@ Assumption: Planned files and commands are not evidence until they exist and com
   explicit segment updates, resume/cancel state transitions, and path/credential exclusion tests.
 - [x] Extend the Linux-first document slice with bounded CSV parsing, selected-column segmentation,
   safe provider-field decoding/re-encoding, schema-9 persistence migration, and native `.csv`
-  chooser coverage; keep HTML, JSON, archives, and other platforms deferred.
+  chooser coverage.
+- [x] Extend the Linux-first document slice with bounded JSON parsing, exact RFC 6901 include/exclude
+  paths, primitive/key protection, escaping preservation, schema-9 mapping, and native `.json` chooser
+  coverage.
+- [x] Extend the Linux-first document slice with bounded structural HTML tag-stack validation,
+  script/style protection, visible text-node segmentation, safe text escaping, schema-9 mapping, and
+  native `.html`/`.htm` chooser coverage.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — secure provider foundation
@@ -923,8 +929,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29645385353` passed; Native SDK `29645385324`, Linux Native `29645547013` (job `88083068099`),
   Foundation `29645547036` (job `88083068179`), and Flatpak `29645547024` (job `88083068088`) passed.
   Central coordination `29645763887` passed Linux job `88083632226` and PowerShell job
-  `88083632209`. HTML,
-  JSON, CSV, archive formats, multi-job selection, Android, Windows, and macOS remain open.
+  `88083632209`. HTML and JSON were subsequently delivered in Core revisions `912780f21d8dbb19571c9b991879778a053272f8`
+  and Linux revision `2a04c096594f5358638fc9e5b1610c78c1051a13`, with remote gates recorded in the
+  central compatibility matrix. DOCX, PPTX/XLSX, EPUB, PDF/OCR, archive formats, multi-job selection,
+  Android, Windows, and macOS remain open.
 
 ## Checkpoint update protocol
 
