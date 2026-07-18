@@ -1021,6 +1021,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Flatpak `29656158526` passed. Complete visible-string coverage beyond these document warnings
   and the remaining acceptance/release work remain open.
 
+- 2026-07-18: The Linux-first document-queue localization follow-up adds ten canonical Linux-only
+  action, dialog, empty/paused/progress status, and tooltip messages. l10n revision
+  `0ef4fb9b6878655e46e2b8ca5bbed9562f97b0f0` contains 277 messages and bundle checksum
+  `e26da1a391369ed84c0f57f5fd5d440f50ed56dcbc8f069abd4d6d27db7dd9c1`; Linux revision
+  `191345c55dc8989d518680c864a4c4a643165f6c` synchronizes all twelve PO/MO packs and asserts the
+  queue keys. Localization runs `29656496378` and `29656496361`, Native `29656549651`, Foundation
+  `29656549644`, and Flatpak `29656549677` passed. Non-English packs remain explicitly unreviewed
+  drafts; complete visible-string coverage, other clients, OCR, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
