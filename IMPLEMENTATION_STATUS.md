@@ -137,11 +137,11 @@ opt-out.
 
 Assumption: the current Linux-first slice prioritizes durable TXT/Markdown job lifecycle controls;
 Android, Windows, and macOS remain deferred. Core schema 7 (`fd79752fe8857ea37098602cefed294924fa1db5`)
-adds transactional paused-job persistence and restart resumability. Linux (`ef3d3630c184efd23e602d244fcac82085a51893`)
+adds transactional paused-job persistence and restart resumability. Linux (`0b62696c26bf119f61ca28c56e329bea5f4062a6`)
 adds worker pause/resume/retry commands, segment-boundary cancellation, GTK per-job progress, and
 pause/resume/retry controls. Local Core workspace tests and Linux 92-test library suite pass; the
-Core CI `29643381786`, Native SDK `29643381763`, Linux Native `29643502027`, Foundation `29643502025`,
-and Flatpak `29643502057` runs all passed.
+Core CI `29643381786`, Native SDK `29643381763`, Linux Native `29643841189`, Foundation `29643841178`,
+and Flatpak `29643841198` runs all passed.
 No stable release or cross-platform completion claim is made.
 
 ## Evidence

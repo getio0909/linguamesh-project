@@ -24,17 +24,17 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
 The current Linux-first TXT/Markdown document slice is pinned to Core `fd79752fe8857ea37098602cefed294924fa1db5`,
-l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux `ef3d3630c184efd23e602d244fcac82085a51893`.
+l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux `0b62696c26bf119f61ca28c56e329bea5f4062a6`.
 Core CI `29643381786` and Native SDK `29643381763` passed; l10n Localization `29640108992` and
 Foundation `29640108969` passed with the 262-message bundle checksum
-`a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux Native `29643502027` (job `88077751854`)
+`a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux Native `29643841189` (job `88078612095`)
 passed all GTK, storage, portal, notification, X11, and forced-Wayland gates; Foundation
-`29643502025` (job `88077751890`) and Flatpak `29643502057` (job `88077751936`) passed the repository-wide
+`29643841178` and Flatpak `29643841198` (job `88078612105`) passed the repository-wide
 and packaging checks. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
 restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
 escaped UTF-8 TSV export, the bounded Core TXT/Markdown document contract with BOM/line-ending
-preservation and verbatim Markdown fences, schema-6 job bounds, segment updates, and restart
+preservation and verbatim Markdown fences, schema-7 job bounds, segment updates, and restart
 recovery of pending/running/paused jobs without paths or credentials; pause/resume/retry worker
 and GTK control regressions are covered by the Linux library suite.
 

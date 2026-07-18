@@ -906,9 +906,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   macOS remain deferred.
 
 - 2026-07-18: Core revision `fd79752fe8857ea37098602cefed294924fa1db5` added schema-7 paused-job
-  persistence and Linux revision `ef3d3630c184efd23e602d244fcac82085a51893` added segment-boundary
-  pause/resume/retry worker commands, GTK progress, and lifecycle controls. Native `29643502027`
-  and Foundation `29643502025` passed; Flatpak `29643502057` also passed. Core CI `29643381786`
+  persistence and Linux revision `0b62696c26bf119f61ca28c56e329bea5f4062a6` added segment-boundary
+  pause/resume/retry worker commands, GTK progress, and lifecycle controls. Native `29643841189`
+  and Foundation `29643841178` passed; Flatpak `29643841198` also passed. Core CI `29643381786`
   and Native SDK `29643381763` passed. The
   Linux-first scope still leaves multi-job selection, provider-parameter persistence, archive
   codecs, Android, Windows, and macOS open.
