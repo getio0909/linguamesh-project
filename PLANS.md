@@ -1113,6 +1113,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `Identity` metadata, complete visible-string gettext coverage, and the remaining Linux/release
   boundaries remain open.
 
+- 2026-07-18: Assumption: the existing `dialog.document_jobs` and `dialog.memory` catalog titles
+  are the canonical Linux labels for job and translation-memory metadata rows. Linux revision
+  `c19192fbd78b30aa55a5bac94c133c7400c78642` routes those identifier prefixes through the active
+  catalog without changing stored content or locale packs. Local fmt, strict Clippy, the locked
+  no-default 61-test suite, and diff checks passed; Native `29665343100` (job `88134735908`),
+  Foundation `29665343120`, and Flatpak `29665343145` passed. Complete visible-string gettext
+  coverage, Orca speech, physical desktop review, OCR, other clients, and stable-release evidence
+  remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

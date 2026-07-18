@@ -117,6 +117,13 @@ content prefixes in the history and translation-memory dialogs. Native `29664934
 `Identity` metadata, complete visible-string gettext coverage, and the remaining Linux/release
 boundaries remain open.
 
+Linux-first dialog metadata localization checkpoint: Linux `c19192fbd78b30aa55a5bac94c133c7400c78642`
+routes the document-job identifier and translation-memory identity prefixes through the active
+catalog, reusing the existing Linux dialog keys without changing stored content or locale packs.
+Native `29665343100` (job `88134735908`), Foundation `29665343120`, and Flatpak `29665343145`
+passed. Complete visible-string gettext coverage, Orca speech, physical desktop review, OCR,
+other platform clients, and stable-release evidence remain open.
+
 Linux-first PPTX package checkpoint: Core `0f71a652a536753f48bb8c852fd38e97740c23ce` adds bounded
 PPTX ZIP/XML inspection, schema-11 package persistence, safe slide/notes/master/layout/handout/
 comments text-node reconstruction, and resource retention. Linux functional revision
