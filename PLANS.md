@@ -671,6 +671,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   worker/file/storage/provider error coverage, release-manifest pins, and Linux remote gates;
   coordination run `29629679652` passed with Linux job `88040764195` and PowerShell job
   `88040764163`.
+- 2026-07-18: Localization revision `d21c3b0d065831b20cf31c9bf3009ffd262e4797` added twelve
+  Linux-only locale-selector language-name messages, bringing the catalog to 184 messages.
+  Localization run `29629934280` and Foundation run `29629934219` passed; the deterministic
+  bundle ZIP checksum is `116e5c70a5266197a0ee8ec91bbb35637802d68ba7456a9aad344838a5f40c1e`.
+- 2026-07-18: Linux evidence revision `a50806edff6a374ad966ccc4f78203bfec1ce2e5` refreshed
+  locale-selector labels during runtime locale switching and pinned the new l10n checkout.
+  Native run `29629975421`, Foundation run `29629975449`, and Flatpak run `29629975454` passed
+  the Linux validation, PO/MO checks, GTK locale assertions, and GNOME 49 sandbox smoke.
 
 ## Checkpoint update protocol
 
