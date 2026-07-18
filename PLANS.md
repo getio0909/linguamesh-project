@@ -994,6 +994,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29654651067` passed. Central release and compatibility records must consume these pins; OCR,
   pixel-identical reconstruction, remaining archive codecs, and non-Linux clients remain deferred.
 
+- 2026-07-18: Assumption: subtitle readability warnings are advisory cue-level metadata and never
+  expose source text or rewrite timing. Core revision `81be0b8be9d7115b98eae3f134b4fd0f25411bbb`
+  adds configurable line-length and reading-speed warnings with 42-character and 17
+  non-whitespace-character-per-second defaults; Linux revision
+  `829b502d98c570c72489720df49c3356dccc636a` persists and renders cue-number-only guidance. Core
+  CI `29655212117`, Native SDK `29655212149`, Linux Native `29655260438`, Foundation `29655260426`,
+  and Flatpak `29655260429` passed. OCR, remaining archive formats, acceptance scenarios 2–20,
+  non-Linux clients, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

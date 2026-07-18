@@ -24,16 +24,16 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
 The current Linux-first TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF document slice is pinned to Core
-`4f03618ffb1f37f27fb1edcf2de5a80e3bec540d`, l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and
-Linux `edbfad1a8e443d86f39c782f4ad991a029cb8e76`. Core CI `29654538722`, Native SDK `29654538670`,
-Linux Native `29654651108`, Foundation `29654651074`, and Flatpak `29654651067` passed. The l10n Localization `29640108992` and Foundation
+`81be0b8be9d7115b98eae3f134b4fd0f25411bbb`, l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and
+Linux `829b502d98c570c72489720df49c3356dccc636a`. Core CI `29655212117`, Native SDK `29655212149`,
+Linux Native `29655260438`, Foundation `29655260426`, and Flatpak `29655260429` passed. The l10n Localization `29640108992` and Foundation
 `29640108969` passed with the 262-message bundle checksum
 `a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
 restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
 escaped UTF-8 TSV export, the bounded Core TXT/Markdown/CSV/SRT/WebVTT document contract with BOM,
 line-ending, cue-ID, header, timestamp, subtitle-structure, CSV delimiter/quote, variable-width row,
-and selected-column preservation, JSON path selection, primitive/key protection, escaping, HTML tag-stack validation, script/style protection, text-node escaping, bounded DOCX/PPTX/XLSX/EPUB package path/XML/resource preservation, page-aware text-PDF extraction/reconstruction and structured HTML fallback, schema-14 job bounds/options, segment updates, and restart
+and selected-column preservation, JSON path selection, primitive/key protection, escaping, HTML tag-stack validation, script/style protection, text-node escaping, bounded DOCX/PPTX/XLSX/EPUB package path/XML/resource preservation, page-aware text-PDF extraction/reconstruction and structured HTML fallback, cue-level subtitle line-length/reading-speed warnings with configurable limits, schema-14 job bounds/options, segment updates, and restart
 recovery of pending/running/paused jobs without paths or credentials; bounded PDF warnings for
 image-only pages, uncertain reading order, and limited reconstruction; pause/resume/retry worker
 and GTK control regressions, including restart reuse and persisted-job queue selection, are covered

@@ -9,8 +9,8 @@ At startup, each client queries the core semantic version, ABI version, protocol
 A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings, migration guidance, client changes, conformance tests, and an updated release train. Release promotion requires source and artifact provenance, license and third-party notices, checksums, SBOMs where practical, platform build evidence, rollback instructions, and acceptance-scenario evidence.
 
 The current unreleased matrix pins Core functional revision
-`4f03618ffb1f37f27fb1edcf2de5a80e3bec540d` and Linux functional revision
-`edbfad1a8e443d86f39c782f4ad991a029cb8e76`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+`81be0b8be9d7115b98eae3f134b4fd0f25411bbb` and Linux functional revision
+`829b502d98c570c72489720df49c3356dccc636a`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
 Linux evidence head `029e7f21322f3d0f3619a8f3a0158e7157972e30` adds official locale-pack switching,
 Arabic RTL direction, Secret Service prompted-flow,
 notification-daemon, portal,
@@ -23,7 +23,7 @@ multi-line editors, label/mnemonic relations, focusability, hidden empty errors,
 semantics using GTK 4.10 APIs. Completed translations emit a generic desktop notification without
 source or translated content; private notification-service transport and headless delivery to a real
 `dunst` daemon and a visible viewable Dunst window are verified, while physical compositor/GPU rendering, signing, and distributable artifacts remain open. Native text
-import uses a bounded UTF-8 GTK FileDialog/GIO path for TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT plus bounded DOCX/PPTX/XLSX/EPUB packages and text-based PDF pages, preserving PDF page association and available coordinates with a structured HTML fallback for unsafe target encodings, structured page-level warnings for image-only pages, uncertain reading order, and limited reconstruction, and a URI-list/GIO source-editor DropTarget; the GTK queue lists persisted document snapshots with progress/state metadata and rebinds a selected job to the existing controls;
+import uses a bounded UTF-8 GTK FileDialog/GIO path for TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT plus bounded DOCX/PPTX/XLSX/EPUB packages and text-based PDF pages, preserving PDF page association and available coordinates with a structured HTML fallback for unsafe target encodings, structured page-level warnings for image-only pages, uncertain reading order, and limited reconstruction, cue-level subtitle line-length and reading-speed warnings with configurable limits, and a URI-list/GIO source-editor DropTarget; the GTK queue lists persisted document snapshots with progress/state metadata and rebinds a selected job to the existing controls;
 the real document-portal lease lifecycle, direct interactive `xdg-desktop-portal-gtk` FileChooser
 backend, application FileDialog callback, and source-editor drag/drop gesture are verified under
 Xvfb.
