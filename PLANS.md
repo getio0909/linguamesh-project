@@ -1085,6 +1085,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   diff checks passed. Screen-reader narration, provider-form Tab-chain repair, physical desktop
   review, OCR, other clients, and stable-release evidence remain open.
 
+- 2026-07-18: Assumption: the provider form's explicit order is saved profile, remove saved
+  profile, provider name, endpoint, credential, Connect, and Remember profile; Ctrl/Alt/Super
+  modified Tab remains native workspace navigation. Linux revision `8f2cba09e500e8d3a3ea5e6ef9f10d6244369305`
+  moves the handler to the application-window Capture phase and verifies the real GTK focus path
+  with an Xvfb/xfwm4 fixture. Native `29663222081` (job `88129285443`), Foundation `29663222084`
+  (job `88129285550`), and Flatpak `29663222096` (job `88129285461`) passed; local format, strict
+  Clippy, 61-library-test suite, shell syntax, and diff checks passed. Screen-reader narration,
+  physical desktop review, OCR, other clients, and stable-release evidence remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
