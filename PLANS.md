@@ -548,6 +548,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central integration revision `f22b5f1` recorded the Linux theme-option evidence and
   passed coordination run `29623135803` with Linux job `88022041698` and PowerShell job
   `88022041716`.
+- 2026-07-18: Linux evidence revision `0a68d1572cef8d330f50a13a1f581ffdfe234715` recorded the
+  GTK locale-switch regression that preserves source text while switching from Simplified Chinese
+  to Arabic and verifies RTL direction. Native run `29623921134` (job `88024412823`), Foundation
+  run `29623921097`, and Flatpak run `29623921145` (job `88024413053`) passed.
 
 ## Checkpoint update protocol
 
