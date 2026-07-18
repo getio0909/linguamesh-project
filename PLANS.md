@@ -985,6 +985,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   text-document slice; OCR, remaining archive formats, multi-job selection, Android, Windows, and
   macOS remain open.
 
+- 2026-07-18: Assumption: PDF fidelity warnings remain advisory structured metadata and never
+  include source text or credentials. Core revision `4f03618ffb1f37f27fb1edcf2de5a80e3bec540d`
+  added warnings for limited reconstruction, image-only pages, and uncertain reading order. Core CI
+  `29654538722` and Native SDK `29654538670` passed. Linux revision
+  `edbfad1a8e443d86f39c782f4ad991a029cb8e76` stores warnings on imported/restored jobs and renders
+  bounded page-number-only UI text; Native `29654651108`, Foundation `29654651074`, and Flatpak
+  `29654651067` passed. Central release and compatibility records must consume these pins; OCR,
+  pixel-identical reconstruction, remaining archive codecs, and non-Linux clients remain deferred.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
