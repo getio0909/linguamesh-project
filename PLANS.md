@@ -693,6 +693,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29630434240` (job `88042823692`), Foundation run `29630434252` (job `88042823739`), and
   Flatpak run `29630434241` (job `88042823704`) passed the Linux validation, GTK export-aware
   assertions, PO/MO checks, and GNOME 49 sandbox smoke.
+- 2026-07-18: Localization revision `057c1b8e859acfa4b4fd4eafbdc68ce01069f9a5` added the
+  Linux construction-stage provider/default-control message and refreshed the catalog to 193
+  messages. Localization run `29630969375` and Foundation run `29630969342` passed; the
+  deterministic bundle ZIP checksum is
+  `deab18a136383deb586f81d08d433cf5cb494c627c92a09b1b7a28f7b918f5da`.
+- 2026-07-18: Linux evidence revision `1be3e7073962c899d152174b0164362c9d04e8f5` routed
+  construction-time GTK labels, tooltips, accessible names, dropdown values, and the default
+  provider name through the pinned catalog. Native run `29631012775` (job `88044414751`),
+  Foundation run `29631012755`, and Flatpak run `29631012763` (job `88044414691`) passed the
+  Linux validation, GTK construction-stage assertions, PO/MO checks, and GNOME 49 sandbox smoke.
 - 2026-07-18: Central integration revision `0b3aeda37882646b6ad8e8d8565a3efdcca4b6ab` recorded
   the 192-message l10n bundle, Linux translation-export evidence, release-manifest pins, and
   all three Linux remote gates; coordination run `29630646183` passed with Linux job
