@@ -647,6 +647,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   reducer-state Linux evidence, release-manifest pins, and all three Linux remote gates;
   coordination run `29628561782` passed with Linux job `88037742108` and PowerShell job
   `88037742148`.
+- 2026-07-18: Localization revision `0b906034784a1b5e81a879649abbfda001fa9e67` added
+  deterministic GNU MO companions for the 14 Linux PO catalogs. Localization and Foundation
+  workflows passed as runs `29628807367` and `29628807378`; the deterministic bundle ZIP checksum
+  is `d82a152aff0212b7dde55d9b9a67ceac7ed16245d6a0ca6de49564f7d1dafcc5`.
+- 2026-07-18: Linux MO integration revision `6c5bfb305967d0f01488ad09ade6e5b88eebbdb0` switched
+  the runtime locale loader to generated MO tables and pinned the updated workflow checkout.
+  Native run `29628986188`, Foundation run `29628986160`, and Flatpak run `29628986187` passed;
+  the workflow validates both PO syntax and MO readability.
 
 ## Checkpoint update protocol
 
