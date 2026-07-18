@@ -800,6 +800,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29635297461`, and Flatpak run `29635297451` (job `88056466121`) passed. Linux remains the
   prioritized client while Android, Windows, and macOS stay deferred; persistent glossary libraries
   and TBX import remain outside the current slice.
+- 2026-07-18: Central revision `be7970f16c946ebcc38f849ef30fcc3c081b3867` recorded the Core, l10n,
+  and Linux glossary CSV pins, evidence, checksums, and unreleased posture. Coordination run
+  `29635479613` passed with Linux job `88056955332` and PowerShell job `88056955356`.
 
 ## Checkpoint update protocol
 
