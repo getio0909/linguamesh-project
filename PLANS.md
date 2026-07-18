@@ -655,6 +655,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   the runtime locale loader to generated MO tables and pinned the updated workflow checkout.
   Native run `29628986188`, Foundation run `29628986160`, and Flatpak run `29628986187` passed;
   the workflow validates both PO syntax and MO readability.
+- 2026-07-18: Central integration revision `db4c0ca` recorded the paired PO/MO Linux resources,
+  l10n bundle checksum, release-manifest pins, and Linux MO evidence; coordination run
+  `29629197379` passed with Linux job `88039490578` and PowerShell job `88039490592`.
 
 ## Checkpoint update protocol
 
