@@ -24,11 +24,11 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
 The current Linux-first TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF document slice is pinned to Core
-`81be0b8be9d7115b98eae3f134b4fd0f25411bbb`, l10n `6bcd237170d1fdfb0a6beb88ee97d1855c478611`, and
-Linux `07af541f5c8561da4f917406c6782155a2a5efb6`. Core CI `29655212117`, Native SDK `29655212149`,
-Linux Native `29655816018`, Foundation `29655816025`, and Flatpak `29655816020` passed. The l10n Localization `29655762044` and Foundation
-`29655762054` passed with the 264-message bundle checksum
-`ee7bf5308a7cd652cad37e8d5e96973c520123dbbf964ddee58bf02bb24cbf7e`. Local Core storage tests
+`81be0b8be9d7115b98eae3f134b4fd0f25411bbb`, l10n `738a7c7328f24acc12c15be78bb11737220bbbae`, and
+Linux `60b560383e53bf4cf9ccc5ecf3821fe735206446`. Core CI `29655212117`, Native SDK `29655212149`,
+Linux Native `29656158543`, Foundation `29656158527`, and Flatpak `29656158526` passed. The l10n Localization `29656124100` and Foundation
+`29656124109` passed with the 267-message bundle checksum
+`49ccf84b2afac15c604f74c45c6e7e72a1c12617eb5efdb3ada1d5164cd3c259`. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
 restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
 escaped UTF-8 TSV export, the bounded Core TXT/Markdown/CSV/SRT/WebVTT document contract with BOM,

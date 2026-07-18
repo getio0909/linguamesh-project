@@ -10,7 +10,7 @@ A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings,
 
 The current unreleased matrix pins Core functional revision
 `81be0b8be9d7115b98eae3f134b4fd0f25411bbb` and Linux functional revision
-`07af541f5c8561da4f917406c6782155a2a5efb6`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+`60b560383e53bf4cf9ccc5ecf3821fe735206446`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
 Linux evidence head `029e7f21322f3d0f3619a8f3a0158e7157972e30` adds official locale-pack switching,
 Arabic RTL direction, Secret Service prompted-flow,
 notification-daemon, portal,

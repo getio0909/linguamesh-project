@@ -1011,6 +1011,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   runs `29655762044` and `29655762054`, Native `29655816018`, Foundation `29655816025`, and
   Flatpak `29655816020` passed. Non-English translations remain explicitly unreviewed drafts.
 
+- 2026-07-18: The Linux-first PDF localization follow-up adds canonical
+  `warning.pdf_reconstruction_limited`, `warning.pdf_image_only_pages`, and
+  `warning.pdf_uncertain_order` messages. l10n revision
+  `738a7c7328f24acc12c15be78bb11737220bbbae` contains 267 messages and bundle checksum
+  `49ccf84b2afac15c604f74c45c6e7e72a1c12617eb5efdb3ada1d5164cd3c259`; Linux revision
+  `60b560383e53bf4cf9ccc5ecf3821fe735206446` consumes the generated PO/MO resources. Localization
+  runs `29656124100` and `29656124109`, Native `29656158543`, Foundation `29656158527`, and
+  Flatpak `29656158526` passed. Complete visible-string coverage beyond these document warnings
+  and the remaining acceptance/release work remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
