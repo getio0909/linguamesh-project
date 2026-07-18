@@ -532,6 +532,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central integration revision `ee1f064` recorded the Linux widget-localization
   evidence and passed coordination run `29622418277` with Linux job `88019924677` and PowerShell
   job `88019924683`.
+- 2026-07-18: Linux evidence revision `4db7076b3a30f0369cc33b7cc0394a8c7103c7f5` added
+  catalog-backed active-provider and Ready/Translating/Cancelled status labels. Native run
+  `29622526617` (job `88020226946`), Foundation run `29622526618`, and Flatpak run `29622526592`
+  passed; complete visible-string gettext coverage, end-user prompt approval, physical compositor/
+  GPU rendering, and release artifacts remain open.
 
 ## Checkpoint update protocol
 
