@@ -1102,7 +1102,8 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   the existing GTK helper still verifies label relations, editor properties, and state changes.
   Default-branch Native `29664478686` (job `88132499067`), Foundation `29664478672`, and Flatpak
   `29664478670` passed. Orca speech, provider-form default Tab-chain review, physical desktop
-  accessibility, OCR, other clients, and stable-release evidence remain open.
+  accessibility, OCR, other clients, and stable-release evidence remain open. Central coordination
+  `29664611878` (Linux job `88132835095`, PowerShell job `88132835104`) passed.
 
 ## Checkpoint update protocol
 
