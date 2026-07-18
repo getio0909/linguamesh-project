@@ -577,6 +577,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Native run `29625054878` (job `88027678296`), Foundation run `29625054875`, and Flatpak run
   `29625054911` (job `88027678198`) passed; the native gate also asserted Simplified Chinese
   status and Open text-file labels and Arabic RTL switching with source-buffer preservation.
+- 2026-07-18: Central integration revision `79bf11e` recorded the Linux text-import localization
+  evidence, l10n bundle checksum, and Flatpak run; coordination run `29625308528` passed with
+  Linux job `88028407855` and PowerShell job `88028407843`.
 
 ## Checkpoint update protocol
 
