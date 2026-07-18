@@ -140,7 +140,8 @@ Android, Windows, and macOS remain deferred. Core schema 7 (`fd79752fe8857ea3709
 adds transactional paused-job persistence and restart resumability. Linux (`ef3d3630c184efd23e602d244fcac82085a51893`)
 adds worker pause/resume/retry commands, segment-boundary cancellation, GTK per-job progress, and
 pause/resume/retry controls. Local Core workspace tests and Linux 92-test library suite pass; the
-Linux Native `29643502027`, Foundation `29643502025`, and Flatpak `29643502057` runs all passed.
+Core CI `29643381786`, Native SDK `29643381763`, Linux Native `29643502027`, Foundation `29643502025`,
+and Flatpak `29643502057` runs all passed.
 No stable release or cross-platform completion claim is made.
 
 ## Evidence

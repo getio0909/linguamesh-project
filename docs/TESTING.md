@@ -25,11 +25,11 @@ Cross-repository conformance runs the same fake-provider scenarios against pinne
 
 The current Linux-first TXT/Markdown document slice is pinned to Core `fd79752fe8857ea37098602cefed294924fa1db5`,
 l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux `ef3d3630c184efd23e602d244fcac82085a51893`.
-Core CI and Native SDK for the schema-7 Core revision passed; l10n Localization `29640108992` and
+Core CI `29643381786` and Native SDK `29643381763` passed; l10n Localization `29640108992` and
 Foundation `29640108969` passed with the 262-message bundle checksum
-`a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux Native `29643502027`
+`a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux Native `29643502027` (job `88077751854`)
 passed all GTK, storage, portal, notification, X11, and forced-Wayland gates; Foundation
-`29643502025` and Flatpak `29643502057` passed the repository-wide
+`29643502025` (job `88077751890`) and Flatpak `29643502057` (job `88077751936`) passed the repository-wide
 and packaging checks. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
 restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
