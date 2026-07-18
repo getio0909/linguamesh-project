@@ -643,6 +643,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   localized fixed reducer errors and category prefixes through the GTK error label. Native run
   `29628307915`, Foundation run `29628307945`, and Flatpak run `29628307886` passed; the workflow
   pins l10n revision `08118b498646ebf56cbb072b937d95fceb34b75c`.
+- 2026-07-18: Central integration revision `b4d6afe` recorded the 148-message l10n bundle,
+  reducer-state Linux evidence, release-manifest pins, and all three Linux remote gates;
+  coordination run `29628561782` passed with Linux job `88037742108` and PowerShell job
+  `88037742148`.
 
 ## Checkpoint update protocol
 
