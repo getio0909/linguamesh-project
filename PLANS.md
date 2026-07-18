@@ -564,6 +564,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   localization pin. Revision `edb9cd226a6468f858023a9125217b426ff58e6e` corrected the workflow pin;
   Native run `29624640319` (job `88026467667`), Foundation run `29624640306`, and Flatpak run
   `29624640300` (job `88026467605`) then passed.
+- 2026-07-18: Central integration revision `2b670c3` recorded the Linux status-summary/partial-output
+  localization and l10n revision update, passing coordination run `29624893274` with Linux job
+  `88027207327` and PowerShell job `88027207325`.
 
 ## Checkpoint update protocol
 
