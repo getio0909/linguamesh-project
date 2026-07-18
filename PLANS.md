@@ -552,6 +552,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   GTK locale-switch regression that preserves source text while switching from Simplified Chinese
   to Arabic and verifies RTL direction. Native run `29623921134` (job `88024412823`), Foundation
   run `29623921097`, and Flatpak run `29623921145` (job `88024413053`) passed.
+- 2026-07-18: Central integration revision `3b13df0` recorded the Linux source-buffer-preservation
+  evidence and passed coordination run `29624204932` with Linux job `88025236212` and PowerShell
+  job `88025236191`.
 
 ## Checkpoint update protocol
 
