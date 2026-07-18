@@ -950,8 +950,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `ce08d1232889522bead58e6056d296f0fc8d56e1` added PPTX chooser/import, worker reconstruction, and
   binary export. Packaging revision `766b78e4b236f15ee7a6f1d6e61ebd828415da82` pins the final
   Linux source. Core CI `29651206485`, Native SDK `29651206487`, Linux Native `29651317600`, and
-  Foundation `29651317621`, and Flatpak `29651317679` passed. PPTX is now
-  supported in the Linux archive slice; XLSX, EPUB, PDF/OCR, remaining archive formats, Android,
+  Foundation `29651317621`, and Flatpak `29651317679` passed. Central coordination `29651628740`
+  passed Linux job `88098822928` and PowerShell job `88098822937`. PPTX is now supported in the
+  Linux archive slice; XLSX, EPUB, PDF/OCR, remaining archive formats, Android,
   Windows, and macOS remain open.
 
 ## Checkpoint update protocol
