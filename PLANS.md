@@ -937,11 +937,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   central compatibility matrix. DOCX, PPTX/XLSX, EPUB, PDF/OCR, archive formats, multi-job selection,
   Android, Windows, and macOS remain open.
 
-- 2026-07-18: Linux revision `ba7d4a3ad9d1cc152d5c52e5acf84633ae46ef92` added the persisted document
-  queue action and selection dialog; packaging revision `71e8b24dd6f233c4667c705066524489b065e49a`
-  pins the Flatpak source. Native `29649067477`, Foundation `29649067457`, and Flatpak `29649067473`
-  passed, so multi-job queue presentation is no longer open. DOCX, PPTX/XLSX, EPUB, PDF/OCR, archive
-  formats, Android, Windows, and macOS remain open.
+- 2026-07-18: Core revision `08eb64cb87d9cf6df624225819818d8287063c4c` added bounded DOCX package
+  inspection/reconstruction and schema-10 package persistence; Linux revision
+  `96c22dd1a5ac964b79124b790117b0b5dd16f2ae` added DOCX chooser/import, worker reconstruction, and
+  binary export. Packaging revision `3725ef97584b30ee34e7807e35cddc16df6ad8ae` pins the final Linux
+  source and vendored dependencies. Core CI `29650212367`, Native SDK `29650212378`, Linux Native
+  `29650642852` (job `88096278936`), Foundation `29650642855`, and Flatpak `29650642850` (job
+  `88096278936`) passed. DOCX is now the supported Linux archive slice; PPTX/XLSX, EPUB, PDF/OCR,
+  remaining archive formats, Android, Windows, and macOS remain open.
 
 ## Checkpoint update protocol
 

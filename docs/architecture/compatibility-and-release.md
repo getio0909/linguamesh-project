@@ -9,8 +9,8 @@ At startup, each client queries the core semantic version, ABI version, protocol
 A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings, migration guidance, client changes, conformance tests, and an updated release train. Release promotion requires source and artifact provenance, license and third-party notices, checksums, SBOMs where practical, platform build evidence, rollback instructions, and acceptance-scenario evidence.
 
 The current unreleased matrix pins Core functional revision
-`912780f21d8dbb19571c9b991879778a053272f8` and Linux functional revision
-`71e8b24dd6f233c4667c705066524489b065e49a`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+`08eb64cb87d9cf6df624225819818d8287063c4c` and Linux functional revision
+`3725ef97584b30ee34e7807e35cddc16df6ad8ae`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
 Linux evidence head `029e7f21322f3d0f3619a8f3a0158e7157972e30` adds official locale-pack switching,
 Arabic RTL direction, Secret Service prompted-flow,
 notification-daemon, portal,
@@ -23,7 +23,7 @@ multi-line editors, label/mnemonic relations, focusability, hidden empty errors,
 semantics using GTK 4.10 APIs. Completed translations emit a generic desktop notification without
 source or translated content; private notification-service transport and headless delivery to a real
 `dunst` daemon and a visible viewable Dunst window are verified, while physical compositor/GPU rendering and packaging remain open. Native text
-import uses a bounded UTF-8 GTK FileDialog/GIO path for TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT and a URI-list/GIO source-editor DropTarget; the GTK queue lists persisted document snapshots with progress/state metadata and rebinds a selected job to the existing controls;
+import uses a bounded UTF-8 GTK FileDialog/GIO path for TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT plus bounded DOCX packages and a URI-list/GIO source-editor DropTarget; the GTK queue lists persisted document snapshots with progress/state metadata and rebinds a selected job to the existing controls;
 the real document-portal lease lifecycle, direct interactive `xdg-desktop-portal-gtk` FileChooser
 backend, application FileDialog callback, and source-editor drag/drop gesture are verified under
 Xvfb.
