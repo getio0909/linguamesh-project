@@ -1080,8 +1080,8 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `tools/run-gtk-keyboard-focus-test.sh` Xvfb/xfwm4 fixture. Tab and Shift+Tab reach the tested
   onboarding/workspace controls; provider fields are asserted enabled, mapped, and focusable but
   remain outside the default Tab chain and are tracked as an explicit Linux follow-up. Linux
-  revision `abdbe78` passed Native `29661016843` (job `88123562296`), Foundation `29661016844`,
-  and Flatpak `29661016848` (job `88123562334`). Local formatting, GUI check, shell syntax, and
+  revision `abdbe78` passed Native `29661215896` (job `88124076970`), Foundation `29661215890`,
+  and Flatpak `29661215925` (job `88124076966`). Local formatting, GUI check, shell syntax, and
   diff checks passed. Screen-reader narration, provider-form Tab-chain repair, physical desktop
   review, OCR, other clients, and stable-release evidence remain open.
 
