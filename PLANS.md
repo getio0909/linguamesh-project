@@ -617,6 +617,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   draft note through the GTK runtime. Native run `29627011700`, Foundation run `29627011696`, and
   Flatpak run `29627011708` passed; the workflow pins l10n revision
   `0536ae1695116f5130943c1114bc31c60376407e`.
+- 2026-07-18: Central integration revision `35ee2d5` recorded the 107-message l10n bundle,
+  active-provider/notification GTK evidence, release-manifest pin, and Linux remote gates;
+  coordination run `29627110594` passed with Linux job `88033588032` and PowerShell job
+  `88033588065`.
 
 ## Checkpoint update protocol
 
