@@ -102,6 +102,14 @@ focus path. Default-branch Native `29663597817` (job `88130256368`), Foundation 
 `88130256318`), and Flatpak `29663597831` (job `88130256370`) passed; screen-reader narration, physical desktop
 review, OCR, other platform clients, and stable-release evidence remain open.
 
+Linux-first AT-SPI semantic export checkpoint: Linux `7480579e4ae305758397082b7456715939666a9e`
+adds an isolated Xvfb/xfwm4 fixture that starts the AT-SPI bus and reads the running GTK tree with
+`python3-pyatspi`, verifying the named `Stop translation` push button and two text-editor roles;
+the existing GTK helper continues to verify label relations, editor properties, and state changes.
+Default-branch Native `29664478686` (job `88132499067`), Foundation `29664478672`, and Flatpak
+`29664478670` passed. Orca speech, provider-form default Tab-chain review, physical desktop
+accessibility, OCR, other platform clients, and stable-release evidence remain open.
+
 Linux-first PPTX package checkpoint: Core `0f71a652a536753f48bb8c852fd38e97740c23ce` adds bounded
 PPTX ZIP/XML inspection, schema-11 package persistence, safe slide/notes/master/layout/handout/
 comments text-node reconstruction, and resource retention. Linux functional revision

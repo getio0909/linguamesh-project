@@ -1095,6 +1095,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   physical desktop review, OCR, other clients, and stable-release evidence remain open. Central
   coordination run `29663798879` (job `88130763937`) also passed.
 
+- 2026-07-18: Assumption: the smallest reproducible Linux screen-reader slice is live AT-SPI tree
+  export for the primary translation controls. Linux revision `7480579e4ae305758397082b7456715939666a9e`
+  adds an isolated Xvfb/xfwm4 fixture that starts the AT-SPI bus and reads the running GTK tree with
+  `python3-pyatspi`, verifying the named `Stop translation` push button and two text-editor roles;
+  the existing GTK helper still verifies label relations, editor properties, and state changes.
+  Default-branch Native `29664478686` (job `88132499067`), Foundation `29664478672`, and Flatpak
+  `29664478670` passed. Orca speech, provider-form default Tab-chain review, physical desktop
+  accessibility, OCR, other clients, and stable-release evidence remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
