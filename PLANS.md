@@ -54,6 +54,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Expose all twelve official Linux PO packs through runtime locale switching, preserve active
   state during action-label changes, and apply Arabic RTL root direction; complete visible-string
   gettext coverage remains a later Linux slice.
+- [x] Add Linux translation export through the native GTK save dialog, asynchronous UTF-8 writing,
+  localized success/error messages, and source-file overwrite protection; cross-platform export
+  remains out of scope for this Linux-first checkpoint.
 - [x] Verify Linux completion-notification transport through a private
   `org.freedesktop.Notifications` service with fixed generic payloads and no source/translated
   content; desktop-shell rendering remains an explicit boundary.
@@ -679,6 +682,17 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   locale-selector labels during runtime locale switching and pinned the new l10n checkout.
   Native run `29629975421`, Foundation run `29629975449`, and Flatpak run `29629975454` passed
   the Linux validation, PO/MO checks, GTK locale assertions, and GNOME 49 sandbox smoke.
+- 2026-07-18: Localization revision `6a1f0e914e56788c34970bd7b18c8f963026ff73` added eight
+  Linux-only translation-export action, dialog, success, and error messages, bringing the
+  catalog to 192 messages. Localization run `29630392940` and Foundation run `29630392962`
+  passed; the deterministic bundle ZIP checksum is
+  `22904dc801a3c61536d1e9f4fc5e7c2d2d6a3eea4d672072419ef61b8ad2be0e`.
+- 2026-07-18: Linux evidence revision `e79df4442a104b2d4e89f8ac81d7442773636771` added the
+  native translation-export action, asynchronous UTF-8 save flow, localized status/error copy,
+  and source-file overwrite protection while pinning the new l10n checkout. Native run
+  `29630434240` (job `88042823692`), Foundation run `29630434252` (job `88042823739`), and
+  Flatpak run `29630434241` (job `88042823704`) passed the Linux validation, GTK export-aware
+  assertions, PO/MO checks, and GNOME 49 sandbox smoke.
 
 ## Checkpoint update protocol
 
