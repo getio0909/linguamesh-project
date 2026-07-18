@@ -529,6 +529,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Simplified Chinese labels. Native run `29622079599` (job `88018959518`), Foundation run
   `29622079615`, and Flatpak run `29622079604` passed. Complete visible-string gettext coverage,
   end-user prompt approval, physical compositor/GPU rendering, and release artifacts remain open.
+- 2026-07-18: Central integration revision `ee1f064` recorded the Linux widget-localization
+  evidence and passed coordination run `29622418277` with Linux job `88019924677` and PowerShell
+  job `88019924683`.
 
 ## Checkpoint update protocol
 
