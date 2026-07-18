@@ -74,8 +74,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
   standard completion persistence, Incognito skip, startup count restoration, clear-all control,
   and localized Linux status/action copy.
 - [x] Add the Linux history inspection window, newest-first Core listing, exact per-entry deletion,
-  and deterministic escaped UTF-8 TSV export; translation-memory storage and history policy remain
-  later slices.
+  and deterministic escaped UTF-8 TSV export; translation-memory storage remains a later slice.
+- [x] Add a persisted Linux history enable/disable policy that preserves existing entries, blocks
+  future standard writes while disabled, and restores across Core storage reopen.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — secure provider foundation
@@ -852,6 +853,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   history-controls pins, evidence, and remaining translation-memory/history-policy limitations;
   coordination run `29638614216` passed with Linux job `88065175722` and PowerShell job
   `88065175707`.
+- 2026-07-18: Core revision `fb00f3dd6b62a8a3a47350acc85831e60e266929` added schema 4 persisted
+  history enable/disable policy; CI `29638960182` and Native SDK `29638960230` passed.
+- 2026-07-18: l10n revision `40f3914e1b28fddd8f38d287fa121010f5192f1c` added four Linux history-policy
+  messages, bringing the catalog to 244; Localization `29639069395` and Foundation `29639069371`
+  passed with bundle checksum `f3e49113ed85e7e4fadeef6b872ccfe5a2e4fa67548028db5f4524479aedeeb4`.
+- 2026-07-18: Linux revision `7173d4a4217d6211c7dc92c368d9f033874198f5` added the persisted
+  history policy toggle and worker regression coverage; Native `29639139698` (job `88066556152`),
+  Foundation `29639139712`, and Flatpak `29639139725` (job `88066556256`) passed.
 
 ## Checkpoint update protocol
 

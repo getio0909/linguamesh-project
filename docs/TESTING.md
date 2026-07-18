@@ -23,17 +23,17 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
-The current Linux-first history-controls slice is pinned to Core `6079138348f3182b19c017f50db768df05da62cb`,
-l10n `971d1691a4eff396c71216b898e30fcfb23e72fa`, and Linux `9ff8f3fb9cf61e1f51c3fc5e042e5fc8f601b837`.
-Core CI `29638085207` and Native SDK `29638085241` passed; l10n Localization `29638057493` and
-Foundation `29638057470` passed with the 240-message bundle checksum
-`36f782f45a228f68520c691a7d015a4839531a892732e31119fd5c0e83a2be9c`. Linux Native `29638278667`
-(job `88064319932`) passed all GTK, storage, portal, notification, X11, and forced-Wayland gates;
-Foundation `29638278676` and Flatpak `29638278677` (job `88064320034`) passed the repository-wide
-and packaging checks. Local Core storage tests and Linux
-worker tests verify bounded standard history writes, Incognito skip, startup count restoration,
-clear-all, newest-first inspection, exact per-entry deletion, and escaped UTF-8 TSV export.
-Translation-memory stores and history enable/disable policy remain unimplemented.
+The current Linux-first history-policy slice is pinned to Core `fb00f3dd6b62a8a3a47350acc85831e60e266929`,
+l10n `40f3914e1b28fddd8f38d287fa121010f5192f1c`, and Linux `7173d4a4217d6211c7dc92c368d9f033874198f5`.
+Core CI `29638960182` and Native SDK `29638960230` passed; l10n Localization `29639069395` and
+Foundation `29639069371` passed with the 244-message bundle checksum
+`f3e49113ed85e7e4fadeef6b872ccfe5a2e4fa67548028db5f4524479aedeeb4`. Linux Native `29639139698`
+(job `88066556152`) passed all GTK, storage, portal, notification, X11, and forced-Wayland gates;
+Foundation `29639139712` and Flatpak `29639139725` (job `88066556256`) passed the repository-wide
+and packaging checks. Local Core storage tests and Linux worker tests verify bounded standard history
+writes, Incognito skip, startup count restoration, clear-all, newest-first inspection, exact
+per-entry deletion, escaped UTF-8 TSV export, and persisted history enable/disable behavior.
+Translation-memory stores remain unimplemented.
 
 Central integration revision `a7ca1f84eef3f98647a4383dc931c11049171b63` passed coordination run
 `29604649153`, including Linux job `87964871597` and Windows PowerShell job `87964871588`.
