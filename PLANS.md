@@ -611,7 +611,7 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Linux-only active-provider transition/mode, completion-notification, and draft-locale-note keys,
   bringing the catalog to 107 messages. Localization and Foundation workflows passed as runs
   `29626983883` and `29626983894`; the deterministic bundle ZIP checksum is
-  `f156183ee8083b6b587a64a5be0e4e8d5f0ae5338c35dbb1cfd11c6f17d00338`.
+  `9eb7acda3347cf9fede9eadf158cda2c233cfbd8399b45ffc4497f0802e32777`.
 - 2026-07-18: Linux evidence revision `220add98a1fcebe0392234db08ce1b9f266d095e` wired the
   active-provider summaries, persistence-mode labels, completion notification copy, and locale
   draft note through the GTK runtime. Native run `29627011700`, Foundation run `29627011696`, and
