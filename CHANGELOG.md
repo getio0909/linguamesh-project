@@ -9,6 +9,9 @@ All notable project-wide changes will be documented here. This project follows s
 - Linux now exposes all twelve official PO locale packs at runtime; switching Translate/Stop labels
   preserves active state, and Arabic switches the GTK workspace root to RTL. Full visible-string
   gettext coverage remains open.
+- Linux now refreshes the catalog-backed application title, editor headings, provider/settings labels,
+  diagnostics heading, and editor accessibility labels when the runtime locale changes; full
+  visible-string gettext coverage remains open.
 - Linux native CI now verifies Secret Service `CreateItem` and `Delete` prompt paths fail closed with
   `SecureStorageUnavailable`; end-user prompt approval remains outside the automated gate.
 - Linux native CI now verifies the application-level GTK `FileDialog` callback and asynchronous

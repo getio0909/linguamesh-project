@@ -523,6 +523,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-17: Central integration revision `54c36d4` recorded the official locale-pack evidence
   and passed coordination run `29621850718` with Linux job `88018313045` and PowerShell job
   `88018313060`.
+- 2026-07-17: Linux evidence revision `5515d9ad8fc78e91945acc739240dfb8291265fb` wired the
+  catalog-backed application title, source/output headings, provider/settings labels, diagnostics
+  heading, and editor accessibility labels into runtime locale refresh; the GTK test asserts the
+  Simplified Chinese labels. Native run `29622079599` (job `88018959518`), Foundation run
+  `29622079615`, and Flatpak run `29622079604` passed. Complete visible-string gettext coverage,
+  end-user prompt approval, physical compositor/GPU rendering, and release artifacts remain open.
 
 ## Checkpoint update protocol
 

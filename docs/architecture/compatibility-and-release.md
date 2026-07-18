@@ -11,7 +11,7 @@ A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings,
 The current unreleased matrix pins Core functional revision
 `fbf3e9b5927049dccaa19f8c36013495ffebba12` and Linux functional revision
 `7d7eba9960b657f0460fb0daaaaebaaa609f39b1`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
-Linux evidence head `7a40c222a00ea7d3d31125507a01c600948a5b94` adds official locale-pack switching,
+Linux evidence head `5515d9ad8fc78e91945acc739240dfb8291265fb` adds official locale-pack switching,
 Arabic RTL direction, Secret Service prompted-flow,
 notification-daemon, portal,
 interactive FileChooser backend, application FileDialog callback, and source-editor drag/drop
@@ -36,7 +36,7 @@ static validation; the GNOME 49 SDK workflow built a prerelease CI bundle and pa
 startup smoke, while physical compositor/GPU rendering, signing, and distributable artifacts remain
 unverified. End-user prompt approval remains unverified; the adapter's store/delete prompt paths are
 verified to fail closed. Runtime catalog switching covers all twelve official Linux packs for the
-Translate and Stop labels plus Arabic RTL direction, not the complete visible UI. This does not prove every database or storage failure, AT-SPI/Orca,
+Translate and Stop labels plus catalog-backed workspace widgets and Arabic RTL direction, not the complete visible UI. This does not prove every database or storage failure, AT-SPI/Orca,
 physical keyboard traversal, or a complete desktop accessibility matrix.
 Their CI evidence publishes no artifact. Linux multi-profile/session onboarding, next-request
 routing, and storage rollback are not evidence of completed secure credential storage or a complete
