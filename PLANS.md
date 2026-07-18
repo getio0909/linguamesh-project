@@ -707,6 +707,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   the 192-message l10n bundle, Linux translation-export evidence, release-manifest pins, and
   all three Linux remote gates; coordination run `29630646183` passed with Linux job
   `88043385432` and PowerShell job `88043385414`.
+- 2026-07-18: Central integration revision `11cd5e5be46aea8900cd49ac62d49fca3f4e3e67` recorded
+  the 193-message l10n bundle, Linux construction-stage localization evidence, release-manifest
+  pins, and all three Linux remote gates; coordination run `29631208474` passed with Linux job
+  `88045006759` and PowerShell job `88045006770`.
 
 ## Checkpoint update protocol
 
