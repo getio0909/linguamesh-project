@@ -74,9 +74,11 @@ Assumption: Planned files and commands are not evidence until they exist and com
   standard completion persistence, Incognito skip, startup count restoration, clear-all control,
   and localized Linux status/action copy.
 - [x] Add the Linux history inspection window, newest-first Core listing, exact per-entry deletion,
-  and deterministic escaped UTF-8 TSV export; translation-memory storage remains a later slice.
+  and deterministic escaped UTF-8 TSV export.
 - [x] Add a persisted Linux history enable/disable policy that preserves existing entries, blocks
   future standard writes while disabled, and restores across Core storage reopen.
+- [x] Add optional Linux translation memory with versioned request identity, Incognito bypass,
+  persisted enable/disable policy, cache reuse, inspection, export, exact deletion, and clear-all.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — secure provider foundation
@@ -864,6 +866,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central revision `e1bcf55ed16f734e14a559e292588dc8285c672e` recorded the Linux
   history-policy pins, evidence, and remaining translation-memory limitation; coordination run
   `29639330664` passed with Linux job `88067060177` and PowerShell job `88067060171`.
+- 2026-07-18: Core revision `b5fb19cf2123b70587775cd6e4a68515a5790575` added schema 5 optional
+  translation memory with versioned identity, persisted policy, Incognito bypass, cache reuse,
+  inspection, export, exact deletion, and clear-all; CI `29640169852` and Native SDK `29640169834`
+  passed. l10n revision `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995` added 262-message Linux controls;
+  Localization `29640108992` and Foundation `29640108969` passed with checksum
+  `a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux revision
+  `2cd9cdc2dfb423e5d9da56f3a235efba8727da53` passed Native `29640319555` (job `88069646252`),
+  Foundation `29640319563`, and Flatpak `29640319593` (job `88069646300`).
 
 ## Checkpoint update protocol
 

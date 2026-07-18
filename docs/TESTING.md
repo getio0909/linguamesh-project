@@ -23,17 +23,16 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
-The current Linux-first history-policy slice is pinned to Core `fb00f3dd6b62a8a3a47350acc85831e60e266929`,
-l10n `40f3914e1b28fddd8f38d287fa121010f5192f1c`, and Linux `7173d4a4217d6211c7dc92c368d9f033874198f5`.
-Core CI `29638960182` and Native SDK `29638960230` passed; l10n Localization `29639069395` and
-Foundation `29639069371` passed with the 244-message bundle checksum
-`f3e49113ed85e7e4fadeef6b872ccfe5a2e4fa67548028db5f4524479aedeeb4`. Linux Native `29639139698`
-(job `88066556152`) passed all GTK, storage, portal, notification, X11, and forced-Wayland gates;
-Foundation `29639139712` and Flatpak `29639139725` (job `88066556256`) passed the repository-wide
+The current Linux-first translation-memory slice is pinned to Core `b5fb19cf2123b70587775cd6e4a68515a5790575`,
+l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux `2cd9cdc2dfb423e5d9da56f3a235efba8727da53`.
+Core CI `29640169852` and Native SDK `29640169834` passed; l10n Localization `29640108992` and
+Foundation `29640108969` passed with the 262-message bundle checksum
+`a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux Native `29640319555`
+(job `88069646252`) passed all GTK, storage, portal, notification, X11, and forced-Wayland gates;
+Foundation `29640319563` and Flatpak `29640319593` (job `88069646300`) passed the repository-wide
 and packaging checks. Local Core storage tests and Linux worker tests verify bounded standard history
-writes, Incognito skip, startup count restoration, clear-all, newest-first inspection, exact
-per-entry deletion, escaped UTF-8 TSV export, and persisted history enable/disable behavior.
-Translation-memory stores remain unimplemented.
+writes, Incognito skip, startup count/policy restoration, cache identity/reuse, clear-all,
+newest-first inspection, exact per-entry deletion, and escaped UTF-8 TSV export.
 
 Central integration revision `e1bcf55ed16f734e14a559e292588dc8285c672e` passed coordination run
 `29639330664`, including Linux job `88067060177` and Windows PowerShell job `88067060171`.
