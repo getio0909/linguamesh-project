@@ -545,6 +545,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Native run `29622930107` (job `88021425747`), Foundation run `29622930079`, and Flatpak run
   `29622930087` passed; complete visible-string gettext coverage and the other release boundaries
   remain open.
+- 2026-07-18: Central integration revision `f22b5f1` recorded the Linux theme-option evidence and
+  passed coordination run `29623135803` with Linux job `88022041698` and PowerShell job
+  `88022041716`.
 
 ## Checkpoint update protocol
 
