@@ -667,6 +667,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   worker/file/storage/provider error keys through the runtime MO loader and pinned the new l10n
   checkout. Native run `29629498575`, Foundation run `29629498574`, and Flatpak run `29629498588`
   passed the Linux validation, MO/PO checks, GTK fixtures, and GNOME 49 sandbox smoke.
+- 2026-07-18: Central integration revision `57210b4` recorded the 172-message l10n bundle,
+  worker/file/storage/provider error coverage, release-manifest pins, and Linux remote gates;
+  coordination run `29629679652` passed with Linux job `88040764195` and PowerShell job
+  `88040764163`.
 
 ## Checkpoint update protocol
 
