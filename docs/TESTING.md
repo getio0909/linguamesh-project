@@ -124,9 +124,9 @@ AT-SPI/Orca, physical keyboard traversal, a physical compositor, GPU rendering, 
 complete desktop matrix.
 
 The scheduled and manually dispatched `cross-repository.yml` workflow clones public canonical siblings using the runtime repository owner and runs strict validation. It has read-only contents permission and is not triggered by untrusted pull requests.
-Central documentation revision `08250c870b42b6df249c30a0379a5db505ef23c2` passed coordination run
-`29638614216` (Linux job `88065175722`, PowerShell job `88065175707`) after the Linux history-
-controls pins, evidence, and unreleased limitations were updated. The Linux document-job execution
+Central documentation revision `d547d882812c61dc0a9a7a3c0abd93c3ea41acce` passed coordination run
+`29649436735` (Linux job `88093116621`, PowerShell job `88093116615`) after the Linux persisted
+document queue pins, evidence, and unreleased limitations were updated. The Linux document-job execution
 slice is covered by the same Native and Flatpak gates; its GTK queue lists persisted snapshots and
 selection reuses the existing job controls, while provider parameters are supplied again when
 resuming after restart.
