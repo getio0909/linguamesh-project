@@ -767,6 +767,21 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central revision `b8f669cef2a2ca74ecb5b04f832feff0a63068d7` passed coordination run
   `29633816618` (Linux job `88052398800`, PowerShell job `88052398798`) after recording the
   Core/glossary, l10n, Linux, compatibility, and release-manifest evidence.
+- 2026-07-18: Core functional revision `ce2b2ab6afa32cb6bbdd45c716fcad8baae00d29` added
+  `long_text_chunking_v1`: UTF-8-safe semantic chunking, ordered sequential provider streaming,
+  shared cancellation propagation, and a request-level byte limit with a conservative 16 KiB
+  default. Local fmt, Clippy, full workspace tests, build, cargo-deny, and Native SDK checks
+  passed; CI run `29634199994` and Native SDK run `29634199989` passed all matrix jobs.
+- 2026-07-18: Linux functional revision `4adaae2cadbce5b19a38d6f133f4c8b843fd870d` negotiated
+  `long_text_chunking_v1`, pinned Core `ce2b2ab6afa32cb6bbdd45c716fcad8baae00d29`, and documented
+  ordered cancellation-aware chunk streaming plus the approximate byte-budget boundary. Local
+  no-default and demo-provider suites, docs.rs checks, strict Clippy, l10n sync, and PO checks
+  passed; Native run `29634278185` (job `88053679712`), Foundation run `29634278188`
+  (job `88053679758`), and Flatpak run `29634278182` (job `88053679696`) passed.
+- 2026-07-18: Central compatibility and release records were advanced to Core functional
+  `ce2b2ab6afa32cb6bbdd45c716fcad8baae00d29`, Linux `4adaae2cadbce5b19a38d6f133f4c8b843fd870d`,
+  and l10n `2e5e3033f453aa2882cf71217f9514dce8501269`; Linux remains the prioritized client while
+  Android, Windows, and macOS stay deferred. Stable release status remains unreleased.
 
 ## Checkpoint update protocol
 
