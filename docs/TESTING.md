@@ -29,7 +29,7 @@ Core CI `29636624648` and Native SDK `29636624656` passed; l10n Localization `29
 Foundation `29636630348` passed with the 230-message bundle checksum
 `03889105a74aec819ae716ee577f78e1da8a235d42be4918aa0fb6f9c5e194b8`. Linux Native `29636710260`
 (job `88060223294`) and Foundation `29636710261` passed; Flatpak `29636710259` (job `88060223278`)
-is pending. Local Core storage tests and Linux worker tests verify bounded standard history writes,
+also passed. Local Core storage tests and Linux worker tests verify bounded standard history writes,
 Incognito skip, startup count restoration, and clear-all behavior; history inspection/export,
 per-entry deletion, and translation memory remain unimplemented.
 
@@ -116,3 +116,5 @@ AT-SPI/Orca, physical keyboard traversal, a physical compositor, GPU rendering, 
 complete desktop matrix.
 
 The scheduled and manually dispatched `cross-repository.yml` workflow clones public canonical siblings using the runtime repository owner and runs strict validation. It has read-only contents permission and is not triggered by untrusted pull requests.
+Central documentation revision `1eeabd86daab8c3a3b34374fca2786ee9788794f` passed coordination run
+`29637067024` after the bounded-history pins, evidence, and unreleased limitations were updated.
