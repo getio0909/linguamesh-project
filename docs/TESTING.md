@@ -24,11 +24,12 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
 The current Linux-first TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF document slice is pinned to Core
-`81be0b8be9d7115b98eae3f134b4fd0f25411bbb`, l10n `4be0401a09ce26e65c8fd3c921e333d6011e8706`, and
-Linux `45d9365eaba0b25d58c65a09e4a5dcfa2bae0840`. Core CI `29655212117`, Native SDK `29655212149`,
-Linux Native `29657811742`, Foundation `29657811734`, and Flatpak `29657811738` passed; the l10n
-Localization `29657734947` and Foundation `29657734951` passed with the 280-message bundle checksum
-`61fe261fb62e996b637745913bb89e5a5e0c0a16a82c5d2fe536a254cf61b6ee`. Local Core storage tests
+`81be0b8be9d7115b98eae3f134b4fd0f25411bbb`, l10n `273be8a4e9c3b1084f393ce0086cdf2c42fcd4e9`, and
+Linux `878a9c015d29ce49633046d435f48f5fee4c9a47`. Core CI `29655212117`, Native SDK `29655212149`,
+and Linux Native `29659054771` (job `88118395199`), Foundation `29659054755` (job `88118395124`),
+and Flatpak `29659054756` (job `88118395046`) passed. The l10n Localization `29658713355`
+and Foundation `29658713372` passed with the 286-message bundle checksum
+`ee7c269571beca22cdbd7bea971ae266975b8004490b02ead4b71305e3a93872`. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
 restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
 escaped UTF-8 TSV export, the bounded Core TXT/Markdown/CSV/SRT/WebVTT document contract with BOM,
@@ -39,7 +40,10 @@ image-only pages, uncertain reading order, and limited reconstruction; pause/res
 and GTK control regressions, including restart reuse and persisted-job queue selection, are covered
 by the Linux library suite. The current Linux GTK slice also records successful asynchronous export
 URIs and opens them through the default GIO handler; stale destinations are cleared on new imports
-or translations, and open failures use a fixed localized message without exposing paths.
+or translations, and open failures use a fixed localized message without exposing paths. Linux ordinary
+text also has a user-approved saved-provider fallback path that retries only network/timeout failures,
+retains partial output, and never applies to document jobs, cancellation, authentication/model errors,
+or unapproved/session-only profiles; its focused worker test passes locally.
 Central coordination run `29651628740` passed Linux validation job `88098822928` and PowerShell
 validation job `88098822937` after the PPTX manifest and compatibility updates.
 

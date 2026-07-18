@@ -57,6 +57,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add Linux translation export through the native GTK save dialog, asynchronous UTF-8 writing,
   localized success/error messages, and source-file overwrite protection; cross-platform export
   remains out of scope for this Linux-first checkpoint.
+- [x] Add explicit Linux standard-text fallback routing: only a different user-approved saved
+  provider may receive a retryable network/timeout retry; document jobs, cancellation,
+  authentication/model failures, unapproved profiles, and session-only profiles never fall back.
 - [x] Verify Linux completion-notification transport through a private
   `org.freedesktop.Notifications` service with fixed generic payloads and no source/translated
   content; desktop-shell rendering remains an explicit boundary.
@@ -95,6 +98,19 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add Linux GTK presentation for persisted document jobs, including a non-blocking list command,
   progress/state metadata, empty-state handling, and selection back into the existing job controls.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
+
+## Active Linux-first checkpoint — approved text fallback routing
+
+Change identifier: `LM-CHANGE-2026-07-LINUX-FALLBACK-1`
+
+The Linux client is the only platform in scope for this checkpoint. Fallback is opt-in, limited to
+ordinary text requests, and requires a different saved provider selected from the UI. A retryable
+network or timeout failure may switch once; the decision is surfaced without exposing endpoints or
+content, partial primary output is preserved, and cancellation or non-retryable errors terminate
+without trying another provider.
+
+Assumption: a single selected saved profile is the smallest complete approved chain for Scenario 7;
+ordered multi-provider chains and automatic routing remain future work.
 
 ## Active Linux-first checkpoint — secure provider foundation
 
@@ -1048,6 +1064,17 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29657811742`, Foundation `29657811734`, and Flatpak `29657811738` passed. Routing fallback, OCR,
   screen-reader narration, physical keyboard traversal, other clients, and stable-release evidence
   remain open.
+
+- 2026-07-18: Linux-first approved text fallback follow-up adds l10n revision
+  `273be8a4e9c3b1084f393ce0086cdf2c42fcd4e9` with six Linux-only messages, raising the bundle to
+  286 messages and checksum `ee7c269571beca22cdbd7bea971ae266975b8004490b02ead4b71305e3a93872`.
+  Linux `878a9c015d29ce49633046d435f48f5fee4c9a47` adds a user-selected different saved provider
+  fallback for retryable network/timeout failures on ordinary text only, preserving partial output;
+  document jobs, cancellation, authentication/model failures, unapproved profiles, and session-only
+  profiles never fall back. Local 61/100 tests plus the focused fallback test, strict Clippy, GUI check,
+  l10n sync, and diff checks passed. Native `29659054771`, Foundation `29659054755`, and Flatpak
+  `29659054756` passed; OCR, screen-reader narration, physical keyboard traversal, other clients,
+  complete acceptance scenarios, and stable-release evidence remain open.
 
 ## Checkpoint update protocol
 
