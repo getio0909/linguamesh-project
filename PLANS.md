@@ -954,6 +954,13 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   passed Linux job `88098822928` and PowerShell job `88098822937`. PPTX is now supported in the
   Linux archive slice; XLSX, EPUB, PDF/OCR, remaining archive formats, Android,
   Windows, and macOS remain open.
+- 2026-07-18: Core revision `36f256637236636889b0933cc5fe6a70bffff02c` added bounded XLSX
+  shared-string/worksheet inspection/reconstruction and schema-12 package persistence; Linux
+  revision `731072eb3d9b29a43fe0e238084290cd5c253e59` added XLSX chooser/import, worker
+  reconstruction, and binary export. Core CI `29651848624`, Native SDK `29651848606`, Linux
+  Native `29651990077`, Foundation `29651990067`, and Flatpak `29651990064` passed. XLSX is now
+  supported in the Linux archive slice; EPUB, PDF/OCR, remaining archive formats, Android, Windows,
+  and macOS remain open.
 
 ## Checkpoint update protocol
 
