@@ -830,12 +830,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   action/status messages, bringing the catalog to 230 messages. Localization run `29636630359`
   and Foundation run `29636630348` passed; bundle checksum is
   `03889105a74aec819ae716ee577f78e1da8a235d42be4918aa0fb6f9c5e194b8`.
-- 2026-07-18: Linux revision `dbec42349b4bebc57f56f8e63d2391c4e2318b0a` wired completed standard
+- 2026-07-18: Linux revision `b968cc21978dd5bea1b4bc6d1c8828bb8ecdc489` wired completed standard
   translations into bounded history, skipped Incognito writes, restored the startup count, and
-  added localized clear-history UI. Native run `29636710260` (job `88060223294`), Foundation run
-  `29636710261`, and Flatpak run `29636710259` (job `88060223278`) passed. Documentation head
-  `16a0a80` records the evidence; Android, Windows, and macOS remain deferred by the Linux-first
-  scope.
+  refreshed the count immediately after successful writes. Native run `29637270603`
+  (job `88061682829`), Foundation run `29637270599`, and Flatpak run `29637270601`
+  (job `88061682853`) passed. Documentation head `b01b4b9` records the evidence; Android, Windows,
+  and macOS remain deferred by the Linux-first scope.
 
 ## Checkpoint update protocol
 

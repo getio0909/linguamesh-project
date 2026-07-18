@@ -24,11 +24,11 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
 The current Linux-first history slice is pinned to Core `8cd65c5846a677e70c4828e4b4a5192319d775d5`,
-l10n `4678fc3810b1e21e5ab8c1095e552930b8649687`, and Linux `dbec42349b4bebc57f56f8e63d2391c4e2318b0a`.
+l10n `4678fc3810b1e21e5ab8c1095e552930b8649687`, and Linux `b968cc21978dd5bea1b4bc6d1c8828bb8ecdc489`.
 Core CI `29636624648` and Native SDK `29636624656` passed; l10n Localization `29636630359` and
 Foundation `29636630348` passed with the 230-message bundle checksum
 `03889105a74aec819ae716ee577f78e1da8a235d42be4918aa0fb6f9c5e194b8`. Linux Native `29636710260`
-(job `88060223294`) and Foundation `29636710261` passed; Flatpak `29636710259` (job `88060223278`)
+(job `88061682829`) and Foundation `29637270599` passed; Flatpak `29637270601` (job `88061682853`)
 also passed. Local Core storage tests and Linux worker tests verify bounded standard history writes,
 Incognito skip, startup count restoration, and clear-all behavior; history inspection/export,
 per-entry deletion, and translation memory remain unimplemented.
