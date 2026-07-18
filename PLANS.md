@@ -540,6 +540,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central integration revision `db6f202` recorded the Linux active-provider/status
   evidence and passed coordination run `29622759405` with Linux job `88020903435` and PowerShell
   job `88020903427`.
+- 2026-07-18: Linux evidence revision `52f9042f88c74dda1cc3c961e150d552c454c106` added runtime
+  localization for System/Light/Dark theme options and asserted the Simplified Chinese Light label.
+  Native run `29622930107` (job `88021425747`), Foundation run `29622930079`, and Flatpak run
+  `29622930087` passed; complete visible-string gettext coverage and the other release boundaries
+  remain open.
 
 ## Checkpoint update protocol
 
