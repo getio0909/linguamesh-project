@@ -537,6 +537,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29622526617` (job `88020226946`), Foundation run `29622526618`, and Flatpak run `29622526592`
   passed; complete visible-string gettext coverage, end-user prompt approval, physical compositor/
   GPU rendering, and release artifacts remain open.
+- 2026-07-18: Central integration revision `db6f202` recorded the Linux active-provider/status
+  evidence and passed coordination run `29622759405` with Linux job `88020903435` and PowerShell
+  job `88020903427`.
 
 ## Checkpoint update protocol
 
