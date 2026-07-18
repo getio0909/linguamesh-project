@@ -1036,6 +1036,19 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29657086060`, and Flatpak `29657086067` passed. Screen-reader narration, physical keyboard
   traversal, routing fallback, OCR, and other acceptance gaps remain open.
 
+- 2026-07-18: Linux-first exported-output follow-up adds l10n revision
+  `4be0401a09ce26e65c8fd3c921e333d6011e8706` with localized open-output/open-failure messages,
+  bringing the bundle to 280 messages and checksum
+  `61fe261fb62e996b637745913bb89e5a5e0c0a16a82c5d2fe536a254cf61b6ee`. Linux revision
+  `45d9365eaba0b25d58c65a09e4a5dcfa2bae0840` records only successfully written GIO URIs, exposes a
+  focusable default-handler action, clears stale destinations on new imports/translations, and
+  keeps open failures path-safe. Local no-default/demo-provider tests (61/99, one existing
+  environment skip), GUI cargo check, strict Clippy, formatting, l10n sync, and diff checks passed;
+  host GTK linking lacks required symbols. Localization `29657734947`/`29657734951`, Native
+  `29657811742`, Foundation `29657811734`, and Flatpak `29657811738` passed. Routing fallback, OCR,
+  screen-reader narration, physical keyboard traversal, other clients, and stable-release evidence
+  remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

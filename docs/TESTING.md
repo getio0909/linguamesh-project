@@ -24,12 +24,11 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
 The current Linux-first TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF document slice is pinned to Core
-`81be0b8be9d7115b98eae3f134b4fd0f25411bbb`, l10n `0ef4fb9b6878655e46e2b8ca5bbed9562f97b0f0`, and
-Linux `191345c55dc8989d518680c864a4c4a643165f6c`. Core CI `29655212117`, Native SDK `29655212149`,
-Linux Native `29656549651`, Foundation `29656549644`, and Flatpak `29656549677` passed; test head
-`1e60e3725b0548a82bb88402c5257eb0f5f0bb0c` also passed Native `29657086074`, Foundation `29657086060`, and Flatpak `29657086067`. The l10n Localization `29656496378` and Foundation
-`29656496361` passed with the 277-message bundle checksum
-`e26da1a391369ed84c0f57f5fd5d440f50ed56dcbc8f069abd4d6d27db7dd9c1`. Local Core storage tests
+`81be0b8be9d7115b98eae3f134b4fd0f25411bbb`, l10n `4be0401a09ce26e65c8fd3c921e333d6011e8706`, and
+Linux `45d9365eaba0b25d58c65a09e4a5dcfa2bae0840`. Core CI `29655212117`, Native SDK `29655212149`,
+Linux Native `29657811742`, Foundation `29657811734`, and Flatpak `29657811738` passed; the l10n
+Localization `29657734947` and Foundation `29657734951` passed with the 280-message bundle checksum
+`61fe261fb62e996b637745913bb89e5a5e0c0a16a82c5d2fe536a254cf61b6ee`. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
 restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
 escaped UTF-8 TSV export, the bounded Core TXT/Markdown/CSV/SRT/WebVTT document contract with BOM,
@@ -38,7 +37,9 @@ and selected-column preservation, JSON path selection, primitive/key protection,
 recovery of pending/running/paused jobs without paths or credentials; bounded PDF warnings for
 image-only pages, uncertain reading order, and limited reconstruction; pause/resume/retry worker
 and GTK control regressions, including restart reuse and persisted-job queue selection, are covered
-by the Linux library suite.
+by the Linux library suite. The current Linux GTK slice also records successful asynchronous export
+URIs and opens them through the default GIO handler; stale destinations are cleared on new imports
+or translations, and open failures use a fixed localized message without exposing paths.
 Central coordination run `29651628740` passed Linux validation job `88098822928` and PowerShell
 validation job `88098822937` after the PPTX manifest and compatibility updates.
 
