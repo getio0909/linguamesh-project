@@ -70,6 +70,10 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `FileChooser.OpenFile` request, visible chooser selection, returned URI, and UTF-8 contents;
   verify the application-level GTK FileDialog callback and a real source-editor URI-list drag/drop
   gesture with the native GTK fixtures.
+- [x] Add the first Linux-first local history vertical slice: Core schema 3 bounded SQLite history,
+  standard completion persistence, Incognito skip, startup count restoration, clear-all control,
+  and localized Linux status/action copy. History inspection/export, per-entry deletion, and
+  translation-memory storage remain later slices.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — secure provider foundation
@@ -819,6 +823,19 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central revision `651fc4ce9d7d6ebf61970e05b87109303bcb3f26` advanced the compatibility
   matrix, implementation status, release manifest pins, and known limitations for the Incognito
   checkpoint. Coordination run `29636156878` passed; stable release remains unreleased.
+- 2026-07-18: Core revision `8cd65c5846a677e70c4828e4b4a5192319d775d5` added SQLite schema 3 bounded
+  translation history with Incognito-aware writes, 100-entry/4 MiB limits, clear support, and
+  storage tests. Core CI run `29636624648` and Native SDK run `29636624656` passed.
+- 2026-07-18: l10n revision `4678fc3810b1e21e5ab8c1095e552930b8649687` added five Linux history
+  action/status messages, bringing the catalog to 230 messages. Localization run `29636630359`
+  and Foundation run `29636630348` passed; bundle checksum is
+  `03889105a74aec819ae716ee577f78e1da8a235d42be4918aa0fb6f9c5e194b8`.
+- 2026-07-18: Linux revision `dbec42349b4bebc57f56f8e63d2391c4e2318b0a` wired completed standard
+  translations into bounded history, skipped Incognito writes, restored the startup count, and
+  added localized clear-history UI. Native run `29636710260` (job `88060223294`), Foundation run
+  `29636710261`, and Flatpak run `29636710259` (job `88060223278`) passed. Documentation head
+  `16a0a80` records the evidence; Android, Windows, and macOS remain deferred by the Linux-first
+  scope.
 
 ## Checkpoint update protocol
 
