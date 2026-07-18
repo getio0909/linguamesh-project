@@ -54,9 +54,9 @@ platform clients remain open.
 
 Linux-first subtitle readability checkpoint: Core `81be0b8be9d7115b98eae3f134b4fd0f25411bbb` adds
 cue-level `DocumentWarning` values for configurable subtitle line-length and reading-speed guidance
-while preserving timing and source content. Linux `191345c55dc8989d518680c864a4c4a643165f6c`
+while preserving timing and source content. Linux `60b560383e53bf4cf9ccc5ecf3821fe735206446`
 persists the warnings and renders cue-number-only guidance without exposing subtitle source text.
-Localization `0ef4fb9b6878655e46e2b8ca5bbed9562f97b0f0` supplies the PDF, subtitle, and document queue warning
+Localization `738a7c7328f24acc12c15be78bb11737220bbbae` supplies the PDF and subtitle warning
 messages. Core CI `29655212117`, Native SDK `29655212149`, Linux Native `29656158543`, Foundation
 `29656158527`, and Flatpak `29656158526` passed; defaults are 42 Unicode characters per line and
 17 non-whitespace characters per second, with custom limits available through Core. OCR, remaining
