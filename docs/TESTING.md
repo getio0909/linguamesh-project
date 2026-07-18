@@ -24,10 +24,10 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
 The current Linux-first TXT/Markdown/CSV/SRT/WebVTT document slice is pinned to Core
-`d7e9b3857cf62f0a6dd24873091cb45dff8d4258`, l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and
-Linux `d5fa1b0a3ce37d20eb6e7eae27086223e435214c`. Core CI `29646441189` passed; Native SDK
-`29646441266` (job `88085388288`), Linux Native `29646594392` (job `88085783161`), Foundation
-`29646594377`, and Flatpak `29646594396` (job `88085783170`) passed. The l10n Localization `29640108992` and Foundation
+`5feaa3700764e3f174a69a4b490ae67b2d5cd8c9`, l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and
+Linux `f198aa539d51f21e2e29b8e366884013ea436360`. Core CI `29646915419` passed; Native SDK
+`29646915403` (job `88086598093`), Linux Native `29646944712` (job `88086670113`), Foundation
+`29646944681`, and Flatpak `29646944737` (job `88086670157`) passed. The l10n Localization `29640108992` and Foundation
 `29640108969` passed with the 262-message bundle checksum
 `a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
