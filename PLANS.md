@@ -580,6 +580,17 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central integration revision `79bf11e` recorded the Linux text-import localization
   evidence, l10n bundle checksum, and Flatpak run; coordination run `29625308528` passed with
   Linux job `88028407855` and PowerShell job `88028407843`.
+- 2026-07-18: Localization revision `b583fbf63dc5ced27136ca1d8a87816593929379` added 23
+  Linux-only provider-profile, tooltip, action, and source/target language messages, bringing the
+  catalog to 80 messages. Its Localization and Foundation workflows passed as runs `29625641716`
+  and `29625641740`; the deterministic bundle ZIP checksum is
+  `e7c0edf2ea92992d682293b5f922c555be07e5132cef9ed63957bdebe8fb2d3b`.
+- 2026-07-18: Linux evidence revision `c074c2d1f8f9446559f23a72d224c48e2e612947` wired the
+  provider-profile card, tooltips, and source/target language options through the catalog and
+  updated the workflow pin. Native run `29625778212` (job `88029765419`), Foundation run
+  `29625778196`, and Flatpak run `29625778180` (job `88029765322`) passed; the Native GTK test
+  asserted Simplified Chinese provider controls and language options together with Arabic RTL and
+  source-buffer preservation.
 
 ## Checkpoint update protocol
 
