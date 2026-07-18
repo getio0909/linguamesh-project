@@ -26,7 +26,7 @@ artifacts = []
 [components.localization]
 repository = "linguamesh-l10n"
 version = "0.1.0"
-source_revision = "0ed08e9e5040edb8f981c90c82dff0fd30219e25"
+source_revision = "08118b498646ebf56cbb072b937d95fceb34b75c"
 minimum_compatible_version = "0.1.0"
 artifacts = []
 
@@ -54,6 +54,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "7d7eba9960b657f0460fb0daaaaebaaa609f39b1"
+source_revision = "9f21836f214d3056934fac9322adc0f20791834e"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

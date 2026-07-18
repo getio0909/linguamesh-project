@@ -634,6 +634,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central integration revision `522c94e` recorded the 117-message l10n bundle,
   fixed Linux error localization, release-manifest pin, and Linux remote gates; coordination run
   `29627851127` passed with Linux and PowerShell validation jobs.
+- 2026-07-18: Localization revision `08118b498646ebf56cbb072b937d95fceb34b75c` added 31
+  Linux-only reducer-state and error-category messages, bringing the catalog to 148 messages.
+  Localization and Foundation workflows passed as runs `29628250037` and `29628250110`; the
+  deterministic bundle ZIP checksum is
+  `08d252c8d3fbdd163e7a5f18eea06ac806029667b8c2ec1e836245d66c2b2595`.
+- 2026-07-18: Linux evidence revision `9f21836f214d3056934fac9322adc0f20791834e` wired
+  localized fixed reducer errors and category prefixes through the GTK error label. Native run
+  `29628307915`, Foundation run `29628307945`, and Flatpak run `29628307886` passed; the workflow
+  pins l10n revision `08118b498646ebf56cbb072b937d95fceb34b75c`.
 
 ## Checkpoint update protocol
 
