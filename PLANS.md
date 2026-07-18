@@ -740,6 +740,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `88048916214`), Foundation run `29632530524` (job `88048916265`), and Flatpak run
   `29632530485` (job `88048916150`) passed. Central manifests and compatibility records now pin
   this Linux revision while other clients remain deferred.
+- 2026-07-18: Central integration revision `a662fd53209730d552bc3c2869b7a5f98e537023` recorded
+  the protected-span Core/Linux pins, compatibility boundary, release-manifest source revisions,
+  and remote evidence. Coordination run `29632758636` passed with Linux job `88049553494` and
+  PowerShell job `88049553476`.
 
 ## Checkpoint update protocol
 
