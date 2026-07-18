@@ -26,7 +26,7 @@ artifacts = []
 [components.localization]
 repository = "linguamesh-l10n"
 version = "0.1.0"
-source_revision = "0536ae1695116f5130943c1114bc31c60376407e"
+source_revision = "0ed08e9e5040edb8f981c90c82dff0fd30219e25"
 minimum_compatible_version = "0.1.0"
 artifacts = []
 
