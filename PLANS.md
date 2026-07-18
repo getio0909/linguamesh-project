@@ -764,6 +764,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `3f96de03eb4ff04add09473fc1473c2c49d67a51`, l10n `2e5e3033f453aa2882cf71217f9514dce8501269`,
   and Linux `3affedb1cc95d9ec57823459f7cf8c91f3eb16bb`; Android, Windows, and macOS remain deferred
   by the Linux-first scope.
+- 2026-07-18: Central revision `b8f669cef2a2ca74ecb5b04f832feff0a63068d7` passed coordination run
+  `29633816618` (Linux job `88052398800`, PowerShell job `88052398798`) after recording the
+  Core/glossary, l10n, Linux, compatibility, and release-manifest evidence.
 
 ## Checkpoint update protocol
 
