@@ -803,6 +803,19 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central revision `be7970f16c946ebcc38f849ef30fcc3c081b3867` recorded the Core, l10n,
   and Linux glossary CSV pins, evidence, checksums, and unreleased posture. Coordination run
   `29635479613` passed with Linux job `88056955332` and PowerShell job `88056955356`.
+- 2026-07-18: Core revision `225d1edc0316b11ea0791c658adc14bd811dc865` added the explicit
+  `TranslationPrivacyMode` Standard/Incognito request policy with serde-default compatibility and
+  regression coverage. CI run `29635844739` and Native SDK run `29635844709` passed all matrix jobs.
+- 2026-07-18: l10n revision `e5c51a046e01c51b106ba3d177e33e41a69b8aa0` added three Linux-only
+  Incognito control/status messages, bringing the catalog to 225 messages. Localization run
+  `29635848454` and Foundation run `29635848465` passed; the deterministic bundle checksum is
+  `012fc5fb90e63259eac8e65e219f9b4d920f1b3cc0ebfa37b69718115900277c`.
+- 2026-07-18: Linux revision `78293684227b40af0b26442d9d23e2ff71d3d36d` added the GTK Incognito
+  toggle, reducer routing, localized status notice, and the updated Core/l10n pins. Native run
+  `29635954249` (job `88058210096`), Foundation run `29635954224`, and Flatpak run `29635954240`
+  (job `88058210082`) passed. The current worker has no history or translation-memory write path;
+  those stores and end-user prompt approval remain open, while Android, Windows, and macOS stay
+  deferred by the Linux-first scope.
 
 ## Checkpoint update protocol
 
