@@ -607,6 +607,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central integration revision `4cc6a96` recorded the 97-message l10n bundle,
   onboarding-stage GTK evidence, release-manifest pin, and Linux remote gates; coordination run
   `29626700744` passed with Linux job `88032448228` and PowerShell job `88032448236`.
+- 2026-07-18: Localization revision `0536ae1695116f5130943c1114bc31c60376407e` added ten
+  Linux-only active-provider transition/mode, completion-notification, and draft-locale-note keys,
+  bringing the catalog to 107 messages. Localization and Foundation workflows passed as runs
+  `29626983883` and `29626983894`; the deterministic bundle ZIP checksum is
+  `f156183ee8083b6b587a64a5be0e4e8d5f0ae5338c35dbb1cfd11c6f17d00338`.
+- 2026-07-18: Linux evidence revision `220add98a1fcebe0392234db08ce1b9f266d095e` wired the
+  active-provider summaries, persistence-mode labels, completion notification copy, and locale
+  draft note through the GTK runtime. Native run `29627011700`, Foundation run `29627011696`, and
+  Flatpak run `29627011708` passed; the workflow pins l10n revision
+  `0536ae1695116f5130943c1114bc31c60376407e`.
 
 ## Checkpoint update protocol
 

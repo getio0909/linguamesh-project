@@ -15,7 +15,7 @@ Linux evidence head `029e7f21322f3d0f3619a8f3a0158e7157972e30` adds official loc
 Arabic RTL direction, Secret Service prompted-flow,
 notification-daemon, portal,
 interactive FileChooser backend, application FileDialog callback, source-editor drag/drop,
-source-buffer-preservation, status-summary/partial-output, text-file import, provider-profile/source-target, and onboarding-stage localization evidence documentation
+source-buffer-preservation, status-summary/partial-output, text-file import, provider-profile/source-target, onboarding-stage, active-provider, notification, and draft-note localization evidence documentation
 relative to that functional source. Native CI verifies the current GTK flow under X11/Xvfb and
 forced Wayland/headless Weston plus real post-startup `ENOSPC` rollback for persistent connection,
 model-update, and deletion transactions. The same GTK test verifies baseline roles, named
@@ -36,7 +36,7 @@ static validation; the GNOME 49 SDK workflow built a prerelease CI bundle and pa
 startup smoke, while physical compositor/GPU rendering, signing, and distributable artifacts remain
 unverified. End-user prompt approval remains unverified; the adapter's store/delete prompt paths are
 verified to fail closed. Runtime catalog switching covers all twelve official Linux packs for the
-Translate and Stop labels plus catalog-backed workspace widgets, active-provider/status-summary/partial-output/text-file-import/provider-profile/source-target/onboarding-stage/theme-option labels, preserves active source text across the tested Arabic switch, and applies Arabic RTL direction, not the complete visible UI. This does not prove every database or storage failure, AT-SPI/Orca,
+Translate and Stop labels plus catalog-backed workspace widgets, active-provider/status-summary/partial-output/text-file-import/provider-profile/source-target/onboarding-stage/notification/draft-note/theme-option labels, preserves active source text across the tested Arabic switch, and applies Arabic RTL direction, not the complete visible UI. This does not prove every database or storage failure, AT-SPI/Orca,
 physical keyboard traversal, or a complete desktop accessibility matrix.
 Their CI evidence publishes no artifact. Linux multi-profile/session onboarding, next-request
 routing, and storage rollback are not evidence of completed secure credential storage or a complete
