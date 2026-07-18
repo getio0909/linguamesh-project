@@ -24,12 +24,12 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
 The current Linux-first TXT/Markdown document slice is pinned to Core `6c54f329e9a62ffa1d2f9503087e59d4b9e9d6e9`,
-l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux `c0d944ddd86ea742fc8cc79187f8be81f240c144`.
+l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux `ec7a12c649c03c20d7a9665a6499fe8eece6023e`.
 Core CI `29641613390` and Native SDK `29641613407` passed; l10n Localization `29640108992` and
 Foundation `29640108969` passed with the 262-message bundle checksum
-`a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux Native `29641700063`
-(job `88073175248`) passed all GTK, storage, portal, notification, X11, and forced-Wayland gates;
-Foundation `29641700069` and Flatpak `29641700077` (job `88073175155`) passed the repository-wide
+`a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux Native `29642622311`
+(job `88075537969`) passed all GTK, storage, portal, notification, X11, and forced-Wayland gates;
+Foundation `29642623263` and Flatpak `29642624183` (job `88075542529`) passed the repository-wide
 and packaging checks. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
 restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
@@ -122,4 +122,6 @@ complete desktop matrix.
 The scheduled and manually dispatched `cross-repository.yml` workflow clones public canonical siblings using the runtime repository owner and runs strict validation. It has read-only contents permission and is not triggered by untrusted pull requests.
 Central documentation revision `08250c870b42b6df249c30a0379a5db505ef23c2` passed coordination run
 `29638614216` (Linux job `88065175722`, PowerShell job `88065175707`) after the Linux history-
-controls pins, evidence, and unreleased limitations were updated.
+controls pins, evidence, and unreleased limitations were updated. The Linux document-job execution
+slice is covered by the same Native and Flatpak gates; its GTK queue remains single-document and
+provider parameters are supplied again when resuming after restart.

@@ -896,6 +896,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `c0d944ddd86ea742fc8cc79187f8be81f240c144` wired worker create/list/update/resume/cancel commands
   and startup recovery without paths or credentials; Native `29641700063` (job `88073175248`),
   Foundation `29641700069`, and Flatpak `29641700077` (job `88073175155`) passed.
+- 2026-07-18: Linux revision `ec7a12c649c03c20d7a9665a6499fe8eece6023e` connected native TXT/Markdown
+  import to persisted Core jobs and added sequential `TranslateDocumentJob` execution, per-segment
+  persistence, reconstruction, cancellation, glossary/privacy propagation, and startup editor restore.
+  Local Linux validation passed 91 tests (one intentional environment skip), strict Clippy, format,
+  l10n, and diff checks. Native `29642622311` (job `88075537969`), Foundation `29642623263` (job
+  `88075540141`), and Flatpak `29642624183` (job `88075542529`) passed. Multi-job queue UI, retry,
+  archive codecs, and automatic provider-parameter persistence remain open; Android, Windows, and
+  macOS remain deferred.
 
 ## Checkpoint update protocol
 
