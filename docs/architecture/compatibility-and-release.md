@@ -11,11 +11,11 @@ A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings,
 The current unreleased matrix pins Core functional revision
 `fbf3e9b5927049dccaa19f8c36013495ffebba12` and Linux functional revision
 `7d7eba9960b657f0460fb0daaaaebaaa609f39b1`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
-Linux evidence head `c074c2d1f8f9446559f23a72d224c48e2e612947` adds official locale-pack switching,
+Linux evidence head `029e7f21322f3d0f3619a8f3a0158e7157972e30` adds official locale-pack switching,
 Arabic RTL direction, Secret Service prompted-flow,
 notification-daemon, portal,
 interactive FileChooser backend, application FileDialog callback, source-editor drag/drop,
-source-buffer-preservation, status-summary/partial-output, text-file import, and provider-profile/source-target localization evidence documentation
+source-buffer-preservation, status-summary/partial-output, text-file import, provider-profile/source-target, and onboarding-stage localization evidence documentation
 relative to that functional source. Native CI verifies the current GTK flow under X11/Xvfb and
 forced Wayland/headless Weston plus real post-startup `ENOSPC` rollback for persistent connection,
 model-update, and deletion transactions. The same GTK test verifies baseline roles, named
@@ -36,7 +36,7 @@ static validation; the GNOME 49 SDK workflow built a prerelease CI bundle and pa
 startup smoke, while physical compositor/GPU rendering, signing, and distributable artifacts remain
 unverified. End-user prompt approval remains unverified; the adapter's store/delete prompt paths are
 verified to fail closed. Runtime catalog switching covers all twelve official Linux packs for the
-Translate and Stop labels plus catalog-backed workspace widgets, active-provider/status-summary/partial-output/text-file-import/provider-profile/source-target/theme-option labels, preserves active source text across the tested Arabic switch, and applies Arabic RTL direction, not the complete visible UI. This does not prove every database or storage failure, AT-SPI/Orca,
+Translate and Stop labels plus catalog-backed workspace widgets, active-provider/status-summary/partial-output/text-file-import/provider-profile/source-target/onboarding-stage/theme-option labels, preserves active source text across the tested Arabic switch, and applies Arabic RTL direction, not the complete visible UI. This does not prove every database or storage failure, AT-SPI/Orca,
 physical keyboard traversal, or a complete desktop accessibility matrix.
 Their CI evidence publishes no artifact. Linux multi-profile/session onboarding, next-request
 routing, and storage rollback are not evidence of completed secure credential storage or a complete

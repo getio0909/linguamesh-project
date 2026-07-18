@@ -594,6 +594,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central integration revision `c5b34c7` recorded the 80-message Linux provider-card
   localization evidence, l10n checksum, and updated release-manifest source pin; coordination run
   `29626082929` passed with Linux job `88030658949` and PowerShell job `88030658881`.
+- 2026-07-18: Localization revision `5c2e5756f02fbc29ba1ca311958b6bf7d26027bf` added 17
+  Linux onboarding-stage and onboarding-detail messages, restored the existing generic onboarding
+  translations, and produced 97 canonical messages. Localization and Foundation workflows passed
+  as runs `29626274539` and `29626274579`; the deterministic bundle ZIP checksum is
+  `c4d08929cbaf89d1836e2b5934ffff880f72cdb28c74e25d30c9a9920ab8b3b7`.
+- 2026-07-18: Linux evidence revision `029e7f21322f3d0f3619a8f3a0158e7157972e30` wired
+  catalog-backed onboarding stage/detail guidance, dynamic provider/profile/model placeholders,
+  and the 97-message snapshot into the GTK onboarding card. Native run `29626461099`, Foundation
+  run `29626461122`, and Flatpak run `29626461131` passed; the workflow now pins l10n revision
+  `5c2e5756f02fbc29ba1ca311958b6bf7d26027bf`.
 
 ## Checkpoint update protocol
 
