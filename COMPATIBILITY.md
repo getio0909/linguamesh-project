@@ -124,6 +124,13 @@ Native `29665343100` (job `88134735908`), Foundation `29665343120`, and Flatpak 
 passed. Complete visible-string gettext coverage, Orca speech, physical desktop review, OCR,
 other platform clients, and stable-release evidence remain open.
 
+Linux-first multi-job queue controls checkpoint: Linux `014a79a19cb72b4eceba3d7c0c592b7655e1cdd0`
+adds catalog-backed pause, resume, and retry actions to each persisted document-job row while
+reusing the existing worker commands and storage state machine. Native `29665725241`, Foundation
+`29665725238`, and Flatpak `29665725434` passed; OCR, Orca speech, physical desktop review,
+complete visible-string gettext coverage, other platform clients, and stable-release evidence
+remain open.
+
 Linux-first PPTX package checkpoint: Core `0f71a652a536753f48bb8c852fd38e97740c23ce` adds bounded
 PPTX ZIP/XML inspection, schema-11 package persistence, safe slide/notes/master/layout/handout/
 comments text-node reconstruction, and resource retention. Linux functional revision

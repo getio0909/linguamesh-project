@@ -1122,6 +1122,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   coverage, Orca speech, physical desktop review, OCR, other clients, and stable-release evidence
   remain open.
 
+- 2026-07-18: Assumption: the persisted `DocumentJobSnapshot` list remains the source of truth
+  for the Linux multi-job queue. Linux `014a79a19cb72b4eceba3d7c0c592b7655e1cdd0` adds
+  catalog-backed pause, resume, and retry actions to each row while reusing the existing worker
+  commands and state machine. Local strict Clippy, no-default 61 tests, demo-provider 99 tests
+  (one existing environment-dependent ignore), formatting, and diff checks passed; Native
+  `29665725241`, Foundation `29665725238`, and Flatpak `29665725434` passed. Orca speech, physical
+  desktop review, OCR, complete visible-string gettext coverage, other clients, and stable-release
+  evidence remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
