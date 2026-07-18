@@ -912,6 +912,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   also passed.
   Core CI `29644499145` and Native SDK `29644499158` passed. The Linux-first scope still leaves
   multi-job selection, archive codecs, Android, Windows, and macOS open.
+- 2026-07-18: Assumption: the next bounded Linux document slice preserves SRT/WebVTT cue IDs,
+  headers, timestamps, ordering, and line endings while translating cue text only. Core revision
+  `e4962fc19dd09ca2ef45d4841ffb617cb25a1342` added subtitle structure/timestamp validation and
+  inter-cue WebVTT metadata handling; Linux revision `33b47852f3bd3a0a4a8997cd6592c756a0b254a3`
+  added `.srt`/`.vtt` chooser support and safe malformed-structure errors. Core CI
+  `29645385353` passed; Native SDK `29645385324`, Linux Native `29645547013` (job `88083068099`),
+  Foundation `29645547036` (job `88083068179`), and Flatpak `29645547024` (job `88083068088`) passed.
+  HTML,
+  JSON, CSV, archive formats, multi-job selection, Android, Windows, and macOS remain open.
 
 ## Checkpoint update protocol
 

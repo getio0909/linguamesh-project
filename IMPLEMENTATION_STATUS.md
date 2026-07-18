@@ -35,7 +35,7 @@ prompt approval remains open. A pinned Linux
 Flatpak manifest now has a remotely verified GNOME 49 SDK build, prerelease CI bundle, and bounded
 sandbox startup smoke; X11 desktop-shell notification rendering is now verified, while physical
 compositor/GPU rendering and release artifacts remain open. Core schema 6 and the Linux worker now
-persist bounded TXT/Markdown job snapshots and restore pending/running segment progress after
+persist bounded TXT/Markdown/SRT/WebVTT job snapshots and restore pending/running segment progress after
 restart without source paths or credentials; GUI queue presentation and archive codecs remain open.
 No stable product release, completed native client, or released SDK artifact is claimed here.
 
@@ -144,6 +144,25 @@ CI `29644499145`, Native SDK `29644499158`, Linux Native `29644639413`, Foundati
 and Flatpak `29644639396` are the current remote evidence.
 No stable release or cross-platform completion claim is made.
 
+## 2026-07-18 — Linux subtitle document checkpoint
+
+Assumption: SRT and WebVTT preserve cue IDs, headers, timestamps, ordering, and original line
+endings verbatim. Only cue text is translatable; timing and subtitle line-length policy are not
+rewritten automatically. Android, Windows, and macOS remain deferred under the Linux-first scope.
+
+Core `e4962fc19dd09ca2ef45d4841ffb617cb25a1342` extends `bounded_text_document_v1` with bounded
+UTF-8 SRT/WebVTT detection, timestamp/cue-order validation, subtitle structural segmentation,
+reconstruction validation, and inter-cue WebVTT metadata handling. Linux
+`33b47852f3bd3a0a4a8997cd6592c756a0b254a3` accepts `.srt` and `.vtt` in the native chooser and maps
+malformed structures to a safe import error. TXT/Markdown and schema-8 restart option reuse remain
+unchanged; HTML/JSON/CSV, archive formats, and multi-job queue presentation remain open.
+
+Local validation passed Core fmt/check/Clippy/offline workspace tests and the 7-test document suite;
+Linux fmt/check/Clippy/offline library tests passed with 94 tests passing and 1 intentional
+environment-dependent ignore. Core CI `29645385353` passed; Native SDK `29645385324`, Linux Native
+`29645547013` (job `88083068099`), Foundation `29645547036` (job `88083068179`), and Flatpak
+`29645547024` (job `88083068088`) passed; Core CI and Native SDK also passed.
+
 ## Evidence
 
 | Area | Status | Evidence |
@@ -155,12 +174,12 @@ No stable release or cross-platform completion claim is made.
 | GitHub repositories | Published and verified | All seven repositories are public, use `main` as the default branch, have Issues and Actions enabled, have Wiki disabled, and initially matched their local committed HEAD. Canonical remotes are recorded in `workspace-manifest.toml`. |
 | GitHub metadata | Validated | The repository Python 3.13 environment parsed all workflow and issue-template YAML files successfully; remote run evidence is listed below. |
 | Canonical sibling repositories | Layout validated | `bash tools/check-workspace.sh --require-repositories` found all seven canonical directories and their minimum policy files. This does not verify sibling application behavior. |
-| Rust core checkpoint | Validated locally and remotely | Functional revision `6c54f329e9a62ffa1d2f9503087e59d4b9e9d6e9` includes schema 5 optional translation memory, schema 6 bounded document-job/segment snapshots with resumable state, and the negotiated `bounded_text_document_v1` contract for bounded UTF-8 TXT/Markdown inspection, preserved line endings, Markdown fenced structure, serializable segments, and fail-closed reconstruction; local fmt, strict Clippy, locked build, full offline workspace tests, CI `29641613390`, and Native SDK `29641613407` passed. |
+| Rust core checkpoint | Validated locally and remotely | Functional revision `e4962fc19dd09ca2ef45d4841ffb617cb25a1342` includes schema 5 optional translation memory, schema 6 bounded document-job/segment snapshots, schema 7 paused-job state, schema 8 non-secret document options, and the negotiated `bounded_text_document_v1` contract for bounded UTF-8 TXT/Markdown/SRT/WebVTT inspection, preserved line endings, Markdown fences, subtitle cue IDs/headers/timestamps, inter-cue WebVTT metadata, serializable segments, and fail-closed reconstruction; local fmt, strict Clippy, offline workspace tests, CI `29645385353`, and Native SDK `29645385324` passed. |
 | Localization bundle | Validated locally and remotely | l10n evidence revision `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995` contains 262 canonical messages, including Linux translation-memory controls/status, 12 official locale packs, two pseudo-locales, 59 generated artifacts including paired Linux PO/MO resources, 26 passing tests, platform-format checks, and deterministic bundle ZIP SHA-256 `a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Non-English packs remain explicitly unreviewed drafts. |
-| Native Linux alpha.2 slice | Validated locally and remotely | Functional revision `ec7a12c649c03c20d7a9665a6499fe8eece6023e` negotiates `bounded_text_document_v1`, converts bounded TXT/Markdown imports into Core jobs, sequentially translates pending prose segments with persisted progress, supports cancellation/reconstruction, and restores schema-6 snapshots without paths or credentials while retaining secure-provider, glossary, history, policy, and translation-memory behavior. Local 92-test suite (91 passed, 1 intentional ignore), strict Clippy, GUI Rust check, localization sync, and diff checks passed; Native `29642622311` (job `88075537969`), Foundation `29642623263` (job `88075540141`), and Flatpak `29642624183` (job `88075542529`) passed. |
-| Linux Flatpak packaging scaffold | GNOME 49 SDK build and bounded sandbox startup validated | Linux packaging revision `fd1f400058f4c68b47a9bd0823e790c6d9cef263` publishes the pinned GNOME 49 manifest, immutable Core/Linux source pins, generated Cargo archive hashes, desktop entry, AppStream metadata, icon, and constrained runtime permissions. `bash tools/validate-flatpak-metadata.sh` passed locally; latest `Flatpak Linux` run `29625778180` (job `88029765322`) is the current remote packaging gate. Physical compositor/GPU rendering, signing, and distributable release remain unverified. |
-| GitHub Actions | Passed | Core revision `6c54f329e9a62ffa1d2f9503087e59d4b9e9d6e9` passed CI `29641613390` and Native SDK `29641613407`; l10n revision `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995` passed Localization `29640108992` and Foundation `29640108969`; Linux revision `ec7a12c649c03c20d7a9665a6499fe8eece6023e` passed Native `29642622311` (job `88075537969`), Foundation `29642623263` (job `88075540141`), and Flatpak `29642624183` (job `88075542529`). |
-| Non-functional repository heads | Passed | Core head `6c54f329e9a62ffa1d2f9503087e59d4b9e9d6e9`, l10n head `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux head `ec7a12c649c03c20d7a9665a6499fe8eece6023e` are the current functional pins and passed their CI gates. The release manifest intentionally pins these revisions and lists no release artifact. |
+| Native Linux alpha.2 slice | Validated locally and remotely | Functional revision `33b47852f3bd3a0a4a8997cd6592c756a0b254a3` negotiates `bounded_text_document_v1`, converts bounded TXT/Markdown/SRT/WebVTT imports into Core jobs, preserves subtitle cue IDs/headers/timestamps, sequentially translates pending prose segments with persisted progress, supports cancellation/reconstruction, and restores schema-8 snapshots without paths or credentials while retaining secure-provider, glossary, history, policy, and translation-memory behavior. Local 94-test suite (1 intentional ignore), strict Clippy, Rust checks, and diff checks passed; Native `29645547013` (job `88083068099`), Foundation `29645547036` (job `88083068179`), and Flatpak `29645547024` (job `88083068088`) passed. |
+| Linux Flatpak packaging scaffold | GNOME 49 SDK build and bounded sandbox startup validated | Linux packaging revision `fd1f400058f4c68b47a9bd0823e790c6d9cef263` publishes the pinned GNOME 49 manifest, immutable Core/Linux source pins, generated Cargo archive hashes, desktop entry, AppStream metadata, icon, and constrained runtime permissions. `bash tools/validate-flatpak-metadata.sh` passed locally; latest `Flatpak Linux` run `29645547024` (job `88083068088`) passed. Physical compositor/GPU rendering, signing, and distributable release remain unverified. |
+| GitHub Actions | Passed | Core revision `e4962fc19dd09ca2ef45d4841ffb617cb25a1342` passed CI `29645385353` and Native SDK `29645385324`; Linux revision `33b47852f3bd3a0a4a8997cd6592c756a0b254a3` passed Native `29645547013` (job `88083068099`), Foundation `29645547036` (job `88083068179`), and Flatpak `29645547024` (job `88083068088`); l10n revision `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995` remains CI-verified. |
+| Non-functional repository heads | Published | Core head `e4962fc19dd09ca2ef45d4841ffb617cb25a1342`, l10n head `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux head `33b47852f3bd3a0a4a8997cd6592c756a0b254a3` are the current functional pins and passed their remote gates. The release manifest remains unreleased with no artifacts. |
 | Acceptance Scenario 1 | Passed locally | The reference CLI discovered and selected a fake model, streamed `你好，LinguaMesh！` over loopback HTTP/SSE, and completed without a key. A separate slow-stream run retained `你好` and emitted cancellation. |
 | Remaining acceptance scenarios | Not passed | Scenarios 2–20 do not yet have complete cross-platform reproducible passing evidence. Linux now has complete secure-provider Scenario 3 implementation evidence and partial Scenario 5 evidence; the global scenarios and stable-release evidence remain incomplete. |
 

@@ -23,18 +23,17 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
-The current Linux-first TXT/Markdown document slice is pinned to Core `31e7d3d06abbbf32199432bdedfcaf9a46dbed38`,
-l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux `d5e9bb13e75e172e8698d5227e4ac27a7e70dd35`.
-Core CI `29644499145` and Native SDK `29644499158` passed; l10n Localization `29640108992` and
-Foundation `29640108969` passed with the 262-message bundle checksum
-`a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux Native `29644639413` (job `88080730976`)
-passed all GTK, storage, portal, notification, X11, and forced-Wayland gates; Foundation
-`29644639392` (job `88080730938`) passed the repository-wide checks; Flatpak `29644639396` (job
-`88080730937`) passed the packaging checks. Local Core storage tests
+The current Linux-first TXT/Markdown/SRT/WebVTT document slice is pinned to Core
+`e4962fc19dd09ca2ef45d4841ffb617cb25a1342`, l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and
+Linux `33b47852f3bd3a0a4a8997cd6592c756a0b254a3`. Core CI `29645385353` passed; Native SDK
+`29645385324`, Linux Native `29645547013` (job `88083068099`), Foundation `29645547036` (job
+`88083068179`), and Flatpak `29645547024` (job `88083068088`) passed. The l10n Localization `29640108992` and Foundation
+`29640108969` passed with the 262-message bundle checksum
+`a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
 restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
-escaped UTF-8 TSV export, the bounded Core TXT/Markdown document contract with BOM/line-ending
-preservation and verbatim Markdown fences, schema-8 job bounds/options, segment updates, and restart
+escaped UTF-8 TSV export, the bounded Core TXT/Markdown/SRT/WebVTT document contract with BOM,
+line-ending, cue-ID, header, timestamp, and subtitle-structure preservation, schema-8 job bounds/options, segment updates, and restart
 recovery of pending/running/paused jobs without paths or credentials; pause/resume/retry worker
 and GTK control regressions, including restart reuse, are covered by the Linux library suite.
 
