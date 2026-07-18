@@ -591,6 +591,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29625778196`, and Flatpak run `29625778180` (job `88029765322`) passed; the Native GTK test
   asserted Simplified Chinese provider controls and language options together with Arabic RTL and
   source-buffer preservation.
+- 2026-07-18: Central integration revision `c5b34c7` recorded the 80-message Linux provider-card
+  localization evidence, l10n checksum, and updated release-manifest source pin; coordination run
+  `29626082929` passed with Linux job `88030658949` and PowerShell job `88030658881`.
 
 ## Checkpoint update protocol
 
