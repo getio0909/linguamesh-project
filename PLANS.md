@@ -968,7 +968,8 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `dc:language` updates from the target locale; Linux revision `3f0f659ccba195e58789d80d9fdc20b087a10b68`
   added chooser/import, worker export integration, MIME filtering, Flatpak pinning, and evidence
   docs. Core document/storage tests (22/28) and Linux checks/Clippy/library tests (61) passed;
-  Core CI/Native SDK and Linux Native/Foundation/Flatpak runs are pending. EPUB is now the supported
+  Core CI `29652884450`, Native SDK `29652884430`, Linux Native `29652937783`, Foundation
+  `29652937750`, and Flatpak `29652937761` passed. EPUB is now the supported
   Linux archive slice; PDF/OCR, remaining archive formats, multi-job selection, Android, Windows,
   and macOS remain open.
 

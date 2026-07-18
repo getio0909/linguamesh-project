@@ -25,8 +25,8 @@ Cross-repository conformance runs the same fake-provider scenarios against pinne
 
 The current Linux-first TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB document slice is pinned to Core
 `554c09521b57de45be154a99edfbf24aa2fc6538`, l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and
-Linux `3f0f659ccba195e58789d80d9fdc20b087a10b68`. Core CI and Native SDK are pending; Linux Native,
-Foundation, and Flatpak gates are pending for this revision. The l10n Localization `29640108992` and Foundation
+Linux `3f0f659ccba195e58789d80d9fdc20b087a10b68`. Core CI `29652884450`, Native SDK `29652884430`,
+Linux Native `29652937783`, Foundation `29652937750`, and Flatpak `29652937761` passed. The l10n Localization `29640108992` and Foundation
 `29640108969` passed with the 262-message bundle checksum
 `a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
