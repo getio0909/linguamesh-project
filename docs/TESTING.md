@@ -44,8 +44,8 @@ or translations, and open failures use a fixed localized message without exposin
 text also has a user-approved saved-provider fallback path that retries only network/timeout failures,
 retains partial output, and never applies to document jobs, cancellation, authentication/model errors,
 or unapproved/session-only profiles; its focused worker test passes locally.
-Central coordination run `29651628740` passed Linux validation job `88098822928` and PowerShell
-validation job `88098822937` after the PPTX manifest and compatibility updates.
+Central coordination run `29659286541` passed Linux validation job `88118991875` and PowerShell
+validation job `88118991823` after the approved-fallback manifest and compatibility updates.
 
 Central integration revision `e1bcf55ed16f734e14a559e292588dc8285c672e` passed coordination run
 `29639330664`, including Linux job `88067060177` and Windows PowerShell job `88067060171`.
