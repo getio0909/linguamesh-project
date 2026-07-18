@@ -136,12 +136,12 @@ opt-out.
 ## 2026-07-18 — Linux document pause checkpoint
 
 Assumption: the current Linux-first slice prioritizes durable TXT/Markdown job lifecycle controls;
-Android, Windows, and macOS remain deferred. Core schema 7 (`fd79752fe8857ea37098602cefed294924fa1db5`)
-adds transactional paused-job persistence and restart resumability. Linux (`0b62696c26bf119f61ca28c56e329bea5f4062a6`)
-adds worker pause/resume/retry commands, segment-boundary cancellation, GTK per-job progress, and
-pause/resume/retry controls. Local Core workspace tests and Linux 92-test library suite pass; the
-Core CI `29643381786`, Native SDK `29643381763`, Linux Native `29643841189`, Foundation `29643841178`,
-and Flatpak `29643841198` runs all passed.
+Android, Windows, and macOS remain deferred. Core schema 8 (`31e7d3d06abbbf32199432bdedfcaf9a46dbed38`)
+adds validated non-secret document translation options on top of transactional paused-job persistence.
+Linux (`d5e9bb13e75e172e8698d5227e4ac27a7e70dd35`) reuses those options after restart only when the
+active provider/model match. Local Core workspace tests and Linux 94-test library suite pass; Core
+CI `29644499145`, Native SDK `29644499158`, Linux Native `29644639413`, Foundation `29644639392`,
+and Flatpak `29644639396` (still running) are the current remote evidence.
 No stable release or cross-platform completion claim is made.
 
 ## Evidence
