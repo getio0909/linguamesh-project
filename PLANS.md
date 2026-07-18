@@ -92,6 +92,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Extend the Linux-first document slice with bounded structural HTML tag-stack validation,
   script/style protection, visible text-node segmentation, safe text escaping, schema-9 mapping, and
   native `.html`/`.htm` chooser coverage.
+- [x] Add Linux GTK presentation for persisted document jobs, including a non-blocking list command,
+  progress/state metadata, empty-state handling, and selection back into the existing job controls.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — secure provider foundation
@@ -111,7 +113,8 @@ remain untouched unless their owner explicitly incorporates them into this check
 
 Assumption: schema-6 document recovery stores only an opaque job ID, source basename, format,
 ordered bounded segments, and lifecycle state. Pending/running jobs are restored on Linux worker
-startup; GUI queue presentation and archive codecs remain future work.
+startup; the Linux GTK queue now presents those bounded snapshots, while archive codecs remain future
+work.
 
 Assumption: exhausting a private Linux tmpfs to `ENOSPC` verifies the implemented SQLite
 transaction-failure boundary, not corruption, read-only media, power loss, or every VFS failure.
@@ -933,6 +936,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   and Linux revision `2a04c096594f5358638fc9e5b1610c78c1051a13`, with remote gates recorded in the
   central compatibility matrix. DOCX, PPTX/XLSX, EPUB, PDF/OCR, archive formats, multi-job selection,
   Android, Windows, and macOS remain open.
+
+- 2026-07-18: Linux revision `ba7d4a3ad9d1cc152d5c52e5acf84633ae46ef92` added the persisted document
+  queue action and selection dialog; packaging revision `71e8b24dd6f233c4667c705066524489b065e49a`
+  pins the Flatpak source. Native `29649067477`, Foundation `29649067457`, and Flatpak `29649067473`
+  passed, so multi-job queue presentation is no longer open. DOCX, PPTX/XLSX, EPUB, PDF/OCR, archive
+  formats, Android, Windows, and macOS remain open.
 
 ## Checkpoint update protocol
 

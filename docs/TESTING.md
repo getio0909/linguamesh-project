@@ -25,9 +25,9 @@ Cross-repository conformance runs the same fake-provider scenarios against pinne
 
 The current Linux-first TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT document slice is pinned to Core
 `912780f21d8dbb19571c9b991879778a053272f8`, l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and
-Linux `2a04c096594f5358638fc9e5b1610c78c1051a13`. Core CI `29648352547` passed; Native SDK
-`29648352548`, Linux Native `29648437605` (job `88090534144`), Foundation
-`29648437590`, and Flatpak `29648437562` (job `88090534114`) passed. The l10n Localization `29640108992` and Foundation
+Linux `71e8b24dd6f233c4667c705066524489b065e49a`. Core CI `29648352547` passed; Native SDK
+`29648352548`, Linux Native `29649067477` (job `88092162300`), Foundation
+`29649067457`, and Flatpak `29649067473` (job `88092162266`) passed. The l10n Localization `29640108992` and Foundation
 `29640108969` passed with the 262-message bundle checksum
 `a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
@@ -36,7 +36,8 @@ escaped UTF-8 TSV export, the bounded Core TXT/Markdown/CSV/SRT/WebVTT document 
 line-ending, cue-ID, header, timestamp, subtitle-structure, CSV delimiter/quote, variable-width row,
 and selected-column preservation, JSON path selection, primitive/key protection, escaping, HTML tag-stack validation, script/style protection, text-node escaping, schema-9 job bounds/options, segment updates, and restart
 recovery of pending/running/paused jobs without paths or credentials; pause/resume/retry worker
-and GTK control regressions, including restart reuse, are covered by the Linux library suite.
+and GTK control regressions, including restart reuse and persisted-job queue selection, are covered
+by the Linux library suite.
 Central coordination run `29648128777` passed Linux validation job `88089721504` and PowerShell
 validation job `88089721479` after the JSON manifest and compatibility updates.
 
@@ -126,5 +127,6 @@ The scheduled and manually dispatched `cross-repository.yml` workflow clones pub
 Central documentation revision `08250c870b42b6df249c30a0379a5db505ef23c2` passed coordination run
 `29638614216` (Linux job `88065175722`, PowerShell job `88065175707`) after the Linux history-
 controls pins, evidence, and unreleased limitations were updated. The Linux document-job execution
-slice is covered by the same Native and Flatpak gates; its GTK queue remains single-document and
-provider parameters are supplied again when resuming after restart.
+slice is covered by the same Native and Flatpak gates; its GTK queue lists persisted snapshots and
+selection reuses the existing job controls, while provider parameters are supplied again when
+resuming after restart.
