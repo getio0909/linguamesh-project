@@ -861,6 +861,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Linux revision `7173d4a4217d6211c7dc92c368d9f033874198f5` added the persisted
   history policy toggle and worker regression coverage; Native `29639139698` (job `88066556152`),
   Foundation `29639139712`, and Flatpak `29639139725` (job `88066556256`) passed.
+- 2026-07-18: Central revision `e1bcf55ed16f734e14a559e292588dc8285c672e` recorded the Linux
+  history-policy pins, evidence, and remaining translation-memory limitation; coordination run
+  `29639330664` passed with Linux job `88067060177` and PowerShell job `88067060171`.
 
 ## Checkpoint update protocol
 

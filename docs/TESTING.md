@@ -35,8 +35,8 @@ writes, Incognito skip, startup count restoration, clear-all, newest-first inspe
 per-entry deletion, escaped UTF-8 TSV export, and persisted history enable/disable behavior.
 Translation-memory stores remain unimplemented.
 
-Central integration revision `a7ca1f84eef3f98647a4383dc931c11049171b63` passed coordination run
-`29604649153`, including Linux job `87964871597` and Windows PowerShell job `87964871588`.
+Central integration revision `e1bcf55ed16f734e14a559e292588dc8285c672e` passed coordination run
+`29639330664`, including Linux job `88067060177` and Windows PowerShell job `88067060171`.
 
 Linux Secret Service wire-shape fix revision `9bcd8d9ca30d109f5c7c9c20e6f72f6a77df078d` passed
 Native Linux run `29598255988` (job `87943844854`) and repository-foundation run `29598255993`
