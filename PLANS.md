@@ -816,6 +816,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   (job `88058210082`) passed. The current worker has no history or translation-memory write path;
   those stores and end-user prompt approval remain open, while Android, Windows, and macOS stay
   deferred by the Linux-first scope.
+- 2026-07-18: Central revision `651fc4ce9d7d6ebf61970e05b87109303bcb3f26` advanced the compatibility
+  matrix, implementation status, release manifest pins, and known limitations for the Incognito
+  checkpoint. Coordination run `29636156878` passed; stable release remains unreleased.
 
 ## Checkpoint update protocol
 
