@@ -23,15 +23,17 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
-The current Linux-first history slice is pinned to Core `8cd65c5846a677e70c4828e4b4a5192319d775d5`,
-l10n `4678fc3810b1e21e5ab8c1095e552930b8649687`, and Linux `b968cc21978dd5bea1b4bc6d1c8828bb8ecdc489`.
-Core CI `29636624648` and Native SDK `29636624656` passed; l10n Localization `29636630359` and
-Foundation `29636630348` passed with the 230-message bundle checksum
-`03889105a74aec819ae716ee577f78e1da8a235d42be4918aa0fb6f9c5e194b8`. Linux Native `29636710260`
-(job `88061682829`) and Foundation `29637270599` passed; Flatpak `29637270601` (job `88061682853`)
-also passed. Local Core storage tests and Linux worker tests verify bounded standard history writes,
-Incognito skip, startup count restoration, and clear-all behavior; history inspection/export,
-per-entry deletion, and translation memory remain unimplemented.
+The current Linux-first history-controls slice is pinned to Core `6079138348f3182b19c017f50db768df05da62cb`,
+l10n `971d1691a4eff396c71216b898e30fcfb23e72fa`, and Linux `9ff8f3fb9cf61e1f51c3fc5e042e5fc8f601b837`.
+Core CI `29638085207` and Native SDK `29638085241` passed; l10n Localization `29638057493` and
+Foundation `29638057470` passed with the 240-message bundle checksum
+`36f782f45a228f68520c691a7d015a4839531a892732e31119fd5c0e83a2be9c`. Linux Native `29638278667`
+(job `88064319932`) passed all GTK, storage, portal, notification, X11, and forced-Wayland gates;
+Foundation `29638278676` and Flatpak `29638278677` (job `88064320034`) passed the repository-wide
+and packaging checks. Local Core storage tests and Linux
+worker tests verify bounded standard history writes, Incognito skip, startup count restoration,
+clear-all, newest-first inspection, exact per-entry deletion, and escaped UTF-8 TSV export.
+Translation-memory stores and history enable/disable policy remain unimplemented.
 
 Central integration revision `a7ca1f84eef3f98647a4383dc931c11049171b63` passed coordination run
 `29604649153`, including Linux job `87964871597` and Windows PowerShell job `87964871588`.

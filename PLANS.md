@@ -72,8 +72,10 @@ Assumption: Planned files and commands are not evidence until they exist and com
   gesture with the native GTK fixtures.
 - [x] Add the first Linux-first local history vertical slice: Core schema 3 bounded SQLite history,
   standard completion persistence, Incognito skip, startup count restoration, clear-all control,
-  and localized Linux status/action copy. History inspection/export, per-entry deletion, and
-  translation-memory storage remain later slices.
+  and localized Linux status/action copy.
+- [x] Add the Linux history inspection window, newest-first Core listing, exact per-entry deletion,
+  and deterministic escaped UTF-8 TSV export; translation-memory storage and history policy remain
+  later slices.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — secure provider foundation
@@ -836,6 +838,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   (job `88061682829`), Foundation run `29637270599`, and Flatpak run `29637270601`
   (job `88061682853`) passed. Documentation head `b01b4b9` records the evidence; Android, Windows,
   and macOS remain deferred by the Linux-first scope.
+- 2026-07-18: Core revision `6079138348f3182b19c017f50db768df05da62cb` added newest-first history
+  listing and exact per-entry deletion; Core CI `29638085207` and Native SDK `29638085241` passed.
+- 2026-07-18: l10n revision `971d1691a4eff396c71216b898e30fcfb23e72fa` added ten Linux history
+  window/export/delete messages, bringing the catalog to 240; Localization `29638057493` and
+  Foundation `29638057470` passed with bundle checksum
+  `36f782f45a228f68520c691a7d015a4839531a892732e31119fd5c0e83a2be9c`.
+- 2026-07-18: Linux revision `9ff8f3fb9cf61e1f51c3fc5e042e5fc8f601b837` added the GTK history
+  window, exact deletion, escaped UTF-8 TSV export, worker commands/events, and regression tests.
+  Native `29638278667` (job `88064319932`), Foundation `29638278676`, and Flatpak `29638278677`
+  (job `88064320034`) passed the Linux gates.
 
 ## Checkpoint update protocol
 
