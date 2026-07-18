@@ -1092,7 +1092,8 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   with an Xvfb/xfwm4 fixture. Native `29663222081` (job `88129285443`), Foundation `29663222084`
   (job `88129285550`), and Flatpak `29663222096` (job `88129285461`) passed; local format, strict
   Clippy, 61-library-test suite, shell syntax, and diff checks passed. Screen-reader narration,
-  physical desktop review, OCR, other clients, and stable-release evidence remain open.
+  physical desktop review, OCR, other clients, and stable-release evidence remain open. Central
+  coordination run `29663509326` (job `88130035321`) also passed.
 
 ## Checkpoint update protocol
 
