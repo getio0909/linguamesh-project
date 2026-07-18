@@ -1076,6 +1076,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29659054756` passed; OCR, screen-reader narration, physical keyboard traversal, other clients,
   complete acceptance scenarios, and stable-release evidence remain open.
 
+- 2026-07-18: Linux keyboard traversal follow-up adds a runtime-only GTK focus probe and the
+  `tools/run-gtk-keyboard-focus-test.sh` Xvfb/xfwm4 fixture. Tab and Shift+Tab reach the tested
+  onboarding/workspace controls; provider fields are asserted enabled, mapped, and focusable but
+  remain outside the default Tab chain and are tracked as an explicit Linux follow-up. Linux
+  revision `abdbe78` passed Native `29661016843` (job `88123562296`), Foundation `29661016844`,
+  and Flatpak `29661016848` (job `88123562334`). Local formatting, GUI check, shell syntax, and
+  diff checks passed. Screen-reader narration, provider-form Tab-chain repair, physical desktop
+  review, OCR, other clients, and stable-release evidence remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
