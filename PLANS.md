@@ -961,6 +961,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Native `29651990077`, Foundation `29651990067`, and Flatpak `29651990064` passed. XLSX is now
   supported in the Linux archive slice; EPUB, PDF/OCR, remaining archive formats, Android, Windows,
   and macOS remain open.
+- 2026-07-18: Assumption: Linux-first EPUB support is bounded to 4 MiB and 512 ZIP entries,
+  requires a first uncompressed `mimetype`, `META-INF/container.xml`, an OPF package, and at least
+  one XHTML/HTML content document. Core revision `554c09521b57de45be154a99edfbf24aa2fc6538` added
+  schema-13 EPUB persistence, safe visible-text reconstruction, resource retention, and OPF
+  `dc:language` updates from the target locale; Linux revision `3f0f659ccba195e58789d80d9fdc20b087a10b68`
+  added chooser/import, worker export integration, MIME filtering, Flatpak pinning, and evidence
+  docs. Core document/storage tests (22/28) and Linux checks/Clippy/library tests (61) passed;
+  Core CI/Native SDK and Linux Native/Foundation/Flatpak runs are pending. EPUB is now the supported
+  Linux archive slice; PDF/OCR, remaining archive formats, multi-job selection, Android, Windows,
+  and macOS remain open.
 
 ## Checkpoint update protocol
 
