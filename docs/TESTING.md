@@ -37,8 +37,8 @@ line-ending, cue-ID, header, timestamp, subtitle-structure, CSV delimiter/quote,
 and selected-column preservation, schema-9 job bounds/options, segment updates, and restart
 recovery of pending/running/paused jobs without paths or credentials; pause/resume/retry worker
 and GTK control regressions, including restart reuse, are covered by the Linux library suite.
-Central coordination run `29647166585` passed Linux validation job `88087235043` and PowerShell
-validation job `88087235023` after the manifest and compatibility updates.
+Central coordination run `29647238626` passed Linux validation job `88087416802` and PowerShell
+validation job `88087416836` after the manifest and compatibility updates.
 
 Central integration revision `e1bcf55ed16f734e14a559e292588dc8285c672e` passed coordination run
 `29639330664`, including Linux job `88067060177` and Windows PowerShell job `88067060171`.
