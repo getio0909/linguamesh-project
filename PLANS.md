@@ -1030,6 +1030,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29656549644`, and Flatpak `29656549677` passed. Non-English packs remain explicitly unreviewed
   drafts; complete visible-string coverage, other clients, OCR, and stable release remain open.
 
+- 2026-07-18: Linux test head `1e60e3725b0548a82bb88402c5257eb0f5f0bb0c` extends the real GTK
+  lifecycle regression with keyboard-focus assertions for Document jobs, Pause, Resume, and Retry.
+  Local format/check/Clippy and 61/99-test suites passed; Native `29657086074`, Foundation
+  `29657086060`, and Flatpak `29657086067` passed. Screen-reader narration, physical keyboard
+  traversal, routing fallback, OCR, and other acceptance gaps remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

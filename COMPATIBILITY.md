@@ -70,6 +70,8 @@ syncs all twelve PO/MO packs and asserts the queue keys alongside PDF/subtitle w
 Localization `29656496378` and Foundation `29656496361`, Linux Native `29656549651`, Foundation
 `29656549644`, and Flatpak `29656549677` passed; non-English packs remain unreviewed drafts and
 complete visible-string coverage, cross-platform clients, OCR, and stable-release evidence remain open.
+Linux test head `1e60e3725b0548a82bb88402c5257eb0f5f0bb0c` additionally asserts keyboard focusability
+for the queue actions; Native `29657086074`, Foundation `29657086060`, and Flatpak `29657086067` passed.
 
 Linux-first PPTX package checkpoint: Core `0f71a652a536753f48bb8c852fd38e97740c23ce` adds bounded
 PPTX ZIP/XML inspection, schema-11 package persistence, safe slide/notes/master/layout/handout/
