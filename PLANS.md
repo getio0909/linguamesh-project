@@ -919,7 +919,8 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   added `.srt`/`.vtt` chooser support and safe malformed-structure errors. Core CI
   `29645385353` passed; Native SDK `29645385324`, Linux Native `29645547013` (job `88083068099`),
   Foundation `29645547036` (job `88083068179`), and Flatpak `29645547024` (job `88083068088`) passed.
-  HTML,
+  Central coordination `29645763887` passed Linux job `88083632226` and PowerShell job
+  `88083632209`. HTML,
   JSON, CSV, archive formats, multi-job selection, Android, Windows, and macOS remain open.
 
 ## Checkpoint update protocol
