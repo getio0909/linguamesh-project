@@ -555,6 +555,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central integration revision `3b13df0` recorded the Linux source-buffer-preservation
   evidence and passed coordination run `29624204932` with Linux job `88025236212` and PowerShell
   job `88025236191`.
+- 2026-07-18: Localization revision `24e6c6b387e52473922574ebb861a9b3bf049ba1` added eleven
+  Linux-only status and partial-output messages. Its Foundation and Localization workflows passed
+  as runs `29624475766` and `29624475769`; the deterministic bundle checksum is
+  `4b8a1c49d0e028f775cdc20f704b0f6f50112d1ee2c7f47728e4a0ad51593f1f`.
+- 2026-07-18: Linux status-localization revision `4d3cfdbdcc92c4caf4e494659ea88315e71bd081` first
+  failed Native run `29624591250` before tests because the workflow still checked out the previous
+  localization pin. Revision `edb9cd226a6468f858023a9125217b426ff58e6e` corrected the workflow pin;
+  Native run `29624640319` (job `88026467667`), Foundation run `29624640306`, and Flatpak run
+  `29624640300` (job `88026467605`) then passed.
 
 ## Checkpoint update protocol
 
