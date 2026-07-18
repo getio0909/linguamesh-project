@@ -23,18 +23,18 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
-The current Linux-first TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX document slice is pinned to Core
-`08eb64cb87d9cf6df624225819818d8287063c4c`, l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and
-Linux `3725ef97584b30ee34e7807e35cddc16df6ad8ae`. Core CI `29650212367` passed; Native SDK
-`29650212378`, Linux Native `29650642852` (job `88096278936`), Foundation
-`29650642855`, and Flatpak `29650642850` (job `88096278936`) passed. The l10n Localization `29640108992` and Foundation
+The current Linux-first TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX document slice is pinned to Core
+`0f71a652a536753f48bb8c852fd38e97740c23ce`, l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and
+Linux `766b78e4b236f15ee7a6f1d6e61ebd828415da82`. Core CI `29651206485` passed; Native SDK
+`29651206487`, Linux Native `29651317600`, Foundation `29651317621`, and Flatpak `29651317679`
+passed. The l10n Localization `29640108992` and Foundation
 `29640108969` passed with the 262-message bundle checksum
 `a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
 restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
 escaped UTF-8 TSV export, the bounded Core TXT/Markdown/CSV/SRT/WebVTT document contract with BOM,
 line-ending, cue-ID, header, timestamp, subtitle-structure, CSV delimiter/quote, variable-width row,
-and selected-column preservation, JSON path selection, primitive/key protection, escaping, HTML tag-stack validation, script/style protection, text-node escaping, bounded DOCX package path/XML/resource preservation, schema-10 job bounds/options, segment updates, and restart
+and selected-column preservation, JSON path selection, primitive/key protection, escaping, HTML tag-stack validation, script/style protection, text-node escaping, bounded DOCX/PPTX package path/XML/resource preservation, schema-11 job bounds/options, segment updates, and restart
 recovery of pending/running/paused jobs without paths or credentials; pause/resume/retry worker
 and GTK control regressions, including restart reuse and persisted-job queue selection, are covered
 by the Linux library suite.

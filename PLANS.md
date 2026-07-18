@@ -945,6 +945,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29650642852` (job `88096278936`), Foundation `29650642855`, and Flatpak `29650642850` (job
   `88096278936`) passed. DOCX is now the supported Linux archive slice; PPTX/XLSX, EPUB, PDF/OCR,
   remaining archive formats, Android, Windows, and macOS remain open.
+- 2026-07-18: Core revision `0f71a652a536753f48bb8c852fd38e97740c23ce` added bounded PPTX
+  inspection/reconstruction and schema-11 package persistence; Linux revision
+  `ce08d1232889522bead58e6056d296f0fc8d56e1` added PPTX chooser/import, worker reconstruction, and
+  binary export. Packaging revision `766b78e4b236f15ee7a6f1d6e61ebd828415da82` pins the final
+  Linux source. Core CI `29651206485`, Native SDK `29651206487`, Linux Native `29651317600`, and
+  Foundation `29651317621`, and Flatpak `29651317679` passed. PPTX is now
+  supported in the Linux archive slice; XLSX, EPUB, PDF/OCR, remaining archive formats, Android,
+  Windows, and macOS remain open.
 
 ## Checkpoint update protocol
 
