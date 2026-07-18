@@ -693,6 +693,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29630434240` (job `88042823692`), Foundation run `29630434252` (job `88042823739`), and
   Flatpak run `29630434241` (job `88042823704`) passed the Linux validation, GTK export-aware
   assertions, PO/MO checks, and GNOME 49 sandbox smoke.
+- 2026-07-18: Central integration revision `0b3aeda37882646b6ad8e8d8565a3efdcca4b6ab` recorded
+  the 192-message l10n bundle, Linux translation-export evidence, release-manifest pins, and
+  all three Linux remote gates; coordination run `29630646183` passed with Linux job
+  `88043385432` and PowerShell job `88043385414`.
 
 ## Checkpoint update protocol
 
