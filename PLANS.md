@@ -785,6 +785,21 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central revision `df262726d2f0727ff51a69d9d62701cc6504a86c` passed coordination run
   `29634540903` with Linux job `88054421542` and PowerShell job `88054421575` after recording the
   Core/Linux long-text pins, compatibility boundary, and unreleased release posture.
+- 2026-07-18: Core functional revision `7adc9cdf6c8243243d42136f8b80fe3ee19f0af1` added a
+  deterministic UTF-8 glossary CSV contract with a fixed header, 4 MiB byte bound, 256-row bound,
+  strict quoting, value validation, conflict checks, and round-trip tests. Core CI run
+  `29635065402` and Native SDK run `29635065341` passed all jobs.
+- 2026-07-18: Localization revision `8fd778a5869c8b8c91610c22241883fff2e41c99` added eleven
+  Linux-only glossary CSV actions, dialogs, errors, and status messages, bringing the catalog to
+  222 messages. The deterministic bundle checksum is
+  `7bab80f8f94d29a4e22d1257b20cfb45800ee45c74fd58ff25751d2a33e9284c`; Localization run
+  `29635157822` and Foundation run `29635157780` passed.
+- 2026-07-18: Linux revision `405ddc9f995499be69f78fc1311c80381e289fee` added native GTK/GIO
+  glossary CSV import/export, request-level state routing, localized controls, bounded reads, and
+  deterministic export. Native run `29635297466` (job `88056466684`), Foundation run
+  `29635297461`, and Flatpak run `29635297451` (job `88056466121`) passed. Linux remains the
+  prioritized client while Android, Windows, and macOS stay deferred; persistent glossary libraries
+  and TBX import remain outside the current slice.
 
 ## Checkpoint update protocol
 
