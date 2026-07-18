@@ -1003,6 +1003,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   and Flatpak `29655260429` passed. OCR, remaining archive formats, acceptance scenarios 2–20,
   non-Linux clients, and stable release remain open.
 
+- 2026-07-18: The Linux-first localization follow-up adds canonical `warning.subtitle_line_length`
+  and `warning.subtitle_reading_speed` messages. l10n revision
+  `6bcd237170d1fdfb0a6beb88ee97d1855c478611` contains 264 messages and bundle checksum
+  `ee7bf5308a7cd652cad37e8d5e96973c520123dbbf964ddee58bf02bb24cbf7e`; Linux revision
+  `07af541f5c8561da4f917406c6782155a2a5efb6` pins the generated PO/MO resources. Localization
+  runs `29655762044` and `29655762054`, Native `29655816018`, Foundation `29655816025`, and
+  Flatpak `29655816020` passed. Non-English translations remain explicitly unreviewed drafts.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
