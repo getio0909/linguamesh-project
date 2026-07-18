@@ -9,8 +9,8 @@ At startup, each client queries the core semantic version, ABI version, protocol
 A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings, migration guidance, client changes, conformance tests, and an updated release train. Release promotion requires source and artifact provenance, license and third-party notices, checksums, SBOMs where practical, platform build evidence, rollback instructions, and acceptance-scenario evidence.
 
 The current unreleased matrix pins Core functional revision
-`fbf3e9b5927049dccaa19f8c36013495ffebba12` and Linux functional revision
-`7d7eba9960b657f0460fb0daaaaebaaa609f39b1`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+`d7e9b3857cf62f0a6dd24873091cb45dff8d4258` and Linux functional revision
+`d5fa1b0a3ce37d20eb6e7eae27086223e435214c`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
 Linux evidence head `029e7f21322f3d0f3619a8f3a0158e7157972e30` adds official locale-pack switching,
 Arabic RTL direction, Secret Service prompted-flow,
 notification-daemon, portal,

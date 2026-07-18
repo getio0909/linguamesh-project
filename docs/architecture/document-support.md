@@ -10,6 +10,8 @@ Codecs expose `inspect`, `extract`, `reconstruct`, and `validate`; they never ma
 
 ## Delivery levels
 
-The roadmap proceeds through TXT/Markdown; HTML/JSON/CSV/subtitles; DOCX; PPTX/XLSX; EPUB; and text-based PDF. OCR remains an optional beta plugin. `IMPLEMENTATION_STATUS.md` is the authoritative record of what actually works.
+The roadmap proceeds through TXT/Markdown/CSV/subtitles in the Linux-first slice; HTML/JSON; DOCX;
+PPTX/XLSX; EPUB; and text-based PDF. OCR remains an optional beta plugin.
+`IMPLEMENTATION_STATUS.md` is the authoritative record of what actually works.
 
 PDF reading order and reconstruction may be uncertain; direct translation must not be advertised as pixel-identical. The product should offer structured HTML or DOCX output when reliable PDF reconstruction is unavailable. Office formats preserve relationships and non-text assets but must disclose limitations for macros, signatures, tracked changes, comments, animation, and text overflow.

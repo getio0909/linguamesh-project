@@ -83,6 +83,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
   Markdown fenced structure, and route Linux native text import through it.
 - [x] Add bounded Core schema-6 document-job/segment persistence and Linux worker startup recovery,
   explicit segment updates, resume/cancel state transitions, and path/credential exclusion tests.
+- [x] Extend the Linux-first document slice with bounded CSV parsing, selected-column segmentation,
+  safe provider-field decoding/re-encoding, schema-9 persistence migration, and native `.csv`
+  chooser coverage; keep HTML, JSON, archives, and other platforms deferred.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — secure provider foundation
