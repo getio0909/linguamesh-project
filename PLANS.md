@@ -711,6 +711,19 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   the 193-message l10n bundle, Linux construction-stage localization evidence, release-manifest
   pins, and all three Linux remote gates; coordination run `29631208474` passed with Linux job
   `88045006759` and PowerShell job `88045006770`.
+- 2026-07-18: Localization revision `dc9a9d48a38dfeb8f6b2020417960023678d8252` added 15
+  Linux-only Core, loopback-provider, runtime-startup, and profile-storage error messages,
+  bringing the catalog to 208 messages. Localization run `29631551712` and Foundation run
+  `29631551720` passed; the deterministic bundle ZIP checksum is
+  `a8c5535b23eb27f02ff5fd3bb4c4c1c6948718f1233321305c173b1741b27e6f`.
+- 2026-07-18: Linux functional revision `595a1fa81205bca0b5d17f9af624078ac82a0dbc` wired the
+  runtime/storage error catalog keys through the native error mapper. Native run `29631662278`
+  (job `88046380380`), Foundation run `29631662275` (job `88046380379`), and Flatpak run
+  `29631662280` (job `88046380350`) passed the Linux validation, GTK, storage, Secret Service,
+  portal, notification, drag/drop, and GNOME 49 sandbox gates.
+- 2026-07-18: Linux evidence documentation revision `2277ffd1a358237cb55bde3aeaf570a94706306e`
+  recorded those remote gates. Its Native run `29631828307`, Foundation run `29631828314`, and
+  Flatpak run `29631828312` (job `88046930820`) passed after the evidence-only update.
 
 ## Checkpoint update protocol
 
