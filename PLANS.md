@@ -658,6 +658,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-18: Central integration revision `db4c0ca` recorded the paired PO/MO Linux resources,
   l10n bundle checksum, release-manifest pins, and Linux MO evidence; coordination run
   `29629197379` passed with Linux job `88039490578` and PowerShell job `88039490592`.
+- 2026-07-18: Localization revision `cc841103c3480ece237baa088bbb5881a321cf0a` added 24
+  Linux-only fixed and detail-bearing worker/file/storage/provider error messages, bringing the
+  catalog to 172 messages. Localization run `29629399707` and Foundation run `29629399734`
+  passed; the deterministic bundle ZIP checksum is
+  `e55dbd79f9ba010161ac998a940d4a8a142c8aca0385731882b65f38acc3228e`.
+- 2026-07-18: Linux evidence revision `e7d2f7776d3c129e1f66a1feacd04c4826160a2b` wired the
+  worker/file/storage/provider error keys through the runtime MO loader and pinned the new l10n
+  checkout. Native run `29629498575`, Foundation run `29629498574`, and Flatpak run `29629498588`
+  passed the Linux validation, MO/PO checks, GTK fixtures, and GNOME 49 sandbox smoke.
 
 ## Checkpoint update protocol
 
