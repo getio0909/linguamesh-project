@@ -622,6 +622,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   active-provider/notification GTK evidence, release-manifest pin, and Linux remote gates;
   coordination run `29627110594` passed with Linux job `88033588032` and PowerShell job
   `88033588065`.
+- 2026-07-18: Localization revision `0ba26705e113230ae7d9e74db54039e1e82296ce` added ten
+  Linux-only fixed provider/file/worker error messages, bringing the catalog to 117 messages.
+  Localization and Foundation workflows passed as runs `29627610120` and `29627610107`; the
+  deterministic bundle ZIP checksum is
+  `bdffb3472da8023e4c414ed40744e4431cb2ae551189ef1ecef701a77b39f01f`.
+- 2026-07-18: Linux evidence revision `b6d2503` wired localized provider validation, saved-profile,
+  active-provider, text-file import, and worker-disconnect/stop errors through the GTK runtime.
+  Native run `29627668119`, Foundation run `29627668093`, and Flatpak run `29627668108` passed;
+  the workflow pins l10n revision `0ba26705e113230ae7d9e74db54039e1e82296ce`.
 
 ## Checkpoint update protocol
 
