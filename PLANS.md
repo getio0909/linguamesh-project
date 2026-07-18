@@ -744,6 +744,26 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   the protected-span Core/Linux pins, compatibility boundary, release-manifest source revisions,
   and remote evidence. Coordination run `29632758636` passed with Linux job `88049553494` and
   PowerShell job `88049553476`.
+- 2026-07-18: Core functional revision `3f96de03eb4ff04add09473fc1473c2c49d67a51` added bounded,
+  request-level glossary validation and protected-span restoration for required target terms or
+  immutable names. Local workspace checks, full tests, build, cargo-deny, and Native SDK passed;
+  its Native SDK run `29633431920` passed. Test-only descendant `da83df8effa9611e496e1c288e6a1f08e1560d2c`
+  removed a credential-signature test fixture false positive; CI run `29633611719` and Native SDK
+  run `29633611665` passed all Windows, Apple, Android, and Linux jobs.
+- 2026-07-18: Localization revision `2e5e3033f453aa2882cf71217f9514dce8501269` added three
+  request-level glossary messages to all twelve official/pseudo Linux packs, bringing the catalog
+  to 211 messages. Lint, deterministic generation/test/build, and checksum `116a9cdedd8b0a3d31171b365969b745681e50257e183b40aa2c37c77f1e6d91` passed.
+- 2026-07-18: Linux revision `3affedb1cc95d9ec57823459f7cf8c91f3eb16bb` exposed the request-level
+  glossary field and semicolon-separated `source => target` UI rules, pinned Core/l10n revisions,
+  synchronized PO/MO resources, and documented the in-memory scope. Local validation passed 53
+  no-default tests, 80 demo-provider tests with one controlled ignore, locked build, Docs.rs
+  checks, strict Clippy, PO syntax, and l10n sync. Native run `29633550137` (job `88051695699`),
+  Foundation run `29633550177` (job `88051695826`), and Flatpak run `29633550134` (job `88051695714`)
+  passed.
+- 2026-07-18: Central release and compatibility records were advanced to Core functional
+  `3f96de03eb4ff04add09473fc1473c2c49d67a51`, l10n `2e5e3033f453aa2882cf71217f9514dce8501269`,
+  and Linux `3affedb1cc95d9ec57823459f7cf8c91f3eb16bb`; Android, Windows, and macOS remain deferred
+  by the Linux-first scope.
 
 ## Checkpoint update protocol
 
