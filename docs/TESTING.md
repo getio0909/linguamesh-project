@@ -23,17 +23,19 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
-The current Linux-first TXT/Markdown document slice is pinned to Core `e207754a35d9e29b8716420e1d19f755c9e27682`,
-l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux `07065259f84dac09618627fda1b0f3c90f8bc9d0`.
-Core CI `29640818611` and Native SDK `29640818595` passed; l10n Localization `29640108992` and
+The current Linux-first TXT/Markdown document slice is pinned to Core `6c54f329e9a62ffa1d2f9503087e59d4b9e9d6e9`,
+l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux `c0d944ddd86ea742fc8cc79187f8be81f240c144`.
+Core CI `29641613390` and Native SDK `29641613407` passed; l10n Localization `29640108992` and
 Foundation `29640108969` passed with the 262-message bundle checksum
-`a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux Native `29640999127`
-(job `88071403342`) passed all GTK, storage, portal, notification, X11, and forced-Wayland gates;
-Foundation `29640999121` and Flatpak `29640999145` (job `88071403518`) passed the repository-wide
-and packaging checks. Local Core storage tests and Linux worker tests verify bounded standard history
-writes, Incognito skip, startup count/policy restoration, cache identity/reuse, clear-all,
-newest-first inspection, exact per-entry deletion, escaped UTF-8 TSV export, and the bounded Core
-TXT/Markdown document contract with BOM/line-ending preservation and verbatim Markdown fences.
+`a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux Native `29641700063`
+(job `88073175248`) passed all GTK, storage, portal, notification, X11, and forced-Wayland gates;
+Foundation `29641700069` and Flatpak `29641700077` (job `88073175155`) passed the repository-wide
+and packaging checks. Local Core storage tests
+and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
+restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
+escaped UTF-8 TSV export, the bounded Core TXT/Markdown document contract with BOM/line-ending
+preservation and verbatim Markdown fences, schema-6 job bounds, segment updates, and restart
+recovery of pending/running jobs without paths or credentials.
 
 Central integration revision `e1bcf55ed16f734e14a559e292588dc8285c672e` passed coordination run
 `29639330664`, including Linux job `88067060177` and Windows PowerShell job `88067060171`.

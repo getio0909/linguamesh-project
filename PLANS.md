@@ -81,6 +81,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   persisted enable/disable policy, cache reuse, inspection, export, exact deletion, and clear-all.
 - [x] Add the bounded Core TXT/Markdown document contract with preserved line endings and
   Markdown fenced structure, and route Linux native text import through it.
+- [x] Add bounded Core schema-6 document-job/segment persistence and Linux worker startup recovery,
+  explicit segment updates, resume/cancel state transitions, and path/credential exclusion tests.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — secure provider foundation
@@ -97,6 +99,10 @@ be added without a separate maintenance, security, and license review.
 
 Assumption: the existing untracked central RFC and ADR drafts are unrelated user work and must
 remain untouched unless their owner explicitly incorporates them into this checkpoint.
+
+Assumption: schema-6 document recovery stores only an opaque job ID, source basename, format,
+ordered bounded segments, and lifecycle state. Pending/running jobs are restored on Linux worker
+startup; GUI queue presentation and archive codecs remain future work.
 
 Assumption: exhausting a private Linux tmpfs to `ENOSPC` verifies the implemented SQLite
 transaction-failure boundary, not corruption, read-only media, power loss, or every VFS failure.
@@ -884,6 +890,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Native `29640999127` (job `88071403342`), Foundation `29640999121`, and Flatpak `29640999145`
   (job `88071403518`). The initial run `29640946521` failed before validation at an incorrect Core
   SHA checkout and is retained as failure evidence; the corrected pin is the verified source.
+- 2026-07-18: Core revision `6c54f329e9a62ffa1d2f9503087e59d4b9e9d6e9` added schema-6 bounded
+  `document_jobs`/`document_segments` snapshots, lifecycle state, segment updates, and restart-safe
+  resumable-job APIs; CI `29641613390` and Native SDK `29641613407` passed. Linux revision
+  `c0d944ddd86ea742fc8cc79187f8be81f240c144` wired worker create/list/update/resume/cancel commands
+  and startup recovery without paths or credentials; Native `29641700063` (job `88073175248`),
+  Foundation `29641700069`, and Flatpak `29641700077` (job `88073175155`) passed.
 
 ## Checkpoint update protocol
 

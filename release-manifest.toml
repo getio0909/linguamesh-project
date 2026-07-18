@@ -19,7 +19,7 @@ localization_schema_version = "1.0.0"
 [components.core]
 repository = "linguamesh-core"
 version = "0.1.0-alpha.2"
-source_revision = "e207754a35d9e29b8716420e1d19f755c9e27682"
+source_revision = "6c54f329e9a62ffa1d2f9503087e59d4b9e9d6e9"
 minimum_compatible_version = "0.1.0-alpha.2"
 artifacts = []
 
@@ -54,6 +54,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "07065259f84dac09618627fda1b0f3c90f8bc9d0"
+source_revision = "c0d944ddd86ea742fc8cc79187f8be81f240c144"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

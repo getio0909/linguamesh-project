@@ -34,9 +34,26 @@ prompted store/delete flows now have a separately verified fail-closed boundary,
 prompt approval remains open. A pinned Linux
 Flatpak manifest now has a remotely verified GNOME 49 SDK build, prerelease CI bundle, and bounded
 sandbox startup smoke; X11 desktop-shell notification rendering is now verified, while physical
-compositor/GPU rendering and release artifacts remain open. No stable product
-release, completed native
-client, released SDK artifact, or supported document codec is claimed here.
+compositor/GPU rendering and release artifacts remain open. Core schema 6 and the Linux worker now
+persist bounded TXT/Markdown job snapshots and restore pending/running segment progress after
+restart without source paths or credentials; GUI queue presentation and archive codecs remain open.
+No stable product release, completed native client, or released SDK artifact is claimed here.
+
+## 2026-07-18 — Linux document job recovery checkpoint
+
+Assumption: this slice persists only an opaque job ID, source basename, format, ordered bounded
+segments, and lifecycle state. Pending/running jobs are restored automatically; completed, cancelled,
+and failed snapshots remain inspectable until deletion. Provider credentials, session secrets,
+filesystem paths, and archive payloads are excluded.
+
+Core revision `6c54f329e9a62ffa1d2f9503087e59d4b9e9d6e9` adds schema 6 document-job/segment tables,
+transactional snapshot replacement, bounds, state transitions, and restart-safe recovery APIs. Linux
+revision `c0d944ddd86ea742fc8cc79187f8be81f240c144` exposes worker create/list/update/resume/cancel
+commands and startup restoration events. Core tests (19 storage tests plus full workspace suite) and
+Linux tests (88 passed, 1 intentional environment skip) cover migration, segment reconstruction,
+queue bounds, structure protection, and absence of paths/credentials. Core CI `29641613390`, Native
+SDK `29641613407`, Linux Native `29641700063` (job `88073175248`), Foundation `29641700069`, and
+Flatpak `29641700077` (job `88073175155`) passed.
 
 ## 2026-07-18 — Linux translation memory checkpoint
 
@@ -126,12 +143,12 @@ opt-out.
 | GitHub repositories | Published and verified | All seven repositories are public, use `main` as the default branch, have Issues and Actions enabled, have Wiki disabled, and initially matched their local committed HEAD. Canonical remotes are recorded in `workspace-manifest.toml`. |
 | GitHub metadata | Validated | The repository Python 3.13 environment parsed all workflow and issue-template YAML files successfully; remote run evidence is listed below. |
 | Canonical sibling repositories | Layout validated | `bash tools/check-workspace.sh --require-repositories` found all seven canonical directories and their minimum policy files. This does not verify sibling application behavior. |
-| Rust core checkpoint | Validated locally and remotely | Functional revision `e207754a35d9e29b8716420e1d19f755c9e27682` includes schema 5 optional translation memory and the negotiated `bounded_text_document_v1` contract for bounded UTF-8 TXT/Markdown inspection, preserved line endings, Markdown fenced structure, serializable segments, and fail-closed reconstruction; local fmt, strict Clippy, locked build, full offline workspace tests, CI `29640818611`, and Native SDK `29640818595` passed. |
+| Rust core checkpoint | Validated locally and remotely | Functional revision `6c54f329e9a62ffa1d2f9503087e59d4b9e9d6e9` includes schema 5 optional translation memory, schema 6 bounded document-job/segment snapshots with resumable state, and the negotiated `bounded_text_document_v1` contract for bounded UTF-8 TXT/Markdown inspection, preserved line endings, Markdown fenced structure, serializable segments, and fail-closed reconstruction; local fmt, strict Clippy, locked build, full offline workspace tests, CI `29641613390`, and Native SDK `29641613407` passed. |
 | Localization bundle | Validated locally and remotely | l10n evidence revision `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995` contains 262 canonical messages, including Linux translation-memory controls/status, 12 official locale packs, two pseudo-locales, 59 generated artifacts including paired Linux PO/MO resources, 26 passing tests, platform-format checks, and deterministic bundle ZIP SHA-256 `a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Non-English packs remain explicitly unreviewed drafts. |
-| Native Linux alpha.2 slice | Validated locally and remotely | Functional revision `07065259f84dac09618627fda1b0f3c90f8bc9d0` negotiates `bounded_text_document_v1` and routes bounded TXT/Markdown imports through Core while retaining secure-provider, glossary, history, policy, and translation-memory behavior. Local 87-test suite, strict Clippy, GUI Rust check, localization sync, and diff checks passed; Native `29640999127` (job `88071403342`), Foundation `29640999121`, and Flatpak `29640999145` (job `88071403518`) passed. |
+| Native Linux alpha.2 slice | Validated locally and remotely | Functional revision `c0d944ddd86ea742fc8cc79187f8be81f240c144` negotiates `bounded_text_document_v1`, routes bounded TXT/Markdown imports through Core, and persists/restores schema-6 document-job segment progress without paths or credentials while retaining secure-provider, glossary, history, policy, and translation-memory behavior. Local 89-test suite (88 passed, 1 intentional ignore), strict Clippy, GUI Rust check, localization sync, and diff checks passed; Native `29641700063` (job `88073175248`), Foundation `29641700069`, and Flatpak `29641700077` (job `88073175155`) passed. |
 | Linux Flatpak packaging scaffold | GNOME 49 SDK build and bounded sandbox startup validated | Linux packaging revision `fd1f400058f4c68b47a9bd0823e790c6d9cef263` publishes the pinned GNOME 49 manifest, immutable Core/Linux source pins, generated Cargo archive hashes, desktop entry, AppStream metadata, icon, and constrained runtime permissions. `bash tools/validate-flatpak-metadata.sh` passed locally; latest `Flatpak Linux` run `29625778180` (job `88029765322`) is the current remote packaging gate. Physical compositor/GPU rendering, signing, and distributable release remain unverified. |
-| GitHub Actions | Passed | Core revision `e207754a35d9e29b8716420e1d19f755c9e27682` passed CI `29640818611` and Native SDK `29640818595`; l10n revision `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995` passed Localization `29640108992` and Foundation `29640108969`; Linux revision `07065259f84dac09618627fda1b0f3c90f8bc9d0` passed Native `29640999127` (job `88071403342`), Foundation `29640999121`, and Flatpak `29640999145` (job `88071403518`). |
-| Non-functional repository heads | Passed | Core head `e207754a35d9e29b8716420e1d19f755c9e27682`, l10n head `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux head `07065259f84dac09618627fda1b0f3c90f8bc9d0` are the current functional pins and passed their CI gates. The release manifest intentionally pins these revisions and lists no release artifact. |
+| GitHub Actions | Passed | Core revision `6c54f329e9a62ffa1d2f9503087e59d4b9e9d6e9` passed CI `29641613390` and Native SDK `29641613407`; l10n revision `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995` passed Localization `29640108992` and Foundation `29640108969`; Linux revision `c0d944ddd86ea742fc8cc79187f8be81f240c144` passed Native `29641700063` (job `88073175248`), Foundation `29641700069`, and Flatpak `29641700077` (job `88073175155`). |
+| Non-functional repository heads | Passed | Core head `6c54f329e9a62ffa1d2f9503087e59d4b9e9d6e9`, l10n head `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux head `c0d944ddd86ea742fc8cc79187f8be81f240c144` are the current functional pins and passed their CI gates. The release manifest intentionally pins these revisions and lists no release artifact. |
 | Acceptance Scenario 1 | Passed locally | The reference CLI discovered and selected a fake model, streamed `你好，LinguaMesh！` over loopback HTTP/SSE, and completed without a key. A separate slow-stream run retained `你好` and emitted cancellation. |
 | Remaining acceptance scenarios | Not passed | Scenarios 2–20 do not yet have complete cross-platform reproducible passing evidence. Linux now has complete secure-provider Scenario 3 implementation evidence and partial Scenario 5 evidence; the global scenarios and stable-release evidence remain incomplete. |
 
