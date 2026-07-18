@@ -848,6 +848,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   window, exact deletion, escaped UTF-8 TSV export, worker commands/events, and regression tests.
   Native `29638278667` (job `88064319932`), Foundation `29638278676`, and Flatpak `29638278677`
   (job `88064320034`) passed the Linux gates.
+- 2026-07-18: Central revision `08250c870b42b6df249c30a0379a5db505ef23c2` recorded the Linux
+  history-controls pins, evidence, and remaining translation-memory/history-policy limitations;
+  coordination run `29638614216` passed with Linux job `88065175722` and PowerShell job
+  `88065175707`.
 
 ## Checkpoint update protocol
 
