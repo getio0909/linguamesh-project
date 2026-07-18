@@ -110,6 +110,13 @@ Default-branch Native `29664478686` (job `88132499067`), Foundation `29664478672
 `29664478670` passed. Orca speech, provider-form default Tab-chain review, physical desktop
 accessibility, OCR, other platform clients, and stable-release evidence remain open.
 
+Linux-first dialog field localization checkpoint: Linux `1b68cef85d89324baba20689ce246486ab28c49b`
+uses the catalog-backed `field.source_text` and `field.translation` labels for source and translated
+content prefixes in the history and translation-memory dialogs. Native `29664934283` (job
+`88133657483`), Foundation `29664934298`, and Flatpak `29664934279` passed; dynamic `Job` and
+`Identity` metadata, complete visible-string gettext coverage, and the remaining Linux/release
+boundaries remain open.
+
 Linux-first PPTX package checkpoint: Core `0f71a652a536753f48bb8c852fd38e97740c23ce` adds bounded
 PPTX ZIP/XML inspection, schema-11 package persistence, safe slide/notes/master/layout/handout/
 comments text-node reconstruction, and resource retention. Linux functional revision

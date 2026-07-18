@@ -1105,6 +1105,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   accessibility, OCR, other clients, and stable-release evidence remain open. Central coordination
   `29664611878` (Linux job `88132835095`, PowerShell job `88132835104`) passed.
 
+- 2026-07-18: Assumption: existing catalog keys `field.source_text` and `field.translation` are
+  the canonical labels for source and translated content in history and translation-memory dialogs.
+  Linux revision `1b68cef85d89324baba20689ce246486ab28c49b` replaces those fixed English prefixes
+  without changing stored content or adding locale-pack keys. Native `29664934283` (job
+  `88133657483`), Foundation `29664934298`, and Flatpak `29664934279` passed. Dynamic `Job` and
+  `Identity` metadata, complete visible-string gettext coverage, and the remaining Linux/release
+  boundaries remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
