@@ -604,6 +604,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   and the 97-message snapshot into the GTK onboarding card. Native run `29626461099`, Foundation
   run `29626461122`, and Flatpak run `29626461131` passed; the workflow now pins l10n revision
   `5c2e5756f02fbc29ba1ca311958b6bf7d26027bf`.
+- 2026-07-18: Central integration revision `4cc6a96` recorded the 97-message l10n bundle,
+  onboarding-stage GTK evidence, release-manifest pin, and Linux remote gates; coordination run
+  `29626700744` passed with Linux job `88032448228` and PowerShell job `88032448236`.
 
 ## Checkpoint update protocol
 
