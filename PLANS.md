@@ -1089,8 +1089,8 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   profile, provider name, endpoint, credential, Connect, and Remember profile; Ctrl/Alt/Super
   modified Tab remains native workspace navigation. Linux revision `8f2cba09e500e8d3a3ea5e6ef9f10d6244369305`
   moves the handler to the application-window Capture phase and verifies the real GTK focus path
-  with an Xvfb/xfwm4 fixture. Native `29663222081` (job `88129285443`), Foundation `29663222084`
-  (job `88129285550`), and Flatpak `29663222096` (job `88129285461`) passed; local format, strict
+  with an Xvfb/xfwm4 fixture. Default-branch Native `29663597817` (job `88130256368`), Foundation
+  `29663597809` (job `88130256318`), and Flatpak `29663597831` (job `88130256370`) passed; local format, strict
   Clippy, 61-library-test suite, shell syntax, and diff checks passed. Screen-reader narration,
   physical desktop review, OCR, other clients, and stable-release evidence remain open. Central
   coordination run `29663509326` (job `88130035321`) also passed.
