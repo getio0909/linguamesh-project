@@ -8,7 +8,7 @@ Milestone 0, Core `0.1.0-alpha.2`, localization development bundle `0.1.0`, and 
 `0.1.0-alpha.2` multi-profile/session-onboarding, runtime-`ENOSPC` rollback, GIO Secret Service
 adapter, runtime official Linux locale-pack switching with Arabic RTL direction, generic completion
 desktop notification, bounded
-native text-file import, bounded Linux glossary CSV import/export, bounded Linux JSON/HTML document import, private notification-service transport validation, headless real
+native text-file import, bounded Linux glossary CSV import/export, bounded Linux JSON/HTML/EPUB/PDF document import, private notification-service transport validation, headless real
 notification-daemon delivery, a real XDG document-portal lease lifecycle fixture, a real
 interactive portal FileChooser backend fixture, application-level GTK FileDialog callback
 verification, and a real GTK source-editor drag/drop gesture fixture are
@@ -38,13 +38,13 @@ compositor/GPU rendering and release artifacts remain open. Core schema 9 and th
 persist bounded TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX job snapshots, preserve CSV delimiters/quotes,
 selected-column boundaries, JSON structure/path selection, and HTML text-node structure, and restore pending/running segment progress after restart without source
 paths or credentials. Core schema 10 now persists bounded DOCX package bytes, schema 11 adds
-bounded PPTX package persistence, schema 12 adds bounded XLSX persistence, and schema 13 adds bounded
-EPUB persistence while retaining
+bounded PPTX package persistence, schema 12 adds bounded XLSX persistence, schema 13 adds bounded
+EPUB persistence, and schema 14 adds bounded text-PDF persistence while retaining
 non-text package parts and
 reconstructing supported OOXML text nodes with ZIP path, XML, entry, and size limits. The Linux GTK
 client now lists persisted jobs in a modal queue and lets the user select a job to resume, retry,
-pause, cancel, or export binary DOCX/PPTX/XLSX/EPUB output; PDF/OCR and remaining archive codecs
-remain open.
+pause, cancel, or export binary DOCX/PPTX/XLSX/EPUB/PDF output; PDF OCR, pixel-identical PDF
+reconstruction, image-only page translation, and remaining archive codecs remain open.
 No stable product release, completed native client, or released SDK artifact is claimed here.
 
 ## 2026-07-18 — Linux JSON document checkpoint
@@ -133,6 +133,24 @@ malformed, DTD-bearing, oversized, and incomplete packages are rejected.
   Flatpak `29651990064` passed.
 - The checkpoint remains unreleased; EPUB, PDF/OCR, remaining archive codecs, full cross-platform
   clients, and acceptance scenarios 2–20 remain open.
+
+## 2026-07-18 — Linux text-PDF checkpoint
+
+Assumption: PDF support is bounded to text-based files and does not perform OCR or promise
+pixel-identical layout reconstruction. The Core parser preserves page association, basic text
+coordinates, and uncertain reading-order boundaries; encrypted PDFs, unsupported filters, malformed
+objects, and over-limit inputs are rejected. Image-only pages remain explicit limitations.
+
+- Core `7275c5ec195946ea20a2d65e5f42790b2d631ff2` adds page-aware PDF extraction, literal/hex text
+  rewriting with Flate stream support, schema-14 persistence, and a structured HTML alternative for
+  target text that cannot be safely encoded. Core CI `29653737299` and Native SDK `29653737293`
+  passed, with 23 document and 29 storage tests in the full workspace run.
+- Linux `a64e3751bdab9e6f21901f1d3bc8a7eb8004d0f0` adds PDF chooser/MIME filtering, worker export
+  fallback from `.pdf` to page-aware `.html`, and documentation. Native `29653900764`, Foundation
+  `29653900780`, and Flatpak `29653900782` all passed.
+- This checkpoint remains unreleased; PDF OCR, pixel-identical reconstruction, image-only page
+  translation, remaining archive codecs, complete cross-platform clients, and acceptance scenarios
+  2–20 remain open.
 
 ## 2026-07-18 — Linux persisted document queue checkpoint
 
@@ -304,12 +322,12 @@ environment-dependent ignore. Core CI `29645385353` passed; Native SDK `29645385
 | GitHub repositories | Published and verified | All seven repositories are public, use `main` as the default branch, have Issues and Actions enabled, have Wiki disabled, and initially matched their local committed HEAD. Canonical remotes are recorded in `workspace-manifest.toml`. |
 | GitHub metadata | Validated | The repository Python 3.13 environment parsed all workflow and issue-template YAML files successfully; remote run evidence is listed below. |
 | Canonical sibling repositories | Layout validated | `bash tools/check-workspace.sh --require-repositories` found all seven canonical directories and their minimum policy files. This does not verify sibling application behavior. |
-| Rust core checkpoint | Validated locally and remotely | Functional revision `554c09521b57de45be154a99edfbf24aa2fc6538` includes schema 5 optional translation memory, schema 6 bounded document-job/segment snapshots, schema 7 paused-job state, schema 8 non-secret document options, schema 9 subtitle/CSV/JSON/HTML format constraints, schema 10 bounded DOCX, schema 11 bounded PPTX, schema 12 bounded XLSX, and schema 13 bounded EPUB package persistence, plus the negotiated `bounded_text_document_v1` contract for bounded UTF-8 TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT and DOCX/PPTX/XLSX/EPUB inspection, preserved line endings, Markdown fences, subtitle cue IDs/headers/timestamps, CSV delimiters/quotes/variable-width rows/selected-column boundaries, JSON keys/primitives/paths/escaping, HTML tags/attributes/scripts/styles/text nodes, OOXML/EPUB package resources and supported text nodes, inter-cue WebVTT metadata, serializable segments, and fail-closed reconstruction; local fmt, strict Clippy, workspace tests, Core CI `29652884450`, and Native SDK `29652884430` passed. |
+| Rust core checkpoint | Validated locally and remotely | Functional revision `7275c5ec195946ea20a2d65e5f42790b2d631ff2` includes schema 5 optional translation memory, schema 6 bounded document-job/segment snapshots, schema 7 paused-job state, schema 8 non-secret document options, schema 9 subtitle/CSV/JSON/HTML format constraints, schema 10 bounded DOCX, schema 11 bounded PPTX, schema 12 bounded XLSX, schema 13 bounded EPUB, and schema 14 bounded PDF package persistence, plus the negotiated `bounded_text_document_v1` contract for bounded UTF-8 TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT, DOCX/PPTX/XLSX/EPUB packages, and text-based PDF page inspection with page association, coordinates where available, structured HTML fallback, preserved line endings, Markdown fences, subtitle cue IDs/headers/timestamps, CSV delimiters/quotes/variable-width rows/selected-column boundaries, JSON keys/primitives/paths/escaping, HTML tags/attributes/scripts/styles/text nodes, OOXML/EPUB package resources and supported text nodes, inter-cue WebVTT metadata, serializable segments, and fail-closed reconstruction; local fmt, strict Clippy, workspace tests, Core CI `29653737299`, and Native SDK `29653737293` passed. |
 | Localization bundle | Validated locally and remotely | l10n evidence revision `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995` contains 262 canonical messages, including Linux translation-memory controls/status, 12 official locale packs, two pseudo-locales, 59 generated artifacts including paired Linux PO/MO resources, 26 passing tests, platform-format checks, and deterministic bundle ZIP SHA-256 `a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Non-English packs remain explicitly unreviewed drafts. |
-| Native Linux alpha.2 slice | Validated locally and remotely | Functional revision `3f0f659ccba195e58789d80d9fdc20b087a10b68` negotiates `bounded_text_document_v1`, converts bounded TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB imports into Core jobs, preserves subtitle cue IDs/headers/timestamps, CSV delimiters/quotes/variable-width rows/selected-column boundaries, JSON structure/path selection/escaping, HTML tags/attributes/links/scripts/styles/text nodes, OOXML/EPUB non-text resources and supported text nodes, sequentially translates pending prose segments with persisted progress, lists persisted jobs in the GTK queue, supports selection plus pause/resume/retry/cancel/export, updates EPUB OPF language metadata at export, and restores schema-13 snapshots without paths or credentials while retaining secure-provider, glossary, history, policy, and translation-memory behavior. Local 61-test suite, strict Clippy, Rust checks, and diff checks passed; Native `29652937783`, Foundation `29652937750`, and Flatpak `29652937761` passed. |
-| Linux Flatpak packaging scaffold | Static validation passed; remote pending | Linux packaging revision `3f0f659ccba195e58789d80d9fdc20b087a10b68` publishes the pinned GNOME 49 manifest, immutable Core/Linux source pins including DOCX/PPTX/XLSX/EPUB and the queue UI, generated Cargo archive hashes for the current lockfile, desktop entry, AppStream metadata, icon, and constrained runtime permissions. `bash tools/validate-flatpak-metadata.sh` passed locally; latest `Flatpak Linux` run `29652937761` is pending. Physical compositor/GPU rendering, signing, and distributable release remain unverified. |
-| GitHub Actions | Passed | Core revision `554c09521b57de45be154a99edfbf24aa2fc6538` passed CI `29652884450` and Native SDK `29652884430`; Linux revision `3f0f659ccba195e58789d80d9fdc20b087a10b68` passed Native `29652937783`, Foundation `29652937750`, and Flatpak `29652937761`; l10n revision `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995` remains CI-verified. |
-| Non-functional repository heads | Published | Core head `554c09521b57de45be154a99edfbf24aa2fc6538`, l10n head `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux head `3f0f659ccba195e58789d80d9fdc20b087a10b68` are published functional pins and passed their remote gates. The release manifest remains unreleased with no artifacts. |
+| Native Linux alpha.2 slice | Validated locally and remotely | Functional revision `a64e3751bdab9e6f21901f1d3bc8a7eb8004d0f0` negotiates `bounded_text_document_v1`, converts bounded TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF imports into Core jobs, preserves subtitle cue IDs/headers/timestamps, CSV delimiters/quotes/variable-width rows/selected-column boundaries, JSON structure/path selection/escaping, HTML tags/attributes/links/scripts/styles/text nodes, OOXML/EPUB non-text resources and supported text nodes, PDF page association/coordinates and structured HTML fallback, sequentially translates pending prose segments with persisted progress, lists persisted jobs in the GTK queue, supports selection plus pause/resume/retry/cancel/export, and restores schema-14 snapshots without paths or credentials while retaining secure-provider, glossary, history, policy, and translation-memory behavior. Local 61-test suite, strict Clippy, Rust checks, and diff checks passed; Native `29653900764`, Foundation `29653900780`, and Flatpak `29653900782` passed. |
+| Linux Flatpak packaging scaffold | Static validation passed; remote passed | Linux packaging revision `a64e3751bdab9e6f21901f1d3bc8a7eb8004d0f0` publishes the pinned GNOME 49 manifest, immutable Core/Linux source pins including DOCX/PPTX/XLSX/EPUB/PDF and the queue UI, generated Cargo archive hashes for the current lockfile, desktop entry, AppStream metadata, icon, and constrained runtime permissions. `bash tools/validate-flatpak-metadata.sh` passed locally; `Flatpak Linux` run `29653900782` passed. Physical compositor/GPU rendering, signing, and distributable release remain unverified. |
+| GitHub Actions | Passed | Core revision `7275c5ec195946ea20a2d65e5f42790b2d631ff2` passed CI `29653737299` and Native SDK `29653737293`; Linux revision `a64e3751bdab9e6f21901f1d3bc8a7eb8004d0f0` passed Native `29653900764`, Foundation `29653900780`, and Flatpak `29653900782`; l10n revision `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995` remains CI-verified. |
+| Non-functional repository heads | Published | Core head `7275c5ec195946ea20a2d65e5f42790b2d631ff2`, l10n head `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux head `a64e3751bdab9e6f21901f1d3bc8a7eb8004d0f0` are published functional pins and passed their remote gates. The release manifest remains unreleased with no artifacts. |
 | Acceptance Scenario 1 | Passed locally | The reference CLI discovered and selected a fake model, streamed `你好，LinguaMesh！` over loopback HTTP/SSE, and completed without a key. A separate slow-stream run retained `你好` and emitted cancellation. |
 | Remaining acceptance scenarios | Not passed | Scenarios 2–20 do not yet have complete cross-platform reproducible passing evidence. Linux now has complete secure-provider Scenario 3 implementation evidence and partial Scenario 5 evidence; the global scenarios and stable-release evidence remain incomplete. |
 

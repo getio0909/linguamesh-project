@@ -973,6 +973,18 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Linux archive slice; PDF/OCR, remaining archive formats, multi-job selection, Android, Windows,
   and macOS remain open.
 
+- 2026-07-18: Assumption: Linux-first text-PDF support is bounded to 4 MiB, 256 pages, 4,096
+  objects, and 100,000 content operators. Core revision `7275c5ec195946ea20a2d65e5f42790b2d631ff2`
+  adds page-aware text extraction, basic coordinates and reading-order boundaries, Flate stream
+  support, safe ASCII literal/hex rewriting, schema-14 persistence, and a structured HTML
+  alternative when target text cannot be safely encoded. Linux revision
+  `a64e3751bdab9e6f21901f1d3bc8a7eb8004d0f0` adds PDF chooser/MIME filtering and worker export
+  fallback to `.html`; image-only pages, OCR, and pixel-identical reconstruction remain explicitly
+  out of scope. Core CI `29653737299`, Native SDK `29653737293`, Linux Native `29653900764`,
+  Foundation `29653900780`, and Flatpak `29653900782` passed. PDF is now the supported Linux
+  text-document slice; OCR, remaining archive formats, multi-job selection, Android, Windows, and
+  macOS remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
