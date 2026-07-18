@@ -905,6 +905,13 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   archive codecs, and automatic provider-parameter persistence remain open; Android, Windows, and
   macOS remain deferred.
 
+- 2026-07-18: Core revision `fd79752fe8857ea37098602cefed294924fa1db5` added schema-7 paused-job
+  persistence and Linux revision `ef3d3630c184efd23e602d244fcac82085a51893` added segment-boundary
+  pause/resume/retry worker commands, GTK progress, and lifecycle controls. Native `29643502027`
+  and Foundation `29643502025` passed; Flatpak `29643502057` also passed. The
+  Linux-first scope still leaves multi-job selection, provider-parameter persistence, archive
+  codecs, Android, Windows, and macOS open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

@@ -23,19 +23,20 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
-The current Linux-first TXT/Markdown document slice is pinned to Core `6c54f329e9a62ffa1d2f9503087e59d4b9e9d6e9`,
-l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux `ec7a12c649c03c20d7a9665a6499fe8eece6023e`.
-Core CI `29641613390` and Native SDK `29641613407` passed; l10n Localization `29640108992` and
+The current Linux-first TXT/Markdown document slice is pinned to Core `fd79752fe8857ea37098602cefed294924fa1db5`,
+l10n `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux `ef3d3630c184efd23e602d244fcac82085a51893`.
+Core CI and Native SDK for the schema-7 Core revision passed; l10n Localization `29640108992` and
 Foundation `29640108969` passed with the 262-message bundle checksum
-`a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux Native `29642622311`
-(job `88075537969`) passed all GTK, storage, portal, notification, X11, and forced-Wayland gates;
-Foundation `29642623263` and Flatpak `29642624183` (job `88075542529`) passed the repository-wide
+`a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux Native `29643502027`
+passed all GTK, storage, portal, notification, X11, and forced-Wayland gates; Foundation
+`29643502025` and Flatpak `29643502057` passed the repository-wide
 and packaging checks. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
 restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
 escaped UTF-8 TSV export, the bounded Core TXT/Markdown document contract with BOM/line-ending
 preservation and verbatim Markdown fences, schema-6 job bounds, segment updates, and restart
-recovery of pending/running jobs without paths or credentials.
+recovery of pending/running/paused jobs without paths or credentials; pause/resume/retry worker
+and GTK control regressions are covered by the Linux library suite.
 
 Central integration revision `e1bcf55ed16f734e14a559e292588dc8285c672e` passed coordination run
 `29639330664`, including Linux job `88067060177` and Windows PowerShell job `88067060171`.
