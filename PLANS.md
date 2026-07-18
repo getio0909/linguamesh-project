@@ -79,6 +79,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   future standard writes while disabled, and restores across Core storage reopen.
 - [x] Add optional Linux translation memory with versioned request identity, Incognito bypass,
   persisted enable/disable policy, cache reuse, inspection, export, exact deletion, and clear-all.
+- [x] Add the bounded Core TXT/Markdown document contract with preserved line endings and
+  Markdown fenced structure, and route Linux native text import through it.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — secure provider foundation
@@ -874,6 +876,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Linux revision
   `2cd9cdc2dfb423e5d9da56f3a235efba8727da53` passed Native `29640319555` (job `88069646252`),
   Foundation `29640319563`, and Flatpak `29640319593` (job `88069646300`).
+- 2026-07-18: Core revision `e207754a35d9e29b8716420e1d19f755c9e27682` added the
+  `linguamesh-document` crate and negotiated `bounded_text_document_v1` for bounded UTF-8 TXT/
+  Markdown inspection, segment reconstruction, preserved line endings, and verbatim fenced code;
+  CI `29640818611` and Native SDK `29640818595` passed. Linux revision
+  `07065259f84dac09618627fda1b0f3c90f8bc9d0` routed native import through the contract and passed
+  Native `29640999127` (job `88071403342`), Foundation `29640999121`, and Flatpak `29640999145`
+  (job `88071403518`). The initial run `29640946521` failed before validation at an incorrect Core
+  SHA checkout and is retained as failure evidence; the corrected pin is the verified source.
 
 ## Checkpoint update protocol
 

@@ -62,6 +62,24 @@ Translation-memory behavior is now implemented for the Linux-first slice; end-us
 complete visible-string gettext coverage, physical compositor/GPU rendering, signing, distributable
 artifacts, stable release, and the remaining acceptance scenarios remain open.
 
+## 2026-07-18 — Linux TXT/Markdown document checkpoint
+
+Assumption: the first Linux document slice is limited to bounded UTF-8 TXT and Markdown imports;
+Core preserves BOM/line endings and Markdown fenced structure, while persistent document queues,
+interrupted-job recovery, archive codecs, and stable release support remain future work.
+
+- Core `e207754a35d9e29b8716420e1d19f755c9e27682` adds `linguamesh-document` and negotiates
+  `bounded_text_document_v1` for format detection, bounded inspection, serializable segments, and
+  fail-closed reconstruction. Local fmt, strict Clippy, locked build, full offline workspace tests,
+  and diff checks passed; CI `29640818611` and Native SDK `29640818595` passed.
+- Linux `07065259f84dac09618627fda1b0f3c90f8bc9d0` routes native TXT/Markdown import through the
+  Core contract and localizes invalid UTF-8/size/import failures. Local 87-test, Clippy, GUI Rust,
+  l10n-sync, and diff checks passed; Native `29640999127` (job `88071403342`), Foundation
+  `29640999121`, and Flatpak `29640999145` (job `88071403518`) passed.
+- The first Linux attempt, run `29640946521`, failed at shared-Core checkout because the workflow
+  contained an incorrect full SHA; the pin was corrected and rerun successfully above. This failure
+  did not execute product validation steps.
+
 ## 2026-07-18 — Linux history controls checkpoint
 
 Assumption: the Linux history window is a bounded view over Core schema 3; export serializes the
@@ -108,12 +126,12 @@ opt-out.
 | GitHub repositories | Published and verified | All seven repositories are public, use `main` as the default branch, have Issues and Actions enabled, have Wiki disabled, and initially matched their local committed HEAD. Canonical remotes are recorded in `workspace-manifest.toml`. |
 | GitHub metadata | Validated | The repository Python 3.13 environment parsed all workflow and issue-template YAML files successfully; remote run evidence is listed below. |
 | Canonical sibling repositories | Layout validated | `bash tools/check-workspace.sh --require-repositories` found all seven canonical directories and their minimum policy files. This does not verify sibling application behavior. |
-| Rust core checkpoint | Validated locally and remotely | Functional revision `b5fb19cf2123b70587775cd6e4a68515a5790575` uses Core `0.1.0-alpha.2`, ABI 1, protocol 1, `protected_spans_v1`, `long_text_chunking_v1`, bounded request-level glossary protection, deterministic bounded glossary CSV interchange, SQLite schema 3 bounded translation history with newest-first listing and exact per-entry deletion, schema 4 persisted history policy, and schema 5 optional translation memory with versioned identity and exact controls; it passed rustfmt, strict Clippy, full workspace tests, offline build, native SDK checks, CI run `29640169852`, and Native SDK run `29640169834`. |
+| Rust core checkpoint | Validated locally and remotely | Functional revision `e207754a35d9e29b8716420e1d19f755c9e27682` includes schema 5 optional translation memory and the negotiated `bounded_text_document_v1` contract for bounded UTF-8 TXT/Markdown inspection, preserved line endings, Markdown fenced structure, serializable segments, and fail-closed reconstruction; local fmt, strict Clippy, locked build, full offline workspace tests, CI `29640818611`, and Native SDK `29640818595` passed. |
 | Localization bundle | Validated locally and remotely | l10n evidence revision `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995` contains 262 canonical messages, including Linux translation-memory controls/status, 12 official locale packs, two pseudo-locales, 59 generated artifacts including paired Linux PO/MO resources, 26 passing tests, platform-format checks, and deterministic bundle ZIP SHA-256 `a3de4b0bf4afd710a01d15e0426f0d163b56910c0b04f26c411870eae9eea368`. Non-English packs remain explicitly unreviewed drafts. |
-| Native Linux alpha.2 slice | Validated locally and remotely | Functional revision `2cd9cdc2dfb423e5d9da56f3a235efba8727da53` includes the prior secure-provider, glossary, history, and policy behavior plus optional translation-memory cache reuse with confirmed provider identity, Incognito bypass, startup policy/count restore, localized GTK policy/list/export/delete/clear controls, and persistence-failure guards. Local suites passed 87 library tests with one controlled ignore; Native run `29640319555` (job `88069646252`), Foundation run `29640319563`, and Flatpak run `29640319593` (job `88069646300`) passed. |
+| Native Linux alpha.2 slice | Validated locally and remotely | Functional revision `07065259f84dac09618627fda1b0f3c90f8bc9d0` negotiates `bounded_text_document_v1` and routes bounded TXT/Markdown imports through Core while retaining secure-provider, glossary, history, policy, and translation-memory behavior. Local 87-test suite, strict Clippy, GUI Rust check, localization sync, and diff checks passed; Native `29640999127` (job `88071403342`), Foundation `29640999121`, and Flatpak `29640999145` (job `88071403518`) passed. |
 | Linux Flatpak packaging scaffold | GNOME 49 SDK build and bounded sandbox startup validated | Linux packaging revision `fd1f400058f4c68b47a9bd0823e790c6d9cef263` publishes the pinned GNOME 49 manifest, immutable Core/Linux source pins, generated Cargo archive hashes, desktop entry, AppStream metadata, icon, and constrained runtime permissions. `bash tools/validate-flatpak-metadata.sh` passed locally; latest `Flatpak Linux` run `29625778180` (job `88029765322`) is the current remote packaging gate. Physical compositor/GPU rendering, signing, and distributable release remain unverified. |
-| GitHub Actions | Passed | l10n revision `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995` passed Localization run `29640108992` and Foundation run `29640108969`; Core revision `b5fb19cf2123b70587775cd6e4a68515a5790575` passed CI run `29640169852` and Native SDK run `29640169834`; Linux revision `2cd9cdc2dfb423e5d9da56f3a235efba8727da53` passed Native run `29640319555` (job `88069646252`), Foundation run `29640319563`, and Flatpak run `29640319593` (job `88069646300`). |
-| Non-functional repository heads | Passed | Core head `b5fb19cf2123b70587775cd6e4a68515a5790575`, l10n head `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux head `2cd9cdc2dfb423e5d9da56f3a235efba8727da53` are the current functional pins and passed their CI gates. The release manifest intentionally pins these revisions and lists no release artifact. |
+| GitHub Actions | Passed | Core revision `e207754a35d9e29b8716420e1d19f755c9e27682` passed CI `29640818611` and Native SDK `29640818595`; l10n revision `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995` passed Localization `29640108992` and Foundation `29640108969`; Linux revision `07065259f84dac09618627fda1b0f3c90f8bc9d0` passed Native `29640999127` (job `88071403342`), Foundation `29640999121`, and Flatpak `29640999145` (job `88071403518`). |
+| Non-functional repository heads | Passed | Core head `e207754a35d9e29b8716420e1d19f755c9e27682`, l10n head `d64d4085fb3c1cc69c9f7965bd97ffca54ca1995`, and Linux head `07065259f84dac09618627fda1b0f3c90f8bc9d0` are the current functional pins and passed their CI gates. The release manifest intentionally pins these revisions and lists no release artifact. |
 | Acceptance Scenario 1 | Passed locally | The reference CLI discovered and selected a fake model, streamed `你好，LinguaMesh！` over loopback HTTP/SSE, and completed without a key. A separate slow-stream run retained `你好` and emitted cancellation. |
 | Remaining acceptance scenarios | Not passed | Scenarios 2–20 do not yet have complete cross-platform reproducible passing evidence. Linux now has complete secure-provider Scenario 3 implementation evidence and partial Scenario 5 evidence; the global scenarios and stable-release evidence remain incomplete. |
 
