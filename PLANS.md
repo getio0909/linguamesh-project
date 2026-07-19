@@ -143,6 +143,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   upsert behavior; verify localized error coverage and all push/PR gates.
 - [x] Expose Core routing preference, local/remote, privacy, streaming, and document constraints in
   the Linux profile editor; preserve hidden constraints during Edit/Save and verify all gates.
+- [x] Expose provider/model allowlists and denylists plus minimum-quality and request-size limits in
+  the Linux profile editor; preserve Core fields during Edit/Save and verify all gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -374,6 +376,23 @@ l10n `b871a881f0eaf88cdda67a50f9221375f4c814ce` contains 377 messages and all 59
 resources. Local validation passed. Push Native/Flatpak/Foundation runs
 `29702482460`/`29702482435`/`29702482419` and PR Native/Flatpak/Foundation runs
 `29702484581`/`29702484564`/`29702484572` all passed.
+
+## Completed Linux-first checkpoint — routing constraint lists and limits
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-CONSTRAINT-LISTS-1`
+
+Assumption: provider/model allow-deny lists and positive quality/request-size limits are non-secret
+Core routing constraints and should be editable in the Linux profile dialog without weakening Core
+identifier or bound validation.
+
+Linux `f64054924102b5611eb0e17761c7acb8b3a771dd` adds localized provider/model allowlists and
+denylists, minimum-quality, and maximum-request-byte controls. Edit/Save restores and persists
+these fields while retaining the existing routing constraints. l10n
+`c366124539d4e8c909c66ca7cc33fb16ed92e8b2` contains 387 messages and all 59 generated resources.
+Local Linux/l10n checks passed. Push Native/Flatpak/Foundation runs
+`29703371083`/`29703371057`/`29703371084` and PR Native/Flatpak/Foundation runs
+`29703373063`/`29703373065`/`29703373076` all passed. Documentation-only l10n correction `3362732`
+was pushed afterward; the Linux build consumes the verified functional bundle `c3661245`.
 
 ## Completed Linux-first checkpoint — multiple routing-profile IDs
 

@@ -2,6 +2,23 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Linux routing allow/deny and request-limit checkpoint
+
+Assumption: provider/model allow-deny lists, minimum quality, and maximum request bytes are
+non-secret Core routing constraints and should be editable on Linux first; validation remains
+owned by Core and Edit/Save must preserve every other constraint.
+
+- Linux `f64054924102b5611eb0e17761c7acb8b3a771dd` adds localized GTK controls and bounded parsers
+  for provider/model allowlists and denylists, minimum quality, and maximum request bytes. The
+  pure text helpers reject empty/invalid identifiers and non-positive numeric limits, while
+  existing profile fields remain preserved.
+- l10n functional bundle `c366124539d4e8c909c66ca7cc33fb16ed92e8b2` contains 387 messages and all
+  59 generated resources; documentation-only correction `3362732` follows it. Local l10n `make
+  check` and Linux format/check/clippy/non-GUI tests, localization audit/sync, Flatpak metadata,
+  and diff checks passed. GUI all-target linking remains blocked by missing GTK symbols locally.
+- Linux push Native/Flatpak/Foundation runs `29703371083`/`29703371057`/`29703371084` and PR
+  Native/Flatpak/Foundation runs `29703373063`/`29703373065`/`29703373076` all passed.
+
 ## 2026-07-19 — Linux routing constraint controls checkpoint
 
 Assumption: Core's non-secret routing constraints must be user-editable in the native Linux profile
