@@ -101,6 +101,7 @@ Assumption: Planned files and commands are not evidence until they exist and com
   the canonical l10n catalog, replacing Rust debug-format presentation.
 - [x] Add native Linux DOCX/XLSX package regression fixtures that exercise wrapper import and Core
   reconstruction while preserving non-text package parts, formulas, numbers, and unselected values.
+- [x] Add a native Linux malicious-DOCX fixture that rejects ZIP path traversal before import.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -1355,6 +1356,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   suite (2 ignored), l10n sync, 215-key audit, and diff checks passed. Push Native/Foundation/Flatpak
   `29680097142`/`29680097156`/`29680097153` and PR `29680098361`/`29680098362`/`29680098380` passed.
   This advances Linux Scenarios 10–11 evidence; macro/signature behavior, visual review, other
+  clients, artifacts, and stable release remain open.
+
+- 2026-07-19: Assumption: the Linux import boundary must reject unsafe OOXML archive entry names
+  before any translation or reconstruction work. Linux `d6ff4c5de6e8ccf43816db05707b00873c65f6e9`
+  adds an in-memory DOCX `../outside.txt` traversal fixture and verifies `InvalidStructure` without
+  touching an output path. Local formatting, GUI checks, strict Clippy, 111-test demo-provider suite
+  (2 ignored), l10n sync, 215-key audit, and diff checks passed. Push Native/Foundation/Flatpak
+  `29680405704`/`29680405679`/`29680405672` and PR `29680407170`/`29680407224`/`29680407182` passed.
+  This advances Linux Scenario 15 evidence; decompression-bomb coverage, visual review, other
   clients, artifacts, and stable release remain open.
 
 ## Checkpoint update protocol

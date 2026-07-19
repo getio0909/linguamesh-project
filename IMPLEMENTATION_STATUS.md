@@ -58,8 +58,26 @@ Native and Foundation CI. Linux now exposes localized OpenAI-compatible and nati
 presets in GTK, preserving user-entered endpoint edits while switching protocol defaults.
 Linux file-import regression coverage now exercises bounded DOCX package reconstruction with tables,
 headers, and retained image parts, plus XLSX shared-string selection while preserving unselected
-values, formulas, numbers, and image parts.
+values, formulas, numbers, and image parts. The same native wrapper now rejects a DOCX ZIP path
+traversal fixture before import.
 No stable product release, completed native client, or released SDK artifact is claimed here.
+
+## 2026-07-19 — Linux archive path-safety checkpoint
+
+Assumption: the Linux import boundary must reject unsafe OOXML archive entry names before any
+translation or reconstruction work; the regression fixture is in-memory and contains no user path.
+
+- Linux `d6ff4c5de6e8ccf43816db05707b00873c65f6e9` adds a native `file_import` test with a DOCX ZIP
+  entry containing `../outside.txt`. Core validation rejects the package as `InvalidStructure`, so
+  no source text is exposed to the worker and no output path is touched.
+- Local formatting, GUI all-target checks, strict Clippy, demo-provider tests (111 passed, 2 ignored),
+  l10n synchronization, 215-key audit, and diff checks passed.
+- Linux push Native `29680405704` (job `88175411454`), Foundation `29680405679` (job `88175411340`),
+  and Flatpak `29680405672` (job `88175411366`) passed. PR Native `29680407170` (job `88175415568`),
+  Foundation `29680407224` (job `88175415790`), and Flatpak `29680407182` (job `88175415660`) also passed.
+
+This strengthens Linux Scenario 15 evidence without claiming decompression-bomb coverage, end-user
+visual review, other clients, release artifacts, or a stable release.
 
 ## 2026-07-19 — Linux office-package import checkpoint
 
