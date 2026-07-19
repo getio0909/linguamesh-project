@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Linux duplicate routing-profile ID checkpoint
+
+Assumption: allowing multiple profile IDs must not turn a new-profile action into an accidental
+upsert of an existing record; only explicit Edit may replace a saved ID.
+
+- Linux `21c89c7e9c671617477a6410240ff1fb0a0c9ff7` rejects a new routing profile when its validated
+  ID already exists, while explicit Edit continues to update the selected record.
+- l10n `712c4b1ac814ffbab265e4d0d40629d9d2bba02d` contains 359 messages and all 59 generated
+  resources; Linux consumes that immutable revision and audits 235 source keys.
+- Local Linux checks passed formatting, GUI all-target check, strict Clippy, 131 tests with 2
+  ignored, localization synchronization/key audit, Flatpak metadata, and diff checks. Push
+  Native/Flatpak/Foundation `29701039457`/`29701039458`/`29701039459` and PR
+  Native/Flatpak/Foundation `29701040720`/`29701040695`/`29701040689` all passed. l10n
+  Localization/Foundation `29700989823`/`29700989820` passed.
+
+This closes accidental new-profile replacement without claiming complete fallback-chain editing,
+full Orca speech, manual visual review, other clients, signed artifacts, or a stable release.
+
 ## 2026-07-19 — Linux multiple routing-profile IDs checkpoint
 
 Assumption: a useful saved-profile manager must support more than one stable routing-profile ID;
