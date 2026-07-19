@@ -1417,6 +1417,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   revalidates the bounded opt-in OCR path; pixel-identical PDF reconstruction, non-English OCR
   quality, physical visual review, other clients, artifacts, and stable release remain open.
 
+- 2026-07-19: Assumption: an interrupted Linux document job must retain all pending segments and
+  reuse its persisted provider/model options when explicitly retried. Linux
+  `1e92fa3f145e61469f221c862584478dff95ae46` adds
+  `cancelled_document_job_can_be_retried_without_losing_pending_segments`; local Linux validation
+  passed with 120 tests and 2 ignored. Current-head push and PR Native/Flatpak/Foundation gates are
+  push Native/Foundation/Flatpak `29687088567`/`29687088573`/`29687088558` and PR
+  Native/Flatpak/Foundation `29687089446`/`29687089445`/`29687089480` passed. Concurrent document
+  execution, physical interruption recovery, other clients, artifacts, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
