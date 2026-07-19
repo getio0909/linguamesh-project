@@ -74,22 +74,22 @@ Assumption: the shared Core archive boundary is the authoritative security contr
 imports; Linux must consume it through the exact Native/Flatpak pin rather than duplicating parser
 logic.
 
-- Core `63fc0ca62e2b1d9bd168a60e6c9051ac338f6486` rejects encrypted, symlinked, duplicate, traversal,
-  over-limit, and suspiciously compressed OOXML entries. Entries at least 1 KiB whose uncompressed
-  size exceeds 200 times the compressed size fail before XML inspection. Core workspace formatting,
-  strict Clippy, all-feature offline tests, and locked build passed; Core CI `29682666941` and Native
-  SDK `29682666929` passed all jobs.
-- Linux `4b8ffdedff22b31321ff8ab8395ccb53f784ccc8` records that Core revision in Native CI and Flatpak
-  metadata, records the security boundary in architecture/testing/release documentation, and keeps
-  the worker DOCX/XLSX end-to-end regressions intact. Local Linux validation passed 115 tests with 2
-  ignored, GUI check, strict Clippy, formatting, 215-key audit, l10n synchronization, Flatpak metadata,
-  and diff checks.
-- Linux push Native `29685292569` (job `88188414822`), Foundation `29685292538` (job `88188414712`),
-  and Flatpak `29685292531` (job `88188414614`) passed. PR Native `29685293703` (job `88188417598`),
-  Foundation `29685293644` (job `88188417433`), and Flatpak `29685293646` (job `88188417590`) passed.
+- Core `14cee83a650610b3a9a79a460c7c6f54ae9d21d4` rejects encrypted, symlinked, duplicate, traversal,
+  over-limit, suspiciously compressed, macro-bearing, and digitally signed OOXML entries before XML
+  inspection. Core workspace formatting, strict Clippy, all-feature offline tests, and locked build
+  passed; Core CI `29685742893` and Native SDK `29685742897` passed all jobs.
+- Linux `e03a6afb93fc4d2a8d04e5feefe31e1de9935e7e` records that Core revision in Native CI and Flatpak
+  metadata, maps the unsupported macro/signature boundary through the native import wrapper, and
+  keeps the worker DOCX/XLSX/PPTX end-to-end regressions intact. Local Linux validation passed 119
+  tests with 2 ignored, GUI check, strict Clippy, formatting, 215-key audit, l10n synchronization,
+  Flatpak metadata, and diff checks.
+- Linux push Native `29686220611` (job `88190803342`), Foundation `29686220631` (job `88190803382`),
+  and Flatpak `29686220605` (job `88190803207`) passed. PR Native `29686222024` (job `88190807513`),
+  Foundation `29686222035` (job `88190807556`), and Flatpak `29686222028` (job `88190807563`) passed.
 
-This strengthens mandatory Scenario 15 archive safety and keeps the release train unreleased; macro/
-signature behavior, physical visual review, other clients, signing, and distributable artifacts remain open.
+This strengthens mandatory Scenario 15 archive safety, records explicit macro/signature rejection, and
+keeps the release train unreleased; physical visual review, other clients, signing, and distributable
+artifacts remain open.
 
 ## 2026-07-19 — Linux worker OOXML end-to-end checkpoint
 
@@ -986,7 +986,7 @@ Orca/visual review, other clients, signing, distributable artifacts, and stable 
 
 | Area | Status | Evidence |
 | --- | --- | --- |
-| Current Linux document-job metadata, OCR, localization-key audit, accessible progress, diagnostics, pause-error localization, Secret Service prompted flows, plural UI, offline-provider preservation, output alias protection, corrupt-database fail-closed behavior, GTK fixture localization, built-in provider-name localization, and OOXML compression-ratio safety | Validated locally and remotely | l10n `85b9d45569ce840c17dc0acc7d7366d6810be48e` contains 334 canonical messages and bundle SHA-256 `028d25b3637fbc19d41d497a860b414353615b9576db6f852a9f236bcbe770ce`; Core `63fc0ca62e2b1d9bd168a60e6c9051ac338f6486` and Linux `4b8ffdedff22b31321ff8ab8395ccb53f784ccc8` are published. Linux audits 215 source keys, preserves the confirmed provider after bounded offline failure, rejects source aliases during export, preserves malformed database bytes while falling back to session mode, drives the locale-dropdown preset regression path, translates persisted DOCX/XLSX/PPTX jobs end to end, reconstructs PPTX slides/notes while retaining binary resources, consumes the Core 200:1 OOXML compression-ratio guard through the native import wrapper, and bounds AT-SPI fixture cleanup. Push Native `29685292569`, Foundation `29685292538`, and Flatpak `29685292531` passed; PR runs `29685293703`, `29685293644`, and `29685293646` also passed. |
+| Current Linux document-job metadata, OCR, localization-key audit, accessible progress, diagnostics, pause-error localization, Secret Service prompted flows, plural UI, offline-provider preservation, output alias protection, corrupt-database fail-closed behavior, GTK fixture localization, built-in provider-name localization, and OOXML archive safety | Validated locally and remotely | l10n `85b9d45569ce840c17dc0acc7d7366d6810be48e` contains 334 canonical messages and bundle SHA-256 `028d25b3637fbc19d41d497a860b414353615b9576db6f852a9f236bcbe770ce`; Core `14cee83a650610b3a9a79a460c7c6f54ae9d21d4` and Linux `e03a6afb93fc4d2a8d04e5feefe31e1de9935e7e` are published. Linux audits 215 source keys, preserves the confirmed provider after bounded offline failure, rejects source aliases during export, preserves malformed database bytes while falling back to session mode, drives the locale-dropdown preset regression path, translates persisted DOCX/XLSX/PPTX jobs end to end, reconstructs PPTX slides/notes while retaining binary resources, consumes the Core 200:1 OOXML compression-ratio guard through the native import wrapper, rejects unsupported macro/signature parts before import, and bounds AT-SPI fixture cleanup. Push Native `29686220611`, Foundation `29686220631`, and Flatpak `29686220605` passed; PR Native `29686222024`, Foundation `29686222035`, and Flatpak `29686222028` also passed. |
 | Authoritative goal and plan | Present | `PROJECT_GOAL.md`, `AGENTS.md`, and `PLANS.md` were read before implementation. |
 | Central policies and documentation | Validated locally | `bash tools/check-workspace.sh` passed required-file and Markdown-link checks. |
 | Workspace and release manifests | Validated locally | Default and strict Bash checks parsed both TOML files, enforced the canonical set and release invariants, parsed the JSON schema, and passed. |
@@ -999,7 +999,7 @@ Orca/visual review, other clients, signing, distributable artifacts, and stable 
 | Native Linux alpha.2 slice | Validated locally and remotely | Linux head `739538c` negotiates `bounded_text_document_v1`, converts bounded TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF imports into Core jobs, preserves structured document metadata, provides queue actions and safe reconstruction, routes ordinary-text fallback only after explicit approval, accepts or dismisses Secret Service prompts for persistent store/delete operations, offers explicit bounded image-only PDF OCR to page-marked TXT while keeping the source PDF unchanged, and enforces source-referenced localization-key coverage against the canonical catalog. Local 65/103-test suites, strict Clippy, Rust checks, OCR and prompted-flow fixtures, localization sync, and the 208-key audit passed; push Native `29672741665`, Foundation `29672741666`, and Flatpak `29672741675` passed, as did PR reruns `29672743058`, `29672742959`, and `29672742990`. |
 | Linux Flatpak packaging scaffold | Static validation passed; remote passed | Linux packaging revision `8f2cba0` publishes the pinned GNOME 49 manifest, immutable Core/Linux/l10n source pins including DOCX/PPTX/XLSX/EPUB/PDF warning UI, document queue/export-open/fallback controls, headless keyboard fixture dependency, generated Cargo archive hashes for the current lockfile, desktop entry, AppStream metadata, icon, and constrained runtime permissions. `bash tools/validate-flatpak-metadata.sh` passed locally; Flatpak job `88129285461` passed. Physical compositor/GPU rendering, signing, and distributable release remain unverified. |
 | GitHub Actions | Passed | Core revision `123d5c4d7a76873e597895763ca5d78e1ea42ea0` remains validated; l10n revision `85b9d45569ce840c17dc0acc7d7366d6810be48e` passed Localization/Foundation gates; Linux head `f14fc89f3aecb20b3ac9611642de15d1a670ebf6` passed push Native `29679490910`, Foundation `29679490922`, and Flatpak `29679490960`, plus PR Native `29679492044`, Foundation `29679492018`, and Flatpak `29679492030`; the corrupt-database, offline-provider, aliased-export, 215-key audit, GTK fixture localization, built-in provider-name localization, locale-dropdown preset regression, plural-count UI, and model-placeholder localization checks passed in Native; central coordination remains separately tracked. |
-| Non-functional repository heads | Published | Core head `63fc0ca62e2b1d9bd168a60e6c9051ac338f6486`, l10n head `85b9d45569ce840c17dc0acc7d7366d6810be48e`, and Linux behavioral/evidence head `4b8ffdedff22b31321ff8ab8395ccb53f784ccc8` are published. Current-head Linux Native/Flatpak/Foundation push and PR gates passed. The release manifest remains unreleased with no artifacts. |
+| Non-functional repository heads | Published | Core head `14cee83a650610b3a9a79a460c7c6f54ae9d21d4`, l10n head `85b9d45569ce840c17dc0acc7d7366d6810be48e`, and Linux behavioral/evidence head `e03a6afb93fc4d2a8d04e5feefe31e1de9935e7e` are published. Current-head Linux Native/Flatpak/Foundation push and PR gates passed. The release manifest remains unreleased with no artifacts. |
 | Acceptance Scenario 1 | Passed locally | The reference CLI discovered and selected a fake model, streamed `你好，LinguaMesh！` over loopback HTTP/SSE, and completed without a key. A separate slow-stream run retained `你好` and emitted cancellation. |
 | Remaining acceptance scenarios | Not passed | Scenarios 2–20 do not yet have complete cross-platform reproducible passing evidence. Linux now has complete secure-provider Scenario 3 and ordinary-text fallback Scenario 7 implementation/remote gate evidence plus partial Scenario 5 evidence; the global scenarios and stable-release evidence remain incomplete. |
 

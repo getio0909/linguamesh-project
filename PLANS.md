@@ -1397,16 +1397,17 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 
 - 2026-07-19: Assumption: the shared Core OOXML archive boundary is authoritative for Linux DOCX,
   PPTX, and XLSX safety; Linux must consume the exact immutable pin. Core
-  `63fc0ca62e2b1d9bd168a60e6c9051ac338f6486` rejects entries at least 1 KiB whose uncompressed size
+  `14cee83a650610b3a9a79a460c7c6f54ae9d21d4` rejects entries at least 1 KiB whose uncompressed size
   exceeds 200 times the compressed size, in addition to encrypted, symlinked, duplicate, traversal,
-  entry-count, and total-size limits. Core CI `29682666941` and Native SDK `29682666929` passed.
-  Linux `4b8ffdedff22b31321ff8ab8395ccb53f784ccc8` adds bounded AT-SPI fixture cleanup after the PPTX
-  slide/notes/resource and compression-ratio evidence; local 118-pass/2-ignored validation and
-  Flatpak metadata checks passed. The prior push Native `29684324260` was cancelled after printing a
-  successful AT-SPI assertion but before cleanup completed; the corrected push Native
-  `29685292569`, Foundation `29685292538`, and Flatpak `29685292531`, plus PR Native `29685293703`,
-  Foundation `29685293644`, and Flatpak `29685293646`, all passed. Macro/signature behavior, physical visual review,
-  other clients, artifacts, and stable release remain open.
+  entry-count, and total-size limits, and rejects `vbaProject.bin` and `_xmlsignatures/` parts before
+  XML inspection. Core CI `29685742893` and Native SDK `29685742897` passed. Linux
+  `e03a6afb93fc4d2a8d04e5feefe31e1de9935e7e` records the macro/signature boundary and bounded AT-SPI
+  cleanup after the PPTX slide/notes/resource and compression-ratio evidence; local 119-pass/2-ignored
+  validation and Flatpak metadata checks passed. The prior Native run `29685948051` against the old
+  pin failed on the new rejection fixture; after updating the workflow pin, push Native `29686220611`, Foundation
+  `29686220631`, and Flatpak `29686220605`, plus PR Native `29686222024`, Foundation `29686222035`,
+  and Flatpak `29686222028`, all passed. Physical visual review, other clients, artifacts, and stable
+  release remain open.
 
 ## Checkpoint update protocol
 
