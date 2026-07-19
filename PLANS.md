@@ -1165,7 +1165,7 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   complete visible-string gettext coverage, other clients, and stable-release evidence remain open.
 
 - 2026-07-19: Assumption: image-only PDF OCR is an explicit Linux opt-in capability, not a default
-  reconstruction promise. l10n `cacc1577bc1a19a94c11faeffa7a63016d54d64e` adds ten OCR toggle,
+  reconstruction promise. l10n `3f3c1a1154b66d25f2936a02b8a08d2a8fc8a878` adds ten OCR toggle,
   progress, and fixed-error messages, producing 306 messages and bundle checksum
   `6fc6839fce3a449eaf37d2efb9a52fa0ede1eab3a39fecdaff68682a79d8a4f8`. Linux
   `d18e8dfa3dd98d56dbe0d5d1eabc536d38b96f1c` invokes bounded shell-free `pdftoppm`/`tesseract`
