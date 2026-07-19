@@ -1131,6 +1131,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   desktop review, OCR, complete visible-string gettext coverage, other clients, and stable-release
   evidence remain open.
 
+- 2026-07-19: Assumption: request-level glossary syntax, credential-like data rejection, and
+  conflicting-rule errors are stable Linux UI messages. l10n `ede66149c501a1680ed050d76b8b78e7b565ba01`
+  adds three dedicated keys, producing 289 messages and checksum
+  `c8bd6b0464ebbfa015988a4fc0cfd30b1f9e28d9e1aad19b8c50d36976128e8f`; Linux
+  `cb22b2052362ce7b4990cc4be99e26a152b07800` synchronizes the catalogs and maps all three errors.
+  Local l10n make check, targeted localization regression, strict Clippy, no-default 61 tests,
+  l10n sync, and diff checks passed. Native `29666379600`, Foundation `29666379579`, and Flatpak
+  `29666379586` passed. Complete gettext coverage, Orca speech, physical desktop review, OCR,
+  other clients, and stable-release evidence remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
