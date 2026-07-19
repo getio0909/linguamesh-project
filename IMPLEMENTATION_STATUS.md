@@ -61,8 +61,32 @@ headers, and retained image parts, plus XLSX shared-string selection while prese
 values, formulas, numbers, and image parts. The same native wrapper now rejects DOCX ZIP path
 traversal and oversized uncompressed entries before import.
 The worker queue now has a native regression proving that multiple pending jobs are listed together
-for explicit queue selection.
+for explicit queue selection. Linux worker regressions now also drive persisted DOCX and XLSX jobs
+through fake-provider translation and inspect reconstructed OOXML while preserving binary resources,
+formulas, and numeric cells.
 No stable product release, completed native client, or released SDK artifact is claimed here.
+
+## 2026-07-19 — Linux worker OOXML end-to-end checkpoint
+
+Assumption: mandatory DOCX/XLSX evidence must exercise the persisted Linux worker command path, not
+only native wrapper or shared Core reconstruction fixtures; the test packages are bounded in-memory
+fixtures and contain no user paths or credentials.
+
+- Linux `9ed0557a87b5c042d38e05cad5abf4a2afe487f9` adds worker regressions that create persisted
+  DOCX and XLSX jobs, translate all pending segments through the fake provider, reconstruct the
+  completed packages, and verify translated text while preserving binary resources, formulas, and
+  numeric cells. Documentation revision `468b915f050864bddff31001669ec80123263ac3` records the
+  test names and validation boundary.
+- Local Linux validation passed: formatting, GUI all-target check, strict Clippy, localization
+  audit, l10n synchronization, diff check, and `cargo test --features demo-provider --offline`
+  with 115 passed and 2 ignored.
+- Linux push Native `29681947505` (job `88179536820`), Foundation `29681947528` (job
+  `88179536691`), and Flatpak `29681947508` (job `88179536581`) passed. PR Native
+  `29681948831` (job `88179540449`), Foundation `29681948813` (job `88179540419`), and Flatpak
+  `29681948798` (job `88179540411`) also passed.
+
+This strengthens Linux evidence for mandatory Scenarios 10 and 11 without claiming macro/signature
+coverage, visual review, other clients, release artifacts, or a stable release.
 
 ## 2026-07-19 — Linux multi-job queue listing checkpoint
 

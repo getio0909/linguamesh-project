@@ -104,6 +104,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add native Linux malicious-DOCX fixtures that reject ZIP path traversal and oversized
   uncompressed entries before import.
 - [x] Verify native Linux queue listing returns multiple pending jobs for explicit selection.
+- [x] Verify native Linux worker translation reconstructs DOCX/XLSX jobs end to end while retaining
+  binary resources, formulas, and numeric cells.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -1379,6 +1381,18 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   checks passed. Push Native/Foundation/Flatpak `29681283021`/`29681282976`/`29681282978` and PR
   `29681283843`/`29681283852`/`29681283837` passed. Concurrent translation, visual review, other
   clients, artifacts, and stable release remain open.
+
+- 2026-07-19: Assumption: mandatory DOCX/XLSX evidence must exercise the persisted Linux worker
+  command path, not only native wrapper or shared Core reconstruction fixtures. Linux
+  `9ed0557a87b5c042d38e05cad5abf4a2afe487f9` adds end-to-end worker regressions that translate
+  persisted DOCX and XLSX jobs through the fake provider, reconstruct the completed OOXML, and
+  retain binary resources, formulas, and numeric cells; docs revision
+  `468b915f050864bddff31001669ec80123263ac3` records the test names. Local formatting, GUI
+  all-target checks, strict Clippy, 115-test demo-provider suite (2 ignored), l10n sync, 215-key
+  audit, and diff checks passed. Push Native/Foundation/Flatpak
+  `29681947505`/`29681947528`/`29681947508` and PR
+  `29681948831`/`29681948813`/`29681948798` passed. Macro/signature behavior, visual review,
+  other clients, artifacts, and stable release remain open.
 
 ## Checkpoint update protocol
 
