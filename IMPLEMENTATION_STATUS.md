@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Linux editor text-metrics checkpoint
+
+Assumption: the editor should expose non-sensitive size feedback, while tokenization remains
+provider/model dependent and must be presented as approximate.
+
+- Linux `7ae70945c60934605d2eca82400a2278c753297f` adds localized source/output character counts
+  and an approximate token estimate; buffer changes update the source metric immediately and
+  output metrics refresh with the UI without logging source or output text.
+- l10n `8adb1f4558e4b1d93a00ce03cf026a98d4a1a5ed` contains 360 messages and all 59 generated
+  resources; Linux audits 236 catalog-backed source keys.
+- Local l10n validation passed. Linux formatting, GUI all-target check, strict Clippy, the
+  non-GUI demo-provider suite (131 passed, 2 ignored), localization sync/audit, Flatpak metadata,
+  and diff checks passed. GUI test linking remains environment-blocked by missing GTK 4 symbols.
+
+Remote Linux push/PR Native, Flatpak, and Foundation evidence is recorded after the workflows
+complete. Provider-specific token accuracy, full Orca speech, manual visual review, other clients,
+signed artifacts, and a stable release remain open.
+
 ## 2026-07-19 — Linux duplicate routing-profile ID checkpoint
 
 Assumption: allowing multiple profile IDs must not turn a new-profile action into an accidental
