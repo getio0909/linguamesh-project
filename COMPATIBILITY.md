@@ -56,6 +56,15 @@ runs `29704836385`/`29704836408`/`29704836382` and PR Native/Flatpak/Foundation 
 `29704837824`/`29704837805`/`29704837827` passed, with non-expired evidence artifacts uploaded on
 both push and PR runs. Stable release packaging remains open.
 
+## Linux-first native release-mode evidence checkpoint
+
+Linux `c6dae33698587e9db1fd8356ac7938d6bd7944ba` builds the native GTK binary in release mode and
+uploads it with SHA-256, deterministic SPDX 2.3, and fixed build-context sidecars. Native and
+Flatpak push/PR gates passed: `29705491999`/`29705491988`/`29705492011` and
+`29705493161`/`29705493148`/`29705493163`. The artifacts are non-expired CI evidence, not signed
+or distributable releases; source archive, rollback, cross-client artifacts, and stable promotion
+remain open.
+
 ## Linux-first duplicate routing-profile ID checkpoint
 
 Linux `21c89c7e9c671617477a6410240ff1fb0a0c9ff7` rejects a new profile whose validated ID already

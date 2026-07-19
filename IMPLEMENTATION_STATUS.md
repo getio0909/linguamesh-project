@@ -2,6 +2,21 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Linux native release-mode evidence remote verification
+
+Assumption: unsigned release-mode Linux binaries may be retained as prerelease CI evidence while
+the stable release train remains closed.
+
+- Linux `c6dae33698587e9db1fd8356ac7938d6bd7944ba` builds the GTK binary with `--release` and
+  uploads the binary, `SHA256SUMS`, deterministic SPDX 2.3 `SBOM.spdx.json`, and fixed-context
+  `BUILD-INFO.txt` in a non-expired artifact. Local non-GUI validation passed 131 tests with 2
+  ignored, both localization audits, formatting, and diff checks; local GUI release linking is
+  unavailable because this host lacks `gtk4.pc` and `libadwaita-1.pc`.
+- Linux push Native/Flatpak/Foundation `29705491999`/`29705491988`/`29705492011` and PR
+  Native/Flatpak/Foundation `29705493161`/`29705493148`/`29705493163` all passed. Native push and
+  PR artifacts were non-expired (4,933,798 bytes each); Flatpak bundle and evidence artifacts were
+  also non-expired. No signing, source archive, rollback, or stable artifact is claimed.
+
 ## 2026-07-19 — Flatpak checksum and SBOM evidence checkpoint
 
 Assumption: Linux prerelease packaging should emit reproducible integrity evidence without implying

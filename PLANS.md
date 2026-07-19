@@ -151,6 +151,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   it before the SDK build, and verify full-history push/PR gates.
 - [x] Emit CI-only SHA-256 and deterministic SPDX SBOM sidecars for the Linux Flatpak bundle and
   verify their upload without claiming a stable release artifact.
+- [x] Build and remotely verify a Linux release-mode native binary with SHA-256, deterministic SPDX
+  SBOM, and fixed build-context sidecars; retain it as unsigned prerelease evidence only.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -444,6 +446,21 @@ package set. The Flatpak workflow uploads these sidecars after the SDK build; pu
 Foundation runs `29704836385`/`29704836408`/`29704836382` and PR Native/Flatpak/Foundation runs
 `29704837824`/`29704837805`/`29704837827` all passed, with non-expired evidence artifacts present
 on both Flatpak runs. Stable signing, publication, and cross-platform release artifacts remain open.
+
+## Completed Linux-first checkpoint — native release-mode evidence
+
+Change identifier: `LM-CHANGE-2026-07-NATIVE-EVIDENCE-1`
+
+Assumption: the native Linux release build should be reproducible in CI and accompanied by
+integrity metadata before any signing or stable-release authorization.
+
+Linux `c6dae33698587e9db1fd8356ac7938d6bd7944ba` adds a release-mode `linguamesh-linux` build and
+uploads the binary with `SHA256SUMS`, deterministic SPDX 2.3 `SBOM.spdx.json`, and `BUILD-INFO.txt`.
+Local non-GUI tests and evidence self-checks passed; the host lacks GTK development metadata for a
+local GUI link. Push Native/Flatpak/Foundation `29705491999`/`29705491988`/`29705492011` and PR
+Native/Flatpak/Foundation `29705493161`/`29705493148`/`29705493163` all passed with non-expired
+native and Flatpak artifacts. Signing, source archives, rollback, cross-client artifacts, and
+stable-release authorization remain open.
 
 ## Completed Linux-first checkpoint — multiple routing-profile IDs
 
