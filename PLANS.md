@@ -1400,10 +1400,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `63fc0ca62e2b1d9bd168a60e6c9051ac338f6486` rejects entries at least 1 KiB whose uncompressed size
   exceeds 200 times the compressed size, in addition to encrypted, symlinked, duplicate, traversal,
   entry-count, and total-size limits. Core CI `29682666941` and Native SDK `29682666929` passed.
-  Linux `b982b75d73995338512b375d2ae3b1c139a5d479` records the Native/Flatpak pins, documentation,
-  and completed remote evidence; local 115-pass/2-ignored validation and Flatpak metadata checks
-  passed. Push gates `29683317201`/`29683317159`/`29683317150` and PR gates
-  `29683318279`/`29683318299`/`29683318280` passed. Macro/signature behavior, physical visual review,
+  Linux `191a11d9bec3623c5403403b9ab489c7642ca62f` adds the native import compression-ratio fixture
+  and records the Native/Flatpak pins, documentation, and completed remote evidence; local 116-pass/
+  2-ignored validation and Flatpak metadata checks passed. Push gates `29683647497`/`29683647505`/
+  `29683647507` and PR gates `29683648413`/`29683648406`/`29683648422` passed. Macro/signature behavior,
+  physical visual review,
   other clients, artifacts, and stable release remain open.
 
 ## Checkpoint update protocol
