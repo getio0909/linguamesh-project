@@ -327,6 +327,15 @@ and Flatpak `29676780531` passed; PR Native `29676781353`, Foundation `296767813
 `29676781369` also passed. Translated-copy, visual/RTL, Orca, physical offline, other clients,
 signing, distributable artifacts, and stable-release evidence remain open.
 
+Linux-first corrupt-database fail-closed checkpoint: Linux `10cc4e7414efa3f55058c5748e887c5a96481641`
+rejects a malformed SQLite database as typed persistence failure, preserves the malformed bytes,
+keeps session-only translation available, and rejects saved-profile deletion while storage is
+unavailable. Local formatting, GUI checks, strict Clippy, 108 passing tests (2 ignored), the
+213-key audit, l10n synchronization, and diff checks passed. Push Native `29677532670`, Foundation
+`29677532645`, and Flatpak `29677532656` passed; PR Native `29677534287`, Foundation `29677534288`,
+and Flatpak `29677534304` also passed. Physical corruption recovery, desktop/Orca review, other
+clients, artifacts, and stable-release evidence remain open.
+
 Linux-first output-safety alias checkpoint: Linux `c7b7599b118fa54baefe32e2063f57a890dc0f52`
 rejects export destinations that identify the imported source through equal GIO identity,
 canonical paths, or Unix device/inode metadata, covering text and binary document output before

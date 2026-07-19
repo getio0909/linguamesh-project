@@ -1302,6 +1302,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29677151266`/`29677151263`/`29677151268` passed. Physical desktop review, Orca, other clients,
   artifacts, and stable release remain open.
 
+- 2026-07-19: Assumption: a malformed SQLite file must fail closed without implicit repair or
+  overwrite, while session-only translation remains available. Linux
+  `10cc4e7414efa3f55058c5748e887c5a96481641` adds this regression and verifies typed persistence
+  failure, unchanged corrupt bytes, successful session translation, and rejected saved-profile
+  deletion. Local formatting, GUI checks, strict Clippy, 108-test demo-provider suite (2 ignored),
+  213-key audit, l10n sync, and diff checks passed. Push Native/Foundation/Flatpak
+  `29677532670`/`29677532645`/`29677532656` and PR `29677534287`/`29677534288`/`29677534304` passed.
+  Physical corruption recovery, desktop/Orca review, other clients, artifacts, and stable release
+  remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

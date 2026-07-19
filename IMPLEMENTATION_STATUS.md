@@ -58,6 +58,26 @@ Native and Foundation CI. Linux now exposes localized OpenAI-compatible and nati
 presets in GTK, preserving user-entered endpoint edits while switching protocol defaults.
 No stable product release, completed native client, or released SDK artifact is claimed here.
 
+## 2026-07-19 — Linux corrupt-database fail-closed checkpoint
+
+Assumption: a corrupted local SQLite file must not be repaired or overwritten implicitly; the
+client should report persistence failure, preserve the bytes for recovery, and keep session-only
+translation available.
+
+- Linux `10cc4e7414efa3f55058c5748e887c5a96481641` adds a worker regression with a private malformed
+  SQLite file. Startup emits typed `Persistence` storage-unavailable evidence, the demo provider
+  remains available, a session-only translation completes, saved-profile deletion is rejected, and
+  the malformed bytes remain unchanged after shutdown.
+- Local formatting, GUI all-target checks, strict Clippy, demo-provider tests (108 passed, 2
+  ignored), the 213-key localization audit, l10n synchronization, and diff checks passed.
+- Push Native `29677532670` (job `88167639832`), Foundation `29677532645` (job `88167639590`), and
+  Flatpak `29677532656` (job `88167639662`) passed. PR Native `29677534287` (job `88167644162`),
+  Foundation `29677534288` (job `88167644068`), and Flatpak `29677534304` (job `88167644121`) also
+  passed.
+
+This strengthens Linux persistence-fault evidence without claiming physical corruption recovery,
+desktop accessibility review, other clients, release artifacts, or a stable release.
+
 ## 2026-07-19 — Linux output-safety alias checkpoint
 
 Assumption: comparing only byte-for-byte equal destination URIs is insufficient for Scenario 18,
@@ -789,7 +809,7 @@ Orca/visual review, other clients, signing, distributable artifacts, and stable 
 
 | Area | Status | Evidence |
 | --- | --- | --- |
-| Current Linux document-job metadata, OCR, localization-key audit, accessible progress, diagnostics, pause-error localization, Secret Service prompted flows, plural UI, and offline-provider preservation | Validated locally and remotely | l10n `d3d838198027e2104583296eb3e0f6fadc283e4e` contains 332 canonical messages and bundle SHA-256 `0650b68a49daf27b56c95ae149cd5c29621d890ba4c7554c7c79d5690e38a05b`; Linux `8d84636636c969e70943b534deba3818381daed6` retains the prompted-flow/document queue slice, audits 213 source keys, renders localized plural file counts and model placeholders, and preserves the confirmed provider after bounded offline failure. Push Native `29676780532`, Foundation `29676780527`, and Flatpak `29676780531` passed; PR reruns `29676781353`, `29676781358`, and `29676781369` also passed. |
+| Current Linux document-job metadata, OCR, localization-key audit, accessible progress, diagnostics, pause-error localization, Secret Service prompted flows, plural UI, offline-provider preservation, output alias protection, and corrupt-database fail-closed behavior | Validated locally and remotely | l10n `d3d838198027e2104583296eb3e0f6fadc283e4e` contains 332 canonical messages and bundle SHA-256 `0650b68a49daf27b56c95ae149cd5c29621d890ba4c7554c7c79d5690e38a05b`; Linux `10cc4e7414efa3f55058c5748e887c5a96481641` retains the prompted-flow/document queue slice, audits 213 source keys, renders localized plural file counts and model placeholders, preserves the confirmed provider after bounded offline failure, rejects source aliases during export, and preserves malformed database bytes while falling back to session mode. Push Native `29677532670`, Foundation `29677532645`, and Flatpak `29677532656` passed; PR reruns `29677534287`, `29677534288`, and `29677534304` also passed. |
 | Authoritative goal and plan | Present | `PROJECT_GOAL.md`, `AGENTS.md`, and `PLANS.md` were read before implementation. |
 | Central policies and documentation | Validated locally | `bash tools/check-workspace.sh` passed required-file and Markdown-link checks. |
 | Workspace and release manifests | Validated locally | Default and strict Bash checks parsed both TOML files, enforced the canonical set and release invariants, parsed the JSON schema, and passed. |
@@ -801,8 +821,8 @@ Orca/visual review, other clients, signing, distributable artifacts, and stable 
 | Localization bundle | Validated locally and remotely | l10n revision `f00b00fda307660000b0e4068c5ca1072d266df1` contains 327 canonical messages, including opt-in image-only PDF OCR controls/errors, Linux diagnostics labels, Secret Service prompt-dismissal guidance, 12 official locale packs, two pseudo-locales, 59 generated artifacts including paired Linux PO/MO resources, 26 passing tests, platform-format checks, and deterministic bundle ZIP SHA-256 `53821e2397e6697b7551693c6f5787cc1f88e24d96b3077ac590645a848f1977`. Non-English packs remain explicitly unreviewed drafts. |
 | Native Linux alpha.2 slice | Validated locally and remotely | Linux head `739538c` negotiates `bounded_text_document_v1`, converts bounded TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF imports into Core jobs, preserves structured document metadata, provides queue actions and safe reconstruction, routes ordinary-text fallback only after explicit approval, accepts or dismisses Secret Service prompts for persistent store/delete operations, offers explicit bounded image-only PDF OCR to page-marked TXT while keeping the source PDF unchanged, and enforces source-referenced localization-key coverage against the canonical catalog. Local 65/103-test suites, strict Clippy, Rust checks, OCR and prompted-flow fixtures, localization sync, and the 208-key audit passed; push Native `29672741665`, Foundation `29672741666`, and Flatpak `29672741675` passed, as did PR reruns `29672743058`, `29672742959`, and `29672742990`. |
 | Linux Flatpak packaging scaffold | Static validation passed; remote passed | Linux packaging revision `8f2cba0` publishes the pinned GNOME 49 manifest, immutable Core/Linux/l10n source pins including DOCX/PPTX/XLSX/EPUB/PDF warning UI, document queue/export-open/fallback controls, headless keyboard fixture dependency, generated Cargo archive hashes for the current lockfile, desktop entry, AppStream metadata, icon, and constrained runtime permissions. `bash tools/validate-flatpak-metadata.sh` passed locally; Flatpak job `88129285461` passed. Physical compositor/GPU rendering, signing, and distributable release remain unverified. |
-| GitHub Actions | Passed | Core revision `123d5c4d7a76873e597895763ca5d78e1ea42ea0` remains validated; l10n revision `d3d838198027e2104583296eb3e0f6fadc283e4e` passed prior Localization/Foundation gates; Linux head `8d84636636c969e70943b534deba3818381daed6` passed push Native `29676780532`, Foundation `29676780527`, and Flatpak `29676780531`, plus PR Native `29676781353`, Foundation `29676781358`, and Flatpak `29676781369`; the offline-provider regression, 213-key audit, plural-count UI, and model-placeholder localization passed in Native; central coordination remains separately tracked. |
-| Non-functional repository heads | Published | Core head `123d5c4d7a76873e597895763ca5d78e1ea42ea0`, l10n head `d3d838198027e2104583296eb3e0f6fadc283e4e`, and Linux behavioral/evidence head `8d84636636c969e70943b534deba3818381daed6` are published. Current-head Linux Native/Flatpak/Foundation gates passed. The release manifest remains unreleased with no artifacts. |
+| GitHub Actions | Passed | Core revision `123d5c4d7a76873e597895763ca5d78e1ea42ea0` remains validated; l10n revision `d3d838198027e2104583296eb3e0f6fadc283e4e` passed prior Localization/Foundation gates; Linux head `10cc4e7414efa3f55058c5748e887c5a96481641` passed push Native `29677532670`, Foundation `29677532645`, and Flatpak `29677532656`, plus PR Native `29677534287`, Foundation `29677534288`, and Flatpak `29677534304`; the corrupt-database, offline-provider, aliased-export, 213-key audit, plural-count UI, and model-placeholder localization checks passed in Native; central coordination remains separately tracked. |
+| Non-functional repository heads | Published | Core head `123d5c4d7a76873e597895763ca5d78e1ea42ea0`, l10n head `d3d838198027e2104583296eb3e0f6fadc283e4e`, and Linux behavioral/evidence head `10cc4e7414efa3f55058c5748e887c5a96481641` are published. Current-head Linux Native/Flatpak/Foundation gates passed. The release manifest remains unreleased with no artifacts. |
 | Acceptance Scenario 1 | Passed locally | The reference CLI discovered and selected a fake model, streamed `你好，LinguaMesh！` over loopback HTTP/SSE, and completed without a key. A separate slow-stream run retained `你好` and emitted cancellation. |
 | Remaining acceptance scenarios | Not passed | Scenarios 2–20 do not yet have complete cross-platform reproducible passing evidence. Linux now has complete secure-provider Scenario 3 and ordinary-text fallback Scenario 7 implementation/remote gate evidence plus partial Scenario 5 evidence; the global scenarios and stable-release evidence remain incomplete. |
 
