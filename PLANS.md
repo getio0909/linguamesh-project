@@ -111,6 +111,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Close the Linux source-level compound-summary gettext gap for history/memory metadata,
   document-job IDs, active-provider mode summaries, and unavailable provider/model labels; l10n
   and Linux remote Native/Foundation/Flatpak gates passed at the pinned revisions.
+- [x] Add Linux routing-profile persistence and a catalog-backed non-secret profile editor on top
+  of Core `routing_planner_v1`; automatic and ordered translation dispatch remain future work.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -140,6 +142,20 @@ routing and ordered multi-provider chain controls remain future work.
 Evidence: Core CI `29688550094`, Core Native SDK `29688550109`; Linux push Native/Foundation/Flatpak
 `29688581267`/`29688581251`/`29688581258`; Linux PR Native/Foundation/Flatpak
 `29688582602`/`29688582637`/`29688582608` all passed.
+
+## Completed Linux-first checkpoint — routing profile persistence/editor
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-PROFILES-1`
+
+Linux `9cbd4d5a270a004eff8e71c0e813d7648f74068d` adds worker CRUD and a GTK dialog for validated,
+non-secret Core routing profiles. It can create a bounded `linux-default` automatic,
+local-preferred profile from saved provider/model selections, inspect mode/candidate counts, and
+delete profiles. It does not yet select a routing profile for actual translation dispatch.
+
+The l10n catalog is pinned to `5f98f8bf760bb552c5d9e6cc7ace575e427bae10` (350 messages). Local
+l10n/Linux/Flatpak validation passed. Linux push Native/Foundation/Flatpak
+`29691040234`/`29691040260`/`29691040243` passed, as did duplicate PR-triggered
+Native/Foundation/Flatpak `29691041454`/`29691041501`/`29691041451`.
 
 ## Active Linux-first checkpoint — secure provider foundation
 

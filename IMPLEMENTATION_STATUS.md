@@ -54,7 +54,8 @@ profiles, and session-only profiles never fall back.
 Core now also exposes the non-secret `routing_planner_v1` contract for deterministic Manual,
 Ordered, and Automatic candidate selection with explainable rejection/ranking data and explicit
 fallback ordering; Linux negotiates this feature before provider work while GTK routing controls
-remain a later client slice.
+remain a later client slice. Linux now persists and edits validated non-secret routing profiles
+through the worker/storage boundary; automatic and ordered dispatch remain unimplemented.
 The document-job queue now renders source, technical format, lifecycle state, and completed/total
 metadata through catalog templates and stable state labels rather than Rust debug formatting. Linux
 source-referenced localization keys are now statically audited against the canonical catalog in
@@ -97,6 +98,29 @@ translation content remain data and are not translated.
 This closes the current Linux source-level compound-summary localization gap without claiming
 human translated-copy review, Orca speech, automatic/ordered routing controls, other clients,
 release artifacts, or a stable release.
+
+## 2026-07-19 — Linux routing profile persistence checkpoint
+
+Assumption: the first Linux routing slice should persist only validated planner metadata; provider
+endpoints, credentials, and translation content remain outside the saved record.
+
+- Linux `9cbd4d5a270a004eff8e71c0e813d7648f74068d` adds a catalog-backed Routing profiles action.
+  The worker saves, lists, and deletes Core `routing_planner_v1` profiles through the storage
+  boundary and rejects mutations while a translation is active.
+- The GTK dialog creates a bounded `linux-default` automatic, local-preferred profile from saved
+  provider/model selections, displays mode and candidate counts, and provides explicit deletion.
+- l10n `5f98f8bf760bb552c5d9e6cc7ace575e427bae10` contains 350 messages, including the 11 Linux
+  routing-profile labels and mode strings. Local l10n checks, Linux tests (122 passed, 2 ignored),
+  GUI check, strict Clippy, localization sync/audit, Flatpak metadata, and diff checks passed.
+
+This establishes routing-profile persistence and editing only. Actual translation dispatch through
+automatic or ordered routing, human copy review, other clients, release artifacts, and a stable
+release remain open.
+
+Remote evidence for this head passed: Linux push Native `29691040234`, Foundation `29691040260`,
+and Flatpak `29691040243`; duplicate PR-triggered Native `29691041454`, Foundation `29691041501`,
+and Flatpak `29691041451`. The corresponding jobs were `88203697224`, `88203697367`,
+`88203697248`, `88203700980`, `88203701027`, and `88203700779`.
 
 ## 2026-07-19 — Linux text translation retry checkpoint
 
