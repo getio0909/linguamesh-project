@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Linux multiple routing-profile IDs checkpoint
+
+Assumption: a useful saved-profile manager must support more than one stable routing-profile ID;
+existing edits must keep their ID immutable so document-job and selection references remain valid.
+
+- Linux `f00cf23f95d33d7c3c9abbc35ebe2141233a80b8` adds a localized profile-ID field, validates
+  1–128 ASCII letters/numbers/`.`, `_`, or `-` against the Core identifier rule, and locks the ID
+  while editing an existing profile.
+- l10n `7b832d765788e5ca64d7ba483b8ad12b3dd382d2` contains 358 messages and all 59 generated
+  resources; Linux consumes the immutable revision and audits 234 source keys.
+- Local Linux checks passed: formatting, GUI all-target check, strict Clippy, 131 tests with 2
+  ignored, localization sync/key audit, Flatpak metadata, and diff checks. Push Native/Flatpak/
+  Foundation `29700497023`/`29700497020`/`29700497017` and PR Native/Flatpak/Foundation
+  `29700498213`/`29700498197`/`29700498198` all passed. l10n Localization/Foundation
+  `29700369900`/`29700369903` passed.
+
+This advances Linux profile management without claiming complete fallback-chain editing, full Orca
+speech, manual visual review, other clients, signed artifacts, or a stable release.
+
 ## 2026-07-19 — Linux routing profile edit checkpoint
 
 Assumption: complete Linux routing-profile management requires loading an existing non-secret

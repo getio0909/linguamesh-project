@@ -136,6 +136,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
   resulting Ordered sequence, reject invalid drag payloads, and verify push/PR gates.
 - [x] Add Linux Edit/Save routing-profile actions that restore mode, consent, candidate order, and
   stable ID, then verify same-ID upsert without duplicate records.
+- [x] Add a Core-compatible Linux routing-profile ID field so new profiles can use distinct stable
+  IDs while existing edits lock their ID; verify localized validation, generated resources, and
+  push/PR gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -337,6 +340,21 @@ Native/Flatpak/Foundation runs `29699870066`/`29699870068`/`29699870071` and PR
 Native/Flatpak/Foundation runs `29699871302`/`29699871301`/`29699871311` all passed. Full
 fallback-chain editing, Orca speech, visual review, other clients, artifacts, and stable release
 remain open.
+
+## Completed Linux-first checkpoint — multiple routing-profile IDs
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-PROFILE-ID-1`
+
+Linux `f00cf23f95d33d7c3c9abbc35ebe2141233a80b8` adds a localized ID entry validated against Core's
+1–128 byte ASCII identifier rule. New profiles can use distinct IDs; editing an existing profile
+locks its ID so document-job and selection references remain stable.
+
+l10n `7b832d765788e5ca64d7ba483b8ad12b3dd382d2` contains 358 messages and all 59 generated
+resources. Local Linux/l10n checks passed. Push Native/Flatpak/Foundation runs
+`29700497023`/`29700497020`/`29700497017` and PR Native/Flatpak/Foundation runs
+`29700498213`/`29700498197`/`29700498198` all passed; l10n Localization/Foundation runs
+`29700369900`/`29700369903` passed. Full fallback-chain editing, Orca speech, visual review, other
+clients, artifacts, and stable release remain open.
 
 ## Completed Linux-first checkpoint — routing candidate accessibility labels
 
