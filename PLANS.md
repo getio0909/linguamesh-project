@@ -101,7 +101,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   the canonical l10n catalog, replacing Rust debug-format presentation.
 - [x] Add native Linux DOCX/XLSX package regression fixtures that exercise wrapper import and Core
   reconstruction while preserving non-text package parts, formulas, numbers, and unselected values.
-- [x] Add a native Linux malicious-DOCX fixture that rejects ZIP path traversal before import.
+- [x] Add native Linux malicious-DOCX fixtures that reject ZIP path traversal and oversized
+  uncompressed entries before import.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -1359,13 +1360,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   clients, artifacts, and stable release remain open.
 
 - 2026-07-19: Assumption: the Linux import boundary must reject unsafe OOXML archive entry names
-  before any translation or reconstruction work. Linux `d6ff4c5de6e8ccf43816db05707b00873c65f6e9`
-  adds an in-memory DOCX `../outside.txt` traversal fixture and verifies `InvalidStructure` without
-  touching an output path. Local formatting, GUI checks, strict Clippy, 111-test demo-provider suite
-  (2 ignored), l10n sync, 215-key audit, and diff checks passed. Push Native/Foundation/Flatpak
-  `29680405704`/`29680405679`/`29680405672` and PR `29680407170`/`29680407224`/`29680407182` passed.
-  This advances Linux Scenario 15 evidence; decompression-bomb coverage, visual review, other
-  clients, artifacts, and stable release remain open.
+  and bounded-size violations before any translation or reconstruction work. Linux
+  `8e057640f9e299335c0b0d60c3881ed7c4a84346` adds in-memory DOCX `../outside.txt` and deflated
+  oversized-entry fixtures, verifying `InvalidStructure` and `TooLarge` without touching an output
+  path. Local formatting, GUI checks, strict Clippy, 112-test demo-provider suite (2 ignored), l10n
+  sync, 215-key audit, and diff checks passed. Push Native/Foundation/Flatpak
+  `29680662802`/`29680662805`/`29680662821` and PR `29680663901`/`29680663898`/`29680663922` passed.
+  This advances Linux Scenario 15 evidence; full bomb heuristics, visual review, other clients,
+  artifacts, and stable release remain open.
 
 ## Checkpoint update protocol
 
