@@ -1263,6 +1263,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29675744738`/`29675744785`/`29675744821` all passed. Central release and compatibility pins are
   updated while the train remains unreleased.
 
+- 2026-07-19: Assumption: pinned gettext catalogs are the Linux runtime source of truth for plural
+  selection. Linux `29e613a806b1eb096cabab2374c494ea6a07e807` retains all NUL-separated MO plural
+  slots and exposes locale-specific `text_plural` selection with safe fallback. Local formatting,
+  GUI checks, strict Clippy, 106-test demo-provider suite, 213-key audit, l10n sync, and diff checks
+  passed. Push Native `29676132263`/job `88163825783`, Foundation `29676132239`, and Flatpak
+  `29676132247`/job `88163825792` passed; PR Native `29676133164`, Foundation `29676133154`, and
+  Flatpak `29676133165`/job `88163828359` also passed. Translated-copy/visual review, Orca, prompt
+  approval, other clients, signing, distributable artifacts, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

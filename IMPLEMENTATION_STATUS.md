@@ -711,6 +711,24 @@ failures.
 End-user prompt approval UX, broader storage-fault coverage, complete gettext/plural/visual/Orca
 review, other clients, signing, distributable artifacts, and stable-release evidence remain open.
 
+## 2026-07-19 — Linux gettext plural runtime checkpoint
+
+Assumption: the pinned gettext catalogs are the runtime source of truth for plural selection, so
+the Linux client must retain every generated translation slot and apply the locale-specific rule
+before replacing non-sensitive placeholders.
+
+- Linux `29e613a806b1eb096cabab2374c494ea6a07e807` retains all NUL-separated MO plural slots and
+  adds `text_plural` selection for English, French, Russian, Arabic, Hindi, Brazilian Portuguese,
+  and one-form Chinese/Japanese/Korean catalogs, with safe incomplete-translation fallback.
+- Local formatting, GUI all-target checks, strict Clippy, demo-provider tests (106 passed, 2
+  ignored), 213-key localization audit, l10n synchronization, and diff checks passed.
+- Push Native `29676132263` (job `88163825783`), Foundation `29676132239`, and Flatpak
+  `29676132247` (job `88163825792`) passed. PR Native `29676133164`, Foundation `29676133154`,
+  and Flatpak `29676133165` (job `88163828359`) also passed.
+
+Translated-copy and visual locale review, Orca speech, end-user prompt approval, other clients,
+signing, distributable artifacts, and stable-release evidence remain open.
+
 | Area | Status | Evidence |
 | --- | --- | --- |
 | Current Linux document-job metadata, OCR, localization-key audit, accessible progress, diagnostics, pause-error localization, and Secret Service prompted flows | Validated locally and remotely | l10n `f00b00fda307660000b0e4068c5ca1072d266df1` contains 327 canonical messages and bundle SHA-256 `53821e2397e6697b7551693c6f5787cc1f88e24d96b3077ac590645a848f1977`; Linux `739538cb27bdcdc4b4f8530da6dcd5110550a310` accepts or dismisses Secret Service `Prompt` flows, renders catalog-backed document rows and opt-in page-marked OCR text, statically audits 208 source keys, exposes native progress-bar semantics, localizes fixed diagnostics labels and values, and routes pause queue errors through catalog-backed rendering. Push Native `29672741665`, Foundation `29672741666`, and Flatpak `29672741675` passed; PR reruns `29672743058`, `29672742959`, and `29672742990` also passed. |

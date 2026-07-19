@@ -298,3 +298,12 @@ GUI checks, localization sync, and documentation validation passed. Push Native 
 (job `88162748481`), and Flatpak `29675744821` (job `88162748719`) also passed. A running
 third-party daemon, GPU acceleration, Orca/visual review, stable release, and other clients remain
 unverified.
+
+Linux-first gettext plural runtime checkpoint: Linux `29e613a806b1eb096cabab2374c494ea6a07e807`
+retains every generated MO plural slot and selects locale-specific English/French/Russian/Arabic/
+Hindi/Brazilian-Portuguese or one-form Chinese/Japanese/Korean variants with safe fallback. Local
+formatting, GUI checks, strict Clippy, 106-test demo-provider suite, 213-key audit, l10n sync, and
+diff checks passed. Push Native `29676132263` (job `88163825783`), Foundation `29676132239`, and
+Flatpak `29676132247` (job `88163825792`) passed; PR Native `29676133164`, Foundation `29676133154`,
+and Flatpak `29676133165` (job `88163828359`) also passed. Translated-copy/visual review, Orca,
+prompt approval, other clients, signing, distributable artifacts, and stable release remain open.
