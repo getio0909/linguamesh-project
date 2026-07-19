@@ -729,6 +729,24 @@ before replacing non-sensitive placeholders.
 Translated-copy and visual locale review, Orca speech, end-user prompt approval, other clients,
 signing, distributable artifacts, and stable-release evidence remain open.
 
+## 2026-07-19 — Linux offline-provider preservation checkpoint
+
+Assumption: an offline provider attempt must fail within a bounded interval while preserving the
+last confirmed provider, model, and request path; the regression uses a just-released loopback port
+and does not claim a physical network outage.
+
+- Linux `b09f47415e33c84981f0d6da6fbfc6a0e00c4a53` adds a worker regression that connects a confirmed
+  fake provider, rejects a session-only connection to the released loopback port as `Network` in
+  under five seconds, and completes the next translation through the previous provider.
+- Local formatting, GUI all-target checks, strict Clippy, demo-provider tests (107 passed, 2
+  ignored), 213-key localization audit, l10n synchronization, and diff checks passed.
+- Push Native `29676519123` (job `88164823336`), Foundation `29676519162`, and Flatpak
+  `29676519121` (job `88164823343`) passed. PR Native `29676520477`, Foundation `29676520497`,
+  and Flatpak `29676520498` (job `88164827465`) also passed.
+
+This strengthens Linux evidence for mandatory Scenario 17; actual physical offline conditions,
+Orca/visual review, other clients, signing, distributable artifacts, and stable release remain open.
+
 | Area | Status | Evidence |
 | --- | --- | --- |
 | Current Linux document-job metadata, OCR, localization-key audit, accessible progress, diagnostics, pause-error localization, and Secret Service prompted flows | Validated locally and remotely | l10n `f00b00fda307660000b0e4068c5ca1072d266df1` contains 327 canonical messages and bundle SHA-256 `53821e2397e6697b7551693c6f5787cc1f88e24d96b3077ac590645a848f1977`; Linux `739538cb27bdcdc4b4f8530da6dcd5110550a310` accepts or dismisses Secret Service `Prompt` flows, renders catalog-backed document rows and opt-in page-marked OCR text, statically audits 208 source keys, exposes native progress-bar semantics, localizes fixed diagnostics labels and values, and routes pause queue errors through catalog-backed rendering. Push Native `29672741665`, Foundation `29672741666`, and Flatpak `29672741675` passed; PR reruns `29672743058`, `29672742959`, and `29672742990` also passed. |

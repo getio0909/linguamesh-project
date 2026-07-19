@@ -1272,6 +1272,17 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Flatpak `29676133165`/job `88163828359` also passed. Translated-copy/visual review, Orca, prompt
   approval, other clients, signing, distributable artifacts, and stable release remain open.
 
+- 2026-07-19: Assumption: offline provider attempts must fail within a bounded interval while
+  preserving the last confirmed provider, model, and request path. Linux
+  `b09f47415e33c84981f0d6da6fbfc6a0e00c4a53` adds a loopback released-port regression requiring a
+  typed `Network` failure under five seconds followed by successful translation through the prior
+  session. Local formatting, GUI checks, strict Clippy, 107-test demo-provider suite, 213-key audit,
+  l10n sync, and diff checks passed. Push Native `29676519123`/job `88164823336`, Foundation
+  `29676519162`, and Flatpak `29676519121`/job `88164823343` passed; PR Native `29676520477`,
+  Foundation `29676520497`, and Flatpak `29676520498`/job `88164827465` also passed. This advances
+  Linux Scenario 17 evidence; physical offline conditions, third-party daemon, other clients, and
+  stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

@@ -307,3 +307,12 @@ diff checks passed. Push Native `29676132263` (job `88163825783`), Foundation `2
 Flatpak `29676132247` (job `88163825792`) passed; PR Native `29676133164`, Foundation `29676133154`,
 and Flatpak `29676133165` (job `88163828359`) also passed. Translated-copy/visual review, Orca,
 prompt approval, other clients, signing, distributable artifacts, and stable release remain open.
+
+Linux-first offline-provider preservation checkpoint: Linux `b09f47415e33c84981f0d6da6fbfc6a0e00c4a53`
+adds a worker regression that rejects a released loopback endpoint as a typed `Network` failure in
+under five seconds and then completes through the previously confirmed provider/model. Local
+formatting, GUI checks, strict Clippy, 107-test demo-provider suite, 213-key audit, l10n sync, and
+diff checks passed. Push Native `29676519123` (job `88164823336`), Foundation `29676519162`, and
+Flatpak `29676519121` (job `88164823343`) passed; PR Native `29676520477`, Foundation `29676520497`,
+and Flatpak `29676520498` (job `88164827465`) also passed. This strengthens Linux Scenario 17
+evidence but does not claim a physical network outage, third-party daemon, or stable release.
