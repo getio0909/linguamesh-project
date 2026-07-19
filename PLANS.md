@@ -1451,8 +1451,10 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   failed/cancelled state. Local Linux validation passed 121 tests with 2 ignored, strict Clippy,
   formatting, l10n sync, 217-key audit, Flatpak metadata, and diff checks. The GUI all-target test
   binary cannot link on this host because the installed system GTK library lacks the gtk-rs GTK 4
-  symbols; remote Linux gates are the remaining evidence for this revision. Automatic/ordered
-  routing UI, other clients, artifacts, and stable release remain open.
+  symbols. Linux Native/Foundation/Flatpak push and PR gates passed in runs 29689432043,
+  29689432053, and 29689432045; duplicate push-triggered runs 29689431072, 29689431028, and
+  29689431052 also passed. l10n runs 29689387482/29689387493 and central run 29689497792 passed.
+  Automatic/ordered routing UI, other clients, artifacts, and stable release remain open.
 
 ## Checkpoint update protocol
 
