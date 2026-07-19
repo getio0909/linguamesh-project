@@ -1312,6 +1312,18 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Physical corruption recovery, desktop/Orca review, other clients, artifacts, and stable release
   remain open.
 
+- 2026-07-19: Assumption: the automated GTK drag-and-drop fixture button is still user-visible UI
+  and must resolve through the canonical catalog. l10n `3aa86232974f9a9ece8d3a45e6760dee294fca81`
+  adds `fixture.drag_file`, producing 333 messages with bundle SHA-256
+  `61a054d99935b256e79d5be7feb4d929fc8cf61af663a02b8fd10475745d70bd`; Linux
+  `ce1672ec3905d0c8fcc3b8f773bad64e5923158a` maps the fixture button and raises the source audit
+  to 214 keys. Local formatting, GUI checks, strict Clippy, 108-test demo-provider suite (2
+  ignored), l10n sync, and diff checks passed. l10n Foundation/Localization
+  `29678032701`/`29678032702` passed. Push Native/Foundation/Flatpak
+  `29678132379`/`29678132390`/`29678132392` and PR
+  `29678130604`/`29678130600`/`29678130605` passed. Human translated-copy, visual/RTL, Orca,
+  physical corruption recovery, other clients, artifacts, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
