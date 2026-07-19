@@ -139,6 +139,13 @@ the runtime catalog. Native `29666379600`, Foundation `29666379579`, and Flatpak
 passed; complete visible-string gettext coverage, Orca speech, physical desktop review, OCR,
 other platform clients, and stable-release evidence remain open.
 
+Linux-first provider-form Tab-chain evidence checkpoint: Linux `713c86b3da9b057cc25e72c687dc6c4c265f6439`
+records the application-window Capture-phase Tab/Shift+Tab order for saved-profile, provider,
+credential, Connect, and Remember controls while preserving modified shortcuts. Native
+`29666820550`, Foundation `29666820602`, and Flatpak `29666820579` passed the current head,
+including the Xvfb/xfwm4 keyboard fixture. Orca speech, physical desktop review, OCR, complete
+visible-string gettext coverage, other platform clients, and stable-release evidence remain open.
+
 Linux-first PPTX package checkpoint: Core `0f71a652a536753f48bb8c852fd38e97740c23ce` adds bounded
 PPTX ZIP/XML inspection, schema-11 package persistence, safe slide/notes/master/layout/handout/
 comments text-node reconstruction, and resource retention. Linux functional revision

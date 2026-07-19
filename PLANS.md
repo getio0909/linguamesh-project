@@ -1141,6 +1141,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29666379586` passed. Complete gettext coverage, Orca speech, physical desktop review, OCR,
   other clients, and stable-release evidence remain open.
 
+- 2026-07-19: Assumption: provider onboarding controls require a deterministic application-window
+  Tab/Shift+Tab order while modified Ctrl/Alt/Super shortcuts remain native workspace navigation.
+  Linux revision `713c86b3da9b057cc25e72c687dc6c4c265f6439` records the Capture-phase handler and
+  its Xvfb/xfwm4 fixture evidence. Native `29666820550`, Foundation `29666820602`, and Flatpak
+  `29666820579` passed for the current head. The local GTK fixture could not link because the host
+  lacks the required GTK 4 symbols; the remote Native gate is the executable evidence. Orca speech,
+  physical desktop review, OCR, complete visible-string gettext coverage, other clients, and
+  stable-release evidence remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

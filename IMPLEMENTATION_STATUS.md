@@ -462,6 +462,21 @@ maps the validation errors through the runtime catalog.
 Complete visible-string gettext coverage, Orca speech, physical desktop review, OCR, other
 platform clients, and stable-release evidence remain open.
 
+## 2026-07-19 — Linux provider-form Tab-chain evidence checkpoint
+
+Assumption: provider onboarding controls require a deterministic application-window Tab/Shift+Tab
+order, while Ctrl/Alt/Super-modified Tab remains native workspace navigation. Linux revision
+`713c86b3da9b057cc25e72c687dc6c4c265f6439` documents the existing Capture-phase handler and the
+real Xvfb/xfwm4 fixture evidence for provider and workspace controls.
+
+- Native `29666820550`, Foundation `29666820602`, and Flatpak `29666820579` passed for the current
+  Linux head.
+- The local GTK fixture remains unavailable because the host linker lacks the GTK 4 symbols used
+  by the current build; this is distinguished from the successful remote executable gate.
+
+Orca speech, physical desktop review, OCR, complete visible-string gettext coverage, other clients,
+and stable-release evidence remain open.
+
 ## Evidence
 
 | Area | Status | Evidence |
