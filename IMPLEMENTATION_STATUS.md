@@ -2,6 +2,15 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Linux localization fallback-template consistency final verification
+
+- Documentation-only Linux head `81eed4f051e0f70406efbe47dca82e4f215c4cce` passed push
+  Native/Flatpak/Foundation `29708338140`/`29708338160`/`29708338159` and PR
+  Native/Flatpak/Foundation `29708339322`/`29708339336`/`29708339368`.
+- Native and Flatpak evidence artifacts were non-expired; the Native push artifact was 5,590,542
+  bytes. The earlier Flatpak pin failure and its manifest correction are documented in the Linux
+  status history. This remains unsigned prerelease evidence.
+
 ## 2026-07-19 — Linux localization placeholder audit final verification
 
 - Documentation-only Linux head `3f5f9ee00dd6359759cec0b96dbc8b6d8b89c70d` passed push

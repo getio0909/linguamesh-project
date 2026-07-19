@@ -98,6 +98,10 @@ Native/Flatpak/Foundation `29707758213`/`29707758214`/`29707758216` and PR
 `29707759245`/`29707759269`/`29707759252`; final Native and Flatpak evidence artifacts were
 non-expired.
 
+The final Linux status head `81eed4f051e0f70406efbe47dca82e4f215c4cce` passed push
+Native/Flatpak/Foundation `29708338140`/`29708338160`/`29708338159` and PR
+`29708339322`/`29708339336`/`29708339368`; its Native and Flatpak artifacts were non-expired.
+
 ## Linux-first duplicate routing-profile ID checkpoint
 
 Linux `21c89c7e9c671617477a6410240ff1fb0a0c9ff7` rejects a new profile whose validated ID already

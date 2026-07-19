@@ -511,6 +511,10 @@ then passed push Native/Flatpak/Foundation `29707758213`/`29707758214`/`29707758
 translated-copy, plural/visual review, Orca speech, signing, other clients, and stable release
 remain open.
 
+The final status head `81eed4f051e0f70406efbe47dca82e4f215c4cce` passed push
+Native/Flatpak/Foundation `29708338140`/`29708338160`/`29708338159` and PR
+`29708339322`/`29708339336`/`29708339368`; its artifacts were non-expired.
+
 ## Completed Linux-first checkpoint — multiple routing-profile IDs
 
 Change identifier: `LM-CHANGE-2026-07-ROUTING-PROFILE-ID-1`
