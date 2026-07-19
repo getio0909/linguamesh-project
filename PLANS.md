@@ -1324,6 +1324,18 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29678130604`/`29678130600`/`29678130605` passed. Human translated-copy, visual/RTL, Orca,
   physical corruption recovery, other clients, artifacts, and stable release remain open.
 
+- 2026-07-19: Assumption: built-in provider display names are user-visible Linux form values and
+  must resolve through the canonical catalog while user-edited names remain untouched. l10n
+  `85b9d45569ce840c17dc0acc7d7366d6810be48e` adds `profile.default_ollama_name`, producing 334
+  messages with bundle SHA-256 `028d25b3637fbc19d41d497a860b414353615b9576db6f852a9f236bcbe770ce`;
+  Linux `1153e0053b5f8e9d19dbb9ed46e9d79f9df9760a` routes new-profile initialization and untouched
+  preset switching through localized default-name helpers and raises the source audit to 215 keys.
+  Local formatting, GUI checks, strict Clippy, 108-test demo-provider suite (2 ignored), l10n sync,
+  and diff checks passed. l10n Localization/Foundation `29678498771`/`29678498778` passed. Push
+  Native/Foundation/Flatpak `29678586553`/`29678586556`/`29678586562` and PR
+  `29678588077`/`29678588076`/`29678588073` passed. Human translated-copy, visual/RTL, Orca,
+  physical corruption recovery, other clients, artifacts, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
