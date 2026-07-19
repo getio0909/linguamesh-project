@@ -113,8 +113,7 @@ resume semantics are independently specified and independently verified.
   path and translated output.
 - Linux push and PR Native/Flatpak/Foundation gates passed: Native
   `29693117355`/`29693118757`, Flatpak `29693117348`/`29693118741`, Foundation
-  `29693117351`/`29693118742`. Central coordination commit `4c507ca7065fe234f5e62612a9b8cea6839900ac`
-  passed workflow `29693366156`.
+  `29693117351`/`29693118742`.
 
 This closes ordinary-text multi-candidate routing execution only. Document-job routing, other
 clients, visual/Orca review, distributable artifacts, and a stable release remain open.
