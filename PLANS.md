@@ -1212,6 +1212,18 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   gettext coverage, translated-copy/plural, visual locale/RTL, Orca speech, prompt approval,
   other clients, and stable-release evidence remain open.
 
+- 2026-07-19: Assumption: Secret Service `CreateItem` and `Delete` prompt paths are explicit
+  Linux security interactions. Linux `739538cb27bdcdc4b4f8530da6dcd5110550a310` calls the
+  `org.freedesktop.Secret.Prompt` object, waits for `Completed`, accepts only approval, maps
+  dismissal through a new catalog key, and fails closed on prompt-call or timeout failures. l10n
+  `f00b00fda307660000b0e4068c5ca1072d266df1` contains 327 messages with checksum
+  `53821e2397e6697b7551693c6f5787cc1f88e24d96b3077ac590645a848f1977`. Local 65/103-test
+  suites, strict Clippy, the 208-key audit, sync checks, and four prompted-flow fixture cases
+  passed. l10n Foundation `29672618359`/Localization `29672618363` passed; Linux push Native
+  `29672741665`, Foundation `29672741666`, Flatpak `29672741675`, and PR reruns
+  `29672743058`/`29672742959`/`29672742990` passed. End-user approval UX, broader storage
+  faults, complete gettext/plural/visual/Orca review, other clients, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
