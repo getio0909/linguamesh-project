@@ -1229,6 +1229,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   compatibility and release-manifest pins, and the unreleased posture. Coordination run
   `29673058773` passed Linux job `88155425506` and PowerShell job `88155425531`.
 
+- 2026-07-19: Assumption: Linux-first Ollama acceptance can be bounded to its OpenAI-compatible
+  `/v1/` surface. Core `0d0d475d22129e8211333ee8f664a7669948ce3a` adds a deterministic fixture
+  returning `llama3.2:latest` and streaming `/v1/chat/completions`; Linux
+  `c1e701b4b0ad35eb6cd2823d19ae83cdb235b30d` exercises explicit connect/model selection and
+  streaming through `local-loopback`. Core/Linux local checks passed, as did push and PR Native
+  and Flatpak runs `29673888541`, `29673888548`, `29673889609`, and `29673889576` with jobs
+  `88157552503`, `88157552511`, `88157555098`, and `88157554910`. Native `/api` and a running
+  third-party daemon remain unverified; Android, Windows, and macOS are deferred.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

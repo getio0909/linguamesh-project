@@ -57,6 +57,23 @@ source-referenced localization keys are now statically audited against the canon
 Native and Foundation CI.
 No stable product release, completed native client, or released SDK artifact is claimed here.
 
+## 2026-07-19 — Linux Ollama-compatible local endpoint checkpoint
+
+Assumption: the Linux-first local-model acceptance path may use Ollama's OpenAI-compatible `/v1/`
+surface. Native Ollama `/api` behavior and interoperability with a running third-party daemon remain
+separate work.
+
+Core `0d0d475d22129e8211333ee8f664a7669948ce3a` now provides a deterministic testkit fixture that
+returns `llama3.2:latest` from `/v1/models` and streams `/v1/chat/completions` without a credential.
+Linux `c1e701b4b0ad35eb6cd2823d19ae83cdb235b30d` uses the existing `local-loopback` preset to
+connect, require deliberate model selection, and verify `你好，Ollama！` streaming end to end.
+
+Local Core validation passed formatting, workspace check, strict Clippy, and all workspace tests;
+Linux passed 65 no-default tests, 104 demo-provider tests, strict Clippy, localization-key audit,
+and synchronized catalog checks. Remote Linux push Native `29673888541` (job `88157552503`) and
+Flatpak `29673888548` (job `88157552511`) passed; PR Native `29673889609` (job `88157555098`) and
+Flatpak `29673889576` (job `88157554910`) also passed. Android, Windows, and macOS remain deferred.
+
 ## 2026-07-18 — Linux JSON document checkpoint
 
 Assumption: JSON include/exclude rules use exact RFC 6901 JSON Pointer paths; object keys,
