@@ -113,6 +113,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
   and Linux remote Native/Foundation/Flatpak gates passed at the pinned revisions.
 - [x] Add Linux routing-profile persistence and a catalog-backed non-secret profile editor on top
   of Core `routing_planner_v1`; automatic and ordered translation dispatch remain future work.
+- [x] Execute Linux ordinary-text Ordered/Automatic routing fallback chains, including unavailable
+  candidate connection skipping, retryable stream-failure switching, typed fallback events, and
+  event-sequence/partial-output preservation; document-job routing remains out of scope.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -125,8 +128,9 @@ network or timeout failure may switch once; the decision is surfaced without exp
 content, partial primary output is preserved, and cancellation or non-retryable errors terminate
 without trying another provider.
 
-Assumption: a single selected saved profile is the smallest complete approved chain for Scenario 7;
-ordered multi-provider chains and automatic routing remain future work.
+Assumption: this checkpoint remains the explicit single-provider fallback boundary for Scenario 7;
+multi-provider Ordered/Automatic execution is recorded in the completed routing fallback checkpoint
+below and remains ordinary-text-only.
 
 ## Active Linux-first checkpoint — shared routing planner contract
 
@@ -136,8 +140,8 @@ Core now owns the non-secret routing policy contract and schema-15 persistence. 
 Automatic modes, bounded local/privacy/capability/size/locale/quality/latency/cost constraints,
 stable rejection reasons, deterministic ranking, and explicit fallback ordering. Linux negotiates
 `routing_planner_v1` before provider work and pins Core `d1c03ba84362c0c672c57045a59fc8092db470be`.
-The GTK surface still exposes only the existing explicitly approved single fallback; automatic
-routing and ordered multi-provider chain controls remain future work.
+The GTK surface retains the explicitly approved single fallback control while ordinary-text
+Ordered/Automatic chain execution is covered by the completed checkpoint below.
 
 Evidence: Core CI `29688550094`, Core Native SDK `29688550109`; Linux push Native/Foundation/Flatpak
 `29688581267`/`29688581251`/`29688581258`; Linux PR Native/Foundation/Flatpak
@@ -175,8 +179,30 @@ Linux validation passed 124 tests with 2 ignored, GUI check, strict Clippy, loca
 `29692402861`/`29692402845`/`29692402867`; l10n Foundation/Localization runs
 `29691938103`/`29691938112` passed.
 
-Complete automatic/ordered fallback chains, document-job routing, cross-platform pins, accepted
-draft publication, distributable artifacts, and stable-release evidence remain open.
+Document-job routing, cross-platform pins, accepted draft publication, distributable artifacts, and
+stable-release evidence remain open.
+
+## Completed Linux-first checkpoint — ordered/automatic routing fallback execution
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-FALLBACK-1`
+
+Linux `8a3b806490191f858411c802070ccaea6af606b8` now executes the remaining eligible candidates
+from Core `routing_planner_v1` for ordinary text. Ordered and Automatic profiles skip unavailable
+saved providers during initial dispatch; retryable network/timeout stream failures reconnect the
+next candidate, preserve partial output, remap event sequence numbers, and emit a typed fallback
+event without endpoints, credentials, or source content. The GTK surface reuses the existing
+generic fallback notice, and document jobs remain separate.
+
+The local Linux suite passed 125 tests with 2 ignored, GUI all-target check, strict Clippy,
+formatting, and diff checks. GitHub PR #1 for this head passed Native, Flatpak, and Foundation
+push/duplicate-PR gates: Native `29693118757`/`29693117355`, Flatpak `29693118741`/`29693117348`,
+and Foundation `29693118742`/`29693117351`.
+
+Assumption: routing fallback remains ordinary-text-only until document-job provider selection and
+resume semantics are specified and independently verified.
+
+Complete document-job routing, other clients, accepted draft publication, distributable artifacts,
+and stable-release evidence remain open.
 
 ## Active Linux-first checkpoint — secure provider foundation
 

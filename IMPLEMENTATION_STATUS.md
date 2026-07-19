@@ -54,10 +54,12 @@ profiles, and session-only profiles never fall back.
 Core now also exposes the non-secret `routing_planner_v1` contract for deterministic Manual,
 Ordered, and Automatic candidate selection with explainable rejection/ranking data and explicit
 fallback ordering; Linux negotiates this feature before provider work. Linux persists and edits
-validated non-secret routing profiles through the worker/storage boundary and now executes ordinary
-text requests through a selected saved routing profile, resolving the chosen provider through the
-host secret broker. Complete automatic/ordered fallback chains, document-job routing, and other
-client controls remain unimplemented.
+validated non-secret routing profiles through the worker/storage boundary and executes ordinary text
+requests through a selected saved routing profile, resolving candidates through the host secret
+broker. Ordered/Automatic chains now skip unavailable saved providers, retry retryable stream
+failures across remaining candidates, preserve partial output, remap event sequences, and emit
+typed fallback notices without endpoints, credentials, or source content. Document-job routing and
+other client controls remain unimplemented.
 The document-job queue now renders source, technical format, lifecycle state, and completed/total
 metadata through catalog templates and stable state labels rather than Rust debug formatting. Linux
 source-referenced localization keys are now statically audited against the canonical catalog in
