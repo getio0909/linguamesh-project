@@ -2,16 +2,35 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Linux routing candidate drag-order checkpoint
+
+Assumption: Ordered routing needs both keyboard-accessible bounded moves and a direct pointer
+gesture for placing a selected candidate before another; invalid drag payloads must fail closed.
+
+- Linux `c0cdee8b729a6800904f6754f30221feb55f78e` adds GTK text drag sources and row drop targets
+  to the routing-profile dialog. Dropping a candidate before another row rebuilds the visible list
+  and preserves the resulting Ordered-mode sequence used by profile creation; localized icon labels
+  and keyboard controls remain available.
+- `move_routing_profile_id_before` rejects self, unknown, and missing target IDs; regression
+  `routing_candidate_drag_reordering_is_bounded` covers forward, reverse, self, and unknown cases.
+- Local Linux targeted/full validation passed. Push Native/Flatpak/Foundation runs
+  `29699210798`/`29699210802`/`29699210801` and PR Native/Flatpak/Foundation runs
+  `29699211832`/`29699211818`/`29699211830` all passed after a cleanup-only AT-SPI rerun.
+
+This advances Linux candidate management without claiming complete profile editing, full Orca
+speech, manual visual review, other clients, release artifacts, or a stable release.
+
 ## Current checkpoint
 
-Linux routing configuration revision `84bed28deaa6034fb45e4f6c925fd5c2713c8782` now exposes
-Core's `Manual`, `Ordered`, and `Automatic` modes, explicit fallback consent defaulting off,
-focusable candidate checkboxes, keyboard-focusable up/down candidate reordering, and catalog-backed
-accessible names for icon controls. Local Linux validation passed with 132 tests (`130 passed; 2
-ignored`), GUI all-target check, strict Clippy, formatting, localization sync/audit, Flatpak metadata,
-and diff checks. Push Native/Flatpak/Foundation runs `29698745522`/`29698745519`/`29698745529` and PR
-Native/Flatpak/Foundation runs `29698747220`/`29698747211`/`29698747194` all passed. This is a Linux
-configuration slice only and does not claim complete candidate management, Orca speech, other
+Linux routing configuration revision `c0cdee8b729a6800904f6754f30221feb55f78e` now exposes Core's
+`Manual`, `Ordered`, and `Automatic` modes, explicit fallback consent defaulting off, focusable
+candidate checkboxes, keyboard-focusable up/down candidate reordering, row drag-and-drop ordering,
+and catalog-backed accessible names for icon controls. Local Linux validation passed with 133 tests
+(`131 passed; 2 ignored`), GUI all-target check, strict Clippy, formatting, localization sync/audit,
+Flatpak metadata, and diff checks. Push Native/Flatpak/Foundation runs
+`29699210798`/`29699210802`/`29699210801` and PR Native/Flatpak/Foundation runs
+`29699211832`/`29699211818`/`29699211830` all passed after a cleanup-only AT-SPI rerun. This is a
+Linux configuration slice only and does not claim complete profile editing, Orca speech, other
 clients, visual review, distributable artifacts, or a stable release.
 
 ## 2026-07-19 — Linux routing candidate accessibility-label checkpoint

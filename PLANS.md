@@ -132,6 +132,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   resulting Ordered sequence, and verify the bounded reordering helper and remote gates.
 - [x] Add catalog-backed accessible labels and tooltips for Linux routing candidate movement
   controls, regenerate all official PO/MO packs, pin the l10n revision in CI, and verify remote gates.
+- [x] Add Linux GTK text drag sources and row drop targets for routing candidates, persist the
+  resulting Ordered sequence, reject invalid drag payloads, and verify push/PR gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -299,6 +301,23 @@ Flathub network failure.
 
 Drag/drop ordering, complete candidate management, other clients, artifacts, and stable release
 remain open.
+
+## Completed Linux-first checkpoint — routing candidate drag ordering
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-CANDIDATE-DRAG-1`
+
+Linux `c0cdee8b729a6800904f6754f30221feb55f78e` adds GTK text drag sources and row drop targets
+to the routing-profile dialog. Dropping a candidate before another row rebuilds the list and
+preserves the resulting Ordered-mode sequence used by profile creation. The Core-facing
+`move_routing_profile_id_before` helper rejects self, unknown, and missing target IDs, with
+`routing_candidate_drag_reordering_is_bounded` covering those boundaries.
+
+Local Linux formatting, GUI all-target check, strict Clippy, 131 passing demo-provider tests with 2
+ignored, localization sync/key audit, Flatpak metadata, and diff checks passed. Push
+Native/Flatpak/Foundation runs `29699210798`/`29699210802`/`29699210801` and PR
+Native/Flatpak/Foundation runs `29699211832`/`29699211818`/`29699211830` all passed after a
+cleanup-only AT-SPI rerun. Full profile editing, Orca speech, visual review, other clients,
+artifacts, and stable release remain open.
 
 ## Completed Linux-first checkpoint — routing candidate accessibility labels
 

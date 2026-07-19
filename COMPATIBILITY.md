@@ -13,6 +13,20 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | Localization | `0.1.0` | Message schema `1.0.0`; resource contract `1`; 334 canonical messages including Linux-only status, partial-output, text-import, opt-in image-only PDF OCR controls and errors, glossary CSV import/export and rule-validation errors, PDF fidelity and subtitle readability warnings, document-job actions/dialog/status/tooltip controls, exported-output open/failure actions, Incognito privacy controls, history and translation-memory controls/status, translation-export, provider-profile, provider preset labels/tooltips, source-target, onboarding-stage, active-provider, notification, draft-note, locale selector language names, fixed provider/file/worker errors, reducer-state/category guidance, fixed worker/file/storage/provider-error guidance, construction-stage provider/default-control and request-level glossary copy, diagnostics labels/state values, Secret Service prompt-dismissal guidance, GTK drag-fixture label, built-in provider default names, and Core/loopback startup plus profile-storage error copy; paired PO/MO Linux resources | CI-verified development bundle at l10n revision `85b9d45569ce840c17dc0acc7d7366d6810be48e`, 59 generated artifacts, deterministic bundle SHA-256 `028d25b3637fbc19d41d497a860b414353615b9576db6f852a9f236bcbe770ce`, Localization `29678498771`, Foundation `29678498778`, unreleased |
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 
+## Linux-first routing candidate drag-order checkpoint
+
+Linux `c0cdee8b729a6800904f6754f30221feb55f78e` extends the routing-profile dialog with GTK text
+drag sources and row drop targets. Dropping a candidate before another row rebuilds the list and
+persists the resulting Ordered-mode sequence; invalid, missing, and self-targeted IDs fail closed.
+Keyboard up/down controls and catalog-backed accessible labels remain available.
+
+Local Linux validation passed with 133 tests (`131 passed; 2 ignored`), GUI all-target check, strict
+Clippy, formatting, localization sync/audit, Flatpak metadata, and diff checks. Push
+Native/Flatpak/Foundation runs `29699210798`/`29699210802`/`29699210801` and PR
+Native/Flatpak/Foundation runs `29699211832`/`29699211818`/`29699211830` all passed after a
+cleanup-only AT-SPI rerun. Full profile editing, Orca speech, visual review, other clients,
+artifacts, and stable release remain open.
+
 ## Linux-first routing candidate accessibility checkpoint
 
 Linux `84bed28deaa6034fb45e4f6c925fd5c2713c8782` adds focusable candidate checkboxes and adjacent
