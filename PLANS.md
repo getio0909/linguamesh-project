@@ -103,6 +103,7 @@ Assumption: Planned files and commands are not evidence until they exist and com
   reconstruction while preserving non-text package parts, formulas, numbers, and unselected values.
 - [x] Add native Linux malicious-DOCX fixtures that reject ZIP path traversal and oversized
   uncompressed entries before import.
+- [x] Verify native Linux queue listing returns multiple pending jobs for explicit selection.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -1368,6 +1369,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29680662802`/`29680662805`/`29680662821` and PR `29680663901`/`29680663898`/`29680663922` passed.
   This advances Linux Scenario 15 evidence; full bomb heuristics, visual review, other clients,
   artifacts, and stable release remain open.
+
+- 2026-07-19: Assumption: queue selection must expose more than one resumable job in a single worker
+  listing before the GTK modal can claim multi-job coverage. Linux `5b7d0d51f189412f92f722345e8dc6b4ec78314b`
+  creates two pending jobs, lists them through `ListDocumentJobs`, and verifies both stable IDs and
+  pending states are returned together. Local formatting, GUI checks, strict Clippy, 113-test
+  demo-provider suite (2 ignored), l10n sync, 215-key audit, and diff checks passed. Push
+  Native/Foundation/Flatpak `29681023684`/`29681023682`/`29681023700` and PR
+  `29681024845`/`29681024858`/`29681024833` passed. Concurrent translation, visual review, other
+  clients, artifacts, and stable release remain open.
 
 ## Checkpoint update protocol
 

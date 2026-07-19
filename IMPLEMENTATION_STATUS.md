@@ -60,7 +60,26 @@ Linux file-import regression coverage now exercises bounded DOCX package reconst
 headers, and retained image parts, plus XLSX shared-string selection while preserving unselected
 values, formulas, numbers, and image parts. The same native wrapper now rejects DOCX ZIP path
 traversal and oversized uncompressed entries before import.
+The worker queue now has a native regression proving that multiple pending jobs are listed together
+for explicit queue selection.
 No stable product release, completed native client, or released SDK artifact is claimed here.
+
+## 2026-07-19 — Linux multi-job queue listing checkpoint
+
+Assumption: queue selection must expose more than one resumable job in a single worker listing before
+the GTK modal can claim multi-job coverage; the test uses two bounded TXT jobs in isolated storage.
+
+- Linux `5b7d0d51f189412f92f722345e8dc6b4ec78314b` adds a worker regression creating two pending jobs,
+  listing them through `ListDocumentJobs`, and asserting both stable IDs and pending states are
+  returned together for selection.
+- Local formatting, GUI all-target checks, strict Clippy, demo-provider tests (113 passed, 2 ignored),
+  l10n synchronization, 215-key audit, and diff checks passed.
+- Linux push Native `29681023684` (job `88177104177`), Foundation `29681023682` (job `88177104190`),
+  and Flatpak `29681023700` (job `88177104183`) passed. PR Native `29681024845` (job `88177107286`),
+  Foundation `29681024858` (job `88177107377`), and Flatpak `29681024833` (job `88177107189`) also passed.
+
+This strengthens Linux document queue evidence without claiming multi-job concurrent translation,
+end-user visual review, other clients, release artifacts, or a stable release.
 
 ## 2026-07-19 — Linux archive path-safety checkpoint
 
