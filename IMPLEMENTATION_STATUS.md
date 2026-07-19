@@ -91,7 +91,8 @@ translation content remain data and are not translated.
   The host GTK all-target test-link limitation remains unchanged.
 - Linux push Native/Foundation/Flatpak runs `29690203426`/`29690203419`/`29690203422` passed;
   duplicate PR-triggered Native/Flatpak runs `29690201544`/`29690201545` also passed. l10n
-  Foundation/Localization runs `29690127881`/`29690127894` passed.
+  Foundation/Localization runs `29690127881`/`29690127894` passed. Central coordination run
+  `29690453908` passed for the updated release and workspace manifests.
 
 This closes the current Linux source-level compound-summary localization gap without claiming
 human translated-copy review, Orca speech, automatic/ordered routing controls, other clients,

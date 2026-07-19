@@ -1469,7 +1469,7 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   strict Clippy, l10n sync, 219-key audit, Flatpak metadata, and diff checks passed. Linux push
   Native/Foundation/Flatpak runs `29690203426`/`29690203419`/`29690203422` passed; duplicate
   PR-triggered Native/Flatpak runs `29690201544`/`29690201545` passed. l10n Foundation/Localization
-  runs `29690127881`/`29690127894` passed. Human translated-copy review, Orca speech,
+  runs `29690127881`/`29690127894` passed; central coordination run `29690453908` passed. Human translated-copy review, Orca speech,
   automatic/ordered routing UI, other clients, artifacts, and stable release remain open.
 
 ## Checkpoint update protocol
