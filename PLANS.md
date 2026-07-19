@@ -147,6 +147,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   the Linux profile editor; preserve Core fields during Edit/Save and verify all gates.
 - [x] Enforce Linux visible-string localization coverage with a dependency-free GTK source audit,
   run it in Native/Foundation CI, and verify the pinned l10n resources and all Linux gates.
+- [x] Make the Flatpak Linux source pin build-input compatible with the current checkout, validate
+  it before the SDK build, and verify full-history push/PR gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -411,6 +413,21 @@ and direct list options. l10n `3362732be198450ff1ca00f30ec092aab2cf4189` supplie
 `29703945583`/`29703945586`/`29703945637` and PR Native/Flatpak/Foundation runs
 `29703946800`/`29703946783`/`29703946789` all passed. Human translated-copy, plural, visual/RTL,
 and Orca review remain open boundaries.
+
+## Completed Linux-first checkpoint — Flatpak source-pin integrity
+
+Change identifier: `LM-CHANGE-2026-07-FLATPAK-SOURCE-PIN-1`
+
+Assumption: Flatpak CI must build the reviewed Linux application revision, or a source-compatible
+ancestor whose build inputs are unchanged; packaging-only follow-up commits must not create a false
+green gate.
+
+Linux `212de54d7eaa62eaeba8f7bc06297b2632d7a09b` updates the Flatpak manifest to the current
+application lineage, validates the pin and build-input diff with a scoped Git safety setting, and
+fetches full history in the Flatpak workflow. Local metadata/localization checks passed. Push
+Native/Flatpak/Foundation runs `29704472892`/`29704472889`/`29704472884` and PR
+Native/Flatpak/Foundation runs `29704474147`/`29704474173`/`29704474207` all passed. This remains
+an unreleased CI integrity checkpoint; distributable and stable artifacts are not claimed.
 
 ## Completed Linux-first checkpoint — multiple routing-profile IDs
 

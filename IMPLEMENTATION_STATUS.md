@@ -2,6 +2,21 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Flatpak source-pin integrity checkpoint
+
+Assumption: Flatpak CI must build the reviewed Linux application revision, or a source-compatible
+ancestor with unchanged build inputs; packaging-only follow-up commits must not create a false green
+gate.
+
+- Linux `212de54d7eaa62eaeba8f7bc06297b2632d7a09b` updates the Flatpak manifest lineage and makes
+  `tools/validate-flatpak-metadata.sh` compare the pinned Linux source with the current checkout
+  (or an ancestor whose build inputs are unchanged). The workflow fetches full history and runs
+  the check before the SDK build, using only a scoped Git safety setting in CI.
+- Local metadata, localization, l10n synchronization, and diff checks passed. Push Native/Flatpak/
+  Foundation `29704472892`/`29704472889`/`29704472884` and PR Native/Flatpak/Foundation
+  `29704474147`/`29704474173`/`29704474207` all passed.
+- This is an unreleased CI integrity checkpoint; no distributable or stable artifact is claimed.
+
 ## 2026-07-19 — Linux visible-string localization audit checkpoint
 
 Assumption: complete Linux gettext coverage requires a repeatable source check that rejects

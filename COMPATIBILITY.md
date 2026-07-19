@@ -35,15 +35,17 @@ twelve official packs. Local Linux validation passed; push Native/Flatpak/Founda
 `29703371083`/`29703371057`/`29703371084` and PR Native/Flatpak/Foundation runs
 `29703373063`/`29703373065`/`29703373076` all passed.
 
-## Linux-first visible-string localization audit checkpoint
+## Linux-first visible-string localization and Flatpak pin checkpoint
 
-Linux `2386d495123d3aeacf2b5815d0c45577808c7a44` adds a dependency-free source audit that rejects
+Linux `212de54d7eaa62eaeba8f7bc06297b2632d7a09b` adds a dependency-free source audit that rejects
 non-empty hard-coded GTK labels, titles, tooltips, placeholders, dialog actions, and direct list
-options while allowing empty reset labels. The existing key audit covers 263 Linux source keys;
-l10n `3362732be198450ff1ca00f30ec092aab2cf4189` contains the 387-message generated bundle. Local
-Linux validation passed, and push Native/Flatpak/Foundation runs `29703945583`/`29703945586`/
-`29703945637` plus PR Native/Flatpak/Foundation runs `29703946800`/`29703946783`/`29703946789`
-all passed. Complete translated-copy, plural, visual/RTL, and Orca review remain manual boundaries.
+options while allowing empty reset labels. Its Flatpak manifest pins the Linux source to a
+source-compatible ancestor and validates that no build inputs changed; the workflow fetches full
+history before this check. The existing key audit covers 263 Linux source keys; l10n
+`3362732be198450ff1ca00f30ec092aab2cf4189` contains the 387-message generated bundle. Local Linux
+validation passed, and push Native/Flatpak/Foundation runs `29704472892`/`29704472889`/`29704472884`
+plus PR Native/Flatpak/Foundation runs `29704474147`/`29704474173`/`29704474207` all passed.
+Complete translated-copy, plural, visual/RTL, and Orca review remain manual boundaries.
 
 ## Linux-first duplicate routing-profile ID checkpoint
 
