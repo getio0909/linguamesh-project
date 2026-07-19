@@ -15,15 +15,16 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 ## Linux-first routing mode and fallback-consent checkpoint
 
-Linux `dc2e52d12300351faf1cccde6cb81dbcda17c318` maps a stable GTK dropdown to Core's `Manual`,
+Linux `88c04495d427fbca09ce2bc6c020dd057652dae9` maps a stable GTK dropdown to Core's `Manual`,
 `Ordered`, and `Automatic` routing modes and persists the selected mode with the non-secret routing
 profile. A separate fallback-consent checkbox is explicit and disabled by default; manual and
 document dispatches remain non-fallback paths. Existing catalog-backed routing labels are reused.
 
 Local Linux GUI check, 130 demo-provider tests (`128 passed; 2 ignored`), strict Clippy, formatting,
-localization sync/audit, Flatpak metadata, and diff checks passed. Remote push/PR gates are pending
-for this published head; other clients, visual/Orca review, artifacts, and stable release remain
-unverified.
+localization sync/audit, Flatpak metadata, and diff checks passed. Push Native/Flatpak/Foundation
+runs `29696348120`/`29696348121`/`29696348094` and PR Native/Flatpak/Foundation runs
+`29696349676`/`29696349689`/`29696349695` all passed; other clients, visual/Orca review, artifacts,
+and stable release remain unverified.
 
 ## Linux-first routed document restart checkpoint
 

@@ -261,14 +261,15 @@ persisting endpoints, credentials, source content, or translated content.
 
 Change identifier: `LM-CHANGE-2026-07-ROUTING-MODE-CONSENT-1`
 
-Linux `dc2e52d12300351faf1cccde6cb81dbcda17c318` exposes Core's `Manual`, `Ordered`, and
+Linux `88c04495d427fbca09ce2bc6c020dd057652dae9` exposes Core's `Manual`, `Ordered`, and
 `Automatic` routing modes in a stable GTK dropdown and persists the selected mode with the saved
 profile. A separate **Allow approved fallback** checkbox records explicit consent and defaults off;
 Core still rejects fallback for manual mode and document jobs. Existing catalog keys are reused.
 
 Local Linux validation passed: GUI all-target check, 130 demo-provider tests (`128 passed; 2
 ignored`), strict Clippy, formatting, localization sync/audit, Flatpak metadata, and diff checks.
-Remote push and PR Native/Flatpak/Foundation runs are pending completion for this published head.
+Push Native/Flatpak/Foundation runs `29696348120`/`29696348121`/`29696348094` and PR
+Native/Flatpak/Foundation runs `29696349676`/`29696349689`/`29696349695` all passed.
 
 This checkpoint advances Linux routing configuration only; complete candidate management, other
 clients, visual/Orca review, distributable artifacts, and stable-release evidence remain open.
@@ -1591,6 +1592,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   29689431052 also passed. l10n runs 29689387482/29689387493 and central run 29689497792 passed.
   Automatic/ordered routing UI, other clients, artifacts, and stable release remain open.
 
+- 2026-07-19: Linux revision `88c04495d427fbca09ce2bc6c020dd057652dae9` records the routing-mode
+  and explicit fallback-consent UI evidence. The stable dropdown maps Core Manual/Ordered/Automatic
+  modes, fallback consent defaults off, and local 130-test/GUI/Clippy/l10n/Flatpak checks passed.
+  Push Native/Flatpak/Foundation `29696348120`/`29696348121`/`29696348094` and PR
+  Native/Flatpak/Foundation `29696349676`/`29696349689`/`29696349695` passed. Complete candidate
+  management, other clients, artifacts, and stable release remain open.
 - 2026-07-19: Assumption: compound summaries visible to users must localize their complete
   template rather than concatenating an English prefix with data; technical identifiers,
   filenames, model IDs, and translation content remain data. l10n

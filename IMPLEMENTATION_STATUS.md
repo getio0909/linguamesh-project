@@ -4,12 +4,13 @@ Last updated: 2026-07-19
 
 ## Current checkpoint
 
-Linux routing configuration revision `dc2e52d12300351faf1cccde6cb81dbcda17c318` now exposes
+Linux routing configuration revision `88c04495d427fbca09ce2bc6c020dd057652dae9` now exposes
 Core's `Manual`, `Ordered`, and `Automatic` modes in the GTK routing-profile dialog and persists a
 separate explicit fallback-consent flag that defaults off. Local Linux validation passed with 130
 demo-provider tests (`128 passed; 2 ignored`), GUI all-target check, strict Clippy, formatting,
-localization sync/audit, Flatpak metadata, and diff checks. The head is pushed to the canonical
-Linux repository; its Native/Flatpak/Foundation push and PR checks remain pending. This is a Linux
+localization sync/audit, Flatpak metadata, and diff checks. Push Native/Flatpak/Foundation runs
+`29696348120`/`29696348121`/`29696348094` and PR Native/Flatpak/Foundation runs
+`29696349676`/`29696349689`/`29696349695` all passed for the published head. This is a Linux
 configuration slice only and does not claim complete candidate management, other clients, visual or
 Orca review, distributable artifacts, or a stable release.
 
