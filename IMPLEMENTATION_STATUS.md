@@ -72,6 +72,25 @@ The reviewed Core archive boundary now also rejects suspicious OOXML compression
 inspection, and Linux consumes that guard through an immutable Core pin.
 No stable product release, completed native client, or released SDK artifact is claimed here.
 
+## 2026-07-19 — Linux text translation retry checkpoint
+
+Assumption: a failed or cancelled ordinary text request must be explicitly retryable without
+creating a document job or changing the confirmed provider/model selection.
+
+- Linux `9c19083aa87304ffb3fcc9cd3bfb276503d38a00` adds an accessible, catalog-backed Retry
+  translation action that reuses the existing real worker command path. The action is disabled for
+  completed/busy/document-job states and enabled only after a failed or cancelled text request.
+- Linux local evidence: 121 demo-provider tests passed with 2 ignored; formatting, GUI check,
+  strict Clippy, l10n synchronization, 217-key audit, Flatpak metadata, and diff checks passed.
+  The host cannot link the GUI all-target test binary because its system GTK libraries do not
+  export the GTK 4 symbols required by the installed gtk-rs version; this is recorded as an
+  environment limitation and not treated as a passing GUI runtime test.
+- l10n `50688449ab16a8007f0edebabed2f8d6f0d3a90a` adds the two Linux-only retry messages to all
+  official packs and pseudo-locales; its 26 tests and deterministic generated-resource checks pass.
+- Linux push/PR Native, Foundation, and Flatpak gates are running under the new head; stable
+  release, human copy/visual/Orca review, other clients, artifacts, and automatic/ordered routing
+  UI remain open.
+
 ## 2026-07-19 — Core OOXML compression-ratio and Linux pin checkpoint
 
 Assumption: the shared Core archive boundary is the authoritative security control for DOCX/PPTX/XLSX
@@ -1052,7 +1071,7 @@ Orca/visual review, other clients, signing, distributable artifacts, and stable 
 | Native Linux alpha.2 slice | Validated locally and remotely | Linux head `739538c` negotiates `bounded_text_document_v1`, converts bounded TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF imports into Core jobs, preserves structured document metadata, provides queue actions and safe reconstruction, routes ordinary-text fallback only after explicit approval, accepts or dismisses Secret Service prompts for persistent store/delete operations, offers explicit bounded image-only PDF OCR to page-marked TXT while keeping the source PDF unchanged, and enforces source-referenced localization-key coverage against the canonical catalog. Local 65/103-test suites, strict Clippy, Rust checks, OCR and prompted-flow fixtures, localization sync, and the 208-key audit passed; push Native `29672741665`, Foundation `29672741666`, and Flatpak `29672741675` passed, as did PR reruns `29672743058`, `29672742959`, and `29672742990`. |
 | Linux Flatpak packaging scaffold | Static validation passed; remote passed | Linux packaging revision `8f2cba0` publishes the pinned GNOME 49 manifest, immutable Core/Linux/l10n source pins including DOCX/PPTX/XLSX/EPUB/PDF warning UI, document queue/export-open/fallback controls, headless keyboard fixture dependency, generated Cargo archive hashes for the current lockfile, desktop entry, AppStream metadata, icon, and constrained runtime permissions. `bash tools/validate-flatpak-metadata.sh` passed locally; Flatpak job `88129285461` passed. Physical compositor/GPU rendering, signing, and distributable release remain unverified. |
 | GitHub Actions | Passed | Core revision `123d5c4d7a76873e597895763ca5d78e1ea42ea0` remains validated; l10n revision `85b9d45569ce840c17dc0acc7d7366d6810be48e` passed Localization/Foundation gates; Linux head `f14fc89f3aecb20b3ac9611642de15d1a670ebf6` passed push Native `29679490910`, Foundation `29679490922`, and Flatpak `29679490960`, plus PR Native `29679492044`, Foundation `29679492018`, and Flatpak `29679492030`; the corrupt-database, offline-provider, aliased-export, 215-key audit, GTK fixture localization, built-in provider-name localization, locale-dropdown preset regression, plural-count UI, and model-placeholder localization checks passed in Native; central coordination remains separately tracked. |
-| Non-functional repository heads | Published | Core head `d1c03ba84362c0c672c57045a59fc8092db470be`, l10n head `85b9d45569ce840c17dc0acc7d7366d6810be48e`, and Linux behavioral/evidence head `eba4b036649cdb1fb4b466844b5c0429d3ff4de5` are published. Current-head Linux Native/Flatpak/Foundation push and PR gates passed. The release manifest remains unreleased with no artifacts. |
+| Non-functional repository heads | Published | Core head `d1c03ba84362c0c672c57045a59fc8092db470be`, l10n head `50688449ab16a8007f0edebabed2f8d6f0d3a90a`, and Linux behavioral/evidence head `9c19083aa87304ffb3fcc9cd3bfb276503d38a00` are published. Current-head Linux Native/Flatpak/Foundation push and PR gates are running. The release manifest remains unreleased with no artifacts. |
 | Acceptance Scenario 1 | Passed locally | The reference CLI discovered and selected a fake model, streamed `你好，LinguaMesh！` over loopback HTTP/SSE, and completed without a key. A separate slow-stream run retained `你好` and emitted cancellation. |
 | Remaining acceptance scenarios | Not passed | Scenarios 2–20 do not yet have complete cross-platform reproducible passing evidence. Linux now has complete secure-provider Scenario 3 and ordinary-text fallback Scenario 7 implementation/remote gate evidence plus partial Scenario 5 evidence; the global scenarios and stable-release evidence remain incomplete. |
 

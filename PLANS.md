@@ -1443,6 +1443,17 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Native/Flatpak/Foundation `29687089446`/`29687089445`/`29687089480` passed. Concurrent document
   execution, physical interruption recovery, other clients, artifacts, and stable release remain open.
 
+- 2026-07-19: Assumption: a failed or cancelled ordinary text request must be explicitly retryable
+  without creating a document job or changing the confirmed provider/model. l10n
+  `50688449ab16a8007f0edebabed2f8d6f0d3a90a` adds `action.retry_translation` and
+  `tooltip.retry_translation`; Linux `9c19083aa87304ffb3fcc9cd3bfb276503d38a00` exposes the
+  catalog-backed accessible action, reuses the existing Translate worker path, and guards it by
+  failed/cancelled state. Local Linux validation passed 121 tests with 2 ignored, strict Clippy,
+  formatting, l10n sync, 217-key audit, Flatpak metadata, and diff checks. The GUI all-target test
+  binary cannot link on this host because the installed system GTK library lacks the gtk-rs GTK 4
+  symbols; remote Linux gates are the remaining evidence for this revision. Automatic/ordered
+  routing UI, other clients, artifacts, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
