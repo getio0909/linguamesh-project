@@ -16,9 +16,10 @@ provider/model dependent and must be presented as approximate.
   non-GUI demo-provider suite (131 passed, 2 ignored), localization sync/audit, Flatpak metadata,
   and diff checks passed. GUI test linking remains environment-blocked by missing GTK 4 symbols.
 
-Remote Linux push/PR Native, Flatpak, and Foundation evidence is recorded after the workflows
-complete. Provider-specific token accuracy, full Orca speech, manual visual review, other clients,
-signed artifacts, and a stable release remain open.
+Remote Linux push/PR Native, Flatpak, and Foundation runs
+`29701632363`/`29701632341`/`29701632350` and
+`29701633693`/`29701633692`/`29701633700` all passed. Provider-specific token accuracy, full Orca
+speech, manual visual review, other clients, signed artifacts, and a stable release remain open.
 
 ## 2026-07-19 — Linux duplicate routing-profile ID checkpoint
 

@@ -353,8 +353,9 @@ described as approximate because providers tokenize differently.
 Linux `7ae70945c60934605d2eca82400a2278c753297f` adds localized character counts and an approximate
 token estimate below both editor panes. Source-buffer changes update immediately; output metrics
 refresh with the translated UI. l10n `8adb1f4558e4b1d93a00ce03cf026a98d4a1a5ed` contains 360
-messages and all 59 generated resources. Local Linux/l10n checks passed; remote gates are pending
-workflow completion. Provider-specific token accuracy, full Orca speech, visual review, other
+messages and all 59 generated resources. Local Linux/l10n checks passed. Push Native/Flatpak/Foundation
+runs `29701632363`/`29701632341`/`29701632350` and PR Native/Flatpak/Foundation runs
+`29701633693`/`29701633692`/`29701633700` passed. Provider-specific token accuracy, full Orca speech, visual review, other
 clients, artifacts, and stable release remain open.
 
 ## Completed Linux-first checkpoint — multiple routing-profile IDs

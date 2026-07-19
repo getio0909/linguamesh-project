@@ -19,8 +19,9 @@ Linux `7ae70945c60934605d2eca82400a2278c753297f` displays localized source/outpu
 and an explicitly approximate token estimate without logging text content. l10n
 `8adb1f4558e4b1d93a00ce03cf026a98d4a1a5ed` supplies the message in all twelve official packs.
 Local l10n validation, Linux source-key audit (236 keys), formatting, GUI checks, strict Clippy,
-tests, and Flatpak metadata validation passed; remote Linux gates are recorded in the release
-manifest after completion. Provider-specific token accuracy, Orca speech, visual review, other
+tests, and Flatpak metadata validation passed. Push Native/Flatpak/Foundation runs
+`29701632363`/`29701632341`/`29701632350` and PR Native/Flatpak/Foundation runs
+`29701633693`/`29701633692`/`29701633700` passed. Provider-specific token accuracy, Orca speech, visual review, other
 clients, artifacts, and stable release remain open.
 
 ## Linux-first duplicate routing-profile ID checkpoint
