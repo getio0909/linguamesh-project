@@ -4,13 +4,13 @@ Last updated: 2026-07-19
 
 ## Current checkpoint
 
-Linux routing configuration revision `88c04495d427fbca09ce2bc6c020dd057652dae9` now exposes
-Core's `Manual`, `Ordered`, and `Automatic` modes in the GTK routing-profile dialog and persists a
-separate explicit fallback-consent flag that defaults off. Local Linux validation passed with 130
-demo-provider tests (`128 passed; 2 ignored`), GUI all-target check, strict Clippy, formatting,
-localization sync/audit, Flatpak metadata, and diff checks. Push Native/Flatpak/Foundation runs
-`29696348120`/`29696348121`/`29696348094` and PR Native/Flatpak/Foundation runs
-`29696349676`/`29696349689`/`29696349695` all passed for the published head. This is a Linux
+Linux routing configuration revision `cd9df9fff290fa2f3ebaf64fcf8e5819039eaf7f` now exposes
+Core's `Manual`, `Ordered`, and `Automatic` modes, explicit fallback consent defaulting off, and
+focusable candidate checkboxes for saved provider/model pairs. Local Linux validation passed with
+131 tests (`129 passed; 2 ignored`), GUI all-target check, strict Clippy, formatting, localization
+sync/audit, Flatpak metadata, and diff checks. Push Native/Flatpak/Foundation runs
+`29697021191`/`29697021176`/`29697021171` and PR Native/Flatpak/Foundation runs
+`29697022738`/`29697022740`/`29697022751` all passed after one PR Native AT-SPI cleanup rerun. This is a Linux
 configuration slice only and does not claim complete candidate management, other clients, visual or
 Orca review, distributable artifacts, or a stable release.
 

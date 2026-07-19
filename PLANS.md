@@ -126,6 +126,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Expose Linux GTK routing-profile mode selection (`Manual`, `Ordered`, `Automatic`) and an
   explicit fallback-consent checkbox defaulting off; verify the Core mode order and local routing
   validation without expanding scope to other clients.
+- [x] Add Linux routing-profile candidate selection for enabled saved provider/model pairs, preserve
+  the displayed order, reject unknown IDs and empty selections, and verify the remote Linux gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -256,6 +258,25 @@ Native/Flatpak/Foundation `29695389589`/`29695389588`/`29695389602` passed.
 
 Assumption: a nullable route ID preserves backward compatibility for schema-15 snapshots without
 persisting endpoints, credentials, source content, or translated content.
+
+## Completed Linux-first checkpoint — routing candidate selection
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-CANDIDATES-1`
+
+Linux `cd9df9fff290fa2f3ebaf64fcf8e5819039eaf7f` adds focusable candidate checkboxes for enabled
+saved provider/model pairs to the routing-profile dialog. The selected IDs are filtered against
+current saved profiles and serialized in displayed order; an empty selection fails through the
+existing fixed no-candidate error. Regression `routing_candidate_selection_preserves_order_and_rejects_unknown_profiles`
+proves deterministic order and unknown-ID rejection without exposing endpoints, credentials, or
+content.
+
+Local Linux validation passed with 131 tests (`129 passed; 2 ignored`), GUI check, strict Clippy,
+formatting, l10n sync/audit, Flatpak metadata, and diff checks. Push Native/Flatpak/Foundation
+`29697021191`/`29697021176`/`29697021171` and PR Native/Flatpak/Foundation
+`29697022738`/`29697022740`/`29697022751` passed after a cleanup-only AT-SPI rerun.
+
+Drag/drop candidate ordering, complete candidate management, other clients, artifacts, and stable
+release remain open.
 
 ## Completed Linux-first checkpoint — routing mode and fallback consent
 
