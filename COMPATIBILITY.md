@@ -326,3 +326,12 @@ l10n synchronization, and diff checks passed. Push Native `29676780532`, Foundat
 and Flatpak `29676780531` passed; PR Native `29676781353`, Foundation `29676781358`, and Flatpak
 `29676781369` also passed. Translated-copy, visual/RTL, Orca, physical offline, other clients,
 signing, distributable artifacts, and stable-release evidence remain open.
+
+Linux-first output-safety alias checkpoint: Linux `c7b7599b118fa54baefe32e2063f57a890dc0f52`
+rejects export destinations that identify the imported source through equal GIO identity,
+canonical paths, or Unix device/inode metadata, covering text and binary document output before
+asynchronous replacement. Local formatting, GUI checks, strict Clippy, 107 passing tests (2
+ignored), the 213-key audit, l10n synchronization, and diff checks passed. Push Native
+`29677149812`, Foundation `29677149807`, and Flatpak `29677149811` passed; PR Native
+`29677151266`, Foundation `29677151263`, and Flatpak `29677151268` also passed. Physical desktop,
+Orca, other-client, artifact, and stable-release evidence remain open.

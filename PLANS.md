@@ -1293,6 +1293,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   passed. Translated-copy, visual/RTL, Orca, physical offline, other clients, signing, artifacts,
   and stable release remain open.
 
+- 2026-07-19: Assumption: URI equality alone cannot protect Scenario 18 when an export target is
+  a source alias. Linux `c7b7599b118fa54baefe32e2063f57a890dc0f52` checks GIO identity, canonical
+  native paths, and Unix device/inode metadata before text or binary replacement, with regression
+  coverage for exact, symbolic-link, hard-link, and distinct targets. Local formatting, GUI checks,
+  strict Clippy, 107-test demo-provider suite (2 ignored), 213-key audit, l10n sync, and diff checks
+  passed. Push Native/Foundation/Flatpak `29677149812`/`29677149807`/`29677149811` and PR
+  `29677151266`/`29677151263`/`29677151268` passed. Physical desktop review, Orca, other clients,
+  artifacts, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

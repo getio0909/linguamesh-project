@@ -58,6 +58,24 @@ Native and Foundation CI. Linux now exposes localized OpenAI-compatible and nati
 presets in GTK, preserving user-entered endpoint edits while switching protocol defaults.
 No stable product release, completed native client, or released SDK artifact is claimed here.
 
+## 2026-07-19 — Linux output-safety alias checkpoint
+
+Assumption: comparing only byte-for-byte equal destination URIs is insufficient for Scenario 18,
+because a save target may be a symbolic link or hard link to the imported source file.
+
+- Linux `c7b7599b118fa54baefe32e2063f57a890dc0f52` compares GIO identity, canonical native paths,
+  and Unix device/inode metadata before both text and binary export writes. Source aliases are
+  rejected before asynchronous replacement begins.
+- Local formatting, GUI all-target checks, strict Clippy, demo-provider tests (107 passed, 2
+  ignored), the 213-key localization audit, l10n synchronization, and diff checks passed.
+- Push Native `29677149812` (job `88166548121`), Foundation `29677149807` (job `88166548172`), and
+  Flatpak `29677149811` (job `88166548143`) passed. PR Native `29677151266` (job `88166552547`),
+  Foundation `29677151263` (job `88166552516`), and Flatpak `29677151268` (job `88166552504`) also
+  passed.
+
+This strengthens Linux Scenario 18 evidence but does not claim a physical desktop review, Orca
+speech review, other clients, release artifacts, or a stable release.
+
 ## 2026-07-19 — Linux plural UI and provider-preservation checkpoint
 
 Assumption: the GTK document queue's visible file count and model-discovery placeholder are
