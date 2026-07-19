@@ -123,6 +123,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Persist the non-secret routing-profile ID in Core schema 16 and reconnect that saved profile
   for Linux document Resume/Retry after worker restart; legacy snapshots without an ID retain their
   provider/model resume path.
+- [x] Expose Linux GTK routing-profile mode selection (`Manual`, `Ordered`, `Automatic`) and an
+  explicit fallback-consent checkbox defaulting off; verify the Core mode order and local routing
+  validation without expanding scope to other clients.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -253,6 +256,22 @@ Native/Flatpak/Foundation `29695389589`/`29695389588`/`29695389602` passed.
 
 Assumption: a nullable route ID preserves backward compatibility for schema-15 snapshots without
 persisting endpoints, credentials, source content, or translated content.
+
+## Completed Linux-first checkpoint — routing mode and fallback consent
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-MODE-CONSENT-1`
+
+Linux `dc2e52d12300351faf1cccde6cb81dbcda17c318` exposes Core's `Manual`, `Ordered`, and
+`Automatic` routing modes in a stable GTK dropdown and persists the selected mode with the saved
+profile. A separate **Allow approved fallback** checkbox records explicit consent and defaults off;
+Core still rejects fallback for manual mode and document jobs. Existing catalog keys are reused.
+
+Local Linux validation passed: GUI all-target check, 130 demo-provider tests (`128 passed; 2
+ignored`), strict Clippy, formatting, localization sync/audit, Flatpak metadata, and diff checks.
+Remote push and PR Native/Flatpak/Foundation runs are pending completion for this published head.
+
+This checkpoint advances Linux routing configuration only; complete candidate management, other
+clients, visual/Orca review, distributable artifacts, and stable-release evidence remain open.
 
 ## Active Linux-first checkpoint — secure provider foundation
 
