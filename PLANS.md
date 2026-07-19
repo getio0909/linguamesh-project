@@ -1238,6 +1238,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `88157552503`, `88157552511`, `88157555098`, and `88157554910`. Native `/api` and a running
   third-party daemon remain unverified; Android, Windows, and macOS are deferred.
 
+- 2026-07-19: Core `123d5c4d7a76873e597895763ca5d78e1ea42ea0` adds the loopback-only native Ollama
+  `/api/tags` and `/api/chat` adapter, catalog preset, NDJSON decoder, cancellation, bounded
+  response, and protected-span tests. Linux `a45ad953738766dc9fba5d9a6bd9e3b3280c62fa` adds the
+  explicit `ollama_chat` worker profile and streams `你好，Ollama！` without a secret. Core CI
+  `29674653973` and Native SDK `29674653960` passed; Linux push Native `29674767565`, Foundation
+  `29674767554`, and Flatpak `29674767552` passed, as did PR reruns `29674768361`, `29674768357`,
+  and `29674768359`. The GTK preset selector and interoperability with a running third-party
+  daemon remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

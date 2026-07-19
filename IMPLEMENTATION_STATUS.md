@@ -57,6 +57,29 @@ source-referenced localization keys are now statically audited against the canon
 Native and Foundation CI.
 No stable product release, completed native client, or released SDK artifact is claimed here.
 
+## 2026-07-19 — Native Ollama `/api` Linux checkpoint
+
+Assumption: Linux-first local-model support requires both Ollama's native `/api` contract and its
+OpenAI-compatible `/v1/` surface; a running third-party daemon remains an external runtime gate.
+
+Core `123d5c4d7a76873e597895763ca5d78e1ea42ea0` adds the loopback-only `ollama` provider catalog
+preset and native `/api/tags` model discovery plus `/api/chat` NDJSON streaming. The adapter owns
+endpoint validation, cancellation, bounded responses, fragmented UTF-8, protected-span restoration,
+and completion-marker validation. Linux `a45ad953738766dc9fba5d9a6bd9e3b3280c62fa` creates an
+explicit `ollama_chat` worker profile, deliberately selects `llama3.2:latest`, and verifies
+`你好，Ollama！` streaming without a secret. The GTK form remains a generic endpoint form, so
+end-user native-Ollama preset selection is not claimed.
+
+Local Core format/check/Clippy/workspace tests and Linux format/check/Clippy, 105-test worker suite,
+208-key localization audit, and l10n synchronization passed. Core CI `29674653973` and Native SDK
+`29674653960` passed. Linux push Native `29674767565` (job `88160007604`), Foundation
+`29674767554` (job `88160007526`), and Flatpak `29674767552` (job `88160007533`) passed. The
+pull-request reruns also passed: Native `29674768361` (job `88160009796`), Foundation
+`29674768357` (job `88160010009`), and Flatpak `29674768359` (job `88160009822`).
+
+The fixture proves the native wire contract only; third-party daemon interoperability, GPU/desktop
+rendering, Orca, visual review, other clients, and stable release artifacts remain open.
+
 ## 2026-07-19 — Linux Ollama-compatible local endpoint checkpoint
 
 Assumption: the Linux-first local-model acceptance path may use Ollama's OpenAI-compatible `/v1/`
