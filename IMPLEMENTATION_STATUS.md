@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Linux routing profile edit checkpoint
+
+Assumption: complete Linux routing-profile management requires loading an existing non-secret
+profile back into the same editor and replacing its stable ID, while preserving constraints that
+the UI does not expose.
+
+- Linux `a4dd4aa644335a3b6539db4d40473423c6292c71` adds an **Edit** action to saved routing-profile
+  rows. The editor restores mode, explicit fallback consent, candidate selection/order, and stable
+  ID; **Save routing profile** upserts that ID instead of creating a duplicate.
+- The Linux worker regression now verifies same-ID replacement and a single updated record without
+  endpoints, credentials, or source content. l10n `aea172c15f421da09a0c848accae7c443820fb27`
+  adds the edit/save actions to all twelve official packs; the bundle contains 356 messages and
+  the Linux source audit covers 232 keys.
+- Local Linux validation passed. Push Native/Flatpak/Foundation runs
+  `29699870066`/`29699870068`/`29699870071` and PR Native/Flatpak/Foundation runs
+  `29699871302`/`29699871301`/`29699871311` all passed.
+
+This closes the saved-profile edit/upsert slice without claiming complete fallback-chain editing,
+full Orca speech, manual visual review, other clients, release artifacts, or a stable release.
+
 ## 2026-07-19 — Linux routing candidate drag-order checkpoint
 
 Assumption: Ordered routing needs both keyboard-accessible bounded moves and a direct pointer

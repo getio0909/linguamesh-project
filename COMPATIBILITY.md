@@ -27,6 +27,21 @@ Native/Flatpak/Foundation runs `29699211832`/`29699211818`/`29699211830` all pas
 cleanup-only AT-SPI rerun. Full profile editing, Orca speech, visual review, other clients,
 artifacts, and stable release remain open.
 
+## Linux-first routing profile edit/upsert checkpoint
+
+Linux `a4dd4aa644335a3b6539db4d40473423c6292c71` adds an **Edit** action to saved routing-profile
+rows. The editor restores the persisted mode, explicit fallback consent, candidate selection/order,
+and stable profile ID; **Save routing profile** preserves hidden constraints and replaces the same ID
+through the storage upsert path. The worker regression verifies one updated record without endpoints,
+credentials, or source content.
+
+Localization revision `aea172c15f421da09a0c848accae7c443820fb27` adds the edit/save actions to all
+twelve official packs and produces a 356-message development bundle. Local Linux/l10n checks passed.
+Push Native/Flatpak/Foundation runs `29699870066`/`29699870068`/`29699870071` and PR
+Native/Flatpak/Foundation runs `29699871302`/`29699871301`/`29699871311` all passed. Full
+fallback-chain editing, Orca speech, visual review, other clients, artifacts, and stable release
+remain open.
+
 ## Linux-first routing candidate accessibility checkpoint
 
 Linux `84bed28deaa6034fb45e4f6c925fd5c2713c8782` adds focusable candidate checkboxes and adjacent

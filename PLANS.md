@@ -134,6 +134,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   controls, regenerate all official PO/MO packs, pin the l10n revision in CI, and verify remote gates.
 - [x] Add Linux GTK text drag sources and row drop targets for routing candidates, persist the
   resulting Ordered sequence, reject invalid drag payloads, and verify push/PR gates.
+- [x] Add Linux Edit/Save routing-profile actions that restore mode, consent, candidate order, and
+  stable ID, then verify same-ID upsert without duplicate records.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -318,6 +320,23 @@ Native/Flatpak/Foundation runs `29699210798`/`29699210802`/`29699210801` and PR
 Native/Flatpak/Foundation runs `29699211832`/`29699211818`/`29699211830` all passed after a
 cleanup-only AT-SPI rerun. Full profile editing, Orca speech, visual review, other clients,
 artifacts, and stable release remain open.
+
+## Completed Linux-first checkpoint — routing profile edit/upsert
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-PROFILE-EDIT-1`
+
+Linux `a4dd4aa644335a3b6539db4d40473423c6292c71` adds an **Edit** action to each saved routing
+profile row. The editor restores the persisted mode, explicit fallback consent, candidate checks and
+order, and stable profile ID; **Save routing profile** preserves hidden constraints and replaces the
+same ID through the existing storage upsert path. The worker regression verifies one updated record,
+without endpoints, credentials, or source content.
+
+l10n `aea172c15f421da09a0c848accae7c443820fb27` adds the edit/save actions to all twelve official
+packs and produces a 356-message bundle. Local Linux/l10n checks passed. Push
+Native/Flatpak/Foundation runs `29699870066`/`29699870068`/`29699870071` and PR
+Native/Flatpak/Foundation runs `29699871302`/`29699871301`/`29699871311` all passed. Full
+fallback-chain editing, Orca speech, visual review, other clients, artifacts, and stable release
+remain open.
 
 ## Completed Linux-first checkpoint — routing candidate accessibility labels
 
