@@ -4,16 +4,30 @@ Last updated: 2026-07-19
 
 ## Current checkpoint
 
-Linux routing configuration revision `21d79530fbb7aedafe3fdc8a025e4db18c285fc4` now exposes
+Linux routing configuration revision `84bed28deaa6034fb45e4f6c925fd5c2713c8782` now exposes
 Core's `Manual`, `Ordered`, and `Automatic` modes, explicit fallback consent defaulting off,
-focusable candidate checkboxes, and keyboard-focusable up/down candidate reordering. Local Linux
-validation passed with 132 tests (`130 passed; 2 ignored`), GUI all-target check, strict Clippy,
-formatting, localization sync/audit, Flatpak metadata, and diff checks. Push Native/Flatpak/Foundation
-runs `29697776890`/`29697776947`/`29697776897` and PR Native/Flatpak/Foundation runs
-`29697778336`/`29697778335`/`29697778323` all passed; the Push Flatpak run required one rerun after
-a transient Flathub network failure. This is a Linux configuration slice only and does not claim
-complete candidate management, other clients, visual or Orca review, distributable artifacts, or a
-stable release.
+focusable candidate checkboxes, keyboard-focusable up/down candidate reordering, and catalog-backed
+accessible names for icon controls. Local Linux validation passed with 132 tests (`130 passed; 2
+ignored`), GUI all-target check, strict Clippy, formatting, localization sync/audit, Flatpak metadata,
+and diff checks. Push Native/Flatpak/Foundation runs `29698745522`/`29698745519`/`29698745529` and PR
+Native/Flatpak/Foundation runs `29698747220`/`29698747211`/`29698747194` all passed. This is a Linux
+configuration slice only and does not claim complete candidate management, Orca speech, other
+clients, visual review, distributable artifacts, or a stable release.
+
+## 2026-07-19 — Linux routing candidate accessibility-label checkpoint
+
+Assumption: icon-only candidate movement controls need catalog-backed accessible names in addition
+to tooltips; full screen-reader speech and manual visual review remain separate gates.
+
+- Linux `84bed28deaa6034fb45e4f6c925fd5c2713c8782` uses `action.move_candidate_up` and
+  `action.move_candidate_down` for both tooltips and GTK accessible `Label` properties.
+- l10n `0d2d8c08f3dec5cd3044558b0b7c75f669a9535d` adds the two Linux-only keys to all twelve official
+  packs and regenerates PO/MO resources; the Linux source audit covers 230 keys.
+- Local Linux and l10n validation passed. Linux push/PR gates passed
+  (`29698745522`, `29698745519`, `29698745529`; `29698747220`, `29698747211`, `29698747194`).
+
+This strengthens icon-control semantics without claiming complete candidate management, Orca speech,
+manual visual review, other clients, release artifacts, or a stable release.
 
 ## 2026-07-19 — Linux routing candidate-order checkpoint
 

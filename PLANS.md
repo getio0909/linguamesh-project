@@ -130,6 +130,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   the displayed order, reject unknown IDs and empty selections, and verify the remote Linux gates.
 - [x] Add keyboard-focusable Linux up/down controls for routing candidate ordering, persist the
   resulting Ordered sequence, and verify the bounded reordering helper and remote gates.
+- [x] Add catalog-backed accessible labels and tooltips for Linux routing candidate movement
+  controls, regenerate all official PO/MO packs, pin the l10n revision in CI, and verify remote gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -297,6 +299,24 @@ Flathub network failure.
 
 Drag/drop ordering, complete candidate management, other clients, artifacts, and stable release
 remain open.
+
+## Completed Linux-first checkpoint — routing candidate accessibility labels
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-CANDIDATE-A11Y-1`
+
+Linux `84bed28deaa6034fb45e4f6c925fd5c2713c8782` uses catalog-backed
+`action.move_candidate_up` and `action.move_candidate_down` strings for both tooltip text and GTK
+accessible `Label` properties on the icon-only Ordered-mode controls. Localization `0d2d8c0` adds
+the keys to all twelve official packs and regenerates native resources.
+
+Local l10n validation passed (26 tests, generated-resource checks, and Foundation validation).
+Linux validation passed (GUI check, strict Clippy, 132 tests with 130 passed and 2 ignored, l10n
+sync/key audit, Flatpak metadata, and diff checks). Push Native/Flatpak/Foundation
+`29698745522`/`29698745519`/`29698745529` and PR Native/Flatpak/Foundation
+`29698747220`/`29698747211`/`29698747194` passed.
+
+Full Orca speech, manual visual review, drag/drop ordering, complete candidate management, other
+clients, artifacts, and stable release remain open.
 
 ## Completed Linux-first checkpoint — routing mode and fallback consent
 
