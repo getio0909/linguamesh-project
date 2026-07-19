@@ -80,6 +80,9 @@ pull-request reruns also passed: Native `29674768361` (job `88160009796`), Found
 The fixture proves the native wire contract only; third-party daemon interoperability, GPU/desktop
 rendering, Orca, visual review, other clients, and stable release artifacts remain open.
 
+Central coordination run `29674950216` passed Linux validation job `88160536390` and PowerShell
+validation job `88160536391` for the manifest, documentation, and credential-hygiene update.
+
 ## 2026-07-19 — Linux Ollama-compatible local endpoint checkpoint
 
 Assumption: the Linux-first local-model acceptance path may use Ollama's OpenAI-compatible `/v1/`

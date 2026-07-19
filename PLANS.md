@@ -1247,6 +1247,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   and `29674768359`. The GTK preset selector and interoperability with a running third-party
   daemon remain open.
 
+- 2026-07-19: Central revision `c690660839606685c7e2b05d8b48041584950ff9` records Core
+  `123d5c4d7a76873e597895763ca5d78e1ea42ea0`, Linux `a45ad953738766dc9fba5d9a6bd9e3b3280c62fa`,
+  the native Ollama compatibility evidence, and the unreleased limitation boundary. Coordination
+  run `29674950216` passed Linux job `88160536390` and PowerShell job `88160536391`.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
