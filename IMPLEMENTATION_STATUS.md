@@ -69,14 +69,16 @@ No stable product release, completed native client, or released SDK artifact is 
 Assumption: queue selection must expose more than one resumable job in a single worker listing before
 the GTK modal can claim multi-job coverage; the test uses two bounded TXT jobs in isolated storage.
 
-- Linux `5b7d0d51f189412f92f722345e8dc6b4ec78314b` adds a worker regression creating two pending jobs,
+- Linux `be10088904be1ae2ebb833180df43b0a1c6295b8` retains the worker regression from
+  `5b7d0d51f189412f92f722345e8dc6b4ec78314b` creating two pending jobs,
   listing them through `ListDocumentJobs`, and asserting both stable IDs and pending states are
-  returned together for selection.
+  returned together for selection; the testing guide now documents that gate and its concurrent-
+  translation boundary.
 - Local formatting, GUI all-target checks, strict Clippy, demo-provider tests (113 passed, 2 ignored),
   l10n synchronization, 215-key audit, and diff checks passed.
-- Linux push Native `29681023684` (job `88177104177`), Foundation `29681023682` (job `88177104190`),
-  and Flatpak `29681023700` (job `88177104183`) passed. PR Native `29681024845` (job `88177107286`),
-  Foundation `29681024858` (job `88177107377`), and Flatpak `29681024833` (job `88177107189`) also passed.
+- Linux push Native `29681283021` (job `88177797814`), Foundation `29681282976` (job `88177797694`),
+  and Flatpak `29681282978` (job `88177797688`) passed. PR Native `29681283843` (job `88177800339`),
+  Foundation `29681283852` (job `88177800356`), and Flatpak `29681283837` (job `88177800299`) also passed.
 
 This strengthens Linux document queue evidence without claiming multi-job concurrent translation,
 end-user visual review, other clients, release artifacts, or a stable release.

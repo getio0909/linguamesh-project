@@ -1371,12 +1371,13 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   artifacts, and stable release remain open.
 
 - 2026-07-19: Assumption: queue selection must expose more than one resumable job in a single worker
-  listing before the GTK modal can claim multi-job coverage. Linux `5b7d0d51f189412f92f722345e8dc6b4ec78314b`
-  creates two pending jobs, lists them through `ListDocumentJobs`, and verifies both stable IDs and
-  pending states are returned together. Local formatting, GUI checks, strict Clippy, 113-test
-  demo-provider suite (2 ignored), l10n sync, 215-key audit, and diff checks passed. Push
-  Native/Foundation/Flatpak `29681023684`/`29681023682`/`29681023700` and PR
-  `29681024845`/`29681024858`/`29681024833` passed. Concurrent translation, visual review, other
+  listing before the GTK modal can claim multi-job coverage. Linux `be10088904be1ae2ebb833180df43b0a1c6295b8`
+  retains the regression from `5b7d0d51f189412f92f722345e8dc6b4ec78314b`, creates two pending jobs,
+  lists them through `ListDocumentJobs`, and verifies both stable IDs and pending states are returned
+  together; `docs/testing.md` records the concurrent-translation boundary. Local formatting, GUI
+  checks, strict Clippy, 113-test demo-provider suite (2 ignored), l10n sync, 215-key audit, and diff
+  checks passed. Push Native/Foundation/Flatpak `29681283021`/`29681282976`/`29681282978` and PR
+  `29681283843`/`29681283852`/`29681283837` passed. Concurrent translation, visual review, other
   clients, artifacts, and stable release remain open.
 
 ## Checkpoint update protocol
