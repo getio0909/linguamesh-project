@@ -1185,6 +1185,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Translated-copy, plural, visual locale/RTL, Orca speech, other clients, and stable-release
   evidence remain open.
 
+- 2026-07-19: Assumption: persisted document-job progress is user-visible state and must expose a
+  native GTK progress-bar role with a bounded completed/total fraction. Linux revision
+  `ca040585db0baaced263d438714110ddfdb315b0` adds localized progress text, a clamped fraction,
+  hidden-reset behavior, and GTK regression coverage. Local Rust/l10n/OCR checks passed; Native
+  `29670131311`, Foundation `29670131969`, and Flatpak `29670131964` passed, as did the preceding
+  code-head and pull-request reruns. Orca speech, manual visual review, prompt approval, other
+  clients, and release artifacts remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

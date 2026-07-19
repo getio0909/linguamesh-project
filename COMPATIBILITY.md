@@ -198,6 +198,12 @@ Native SDK `29645385324` passed. This remains unreleased.
 
 The Linux row above is superseded by the current EPUB checkpoint: Core `554c09521b57de45be154a99edfbf24aa2fc6538`, Linux `3f0f659ccba195e58789d80d9fdc20b087a10b68`, schema 13, and passed Core CI `29652884450`, Native SDK `29652884430`, Linux Native `29652937783`, Foundation `29652937750`, and Flatpak `29652937761`. EPUB package metadata, navigation, CSS, resources, visible XHTML/HTML text, and OPF language updates are included; PDF/OCR and other platform clients remain open.
 
+Linux-first accessible progress checkpoint: Linux `ca040585db0baaced263d438714110ddfdb315b0` adds
+the native GTK document-progress role, localized completed/total text, bounded fraction, and
+hidden reset behavior. Native `29670131311`, Foundation `29670131969`, and Flatpak `29670131964`
+passed, with code-head and pull-request reruns also passing. Orca speech, manual visual review,
+prompt approval, signing, distributable artifacts, and stable release remain open.
+
 Linux-first text-PDF checkpoint: Core `4f03618ffb1f37f27fb1edcf2de5a80e3bec540d` adds bounded PDF
 object/page inspection, page-aware text segments, basic coordinates and reading-order boundaries,
 Flate stream support, safe ASCII literal/hex rewriting, schema-14 persistence, and a structured

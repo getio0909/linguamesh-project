@@ -543,9 +543,27 @@ canonical catalog; dynamic keys remain covered by the existing runtime localizat
 The audit makes source-to-catalog coverage reproducible but does not replace translated-copy,
 plural, visual locale/RTL, or Orca speech review.
 
+## 2026-07-19 — Linux accessible document-progress checkpoint
+
+Assumption: persisted document-job progress is user-visible state and must be exposed through a
+native GTK progress-bar role with a bounded completed/total fraction.
+
+- Linux `ca040585db0baaced263d438714110ddfdb315b0` adds localized completed/total progress text,
+  a clamped fraction, and regression coverage for the role, 2/4 fraction, localized text, and
+  hidden reset state.
+- Local Linux formatting, locked no-default and demo-provider tests, strict Clippy, OCR fixture,
+  localization sync, shell syntax, and diff checks passed. The host GTK libraries cannot link the
+  binary GUI test; the remote Native gate executes it.
+- Linux push runs Native `29670131311`, Foundation `29670131969`, and Flatpak `29670131964` passed;
+  code-head runs `29669977294`/`29669977297`/`29669977295` and PR reruns
+  `29669978352`/`29669978350`/`29669978371` also passed.
+
+Orca speech, manual high-contrast/RTL/reduced-motion review, end-user Secret Service prompt
+approval, translated-copy/plural/visual review, other clients, and release artifacts remain open.
+
 | Area | Status | Evidence |
 | --- | --- | --- |
-| Current Linux document-job metadata, OCR, and localization-key audit | Validated locally and remotely | l10n `3f3c1a1154b66d25f2936a02b8a08d2a8fc8a878` contains 306 canonical messages and bundle SHA-256 `6fc6839fce3a449eaf37d2efb9a52fa0ede1eab3a39fecdaff68682a79d8a4f8`; Linux `a26ee1855e6d46ac1c174f1388bae5eb09420588` renders catalog-backed document rows and opt-in page-marked OCR text and statically audits 187 source keys. Native `29669448961`, Foundation `29669448991`, and Flatpak `29669448995` passed; pull-request reruns `29669459291`, `29669459309`, and `29669459312` passed. |
+| Current Linux document-job metadata, OCR, localization-key audit, and accessible progress | Validated locally and remotely | l10n `3f3c1a1154b66d25f2936a02b8a08d2a8fc8a878` contains 306 canonical messages and bundle SHA-256 `6fc6839fce3a449eaf37d2efb9a52fa0ede1eab3a39fecdaff68682a79d8a4f8`; Linux `ca040585db0baaced263d438714110ddfdb315b0` renders catalog-backed document rows and opt-in page-marked OCR text, statically audits 187 source keys, and exposes native progress-bar semantics. Native `29670131311`, Foundation `29670131969`, and Flatpak `29670131964` passed; code-head and pull-request reruns also passed. |
 | Authoritative goal and plan | Present | `PROJECT_GOAL.md`, `AGENTS.md`, and `PLANS.md` were read before implementation. |
 | Central policies and documentation | Validated locally | `bash tools/check-workspace.sh` passed required-file and Markdown-link checks. |
 | Workspace and release manifests | Validated locally | Default and strict Bash checks parsed both TOML files, enforced the canonical set and release invariants, parsed the JSON schema, and passed. |
@@ -557,8 +575,8 @@ plural, visual locale/RTL, or Orca speech review.
 | Localization bundle | Validated locally and remotely | l10n revision `3f3c1a1154b66d25f2936a02b8a08d2a8fc8a878` contains 306 canonical messages, including opt-in image-only PDF OCR controls/errors, 12 official locale packs, two pseudo-locales, 59 generated artifacts including paired Linux PO/MO resources, 26 passing tests, platform-format checks, and deterministic bundle ZIP SHA-256 `6fc6839fce3a449eaf37d2efb9a52fa0ede1eab3a39fecdaff68682a79d8a4f8`. Non-English packs remain explicitly unreviewed drafts. |
 | Native Linux alpha.2 slice | Validated locally and remotely | Linux head `a26ee18` negotiates `bounded_text_document_v1`, converts bounded TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF imports into Core jobs, preserves structured document metadata, provides queue actions and safe reconstruction, routes ordinary-text fallback only after explicit approval, offers explicit bounded image-only PDF OCR to page-marked TXT while keeping the source PDF unchanged, and enforces source-referenced localization-key coverage against the canonical catalog. Local 64/102-test suites, strict Clippy, Rust checks, OCR fixture, localization sync, and the 187-key audit passed; Native `29669448961`, Foundation `29669448991`, and Flatpak `29669448995` passed. |
 | Linux Flatpak packaging scaffold | Static validation passed; remote passed | Linux packaging revision `8f2cba0` publishes the pinned GNOME 49 manifest, immutable Core/Linux/l10n source pins including DOCX/PPTX/XLSX/EPUB/PDF warning UI, document queue/export-open/fallback controls, headless keyboard fixture dependency, generated Cargo archive hashes for the current lockfile, desktop entry, AppStream metadata, icon, and constrained runtime permissions. `bash tools/validate-flatpak-metadata.sh` passed locally; Flatpak job `88129285461` passed. Physical compositor/GPU rendering, signing, and distributable release remain unverified. |
-| GitHub Actions | Passed | Core revision `81be0b8be9d7115b98eae3f134b4fd0f25411bbb` remains validated; l10n revision `3f3c1a1154b66d25f2936a02b8a08d2a8fc8a878` passed `29669015989`/`29669016025`; Linux head `a26ee1855e6d46ac1c174f1388bae5eb09420588` passed Native `29669448961`, Foundation `29669448991`, and Flatpak `29669448995`, with pull-request reruns `29669459291`/`29669459309`/`29669459312`; the OCR fixture and localization-key audit passed in Native job `88145739138`; central coordination `29669694443` passed Linux job `88146359206` and PowerShell job `88146359202`. |
-| Non-functional repository heads | Published | Core head `81be0b8be9d7115b98eae3f134b4fd0f25411bbb`, l10n head `3f3c1a1154b66d25f2936a02b8a08d2a8fc8a878`, and Linux head `a26ee1855e6d46ac1c174f1388bae5eb09420588` are published; current-head Linux Native/Flatpak/Foundation gates passed. The release manifest remains unreleased with no artifacts. |
+| GitHub Actions | Passed | Core revision `81be0b8be9d7115b98eae3f134b4fd0f25411bbb` remains validated; l10n revision `3f3c1a1154b66d25f2936a02b8a08d2a8fc8a878` passed `29669015989`/`29669016025`; Linux head `ca040585db0baaced263d438714110ddfdb315b0` passed Native `29670131311`, Foundation `29670131969`, and Flatpak `29670131964`, with code-head runs `29669977294`/`29669977297`/`29669977295` and PR reruns `29669978352`/`29669978350`/`29669978371`; the OCR fixture, localization-key audit, and accessible progress assertions passed in Native job `88147494109`; central coordination `29669694443` passed Linux job `88146359206` and PowerShell job `88146359202`. |
+| Non-functional repository heads | Published | Core head `81be0b8be9d7115b98eae3f134b4fd0f25411bbb`, l10n head `3f3c1a1154b66d25f2936a02b8a08d2a8fc8a878`, and Linux head `ca040585db0baaced263d438714110ddfdb315b0` are published; current-head Linux Native/Flatpak/Foundation gates passed. The release manifest remains unreleased with no artifacts. |
 | Acceptance Scenario 1 | Passed locally | The reference CLI discovered and selected a fake model, streamed `你好，LinguaMesh！` over loopback HTTP/SSE, and completed without a key. A separate slow-stream run retained `你好` and emitted cancellation. |
 | Remaining acceptance scenarios | Not passed | Scenarios 2–20 do not yet have complete cross-platform reproducible passing evidence. Linux now has complete secure-provider Scenario 3 and ordinary-text fallback Scenario 7 implementation/remote gate evidence plus partial Scenario 5 evidence; the global scenarios and stable-release evidence remain incomplete. |
 
