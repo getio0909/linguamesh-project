@@ -153,6 +153,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   verify their upload without claiming a stable release artifact.
 - [x] Build and remotely verify a Linux release-mode native binary with SHA-256, deterministic SPDX
   SBOM, and fixed build-context sidecars; retain it as unsigned prerelease evidence only.
+- [x] Add and remotely verify a repository-only Linux source archive with a SHA-256 entry in the
+  native evidence artifact; keep sibling Core/l10n pins and stable-release authorization explicit.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -461,6 +463,22 @@ local GUI link. Push Native/Flatpak/Foundation `29705491999`/`29705491988`/`2970
 Native/Flatpak/Foundation `29705493161`/`29705493148`/`29705493163` all passed with non-expired
 native and Flatpak artifacts. Signing, source archives, rollback, cross-client artifacts, and
 stable-release authorization remain open.
+
+## Completed Linux-first checkpoint — source archive evidence and AT-SPI cleanup
+
+Change identifier: `LM-CHANGE-2026-07-LINUX-SOURCE-ARCHIVE-1`
+
+Assumption: a repository-only source archive is useful prerelease evidence only when its external
+Core and localization pins remain documented; test cleanup retries must not alter accessibility
+assertions.
+
+Linux `d5525263f2b5e339933a3b3c6dac7d21537ad990` adds the source archive and checksum entry and
+hardens the exact temporary-directory cleanup used by the AT-SPI fixture. The initial push run
+`29705840151` failed only during cleanup after passing its assertions; final push
+Native/Flatpak/Foundation `29706120410`/`29706120412`/`29706120423` and PR
+Native/Flatpak/Foundation `29706121615`/`29706121557`/`29706121564` all passed with non-expired
+native and Flatpak artifacts. The archive remains unsigned repository-only evidence, not a stable
+source release.
 
 ## Completed Linux-first checkpoint — multiple routing-profile IDs
 

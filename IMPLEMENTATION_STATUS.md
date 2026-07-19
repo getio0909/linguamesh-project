@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Linux source archive and AT-SPI cleanup verification
+
+Assumption: the Linux source snapshot is repository-only evidence and must retain explicit sibling
+Core/l10n pins; a test-fixture cleanup fix is acceptable only when assertions remain unchanged.
+
+- Linux `d5525263f2b5e339933a3b3c6dac7d21537ad990` records the repository-only
+  `linguamesh-linux-source.tar.gz` and appends its SHA-256 to the native evidence checksums. It
+  also makes AT-SPI fixture cleanup retry bounded deletion after the first source-archive attempt
+  `29705840151` failed only because asynchronous portal files made `rm` return non-zero after all
+  accessibility assertions passed.
+- Final push Native/Flatpak/Foundation runs `29706120410`/`29706120412`/`29706120423` and PR
+  Native/Flatpak/Foundation runs `29706121615`/`29706121557`/`29706121564` all passed. Native
+  push/PR evidence artifacts were non-expired (5,584,791 and 5,584,680 bytes) and include the
+  release binary, source archive, checksums, SBOM, and build context. This remains unsigned CI
+  evidence; no standalone or stable source release is claimed.
+
 ## 2026-07-19 — Linux native release-mode evidence remote verification
 
 Assumption: unsigned release-mode Linux binaries may be retained as prerelease CI evidence while

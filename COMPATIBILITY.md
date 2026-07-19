@@ -65,6 +65,16 @@ Flatpak push/PR gates passed: `29705491999`/`29705491988`/`29705492011` and
 or distributable releases; source archive, rollback, cross-client artifacts, and stable promotion
 remain open.
 
+## Linux-first source archive evidence checkpoint
+
+Linux `d5525263f2b5e339933a3b3c6dac7d21537ad990` adds a repository-only source archive to the
+native evidence artifact and appends its SHA-256 to `SHA256SUMS`; the archive still requires the
+pinned Core and localization repositories. Final push Native/Flatpak/Foundation runs
+`29706120410`/`29706120412`/`29706120423` and PR Native/Flatpak/Foundation runs
+`29706121615`/`29706121557`/`29706121564` passed. The first attempt `29705840151` failed only during
+AT-SPI temporary-directory cleanup after its assertions passed; the bounded retry fix is covered by
+the final gates. No standalone or stable source release is claimed.
+
 ## Linux-first duplicate routing-profile ID checkpoint
 
 Linux `21c89c7e9c671617477a6410240ff1fb0a0c9ff7` rejects a new profile whose validated ID already
