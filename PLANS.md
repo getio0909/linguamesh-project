@@ -1164,6 +1164,17 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   by `fd30017b8d59df8daed3c18cef47e8741f42d904`; Orca speech, physical desktop review, OCR,
   complete visible-string gettext coverage, other clients, and stable-release evidence remain open.
 
+- 2026-07-19: Assumption: image-only PDF OCR is an explicit Linux opt-in capability, not a default
+  reconstruction promise. l10n `cacc1577bc1a19a94c11faeffa7a63016d54d64e` adds ten OCR toggle,
+  progress, and fixed-error messages, producing 306 messages and bundle checksum
+  `6fc6839fce3a449eaf37d2efb9a52fa0ede1eab3a39fecdaff68682a79d8a4f8`. Linux
+  `d18e8dfa3dd98d56dbe0d5d1eabc536d38b96f1c` invokes bounded shell-free `pdftoppm`/`tesseract`
+  processes only after explicit user opt-in, stores page-marked TXT jobs, and keeps source PDFs
+  untouched. Local Linux tests and the generated OCR fixture passed; Native `29668688201`,
+  Foundation `29668688202`, and Flatpak `29668688223` passed, as did l10n `29668388983`/`29668388992`.
+  Orca speech, physical desktop review, complete visible-string gettext coverage, other clients,
+  and stable-release evidence remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
