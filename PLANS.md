@@ -128,6 +128,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   validation without expanding scope to other clients.
 - [x] Add Linux routing-profile candidate selection for enabled saved provider/model pairs, preserve
   the displayed order, reject unknown IDs and empty selections, and verify the remote Linux gates.
+- [x] Add keyboard-focusable Linux up/down controls for routing candidate ordering, persist the
+  resulting Ordered sequence, and verify the bounded reordering helper and remote gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -277,6 +279,24 @@ formatting, l10n sync/audit, Flatpak metadata, and diff checks. Push Native/Flat
 
 Drag/drop candidate ordering, complete candidate management, other clients, artifacts, and stable
 release remain open.
+
+## Completed Linux-first checkpoint — routing candidate ordering
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-CANDIDATE-ORDER-1`
+
+Linux `21d79530fbb7aedafe3fdc8a025e4db18c285fc4` adds focusable up/down controls beside enabled
+routing candidates. GTK rebuilds the rows after a bounded move, and the selected IDs are persisted
+in the resulting Ordered-mode sequence. `move_routing_profile_id` rejects unknown and out-of-range
+moves; `routing_candidate_reordering_is_bounded` covers forward, reverse, boundary, and missing IDs.
+
+Local Linux validation passed with 132 tests (`130 passed; 2 ignored`), GUI check, strict Clippy,
+formatting, l10n sync/audit, Flatpak metadata, and diff checks. Push Native/Flatpak/Foundation
+`29697776890`/`29697776947`/`29697776897` and PR Native/Flatpak/Foundation
+`29697778336`/`29697778335`/`29697778323` passed; the Push Flatpak run was rerun after a transient
+Flathub network failure.
+
+Drag/drop ordering, complete candidate management, other clients, artifacts, and stable release
+remain open.
 
 ## Completed Linux-first checkpoint — routing mode and fallback consent
 

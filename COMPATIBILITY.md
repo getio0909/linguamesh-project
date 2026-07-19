@@ -13,18 +13,20 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | Localization | `0.1.0` | Message schema `1.0.0`; resource contract `1`; 334 canonical messages including Linux-only status, partial-output, text-import, opt-in image-only PDF OCR controls and errors, glossary CSV import/export and rule-validation errors, PDF fidelity and subtitle readability warnings, document-job actions/dialog/status/tooltip controls, exported-output open/failure actions, Incognito privacy controls, history and translation-memory controls/status, translation-export, provider-profile, provider preset labels/tooltips, source-target, onboarding-stage, active-provider, notification, draft-note, locale selector language names, fixed provider/file/worker errors, reducer-state/category guidance, fixed worker/file/storage/provider-error guidance, construction-stage provider/default-control and request-level glossary copy, diagnostics labels/state values, Secret Service prompt-dismissal guidance, GTK drag-fixture label, built-in provider default names, and Core/loopback startup plus profile-storage error copy; paired PO/MO Linux resources | CI-verified development bundle at l10n revision `85b9d45569ce840c17dc0acc7d7366d6810be48e`, 59 generated artifacts, deterministic bundle SHA-256 `028d25b3637fbc19d41d497a860b414353615b9576db6f852a9f236bcbe770ce`, Localization `29678498771`, Foundation `29678498778`, unreleased |
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 
-## Linux-first routing candidate-selection checkpoint
+## Linux-first routing candidate-order checkpoint
 
-Linux `cd9df9fff290fa2f3ebaf64fcf8e5819039eaf7f` adds focusable candidate checkboxes to the GTK
-routing-profile dialog. Only explicitly checked enabled saved provider/model pairs are serialized,
-in displayed order; unknown IDs are filtered and empty selections fail closed. The existing Core
-Manual/Ordered/Automatic mode and explicit fallback-consent behavior remain unchanged.
+Linux `21d79530fbb7aedafe3fdc8a025e4db18c285fc4` adds focusable candidate checkboxes and adjacent
+up/down controls to the GTK routing-profile dialog. Only explicitly checked enabled saved
+provider/model pairs are serialized, in the user-selected Ordered sequence; unknown IDs and
+out-of-range moves fail closed. The existing Core Manual/Ordered/Automatic mode and explicit
+fallback-consent behavior remain unchanged.
 
-Local Linux validation passed with 131 tests (`129 passed; 2 ignored`), GUI check, strict Clippy,
+Local Linux validation passed with 132 tests (`130 passed; 2 ignored`), GUI check, strict Clippy,
 formatting, localization sync/audit, Flatpak metadata, and diff checks. Push Native/Flatpak/Foundation
-runs `29697021191`/`29697021176`/`29697021171` and PR Native/Flatpak/Foundation runs
-`29697022738`/`29697022740`/`29697022751` passed; one PR Native AT-SPI cleanup rerun was required.
-Drag/drop ordering, other clients, visual/Orca review, artifacts, and stable release remain open.
+runs `29697776890`/`29697776947`/`29697776897` and PR Native/Flatpak/Foundation runs
+`29697778336`/`29697778335`/`29697778323` passed; the Push Flatpak run was rerun after a transient
+Flathub network failure. Drag/drop ordering, other clients, visual/Orca review, artifacts, and
+stable release remain open.
 
 ## Linux-first routing mode and fallback-consent checkpoint
 

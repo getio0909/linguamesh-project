@@ -4,15 +4,33 @@ Last updated: 2026-07-19
 
 ## Current checkpoint
 
-Linux routing configuration revision `cd9df9fff290fa2f3ebaf64fcf8e5819039eaf7f` now exposes
-Core's `Manual`, `Ordered`, and `Automatic` modes, explicit fallback consent defaulting off, and
-focusable candidate checkboxes for saved provider/model pairs. Local Linux validation passed with
-131 tests (`129 passed; 2 ignored`), GUI all-target check, strict Clippy, formatting, localization
-sync/audit, Flatpak metadata, and diff checks. Push Native/Flatpak/Foundation runs
-`29697021191`/`29697021176`/`29697021171` and PR Native/Flatpak/Foundation runs
-`29697022738`/`29697022740`/`29697022751` all passed after one PR Native AT-SPI cleanup rerun. This is a Linux
-configuration slice only and does not claim complete candidate management, other clients, visual or
-Orca review, distributable artifacts, or a stable release.
+Linux routing configuration revision `21d79530fbb7aedafe3fdc8a025e4db18c285fc4` now exposes
+Core's `Manual`, `Ordered`, and `Automatic` modes, explicit fallback consent defaulting off,
+focusable candidate checkboxes, and keyboard-focusable up/down candidate reordering. Local Linux
+validation passed with 132 tests (`130 passed; 2 ignored`), GUI all-target check, strict Clippy,
+formatting, localization sync/audit, Flatpak metadata, and diff checks. Push Native/Flatpak/Foundation
+runs `29697776890`/`29697776947`/`29697776897` and PR Native/Flatpak/Foundation runs
+`29697778336`/`29697778335`/`29697778323` all passed; the Push Flatpak run required one rerun after
+a transient Flathub network failure. This is a Linux configuration slice only and does not claim
+complete candidate management, other clients, visual or Orca review, distributable artifacts, or a
+stable release.
+
+## 2026-07-19 — Linux routing candidate-order checkpoint
+
+Assumption: Ordered routing needs an explicit, keyboard-focusable way to change the sequence of
+selected candidates; drag/drop and screen-reader copy review remain separate accessibility work.
+
+- Linux `21d79530fbb7aedafe3fdc8a025e4db18c285fc4` adds bounded up/down candidate controls and
+  rebuilds the GTK list before persistence, so the Core profile receives the exact Ordered-mode
+  sequence selected by the user.
+- `move_routing_profile_id` rejects unknown and out-of-range moves; the regression covers forward,
+  reverse, boundary, and missing-candidate behavior.
+- Local validation passed with 132 tests (`130 passed; 2 ignored`), GUI check, strict Clippy,
+  localization/Flatpak audits, and diff checks. Push/PR Foundation, Native, and Flatpak gates all
+  passed (`29697776890`, `29697776947`, `29697776897`; `29697778336`, `29697778335`, `29697778323`).
+
+This remains a Linux configuration slice and does not claim complete candidate management, other
+clients, visual/Orca review, release artifacts, or a stable release.
 
 Milestone 0, Core `0.1.0-alpha.2`, localization development bundle `0.1.0`, and the Linux
 `0.1.0-alpha.2` multi-profile/session-onboarding, runtime-`ENOSPC` rollback, GIO Secret Service
