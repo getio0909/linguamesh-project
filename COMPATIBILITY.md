@@ -146,6 +146,16 @@ credential, Connect, and Remember controls while preserving modified shortcuts. 
 including the Xvfb/xfwm4 keyboard fixture. Orca speech, physical desktop review, OCR, complete
 visible-string gettext coverage, other platform clients, and stable-release evidence remain open.
 
+Linux-first document-job metadata localization checkpoint: l10n `c81728faf8679e7a5e9854537ad7c70c046c7800`
+adds seven Linux-only catalog messages for the document-job row template and pending/running/
+paused/completed/cancelled/failed states, producing 296 canonical messages and bundle checksum
+`d2f4fd439b5fbc8fc6d48f1be0a91ee92f558c70b851271d643829cfe8590e9b`. Linux
+`76b5f632fee62dc8e323e0cfec5d420e6fcc6992` maps document format and lifecycle metadata through
+the active catalog instead of Rust debug output. Native `29667553178`, Foundation `29667553139`,
+and Flatpak `29667553149` passed, including the GTK AT-SPI/Wayland and Flatpak smoke gates. Orca
+speech, physical desktop review, OCR, complete visible-string gettext coverage, other platform
+clients, and stable-release evidence remain open.
+
 Linux-first PPTX package checkpoint: Core `0f71a652a536753f48bb8c852fd38e97740c23ce` adds bounded
 PPTX ZIP/XML inspection, schema-11 package persistence, safe slide/notes/master/layout/handout/
 comments text-node reconstruction, and resource retention. Linux functional revision

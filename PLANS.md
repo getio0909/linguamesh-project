@@ -97,6 +97,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   native `.html`/`.htm` chooser coverage.
 - [x] Add Linux GTK presentation for persisted document jobs, including a non-blocking list command,
   progress/state metadata, empty-state handling, and selection back into the existing job controls.
+- [x] Localize Linux document-job row format, lifecycle state, and completed/total metadata through
+  the canonical l10n catalog, replacing Rust debug-format presentation.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -1149,6 +1151,18 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   lacks the required GTK 4 symbols; the remote Native gate is the executable evidence. Orca speech,
   physical desktop review, OCR, complete visible-string gettext coverage, other clients, and
   stable-release evidence remain open.
+
+- 2026-07-19: Assumption: document-job row metadata is user-visible Linux UI and must use stable
+  technical format labels plus catalog-backed lifecycle labels; Rust `Debug` output is not a
+  presentation contract. l10n revision `c81728faf8679e7a5e9854537ad7c70c046c7800` adds seven
+  Linux-only messages, producing 296 canonical messages and bundle checksum
+  `d2f4fd439b5fbc8fc6d48f1be0a91ee92f558c70b851271d643829cfe8590e9b`. Linux revision
+  `76b5f632fee62dc8e323e0cfec5d420e6fcc6992` maps the row template and pending/running/paused/
+  completed/cancelled/failed labels through the active catalog. Local l10n make check, Linux
+  format/Clippy/test/sync checks passed; Native `29667553178`, Foundation `29667553139`, and
+  Flatpak `29667553149` passed. The initial Native gate failed on the stale l10n pin and was fixed
+  by `fd30017b8d59df8daed3c18cef47e8741f42d904`; Orca speech, physical desktop review, OCR,
+  complete visible-string gettext coverage, other clients, and stable-release evidence remain open.
 
 ## Checkpoint update protocol
 

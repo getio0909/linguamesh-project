@@ -1,6 +1,6 @@
 # Implementation Status
 
-Last updated: 2026-07-18
+Last updated: 2026-07-19
 
 ## Current checkpoint
 
@@ -51,6 +51,8 @@ Linux standard-text translation now has an explicit approved-fallback control: o
 provider may receive a retry after a network or timeout failure, partial output is preserved, and the
 selection is surfaced; document jobs, cancellation, authentication/model failures, unapproved
 profiles, and session-only profiles never fall back.
+The document-job queue now renders source, technical format, lifecycle state, and completed/total
+metadata through catalog templates and stable state labels rather than Rust debug formatting.
 No stable product release, completed native client, or released SDK artifact is claimed here.
 
 ## 2026-07-18 — Linux JSON document checkpoint
@@ -477,10 +479,33 @@ real Xvfb/xfwm4 fixture evidence for provider and workspace controls.
 Orca speech, physical desktop review, OCR, complete visible-string gettext coverage, other clients,
 and stable-release evidence remain open.
 
+## 2026-07-19 — Linux document-job metadata localization checkpoint
+
+Assumption: document-job row metadata is user-visible Linux UI and must use stable technical format
+labels plus catalog-backed lifecycle labels; Rust `Debug` output is not an acceptable presentation
+contract. l10n revision `c81728faf8679e7a5e9854537ad7c70c046c7800` adds seven Linux-only messages,
+bringing the catalog to 296 messages with deterministic bundle SHA-256
+`d2f4fd439b5fbc8fc6d48f1be0a91ee92f558c70b851271d643829cfe8590e9b`. Linux revision
+`76b5f632fee62dc8e323e0cfec5d420e6fcc6992` localizes the row template and pending/running/paused/
+completed/cancelled/failed state labels while preserving source and progress values.
+
+- Local l10n `make check`, deterministic build, Linux formatting, strict all-target/all-feature
+  Clippy, locked no-default 61-test suite, demo-provider 99-test suite (one existing
+  environment-dependent ignore), l10n sync, and diff checks passed.
+- Native `29667553178` (job `88140593951`), Foundation `29667553139`, and Flatpak `29667553149`
+  (job `88140593974`) passed, including GTK AT-SPI/Wayland and Flatpak sandbox smoke gates.
+- The first Native run for the implementation commit failed only because the workflow pinned the
+  previous l10n revision; CI pin fix `fd30017b8d59df8daed3c18cef47e8741f42d904` was pushed before
+  the current passing head.
+
+Orca speech, physical desktop review, OCR, complete visible-string gettext coverage, other clients,
+and stable-release evidence remain open.
+
 ## Evidence
 
 | Area | Status | Evidence |
 | --- | --- | --- |
+| Current Linux document-job metadata slice | Validated locally and remotely | l10n `c81728faf8679e7a5e9854537ad7c70c046c7800` contains 296 canonical messages and bundle SHA-256 `d2f4fd439b5fbc8fc6d48f1be0a91ee92f558c70b851271d643829cfe8590e9b`; Linux `76b5f632fee62dc8e323e0cfec5d420e6fcc6992` renders catalog-backed document format/state/progress rows. Native `29667553178`, Foundation `29667553139`, and Flatpak `29667553149` passed. |
 | Authoritative goal and plan | Present | `PROJECT_GOAL.md`, `AGENTS.md`, and `PLANS.md` were read before implementation. |
 | Central policies and documentation | Validated locally | `bash tools/check-workspace.sh` passed required-file and Markdown-link checks. |
 | Workspace and release manifests | Validated locally | Default and strict Bash checks parsed both TOML files, enforced the canonical set and release invariants, parsed the JSON schema, and passed. |
