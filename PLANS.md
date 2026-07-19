@@ -1400,11 +1400,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `63fc0ca62e2b1d9bd168a60e6c9051ac338f6486` rejects entries at least 1 KiB whose uncompressed size
   exceeds 200 times the compressed size, in addition to encrypted, symlinked, duplicate, traversal,
   entry-count, and total-size limits. Core CI `29682666941` and Native SDK `29682666929` passed.
-  Linux `4101dffa9d300c1919fbb01f85e634521ccc54b3` adds the native PPTX slide/notes/resource fixture
-  after the compression-ratio import guard and records the Native/Flatpak pins, documentation, and
-  completed remote evidence; local 117-pass/2-ignored validation and Flatpak metadata checks passed.
-  Push gates `29683990603`/`29683990650`/`29683990621` and PR gates
-  `29683991818`/`29683991925`/`29683991824` passed. Macro/signature behavior, physical visual review,
+  Linux `4b8ffdedff22b31321ff8ab8395ccb53f784ccc8` adds bounded AT-SPI fixture cleanup after the PPTX
+  slide/notes/resource and compression-ratio evidence; local 118-pass/2-ignored validation and
+  Flatpak metadata checks passed. The prior push Native `29684324260` was cancelled after printing a
+  successful AT-SPI assertion but before cleanup completed; the corrected push Native
+  `29685292569`, Foundation `29685292538`, and Flatpak `29685292531`, plus PR Native `29685293703`,
+  Foundation `29685293644`, and Flatpak `29685293646`, all passed. Macro/signature behavior, physical visual review,
   other clients, artifacts, and stable release remain open.
 
 ## Checkpoint update protocol
