@@ -108,6 +108,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
   binary resources, formulas, and numeric cells.
 - [x] Publish and remotely verify the shared Core `routing_planner_v1` contract and Linux exact
   compatibility pin; GTK automatic/ordered routing controls remain a later client slice.
+- [x] Close the Linux source-level compound-summary gettext gap for history/memory metadata,
+  document-job IDs, active-provider mode summaries, and unavailable provider/model labels; l10n
+  and Linux remote Native/Foundation/Flatpak gates passed at the pinned revisions.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -1455,6 +1458,19 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   29689432053, and 29689432045; duplicate push-triggered runs 29689431072, 29689431028, and
   29689431052 also passed. l10n runs 29689387482/29689387493 and central run 29689497792 passed.
   Automatic/ordered routing UI, other clients, artifacts, and stable release remain open.
+
+- 2026-07-19: Assumption: compound summaries visible to users must localize their complete
+  template rather than concatenating an English prefix with data; technical identifiers,
+  filenames, model IDs, and translation content remain data. l10n
+  `bd06a76bcd498748b520143c61964a92727d1b51` adds `status.translation_entry_metadata`,
+  `status.document_job_id`, and `provider.active_with_mode` to the 339-message bundle; Linux
+  `5fe8d20cd0970e8ddb0ded0fdb207c9bc7360a36` consumes them and localizes the unavailable fallback.
+  Local l10n `make check`, Linux formatting, 121 demo-provider tests with 2 ignored, GUI check,
+  strict Clippy, l10n sync, 219-key audit, Flatpak metadata, and diff checks passed. Linux push
+  Native/Foundation/Flatpak runs `29690203426`/`29690203419`/`29690203422` passed; duplicate
+  PR-triggered Native/Flatpak runs `29690201544`/`29690201545` passed. l10n Foundation/Localization
+  runs `29690127881`/`29690127894` passed. Human translated-copy review, Orca speech,
+  automatic/ordered routing UI, other clients, artifacts, and stable release remain open.
 
 ## Checkpoint update protocol
 
