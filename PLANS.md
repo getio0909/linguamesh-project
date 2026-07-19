@@ -1194,6 +1194,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29670659495`/`29670659502`/`29670659509`. Orca speech, manual visual review, prompt approval,
   other clients, and release artifacts remain open.
 
+- 2026-07-19: Assumption: fixed diagnostics labels and state values are Linux-visible copy and must
+  use the canonical catalog while identifiers, endpoints, and output content remain excluded.
+  l10n `32bef261f5f0deb9f6a0426231e365d0bae72b62` adds 20 Linux-only diagnostics keys, raising the
+  bundle to 326 messages with checksum
+  `054d6749397cbbf652e099784f2c7d0e3650779a3c17c98e68d25560d286b2d3`; Linux revision
+  `355481d937b3722e509dbd05cc1575c4e71be143` raises the source audit to 208 keys. Push Native
+  `29671444706`, Foundation `29671444731`, and Flatpak `29671444733` passed, as did PR reruns
+  `29671445475`/`29671445499`/`29671445495`. Translated-copy, plural, visual locale/RTL, Orca
+  speech, other clients, and stable-release evidence remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
