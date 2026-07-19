@@ -158,6 +158,26 @@ l10n/Linux/Flatpak validation passed. Linux push Native/Foundation/Flatpak
 Native/Foundation/Flatpak `29691041454`/`29691041501`/`29691041451`. Central coordination
 commit `bcff9b563df6f72d8a285ba4a29e8ec799d666a0` passed workflow `29691253266`.
 
+## Completed Linux-first checkpoint — ordinary-text saved routing execution
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-DISPATCH-1`
+
+Linux `128a03ef82a031d69ad55597467d501d0415522d` adds an ordinary-text routing command. The
+worker builds a bounded, non-secret Core routing context, selects a candidate through
+`routing_planner_v1`, resolves the saved provider profile through the host secret broker, and
+streams the result with a typed decision event. The GTK profile dialog now has an explicit Use
+action; document jobs and the existing explicit single-provider fallback remain separate paths.
+
+The l10n catalog is pinned to `fade545ec14793893de2603c62e0994689d9c4df` (352 messages). Local
+Linux validation passed 124 tests with 2 ignored, GUI check, strict Clippy, localization sync and
+228-key audit, Flatpak metadata, and diff checks. Push Native/Foundation/Flatpak runs
+`29692401405`/`29692401396`/`29692401402` passed, as did duplicate PR-triggered runs
+`29692402861`/`29692402845`/`29692402867`; l10n Foundation/Localization runs
+`29691938103`/`29691938112` passed.
+
+Complete automatic/ordered fallback chains, document-job routing, cross-platform pins, accepted
+draft publication, distributable artifacts, and stable-release evidence remain open.
+
 ## Active Linux-first checkpoint — secure provider foundation
 
 Change identifier: `LM-CHANGE-2026-07-LINUX-SECURE-PROVIDER-1`

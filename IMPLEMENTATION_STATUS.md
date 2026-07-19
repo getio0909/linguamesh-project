@@ -53,9 +53,11 @@ selection is surfaced; document jobs, cancellation, authentication/model failure
 profiles, and session-only profiles never fall back.
 Core now also exposes the non-secret `routing_planner_v1` contract for deterministic Manual,
 Ordered, and Automatic candidate selection with explainable rejection/ranking data and explicit
-fallback ordering; Linux negotiates this feature before provider work while GTK routing controls
-remain a later client slice. Linux now persists and edits validated non-secret routing profiles
-through the worker/storage boundary; automatic and ordered dispatch remain unimplemented.
+fallback ordering; Linux negotiates this feature before provider work. Linux persists and edits
+validated non-secret routing profiles through the worker/storage boundary and now executes ordinary
+text requests through a selected saved routing profile, resolving the chosen provider through the
+host secret broker. Complete automatic/ordered fallback chains, document-job routing, and other
+client controls remain unimplemented.
 The document-job queue now renders source, technical format, lifecycle state, and completed/total
 metadata through catalog templates and stable state labels rather than Rust debug formatting. Linux
 source-referenced localization keys are now statically audited against the canonical catalog in
@@ -72,6 +74,27 @@ formulas, and numeric cells.
 The reviewed Core archive boundary now also rejects suspicious OOXML compression ratios before XML
 inspection, and Linux consumes that guard through an immutable Core pin.
 No stable product release, completed native client, or released SDK artifact is claimed here.
+
+## 2026-07-19 — Linux ordinary-text routing execution checkpoint
+
+Assumption: applying a saved routing profile to ordinary text is the smallest complete vertical
+slice; document jobs and the existing explicit single-provider fallback retain their boundaries
+until their multi-candidate semantics are specified.
+
+- Linux `128a03ef82a031d69ad55597467d501d0415522d` adds `TranslateWithRouting`: it builds a
+  non-secret `RoutingContext`, asks Core to select a candidate, reconnects the selected saved
+  provider through the host secret broker when needed, and emits a typed decision summary before
+  streaming the ordinary text result. The GTK routing dialog adds an explicit Use action.
+- l10n `fade545ec14793893de2603c62e0994689d9c4df` contains 352 messages and the Linux pin now
+  consumes the regenerated PO/MO resources.
+- Local Linux validation passed 124 tests with 2 ignored, GUI all-target check, strict Clippy,
+  localization sync and 228-key audit, Flatpak metadata, and diff checks. Remote push Native/
+  Foundation/Flatpak runs `29692401405`/`29692401396`/`29692401402` passed; duplicate PR-triggered
+  runs `29692402861`/`29692402845`/`29692402867` also passed. l10n Foundation/Localization runs
+  `29691938103`/`29691938112` passed.
+
+This checkpoint does not claim complete automatic/ordered fallback chains, document-job routing,
+other clients, visual/Orca review, distributable artifacts, or a stable release.
 
 ## 2026-07-19 — Linux visible-string gettext coverage checkpoint
 
