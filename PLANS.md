@@ -106,6 +106,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Verify native Linux queue listing returns multiple pending jobs for explicit selection.
 - [x] Verify native Linux worker translation reconstructs DOCX/XLSX jobs end to end while retaining
   binary resources, formulas, and numeric cells.
+- [x] Publish and remotely verify the shared Core `routing_planner_v1` contract and Linux exact
+  compatibility pin; GTK automatic/ordered routing controls remain a later client slice.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -120,6 +122,21 @@ without trying another provider.
 
 Assumption: a single selected saved profile is the smallest complete approved chain for Scenario 7;
 ordered multi-provider chains and automatic routing remain future work.
+
+## Active Linux-first checkpoint — shared routing planner contract
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-PLANNER-1`
+
+Core now owns the non-secret routing policy contract. `RoutingProfile` supports Manual, Ordered, and
+Automatic modes, bounded local/privacy/capability/size/locale/quality/latency/cost constraints,
+stable rejection reasons, deterministic ranking, and explicit fallback ordering. Linux negotiates
+`routing_planner_v1` before provider work and pins Core `7fabf6130f6813638866814146dac83544d522c3`.
+The GTK surface still exposes only the existing explicitly approved single fallback; automatic
+routing and ordered multi-provider chain controls remain future work.
+
+Evidence: Core CI `29687564822`, Core Native SDK `29687564814`; Linux push Native/Foundation/Flatpak
+`29687648441`/`29687648443`/`29687648493`; Linux PR Native/Foundation/Flatpak
+`29687649819`/`29687649832`/`29687649826` all passed.
 
 ## Active Linux-first checkpoint — secure provider foundation
 
