@@ -145,6 +145,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   the Linux profile editor; preserve hidden constraints during Edit/Save and verify all gates.
 - [x] Expose provider/model allowlists and denylists plus minimum-quality and request-size limits in
   the Linux profile editor; preserve Core fields during Edit/Save and verify all gates.
+- [x] Enforce Linux visible-string localization coverage with a dependency-free GTK source audit,
+  run it in Native/Foundation CI, and verify the pinned l10n resources and all Linux gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -393,6 +395,22 @@ Local Linux/l10n checks passed. Push Native/Flatpak/Foundation runs
 `29703371083`/`29703371057`/`29703371084` and PR Native/Flatpak/Foundation runs
 `29703373063`/`29703373065`/`29703373076` all passed. Documentation-only l10n correction `3362732`
 was pushed afterward; the Linux build consumes the verified functional bundle `c3661245`.
+
+## Completed Linux-first checkpoint — visible-string localization audit
+
+Change identifier: `LM-CHANGE-2026-07-VISIBLE-LOCALIZATION-AUDIT-1`
+
+Assumption: Linux gettext coverage must fail closed when a new non-empty GTK-visible literal is
+introduced, while empty labels used to clear transient state remain valid.
+
+Linux `2386d495123d3aeacf2b5815d0c45577808c7a44` adds
+`tools/check-visible-localization.py` and runs it alongside the 263-key catalog audit in Native
+and Foundation CI. The audit covers GTK labels, titles, tooltips, placeholders, dialog actions,
+and direct list options. l10n `3362732be198450ff1ca00f30ec092aab2cf4189` supplies the immutable
+387-message generated resources. Local Linux checks passed; push Native/Flatpak/Foundation runs
+`29703945583`/`29703945586`/`29703945637` and PR Native/Flatpak/Foundation runs
+`29703946800`/`29703946783`/`29703946789` all passed. Human translated-copy, plural, visual/RTL,
+and Orca review remain open boundaries.
 
 ## Completed Linux-first checkpoint — multiple routing-profile IDs
 

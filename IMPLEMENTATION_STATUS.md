@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Linux visible-string localization audit checkpoint
+
+Assumption: complete Linux gettext coverage requires a repeatable source check that rejects
+non-empty visible GTK literals, while empty labels used to clear transient state remain valid.
+
+- Linux `2386d495123d3aeacf2b5815d0c45577808c7a44` adds the dependency-free
+  `tools/check-visible-localization.py` audit for labels, titles, tooltips, placeholders, dialog
+  actions, and direct list options. Native and Foundation workflows run it beside the 263-key
+  catalog audit, and the foundation check requires the script.
+- l10n `3362732be198450ff1ca00f30ec092aab2cf4189` contains 387 messages and all 59 generated
+  resources. Local formatting, GUI-feature check, strict Clippy, 131 demo-provider tests with 2
+  ignored, both localization audits, l10n synchronization, Flatpak metadata, and diff checks
+  passed. The host GUI all-target linker limitation remains documented; remote Native covers it.
+- Linux push Native/Flatpak/Foundation `29703945583`/`29703945586`/`29703945637` and PR
+  Native/Flatpak/Foundation `29703946800`/`29703946783`/`29703946789` all passed.
+
 ## 2026-07-19 — Linux routing allow/deny and request-limit checkpoint
 
 Assumption: provider/model allow-deny lists, minimum quality, and maximum request bytes are
