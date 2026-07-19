@@ -200,9 +200,10 @@ The Linux row above is superseded by the current EPUB checkpoint: Core `554c0952
 
 Linux-first accessible progress checkpoint: Linux `ca040585db0baaced263d438714110ddfdb315b0` adds
 the native GTK document-progress role, localized completed/total text, bounded fraction, and
-hidden reset behavior. Native `29670131311`, Foundation `29670131969`, and Flatpak `29670131964`
-passed, with code-head and pull-request reruns also passing. Orca speech, manual visual review,
-prompt approval, signing, distributable artifacts, and stable release remain open.
+hidden reset behavior. Push Native `29670131311`, Foundation `29670131313`, and Flatpak
+`29670131281` passed; PR reruns `29670131967`, `29670131969`, and `29670131964` also passed.
+Orca speech, manual visual review, prompt approval, signing, distributable artifacts, and stable
+release remain open.
 
 Linux-first text-PDF checkpoint: Core `4f03618ffb1f37f27fb1edcf2de5a80e3bec540d` adds bounded PDF
 object/page inspection, page-aware text segments, basic coordinates and reading-order boundaries,

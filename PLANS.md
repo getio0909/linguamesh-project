@@ -1189,9 +1189,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   native GTK progress-bar role with a bounded completed/total fraction. Linux revision
   `ca040585db0baaced263d438714110ddfdb315b0` adds localized progress text, a clamped fraction,
   hidden-reset behavior, and GTK regression coverage. Local Rust/l10n/OCR checks passed; Native
-  `29670131311`, Foundation `29670131969`, and Flatpak `29670131964` passed, as did the preceding
-  code-head and pull-request reruns. Orca speech, manual visual review, prompt approval, other
-  clients, and release artifacts remain open.
+  push runs Native `29670131311`, Foundation `29670131313`, and Flatpak `29670131281` passed;
+  PR reruns `29670131967`/`29670131969`/`29670131964` also passed. Orca speech, manual visual
+  review, prompt approval, other clients, and release artifacts remain open.
 
 ## Checkpoint update protocol
 
