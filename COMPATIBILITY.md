@@ -316,3 +316,13 @@ diff checks passed. Push Native `29676519123` (job `88164823336`), Foundation `2
 Flatpak `29676519121` (job `88164823343`) passed; PR Native `29676520477`, Foundation `29676520497`,
 and Flatpak `29676520498` (job `88164827465`) also passed. This strengthens Linux Scenario 17
 evidence but does not claim a physical network outage, third-party daemon, or stable release.
+
+Linux-first plural UI and provider-preservation checkpoint: Linux `8d84636636c969e70943b534deba3818381daed6`
+wires a localized plural file count into the GTK document-jobs dialog and resolves the model
+discovery placeholder through the canonical catalog. It also retains the typed offline `Network`
+failure regression and previous-provider continuation from `b09f474`, with a five-second bound.
+Local formatting, GUI checks, strict Clippy, 107 passing tests (2 ignored), the 213-key audit,
+l10n synchronization, and diff checks passed. Push Native `29676780532`, Foundation `29676780527`,
+and Flatpak `29676780531` passed; PR Native `29676781353`, Foundation `29676781358`, and Flatpak
+`29676781369` also passed. Translated-copy, visual/RTL, Orca, physical offline, other clients,
+signing, distributable artifacts, and stable-release evidence remain open.

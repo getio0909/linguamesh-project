@@ -1283,6 +1283,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Linux Scenario 17 evidence; physical offline conditions, third-party daemon, other clients, and
   stable release remain open.
 
+- 2026-07-19: Assumption: visible GTK plural counts and model-discovery placeholders are
+  user-facing strings and must use the canonical catalog. Linux
+  `8d84636636c969e70943b534deba3818381daed6` wires the document-jobs dialog plural count and model
+  placeholder, while retaining the bounded typed offline failure and previous-provider
+  continuation regression. Local formatting, GUI checks, strict Clippy, 107-test demo-provider
+  suite (2 ignored), 213-key audit, l10n sync, and diff checks passed. Push Native/Foundation/
+  Flatpak `29676780532`/`29676780527`/`29676780531` and PR `29676781353`/`29676781358`/`29676781369`
+  passed. Translated-copy, visual/RTL, Orca, physical offline, other clients, signing, artifacts,
+  and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
