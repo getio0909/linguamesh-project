@@ -198,11 +198,12 @@ Native SDK `29645385324` passed. This remains unreleased.
 
 The Linux row above is superseded by the current EPUB checkpoint: Core `554c09521b57de45be154a99edfbf24aa2fc6538`, Linux `3f0f659ccba195e58789d80d9fdc20b087a10b68`, schema 13, and passed Core CI `29652884450`, Native SDK `29652884430`, Linux Native `29652937783`, Foundation `29652937750`, and Flatpak `29652937761`. EPUB package metadata, navigation, CSS, resources, visible XHTML/HTML text, and OPF language updates are included; PDF/OCR and other platform clients remain open.
 
-Linux-first accessible progress and diagnostics-label checkpoint: Linux `355481d937b3722e509dbd05cc1575c4e71be143` adds
+Linux-first accessible progress, diagnostics-label, and pause-error localization checkpoint: Linux `1d96c9825b83cdc1cd6a2783b61fdd678b89e510` adds
 the native GTK document-progress role, localized completed/total text, bounded fraction, and
 hidden reset behavior, catalog-backed diagnostics summary, and localized fixed diagnostics labels
-and state values. Push Native `29671444706`, Foundation `29671444731`, and Flatpak `29671444733`
-passed; PR reruns `29671445475`, `29671445499`, and `29671445495` also passed. Orca speech, manual
+and state values, and routes document-pause queue errors through the catalog-backed reducer path.
+Push Native `29672046465`, Foundation `29672046491`, and Flatpak `29672046488` passed; PR reruns
+`29672047299`, `29672047295`, and `29672047296` also passed. Orca speech, manual
 visual review, prompt approval, signing, distributable artifacts, and stable release remain open.
 
 Linux-first text-PDF checkpoint: Core `4f03618ffb1f37f27fb1edcf2de5a80e3bec540d` adds bounded PDF

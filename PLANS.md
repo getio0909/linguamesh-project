@@ -1204,6 +1204,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29671445475`/`29671445499`/`29671445495`. Translated-copy, plural, visual locale/RTL, Orca
   speech, other clients, and stable-release evidence remain open.
 
+- 2026-07-19: Assumption: a document-pause command rejected by the bounded worker queue is
+  user-visible UI and must use the same catalog-backed error rendering as other worker failures.
+  Linux `1d96c9825b83cdc1cd6a2783b61fdd678b89e510` routes that queue-send failure through the
+  reducer error path. Push Native `29672046465`, Foundation `29672046491`, and Flatpak `29672046488`
+  passed, as did PR reruns `29672047299`/`29672047295`/`29672047296`. Complete visible-string
+  gettext coverage, translated-copy/plural, visual locale/RTL, Orca speech, prompt approval,
+  other clients, and stable-release evidence remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
