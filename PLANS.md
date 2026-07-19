@@ -113,10 +113,13 @@ Assumption: Planned files and commands are not evidence until they exist and com
   and Linux remote Native/Foundation/Flatpak gates passed at the pinned revisions.
 - [x] Add Linux routing-profile persistence and a catalog-backed non-secret profile editor on top
   of Core `routing_planner_v1`; ordinary-text dispatch and Ordered/Automatic fallback execution
-  are verified, while document-job routing remains future work.
+  are verified, while document-job selection is now covered by the Linux document-routing slice.
 - [x] Execute Linux ordinary-text Ordered/Automatic routing fallback chains, including unavailable
   candidate connection skipping, retryable stream-failure switching, typed fallback events, and
   event-sequence/partial-output preservation; document-job routing remains out of scope.
+- [x] Route Linux document jobs through a selected saved document-capable routing candidate,
+  persist the selected provider/model options, preserve pause/resume segment state, and keep
+  document-job fallback disabled.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -204,6 +207,29 @@ resume semantics are specified and independently verified.
 
 Complete document-job routing, other clients, accepted draft publication, distributable artifacts,
 and stable-release evidence remain open.
+
+## Completed Linux-first checkpoint — document-job saved routing execution
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-DOCUMENT-1`
+
+Linux `08a85653b303345bc54e242405a537a03fb1ad32` routes a document job through the selected saved
+Core routing profile when the candidate is document-capable. The worker resolves the candidate
+through the host secret broker, persists the actual provider/model options, emits a typed non-secret
+routing decision, and reuses the selected manager for segment continuation and same-process
+pause/resume. Document jobs never auto-fallback, even when a profile advertises explicit fallback;
+restart recovery currently reuses the persisted provider/model options because the document-job
+schema does not yet persist a routing-profile ID.
+
+Local Linux evidence: 126 tests passed with 2 ignored; GUI all-target check, strict Clippy,
+formatting, localization sync and 228-key audit, Flatpak metadata, and diff checks passed. Linux
+push and PR Native/Flatpak/Foundation gates all passed: Native `29693935010`/`29693936875`,
+Flatpak `29693934970`/`29693936887`, and Foundation `29693934974`/`29693936881`.
+
+Assumption: retaining the schema-15 document snapshot and actual selected provider/model is the
+smallest complete Linux slice; persisting the profile ID and cross-client routing remain future work.
+
+Other clients, accepted draft publication, distributable artifacts, and stable-release evidence
+remain open.
 
 ## Active Linux-first checkpoint — secure provider foundation
 

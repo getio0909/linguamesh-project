@@ -58,8 +58,11 @@ validated non-secret routing profiles through the worker/storage boundary and ex
 requests through a selected saved routing profile, resolving candidates through the host secret
 broker. Ordered/Automatic chains now skip unavailable saved providers, retry retryable stream
 failures across remaining candidates, preserve partial output, remap event sequences, and emit
-typed fallback notices without endpoints, credentials, or source content. Document-job routing and
-other client controls remain unimplemented.
+typed fallback notices without endpoints, credentials, or source content. Linux document jobs now
+select a saved document-capable routing candidate, persist the selected provider/model options,
+and emit a typed non-secret decision; document jobs never auto-fallback. The current schema-15
+snapshot does not persist a routing-profile ID, so restart recovery resumes with the persisted
+provider/model options. Other client controls remain unimplemented.
 The document-job queue now renders source, technical format, lifecycle state, and completed/total
 metadata through catalog templates and stable state labels rather than Rust debug formatting. Linux
 source-referenced localization keys are now statically audited against the canonical catalog in
@@ -117,6 +120,29 @@ resume semantics are independently specified and independently verified.
 
 This closes ordinary-text multi-candidate routing execution only. Document-job routing, other
 clients, visual/Orca review, distributable artifacts, and a stable release remain open.
+
+## 2026-07-19 — Linux document-job saved routing checkpoint
+
+Assumption: the smallest complete Linux document-routing slice selects one saved document-capable
+candidate, records the actual provider/model options in the existing schema-15 snapshot, and keeps
+automatic fallback disabled; persisting the routing-profile ID is deferred to a future migration.
+
+- Linux `08a85653b303345bc54e242405a537a03fb1ad32` adds a routed document-job command. It loads the
+  saved profile, selects a document-capable candidate through `routing_planner_v1`, resolves that
+  provider through the host secret broker, and emits `RoutingDecisionSelected` with only profile,
+  provider/model, and eligible/rejected/fallback counts. The selected manager is reused for segment
+  continuation and same-process pause/resume; failed starts reset the job to Pending.
+- The GTK document-job action prefers the selected saved routing profile over the explicit fallback
+  checkbox. Document jobs reject Incognito persistence and never switch to another candidate after
+  a start or stream failure, even if the profile allows explicit fallback.
+- Local Linux evidence: 126 demo-provider tests passed with 2 ignored; GUI all-target check, strict
+  Clippy, formatting, localization sync and 228-key audit, Flatpak metadata, and diff checks passed.
+- Linux push and PR Native/Flatpak/Foundation gates passed: Native `29693935010`/`29693936875`,
+  Flatpak `29693934970`/`29693936887`, and Foundation `29693934974`/`29693936881`.
+
+This advances Linux document-routing evidence without claiming persisted profile-ID recovery,
+concurrent document execution, other clients, visual/Orca review, distributable artifacts, or a
+stable release.
 
 ## 2026-07-19 — Linux visible-string gettext coverage checkpoint
 
