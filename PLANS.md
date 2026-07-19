@@ -127,16 +127,16 @@ ordered multi-provider chains and automatic routing remain future work.
 
 Change identifier: `LM-CHANGE-2026-07-ROUTING-PLANNER-1`
 
-Core now owns the non-secret routing policy contract. `RoutingProfile` supports Manual, Ordered, and
+Core now owns the non-secret routing policy contract and schema-15 persistence. `RoutingProfile` supports Manual, Ordered, and
 Automatic modes, bounded local/privacy/capability/size/locale/quality/latency/cost constraints,
 stable rejection reasons, deterministic ranking, and explicit fallback ordering. Linux negotiates
-`routing_planner_v1` before provider work and pins Core `7fabf6130f6813638866814146dac83544d522c3`.
+`routing_planner_v1` before provider work and pins Core `c3ccf229af29058fe05b9e1a13b12542cb87f2b9`.
 The GTK surface still exposes only the existing explicitly approved single fallback; automatic
 routing and ordered multi-provider chain controls remain future work.
 
-Evidence: Core CI `29687564822`, Core Native SDK `29687564814`; Linux push Native/Foundation/Flatpak
-`29687648441`/`29687648443`/`29687648493`; Linux PR Native/Foundation/Flatpak
-`29687649819`/`29687649832`/`29687649826` all passed.
+Evidence: Core CI `29688148375`, Core Native SDK `29688148380`; Linux push Native/Foundation/Flatpak
+`29688187132`/`29688187170`/`29688187176`; Linux PR Native/Foundation/Flatpak
+`29688188380`/`29688188373`/`29688188394` all passed.
 
 ## Active Linux-first checkpoint — secure provider foundation
 
