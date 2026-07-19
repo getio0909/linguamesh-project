@@ -1175,6 +1175,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Orca speech, physical desktop review, complete visible-string gettext coverage, other clients,
   and stable-release evidence remain open.
 
+- 2026-07-19: Assumption: literal keys passed to Linux localization helpers must exist in the
+  canonical catalog; dynamic keys remain covered by runtime localization tests. Linux revision
+  `a26ee1855e6d46ac1c174f1388bae5eb09420588` adds the dependency-free
+  `tools/check-localization-keys.py` audit and runs it in Native/Foundation validation. The audit
+  covered 187 source keys against the 306-message l10n revision
+  `3f3c1a1154b66d25f2936a02b8a08d2a8fc8a878`; Native `29669448961`, Foundation `29669448991`,
+  Flatpak `29669448995`, and pull-request reruns `29669459291`/`29669459309`/`29669459312` passed.
+  Translated-copy, plural, visual locale/RTL, Orca speech, other clients, and stable-release
+  evidence remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
