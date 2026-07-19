@@ -1224,6 +1224,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29672743058`/`29672742959`/`29672742990` passed. End-user approval UX, broader storage
   faults, complete gettext/plural/visual/Orca review, other clients, and stable release remain open.
 
+- 2026-07-19: Central revision `10657ea` records the Linux prompted-flow checkpoint, l10n
+  `f00b00fda307660000b0e4068c5ca1072d266df1`, Linux behavioral/evidence heads, updated
+  compatibility and release-manifest pins, and the unreleased posture. Coordination run
+  `29673058773` passed Linux job `88155425506` and PowerShell job `88155425531`.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
