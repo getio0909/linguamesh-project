@@ -1395,6 +1395,17 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29682268238`/`29682268236`/`29682268234` passed. Macro/signature behavior, visual review, other
   clients, artifacts, and stable release remain open.
 
+- 2026-07-19: Assumption: the shared Core OOXML archive boundary is authoritative for Linux DOCX,
+  PPTX, and XLSX safety; Linux must consume the exact immutable pin. Core
+  `63fc0ca62e2b1d9bd168a60e6c9051ac338f6486` rejects entries at least 1 KiB whose uncompressed size
+  exceeds 200 times the compressed size, in addition to encrypted, symlinked, duplicate, traversal,
+  entry-count, and total-size limits. Core CI `29682666941` and Native SDK `29682666929` passed.
+  Linux `914793f013e614fe2a12a9430fc76b7bff302830` updated Native/Flatpak pins and documentation;
+  local 115-pass/2-ignored validation and Flatpak metadata checks passed. Push gates
+  `29682975678`/`29682975679`/`29682975675` and PR gates
+  `29682976712`/`29682976695`/`29682976678` passed. Macro/signature behavior, physical visual review,
+  other clients, artifacts, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
