@@ -1336,6 +1336,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29678588077`/`29678588076`/`29678588073` passed. Human translated-copy, visual/RTL, Orca,
   physical corruption recovery, other clients, artifacts, and stable release remain open.
 
+- 2026-07-19: Assumption: the GTK regression must drive the production locale dropdown and
+  preset-notification path. Linux `f14fc89f3aecb20b3ac9611642de15d1a670ebf6` verifies localized
+  OpenAI/Ollama defaults, user-edited name preservation, and demo-endpoint restoration. Local
+  formatting, GUI checks, strict Clippy, 108-test demo-provider suite (2 ignored), l10n sync,
+  215-key audit, and diff checks passed. Push Native/Foundation/Flatpak
+  `29679490910`/`29679490922`/`29679490960` and PR `29679492044`/`29679492018`/`29679492030`
+  passed. This strengthens Linux test evidence; human translated-copy, visual/RTL, Orca,
+  physical corruption recovery, other clients, artifacts, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
