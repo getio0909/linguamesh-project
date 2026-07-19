@@ -47,6 +47,15 @@ validation passed, and push Native/Flatpak/Foundation runs `29704472892`/`297044
 plus PR Native/Flatpak/Foundation runs `29704474147`/`29704474173`/`29704474207` all passed.
 Complete translated-copy, plural, visual/RTL, and Orca review remain manual boundaries.
 
+## Linux-first Flatpak integrity-evidence checkpoint
+
+Linux `dc1c0bc3485c95a57810ac658dab2c0a232f1af7` adds CI-only SHA-256 and deterministic SPDX 2.3
+SBOM sidecars for the generated Flatpak bundle. The evidence generator reads the bundle and locked
+Cargo package set; it does not sign or publish a stable artifact. Push Native/Flatpak/Foundation
+runs `29704836385`/`29704836408`/`29704836382` and PR Native/Flatpak/Foundation runs
+`29704837824`/`29704837805`/`29704837827` passed, with non-expired evidence artifacts uploaded on
+both push and PR runs. Stable release packaging remains open.
+
 ## Linux-first duplicate routing-profile ID checkpoint
 
 Linux `21c89c7e9c671617477a6410240ff1fb0a0c9ff7` rejects a new profile whose validated ID already

@@ -2,6 +2,20 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Flatpak checksum and SBOM evidence checkpoint
+
+Assumption: Linux prerelease packaging should emit reproducible integrity evidence without implying
+that an unsigned CI artifact is a stable release.
+
+- Linux `dc1c0bc3485c95a57810ac658dab2c0a232f1af7` adds a dependency-free generator that hashes the
+  Flatpak bundle and emits a deterministic SPDX 2.3 SBOM from the locked Cargo package set. The
+  workflow uploads `SHA256SUMS` and `SBOM.spdx.json` sidecars after the SDK build.
+- Local self-check validated the SHA-256 sidecar and SPDX schema with 230 locked packages. Push
+  Native/Flatpak/Foundation `29704836385`/`29704836408`/`29704836382` and PR
+  Native/Flatpak/Foundation `29704837824`/`29704837805`/`29704837827` all passed; non-expired
+  evidence artifacts were present on both Flatpak runs.
+- This remains CI-only prerelease evidence; no signing, notarization, or stable artifact is claimed.
+
 ## 2026-07-19 — Flatpak source-pin integrity checkpoint
 
 Assumption: Flatpak CI must build the reviewed Linux application revision, or a source-compatible

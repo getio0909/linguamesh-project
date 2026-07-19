@@ -149,6 +149,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   run it in Native/Foundation CI, and verify the pinned l10n resources and all Linux gates.
 - [x] Make the Flatpak Linux source pin build-input compatible with the current checkout, validate
   it before the SDK build, and verify full-history push/PR gates.
+- [x] Emit CI-only SHA-256 and deterministic SPDX SBOM sidecars for the Linux Flatpak bundle and
+  verify their upload without claiming a stable release artifact.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -428,6 +430,20 @@ fetches full history in the Flatpak workflow. Local metadata/localization checks
 Native/Flatpak/Foundation runs `29704472892`/`29704472889`/`29704472884` and PR
 Native/Flatpak/Foundation runs `29704474147`/`29704474173`/`29704474207` all passed. This remains
 an unreleased CI integrity checkpoint; distributable and stable artifacts are not claimed.
+
+## Completed Linux-first checkpoint — Flatpak checksum and SBOM evidence
+
+Change identifier: `LM-CHANGE-2026-07-FLATPAK-EVIDENCE-1`
+
+Assumption: Linux prerelease packaging should provide reproducible bundle integrity and dependency
+evidence, while unsigned CI outputs remain explicitly non-release artifacts.
+
+Linux `dc1c0bc3485c95a57810ac658dab2c0a232f1af7` adds a dependency-free evidence generator that
+writes `SHA256SUMS` and a deterministic SPDX 2.3 SBOM from the Flatpak bundle and locked Cargo
+package set. The Flatpak workflow uploads these sidecars after the SDK build; push Native/Flatpak/
+Foundation runs `29704836385`/`29704836408`/`29704836382` and PR Native/Flatpak/Foundation runs
+`29704837824`/`29704837805`/`29704837827` all passed, with non-expired evidence artifacts present
+on both Flatpak runs. Stable signing, publication, and cross-platform release artifacts remain open.
 
 ## Completed Linux-first checkpoint — multiple routing-profile IDs
 
