@@ -1387,12 +1387,13 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `9ed0557a87b5c042d38e05cad5abf4a2afe487f9` adds end-to-end worker regressions that translate
   persisted DOCX and XLSX jobs through the fake provider, reconstruct the completed OOXML, and
   retain binary resources, formulas, and numeric cells; docs revision
-  `468b915f050864bddff31001669ec80123263ac3` records the test names. Local formatting, GUI
-  all-target checks, strict Clippy, 115-test demo-provider suite (2 ignored), l10n sync, 215-key
-  audit, and diff checks passed. Push Native/Foundation/Flatpak
-  `29681947505`/`29681947528`/`29681947508` and PR
-  `29681948831`/`29681948813`/`29681948798` passed. Macro/signature behavior, visual review,
-  other clients, artifacts, and stable release remain open.
+  `468b915f050864bddff31001669ec80123263ac3` and validation docs revision
+  `541d7cac307dfb4d63b61568cdc4ff441ed17c62` record the test names and actual local checks.
+  Local formatting, GUI all-target checks, strict Clippy, 115-test demo-provider suite (2 ignored),
+  l10n sync, 215-key audit, and diff checks passed. Push Native/Foundation/Flatpak
+  `29682266701`/`29682266727`/`29682266698` and PR
+  `29682268238`/`29682268236`/`29682268234` passed. Macro/signature behavior, visual review, other
+  clients, artifacts, and stable release remain open.
 
 ## Checkpoint update protocol
 

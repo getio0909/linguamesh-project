@@ -75,15 +75,16 @@ fixtures and contain no user paths or credentials.
 - Linux `9ed0557a87b5c042d38e05cad5abf4a2afe487f9` adds worker regressions that create persisted
   DOCX and XLSX jobs, translate all pending segments through the fake provider, reconstruct the
   completed packages, and verify translated text while preserving binary resources, formulas, and
-  numeric cells. Documentation revision `468b915f050864bddff31001669ec80123263ac3` records the
-  test names and validation boundary.
+  numeric cells. Documentation revisions `468b915f050864bddff31001669ec80123263ac3` and
+  `541d7cac307dfb4d63b61568cdc4ff441ed17c62` record the test names, validation boundary, and actual
+  local checks.
 - Local Linux validation passed: formatting, GUI all-target check, strict Clippy, localization
   audit, l10n synchronization, diff check, and `cargo test --features demo-provider --offline`
   with 115 passed and 2 ignored.
-- Linux push Native `29681947505` (job `88179536820`), Foundation `29681947528` (job
-  `88179536691`), and Flatpak `29681947508` (job `88179536581`) passed. PR Native
-  `29681948831` (job `88179540449`), Foundation `29681948813` (job `88179540419`), and Flatpak
-  `29681948798` (job `88179540411`) also passed.
+- Linux push Native `29682266701` (job `88180407003`), Foundation `29682266727` (job
+  `88180407046`), and Flatpak `29682266698` (job `88180407090`) passed. PR Native
+  `29682268238` (job `88180411020`), Foundation `29682268236` (job `88180411096`), and Flatpak
+  `29682268234` (job `88180411062`) also passed.
 
 This strengthens Linux evidence for mandatory Scenarios 10 and 11 without claiming macro/signature
 coverage, visual review, other clients, release artifacts, or a stable release.
