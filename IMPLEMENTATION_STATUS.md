@@ -54,8 +54,31 @@ profiles, and session-only profiles never fall back.
 The document-job queue now renders source, technical format, lifecycle state, and completed/total
 metadata through catalog templates and stable state labels rather than Rust debug formatting. Linux
 source-referenced localization keys are now statically audited against the canonical catalog in
-Native and Foundation CI.
+Native and Foundation CI. Linux now exposes localized OpenAI-compatible and native Ollama provider
+presets in GTK, preserving user-entered endpoint edits while switching protocol defaults.
 No stable product release, completed native client, or released SDK artifact is claimed here.
+
+## 2026-07-19 — Native Ollama GTK preset checkpoint
+
+Assumption: the verified native Ollama worker path is ready for explicit Linux user selection, while
+an independently installed daemon remains an external interoperability gate.
+
+Linux `07463ab9cbab8e2d16e96c3381b2ac13428b88de` adds localized OpenAI-compatible and native Ollama
+presets to the GTK provider form. The native selection maps to the stable `ollama`/`ollama_chat`
+pair, restores with saved profiles, updates only untouched default name/endpoint fields, and uses
+the native `/api/` endpoint tooltip. The GTK regression connects to the deterministic `/api/`
+fixture, discovers `llama3.2:latest`, streams `你好，Ollama！` without a credential, and checks
+Simplified Chinese labels and accessible label relations.
+
+Local `cargo check --features gui --all-targets --offline`, test-source checking, the 105-test
+demo-provider suite, l10n sync, and documentation/manifest checks passed. The host cannot link the
+GTK binary because installed GTK/libadwaita symbols are older than the gtk-rs headers; remote Native,
+Foundation, and Flatpak runs for this revision are required evidence. l10n revision
+`d3d838198027e2104583296eb3e0f6fadc283e4e` contains 332 messages and bundle SHA-256
+`0650b68a49daf27b56c95ae149cd5c29621d890ba4c7554c7c79d5690e38a05b`.
+
+The fixture still does not claim third-party daemon interoperability, GPU/desktop rendering, Orca,
+visual copy review, stable release artifacts, or other clients.
 
 ## 2026-07-19 — Native Ollama `/api` Linux checkpoint
 

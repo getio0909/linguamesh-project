@@ -1252,6 +1252,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   the native Ollama compatibility evidence, and the unreleased limitation boundary. Coordination
   run `29674950216` passed Linux job `88160536390` and PowerShell job `88160536391`.
 
+- 2026-07-19: Assumption: verified native Ollama worker support is ready for explicit Linux GTK
+  selection while third-party daemon interoperability remains external. l10n `d3d8381` adds five
+  Linux provider-preset labels/tooltips (332 messages; bundle SHA-256
+  `0650b68a49daf27b56c95ae149cd5c29621d890ba4c7554c7c79d5690e38a05b`). Linux
+  `07463ab9cbab8e2d16e96c3381b2ac13428b88de` adds the localized preset dropdown, saved-profile
+  restoration, default-preserving switching, and a fixture-backed GTK `/api/` connect/translate
+  regression. Local GUI source checks, the 105-test worker suite, and l10n synchronization passed;
+  remote Linux Native/Foundation/Flatpak push and PR gates are pending. Central release and
+  compatibility pins are updated while the train remains unreleased.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

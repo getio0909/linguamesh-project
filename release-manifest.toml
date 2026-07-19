@@ -8,7 +8,7 @@ known_limitations = [
   "Linux Flatpak manifest, generated Cargo source set, desktop metadata, and icon pass static validation at published revision 739538cb27bdcdc4b4f8530da6dcd5110550a310. The GNOME 49 SDK workflow built and smoke-tested the current pinned DOCX/PPTX/XLSX/EPUB/PDF/localized-warning/document-queue/document-job-row-metadata/export-open/fallback/optional-OCR bundle in push run 29672741675; the Native workflow ran the bounded pdftoppm/tesseract OCR fixture, the 208-key canonical localization audit, native document progress-bar role/fraction assertions, localized diagnostics coverage, pause-error localization, and all GTK, portal, AT-SPI, Wayland, and build gates in push run 29672741665. Foundation push run 29672741666 passed; PR reruns 29672743058/29672742959/29672742990 also passed. Physical compositor/GPU rendering, Orca speech, signing, and distributable artifacts remain unverified.",
   "Localization 0.1.0 is a 327-message development bundle whose non-English packs remain unreviewed machine-generated drafts; Linux consumes deterministic bundle SHA-256 53821e2397e6697b7551693c6f5787cc1f88e24d96b3077ac590645a848f1977.",
   "Only mandatory acceptance Scenario 1 has complete release evidence; Linux Scenario 7 and the Linux keyboard traversal checkpoint have Linux client and remote gate evidence, and no scenario has stable-release evidence.",
-  "The Ollama-compatible OpenAI /v1/ and native /api loopback wire contracts are verified with deterministic Linux/Core fixtures; interoperability with a running third-party daemon, GPU acceleration, and GTK preset selection remain unverified."
+  "The Ollama-compatible OpenAI /v1/ and native /api loopback wire contracts are verified with deterministic Linux/Core fixtures; Linux GTK now exposes localized preset selection; interoperability with a running third-party daemon, GPU acceleration, and stable release remain unverified."
 ]
 
 [contracts]
@@ -27,7 +27,7 @@ artifacts = []
 [components.localization]
 repository = "linguamesh-l10n"
 version = "0.1.0"
-source_revision = "f00b00fda307660000b0e4068c5ca1072d266df1"
+source_revision = "d3d838198027e2104583296eb3e0f6fadc283e4e"
 minimum_compatible_version = "0.1.0"
 artifacts = []
 
@@ -55,6 +55,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "a45ad953738766dc9fba5d9a6bd9e3b3280c62fa"
+source_revision = "07463ab9cbab8e2d16e96c3381b2ac13428b88de"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []
