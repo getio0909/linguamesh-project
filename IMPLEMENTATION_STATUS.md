@@ -120,7 +120,8 @@ release remain open.
 Remote evidence for this head passed: Linux push Native `29691040234`, Foundation `29691040260`,
 and Flatpak `29691040243`; duplicate PR-triggered Native `29691041454`, Foundation `29691041501`,
 and Flatpak `29691041451`. The corresponding jobs were `88203697224`, `88203697367`,
-`88203697248`, `88203700980`, `88203701027`, and `88203700779`.
+`88203697248`, `88203700980`, `88203701027`, and `88203700779`. Central coordination commit
+`bcff9b563df6f72d8a285ba4a29e8ec799d666a0` passed workflow `29691253266`.
 
 ## 2026-07-19 — Linux text translation retry checkpoint
 

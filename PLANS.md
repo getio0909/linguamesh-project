@@ -155,7 +155,8 @@ delete profiles. It does not yet select a routing profile for actual translation
 The l10n catalog is pinned to `5f98f8bf760bb552c5d9e6cc7ace575e427bae10` (350 messages). Local
 l10n/Linux/Flatpak validation passed. Linux push Native/Foundation/Flatpak
 `29691040234`/`29691040260`/`29691040243` passed, as did duplicate PR-triggered
-Native/Foundation/Flatpak `29691041454`/`29691041501`/`29691041451`.
+Native/Foundation/Flatpak `29691041454`/`29691041501`/`29691041451`. Central coordination
+commit `bcff9b563df6f72d8a285ba4a29e8ec799d666a0` passed workflow `29691253266`.
 
 ## Active Linux-first checkpoint — secure provider foundation
 
