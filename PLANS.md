@@ -99,6 +99,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   progress/state metadata, empty-state handling, and selection back into the existing job controls.
 - [x] Localize Linux document-job row format, lifecycle state, and completed/total metadata through
   the canonical l10n catalog, replacing Rust debug-format presentation.
+- [x] Add native Linux DOCX/XLSX package regression fixtures that exercise wrapper import and Core
+  reconstruction while preserving non-text package parts, formulas, numbers, and unselected values.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -1344,6 +1346,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29679490910`/`29679490922`/`29679490960` and PR `29679492044`/`29679492018`/`29679492030`
   passed. This strengthens Linux test evidence; human translated-copy, visual/RTL, Orca,
   physical corruption recovery, other clients, artifacts, and stable release remain open.
+
+- 2026-07-19: Assumption: bounded OOXML package behavior must be verified through the Linux native
+  import wrapper, not only through Core codec unit tests. Linux `258f4b3d2537e3920f63dbea561649483489d036`
+  adds in-memory DOCX and XLSX fixtures: paragraph/table/header text and image retention, selected
+  shared-string translation, unselected-value preservation, formula/number preservation, and
+  source-buffer immutability. Local formatting, GUI checks, strict Clippy, 110-test demo-provider
+  suite (2 ignored), l10n sync, 215-key audit, and diff checks passed. Push Native/Foundation/Flatpak
+  `29680097142`/`29680097156`/`29680097153` and PR `29680098361`/`29680098362`/`29680098380` passed.
+  This advances Linux Scenarios 10–11 evidence; macro/signature behavior, visual review, other
+  clients, artifacts, and stable release remain open.
 
 ## Checkpoint update protocol
 

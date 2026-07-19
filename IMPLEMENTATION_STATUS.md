@@ -56,7 +56,29 @@ metadata through catalog templates and stable state labels rather than Rust debu
 source-referenced localization keys are now statically audited against the canonical catalog in
 Native and Foundation CI. Linux now exposes localized OpenAI-compatible and native Ollama provider
 presets in GTK, preserving user-entered endpoint edits while switching protocol defaults.
+Linux file-import regression coverage now exercises bounded DOCX package reconstruction with tables,
+headers, and retained image parts, plus XLSX shared-string selection while preserving unselected
+values, formulas, numbers, and image parts.
 No stable product release, completed native client, or released SDK artifact is claimed here.
+
+## 2026-07-19 — Linux office-package import checkpoint
+
+Assumption: Linux's bounded OOXML import contract should be proven through the native wrapper as well
+as Core codec tests; the fixture uses only in-memory ZIP packages and never writes to a user path.
+
+- Linux `258f4b3d2537e3920f63dbea561649483489d036` adds native `file_import` regression fixtures for
+  DOCX and XLSX. DOCX coverage translates paragraph, table, and header text while checking that the
+  package's image part survives reconstruction. XLSX coverage translates one selected shared string,
+  preserves an unselected string and inline value, and checks that formula, numeric, and image parts
+  remain intact. The source byte buffers are never modified.
+- Local formatting, GUI all-target checks, strict Clippy, demo-provider tests (110 passed, 2 ignored),
+  l10n synchronization, 215-key audit, and diff checks passed.
+- Linux push Native `29680097142` (job `88174572577`), Foundation `29680097156` (job `88174572714`),
+  and Flatpak `29680097153` (job `88174572545`) passed. PR Native `29680098361` (job `88174576163`),
+  Foundation `29680098362` (job `88174576126`), and Flatpak `29680098380` (job `88174576268`) also passed.
+
+This strengthens Linux evidence for Scenarios 10 and 11 without claiming end-user visual review,
+macro/signature coverage, other clients, release artifacts, or a stable release.
 
 ## 2026-07-19 — Linux GTK fixture localization checkpoint
 
