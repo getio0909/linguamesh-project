@@ -60,9 +60,10 @@ broker. Ordered/Automatic chains now skip unavailable saved providers, retry ret
 failures across remaining candidates, preserve partial output, remap event sequences, and emit
 typed fallback notices without endpoints, credentials, or source content. Linux document jobs now
 select a saved document-capable routing candidate, persist the selected provider/model options,
-and emit a typed non-secret decision; document jobs never auto-fallback. The current schema-15
-snapshot does not persist a routing-profile ID, so restart recovery resumes with the persisted
-provider/model options. Other client controls remain unimplemented.
+and emit a typed non-secret decision; document jobs never auto-fallback. Core schema 16 now stores
+the optional non-secret routing-profile ID, so Linux Resume and Retry reconnect the saved profile
+after worker restart; legacy schema-15 snapshots without that ID retain their persisted provider/
+model resume path. Other client controls remain unimplemented.
 The document-job queue now renders source, technical format, lifecycle state, and completed/total
 metadata through catalog templates and stable state labels rather than Rust debug formatting. Linux
 source-referenced localization keys are now statically audited against the canonical catalog in
@@ -79,6 +80,25 @@ formulas, and numeric cells.
 The reviewed Core archive boundary now also rejects suspicious OOXML compression ratios before XML
 inspection, and Linux consumes that guard through an immutable Core pin.
 No stable product release, completed native client, or released SDK artifact is claimed here.
+
+## 2026-07-19 — Linux routed document restart checkpoint
+
+Assumption: a routed document job must persist only its non-secret routing-profile ID so restart can
+re-run deterministic candidate selection; legacy jobs without that ID continue using saved
+provider/model options. Document fallback remains disabled.
+
+- Core `9926d0f9bf6394c6011c6cc886d142bfeb54e10f` adds schema 16 and the transactional migration
+  for `document_job_options.routing_profile_id`.
+- Linux `202f565f65738345d23c3e19b428a99494ad7cfe` reconnects the saved profile through the host
+  secret broker for Resume and Retry, emits a zero-fallback decision, and translates remaining
+  segments after restart. Regression `document_job_resume_reconnects_saved_routing_profile_after_restart`
+  verifies complete reconstruction.
+- Local Core storage/workspace validation, Linux formatting/checks/tests/Clippy, localization and
+  Flatpak audits, and diff checks passed. Core remote CI/Native SDK passed (`29694632345`,
+  `29694632350`); Linux Native/Foundation push and PR gates passed (`29694926451`, `29694926454`,
+  `29694927642`, `29694927681`). Final Linux push Native/Flatpak/Foundation
+  `29695388000`/`29695388015`/`29695387996` and PR Native/Flatpak/Foundation
+  `29695389589`/`29695389588`/`29695389602` also passed.
 
 ## 2026-07-19 — Linux ordinary-text routing execution checkpoint
 

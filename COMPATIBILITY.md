@@ -13,6 +13,22 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | Localization | `0.1.0` | Message schema `1.0.0`; resource contract `1`; 334 canonical messages including Linux-only status, partial-output, text-import, opt-in image-only PDF OCR controls and errors, glossary CSV import/export and rule-validation errors, PDF fidelity and subtitle readability warnings, document-job actions/dialog/status/tooltip controls, exported-output open/failure actions, Incognito privacy controls, history and translation-memory controls/status, translation-export, provider-profile, provider preset labels/tooltips, source-target, onboarding-stage, active-provider, notification, draft-note, locale selector language names, fixed provider/file/worker errors, reducer-state/category guidance, fixed worker/file/storage/provider-error guidance, construction-stage provider/default-control and request-level glossary copy, diagnostics labels/state values, Secret Service prompt-dismissal guidance, GTK drag-fixture label, built-in provider default names, and Core/loopback startup plus profile-storage error copy; paired PO/MO Linux resources | CI-verified development bundle at l10n revision `85b9d45569ce840c17dc0acc7d7366d6810be48e`, 59 generated artifacts, deterministic bundle SHA-256 `028d25b3637fbc19d41d497a860b414353615b9576db6f852a9f236bcbe770ce`, Localization `29678498771`, Foundation `29678498778`, unreleased |
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 
+## Linux-first routed document restart checkpoint
+
+Core `9926d0f9bf6394c6011c6cc886d142bfeb54e10f` extends the document-job storage contract to
+schema 16 with nullable `routing_profile_id`. The field contains only a validated non-secret
+profile identifier; schema-15 snapshots without it remain readable and continue their persisted
+provider/model resume path. Linux `202f565f65738345d23c3e19b428a99494ad7cfe` reconnects the saved
+profile through the host secret broker for Resume and Retry after restart, emits a zero-fallback
+routing decision, and keeps document fallback disabled.
+
+Local Core storage/workspace validation and Linux formatting, GUI check, 129-test suite (127
+passed, 2 ignored), strict Clippy, localization-key audit, Flatpak metadata validation, and diff
+checks passed. Core CI/Native SDK `29694632345`/`29694632350` passed. Linux Native/Foundation
+push and PR gates `29694926451`/`29694926454`/`29694927642`/`29694927681` passed. Final Linux
+push Native/Flatpak/Foundation `29695388000`/`29695388015`/`29695387996` and PR
+Native/Flatpak/Foundation `29695389589`/`29695389588`/`29695389602` also passed.
+
 Linux-first CSV document checkpoint: Core `5feaa3700764e3f174a69a4b490ae67b2d5cd8c9` adds
 bounded CSV delimiter/quote parsing, selected-column segmentation, safe provider decoding and
 schema-9 persistence. Linux `f198aa539d51f21e2e29b8e366884013ea436360` accepts `.csv` in the native

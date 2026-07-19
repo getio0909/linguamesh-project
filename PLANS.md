@@ -120,6 +120,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Route Linux document jobs through a selected saved document-capable routing candidate,
   persist the selected provider/model options, preserve pause/resume segment state, and keep
   document-job fallback disabled.
+- [x] Persist the non-secret routing-profile ID in Core schema 16 and reconnect that saved profile
+  for Linux document Resume/Retry after worker restart; legacy snapshots without an ID retain their
+  provider/model resume path.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -143,7 +146,7 @@ Change identifier: `LM-CHANGE-2026-07-ROUTING-PLANNER-1`
 Core now owns the non-secret routing policy contract and schema-15 persistence. `RoutingProfile` supports Manual, Ordered, and
 Automatic modes, bounded local/privacy/capability/size/locale/quality/latency/cost constraints,
 stable rejection reasons, deterministic ranking, and explicit fallback ordering. Linux negotiates
-`routing_planner_v1` before provider work and pins Core `d1c03ba84362c0c672c57045a59fc8092db470be`.
+`routing_planner_v1` before provider work and pins Core `9926d0f9bf6394c6011c6cc886d142bfeb54e10f`.
 The GTK surface retains the explicitly approved single fallback control while ordinary-text
 Ordered/Automatic chain execution is covered by the completed checkpoint below.
 
@@ -230,6 +233,26 @@ smallest complete Linux slice; persisting the profile ID and cross-client routin
 
 Other clients, accepted draft publication, distributable artifacts, and stable-release evidence
 remain open.
+
+## Completed Linux-first checkpoint — routed document restart recovery
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-DOCUMENT-RESTART-1`
+
+Core `9926d0f9bf6394c6011c6cc886d142bfeb54e10f` adds schema 16 and a nullable,
+non-secret `document_job_options.routing_profile_id` with a transactional migration. Linux
+`202f565f65738345d23c3e19b428a99494ad7cfe` persists that ID for routed document jobs and reconnects
+the saved profile through the host secret broker for Resume and Retry after restart. Legacy jobs
+without an ID continue through their persisted provider/model options; document fallback remains
+disabled.
+
+Local Core and Linux validation passed, including the 129-test Linux suite and the dedicated
+restart regression. Core CI/Native SDK `29694632345`/`29694632350` passed. Linux push Native and
+Foundation `29694926451`/`29694926454` and PR Native/Foundation `29694927642`/`29694927681` passed.
+Final Linux push Native/Flatpak/Foundation `29695388000`/`29695388015`/`29695387996` and PR
+Native/Flatpak/Foundation `29695389589`/`29695389588`/`29695389602` passed.
+
+Assumption: a nullable route ID preserves backward compatibility for schema-15 snapshots without
+persisting endpoints, credentials, source content, or translated content.
 
 ## Active Linux-first checkpoint — secure provider foundation
 
