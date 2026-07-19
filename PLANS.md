@@ -1185,13 +1185,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Translated-copy, plural, visual locale/RTL, Orca speech, other clients, and stable-release
   evidence remain open.
 
-- 2026-07-19: Assumption: persisted document-job progress is user-visible state and must expose a
-  native GTK progress-bar role with a bounded completed/total fraction. Linux revision
-  `ca040585db0baaced263d438714110ddfdb315b0` adds localized progress text, a clamped fraction,
-  hidden-reset behavior, and GTK regression coverage. Local Rust/l10n/OCR checks passed; Native
-  push runs Native `29670131311`, Foundation `29670131313`, and Flatpak `29670131281` passed;
-  PR reruns `29670131967`/`29670131969`/`29670131964` also passed. Orca speech, manual visual
-  review, prompt approval, other clients, and release artifacts remain open.
+- 2026-07-19: Assumption: the non-sensitive diagnostics panel is user-visible UI and its
+  compatibility summary must follow runtime locale changes without exposing source text, endpoints,
+  or secret references. Linux revision `3a135bf86d3627dafb48d53164e4568a9c9e5c03` routes the Core
+  ABI/protocol header through `diagnostics.summary` and adds Simplified Chinese/source-exclusion
+  regression coverage. Local Rust/l10n/OCR checks passed; push Native `29670658430`, Foundation
+  `29670658434`, and Flatpak `29670658437` passed, as did PR reruns
+  `29670659495`/`29670659502`/`29670659509`. Orca speech, manual visual review, prompt approval,
+  other clients, and release artifacts remain open.
 
 ## Checkpoint update protocol
 
