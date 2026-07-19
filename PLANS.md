@@ -112,7 +112,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   document-job IDs, active-provider mode summaries, and unavailable provider/model labels; l10n
   and Linux remote Native/Foundation/Flatpak gates passed at the pinned revisions.
 - [x] Add Linux routing-profile persistence and a catalog-backed non-secret profile editor on top
-  of Core `routing_planner_v1`; automatic and ordered translation dispatch remain future work.
+  of Core `routing_planner_v1`; ordinary-text dispatch and Ordered/Automatic fallback execution
+  are verified, while document-job routing remains future work.
 - [x] Execute Linux ordinary-text Ordered/Automatic routing fallback chains, including unavailable
   candidate connection skipping, retryable stream-failure switching, typed fallback events, and
   event-sequence/partial-output preservation; document-job routing remains out of scope.

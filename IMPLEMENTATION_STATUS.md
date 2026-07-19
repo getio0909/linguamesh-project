@@ -98,6 +98,27 @@ until their multi-candidate semantics are specified.
 This checkpoint does not claim complete automatic/ordered fallback chains, document-job routing,
 other clients, visual/Orca review, distributable artifacts, or a stable release.
 
+## 2026-07-19 — Linux ordered/automatic routing fallback checkpoint
+
+Assumption: routing fallback remains ordinary-text-only until document-job provider selection and
+resume semantics are independently specified and independently verified.
+
+- Linux `8a3b806490191f858411c802070ccaea6af606b8` executes remaining Core planner candidates for
+  ordinary text. Ordered/Automatic profiles skip unavailable saved providers during initial
+  dispatch; retryable network/timeout stream failures reconnect the next candidate, preserve
+  partial output, remap event sequences, and emit a typed non-sensitive fallback event.
+- Local Linux evidence: 125 tests passed with 2 ignored; GUI all-target check, strict Clippy,
+  formatting, and diff checks passed. The regression
+  `ordered_routing_skips_unavailable_primary_candidate` covers the unavailable-first-candidate
+  path and translated output.
+- Linux push and PR Native/Flatpak/Foundation gates passed: Native
+  `29693117355`/`29693118757`, Flatpak `29693117348`/`29693118741`, Foundation
+  `29693117351`/`29693118742`. Central coordination commit `4c507ca7065fe234f5e62612a9b8cea6839900ac`
+  passed workflow `29693366156`.
+
+This closes ordinary-text multi-candidate routing execution only. Document-job routing, other
+clients, visual/Orca review, distributable artifacts, and a stable release remain open.
+
 ## 2026-07-19 — Linux visible-string gettext coverage checkpoint
 
 Assumption: compound summaries visible to users must localize their complete template rather than
