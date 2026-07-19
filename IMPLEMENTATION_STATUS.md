@@ -2,6 +2,30 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Linux localization placeholder audit final verification
+
+- Documentation-only Linux head `3f5f9ee00dd6359759cec0b96dbc8b6d8b89c70d` passed push
+  Native/Flatpak/Foundation `29707758213`/`29707758214`/`29707758216` and PR
+  Native/Flatpak/Foundation `29707759245`/`29707759269`/`29707759252`.
+- The final Native push evidence artifact was non-expired at 5,590,080 bytes; push and PR Flatpak
+  bundles/evidence and the PR Native artifact were also non-expired. The Linux release remains
+  unsigned prerelease evidence.
+
+## 2026-07-19 — Linux localization placeholder audit evidence
+
+Assumption: literal fallback templates are part of the Linux visible-string contract, so source
+validation should reject malformed braces and placeholder drift before GTK or release checks.
+
+- Linux `3a20620eb95806baadb1b22ef4833302d0438fea` adds a dependency-free audit for literal
+  `text`, `text_plural`, mnemonic, and template calls against the canonical l10n placeholder
+  contract. Local validation checked 363 calls and passed alongside key/visible-string audits,
+  l10n synchronization, formatting, and 131 Rust tests with 2 ignored.
+- Push Native/Flatpak/Foundation `29707410914`/`29707410888`/`29707410893` and PR
+  Native/Flatpak/Foundation `29707412487`/`29707412476`/`29707412474` all passed. Native and
+  Flatpak evidence artifacts were non-expired; this is source-level prerelease evidence only.
+- Human translated-copy/plural/visual review, Orca speech, end-user prompt approval, other clients,
+  signing, rollback, distributable artifacts, and stable-release authorization remain open.
+
 ## 2026-07-19 — Linux performance baseline evidence
 
 Assumption: performance numbers are meaningful only with their runner context and are retained as

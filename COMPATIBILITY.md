@@ -84,6 +84,20 @@ reconstruction, XLSX reconstruction, and saved-profile routing dispatch (`0.404s
 `29706936415`/`29706936411`/`29706936399` passed, and the current Native artifact contains the
 baseline TSV. The values are trend evidence only; no portable budget or stable-release claim is made.
 
+## Linux-first localization-placeholder checkpoint
+
+Linux `3a20620eb95806baadb1b22ef4833302d0438fea` adds a dependency-free source audit for malformed
+braces and placeholder drift in literal catalog-backed fallback templates. Push
+Native/Flatpak/Foundation `29707410914`/`29707410888`/`29707410893` and PR
+Native/Flatpak/Foundation `29707412487`/`29707412476`/`29707412474` passed; Native and Flatpak
+evidence artifacts were non-expired. This remains source-level prerelease evidence, not human
+translated-copy or stable-release approval.
+
+The documentation-only Linux head `3f5f9ee00dd6359759cec0b96dbc8b6d8b89c70d` passed push
+Native/Flatpak/Foundation `29707758213`/`29707758214`/`29707758216` and PR
+`29707759245`/`29707759269`/`29707759252`; final Native and Flatpak evidence artifacts were
+non-expired.
+
 ## Linux-first duplicate routing-profile ID checkpoint
 
 Linux `21c89c7e9c671617477a6410240ff1fb0a0c9ff7` rejects a new profile whose validated ID already

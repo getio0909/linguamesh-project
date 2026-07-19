@@ -157,6 +157,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   native evidence artifact; keep sibling Core/l10n pins and stable-release authorization explicit.
 - [x] Capture and remotely verify a machine-contextual Linux performance baseline for document
   reconstruction and saved-routing dispatch without claiming portable performance numbers.
+- [x] Add and remotely verify a Linux source-level localization placeholder audit for literal
+  fallback templates, keeping malformed braces and placeholder drift out of GTK/release gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -495,6 +497,19 @@ were `0.404s`/`0.382s`/`0.399s`; push Native/Flatpak/Foundation `29706935372`/`2
 `29706935322` and PR Native/Flatpak/Foundation `29706936415`/`29706936411`/`29706936399` all
 passed, with the baseline present in the non-expired Native artifact. These are machine-specific
 trend values, not a stable performance guarantee.
+
+## Completed Linux-first checkpoint — localization placeholder audit
+
+Linux `3a20620eb95806baadb1b22ef4833302d0438fea` adds a dependency-free source parser that checks
+literal `text`, `text_plural`, mnemonic, and template fallback arguments against canonical
+placeholder identities. Native and Foundation CI run the audit beside key and visible-string
+checks; push Native/Flatpak/Foundation `29707410914`/`29707410888`/`29707410893` and PR
+Native/Flatpak/Foundation `29707412487`/`29707412476`/`29707412474` passed with non-expired
+Native and Flatpak artifacts. Documentation-only head `3f5f9ee00dd6359759cec0b96dbc8b6d8b89c70d`
+then passed push Native/Flatpak/Foundation `29707758213`/`29707758214`/`29707758216` and PR
+`29707759245`/`29707759269`/`29707759252`. This verifies source-level fallback safety only;
+translated-copy, plural/visual review, Orca speech, signing, other clients, and stable release
+remain open.
 
 ## Completed Linux-first checkpoint — multiple routing-profile IDs
 
