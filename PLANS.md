@@ -1409,6 +1409,14 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   and Flatpak `29686222028`, all passed. Physical visual review, other clients, artifacts, and stable
   release remain open.
 
+- 2026-07-19: Assumption: optional image-only PDF OCR evidence must be revalidated against the
+  current Linux checkout and real external tools. Linux `0d5989186924362cb3d8de8008e8c57717669dd1`
+  passed `bash tools/run-ocr-test.sh` locally using ImageMagick, Poppler, and Tesseract with the
+  generated private fixture. Push Native/Foundation/Flatpak `29686617153`/`29686617163`/`29686617156`
+  and PR Native/Flatpak/Foundation `29686619015`/`29686619042`/`29686619011` passed. This
+  revalidates the bounded opt-in OCR path; pixel-identical PDF reconstruction, non-English OCR
+  quality, physical visual review, other clients, artifacts, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
