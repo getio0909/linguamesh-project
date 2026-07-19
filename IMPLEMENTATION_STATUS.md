@@ -63,7 +63,7 @@ No stable product release, completed native client, or released SDK artifact is 
 Assumption: the verified native Ollama worker path is ready for explicit Linux user selection, while
 an independently installed daemon remains an external interoperability gate.
 
-Linux `07463ab9cbab8e2d16e96c3381b2ac13428b88de` adds localized OpenAI-compatible and native Ollama
+Linux `75d5ded3d6ab25e9a35c8614899b8ccc3cf94535` adds localized OpenAI-compatible and native Ollama
 presets to the GTK provider form. The native selection maps to the stable `ollama`/`ollama_chat`
 pair, restores with saved profiles, updates only untouched default name/endpoint fields, and uses
 the native `/api/` endpoint tooltip. The GTK regression connects to the deterministic `/api/`
@@ -72,8 +72,10 @@ Simplified Chinese labels and accessible label relations.
 
 Local `cargo check --features gui --all-targets --offline`, test-source checking, the 105-test
 demo-provider suite, l10n sync, and documentation/manifest checks passed. The host cannot link the
-GTK binary because installed GTK/libadwaita symbols are older than the gtk-rs headers; remote Native,
-Foundation, and Flatpak runs for this revision are required evidence. l10n revision
+GTK binary because installed GTK/libadwaita symbols are older than the gtk-rs headers. Remote push
+Native `29675743173` (job `88162744428`), Foundation `29675743166` (job `88162744434`), and Flatpak
+`29675743159` (job `88162744336`) passed; PR Native `29675744738` (job `88162748418`), Foundation
+`29675744785` (job `88162748481`), and Flatpak `29675744821` (job `88162748719`) also passed. l10n revision
 `d3d838198027e2104583296eb3e0f6fadc283e4e` contains 332 messages and bundle SHA-256
 `0650b68a49daf27b56c95ae149cd5c29621d890ba4c7554c7c79d5690e38a05b`.
 

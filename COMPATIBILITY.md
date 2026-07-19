@@ -288,10 +288,13 @@ protected-span restoration. Linux `a45ad953738766dc9fba5d9a6bd9e3b3280c62fa` exe
 `29674768357` (job `88160010009`), and Flatpak `29674768359` (job `88160009822`) also passed. A running third-party daemon, GPU acceleration, and GTK
 preset selection remain unverified; Android, Windows, and macOS stay deferred.
 
-Linux-first native Ollama GTK preset checkpoint: Linux `07463ab9cbab8e2d16e96c3381b2ac13428b88de`
+Linux-first native Ollama GTK preset checkpoint: Linux `75d5ded3d6ab25e9a35c8614899b8ccc3cf94535`
 adds localized OpenAI-compatible and native Ollama selections to the provider form, restores the
 preset for saved profiles, preserves user-edited endpoints when switching, and exercises the
 `ollama_chat` profile through a GTK fixture-backed `/api/` connection. Local worker, source-level
-GUI checks, localization sync, and documentation validation passed; Native, Foundation, and Flatpak
-push and PR gates are pending for this revision. A running third-party daemon, GPU acceleration,
-Orca/visual review, stable release, and other clients remain unverified.
+GUI checks, localization sync, and documentation validation passed. Push Native `29675743173`
+(job `88162744428`), Foundation `29675743166` (job `88162744434`), and Flatpak `29675743159`
+(job `88162744336`) passed; PR Native `29675744738` (job `88162748418`), Foundation `29675744785`
+(job `88162748481`), and Flatpak `29675744821` (job `88162748719`) also passed. A running
+third-party daemon, GPU acceleration, Orca/visual review, stable release, and other clients remain
+unverified.

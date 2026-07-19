@@ -1256,11 +1256,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   selection while third-party daemon interoperability remains external. l10n `d3d8381` adds five
   Linux provider-preset labels/tooltips (332 messages; bundle SHA-256
   `0650b68a49daf27b56c95ae149cd5c29621d890ba4c7554c7c79d5690e38a05b`). Linux
-  `07463ab9cbab8e2d16e96c3381b2ac13428b88de` adds the localized preset dropdown, saved-profile
+  `75d5ded3d6ab25e9a35c8614899b8ccc3cf94535` adds the localized preset dropdown, saved-profile
   restoration, default-preserving switching, and a fixture-backed GTK `/api/` connect/translate
   regression. Local GUI source checks, the 105-test worker suite, and l10n synchronization passed;
-  remote Linux Native/Foundation/Flatpak push and PR gates are pending. Central release and
-  compatibility pins are updated while the train remains unreleased.
+  push Native/Foundation/Flatpak runs `29675743173`/`29675743166`/`29675743159` and PR runs
+  `29675744738`/`29675744785`/`29675744821` all passed. Central release and compatibility pins are
+  updated while the train remains unreleased.
 
 ## Checkpoint update protocol
 
