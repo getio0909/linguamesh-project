@@ -2,6 +2,19 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Linux performance baseline evidence
+
+Assumption: performance numbers are meaningful only with their runner context and are retained as
+trend evidence until a measured platform budget is established.
+
+- Linux `4d6f041f388606dcc99311826ee4dbd3503edfd8` records the performance-baseline documentation
+  head. The measured host baseline was DOCX `0.404s`, XLSX `0.382s`, and saved-routing dispatch
+  `0.399s`; these values are machine-specific and not portable claims.
+- Linux push Native/Flatpak/Foundation `29706935372`/`29706935324`/`29706935322` and PR
+  Native/Flatpak/Foundation `29706936415`/`29706936411`/`29706936399` all passed. The current-head
+  Native artifact was non-expired and its downloaded contents included the binary, source archive,
+  checksums, SPDX SBOM, build context, and `LINUX-PERFORMANCE-BASELINE.tsv`.
+
 ## 2026-07-19 — Linux source archive and AT-SPI cleanup verification
 
 Assumption: the Linux source snapshot is repository-only evidence and must retain explicit sibling

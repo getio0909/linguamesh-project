@@ -155,6 +155,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   SBOM, and fixed build-context sidecars; retain it as unsigned prerelease evidence only.
 - [x] Add and remotely verify a repository-only Linux source archive with a SHA-256 entry in the
   native evidence artifact; keep sibling Core/l10n pins and stable-release authorization explicit.
+- [x] Capture and remotely verify a machine-contextual Linux performance baseline for document
+  reconstruction and saved-routing dispatch without claiming portable performance numbers.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -479,6 +481,20 @@ Native/Flatpak/Foundation `29706120410`/`29706120412`/`29706120423` and PR
 Native/Flatpak/Foundation `29706121615`/`29706121557`/`29706121564` all passed with non-expired
 native and Flatpak artifacts. The archive remains unsigned repository-only evidence, not a stable
 source release.
+
+## Completed Linux-first checkpoint — performance baseline evidence
+
+Change identifier: `LM-CHANGE-2026-07-LINUX-PERFORMANCE-BASELINE-1`
+
+Assumption: Linux hardening should retain exact runner context and representative elapsed times
+before setting a portable performance budget.
+
+Linux `4d6f041f388606dcc99311826ee4dbd3503edfd8` documents a dependency-free baseline runner for
+DOCX reconstruction, XLSX reconstruction, and saved-profile routing dispatch. Local measurements
+were `0.404s`/`0.382s`/`0.399s`; push Native/Flatpak/Foundation `29706935372`/`29706935324`/
+`29706935322` and PR Native/Flatpak/Foundation `29706936415`/`29706936411`/`29706936399` all
+passed, with the baseline present in the non-expired Native artifact. These are machine-specific
+trend values, not a stable performance guarantee.
 
 ## Completed Linux-first checkpoint — multiple routing-profile IDs
 

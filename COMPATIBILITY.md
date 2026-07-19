@@ -75,6 +75,15 @@ pinned Core and localization repositories. Final push Native/Flatpak/Foundation 
 AT-SPI temporary-directory cleanup after its assertions passed; the bounded retry fix is covered by
 the final gates. No standalone or stable source release is claimed.
 
+## Linux-first performance-baseline checkpoint
+
+Linux `4d6f041f388606dcc99311826ee4dbd3503edfd8` records a machine-contextual baseline for DOCX
+reconstruction, XLSX reconstruction, and saved-profile routing dispatch (`0.404s`, `0.382s`, and
+`0.399s` on the documented host). Push Native/Flatpak/Foundation runs
+`29706935372`/`29706935324`/`29706935322` and PR Native/Flatpak/Foundation runs
+`29706936415`/`29706936411`/`29706936399` passed, and the current Native artifact contains the
+baseline TSV. The values are trend evidence only; no portable budget or stable-release claim is made.
+
 ## Linux-first duplicate routing-profile ID checkpoint
 
 Linux `21c89c7e9c671617477a6410240ff1fb0a0c9ff7` rejects a new profile whose validated ID already
