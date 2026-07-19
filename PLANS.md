@@ -141,6 +141,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   push/PR gates.
 - [x] Reject new Linux routing-profile IDs that already exist, while preserving explicit Edit
   upsert behavior; verify localized error coverage and all push/PR gates.
+- [x] Expose Core routing preference, local/remote, privacy, streaming, and document constraints in
+  the Linux profile editor; preserve hidden constraints during Edit/Save and verify all gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Active Linux-first checkpoint — approved text fallback routing
@@ -357,6 +359,21 @@ messages and all 59 generated resources. Local Linux/l10n checks passed. Push Na
 runs `29701632363`/`29701632341`/`29701632350` and PR Native/Flatpak/Foundation runs
 `29701633693`/`29701633692`/`29701633700` passed. Provider-specific token accuracy, full Orca speech, visual review, other
 clients, artifacts, and stable release remain open.
+
+## Completed Linux-first checkpoint — routing constraints
+
+Change identifier: `LM-CHANGE-2026-07-ROUTING-CONSTRAINTS-1`
+
+Assumption: Core's non-secret routing constraints should be editable in the Linux profile dialog,
+while fields not yet represented by GTK must survive an Edit/Save round trip.
+
+Linux `0afc6aff9cf8b7a513827201c0e23de79de00553` adds localized controls for Automatic preference,
+local-only and remote permission, privacy-sensitive requests, streaming capability, and document
+capability. Edit/Save preserves hidden allow/model lists, quality tiers, and request-size limits.
+l10n `b871a881f0eaf88cdda67a50f9221375f4c814ce` contains 377 messages and all 59 generated
+resources. Local validation passed. Push Native/Flatpak/Foundation runs
+`29702482460`/`29702482435`/`29702482419` and PR Native/Flatpak/Foundation runs
+`29702484581`/`29702484564`/`29702484572` all passed.
 
 ## Completed Linux-first checkpoint — multiple routing-profile IDs
 

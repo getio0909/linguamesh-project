@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-19
 
+## 2026-07-19 — Linux routing constraint controls checkpoint
+
+Assumption: Core's non-secret routing constraints must be user-editable in the native Linux profile
+dialog; editing visible controls must preserve future Core fields that the GTK surface does not yet
+expose.
+
+- Linux `0afc6aff9cf8b7a513827201c0e23de79de00553` adds localized controls for Automatic preference
+  (none/local/quality/latency/cost), local-only routing, remote-candidate permission,
+  privacy-sensitive requests, streaming capability, and document capability. Local-only and remote
+  permission are mutually exclusive in the UI.
+- Existing profile edits restore these controls and preserve hidden allow/model lists, minimum
+  quality, and request-size limits when saving; helper tests cover preference mapping and preservation.
+- l10n `b871a881f0eaf88cdda67a50f9221375f4c814ce` contains 377 messages and all 59 generated
+  resources; Linux consumes the immutable revision and audits 253 catalog-backed source keys.
+- Local Linux validation passed formatting, GUI all-target check, strict Clippy, 131 tests with 2
+  ignored, localization synchronization/key audit, Flatpak metadata, and diff checks. GUI test
+  linking remains environment-blocked by missing GTK 4 symbols.
+- Remote Linux push Native/Flatpak/Foundation runs `29702482460`/`29702482435`/`29702482419` and
+  PR Native/Flatpak/Foundation runs `29702484581`/`29702484564`/`29702484572` all passed.
+
 ## 2026-07-19 — Linux editor text-metrics checkpoint
 
 Assumption: the editor should expose non-sensitive size feedback, while tokenization remains
