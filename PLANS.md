@@ -82,7 +82,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
   Linux code/pin `3ff10f4` and documentation head `eb7e578` passed push Native/Flatpak/Foundation
   runs `29778624703`/`29778624674`/`29778624715` and PR runs
   `29778626906`/`29778626865`/`29778626849`. Local Core and Linux validation is recorded in both
-  repositories. The Linux PR remains Draft/Open and the release train remains unreleased.
+  repositories. Final Linux status head `857dac3` passed push Native/Flatpak/Foundation
+  `29779357668`/`29779357649`/`29779357690` and PR
+  `29779360891`/`29779360949`/`29779361066` (jobs
+  `88476555747`/`88476555602`/`88476555686` and
+  `88476567289`/`88476567432`/`88476567728`). The Linux PR remains Draft/Open and the release
+  train remains unreleased.
 
 - [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
   Technical/Marketing selector, Core prompt/memory identity propagation, compatibility guard, and

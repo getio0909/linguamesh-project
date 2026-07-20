@@ -43,6 +43,10 @@ approved routing fallback and circuit state; documentation/source-pin head
 clients, live provider quota behavior, human review, signing, rollback, and stable release remain
 unverified.
 
+Final Linux status head `857dac37c1d54c3987b69bd5b96e357fb8977e82` passed push
+Native/Flatpak/Foundation `29779357668`/`29779357649`/`29779357690` and PR
+`29779360891`/`29779360949`/`29779361066`, confirming the recorded evidence head and Flatpak pin.
+
 ## Linux-first bounded routing retry checkpoint
 
 Core revision `c03bd205e1d135c024f3a0a767dd94770030a723` adds an optional `retry_after_ms` field to

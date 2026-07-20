@@ -14,6 +14,11 @@ cannot drift in backoff, jitter, provider hints, or cooldown behavior.
   and circuit state. Documentation/source-pin head `eb7e57869580917494d719ac61ec861c1c8bcff4`
   passed push Native/Flatpak/Foundation `29778624703`/`29778624674`/`29778624715` and PR
   `29778626906`/`29778626865`/`29778626849`.
+- Final Linux status head `857dac37c1d54c3987b69bd5b96e357fb8977e82` passed push
+  Native/Flatpak/Foundation `29779357668`/`29779357649`/`29779357690` (jobs
+  `88476555747`/`88476555602`/`88476555686`) and PR
+  `29779360891`/`29779360949`/`29779361066` (jobs
+  `88476567289`/`88476567432`/`88476567728`).
 - Local Core full workspace validation and Linux GUI check/Clippy/no-default/demo-provider suites
   passed; Linux remains the only actively implemented native priority. PR #1 remains Draft/Open,
   Issue #1 remains Open, and no stable release or artifact promotion is claimed.
