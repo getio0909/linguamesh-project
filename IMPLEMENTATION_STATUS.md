@@ -14,9 +14,9 @@ ownership transition can proceed without a binary migration release.
   engine, forged/copied/duplicate descriptors, shutdown release, concurrent controls, and the
   64-buffer bound. Protocol version 1 is unchanged and the central release train remains
   `unreleased` with empty artifact lists.
-- `bash tools/check-workspace.sh` passed before publication; coordination CI is pending for the
-  documentation head. Android, Windows, and macOS wrapper conformance, sanitizers/fuzzing, signed
-  SDK artifacts, and stable-release authorization remain open.
+- `bash tools/check-workspace.sh` and coordination CI `29736748680` (Linux and PowerShell jobs)
+  passed for the documentation head. Android, Windows, and macOS wrapper conformance,
+  sanitizers/fuzzing, signed SDK artifacts, and stable-release authorization remain open.
 
 ## 2026-07-20 — Linux Gemini end-to-end worker fixture
 
@@ -33,7 +33,8 @@ scope for deterministic CI.
   push Native/Flatpak/Foundation `29736402002`/`29736401951`/`29736401989` and PR
   Native/Flatpak/Foundation `29736404211`/`29736404204`/`29736404197`. The central release
   manifest points to the functional Core/Linux pins with l10n
-  `f9d74a8f83a89540a58bba65477a5031031bd619`, while status remains `unreleased`.
+  `f9d74a8f83a89540a58bba65477a5031031bd619`, and coordination CI `29736748680` passed; status
+  remains `unreleased`.
 
 ## 2026-07-20 — Linux Google Gemini Generate Content provider
 
