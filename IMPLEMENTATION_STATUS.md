@@ -21,8 +21,8 @@ must fail closed if that lease expires or is explicitly revoked before decoding 
   `88495671317`/`88495671975`/`88495671980`. This is unreleased Linux-first evidence; ABI handle
   transfer, Android/Windows/macOS clients, human accessibility review, signing, rollback, and stable
   release remain open. PR #1 remains Draft/Open and Issue #1 remains Open.
-- Central coordination run `29785192636` passed Linux job `88495096183` and PowerShell job
-  `88495096175` for the synchronized manifest, documentation, and credential-hygiene checks.
+- Central coordination run `29785760751` passed Linux job `88496851860` and PowerShell job
+  `88496851914` for the synchronized manifest, documentation, and credential-hygiene checks.
 
 ## 2026-07-20 — C ABI compatibility snapshot consumed by Linux
 

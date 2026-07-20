@@ -18,7 +18,7 @@ while ABI handle transfer and lease-control calls remain unprojected.
 The Linux FileLease checkpoint adds expiry/revocation checks to asynchronous document imports and
 revokes the lease after bounded bytes are copied into a document job. Local Linux suites and PR
 Native/Flatpak/Foundation runs `29785377479`/`29785377512`/`29785377513` passed; ABI handle transfer
-and stable release evidence remain open. Central coordination `29785192636` passed the Linux and
+and stable release evidence remain open. Central coordination `29785760751` passed the Linux and
 PowerShell manifest checks.
 Linux evidence head `029e7f21322f3d0f3619a8f3a0158e7157972e30` adds official locale-pack switching,
 Arabic RTL direction, Secret Service prompted-flow,

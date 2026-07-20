@@ -33,7 +33,7 @@ tests, strict Clippy, localization audits, Flatpak metadata validation, and diff
 Linux PR Native/Flatpak/Foundation runs `29785377479`/`29785377512`/`29785377513` passed with jobs
 `88495671317`/`88495671975`/`88495671980`; this remains unreleased Linux-first evidence and does not
 claim native ABI lease transport, other clients, signing, rollback, or stable release. Central
-coordination `29785192636` passed Linux/PowerShell jobs `88495096183`/`88495096175`.
+coordination `29785760751` passed Linux/PowerShell jobs `88496851860`/`88496851914`.
 
 ## Linux explainable routing diagnostics checkpoint
 
