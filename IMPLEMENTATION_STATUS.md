@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux descriptor-pinned database open
+
+Assumption: Linux profile storage must keep the validated database inode fixed through Core's
+migration/open call, not merely preflight a replaceable pathname.
+
+- Linux source revision `0479dbcc7e629d48f1d65002cfd2cb43439b77d5` opens the private parent with
+  `openat2(RESOLVE_NO_SYMLINKS)`, opens the final file with `O_NOFOLLOW | O_CLOEXEC`, and calls
+  Core's narrowly validated `Storage::open_from_trusted_descriptor` on `/proc/self/fd/<fd>`.
+  Ordinary Core paths still require SQLite no-follow.
+- Local Linux format/check/strict Clippy/full tests passed (`133 passed; 3 ignored`), as did Core
+  workspace format/Clippy/tests and the new trusted-descriptor storage regression. Push
+  Native/Flatpak/Foundation `29715772612`/`29715772573`/`29715772602` (jobs
+  `88268680841`/`88268680801`/`88268680852`) and PR Native/Flatpak/Foundation
+  `29715774034`/`29715774044`/`29715774031` (jobs `88268684940`/`88268684830`/`88268684784`)
+  all completed successfully. Core CI/Native SDK `29714966974`/`29714966969` also passed.
+- The first code push's stale Flatpak pin failures (`29715256438`, `29715257892`) are retained as
+  failures; corrected pin gates passed before this final status record. Prompted unlock UX,
+  physical visual/manual review, other clients, signing, rollback, and stable release remain open.
+
 ## 2026-07-20 — Linux final database component no-follow hardening
 
 Assumption: the Linux host should reject a final profile-database path component swapped to a

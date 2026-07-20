@@ -1982,6 +1982,17 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   require a future directory-descriptor or `openat2` design; other clients, signing, rollback,
   and stable release remain open.
 
+- 2026-07-20: Assumption: Linux profile storage must keep the validated database inode fixed
+  through Core migration/open, not merely preflight a pathname. Core `b5febb8daec88ab0401af4d6ceb20ec848f65138`
+  adds the narrowly validated `/proc/self/fd/<fd>` entry point; Linux `0479dbcc7e629d48f1d65002cfd2cb43439b77d5`
+  pins the parent with `openat2(RESOLVE_NO_SYMLINKS)` and opens the final file with
+  `O_NOFOLLOW | O_CLOEXEC`. The rename-and-symlink regression keeps migration in the pinned
+  directory. Push Native/Flatpak/Foundation `29715772612`/`29715772573`/`29715772602` and PR
+  `29715774034`/`29715774044`/`29715774031` all passed; Core CI/Native SDK
+  `29714966974`/`29714966969` passed. The first code push's stale Flatpak pin failures
+  `29715256438`/`29715257892` remain recorded as failures; prompted unlock UX, other clients,
+  signing, rollback, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
