@@ -13,7 +13,7 @@ is deliberately extended.
   separation. All built-in provider adapters carry the request-level preset.
 - l10n `7f65596bd71be3ed6e179ade3bf2e436545436a2` raises the catalog to 415 messages and regenerates
   Linux PO/MO resources for all official locales; non-English packs remain machine-generated drafts.
-- Linux `1b8b9780bd6777d596809ac034f1910e8ce1a83b` adds the localized GTK selector, request
+- Linux `76aa9151b9f4bceda441da750f5b75cf7bffa5db` adds the localized GTK selector, request
   propagation, compatibility requirement, and mapping regressions. Local Core and Linux tests,
   Clippy, locked builds, localization checks, Flatpak metadata, and diff checks passed.
 - Remote evidence passed: Core CI/Native SDK `29748228757`/`29748228831`; l10n Localization/Foundation
