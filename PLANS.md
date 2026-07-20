@@ -2067,7 +2067,9 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
 - 2026-07-20: Assumption: the Native/Flatpak gates cover Linux queue listing, explicit selection,
   and sequential document execution, not concurrent document execution or stable readiness. Linux
   `01d7ba7` and the active plan now state that boundary accurately; no runtime code or manifest pin
-  changed, and the Linux PR/central issue remain Draft/Open and Open respectively.
+  changed. Push Native/Flatpak/Foundation `29724628374`/`29724628347`/`29724628370` and PR
+  `29724630281`/`29724630307`/`29724630279` all passed; the Linux PR/central issue remain
+  Draft/Open and Open respectively.
 
 ## Checkpoint update protocol
 

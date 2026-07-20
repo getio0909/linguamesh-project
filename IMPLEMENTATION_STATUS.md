@@ -71,9 +71,10 @@ release readiness.
 - Linux `01d7ba7` updates `docs/releasing.md` to distinguish the verified document-job path from
   the still-open concurrent-execution and stable-release boundaries. Central `PLANS.md` uses the
   same wording instead of listing already-supported archive formats as future work.
-- No runtime code, source pin, workspace-manifest value, or release-manifest value changed. The
-  Linux PR remains Draft/Open, Issue #1 remains Open, and no merge or stable release action was
-  taken.
+- Linux push Native/Flatpak/Foundation `29724628374`/`29724628347`/`29724628370` and PR
+  `29724630281`/`29724630307`/`29724630279` all passed. No runtime code, source pin,
+  workspace-manifest value, or release-manifest value changed. The Linux PR remains Draft/Open,
+  Issue #1 remains Open, and no merge or stable release action was taken.
 
 ## 2026-07-20 — Linux Anthropic Messages GTK preset checkpoint
 
