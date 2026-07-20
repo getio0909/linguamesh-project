@@ -199,8 +199,10 @@ time and reuses it for every segment after pause, retry, or process restart; leg
   selector enabled for selected jobs. The routed restart regression selects `Best`, resumes after
   shutdown, and asserts the completed snapshot retains `Best`.
 - Local Linux GUI check, strict Clippy, 140 tests with 3 ignored, locked build, localization audits,
-  Flatpak metadata, and diff checks passed. Push/PR runs are pending final completion; no merge or
-  stable release was authorized.
+  Flatpak metadata, and diff checks passed. Linux push Native/Flatpak/Foundation
+  `29745442484`/`29745442374`/`29745442379` and PR Native/Flatpak/Foundation
+  `29745445634`/`29745445670`/`29745445545` all passed. Central coordination run `29745573599`
+  for commit `5d076e9` also passed; no merge or stable release was authorized.
 
 ## Completed Linux-first checkpoint — translation quality modes
 

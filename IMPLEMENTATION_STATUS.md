@@ -15,8 +15,10 @@ time and reuses it for every segment after pause, retry, or process restart; leg
   document commands, applies it to every segment request, restores it into GTK state, and keeps
   the selector enabled for selected jobs. Local GUI check, strict Clippy, 140 tests with 3 ignored,
   locked build, localization audits, Flatpak metadata, and diff checks passed.
-- Push/PR Linux validation is in progress; this remains an unreleased Linux-first checkpoint. No
-  merge, signing, rollback, or stable-release action is claimed.
+- Linux push Native/Flatpak/Foundation `29745442484`/`29745442374`/`29745442379` and PR
+  Native/Flatpak/Foundation `29745445634`/`29745445670`/`29745445545` all passed. Central
+  coordination run `29745573599` for commit `5d076e9` passed. This remains an unreleased Linux-first
+  checkpoint; no merge, signing, rollback, or stable-release action is claimed.
 
 ## 2026-07-20 — Linux translation quality modes checkpoint
 
