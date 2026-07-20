@@ -104,9 +104,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add native Linux malicious-DOCX fixtures that reject ZIP path traversal and oversized
   uncompressed entries before import.
 - [x] Verify native Linux queue listing returns multiple pending jobs for explicit selection.
-- [x] Verify Linux rejects an overlapping document start with a typed configuration error while
-  preserving the active job's cancellation path and the second job's pending snapshot; true
-  concurrent document execution remains an explicit open boundary.
+- [x] Verify Linux bounded concurrent document execution: four jobs may run with per-job event and
+  cancellation isolation, while duplicate and fifth starts are rejected before Running persistence.
 - [x] Verify native Linux worker translation reconstructs DOCX/XLSX jobs end to end while retaining
   binary resources, formulas, and numeric cells.
 - [x] Publish and remotely verify the shared Core `routing_planner_v1` contract and Linux exact
