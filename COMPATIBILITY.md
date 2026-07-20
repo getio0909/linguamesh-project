@@ -32,7 +32,8 @@ the document job. Local no-default (`81 passed; 1 ignored`) and demo-provider (`
 tests, strict Clippy, localization audits, Flatpak metadata validation, and diff checks passed.
 Linux PR Native/Flatpak/Foundation runs `29784747285`/`29784747337`/`29784747308` passed with jobs
 `88493720682`/`88493720915`/`88493720876`; this remains unreleased Linux-first evidence and does not
-claim native ABI lease transport, other clients, signing, rollback, or stable release.
+claim native ABI lease transport, other clients, signing, rollback, or stable release. Central
+coordination `29785192636` passed Linux/PowerShell jobs `88495096183`/`88495096175`.
 
 ## Linux explainable routing diagnostics checkpoint
 

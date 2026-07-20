@@ -28,7 +28,8 @@ The current Linux-first TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPU
 Linux `dc1713bf91e0530aa101b9216477593d9baefdf5`. Core CI `29784269272` and Native SDK
 `29784269356` passed. Linux Native `29784747285`, Foundation `29784747308`, and Flatpak
 `29784747337` passed with jobs `88493720682`/`88493720915`/`88493720876` for the lease-enabled
-revision. The l10n Localization `29658713355`
+revision. Central coordination `29785192636` passed Linux/PowerShell jobs
+`88495096183`/`88495096175`. The l10n Localization `29658713355`
 and Foundation `29658713372` passed with the 286-message bundle checksum
 `ee7c269571beca22cdbd7bea971ae266975b8004490b02ead4b71305e3a93872`. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy

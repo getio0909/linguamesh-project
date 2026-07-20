@@ -33,7 +33,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   localization audits, Flatpak metadata, Core CI `29784269272`, and Native SDK smoke passed; Linux
   Linux PR Native/Flatpak/Foundation runs `29784747285`/`29784747337`/`29784747308` passed with jobs
   `88493720682`/`88493720915`/`88493720876`. ABI lease transfer, other clients, signing, rollback,
-  and stable release remain open.
+  and stable release remain open. Central coordination `29785192636` passed Linux/PowerShell jobs
+  `88495096183`/`88495096175`.
 
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
