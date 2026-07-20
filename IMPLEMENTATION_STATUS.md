@@ -18,7 +18,8 @@ but must not switch or persist the active profile, selected model, or credential
 - Local Linux check, 143 passing library tests with 12 environment-gated ignored, strict Clippy,
   localization audits, and Flatpak metadata validation passed. Push Native/Flatpak/Foundation
   runs `29758801692`/`29758801470`/`29758801642` and PR runs `29758805190`/`29758806520`/
-  `29758805530` all passed. PR #1 remains Draft/Open and Issue #1 remains Open; no merge,
+  `29758805530` all passed. Central coordination workflow `29759295217` passed for commit
+  `22eac8973cae90a9ab5e9f7244d968f5fedfcf79`. PR #1 remains Draft/Open and Issue #1 remains Open; no merge,
   signing, rollback, or stable-release action is claimed.
 
 ## 2026-07-20 — Linux document-routing evidence reconciliation

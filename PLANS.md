@@ -213,7 +213,8 @@ current session and are disabled while translation/document work is busy.
 - Local Linux tests, strict Clippy, localization audits, generated-resource checks, and Flatpak
   metadata validation passed. Push Native/Flatpak/Foundation runs
   `29758801692`/`29758801470`/`29758801642` and PR runs `29758805190`/`29758806520`/`29758805530`
-  all passed. PR #1 remains Draft/Open and Issue #1 remains Open.
+  all passed; central coordination workflow `29759295217` passed. PR #1 remains Draft/Open and
+  Issue #1 remains Open.
 
 ## Completed Linux-first checkpoint — document quality-mode persistence
 
