@@ -29,6 +29,10 @@ Assumption: Planned files and commands are not evidence until they exist and com
   schema-18 persistence through Linux document creation, routed dispatch, pause, retry, and restart.
   Assumption: Android, Windows, and macOS remain out of scope for this checkpoint.
 
+- [x] Add Linux routing-profile JSON exchange: Core-bounded non-secret serialization, GTK import/
+  export file actions, duplicate-ID protection, and malformed/unknown-field/size validation.
+  Assumption: import never overwrites an existing profile; replacement remains an explicit edit.
+
 - [x] Read the active goal attachment, `AGENTS.md`, and `PROJECT_GOAL.md` completely.
 - [x] Confirm that `PLANS.md` was absent before creating this plan.
 - [x] Confirm that `linguamesh-project` initially contained only `PROJECT_GOAL.md`, `AGENTS.md`, and ignored local Codex configuration, with no Git repository.
@@ -2293,6 +2297,17 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   changed. Push Native/Flatpak/Foundation `29724628374`/`29724628347`/`29724628370` and PR
   `29724630281`/`29724630307`/`29724630279` all passed; the Linux PR/central issue remain
   Draft/Open and Open respectively.
+
+- 2026-07-20: Assumption: routing-profile exchange files are portable non-secret metadata and must
+  not silently replace saved IDs. Core `115535c76d804020f045708867af7798b8d0294a` adds the bounded
+  JSON codec with unknown-field and 64 KiB rejection; l10n `026c35b8dbb1c13c22d77809cc5fe72e6af6f5a3`
+  adds the GTK exchange strings; Linux `325c0e0dae4c9353d44a171cd52dca3cd1d139f2` adds worker
+  commands, asynchronous GTK file chooser paths, and duplicate-ID rejection. Core CI/Native SDK
+  `29753851712`/`29753851733`, l10n Localization/Foundation `29754460570`/`29754460635`, Linux
+  push Native/Flatpak/Foundation `29754834075`/`29754834005`/`29754833968`, and Linux PR
+  Native/Flatpak/Foundation `29754842789`/`29754841021`/`29754842936` all passed. PR #1 remains
+  Draft/Open and Issue #1 remains Open; Android, Windows, macOS, signing, rollback, and stable
+  release remain open.
 
 ## Checkpoint update protocol
 

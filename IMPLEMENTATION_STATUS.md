@@ -2,6 +2,29 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux routing profile JSON exchange
+
+Assumption: profile exchange is a non-secret portability path; importing an existing ID must fail
+closed rather than silently replacing a profile referenced by a document job.
+
+- Core `115535c76d804020f045708867af7798b8d0294a` adds bounded routing-profile JSON codecs. The
+  codec validates all Core fields, rejects unknown fields (including endpoint/credential-shaped
+  extensions), and enforces a 64 KiB UTF-8 exchange limit.
+- l10n `026c35b8dbb1c13c22d77809cc5fe72e6af6f5a3` raises the canonical catalog to 422 messages and
+  regenerates Linux PO/MO resources for all official and pseudo locales.
+- Linux `325c0e0dae4c9353d44a171cd52dca3cd1d139f2` adds worker export/import commands and GTK native
+  file chooser actions. Import rejects malformed, non-UTF-8, oversized, unknown-field, and
+  duplicate-ID payloads; export contains only validated routing metadata and never logs file bytes.
+
+Local evidence: Core workspace tests (all targets/features, including 29 domain and 33 storage
+tests), Linux all-target check, strict Clippy, 142 Linux library tests with 12 environment-gated
+ignored, localization check/generate-check, key/placeholder/visible audits, and Flatpak metadata
+validation passed. Remote evidence: Core CI/Native SDK `29753851712`/`29753851733`; l10n
+Localization/Foundation `29754460570`/`29754460635`; Linux push Native/Flatpak/Foundation
+`29754834075`/`29754834005`/`29754833968`; Linux PR Native/Flatpak/Foundation
+`29754842789`/`29754841021`/`29754842936`. PR #1 remains Draft/Open and Issue #1 remains Open;
+no merge, signing, rollback, or stable-release action is claimed.
+
 ## 2026-07-20 — Linux request-level translation presets
 
 Assumption: Linux is the first active client target; Android, Windows, and macOS remain out of scope
