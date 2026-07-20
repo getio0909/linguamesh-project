@@ -5,21 +5,22 @@ Last updated: 2026-07-20
 ## 2026-07-20 — Linux request-level translation presets
 
 Assumption: Linux is the first active client target; Android, Windows, and macOS remain out of scope
-for this checkpoint, and document jobs keep the General preset until their persisted options schema
-is deliberately extended.
+for this checkpoint. Document jobs persist the same bounded non-secret preset contract as text
+requests, and legacy schema rows default to General.
 
-- Core `f79631fd3e83a55077000c888aee6c0fc580c115` adds the validated `TranslationPreset` request
+- Core `0d5351340990544dc25921d522834e1e622f64a1` adds the validated `TranslationPreset` request
   contract, `translation_presets_v1`, escaped prompt rendering, and translation-memory identity
   separation. All built-in provider adapters carry the request-level preset.
 - l10n `7f65596bd71be3ed6e179ade3bf2e436545436a2` raises the catalog to 415 messages and regenerates
   Linux PO/MO resources for all official locales; non-English packs remain machine-generated drafts.
-- Linux `76aa9151b9f4bceda441da750f5b75cf7bffa5db` adds the localized GTK selector, request
-  propagation, compatibility requirement, and mapping regressions. Local Core and Linux tests,
+- Linux `c8d3d500a2d5f29a9aa857e5893d1b5f5d4cbb18` adds schema-18 document option persistence,
+  localized GTK selector restoration, request propagation through plain/routed create, retry, and
+  restart, compatibility requirement, and mapping regressions. Local Core and Linux tests,
   Clippy, locked builds, localization checks, Flatpak metadata, and diff checks passed.
 - Remote evidence passed: Core CI/Native SDK `29748228757`/`29748228831`; l10n Localization/Foundation
   `29748435744`/`29748435654`; Linux push Native/Flatpak/Foundation `29748878416`/`29748878327`/
   `29748878262`; Linux PR Native/Flatpak/Foundation `29748882775`/`29748883031`/`29748882916`;
-  coordination validation `29749260270`. PR #1 remains Draft/Open and Issue #1 remains Open; no
+  coordination validation will be recorded after the current Linux gates complete. PR #1 remains Draft/Open and Issue #1 remains Open; no
   merge, close, signing, rollback, or stable-release action is claimed.
 
 ## 2026-07-20 — Linux document quality-mode persistence

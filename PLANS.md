@@ -25,9 +25,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 ## Progress
 
 - [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
-  Technical/Marketing selector, Core prompt/memory identity propagation, and compatibility guard.
-  Assumption: document jobs remain General until their persisted preset options schema is explicitly
-  extended; Android, Windows, and macOS remain out of scope for this checkpoint.
+  Technical/Marketing selector, Core prompt/memory identity propagation, compatibility guard, and
+  schema-18 persistence through Linux document creation, routed dispatch, pause, retry, and restart.
+  Assumption: Android, Windows, and macOS remain out of scope for this checkpoint.
 
 - [x] Read the active goal attachment, `AGENTS.md`, and `PROJECT_GOAL.md` completely.
 - [x] Confirm that `PLANS.md` was absent before creating this plan.
