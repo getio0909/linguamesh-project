@@ -28,9 +28,12 @@ scope for deterministic CI.
   Linux `3edb91c5a17d774edffbd336564cfdc385f75fc5` consumes it and runs
   `gemini_provider_discovers_and_streams_without_secret`, selecting `gemini-2.0-flash` and
   producing `你好，Gemini！` through the worker.
-- Core CI passed and Native SDK is still running; Linux push/PR Native, Flatpak, and Foundation
-  gates are still running. The central release manifest now points to these exact Core/Linux pins
-  with l10n `f9d74a8f83a89540a58bba65477a5031031bd619`, while status remains `unreleased`.
+- Core CI/Native SDK `29735977442`/`29735977484` passed. Linux documentation head
+  `a698d47945367d4336a739f93185a0519d469fb2` passed all six final push/PR gates:
+  push Native/Flatpak/Foundation `29736402002`/`29736401951`/`29736401989` and PR
+  Native/Flatpak/Foundation `29736404211`/`29736404204`/`29736404197`. The central release
+  manifest points to the functional Core/Linux pins with l10n
+  `f9d74a8f83a89540a58bba65477a5031031bd619`, while status remains `unreleased`.
 
 ## 2026-07-20 — Linux Google Gemini Generate Content provider
 

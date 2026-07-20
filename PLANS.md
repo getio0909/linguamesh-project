@@ -222,8 +222,11 @@ translating `你好，Gemini！` without a credential.
 Core workspace tests, strict Clippy, Linux formatting/check/Clippy, demo-provider tests (`136 passed;
 3 ignored`), localization synchronization and three audits, Flatpak metadata validation, and diff
 checks passed locally. Linux push Native/Flatpak/Foundation `29735086126`/`29735086106`/`29735086081`
-and PR `29735088589`/`29735088578`/`29735088610` all passed. Core CI/Native SDK
-`29734921076`/`29734921078` passed. The PR remains Draft/Open, the central issue remains Open, and
+and PR `29735088589`/`29735088578`/`29735088610` all passed. The newer worker documentation head
+`a698d47945367d4336a739f93185a0519d469fb2` also passed push Native/Flatpak/Foundation
+`29736402002`/`29736401951`/`29736401989` and PR Native/Flatpak/Foundation
+`29736404211`/`29736404204`/`29736404197`. Core CI/Native SDK
+`29735977442`/`29735977484` passed. The PR remains Draft/Open, the central issue remains Open, and
 the release train stays `unreleased`.
 
 ## Completed Linux-first checkpoint — bounded concurrent document execution
