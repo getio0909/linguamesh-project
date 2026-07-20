@@ -222,8 +222,9 @@ adds the localized Azure OpenAI preset and worker regression, while l10n
 Linux, localization, and Flatpak validation passed. Core CI/Native SDK
 `29738151804`/`29738151858`, l10n Localization/Foundation `29738073868`/`29738073889`, and Linux
 push/PR Native/Flatpak/Foundation `29738486868`/`29738486841`/`29738486838` and
-`29738489229`/`29738489379`/`29738489251` all passed. Central coordination is pending for this
-documentation head; PR #1 remains Draft/Open and Issue #1 remains Open.
+`29738489229`/`29738489379`/`29738489251` all passed. Central commit
+`df0d3b8994d5466b4a7fe209ab43288bbf689bac` passed coordination run `29738896174` (Linux and
+PowerShell). PR #1 remains Draft/Open and Issue #1 remains Open.
 
 ## Completed Linux-first checkpoint — Google Gemini Generate Content provider
 
