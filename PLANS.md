@@ -227,8 +227,8 @@ and PR `29735088589`/`29735088578`/`29735088610` all passed. The newer worker do
 `29736402002`/`29736401951`/`29736401989` and PR Native/Flatpak/Foundation
 `29736404211`/`29736404204`/`29736404197`. Core CI/Native SDK
 `29735977442`/`29735977484` passed. The PR remains Draft/Open, the central issue remains Open, and
-the release train stays `unreleased`. Central coordination `29736748680` passed on the resulting
-documentation head.
+the release train stays `unreleased`. Central coordination `29736748680` and follow-up validation
+`29736800710` passed on the resulting documentation heads.
 
 ## Completed Linux-first checkpoint — bounded concurrent document execution
 
