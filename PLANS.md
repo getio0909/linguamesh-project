@@ -89,6 +89,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `88476567289`/`88476567432`/`88476567728`). The Linux PR remains Draft/Open and the release
   train remains unreleased.
 
+- [x] Enforce shared `RetryPolicy` bounds at the serialized Core boundary. Core
+  `6e8c40224943a6ba892e5a064fb3b00657b3bf47` validates deserialized policy fields through the
+  constructor, and Linux documentation/source-pin head `5b807093c05995a3029e60bb3563ba55200597f9`
+  consumes that exact revision. Core domain/engine/FFI tests and Linux no-default/demo-provider,
+  strict Clippy, localization, and Flatpak metadata checks passed. GitHub Foundation/Native/
+  Flatpak gates `29780440569`/`29780440461`/`29780440421` passed (jobs
+  `88480156512`/`88480156210`/`88480155904`). The Linux PR remains Draft/Open and the release
+  train remains unreleased.
+
 - [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
   Technical/Marketing selector, Core prompt/memory identity propagation, compatibility guard, and
   schema-18 persistence through Linux document creation, routed dispatch, pause, retry, and restart.

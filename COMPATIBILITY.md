@@ -47,6 +47,17 @@ Final Linux status head `857dac37c1d54c3987b69bd5b96e357fb8977e82` passed push
 Native/Flatpak/Foundation `29779357668`/`29779357649`/`29779357690` and PR
 `29779360891`/`29779360949`/`29779361066`, confirming the recorded evidence head and Flatpak pin.
 
+## Linux-first RetryPolicy deserialization hardening
+
+Core revision `6e8c40224943a6ba892e5a064fb3b00657b3bf47` validates every serialized `RetryPolicy`
+through the bounded constructor, so restored policy data cannot bypass backoff, jitter, circuit
+threshold, or cooldown limits. Linux documentation/source-pin head
+`5b807093c05995a3029e60bb3563ba55200597f9` consumes that exact Core revision and updates the
+Flatpak manifest. Foundation/Native/Flatpak gates `29780440569`/`29780440461`/`29780440421`
+passed with jobs `88480156512`/`88480156210`/`88480155904`. This remains unreleased Linux-first
+evidence; other clients, stable distribution, signing, rollback, and live quota behavior remain
+unverified.
+
 ## Linux-first bounded routing retry checkpoint
 
 Core revision `c03bd205e1d135c024f3a0a767dd94770030a723` adds an optional `retry_after_ms` field to

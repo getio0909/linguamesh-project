@@ -2,6 +2,23 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Core RetryPolicy deserialization validation consumed by Linux
+
+Assumption: retry-policy data restored from JSON or another serialized boundary must be subject to
+the same bounds as freshly constructed policy data.
+
+- Core `6e8c40224943a6ba892e5a064fb3b00657b3bf47` replaces derived `RetryPolicy` deserialization
+  with validation through `RetryPolicy::new`, preventing serialized configurations from restoring
+  unbounded backoff, jitter, circuit threshold, or cooldown values. Core domain, engine, and FFI
+  tests passed (`36`, `5`, and `10` tests respectively), with formatting and diff checks clean.
+- Linux documentation/source-pin head `5b807093c05995a3029e60bb3563ba55200597f9` consumes the
+  exact Core revision and updates the Flatpak source manifest. Local no-default tests passed
+  (`80 passed; 1 ignored`), demo-provider tests passed (`144 passed; 3 ignored`), strict Clippy,
+  localization audits, and Flatpak metadata validation passed.
+- GitHub Foundation `29780440569` (job `88480156512`), Native Linux `29780440461` (job
+  `88480156210`), and Flatpak Linux `29780440421` (job `88480155904`) passed for the Linux head.
+  PR #1 remains Draft/Open, Issue #1 remains Open, and the release train remains unreleased.
+
 ## 2026-07-20 — Shared Core RetryPolicy consumed by Linux
 
 Assumption: retry and circuit-breaker bounds must be one validated Core contract so native clients
