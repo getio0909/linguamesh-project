@@ -1939,6 +1939,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   full Native release build. Local execution remains unavailable because this host lacks `xvfb-run`
   and `python3-pyatspi`; other clients, signing, rollback, and stable release remain open.
 
+- 2026-07-20: Assumption: enabling fallback in configuration is not sufficient consent at the
+  moment content may cross providers. Linux `af200122e4862f6230d89268f5292f16438449bb` adds a
+  localized modal confirmation for ordinary text requests with fallback enabled; approval is
+  one-shot and cancellation queues no worker command. Flatpak source pin `8dba6129f1706f9f450537477ef6d45ef6531d87`
+  passed local metadata validation. Push Native/Flatpak/Foundation `29711055269`/`29711055278`/
+  `29711055281` and PR `29711056550`/`29711056549`/`29711056544` all passed. Prompted Secret
+  Service/portal unlock UI, human listening, translated-copy/visual review, other clients,
+  signing, rollback, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

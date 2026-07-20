@@ -2,6 +2,18 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux fallback-send confirmation remote evidence
+
+- Linux source revisions `af200122e4862f6230d89268f5292f16438449bb` and Flatpak pin correction
+  `8dba6129f1706f9f450537477ef6d45ef6531d87` add a localized, modal confirmation before an
+  ordinary request with approved fallback enabled is dispatched. **Translate** grants one request;
+  **Close** queues no worker command. The one-shot approval resets after dispatch.
+- Push Native/Flatpak/Foundation runs `29711055269`/`29711055278`/`29711055281` (jobs
+  `88254903448`/`88254903504`/`88254903474`) and PR Native/Flatpak/Foundation runs
+  `29711056550`/`29711056549`/`29711056544` (jobs `88254906904`/`88254906952`/`88254906935`)
+  all completed successfully. Prompted Secret Service/portal unlock UI, human listening,
+  translated-copy review, other clients, signing, rollback, and stable release remain open.
+
 ## 2026-07-20 — Linux headless Orca remote gate evidence
 
 - Linux source revision `a3bd4a3229088e24c8f1a6cd9fb6c1574ca55839` passed push Native/Flatpak/Foundation

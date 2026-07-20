@@ -22,6 +22,16 @@ Native/Flatpak/Foundation `29710531278`/`29710531303`/`29710531308` and PR
 Native/Flatpak/Foundation `29710532205`/`29710532203`/`29710532204` passed. This is headless process
 evidence, not human listening, translated-copy/visual review, or a stable release claim.
 
+## Linux-first fallback-send confirmation checkpoint
+
+Linux source revision `8dba6129f1706f9f450537477ef6d45ef6531d87` adds a localized modal confirmation
+before an ordinary request with approved fallback enabled is dispatched. **Translate** grants one
+request and **Close** sends nothing; the existing retryable-only and partial-output policy is
+unchanged. Push Native/Flatpak/Foundation `29711055269`/`29711055278`/`29711055281` and PR
+Native/Flatpak/Foundation `29711056550`/`29711056549`/`29711056544` all passed. Prompted Secret
+Service/portal unlock UI, human listening, translated-copy/visual review, other clients, signing,
+rollback, and stable release remain open.
+
 ## Linux-first editor text-metrics checkpoint
 
 Linux `7ae70945c60934605d2eca82400a2278c753297f` displays localized source/output character counts
