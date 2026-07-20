@@ -22,6 +22,17 @@ Native/Flatpak/Foundation `29710531278`/`29710531303`/`29710531308` and PR
 Native/Flatpak/Foundation `29710532205`/`29710532203`/`29710532204` passed. This is headless process
 evidence, not human listening, translated-copy/visual review, or a stable release claim.
 
+## Linux-first Manual routing cardinality checkpoint
+
+Linux source revision `be985e0bf906f8c5ddcb229f4e6cc6b26d9efe7b` constrains Manual routing profiles
+to exactly the first displayed provider/model candidate. The GTK editor deactivates extra Manual
+selections when loading or switching modes; Ordered and Automatic retain their selected candidate
+chains. Local format/check/Clippy/test, Flatpak metadata, and diff validation passed. Push
+Native/Flatpak/Foundation `29713205178`/`29713205186`/`29713205194` and PR
+Native/Flatpak/Foundation `29713206482`/`29713206495`/`29713206461` all passed. Complete candidate-management
+release evidence, physical visual review, other clients, signing, rollback, and stable release
+remain open.
+
 ## Linux-first fallback-send confirmation checkpoint
 
 Linux source revision `8dba6129f1706f9f450537477ef6d45ef6531d87` adds a localized modal confirmation

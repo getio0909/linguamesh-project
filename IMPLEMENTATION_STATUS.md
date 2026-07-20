@@ -2,6 +2,21 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux Manual routing candidate cardinality
+
+Assumption: Manual routing must identify exactly one provider/model; candidate chains belong to
+Ordered and Automatic modes.
+
+- Linux source revision `be985e0bf906f8c5ddcb229f4e6cc6b26d9efe7b` now deactivates extra Manual
+  selections in the GTK editor and normalizes the save path to the first displayed candidate;
+  Ordered and Automatic preserve their selected chains. The Linux status record includes the
+  local format/check/Clippy/test/Flatpak evidence and remote run IDs. The final push checks are
+  Native/Flatpak/Foundation `29713205178`/`29713205186`/`29713205194`; the final PR checks are
+  `29713206482`/`29713206495`/`29713206461`; all six completed successfully.
+- This remains a Linux-first configuration-surface checkpoint. Complete candidate-management
+  release evidence, physical visual review, other clients, signing, rollback, and stable release
+  remain open.
+
 ## 2026-07-20 — Linux third-party Ollama interoperability harness
 
 Assumption: deterministic loopback fixtures prove the wire contract only; third-party daemon

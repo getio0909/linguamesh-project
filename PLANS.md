@@ -1954,6 +1954,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   full Native release build. Local execution remains unavailable because this host lacks `xvfb-run`
   and `python3-pyatspi`; other clients, signing, rollback, and stable release remain open.
 
+- 2026-07-20: Assumption: Manual routing must identify exactly one provider/model; candidate chains
+  belong to Ordered and Automatic modes. Linux `be985e0bf906f8c5ddcb229f4e6cc6b26d9efe7b`
+  deactivates extra Manual selections in the GTK editor and normalizes save to the first displayed
+  candidate, while Ordered and Automatic retain their selected chains. Local format/check/Clippy/
+  test/Flatpak/diff validation passed. Push Native/Flatpak/Foundation `29713205178`/`29713205186`/
+  `29713205194` and PR Native/Flatpak/Foundation `29713206482`/`29713206495`/`29713206461` are
+  the current-head remote evidence; complete candidate-management release evidence, physical visual
+  review, other clients, signing, rollback, and stable release remain open.
+
 - 2026-07-20: Assumption: enabling fallback in configuration is not sufficient consent at the
   moment content may cross providers. Linux `af200122e4862f6230d89268f5292f16438449bb` adds a
   localized modal confirmation for ordinary text requests with fallback enabled; approval is
