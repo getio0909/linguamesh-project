@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux Azure OpenAI provider checkpoint
+
+Assumption: Linux is the first active client target; deterministic Azure loopback evidence proves
+request shaping and session-secret handling while live Azure account, quota, deployment, other
+clients, signing, rollback, and stable-release behavior remain unverified.
+
+- Core `e46066ccafcd81e50b004c84d7eb8734e77f3279` adds `azure_openai_chat` with resource/deployment
+  URL validation, pinned API version `2024-10-21`, `api-key` authentication, manual deployment
+  selection, and deterministic testkit coverage.
+- Linux `a679d57bf9b4d887d27fdd4c2cb2f87dfd6342db` adds the localized Azure OpenAI preset and
+  `azure_openai_provider_uses_manual_deployment_and_api_key`; the fixture selects
+  `fake-deployment`, makes no model-list request, and streams `你好，Azure！` through the worker.
+- l10n `8e0e50577f8714b90bcc08a0d22cc790319f9239` contains 401 messages and generated Linux PO/MO
+  resources. Core CI/Native SDK `29738151804`/`29738151858` and l10n Localization/Foundation
+  `29738073868`/`29738073889` passed. Linux push Native/Flatpak/Foundation
+  `29738486868`/`29738486841`/`29738486838` and PR Native/Flatpak/Foundation
+  `29738489229`/`29738489379`/`29738489251` all passed. Central coordination is pending for this
+  documentation head; PR #1 remains Draft/Open and Issue #1 remains Open.
+
 ## 2026-07-20 — ABI 1 engine-bound buffer ownership documentation
 
 Assumption: no ABI 0 SDK artifact or compatible native client was released, so the accepted ABI 1

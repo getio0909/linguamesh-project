@@ -131,6 +131,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add and verify the Linux-first Google Gemini Generate Content provider slice with deterministic
   model discovery, SSE streaming, cancellation, redacted diagnostics, localized GTK preset copy,
   and pinned Core/l10n compatibility revisions.
+- [x] Add and verify the Linux-first Azure OpenAI provider slice with resource/deployment URL
+  validation, pinned API version, `api-key` session authentication, manual deployment selection,
+  deterministic Core/Linux fixtures, localized GTK copy, and synchronized Core/l10n pins.
 - [x] Publish the accepted ABI 1 engine-bound buffer ownership RFC/ADR and keep the central issue,
   Core ABI contract, and migration documentation aligned without claiming a stable SDK release.
 - [x] Add Linux routing-profile candidate selection for enabled saved provider/model pairs, preserve
@@ -204,6 +207,23 @@ Flatpak, and Foundation runs `29730049695`/`29730049744`/`29730049648` and
 then passed push/PR Native, Flatpak, and Foundation runs
 `29730511966`/`29730512095`/`29730511907` and `29730513799`/`29730513772`/`29730513834`.
 Central coordination run `29730453936` passed.
+
+## Completed Linux-first checkpoint — Azure OpenAI provider
+
+Assumption: Linux is the first active client target; deterministic Azure loopback coverage proves
+request shaping and session-secret handling while live Azure account, quota, deployment, other
+clients, signing, rollback, and stable-release behavior remain unverified.
+
+Core `e46066ccafcd81e50b004c84d7eb8734e77f3279` adds the `azure_openai_chat` adapter with resource
+and deployment validation, API version `2024-10-21`, `api-key` authentication, manual deployment
+model listing, and a deterministic testkit fixture. Linux `a679d57bf9b4d887d27fdd4c2cb2f87dfd6342db`
+adds the localized Azure OpenAI preset and worker regression, while l10n
+`8e0e50577f8714b90bcc08a0d22cc790319f9239` supplies the 401-message generated bundle. Local Core,
+Linux, localization, and Flatpak validation passed. Core CI/Native SDK
+`29738151804`/`29738151858`, l10n Localization/Foundation `29738073868`/`29738073889`, and Linux
+push/PR Native/Flatpak/Foundation `29738486868`/`29738486841`/`29738486838` and
+`29738489229`/`29738489379`/`29738489251` all passed. Central coordination is pending for this
+documentation head; PR #1 remains Draft/Open and Issue #1 remains Open.
 
 ## Completed Linux-first checkpoint — Google Gemini Generate Content provider
 
