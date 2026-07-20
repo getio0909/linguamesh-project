@@ -2050,6 +2050,13 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   The concurrent C ABI control-call regression passed locally; Core CI `29723055135` and Native
   SDK `29723055154` passed all jobs. No workspace or release-manifest pin changed.
 
+- 2026-07-20: Assumption: Linux queue selection is implemented, while concurrent document
+  execution remains outside the validation gate. Linux `8167481cbdea` corrected the architecture
+  boundary without changing runtime code or source pins. Existing queue selection and the full
+  Linux local suite passed; push Native/Flatpak/Foundation `29723524259`/`29723524286`/`29723524238`
+  and PR `29723526302`/`29723526314`/`29723526298` all passed. PR #1 remains Draft/Open and Issue
+  #1 remains Open; no manifest pin or release status changed.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

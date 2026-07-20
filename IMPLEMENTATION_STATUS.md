@@ -33,6 +33,22 @@ production pin remains unchanged until a functional client slice consumes it.
   and central issue remain Draft/Open and the release train remains unreleased while human review,
   cross-client parity, signing, rollback, and stable-release gates remain incomplete.
 
+## 2026-07-20 — Linux document queue boundary documentation checkpoint
+
+Assumption: the Linux GTK queue-selection surface is implemented and must be documented separately
+from the still-unverified concurrent document-execution boundary.
+
+- Linux `8167481cbdea` corrects `docs/architecture.md` to describe explicit selection among
+  multiple persisted jobs while retaining single-active-job execution as the current validation
+  boundary. No runtime code, provider contract, persistence schema, source pin, or release-manifest
+  value changed.
+- The existing queue regression passed locally alongside 134 demo-provider tests (3 ignored),
+  formatting, GUI check, strict Clippy, localization key/placeholder/visible-string audits,
+  l10n synchronization, Flatpak metadata validation, and diff checks.
+- Linux push Native/Flatpak/Foundation `29723524259`/`29723524286`/`29723524238` and PR
+  `29723526302`/`29723526314`/`29723526298` all passed. PR #1 remains Draft/Open and Issue #1
+  remains Open; no merge or stable release action was taken.
+
 ## 2026-07-20 — Linux Anthropic Messages GTK preset checkpoint
 
 Assumption: Linux remains the priority client and Anthropic model discovery remains manual until a
