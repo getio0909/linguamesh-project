@@ -2,6 +2,27 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux GTK routing candidate behavior evidence
+
+Assumption: the Linux-first prerelease remains Draft/Open while the candidate-management callbacks
+and remote GTK/Flatpak gates are verified, but human, cross-platform, signing, rollback, and stable
+release gates remain incomplete.
+
+- Linux code head `0658f0f31083e0eb90259784dc2bfd0e642412ed` exercises two sorted restored candidates
+  through real GTK Down/Up callbacks, asserts order mutation and restoration, and restores the
+  disabled-profile fixture state before continuing the existing lifecycle assertions. Documentation
+  head `bf0906b97ac2f4a7065f0f9cfe7fe4f0e05841af` records the evidence; the Flatpak source pin
+  remains on the code ancestor because the follow-up changes are documentation-only.
+- Final code-head push Native/Flatpak/Foundation checks `29728346052`/`29728346055`/`29728346087`
+  and PR checks `29728348382`/`29728348395`/`29728348472` passed. Documentation-head push checks
+  `29728730611`/`29728730516`/`29728730520` and PR checks `29728732350`/`29728732354`/`29728732411`
+  also passed. Earlier ordering and fixture-state failures `29727820986` and `29728076058` remain
+  retained as evidence.
+- Local Linux formatting, GUI all-target check, strict Clippy, demo-provider tests (`134 passed; 3
+  ignored`), Flatpak metadata, localization audits, l10n synchronization, and diff checks pass;
+  the host GTK test binary remains linker-limited, so Native CI is authoritative for GTK runtime.
+- PR #1 remains Draft/Open and Issue #1 remains Open; no merge or stable release action occurred.
+
 ## 2026-07-20 — Linux GTK routing-control evidence refresh
 
 Assumption: the Linux-first prerelease remains Draft/Open while the latest automated evidence is

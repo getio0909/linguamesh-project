@@ -133,8 +133,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add catalog-backed accessible labels and tooltips for Linux routing candidate movement
   controls, regenerate all official PO/MO packs, pin the l10n revision in CI, and verify remote gates.
 - [x] Exercise the routing-profile candidate movement controls through the serialized GTK dialog
-  lifecycle after restored provider profiles are available; record push/PR Native, Flatpak, and
-  Foundation evidence without changing the Linux production source pin.
+  lifecycle after restored provider profiles are available; click the sorted first candidate's
+  Down and Up callbacks, assert visible order changes and restoration, and record push/PR Native,
+  Flatpak, and Foundation evidence without changing the Linux production source pin.
 - [x] Add Linux GTK text drag sources and row drop targets for routing candidates, persist the
   resulting Ordered sequence, reject invalid drag payloads, and verify push/PR gates.
 - [x] Add Linux Edit/Save routing-profile actions that restore mode, consent, candidate order, and
@@ -163,6 +164,27 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add and remotely verify a Linux source-level localization placeholder audit for literal
   fallback templates, keeping malformed braces and placeholder drift out of GTK/release gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
+
+## Completed Linux-first checkpoint — GTK routing candidate reorder behavior
+
+Assumption: Linux candidate-management evidence must exercise the real GTK callbacks and resulting
+row order while preserving the existing lifecycle fixture state used by later assertions.
+
+Linux code head `0658f0f31083e0eb90259784dc2bfd0e642412ed` adds two enabled restored provider/model
+candidates to the serialized routing-profile dialog regression, clicks the first sorted candidate's
+Down and Up controls, verifies the visible order changes and returns to its original order, then
+restores the disabled-profile fixture state. Documentation head `bf0906b97ac2f4a7065f0f9cfe7fe4f0e05841af`
+records the final evidence and keeps the Flatpak source pin on the code ancestor.
+
+Local formatting, GUI all-target check, strict Clippy, demo-provider tests (`134 passed; 3 ignored`),
+Flatpak metadata, localization audits, l10n synchronization, and diff checks passed. The host GTK
+test binary remains linker-limited; Native CI is authoritative for GTK runtime behavior.
+
+Final code-head push Native/Flatpak/Foundation `29728346052`/`29728346055`/`29728346087` and PR
+`29728348382`/`29728348395`/`29728348472` passed. Documentation-head push
+`29728730611`/`29728730516`/`29728730520` and PR `29728732350`/`29728732354`/`29728732411` also
+passed. Earlier fixture failures `29727820986` and `29728076058` remain recorded. Human review,
+cross-platform parity, signing, rollback, and stable release remain open.
 
 ## Completed Linux-first checkpoint — third-party Ollama interoperability harness
 
