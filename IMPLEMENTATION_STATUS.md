@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux GTK routing-control evidence refresh
+
+Assumption: the Linux-first prerelease remains Draft/Open while the latest automated evidence is
+current but human, cross-platform, signing, rollback, and stable-release gates remain incomplete.
+
+- Linux final evidence head `ca2d4fcefc411aabdf087e6bdde34bd1b0e170df` records the real GTK routing-
+  profile dialog lifecycle regression for localized, keyboard-focusable candidate movement controls.
+- Push Native/Flatpak/Foundation checks `29726610000`/`29726609962`/`29726609977` and PR
+  Native/Flatpak/Foundation checks `29726612473`/`29726612471`/`29726612454` all completed
+  successfully. Local Linux formatting, GUI check, strict Clippy, demo-provider tests (`134
+  passed; 3 ignored`), Flatpak metadata validation, localization audits, and diff checks pass;
+  the host GTK test binary remains linker-limited, so Native CI is authoritative for GTK runtime.
+- PR #1 is still Draft/Open with no merge or release action. Issue #1 is Open and now points to
+  this head and central coordination run `29724974241`; user-owned RFC/ADR drafts remain
+  uncommitted and are not altered.
+
 ## 2026-07-20 — GitHub PR and issue triage checkpoint
 
 Assumption: the Linux-first prerelease remains open while automated evidence is current and

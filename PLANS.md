@@ -132,6 +132,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
   resulting Ordered sequence, and verify the bounded reordering helper and remote gates.
 - [x] Add catalog-backed accessible labels and tooltips for Linux routing candidate movement
   controls, regenerate all official PO/MO packs, pin the l10n revision in CI, and verify remote gates.
+- [x] Exercise the routing-profile candidate movement controls through the serialized GTK dialog
+  lifecycle after restored provider profiles are available; record push/PR Native, Flatpak, and
+  Foundation evidence without changing the Linux production source pin.
 - [x] Add Linux GTK text drag sources and row drop targets for routing candidates, persist the
   resulting Ordered sequence, reject invalid drag payloads, and verify push/PR gates.
 - [x] Add Linux Edit/Save routing-profile actions that restore mode, consent, candidate order, and
