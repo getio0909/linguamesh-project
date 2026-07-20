@@ -13,6 +13,22 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | Localization | `0.1.0` | Message schema `1.0.0`; resource contract `1`; 387 canonical messages including Linux-only status, partial-output, text-import, opt-in image-only PDF OCR controls and errors, glossary CSV import/export and rule-validation errors, PDF fidelity and subtitle readability warnings, document-job actions/dialog/status/tooltip controls, exported-output open/failure actions, Incognito privacy controls, history and translation-memory controls/status, translation-export, provider-profile, provider preset labels/tooltips, routing-profile ID/edit/save/candidate-order/accessibility/duplicate-ID/routing-constraint labels, provider/model allow-deny lists, quality/request-size limits, source-target, onboarding-stage, active-provider, notification, draft-note, locale selector language names, fixed provider/file/worker errors, reducer-state/category guidance, fixed worker/file/storage/provider-error guidance, construction-stage provider/default-control and request-level glossary copy, diagnostics labels/state values, Secret Service prompt-dismissal guidance, GTK drag-fixture label, built-in provider default names, editor text-metrics labels, and Core/loopback startup plus profile-storage error copy; paired PO/MO Linux resources | CI-verified development bundle at l10n revision `3362732be198450ff1ca00f30ec092aab2cf4189`, 59 generated artifacts, Localization `29703625736`, Foundation `29703625695`, unreleased |
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 
+## Linux-first Secret Service session-fallback checkpoint
+
+Linux source revision `7df461ec5e0d1cc5736e2c2edef48333fcf5ff14` adds an explicit localized
+recovery modal after a persistent Secret Service store failure. The user may choose a clearly
+labeled session-only path, which disables Remember and focuses the credential field; closing the
+modal leaves the connection unsubmitted. Local formatting, localization placeholder audit,
+Flatpak metadata validation, 134 tests (3 ignored), all-target check, strict Clippy, and diff
+checks passed. The first remote attempt is retained as a failure because the new fallback literal
+did not match the canonical catalog and the Flatpak source pin was stale (`29717314361`,
+`29717314328`, `29717312990`, `29717312998`). After the corrected literal and pin, final Push
+Native/Flatpak/Foundation runs `29717769144`/`29717769121`/`29717769119` and PR
+Native/Flatpak/Foundation runs `29717770780`/`29717770833`/`29717770765` all passed, with jobs
+`88274285611`/`88274285568`/`88274285482` and `88274289941`/`88274290099`/`88274289936`.
+End-user prompt approval, visual/translated-copy review, other clients, signing, rollback, and
+stable release remain open.
+
 ## Linux-first final database no-follow hardening checkpoint
 
 Linux source revision `651767d1493662f0631bf8e4245d0c525b684edc` opens the final profile-database

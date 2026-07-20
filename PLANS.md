@@ -2005,6 +2005,17 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `88271663136`/`88271663160`/`88271663435` and `88271669287`/`88271669310`/`88271669196`.
   Power-loss and broader SQLite VFS behavior remain open.
 
+- 2026-07-20: Assumption: persistent Secret Service failure must produce an explicit localized
+  session-only recovery choice. Linux `7df461ec5e0d1cc5736e2c2edef48333fcf5ff14` adds the
+  modal, disables Remember, focuses the credential field, and leaves Connect unsubmitted when
+  closed. Local 134-test/3-ignored, formatting, strict Clippy, all-target, localization
+  placeholder, Flatpak, and diff checks passed. The initial placeholder/pin failures
+  `29717314361`/`29717314328`/`29717312990`/`29717312998` remain recorded; corrected Push
+  `29717769144`/`29717769121`/`29717769119` and PR `29717770780`/`29717770833`/`29717770765`
+  passed with jobs `88274285611`/`88274285568`/`88274285482` and
+  `88274289941`/`88274290099`/`88274289936`. End-user prompt approval, other clients, visual
+  review, artifacts, rollback, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
