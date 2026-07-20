@@ -25,6 +25,25 @@ provider quality, human review, or stable-release readiness.
   central coordination `29742676456` passed. Android, Windows, macOS, live-provider review, signing,
   rollback, and stable-release gates remain open.
 
+## 2026-07-20 — Linux Provider Catalog compatibility checkpoint
+
+Assumption: Core's bundled provider catalog is the authoritative non-secret contract for adapter
+types and model-listing policy; Linux retains native localized labels and endpoint defaults, while a
+stale mapping must stop before the GTK window is created.
+
+- Linux `f1996faaae591f476ff2610746bd4cbeb9e0b53e` consumes Core's `linguamesh-provider-catalog`
+  crate at `d304afe01e21023a1e1f37ad8f674d49a23b5d42`, caches the bundled catalog, derives
+  manual-model visibility from `model_listing`, and validates all six GTK preset adapter mappings
+  before startup. The Flatpak source pin follows this head.
+- `provider_presets_map_to_stable_native_and_compatible_defaults` covers the stable GTK order and
+  catalog compatibility without credentials or network access; mismatch fails closed with an
+  English diagnostic.
+- Local Linux formatting, GUI all-target check, strict Clippy, 140 demo-provider tests with 3
+  ignored, localization audits/sync, Flatpak metadata, and diff checks passed. Push
+  Native/Flatpak/Foundation `29743687368`/`29743687294`/`29743687262` and PR
+  `29743689677`/`29743689725`/`29743689515` passed. PR #1 remains Draft/Open, central Issue #1
+  remains Open, and the release train remains `unreleased`.
+
 ## 2026-07-20 — Linux OpenAI Responses typed-SSE checkpoint
 
 Assumption: Linux remains the first active client target; OpenAI Responses model discovery uses the

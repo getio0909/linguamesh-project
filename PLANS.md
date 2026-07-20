@@ -178,6 +178,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   fallback templates, keeping malformed braces and placeholder drift out of GTK/release gates.
 - [x] Add Linux-first translation quality modes with synchronized Core, localization, GTK, storage,
   prompt-contract, output-validation, and Flatpak source-pin evidence.
+- [x] Consume the validated Core provider catalog in the Linux GTK preset flow, derive model-listing
+  policy from the catalog, and fail closed on adapter drift.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
 ## Completed Linux-first checkpoint — translation quality modes
@@ -201,6 +203,25 @@ extra provider calls or stable-release readiness.
   `29742198569`/`29742198614`, Linux push Native/Flatpak/Foundation `29742596157`/`29742596195`/
   `29742596247`, Linux PR Native/Flatpak/Foundation `29742602112`/`29742602104`/`29742602095`, and
   central coordination `29742676456` passed. No merge or stable release was authorized.
+
+## Completed Linux-first checkpoint — provider catalog compatibility
+
+Assumption: Core's bundled provider catalog is the authoritative non-secret contract for adapter
+types and model-listing policy; Linux retains native localized labels and endpoint defaults, while a
+stale mapping must stop before the GTK window is created.
+
+- Linux `f1996faaae591f476ff2610746bd4cbeb9e0b53e` directly consumes Core's
+  `linguamesh-provider-catalog` crate at `d304afe01e21023a1e1f37ad8f674d49a23b5d42`, caches the
+  bundled catalog, derives manual-model visibility from `model_listing`, and validates all six
+  GTK preset adapter mappings before startup. Flatpak pin follows the same head.
+- The regression `provider_presets_map_to_stable_native_and_compatible_defaults` covers the stable
+  GTK order and catalog compatibility without credentials or network access. A mismatch fails
+  closed with an English diagnostic.
+- Local Linux formatting, GUI all-target check, strict Clippy, 140 demo-provider tests with 3
+  ignored, localization audits/sync, Flatpak metadata, and diff checks passed. Push
+  Native/Flatpak/Foundation `29743687368`/`29743687294`/`29743687262` and PR
+  `29743689677`/`29743689725`/`29743689515` passed. PR #1 remains Draft/Open and no stable release
+  action was taken.
 
 ## Completed Linux-first checkpoint — OpenAI Responses typed SSE
 
