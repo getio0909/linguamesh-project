@@ -8,20 +8,26 @@ Assumption: deterministic loopback fixtures prove the wire contract only; third-
 interoperability requires an installed model and an external daemon that is not treated as a
 release fixture.
 
-- Linux head `cb39b10aec0268aaeeea4fbea897e62316385a7a` adds the opt-in
+- Linux head `8645caf3c0504b225a4a44d97fd634af9ab67d0c` adds the opt-in
   `tools/run-ollama-interop-test.sh` harness and an ignored worker regression covering `/api/tags`
   discovery, model selection, and translation without serialized secrets. Default CI keeps this
   external test ignored.
 - Local validation passed with 131 tests passed and 3 ignored; formatting, all-target checks,
   strict Clippy, localization audits, Flatpak metadata, and diff checks also passed.
-- Push Native/Flatpak/Foundation runs `29711535278`/`29711535284`/`29711535293` (jobs
-  `88256083560`/`88256083563`/`88256083629`) and PR Native/Flatpak/Foundation runs
-  `29711537242`/`29711537244`/`29711537248` (jobs `88256087720`/`88256087639`/`88256087672`)
+- Local and remote validation passed with 133 Rust tests passed and 12 ignored in Native CI; the
+  local offline suite passed 131 tests with 3 ignored. Push Native/Flatpak/Foundation runs
+  `29712165334`/`29712165338`/`29712165360` (jobs `88257689365`/`88257689383`/`88257689424`) and
+  PR Native/Flatpak/Foundation runs `29712166849`/`29712166856`/`29712166851` (jobs
+  `88257693555`/`88257693727`/`88257693563`)
   all completed successfully. Native PR evidence includes the fallback-confirmation regression,
   GTK AT-SPI fixture, and Orca Speech Dispatcher fixture.
-- A Docker `ollama/ollama:0.11.10` daemon answered `/api/tags`, but pulling `smollm:135m` failed
-  with HTTP 500 after the Ollama registry connection timed out. No real third-party translation
-  interoperability claim is made until an installed model is available.
+- A Docker `ollama/ollama:0.11.10` daemon served `/api/tags` and `/api/chat` for
+  `qwen2.5-0.5b-instruct:latest`; the opt-in harness reported `1 passed; 0 failed` without a
+  credential. The public Qwen GGUF SHA-256 was
+  `9ee36184e616dfc76df4f5dd66f908dbde6979524ae36e6cefb67f532f798cb8`, and the Ollama model
+  digest was `91a334af822cdceab2234d673b0099d726d4944e1997b275744f4418e8b6a254`. The temporary
+  model and daemon were removed. This closes the Linux third-party daemon/model gate for this
+  prerelease checkpoint; GPU and stable-release evidence remain open.
 
 ## 2026-07-20 — Linux fallback-send confirmation remote evidence
 

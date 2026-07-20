@@ -34,14 +34,15 @@ rollback, and stable release remain open.
 
 ## Linux-first third-party Ollama interoperability checkpoint
 
-Linux head `cb39b10aec0268aaeeea4fbea897e62316385a7a` adds an opt-in daemon harness and an ignored
+Linux head `8645caf3c0504b225a4a44d97fd634af9ab67d0c` adds an opt-in daemon harness and an ignored
 worker regression for native `/api/tags` discovery, model selection, and translation. Local
-validation passed with 131 tests passed and 3 ignored. Push Native/Flatpak/Foundation
-`29711535278`/`29711535284`/`29711535293` and PR Native/Flatpak/Foundation
-`29711537242`/`29711537244`/`29711537248` all passed; the Native PR also records the fallback,
-AT-SPI, and Orca fixtures. A Docker `ollama/ollama:0.11.10` daemon answered `/api/tags`, but the
-`smollm:135m` registry pull timed out with HTTP 500, so third-party model interoperability remains
-unverified and no stable-release claim is made.
+validation passed with 131 tests passed and 3 ignored locally; Native CI passed 133 tests with 12
+ignored. Push Native/Flatpak/Foundation `29712165334`/`29712165338`/`29712165360` and PR
+Native/Flatpak/Foundation `29712166849`/`29712166856`/`29712166851` all passed; the Native PR also
+records the fallback, AT-SPI, and Orca fixtures. A Docker `ollama/ollama:0.11.10` daemon served
+`/api/tags` and `/api/chat` for `qwen2.5-0.5b-instruct:latest`, and the harness reported
+`1 passed; 0 failed` without a credential. The model and daemon were removed after validation;
+GPU and stable-release evidence remain open.
 
 ## Linux-first editor text-metrics checkpoint
 

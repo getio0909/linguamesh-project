@@ -165,15 +165,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 Change identifier: `LM-CHANGE-2026-07-OLLAMA-INTEROP-HARNESS-1`
 
-Linux head `cb39b10aec0268aaeeea4fbea897e62316385a7` adds an opt-in
+Linux head `8645caf3c0504b225a4a44d97fd634af9ab67d0c` adds an opt-in
 `tools/run-ollama-interop-test.sh` path plus an ignored worker regression. The harness requires a
 real daemon and installed model, keeps credentials out of the test state, and is intentionally not
 part of the default offline suite. Local validation passed with 131 tests passed and 3 ignored.
 
-Push Native/Flatpak/Foundation `29711535278`/`29711535284`/`29711535293` and PR
-Native/Flatpak/Foundation `29711537242`/`29711537244`/`29711537248` all passed. A temporary Docker
-`ollama/ollama:0.11.10` daemon served `/api/tags`, but the `smollm:135m` pull failed with HTTP 500
-after an Ollama registry timeout; real third-party translation evidence remains open.
+Push Native/Flatpak/Foundation `29712165334`/`29712165338`/`29712165360` and PR
+Native/Flatpak/Foundation `29712166849`/`29712166856`/`29712166851` all passed. A temporary Docker
+`ollama/ollama:0.11.10` daemon served `/api/tags` and `/api/chat` for
+`qwen2.5-0.5b-instruct:latest`; the harness reported `1 passed; 0 failed` without a credential.
+The model and daemon were removed after validation; GPU and stable-release evidence remain open.
 
 ## Active Linux-first checkpoint — approved text fallback routing
 
