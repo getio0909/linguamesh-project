@@ -2039,6 +2039,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   passed. The GTK test-link limitation, visual/copy review, prompt approval, other clients,
   signing, rollback, and stable release remain open.
 
+- 2026-07-20: Assumption: GitHub review state must reflect the latest verified Linux evidence
+  without implying merge or release readiness. Authenticated triage found only Linux PR #1 open
+  (Draft/Open, mergeable, no reviews, no unresolved threads) and central Issue #1 open across the
+  canonical repositories. The PR and issue bodies/comments now reference Linux `f41e14a`, Core
+  `a87aaf2`, l10n `e1ee15a`, and coordination run `29722312762`; no stable release action was taken.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

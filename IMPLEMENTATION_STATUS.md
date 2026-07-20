@@ -2,6 +2,21 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — GitHub PR and issue triage checkpoint
+
+Assumption: the Linux-first prerelease remains open while automated evidence is current and
+human, cross-platform, signing, rollback, and stable-release gates remain incomplete.
+
+- The canonical repositories were checked with the authenticated `getio0909` account. Only
+  `getio0909/linguamesh-linux#1` has an open pull request; it remains Draft/Open and mergeable.
+- PR #1 has no submitted reviews and no unresolved review threads. Native, Flatpak, and Foundation
+  push/PR checks all pass at Linux head `f41e14af53b6d2d70b0f1d452ea32eda10d63095`.
+- Central `getio0909/linguamesh-project#1` is the only open issue in the canonical set. Its body
+  and the Linux PR body now point to current Core/l10n pins and central coordination run
+  `29722312762`; neither item was closed, merged, or marked ready for release.
+- The central release manifest remains `status = "unreleased"`; no source revision or artifact
+  pin changed during this triage checkpoint, so workspace and release manifests remain consistent.
+
 ## 2026-07-20 — Linux Anthropic Messages GTK preset checkpoint
 
 Assumption: Linux remains the priority client and Anthropic model discovery remains manual until a
