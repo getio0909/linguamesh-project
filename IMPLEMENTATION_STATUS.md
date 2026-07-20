@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux read-only profile storage fallback
+
+Assumption: a read-only profile database directory must reject persistent mutations without
+silently creating or replacing state, while preserving session-only translation.
+
+- Linux `06a9a76c8b964a9e0badc087b243a2fc4cd09544` adds
+  `read_only_database_directory_reports_error_but_session_mode_still_works`. The test uses a
+  private `0500` directory, verifies a typed persistence failure and no database creation,
+  completes a session-only fake-provider translation, and rejects saved-profile deletion.
+- Local Linux format/check/strict Clippy/full tests passed (`134 passed; 3 ignored`); Flatpak
+  metadata validation and diff checks passed. Push Native/Flatpak/Foundation
+  `29716832991`/`29716832970`/`29716832961` (jobs `88271663136`/`88271663160`/`88271663435`)
+  and PR Native/Flatpak/Foundation `29716835042`/`29716835044`/`29716835030` (jobs
+  `88271669287`/`88271669310`/`88271669196`) all completed successfully. Power-loss and broader
+  SQLite VFS behavior remain open.
+
 ## 2026-07-20 — Linux descriptor-pinned database open
 
 Assumption: Linux profile storage must keep the validated database inode fixed through Core's

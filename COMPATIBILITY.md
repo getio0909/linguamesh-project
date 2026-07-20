@@ -37,6 +37,18 @@ Native/Flatpak/Foundation `29715774034`/`29715774044`/`29715774031` all passed. 
 draft; prompted unlock UX, visual/manual review, other clients, signing, rollback, and stable
 release remain open.
 
+## Linux-first read-only profile storage checkpoint
+
+Linux source revision `06a9a76c8b964a9e0badc087b243a2fc4cd09544` adds the regression
+`read_only_database_directory_reports_error_but_session_mode_still_works`. A private `0500`
+profile directory rejects persistent startup with a typed persistence error, does not create a
+database file, and still permits session-only fake-provider translation. The local targeted and
+full Linux suites passed. Push Native/Flatpak/Foundation `29716832991`/`29716832970`/`29716832961`
+and PR Native/Flatpak/Foundation `29716835042`/`29716835044`/`29716835030` all passed, with jobs
+`88271663136`/`88271663160`/`88271663435` and `88271669287`/`88271669310`/`88271669196`.
+Corrupt-database and `ENOSPC` fail-closed boundaries remain separately recorded; power-loss and
+broader SQLite VFS behavior remain open.
+
 ## Linux-first headless Orca checkpoint
 
 Linux source revision `a3bd4a3229088e24c8f1a6cd9fb6c1574ca55839` adds an isolated Xvfb/private-D-Bus

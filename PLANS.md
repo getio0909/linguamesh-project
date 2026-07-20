@@ -1993,6 +1993,18 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `29715256438`/`29715257892` remain recorded as failures; prompted unlock UX, other clients,
   signing, rollback, and stable release remain open.
 
+- 2026-07-20: Assumption: a read-only Linux profile database directory must fail closed for
+  persistence while preserving session-only translation. Linux
+  `06a9a76c8b964a9e0badc087b243a2fc4cd09544` adds
+  `read_only_database_directory_reports_error_but_session_mode_still_works`, which uses a private
+  `0500` directory, verifies typed persistence failure and no database creation, completes a
+  session-only fake-provider translation, and rejects deletion. Local Linux format/check/Clippy/
+  full-test and Flatpak metadata validation passed (`134 passed; 3 ignored`). Push
+  Native/Flatpak/Foundation `29716832991`/`29716832970`/`29716832961` and PR
+  Native/Flatpak/Foundation `29716835042`/`29716835044`/`29716835030` all passed, with jobs
+  `88271663136`/`88271663160`/`88271663435` and `88271669287`/`88271669310`/`88271669196`.
+  Power-loss and broader SQLite VFS behavior remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
