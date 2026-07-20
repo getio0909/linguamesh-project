@@ -21,6 +21,8 @@ unfreezing the other clients or claiming a stable release.
   `29733047267`/`29733047292`/`29733047328` and `29733050760`/`29733050738`/`29733050725`.
   PR #1 remains Draft/Open and Issue #1 remains Open. Cross-platform clients, human
   accessibility/visual review, signing, rollback, and stable-release authorization remain open.
+  Central coordination commit `cbde16f3323e9fdc68d800dde29ba461c1126c9e` and run `29733527316`
+  passed both Linux and PowerShell validation.
 
 ## 2026-07-20 — Linux GTK routing candidate behavior evidence
 
