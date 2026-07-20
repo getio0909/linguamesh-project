@@ -48,6 +48,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
   mnemonic-label failures remain documented. Central coordination `29770588175` passed for
   commit `7f2b151`; the PR stays Draft/Open and the release train stays unreleased.
 
+- [x] Add and remotely verify the Linux GTK routing candidate dialog accessibility lifecycle at
+  code/pin head `1c47ff9`. The dedicated fixture checks the labelled profile ID field, stable mode
+  choices, explicit fallback control, focusable candidates, accessible movement labels, row
+  reordering, Manual single-candidate enforcement, and Use close-and-select behavior. Push
+  Native/Flatpak/Foundation `29771475803`/`29771475775`/`29771475669` and PR gates
+  `29771479057`/`29771478869`/`29771478884` passed; the PR remains Draft/Open and the release
+  train remains unreleased.
+
 - [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
   Technical/Marketing selector, Core prompt/memory identity propagation, compatibility guard, and
   schema-18 persistence through Linux document creation, routed dispatch, pause, retry, and restart.
@@ -434,6 +442,23 @@ Final code-head push Native/Flatpak/Foundation `29728346052`/`29728346055`/`2972
 `29728730611`/`29728730516`/`29728730520` and PR `29728732350`/`29728732354`/`29728732411` also
 passed. Earlier fixture failures `29727820986` and `29728076058` remain recorded. Human review,
 cross-platform parity, signing, rollback, and stable release remain open.
+
+## Completed Linux-first checkpoint — GTK routing candidate accessibility lifecycle
+
+Assumption: candidate-management acceptance requires the production GTK dialog to expose
+focusable, screen-reader-labelled controls and preserve the selected profile through Use/close.
+
+Linux code/pin head `1c47ff9b6b103ee16d564480d3dd3cdfcda5e083` adds the ignored serialized
+`gtk_routing_profile_candidate_controls_have_accessible_lifecycle` fixture. It constructs the
+real dialog with two saved provider/model pairs, checks the labelled profile ID field, stable
+Manual/Ordered/Automatic choices, explicit fallback checkbox, focusable candidate checkboxes,
+accessible up/down labels, row reordering, Manual cardinality enforcement, and Use selection.
+Local formatting, GUI all-target check, strict Clippy, no-default-feature tests (`80 passed; 1
+ignored`), demo-provider tests (`142 passed; 3 ignored`), Flatpak metadata, and diff checks passed.
+The host has no `xvfb-run`; Native CI is authoritative for runtime GTK/AT-SPI behavior. Push
+Native/Flatpak/Foundation `29771475803`/`29771475775`/`29771475669` and PR
+`29771479057`/`29771478869`/`29771478884` passed. Visual/translated-copy review, end-user Orca
+acceptance, other clients, signing, rollback, and stable release remain open.
 
 ## Completed Linux-first checkpoint — third-party Ollama interoperability harness
 

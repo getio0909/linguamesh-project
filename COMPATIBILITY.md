@@ -142,6 +142,17 @@ Native/Flatpak/Foundation `29770062559`/`29770062414`/`29770062090` all passed. 
 unreleased evidence; human copy/accessibility review, other clients, signing, rollback, and
 stable release remain open.
 
+## Linux-first routing candidate accessibility lifecycle checkpoint
+
+Linux source/pin revision `1c47ff9b6b103ee16d564480d3dd3cdfcda5e083` adds the serialized GTK
+`gtk_routing_profile_candidate_controls_have_accessible_lifecycle` regression. It exercises the
+production routing dialog's labelled profile ID field, stable modes, explicit fallback control,
+focusable candidate checkboxes, accessible up/down labels, row reordering, Manual cardinality, and
+Use close-and-select lifecycle. Push Native/Flatpak/Foundation `29771475803`/`29771475775`/
+`29771475669` and PR `29771479057`/`29771478869`/`29771478884` all passed. This remains
+unreleased evidence; human visual/copy review, end-user Orca acceptance, other clients, signing,
+rollback, and stable release remain open.
+
 ## Linux-first third-party Ollama interoperability checkpoint
 
 Linux head `8645caf3c0504b225a4a44d97fd634af9ab67d0c` adds an opt-in daemon harness and an ignored

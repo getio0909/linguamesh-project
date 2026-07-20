@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux GTK routing candidate accessibility lifecycle
+
+Assumption: candidate-management acceptance requires the production GTK dialog to expose
+focusable, screen-reader-labelled controls and preserve the selected profile through Use/close.
+
+- Linux code/pin head `1c47ff9b6b103ee16d564480d3dd3cdfcda5e083` adds the ignored serialized
+  `gtk_routing_profile_candidate_controls_have_accessible_lifecycle` fixture. It checks the
+  labelled profile ID field, stable mode order, explicit fallback checkbox, focusable candidates,
+  accessible movement labels, row reordering, Manual single-candidate enforcement, and Use
+  close-and-select behavior through the real GTK dialog.
+- Local formatting, GUI all-target check, strict Clippy, no-default-feature tests (`80 passed; 1
+  ignored`), demo-provider tests (`142 passed; 3 ignored`), Flatpak metadata, and diff checks
+  passed. The host has no `xvfb-run`; Native CI is authoritative for the GTK runtime fixture.
+- Push Native/Flatpak/Foundation `29771475803`/`29771475775`/`29771475669` and PR
+  `29771479057`/`29771478869`/`29771478884` passed. PR #1 remains Draft/Open and Issue #1 remains
+  Open; visual/translated-copy review, end-user Orca acceptance, other clients, signing, rollback,
+  and stable-release authorization remain open.
+
 ## 2026-07-20 — Linux fallback approval dialog lifecycle
 
 Assumption: ordinary-text fallback requires explicit one-shot consent; dismissing the modal must
