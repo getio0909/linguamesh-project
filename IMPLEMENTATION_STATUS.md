@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux explicit provider connection test
+
+Assumption: an explicit provider test may create a temporary provider session for model discovery,
+but must not switch or persist the active profile, selected model, or credential.
+
+- Linux `02efde00fb9faf3abfc4ab5dcf19b9c6036be656` adds a cancellable worker `TestConnection`
+  command/event pair and a localized GTK provider-form action. The action validates the draft,
+  clears the credential entry immediately, discovers models, and reports a typed result without
+  changing the active translation session or saved profile.
+- Linux worker regression `explicit_connection_test_discovers_models_without_switching_active_session`
+  proves a successful and failed test leave the confirmed provider/model usable. Localization
+  `7e8c987737444d4e0f8f2642b108eee4c7801f58` adds the action, tooltip, and success template to all
+  generated locale resources.
+- Local Linux check, 143 passing library tests with 12 environment-gated ignored, strict Clippy,
+  localization audits, and Flatpak metadata validation passed. Push Native/Flatpak/Foundation
+  runs `29758801692`/`29758801470`/`29758801642` and PR runs `29758805190`/`29758806520`/
+  `29758805530` all passed. PR #1 remains Draft/Open and Issue #1 remains Open; no merge,
+  signing, rollback, or stable-release action is claimed.
+
 ## 2026-07-20 — Linux document-routing evidence reconciliation
 
 Assumption: the current Linux document-routing slice is complete for saved single-profile
@@ -11,7 +30,7 @@ selection, while document-job fallback and cross-client routing remain intention
   `document_job_resume_reconnects_saved_routing_profile_after_restart` select a saved
   document-capable candidate, emit a typed routing decision with zero fallback attempts, rebuild
   the translated document, and reconnect the persisted non-secret profile ID after restart.
-- The behavior is implemented at Linux revision `e6d87958ce13e8ccfb04a62c22b8bb5657bbb69e`,
+- The behavior is implemented at Linux revision `02efde00fb9faf3abfc4ab5dcf19b9c6036be656`,
   against Core `115535c76d804020f045708867af7798b8d0294a`; the current push/PR Native, Flatpak,
   and Foundation gates all passed (`29755663043`/`29755662549`/`29755662552` and
   `29755666246`/`29755666022`/`29755666120`).
@@ -27,9 +46,9 @@ closed rather than silently replacing a profile referenced by a document job.
 - Core `115535c76d804020f045708867af7798b8d0294a` adds bounded routing-profile JSON codecs. The
   codec validates all Core fields, rejects unknown fields (including endpoint/credential-shaped
   extensions), and enforces a 64 KiB UTF-8 exchange limit.
-- l10n `026c35b8dbb1c13c22d77809cc5fe72e6af6f5a3` raises the canonical catalog to 422 messages and
+- l10n `7e8c987737444d4e0f8f2642b108eee4c7801f58` raises the canonical catalog to 425 messages and
   regenerates Linux PO/MO resources for all official and pseudo locales.
-- Linux `e6d87958ce13e8ccfb04a62c22b8bb5657bbb69e` adds worker export/import commands and GTK native
+- Linux `02efde00fb9faf3abfc4ab5dcf19b9c6036be656` adds worker export/import commands and GTK native
   file chooser actions. Import rejects malformed, non-UTF-8, oversized, unknown-field, and
   duplicate-ID payloads; export contains only validated routing metadata and never logs file bytes.
 

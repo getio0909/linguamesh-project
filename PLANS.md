@@ -195,7 +195,25 @@ Assumption: Planned files and commands are not evidence until they exist and com
   policy from the catalog, and fail closed on adapter drift.
 - [x] Persist Linux document-job quality modes through Core schema 17, restore them on queue
   selection and worker restart, and verify routed `Best` recovery.
+- [x] Add an explicit Linux provider connection test that discovers models in a temporary session,
+  preserves the active profile/model and storage, clears entered credentials immediately, and
+  reports localized typed success/failure results.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
+
+## Completed Linux-first checkpoint — explicit provider connection test
+
+Assumption: connection tests are diagnostics only; they never activate, persist, or replace the
+current session and are disabled while translation/document work is busy.
+
+- Linux `02efde00fb9faf3abfc4ab5dcf19b9c6036be656` adds the worker command/event contract, temporary
+  provider manager, cancellation propagation, GTK action, immediate credential-field clearing,
+  and a regression covering success, network failure, and continued baseline translation.
+- l10n `7e8c987737444d4e0f8f2642b108eee4c7801f58` adds localized action, tooltip, and model-count
+  status resources across all official and pseudo-locale outputs.
+- Local Linux tests, strict Clippy, localization audits, generated-resource checks, and Flatpak
+  metadata validation passed. Push Native/Flatpak/Foundation runs
+  `29758801692`/`29758801470`/`29758801642` and PR runs `29758805190`/`29758806520`/`29758805530`
+  all passed. PR #1 remains Draft/Open and Issue #1 remains Open.
 
 ## Completed Linux-first checkpoint — document quality-mode persistence
 
