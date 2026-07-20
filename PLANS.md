@@ -131,6 +131,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add and verify the Linux-first Google Gemini Generate Content provider slice with deterministic
   model discovery, SSE streaming, cancellation, redacted diagnostics, localized GTK preset copy,
   and pinned Core/l10n compatibility revisions.
+- [x] Publish the accepted ABI 1 engine-bound buffer ownership RFC/ADR and keep the central issue,
+  Core ABI contract, and migration documentation aligned without claiming a stable SDK release.
 - [x] Add Linux routing-profile candidate selection for enabled saved provider/model pairs, preserve
   the displayed order, reject unknown IDs and empty selections, and verify the remote Linux gates.
 - [x] Add keyboard-focusable Linux up/down controls for routing candidate ordering, persist the
@@ -169,6 +171,19 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add and remotely verify a Linux source-level localization placeholder audit for literal
   fallback templates, keeping malformed braces and placeholder drift out of GTK/release gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
+
+## Completed cross-repository checkpoint — ABI 1 engine-bound buffer ownership
+
+Assumption: the ABI 0 source skeleton has no released binary consumers, so the safe engine-bound
+buffer transition can be accepted before any stable SDK artifact is published.
+
+Central commit `81d3f3c37e6fde54da21034e60d716c56b67e981` publishes accepted RFC-0001 and ADR-0004.
+They require ABI major 1, `lm_engine_buffer_free(engine, buffer)`, bounded per-engine allocation
+registries, token/pointer/length/capacity validation, and wrapper-side copy-and-release behavior.
+Core already implements and tests that contract at `638713c34ce7d5bcc8003bb0d7e54c514ab49ea7`;
+the release manifest remains `unreleased` because no stable SDK artifact or compatible four-client
+train exists. Central workspace validation passed; coordination CI is pending for this documentation
+head.
 
 ## Completed Linux-first checkpoint — document-job concurrency isolation
 

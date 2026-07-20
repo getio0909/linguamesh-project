@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — ABI 1 engine-bound buffer ownership documentation
+
+Assumption: no ABI 0 SDK artifact or compatible native client was released, so the accepted ABI 1
+ownership transition can proceed without a binary migration release.
+
+- Central commit `81d3f3c37e6fde54da21034e60d716c56b67e981` publishes RFC-0001 and ADR-0004. The
+  decision requires `lm_engine_buffer_free(engine, buffer)`, a bounded allocation registry owned
+  by each engine, monotonic ownership tokens, descriptor validation, and wrapper copy-and-release.
+- Core `638713c34ce7d5bcc8003bb0d7e54c514ab49ea7` already implements ABI major 1 and tests wrong
+  engine, forged/copied/duplicate descriptors, shutdown release, concurrent controls, and the
+  64-buffer bound. Protocol version 1 is unchanged and the central release train remains
+  `unreleased` with empty artifact lists.
+- `bash tools/check-workspace.sh` passed before publication; coordination CI is pending for the
+  documentation head. Android, Windows, and macOS wrapper conformance, sanitizers/fuzzing, signed
+  SDK artifacts, and stable-release authorization remain open.
+
 ## 2026-07-20 — Linux Google Gemini Generate Content provider
 
 Assumption: Linux remains the priority client; Android, Windows, and macOS stay deferred while this
