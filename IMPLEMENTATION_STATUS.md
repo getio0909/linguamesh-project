@@ -2,6 +2,23 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux document-routing evidence reconciliation
+
+Assumption: the current Linux document-routing slice is complete for saved single-profile
+selection, while document-job fallback and cross-client routing remain intentionally disabled.
+
+- Linux worker tests `document_job_translation_uses_saved_routing_profile_without_fallback` and
+  `document_job_resume_reconnects_saved_routing_profile_after_restart` select a saved
+  document-capable candidate, emit a typed routing decision with zero fallback attempts, rebuild
+  the translated document, and reconnect the persisted non-secret profile ID after restart.
+- The behavior is implemented at Linux revision `e6d87958ce13e8ccfb04a62c22b8bb5657bbb69e`,
+  against Core `115535c76d804020f045708867af7798b8d0294a`; the current push/PR Native, Flatpak,
+  and Foundation gates all passed (`29755663043`/`29755662549`/`29755662552` and
+  `29755666246`/`29755666022`/`29755666120`).
+- Central release metadata now records document-job routing as implemented for this Linux slice;
+  it does not claim automatic document fallback, other clients, signing, rollback, or a stable
+  release.
+
 ## 2026-07-20 — Linux routing profile JSON exchange
 
 Assumption: profile exchange is a non-secret portability path; importing an existing ID must fail

@@ -33,6 +33,10 @@ Assumption: Planned files and commands are not evidence until they exist and com
   export file actions, duplicate-ID protection, and malformed/unknown-field/size validation.
   Assumption: import never overwrites an existing profile; replacement remains an explicit edit.
 
+- [x] Reconcile central evidence for Linux document-job routing: saved document-capable candidate
+  selection and non-secret profile-ID restart recovery are implemented and remotely verified;
+  document fallback and cross-client routing remain disabled.
+
 - [x] Read the active goal attachment, `AGENTS.md`, and `PROJECT_GOAL.md` completely.
 - [x] Confirm that `PLANS.md` was absent before creating this plan.
 - [x] Confirm that `linguamesh-project` initially contained only `PROJECT_GOAL.md`, `AGENTS.md`, and ignored local Codex configuration, with no Git repository.
@@ -2308,6 +2312,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Native/Flatpak/Foundation `29755666246`/`29755666022`/`29755666120` all passed. PR #1 remains
   Draft/Open and Issue #1 remains Open; Android, Windows, macOS, signing, rollback, and stable
   release remain open.
+
+- 2026-07-20: Assumption: the current Linux document-routing slice selects one saved
+  document-capable candidate and reconnects its persisted non-secret profile ID after restart;
+  document fallback and cross-client routing remain disabled. Existing Linux regressions
+  `document_job_translation_uses_saved_routing_profile_without_fallback` and
+  `document_job_resume_reconnects_saved_routing_profile_after_restart` passed at
+  `e6d87958ce13e8ccfb04a62c22b8bb5657bbb69e`; current push/PR Native, Flatpak, and Foundation
+  runs `29755663043`/`29755662549`/`29755662552` and `29755666246`/`29755666022`/`29755666120`
+  passed. Central documentation now reflects this evidence without changing release status.
 
 ## Checkpoint update protocol
 
