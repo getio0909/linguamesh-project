@@ -20,7 +20,7 @@ requests, and legacy schema rows default to General.
 - Remote evidence passed: Core CI/Native SDK `29751949004`/`29751948936`; l10n Localization/Foundation
   `29748435744`/`29748435654`; Linux push Native/Flatpak/Foundation `29752035759`/`29752035851`/
   `29752035798`; Linux PR Native/Flatpak/Foundation `29752038881`/`29752038779`/`29752038938`;
-  coordination validation will be recorded after this manifest update. PR #1 remains Draft/Open and Issue #1 remains Open; no
+  coordination validation `29752543584` passed on central commit `52fe082f1f1f4c091dda8d732dcdf5e1c8ae2806`. PR #1 remains Draft/Open and Issue #1 remains Open; no
   merge, close, signing, rollback, or stable-release action is claimed.
 
 ## 2026-07-20 — Linux document quality-mode persistence
