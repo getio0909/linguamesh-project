@@ -176,7 +176,29 @@ Assumption: Planned files and commands are not evidence until they exist and com
   reconstruction and saved-routing dispatch without claiming portable performance numbers.
 - [x] Add and remotely verify a Linux source-level localization placeholder audit for literal
   fallback templates, keeping malformed braces and placeholder drift out of GTK/release gates.
+- [x] Add Linux-first translation quality modes with synchronized Core, localization, GTK, storage,
+  prompt-contract, output-validation, and Flatpak source-pin evidence.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
+
+## Completed Linux-first checkpoint — translation quality modes
+
+Assumption: quality mode is a request-level deterministic policy shared by Core and Linux; `Best`
+uses one provider request with an internal critique/revision instruction and does not imply hidden
+extra provider calls or stable-release readiness.
+
+- Core `d304afe01e21023a1e1f37ad8f674d49a23b5d42` adds `Fast`, `Balanced`, and `Best`, the shared
+  `translation-prompt-v2` contract, malformed-output validation, and versioned translation-memory
+  identity. Core workspace checks, tests, Clippy, and locked build passed locally.
+- l10n `e03d8ccc548d7d2eeeef9163b4b12b8204e68d6d` raises the catalog to 410 messages and regenerates
+  all official Linux resources. `PYTHON_BIN=/home/wangtinghu/miniconda3/envs/py313/bin/python make check`
+  passed locally.
+- Linux functional head `aaffb87d4a7e52e64370c082b144fd8e50e84b43` adds the localized GTK selector,
+  request propagation, and selection regressions. Flatpak pin `f78574d` follows the source and
+  metadata validation passed; Linux local GUI/all-target checks, 140 tests with 3 ignored, strict
+  Clippy, localization audits, sync, and diff checks passed.
+- Core, l10n, Linux, and central changes are pushed; PR #1 remains Draft/Open and Issue #1 remains
+  Open. Remote workflow evidence is pending for this latest head; no merge or stable release was
+  authorized.
 
 ## Completed Linux-first checkpoint — OpenAI Responses typed SSE
 

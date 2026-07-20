@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux translation quality modes checkpoint
+
+Assumption: quality mode is a request-level deterministic policy shared by Core and Linux; `Best`
+uses one provider request with an internal critique/revision instruction and does not claim live
+provider quality, human review, or stable-release readiness.
+
+- Core `d304afe01e21023a1e1f37ad8f674d49a23b5d42` adds `Fast`, `Balanced`, and `Best`, the shared
+  `translation-prompt-v2` contract, malformed-output validation, and versioned translation-memory
+  identity. Local workspace check, tests, strict Clippy, and locked build passed.
+- l10n `e03d8ccc548d7d2eeeef9163b4b12b8204e68d6d` raises the catalog to 410 messages and regenerates
+  official Linux resources. `PYTHON_BIN=/home/wangtinghu/miniconda3/envs/py313/bin/python make check`
+  passed locally.
+- Linux `aaffb87d4a7e52e64370c082b144fd8e50e84b43` adds the localized GTK quality selector, request
+  propagation, and selection regressions. Flatpak pin `f78574d` follows the source; local GUI checks,
+  140 tests with 3 ignored, strict Clippy, localization audits/sync, and Flatpak metadata validation
+  passed.
+- Core, l10n, Linux, and central pins are pushed. PR #1 remains Draft/Open and Issue #1 remains Open;
+  latest remote workflow evidence is pending. Android, Windows, macOS, live-provider review, signing,
+  rollback, and stable-release gates remain open.
+
 ## 2026-07-20 — Linux OpenAI Responses typed-SSE checkpoint
 
 Assumption: Linux remains the first active client target; OpenAI Responses model discovery uses the
