@@ -17,6 +17,25 @@ and distribution signing remain outside this slice.
   `29765906044` is the final remote build/test/package gate for this head. No merge, notarization,
   stable signing, rollback, or release promotion is claimed.
 
+## 2026-07-20 — Linux Automatic routing fallback integration
+
+Assumption: Automatic routing requires client-worker evidence in addition to Core ranking tests;
+only candidates explicitly exposed by the saved routing profile may receive a retryable retry.
+
+- Linux code head `0e2ae25c321cef243275d1322f2b8271f0602d06` adds a worker regression that creates
+  two saved providers, verifies the Core quality preference selects the higher-quality candidate,
+  shuts it down before dispatch, and asserts typed decision/fallback events before completion through
+  the next approved candidate. The test does not introduce document-job fallback or unapproved data
+  disclosure. Linux documentation head `75910c8a77d0c05d4bc9e069a40381808160f4aa` records the
+  reproducible commands and corrective Flatpak source-pin change.
+- Local Linux full tests passed (`142 passed; 3 ignored`), with formatting, GUI all-target check,
+  strict Clippy, localization/Flatpak validation, and diff checks. Final documentation-head push/
+  PR Native, Flatpak, and Foundation gates passed: push `29767242226`/`29767242244`/`29767242325`
+  and PR `29767246017`/`29767246202`/`29767246112`. The initial code-head stale-pin Flatpak
+  failures (`29767075134`/`29767080595`) are retained in the Linux status as corrective evidence.
+- PR #1 remains Draft/Open; the release train is unreleased and no merge, signing, rollback, or
+  stable-release claim is made.
+
 ## 2026-07-20 — Linux explicit provider connection test
 
 Assumption: an explicit provider test may create a temporary provider session for model discovery,

@@ -3,6 +3,7 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
+  "Linux Automatic routing worker integration is an unreleased deterministic checkpoint at Core 115535c76d804020f045708867af7798b8d0294a, l10n 7e8c987737444d4e0f8f2642b108eee4c7801f58, and Linux 0e2ae25c321cef243275d1322f2b8271f0602d06; the worker verifies quality-ranked selection and retryable fallback only through the saved profile's explicit chain. Final documentation-head push/PR Native, Flatpak, and Foundation gates passed at 75910c8; document-job fallback, other clients, live provider behavior, human review, signing, rollback, and stable release remain unverified.",
   "Linux explicit provider connection testing is an unreleased deterministic checkpoint at Core 115535c76d804020f045708867af7798b8d0294a, l10n 7e8c987737444d4e0f8f2642b108eee4c7801f58, and Linux 02efde00fb9faf3abfc4ab5dcf19b9c6036be656; model discovery uses a temporary cancellable session, clears entered credentials, and leaves the active profile/model and persistence unchanged. Remote Native/Flatpak/Foundation gates are required before this checkpoint is considered verified; live provider behavior, other clients, signing, rollback, and stable release remain unverified.",
   "Linux routing-profile JSON exchange is an unreleased deterministic checkpoint at Core 115535c76d804020f045708867af7798b8d0294a, l10n 026c35b8dbb1c13c22d77809cc5fe72e6af6f5a3, and Linux e6d87958ce13e8ccfb04a62c22b8bb5657bbb69e; Core bounds exchange files to validated non-secret fields and 64 KiB, while Linux GTK import rejects unknown fields, malformed/non-UTF-8/duplicate-ID files and never overwrites an existing profile. Push/PR Linux Native, Flatpak, and Foundation gates passed; other clients, live provider behavior, human copy/accessibility review, signing, rollback, and stable release remain unverified.",
   "Linux translation quality modes, document-job persistence, provider-catalog compatibility, and request-level translation presets are an unreleased deterministic checkpoint at Core 115535c76d804020f045708867af7798b8d0294a, l10n 026c35b8dbb1c13c22d77809cc5fe72e6af6f5a3, and Linux e6d87958ce13e8ccfb04a62c22b8bb5657bbb69e; Fast, Balanced, and Best remain request-level modes with shared translation-prompt-v2, while General, Technical, and Marketing are bounded preset identities included in prompts and translation-memory keys. Schema-18 document-job translation-preset persistence now survives legacy migration, pause, retry, and restart, and Linux validates all GTK preset adapters and model-listing policies against the bundled Core catalog before window creation. Live provider behavior, human copy/accessibility review, other clients, signing, rollback, and stable release remain unverified.",
@@ -64,6 +65,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "02efde00fb9faf3abfc4ab5dcf19b9c6036be656"
+source_revision = "0e2ae25c321cef243275d1322f2b8271f0602d06"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

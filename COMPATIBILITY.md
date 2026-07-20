@@ -14,7 +14,7 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 | Windows client | `0.0.0-dev` | Foundation repository only; no native product slice or artifact | Unreleased |
 | macOS client | `0.1.0-alpha.1` | SwiftUI/AppKit text slice, ABI 1/protocol 1, Core `0db51464`, l10n `7e8c987`; Native CI `29765906044` passed build, tests, bundle, and ad-hoc signing smoke check | Unreleased |
-| Linux client | `0.1.0-alpha.2` | GTK client with provider/routing/document slices at Linux `02efde00`, Core `115535c`, and l10n `7e8c987`; push/PR Native, Flatpak, and Foundation gates passed | Unreleased |
+| Linux client | `0.1.0-alpha.2` | GTK client with provider/routing/document slices at Linux `0e2ae25`, Core `115535c`, and l10n `7e8c987`; Automatic quality-ranked retryable fallback is covered by a worker integration regression; push/PR Native, Flatpak, and Foundation gates passed | Unreleased |
 
 ## Core Anthropic Messages adapter checkpoint
 

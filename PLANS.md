@@ -30,6 +30,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
   checks. Typed host-secret transport, model discovery, persisted routing profiles, document jobs,
   notarization, and stable release remain open.
 
+- [x] Verify the Linux Automatic routing worker slice at code head `0e2ae25` and documentation
+  head `75910c8`. The integration regression proves Core quality ranking selects the higher-quality
+  saved candidate, then a retryable failure switches only through the explicitly approved fallback
+  chain. Local Linux tests passed (`142 passed; 3 ignored`); final documentation-head push/PR
+  Native, Flatpak, and Foundation gates passed (`29767242226`/`29767242244`/`29767242325` and
+  `29767246017`/`29767246202`/`29767246112`). The first code-head stale-pin Flatpak failures
+  (`29767075134`/`29767080595`) remain recorded as corrective evidence. The Linux PR remains
+  Draft/Open and the release train remains unreleased.
+
 - [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
   Technical/Marketing selector, Core prompt/memory identity propagation, compatibility guard, and
   schema-18 persistence through Linux document creation, routed dispatch, pause, retry, and restart.
