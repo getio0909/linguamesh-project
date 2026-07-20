@@ -1,6 +1,16 @@
 # Implementation Status
 
-Last updated: 2026-07-19
+Last updated: 2026-07-20
+
+## 2026-07-20 — Linux headless Orca remote gate evidence
+
+- Linux source revision `a3bd4a3229088e24c8f1a6cd9fb6c1574ca55839` passed push Native/Flatpak/Foundation
+  `29710531278`/`29710531303`/`29710531308` and PR Native/Flatpak/Foundation
+  `29710532205`/`29710532203`/`29710532204`; all six jobs completed successfully.
+- Native job `88253669507` records the AT-SPI named-control inspection and Orca Speech Dispatcher
+  `SPEECH GENERATOR` output for the Linux application tree. This is headless process evidence only;
+  the GTK4/Orca focus handoff limitation, human listening, translated-copy review, other clients,
+  signing, rollback, and stable release remain open.
 
 ## 2026-07-19 — Linux localization fallback-template consistency final verification
 

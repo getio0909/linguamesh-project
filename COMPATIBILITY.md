@@ -13,6 +13,15 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | Localization | `0.1.0` | Message schema `1.0.0`; resource contract `1`; 387 canonical messages including Linux-only status, partial-output, text-import, opt-in image-only PDF OCR controls and errors, glossary CSV import/export and rule-validation errors, PDF fidelity and subtitle readability warnings, document-job actions/dialog/status/tooltip controls, exported-output open/failure actions, Incognito privacy controls, history and translation-memory controls/status, translation-export, provider-profile, provider preset labels/tooltips, routing-profile ID/edit/save/candidate-order/accessibility/duplicate-ID/routing-constraint labels, provider/model allow-deny lists, quality/request-size limits, source-target, onboarding-stage, active-provider, notification, draft-note, locale selector language names, fixed provider/file/worker errors, reducer-state/category guidance, fixed worker/file/storage/provider-error guidance, construction-stage provider/default-control and request-level glossary copy, diagnostics labels/state values, Secret Service prompt-dismissal guidance, GTK drag-fixture label, built-in provider default names, editor text-metrics labels, and Core/loopback startup plus profile-storage error copy; paired PO/MO Linux resources | CI-verified development bundle at l10n revision `3362732be198450ff1ca00f30ec092aab2cf4189`, 59 generated artifacts, Localization `29703625736`, Foundation `29703625695`, unreleased |
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 
+## Linux-first headless Orca checkpoint
+
+Linux source revision `a3bd4a3229088e24c8f1a6cd9fb6c1574ca55839` adds an isolated Xvfb/private-D-Bus
+Orca fixture. `python3-pyatspi` confirms the production `Stop translation` control, while Orca with
+Speech Dispatcher records `SPEECH GENERATOR` output for the Linux application tree. Push
+Native/Flatpak/Foundation `29710531278`/`29710531303`/`29710531308` and PR
+Native/Flatpak/Foundation `29710532205`/`29710532203`/`29710532204` passed. This is headless process
+evidence, not human listening, translated-copy/visual review, or a stable release claim.
+
 ## Linux-first editor text-metrics checkpoint
 
 Linux `7ae70945c60934605d2eca82400a2278c753297f` displays localized source/output character counts

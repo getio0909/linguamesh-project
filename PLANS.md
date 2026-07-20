@@ -1915,6 +1915,30 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   runs `29690127881`/`29690127894` passed; central coordination run `29690453908` passed. Human translated-copy review, Orca speech,
   automatic/ordered routing UI, other clients, artifacts, and stable release remain open.
 
+- 2026-07-20: Assumption: Linux accessibility evidence should exercise the installed Orca process
+  against the live GTK tree while keeping human listening and physical desktop review separate.
+  Linux adds `tools/run-orca-atspi-test.sh` and `tools/orca-atspi-inspect.py`; Native CI installs
+  Orca plus Speech Dispatcher, confirms the named `Stop translation` control through AT-SPI, and
+  requires Orca's speech-generator debug record for the Linux application tree. The host lacks `xvfb-run` and `python3-pyatspi`,
+  so local execution is unavailable; shell/Python static checks are the local evidence and the
+  remote Native gate is required. This does not claim listening quality, translated-copy review,
+  physical desktop behavior, other clients, artifacts, or stable release.
+
+- 2026-07-20 correction: Native push run `29709041999` reached the Orca fixture but failed at job
+  `88250409247` because the idle Stop button is disabled and AT-SPI rejected `grabFocus()`. The
+  fixture now sets the test-only `LINGUAMESH_TEST_ORCA_ATSPI=1` flag so only that control is enabled
+  during the isolated run; normal production idle behavior is unchanged. A rerun is required before
+  the headless Orca checkpoint is considered verified.
+
+- 2026-07-20: Linux headless Orca evidence is verified at source revision
+  `a3bd4a3229088e24c8f1a6cd9fb6c1574ca55839`. The fixture confirms the named `Stop translation`
+  control through AT-SPI and records Orca Speech Dispatcher speech-generator output for the Linux
+  application tree; the remote GTK4/Orca focus handoff limitation and human-listening boundary are
+  explicit. Push Native/Flatpak/Foundation `29710531278`/`29710531303`/`29710531308` and PR
+  Native/Flatpak/Foundation `29710532205`/`29710532203`/`29710532204` all passed, including the
+  full Native release build. Local execution remains unavailable because this host lacks `xvfb-run`
+  and `python3-pyatspi`; other clients, signing, rollback, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
