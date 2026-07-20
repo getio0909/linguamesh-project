@@ -16,9 +16,11 @@ is deliberately extended.
 - Linux `1b8b9780bd6777d596809ac034f1910e8ce1a83b` adds the localized GTK selector, request
   propagation, compatibility requirement, and mapping regressions. Local Core and Linux tests,
   Clippy, locked builds, localization checks, Flatpak metadata, and diff checks passed.
-- Remote run evidence is being collected for Core, Linux push/PR gates, l10n, and this coordination
-  repository. PR #1 remains Draft/Open and Issue #1 remains Open; no merge, close, signing, rollback,
-  or stable-release action is claimed.
+- Remote evidence passed: Core CI/Native SDK `29748228757`/`29748228831`; l10n Localization/Foundation
+  `29748435744`/`29748435654`; Linux push Native/Flatpak/Foundation `29748878416`/`29748878327`/
+  `29748878262`; Linux PR Native/Flatpak/Foundation `29748882775`/`29748883031`/`29748882916`;
+  coordination validation `29749260270`. PR #1 remains Draft/Open and Issue #1 remains Open; no
+  merge, close, signing, rollback, or stable-release action is claimed.
 
 ## 2026-07-20 — Linux document quality-mode persistence
 
