@@ -2,6 +2,27 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — C ABI host-secret response projection consumed by Linux
+
+Assumption: ABI 1 native clients must receive the same one-time, non-persistent secret-broker
+semantics already enforced by the typed Rust application layer.
+
+- Core `adc1e26f37db3761406bb30aa7515003a8bd2717` adds the backward-compatible `secret_ref`
+  command field, versioned `secret_required` event, and one-shot `host_secret_response`. The FFI
+  validates operation/correlation/request identity, resolution, size, replay, and late responses;
+  local Core workspace check, strict Clippy, all-target/all-feature tests, and C/C++ Native SDK
+  smoke passed. Core CI `29781845494` and Native SDK `29781845502` passed.
+- Linux documentation/source-pin head `016c4d79131b08ad5eb66e0b7561b9e3e50f02b0` consumes the
+  exact Core revision and refreshes Flatpak metadata. Local no-default tests passed (`80 passed;
+  1 ignored`), demo-provider tests passed (`144 passed; 3 ignored`), strict Clippy, localization
+  audits, Flatpak metadata, and diff checks passed. Linux Foundation/Native/Flatpak gates
+  `29781942858`/`29781942757`/`29781942821` passed with jobs
+  `88484970323`/`88484969938`/`88484969961`.
+- This remains an unreleased Linux-first compatibility checkpoint: semantic/catalog/feature
+  negotiation, file leases, other client projections, complete acceptance scenarios, human review,
+  signing, rollback, and stable release remain open. PR #1 remains Draft/Open and Issue #1 remains
+  Open.
+
 ## 2026-07-20 — Core RetryPolicy deserialization validation consumed by Linux
 
 Assumption: retry-policy data restored from JSON or another serialized boundary must be subject to

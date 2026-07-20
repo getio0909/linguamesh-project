@@ -98,6 +98,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `88480156512`/`88480156210`/`88480155904`). The Linux PR remains Draft/Open and the release
   train remains unreleased.
 
+- [x] Project the one-time host-secret flow through ABI 1. Core
+  `adc1e26f37db3761406bb30aa7515003a8bd2717` adds the optional non-secret `secret_ref` command
+  field, `secret_required` event, and matching one-shot `host_secret_response`; FFI tests cover
+  authenticated loopback streaming, correlation checks, replay rejection, bounded resolutions,
+  and terminal event ordering. Core CI/Native SDK `29781845494`/`29781845502` passed. Linux
+  documentation/source-pin head `016c4d79131b08ad5eb66e0b7561b9e3e50f02b0` consumes the exact
+  revision; Linux Foundation/Native/Flatpak gates `29781942858`/`29781942757`/`29781942821`
+  passed (jobs `88484970323`/`88484969938`/`88484969961`). The Linux PR remains Draft/Open and
+  the release train remains unreleased.
+
 - [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
   Technical/Marketing selector, Core prompt/memory identity propagation, compatibility guard, and
   schema-18 persistence through Linux document creation, routed dispatch, pause, retry, and restart.

@@ -694,6 +694,19 @@ GUI checks, localization sync, and documentation validation passed. Push Native 
 third-party daemon, GPU acceleration, Orca/visual review, stable release, and other clients remain
 unverified.
 
+## ABI 1 host-secret response checkpoint
+
+Core revision `adc1e26f37db3761406bb30aa7515003a8bd2717` projects the typed Rust secret broker
+through the versioned ABI protocol: commands may carry only a `secret_ref`, Core emits one
+`secret_required` event, and a matching `host_secret_response` provides or safely rejects the
+credential exactly once. Operation/correlation/request identity, size limits, replay, late
+responses, and authenticated loopback streaming are covered by the FFI regression. Core CI/
+Native SDK `29781845494`/`29781845502` passed. Linux documentation/source-pin head
+`016c4d79131b08ad5eb66e0b7561b9e3e50f02b0` consumes the same revision; Linux
+Foundation/Native/Flatpak `29781942858`/`29781942757`/`29781942821` passed with jobs
+`88484970323`/`88484969938`/`88484969961`. Semantic/catalog/feature negotiation, file leases,
+other clients, and stable release remain unverified.
+
 Linux-first gettext plural runtime checkpoint: Linux `29e613a806b1eb096cabab2374c494ea6a07e807`
 retains every generated MO plural slot and selects locale-specific English/French/Russian/Arabic/
 Hindi/Brazilian-Portuguese or one-form Chinese/Japanese/Korean variants with safe fallback. Local
