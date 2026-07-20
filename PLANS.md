@@ -180,7 +180,27 @@ Assumption: Planned files and commands are not evidence until they exist and com
   prompt-contract, output-validation, and Flatpak source-pin evidence.
 - [x] Consume the validated Core provider catalog in the Linux GTK preset flow, derive model-listing
   policy from the catalog, and fail closed on adapter drift.
+- [x] Persist Linux document-job quality modes through Core schema 17, restore them on queue
+  selection and worker restart, and verify routed `Best` recovery.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
+
+## Completed Linux-first checkpoint — document quality-mode persistence
+
+Assumption: a document job captures the selected `Fast`, `Balanced`, or `Best` policy at dispatch
+time and reuses it for every segment after pause, retry, or process restart; legacy rows default to
+`Balanced`.
+
+- Core `f62f2df91584eeebdf5c30bd06c5e0893f2345d8` adds transactional schema 17 migration
+  `0017_document_quality_mode.sql`, validated stable names, and restart-safe `DocumentJobOptions`
+  persistence. Core offline check, 139 workspace tests, strict Clippy, locked build, and diff checks
+  passed; Core CI/Native SDK `29744643575`/`29744643593` passed.
+- Linux `6a45e7128651a6f0192f2357b22d348ec6bce119` passes quality mode through plain and routed
+  worker commands, applies it to every document request, restores it into GTK state, and keeps the
+  selector enabled for selected jobs. The routed restart regression selects `Best`, resumes after
+  shutdown, and asserts the completed snapshot retains `Best`.
+- Local Linux GUI check, strict Clippy, 140 tests with 3 ignored, locked build, localization audits,
+  Flatpak metadata, and diff checks passed. Push/PR runs are pending final completion; no merge or
+  stable release was authorized.
 
 ## Completed Linux-first checkpoint — translation quality modes
 

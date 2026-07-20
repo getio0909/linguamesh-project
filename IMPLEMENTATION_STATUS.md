@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux document quality-mode persistence
+
+Assumption: a document job captures the selected `Fast`, `Balanced`, or `Best` policy at dispatch
+time and reuses it for every segment after pause, retry, or process restart; legacy rows default to
+`Balanced`.
+
+- Core `f62f2df91584eeebdf5c30bd06c5e0893f2345d8` adds schema 17 migration
+  `0017_document_quality_mode.sql`, stable-name parsing, and non-secret option round trips. Core
+  CI/Native SDK runs `29744643575`/`29744643593` passed.
+- Linux `6a45e7128651a6f0192f2357b22d348ec6bce119` propagates quality mode through plain/routed
+  document commands, applies it to every segment request, restores it into GTK state, and keeps
+  the selector enabled for selected jobs. Local GUI check, strict Clippy, 140 tests with 3 ignored,
+  locked build, localization audits, Flatpak metadata, and diff checks passed.
+- Push/PR Linux validation is in progress; this remains an unreleased Linux-first checkpoint. No
+  merge, signing, rollback, or stable-release action is claimed.
+
 ## 2026-07-20 — Linux translation quality modes checkpoint
 
 Assumption: quality mode is a request-level deterministic policy shared by Core and Linux; `Best`
