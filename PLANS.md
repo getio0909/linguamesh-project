@@ -2016,6 +2016,20 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `88274289941`/`88274290099`/`88274289936`. End-user prompt approval, other clients, visual
   review, artifacts, rollback, and stable release remain open.
 
+- 2026-07-20: Assumption: Anthropic Messages model selection remains manual until a provider
+  catalog service is intentionally introduced. Core `a87aaf2bef7cca287c4a6faa8addd340e0245b0e`
+  adds the `anthropic_messages` adapter with bounded SSE, cancellation, protected-span restoration,
+  typed errors, redacted diagnostics, and a pre-secret model-selection check. Core CI
+  `29718737864` and Native SDK `29718737836` passed; the adapter is unreleased and Linux UI binding
+  remains open.
+
+- 2026-07-20: Linux `d15e915a516796b7565c34053b27a913c3a2aed4` pins that Core revision and refreshes
+  the Flatpak source manifest. Local non-GTK validation passed; the host GTK test-link limitation is
+  recorded explicitly. Final push/PR Native, Flatpak, and Foundation runs
+  `29719373604`/`29719373628`/`29719373607` and `29719371860`/`29719371922`/`29719371859` passed.
+  Prompted unlock approval, human review, other clients, signing, rollback, and stable release
+  remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

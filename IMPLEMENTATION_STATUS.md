@@ -2,6 +2,39 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Core Anthropic Messages adapter checkpoint
+
+Assumption: Anthropic model discovery is manual because this integration does not rely on a general
+model-list endpoint; a selected model must be validated before any host secret request.
+
+- Core `a87aaf2bef7cca287c4a6faa8addd340e0245b0e` adds the `linguamesh-provider-anthropic` crate,
+  catalog entry, application dispatch, `/v1/messages` SSE streaming, required version/API-key
+  headers, bounded response parsing, cancellation, protected-span restoration, typed HTTP errors,
+  redacted diagnostics, and session credential clearing.
+- Core provider tests cover fragmented UTF-8 SSE, headers/body, manual model listing, cancellation,
+  and diagnostics redaction. Full Core workspace check, Clippy, tests, build, and cargo-deny passed;
+  CI `29718737864` and Native SDK `29718737836` also passed.
+- This is an unreleased provider-family checkpoint. Linux pins the revision, but its GTK form does
+  not yet expose an Anthropic-specific preset; other clients remain deferred by the Linux-first
+  priority.
+
+## 2026-07-20 — Linux Core pin and Flatpak source checkpoint
+
+Assumption: Linux should consume the verified Core adapter without claiming a Linux Anthropic UI
+that has not been implemented.
+
+- Linux `d15e915a516796b7565c34053b27a913c3a2aed4` pins Core
+  `a87aaf2bef7cca287c4a6faa8addd340e0245b0e`, updates `Cargo.lock`, and refreshes the Flatpak
+  source manifest. Local non-GTK checks, 134 demo-provider tests (3 ignored), localization audits,
+  and Flatpak metadata validation passed.
+- The host all-feature test binary could not link against its installed GTK runtime; the exact
+  linker limitation is recorded in the Linux repository. Final push/PR Native, Flatpak, and
+  Foundation runs `29719373604`/`29719373628`/`29719373607` and
+  `29719371860`/`29719371922`/`29719371859` passed.
+- The prior Flatpak stale-source-pin failure is retained in Linux evidence; no stable release is
+  claimed. Prompted unlock approval, human visual/listening review, other clients, signing, and
+  rollback remain open.
+
 ## 2026-07-20 — Linux Secret Service session-only recovery
 
 Assumption: when persistent Secret Service storage fails, the user must receive an explicit,

@@ -13,6 +13,28 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | Localization | `0.1.0` | Message schema `1.0.0`; resource contract `1`; 387 canonical messages including Linux-only status, partial-output, text-import, opt-in image-only PDF OCR controls and errors, glossary CSV import/export and rule-validation errors, PDF fidelity and subtitle readability warnings, document-job actions/dialog/status/tooltip controls, exported-output open/failure actions, Incognito privacy controls, history and translation-memory controls/status, translation-export, provider-profile, provider preset labels/tooltips, routing-profile ID/edit/save/candidate-order/accessibility/duplicate-ID/routing-constraint labels, provider/model allow-deny lists, quality/request-size limits, source-target, onboarding-stage, active-provider, notification, draft-note, locale selector language names, fixed provider/file/worker errors, reducer-state/category guidance, fixed worker/file/storage/provider-error guidance, construction-stage provider/default-control and request-level glossary copy, diagnostics labels/state values, Secret Service prompt-dismissal guidance, GTK drag-fixture label, built-in provider default names, editor text-metrics labels, and Core/loopback startup plus profile-storage error copy; paired PO/MO Linux resources | CI-verified development bundle at l10n revision `3362732be198450ff1ca00f30ec092aab2cf4189`, 59 generated artifacts, Localization `29703625736`, Foundation `29703625695`, unreleased |
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 
+## Core Anthropic Messages adapter checkpoint
+
+Core source revision `a87aaf2bef7cca287c4a6faa8addd340e0245b0e` adds the
+`linguamesh-provider-anthropic` adapter and catalog entry. It validates HTTPS or loopback endpoints,
+uses the Anthropic Messages `/v1/messages` streaming contract with required version/API-key headers,
+supports manual model listing because no general model-list endpoint is assumed, bounds SSE decoding,
+restores protected spans, cancels in-flight work, and clears session credentials. Core application
+connection rejects a missing manual model before asking the host secret broker. Core CI `29718737864`
+and Native SDK `29718737836` passed; this remains unreleased provider-family evidence.
+
+## Linux-first Core pin and Flatpak source checkpoint
+
+Linux source revision `d15e915a516796b7565c34053b27a913c3a2aed4` pins Core
+`a87aaf2bef7cca287c4a6faa8addd340e0245b0e` and refreshes the lockfile and Flatpak source manifest.
+Local non-GTK checks, demo-provider tests (`134 passed; 3 ignored`), localization audits, and
+Flatpak metadata validation passed. The host's all-feature test binary could not link against its
+installed GTK runtime, so full GTK/portal/Secret-Service/AT-SPI/Orca/Wayland evidence is taken from
+CI. Final push Native/Flatpak/Foundation runs `29719373604`/`29719373628`/`29719373607` and PR
+runs `29719371860`/`29719371922`/`29719371859` all passed. Linux does not yet expose an
+Anthropic-specific GTK preset; prompted unlock approval, human visual/listening review, other
+clients, signing, rollback, and stable release remain open.
+
 ## Linux-first Secret Service session-fallback checkpoint
 
 Linux source revision `7df461ec5e0d1cc5736e2c2edef48333fcf5ff14` adds an explicit localized
