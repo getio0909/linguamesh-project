@@ -2,6 +2,30 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux OpenAI Responses typed-SSE checkpoint
+
+Assumption: Linux remains the first active client target; OpenAI Responses model discovery uses the
+shared `/v1/models` contract, while live account, quota, model availability, and cross-client
+behavior remain unverified.
+
+- Core `58075c997cecdcd9a179b9397cb493da375d3a50` adds `openai_responses` with Bearer
+  authentication, `/v1/responses` request shaping, typed `response.output_text.delta` and
+  `response.completed` SSE handling, redacted diagnostics, and `openai_responses_v1`. Local Core
+  workspace tests, strict Clippy, and locked validation passed; CI/Native SDK runs
+  `29739668055`/`29739668165` passed.
+- l10n `95078b1a0c30defe98995a9879c4c669d213e5bc` adds the localized Responses preset copy and
+  generated 405-message resources. Local `make check` passed; Localization/Foundation runs
+  `29739956505`/`29739956524` passed.
+- Linux functional revision `498323ee09a69f3183b903278efcab137836c3fb` adds the six-item GTK preset
+  list and `openai_responses_provider_discovers_and_streams_typed_sse`; Flatpak pin revision
+  `62385d4228750711f232381805bbdab2f560b309` follows the functional head. Local GUI/all-target
+  check, 139 passing tests with 3 ignored, strict Clippy, localization audits/synchronization, and
+  Flatpak metadata validation passed. Push/PR Native, Flatpak, and Foundation runs
+  `29740264065`/`29740263971`/`29740263996` and `29740261207`/`29740261147`/`29740261173` all passed.
+- PR #1 remains Draft/Open and central Issue #1 remains Open. The release train stays `unreleased`
+  with empty artifact lists; Android, Windows, macOS, signing, rollback, and stable-release gates
+  remain open.
+
 ## 2026-07-20 — Linux Azure OpenAI provider checkpoint
 
 Assumption: Linux is the first active client target; deterministic Azure loopback evidence proves

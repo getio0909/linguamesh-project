@@ -134,6 +134,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add and verify the Linux-first Azure OpenAI provider slice with resource/deployment URL
   validation, pinned API version, `api-key` session authentication, manual deployment selection,
   deterministic Core/Linux fixtures, localized GTK copy, and synchronized Core/l10n pins.
+- [x] Add and verify the Linux-first OpenAI Responses provider slice with `/v1/models` discovery,
+  Bearer session authentication, typed `/v1/responses` SSE decoding, deterministic Core/Linux
+  fixtures, localized GTK copy, and synchronized Core/l10n/Flatpak pins.
 - [x] Publish the accepted ABI 1 engine-bound buffer ownership RFC/ADR and keep the central issue,
   Core ABI contract, and migration documentation aligned without claiming a stable SDK release.
 - [x] Add Linux routing-profile candidate selection for enabled saved provider/model pairs, preserve
@@ -174,6 +177,25 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add and remotely verify a Linux source-level localization placeholder audit for literal
   fallback templates, keeping malformed braces and placeholder drift out of GTK/release gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
+
+## Completed Linux-first checkpoint — OpenAI Responses typed SSE
+
+Assumption: OpenAI Responses model discovery remains compatible with `/v1/models`; the deterministic
+fixture proves request shaping, Bearer session authentication, typed SSE delta/completion handling,
+and secret isolation without claiming live account, quota, or model availability.
+
+- Core `58075c997cecdcd9a179b9397cb493da375d3a50` adds `openai_responses`, the typed
+  `response.output_text.delta`/`response.completed` decoder, the `openai_responses_v1` feature, and
+  deterministic application/testkit coverage. Core CI/Native SDK `29739668055`/`29739668165` passed.
+- l10n `95078b1a0c30defe98995a9879c4c669d213e5bc` contains 405 messages and generated resources;
+  Localization/Foundation `29739956505`/`29739956524` passed.
+- Linux functional head `498323ee09a69f3183b903278efcab137836c3fb` adds the localized six-item preset
+  list and `openai_responses_provider_discovers_and_streams_typed_sse`; Flatpak pin head is
+  `62385d4228750711f232381805bbdab2f560b309`. Local Linux GUI check, 139 passing tests with 3
+  ignored, strict Clippy, l10n sync/audits, and Flatpak metadata validation passed.
+- Linux push Native/Flatpak/Foundation `29740264065`/`29740263971`/`29740263996` and PR
+  Native/Flatpak/Foundation `29740261207`/`29740261147`/`29740261173` all passed. PR #1 remains
+  Draft/Open; central Issue #1 remains Open; other clients and stable release remain out of scope.
 
 ## Completed cross-repository checkpoint — ABI 1 engine-bound buffer ownership
 
