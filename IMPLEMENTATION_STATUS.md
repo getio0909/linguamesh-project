@@ -16,10 +16,12 @@ shared provider slice is validated.
   strict Clippy, demo-provider tests (`136 passed; 3 ignored`), localization synchronization and
   three audits, Flatpak metadata validation, and diff checks passed. The deterministic fixture does
   not claim live Gemini account, credential, quota, or visual-copy coverage.
-- Linux push/PR Native, Flatpak, and Foundation checks are pending for final head `df9b0fe`; PR #1
-  remains Draft/Open, Issue #1 remains Open, and `release-manifest.toml` remains `unreleased` with
-  the Core/Linux/l10n pins updated to these exact revisions. Stable signing, rollback, human review,
-  complete acceptance scenarios, and other clients remain open.
+- Linux push/PR Native, Flatpak, and Foundation checks all passed for final head `df9b0fe`: push
+  `29735086126`/`29735086106`/`29735086081`, PR `29735088589`/`29735088578`/`29735088610`.
+  Core CI/Native SDK `29734921076`/`29734921078` also passed. PR #1 remains Draft/Open, Issue #1
+  remains Open, and `release-manifest.toml` remains `unreleased` with the Core/Linux/l10n pins
+  updated to these exact revisions. Stable signing, rollback, human review, complete acceptance
+  scenarios, and other clients remain open.
 
 ## 2026-07-20 — Linux bounded concurrent document execution
 

@@ -204,9 +204,10 @@ manual-model controls Anthropic-only. l10n `f9d74a8f83a89540a58bba65477a5031031b
 
 Core workspace tests, strict Clippy, Linux formatting/check/Clippy, demo-provider tests (`136 passed;
 3 ignored`), localization synchronization and three audits, Flatpak metadata validation, and diff
-checks passed locally. Linux push/PR Native, Flatpak, and Foundation checks are pending for the final
-head; the PR remains Draft/Open, the central issue remains Open, and the release train stays
-`unreleased`.
+checks passed locally. Linux push Native/Flatpak/Foundation `29735086126`/`29735086106`/`29735086081`
+and PR `29735088589`/`29735088578`/`29735088610` all passed. Core CI/Native SDK
+`29734921076`/`29734921078` passed. The PR remains Draft/Open, the central issue remains Open, and
+the release train stays `unreleased`.
 
 ## Completed Linux-first checkpoint — bounded concurrent document execution
 
