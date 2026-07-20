@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux bounded routing retry and circuit-breaker policy
+
+Assumption: retryable provider failures must advance only through the configured Linux routing
+chain, with bounded waits, cancellation, and no sensitive data in retry state.
+
+- Core `c03bd205e1d135c024f3a0a767dd94770030a723` adds optional `retry_after_ms` to
+  `TranslationError`; HTTP-date and delta-seconds headers are bounded to sixty seconds and all
+  four HTTP adapters preserve legacy payload compatibility when the hint is absent.
+- Linux source/pin `4b345763af46bc4cd23bdecc54ecb6b8b52e597a` applies an eight-second maximum,
+  deterministic safe-key jitter, shutdown-aware waits, and a two-failure/30-second in-memory
+  circuit breaker. Core CI/Native SDK `29776309259`/`29776309263` passed, as did Linux source/pin
+  push/PR Native/Flatpak/Foundation `29776662997`/`29776663334`/`29776662987` and
+  `29776667400`/`29776667014`/`29776667068`. Documentation follow-up head
+  `2a75ac0449dcc577ec263b73929c4c89ca10f063` passed push Native/Flatpak/Foundation
+  `29777101390`/`29777101871`/`29777101540` and PR `29777102953`/`29777103017`/`29777103023`.
+- Local Core workspace tests passed 150 cases; Linux passed no-default (`80 passed; 1 ignored`)
+  and demo-provider (`144 passed; 3 ignored`) suites, GUI all-target check, strict Clippy,
+  l10n audits, Flatpak metadata validation, and diff checks. PR #1 remains Draft/Open and Issue #1
+  remains Open; this is unreleased Linux-first evidence.
+
 ## 2026-07-20 — Linux explainable routing decision diagnostics
 
 Assumption: Linux routing diagnostics must be inspectable while remaining free of provider

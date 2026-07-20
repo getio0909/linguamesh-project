@@ -66,6 +66,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29774707677`/`29774707852`/`29774708075` and PR gates `29774709730`/`29774709849`/
   `29774710165`. The Linux PR remains Draft/Open and the release train remains unreleased.
 
+- [x] Add and remotely verify the Linux bounded routing retry policy at documentation head
+  `2a75ac0`. Core `c03bd205` carries bounded, optional Retry-After hints from all four HTTP
+  adapters; Linux source/pin `4b34576` applies an eight-second maximum backoff with stable jitter,
+  shutdown cancellation, and a two-failure/30-second in-memory circuit breaker. Core CI/Native SDK
+  `29776309259`/`29776309263` and Linux source/pin push/PR Native, Flatpak, and Foundation gates
+  `29776662997`/`29776663334`/`29776662987` and `29776667400`/`29776667014`/`29776667068` passed.
+  Documentation-head push Native/Flatpak/Foundation `29777101390`/`29777101871`/`29777101540` and
+  PR gates `29777102953`/`29777103017`/`29777103023` also passed. The Linux PR remains Draft/Open
+  and the release train remains unreleased.
+
 - [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
   Technical/Marketing selector, Core prompt/memory identity propagation, compatibility guard, and
   schema-18 persistence through Linux document creation, routed dispatch, pause, retry, and restart.

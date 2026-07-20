@@ -4,6 +4,7 @@ status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
   "Linux explainable routing diagnostics are verified at source/pin head ab82f36963a63f43091d94e960541fc173175724 with l10n 737d890e60fd34f15fd8708698448ef9ab96299f: typed events expose eligible candidates, rejected candidates with stable reasons, ranking inputs, and fallback order while excluding endpoints, credentials, source text, and translated output. Push Native/Flatpak/Foundation gates 29773735297/29773735296/29773735294 and PR gates 29773738883/29773738887/29773738924 passed; documentation head 458a920321ae16e6d3983213a286a972e34c8a18 also passed push gates 29774707677/29774707852/29774708075 and PR gates 29774709730/29774709849/29774710165. The PR remains Draft/Open and this is unreleased Linux-first evidence; human visual/copy review, end-user Orca acceptance, other clients, signing, rollback, and stable release remain unverified.",
+  "Linux bounded routing retry is verified at Core c03bd205e1d135c024f3a0a767dd94770030a723 and Linux source/pin 4b345763af46bc4cd23bdecc54ecb6b8b52e597a: HTTP providers carry bounded optional Retry-After hints, while Linux uses an eight-second maximum backoff, stable candidate-key jitter, shutdown cancellation, and a two-failure/30-second in-memory circuit breaker. Core CI/Native SDK 29776309259/29776309263 and Linux source/pin push/PR Native/Flatpak/Foundation gates 29776662997/29776663334/29776662987 and 29776667400/29776667014/29776667068 passed; documentation head 2a75ac0449dcc577ec263b73929c4c89ca10f063 also passed push Native/Flatpak/Foundation 29777101390/29777101871/29777101540 and PR 29777102953/29777103017/29777103023. This remains unreleased Linux-first evidence; provider quota behavior, physical review, other clients, signing, rollback, and stable release remain unverified.",
   "Linux GTK routing candidate accessibility lifecycle is verified at Linux 1c47ff9b6b103ee16d564480d3dd3cdfcda5e083: the dedicated serialized DBus/Xvfb fixture checks labelled/focusable profile and candidate controls, accessible up/down labels, row reordering, Manual single-candidate enforcement, and Use close-and-select behavior. Push Native/Flatpak/Foundation gates 29771475803/29771475775/29771475669 and PR gates 29771479057/29771478869/29771478884 passed; the PR remains Draft/Open and this is unreleased evidence only. Human visual/copy review, end-user Orca acceptance, other clients, signing, rollback, and stable release remain unverified.",
   "Linux GTK fallback approval lifecycle is verified at Linux 62d70b1c57662515fadb447aa625cabe1b5d74e9: the dedicated DBus/Xvfb fixture proves Close leaves approval and dispatch untouched, while one Translate action records one-shot approval and dispatches exactly once. Push Native/Flatpak/Foundation gates 29770058909/29770058926/29770058895 and PR gates 29770062559/29770062414/29770062090 passed; the PR remains Draft/Open and this is unreleased evidence only.",
   "Linux Automatic routing worker integration is an unreleased deterministic checkpoint at Core 115535c76d804020f045708867af7798b8d0294a, l10n 7e8c987737444d4e0f8f2642b108eee4c7801f58, and Linux 0e2ae25c321cef243275d1322f2b8271f0602d06; the worker verifies quality-ranked selection and retryable fallback only through the saved profile's explicit chain. Final documentation-head push/PR Native, Flatpak, and Foundation gates passed at 75910c8; document-job fallback, other clients, live provider behavior, human review, signing, rollback, and stable release remain unverified.",
@@ -33,7 +34,7 @@ localization_schema_version = "1.0.0"
 [components.core]
 repository = "linguamesh-core"
 version = "0.1.0-alpha.2"
-source_revision = "0db51464a9359400a2754ee86b51be2709e73709"
+source_revision = "c03bd205e1d135c024f3a0a767dd94770030a723"
 minimum_compatible_version = "0.1.0-alpha.2"
 artifacts = []
 
@@ -68,6 +69,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "ab82f36963a63f43091d94e960541fc173175724"
+source_revision = "2a75ac0449dcc577ec263b73929c4c89ca10f063"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []
