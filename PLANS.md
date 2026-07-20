@@ -180,6 +180,13 @@ Local formatting and the filtered demo-provider test passed (`1 passed; 0 failed
 source pin follows Linux code head `36b81586b8b148d7adc08ecfc46203b2ef94af4d`; no Core,
 localization, workspace-manifest, or release-manifest pin changed. True concurrent document
 execution, other clients, signing, rollback, and stable release remain open.
+The full local suite passed at code head (`135 passed; 3 ignored`); code-head push/PR Native,
+Flatpak, and Foundation runs `29730049695`/`29730049744`/`29730049648` and
+`29730052583`/`29730052576`/`29730052602` passed after correcting the initial Flatpak pin failures
+`29729850476` and `29729852622`. Documentation head `9fbc995747400528c6680977bb8ee6c0a51d7506`
+then passed push/PR Native, Flatpak, and Foundation runs
+`29730511966`/`29730512095`/`29730511907` and `29730513799`/`29730513772`/`29730513834`.
+Central coordination run `29730453936` passed.
 
 ## Completed Linux-first checkpoint — GTK routing candidate reorder behavior
 

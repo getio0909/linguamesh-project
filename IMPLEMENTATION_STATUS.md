@@ -23,6 +23,28 @@ release gates remain incomplete.
   the host GTK test binary remains linker-limited, so Native CI is authoritative for GTK runtime.
 - PR #1 remains Draft/Open and Issue #1 remains Open; no merge or stable release action occurred.
 
+## 2026-07-20 — Linux document-job concurrency isolation evidence
+
+Assumption: overlapping document starts remain fail-closed until bounded concurrent execution is
+implemented; this Linux-first checkpoint proves isolation without claiming concurrency.
+
+- Linux code head `36b81586b8b148d7adc08ecfc46203b2ef94af4d` adds
+  `concurrent_document_start_is_rejected_without_interrupting_active_job`; Flatpak source pin
+  `17d25816d2cecb763c331c02e55248efcb172a54` follows that code head, and documentation head is
+  `9fbc995747400528c6680977bb8ee6c0a51d7506`. The regression rejects the second start with a
+  typed configuration error, preserves the active cancellation path, and leaves the second job
+  pending.
+- Full local Linux validation passed (`135 passed; 3 ignored`) with formatting, GUI all-target
+  check, strict Clippy, Flatpak metadata, l10n synchronization, three localization audits, and
+  diff checks. Code-head push/PR Native, Flatpak, and Foundation runs
+  `29730049695`/`29730049744`/`29730049648` and `29730052583`/`29730052576`/`29730052602` passed;
+  docs-head push/PR runs `29730511966`/`29730512095`/`29730511907` and
+  `29730513799`/`29730513772`/`29730513834` passed. Initial Flatpak pin failures
+  `29729850476` and `29729852622` remain retained as corrective evidence.
+- Central coordination run `29730453936` passed. PR #1 remains Draft/Open and Issue #1 remains
+  Open; true concurrent document execution, other clients, signing, rollback, and stable-release
+  authorization remain open.
+
 ## 2026-07-20 — Linux GTK routing-control evidence refresh
 
 Assumption: the Linux-first prerelease remains Draft/Open while the latest automated evidence is
