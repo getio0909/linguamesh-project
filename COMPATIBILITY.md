@@ -44,6 +44,8 @@ Native/Flatpak/Foundation `29776662997`/`29776663334`/`29776662987` and PR
 `29776667400`/`29776667014`/`29776667068` passed. The follow-up documentation head
 `2a75ac0449dcc577ec263b73929c4c89ca10f063` also passed push Native/Flatpak/Foundation
 `29777101390`/`29777101871`/`29777101540` and PR `29777102953`/`29777103017`/`29777103023`.
+Central coordination commit `adaa2a16e127b508b630c3a7711a2cb19d26ecb0` passed workflow
+`29777574182`.
 This remains unreleased Linux-first evidence; provider quota behavior, physical review, other
 clients, signing, rollback, and stable release remain open.
 

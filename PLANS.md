@@ -74,7 +74,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29776662997`/`29776663334`/`29776662987` and `29776667400`/`29776667014`/`29776667068` passed.
   Documentation-head push Native/Flatpak/Foundation `29777101390`/`29777101871`/`29777101540` and
   PR gates `29777102953`/`29777103017`/`29777103023` also passed. The Linux PR remains Draft/Open
-  and the release train remains unreleased.
+  and the release train remains unreleased. Central coordination commit `adaa2a1` passed workflow
+  `29777574182`.
 
 - [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
   Technical/Marketing selector, Core prompt/memory identity propagation, compatibility guard, and

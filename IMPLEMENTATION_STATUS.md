@@ -17,6 +17,8 @@ chain, with bounded waits, cancellation, and no sensitive data in retry state.
   `29776667400`/`29776667014`/`29776667068`. Documentation follow-up head
   `2a75ac0449dcc577ec263b73929c4c89ca10f063` passed push Native/Flatpak/Foundation
   `29777101390`/`29777101871`/`29777101540` and PR `29777102953`/`29777103017`/`29777103023`.
+  Central coordination commit `adaa2a16e127b508b630c3a7711a2cb19d26ecb0` passed workflow
+  `29777574182` (Linux and PowerShell validation).
 - Local Core workspace tests passed 150 cases; Linux passed no-default (`80 passed; 1 ignored`)
   and demo-provider (`144 passed; 3 ignored`) suites, GUI all-target check, strict Clippy,
   l10n audits, Flatpak metadata validation, and diff checks. PR #1 remains Draft/Open and Issue #1
