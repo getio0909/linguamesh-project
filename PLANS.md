@@ -24,6 +24,11 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
+  Technical/Marketing selector, Core prompt/memory identity propagation, and compatibility guard.
+  Assumption: document jobs remain General until their persisted preset options schema is explicitly
+  extended; Android, Windows, and macOS remain out of scope for this checkpoint.
+
 - [x] Read the active goal attachment, `AGENTS.md`, and `PROJECT_GOAL.md` completely.
 - [x] Confirm that `PLANS.md` was absent before creating this plan.
 - [x] Confirm that `linguamesh-project` initially contained only `PROJECT_GOAL.md`, `AGENTS.md`, and ignored local Codex configuration, with no Git repository.

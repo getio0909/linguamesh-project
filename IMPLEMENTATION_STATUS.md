@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux request-level translation presets
+
+Assumption: Linux is the first active client target; Android, Windows, and macOS remain out of scope
+for this checkpoint, and document jobs keep the General preset until their persisted options schema
+is deliberately extended.
+
+- Core `f79631fd3e83a55077000c888aee6c0fc580c115` adds the validated `TranslationPreset` request
+  contract, `translation_presets_v1`, escaped prompt rendering, and translation-memory identity
+  separation. All built-in provider adapters carry the request-level preset.
+- l10n `7f65596bd71be3ed6e179ade3bf2e436545436a2` raises the catalog to 415 messages and regenerates
+  Linux PO/MO resources for all official locales; non-English packs remain machine-generated drafts.
+- Linux `1b8b9780bd6777d596809ac034f1910e8ce1a83b` adds the localized GTK selector, request
+  propagation, compatibility requirement, and mapping regressions. Local Core and Linux tests,
+  Clippy, locked builds, localization checks, Flatpak metadata, and diff checks passed.
+- Remote run evidence is being collected for Core, Linux push/PR gates, l10n, and this coordination
+  repository. PR #1 remains Draft/Open and Issue #1 remains Open; no merge, close, signing, rollback,
+  or stable-release action is claimed.
+
 ## 2026-07-20 — Linux document quality-mode persistence
 
 Assumption: a document job captures the selected `Fast`, `Balanced`, or `Best` policy at dispatch
