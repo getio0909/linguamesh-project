@@ -24,6 +24,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add the Linux-first FileLease document-import vertical slice. Core
+  `8b096478b1623bdaf5105e8a8f59e55e2fa8015d` adds `file_lease_v1`, validates all required resource
+  shapes, and proves fail-closed access after expiry/revocation through domain and FFI tests. Linux
+  `dc1713bf91e0530aa101b9216477593d9baefdf5` requires the feature, validates the lease around portal/
+  GIO reads, rejects expired decoding, and revokes the lease after bounded bytes are copied. Local
+  no-default/demo-provider suites (`81 passed; 1 ignored` / `145 passed; 3 ignored`), strict Clippy,
+  localization audits, Flatpak metadata, Core CI `29784269272`, and Native SDK smoke passed; Linux
+  Native/Flatpak/Foundation runs `29784467971`/`29784467987`/`29784468054` are pending. ABI lease
+  transfer, other clients, signing, rollback, and stable release remain open.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with

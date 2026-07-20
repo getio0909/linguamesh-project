@@ -3,6 +3,7 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
+  "Linux-first FileLease lifecycle checkpoint is implemented at Core 8b096478b1623bdaf5105e8a8f59e55e2fa8015d and Linux dc1713bf91e0530aa101b9216477593d9baefdf5. Core local workspace/FFI/native SDK checks and Linux local no-default/demo-provider, strict Clippy, localization, and Flatpak metadata checks passed; Linux Native/Flatpak/Foundation remote gates are pending. Core exposes file_lease_v1 and Linux validates portal-read expiry/revocation, while ABI handle transfer and other clients remain unverified.",
   "ABI 1 compatibility snapshot projection is verified at Core c559b32d3869e01983f2bbf32f1386bad99c3290 and Linux b38a8fd722d4740abd161e30197354793e3de1f6. Core CI/Native SDK 29782822854/29782822883 passed; Linux PR Native/Flatpak/Foundation 29783023917/29783023872/29783023894 (jobs 88488352790/88488352708/88488352736) passed. The five-dimension query is available through the C ABI, while file leases, other clients, signing, rollback, and stable release remain unverified.",
   "Linux explainable routing diagnostics are verified at source/pin head ab82f36963a63f43091d94e960541fc173175724 with l10n 737d890e60fd34f15fd8708698448ef9ab96299f: typed events expose eligible candidates, rejected candidates with stable reasons, ranking inputs, and fallback order while excluding endpoints, credentials, source text, and translated output. Push Native/Flatpak/Foundation gates 29773735297/29773735296/29773735294 and PR gates 29773738883/29773738887/29773738924 passed; documentation head 458a920321ae16e6d3983213a286a972e34c8a18 also passed push gates 29774707677/29774707852/29774708075 and PR gates 29774709730/29774709849/29774710165. The PR remains Draft/Open and this is unreleased Linux-first evidence; human visual/copy review, end-user Orca acceptance, other clients, signing, rollback, and stable release remain unverified.",
   "Linux shared RetryPolicy is verified at Core 8790eb41a52c4e2c908044699e8c12597d3c42a5 and Linux source/pin 3ff10f4c9f54d82b7c43a0204946033cb063b92f: Core validates bounded backoff, jitter, Retry-After, circuit threshold, and cooldown values, while Linux consumes the same policy for approved fallback and circuit state. Core CI/Native SDK 29778375725/29778375728 passed. Documentation/source-pin head eb7e57869580917494d719ac61ec861c1c8bcff4 passed Linux push Native/Flatpak/Foundation 29778624703/29778624674/29778624715 and PR 29778626906/29778626865/29778626849. Final status head 857dac37c1d54c3987b69bd5b96e357fb8977e82 passed push Native/Flatpak/Foundation 29779357668/29779357649/29779357690 and PR 29779360891/29779360949/29779361066 (jobs 88476555747/88476555602/88476555686 and 88476567289/88476567432/88476567728). The PR remains Draft/Open and this remains unreleased Linux-first evidence; provider quota behavior, physical review, other clients, signing, rollback, and stable release remain unverified.",
@@ -38,7 +39,7 @@ localization_schema_version = "1.0.0"
 [components.core]
 repository = "linguamesh-core"
 version = "0.1.0-alpha.2"
-source_revision = "c559b32d3869e01983f2bbf32f1386bad99c3290"
+source_revision = "8b096478b1623bdaf5105e8a8f59e55e2fa8015d"
 minimum_compatible_version = "0.1.0-alpha.2"
 artifacts = []
 
@@ -73,6 +74,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "b38a8fd722d4740abd161e30197354793e3de1f6"
+source_revision = "dc1713bf91e0530aa101b9216477593d9baefdf5"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

@@ -24,14 +24,15 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
 The current Linux-first TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF document slice is pinned to Core
-`c559b32d3869e01983f2bbf32f1386bad99c3290`, l10n `737d890e60fd34f15fd8708698448ef9ab96299f`, and
-Linux `b38a8fd`. Core CI `29782822854`, Native SDK `29782822883`, and Linux PR Native `29783023917`
-(job `88488352790`), Foundation `29783023894` (job `88488352736`), and Flatpak `29783023872` (job `88488352708`) passed. The l10n Localization `29658713355`
+`8b096478b1623bdaf5105e8a8f59e55e2fa8015d`, l10n `737d890e60fd34f15fd8708698448ef9ab96299f`, and
+Linux `dc1713bf91e0530aa101b9216477593d9baefdf5`. Core CI `29784269272` passed and Native SDK
+`29784269356` is pending. Linux Native `29784467971`, Foundation `29784468054`, and Flatpak
+`29784467987` are pending for the lease-enabled revision. The l10n Localization `29658713355`
 and Foundation `29658713372` passed with the 286-message bundle checksum
 `ee7c269571beca22cdbd7bea971ae266975b8004490b02ead4b71305e3a93872`. Local Core storage tests
 and Linux worker tests verify bounded standard history writes, Incognito skip, startup count/policy
 restoration, cache identity/reuse, clear-all, newest-first inspection, exact per-entry deletion,
-escaped UTF-8 TSV export, the bounded Core TXT/Markdown/CSV/SRT/WebVTT document contract with BOM,
+escaped UTF-8 TSV export, Core FileLease expiry/revocation tests, the bounded Core TXT/Markdown/CSV/SRT/WebVTT document contract with BOM,
 line-ending, cue-ID, header, timestamp, subtitle-structure, CSV delimiter/quote, variable-width row,
 and selected-column preservation, JSON path selection, primitive/key protection, escaping, HTML tag-stack validation, script/style protection, text-node escaping, bounded DOCX/PPTX/XLSX/EPUB package path/XML/resource preservation, page-aware text-PDF extraction/reconstruction and structured HTML fallback, cue-level subtitle line-length/reading-speed warnings with configurable limits, schema-14 job bounds/options, segment updates, and restart
 recovery of pending/running/paused jobs without paths or credentials; bounded PDF warnings for

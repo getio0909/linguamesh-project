@@ -9,10 +9,16 @@ At startup, each client queries the core semantic version, ABI version, protocol
 A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings, migration guidance, client changes, conformance tests, and an updated release train. Release promotion requires source and artifact provenance, license and third-party notices, checksums, SBOMs where practical, platform build evidence, rollback instructions, and acceptance-scenario evidence.
 
 The current unreleased matrix pins Core functional revision
-`c559b32d3869e01983f2bbf32f1386bad99c3290` and Linux functional revision
-`b38a8fd722d4740abd161e30197354793e3de1f6`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+`8b096478b1623bdaf5105e8a8f59e55e2fa8015d` and Linux functional revision
+`dc1713bf91e0530aa101b9216477593d9baefdf5`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
 Native clients query `CompatibilitySnapshot` through `lm_engine_get_compatibility` before provider
-work; file-lease capabilities remain unprojected.
+work. Core advertises `file_lease_v1`; Linux validates the lease around portal/GIO document reads,
+while ABI handle transfer and lease-control calls remain unprojected.
+
+The Linux FileLease checkpoint adds expiry/revocation checks to asynchronous document imports and
+revokes the lease after bounded bytes are copied into a document job. Local Linux suites passed;
+remote Native/Flatpak/Foundation evidence is recorded in `COMPATIBILITY.md` once the current runs
+complete.
 Linux evidence head `029e7f21322f3d0f3619a8f3a0158e7157972e30` adds official locale-pack switching,
 Arabic RTL direction, Secret Service prompted-flow,
 notification-daemon, portal,

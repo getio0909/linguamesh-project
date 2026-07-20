@@ -2,11 +2,31 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux FileLease document-import boundary
+
+Assumption: Linux document imports must borrow a bounded Core file resource only for the read and
+must fail closed if that lease expires or is explicitly revoked before decoding completes.
+
+- Core `8b096478b1623bdaf5105e8a8f59e55e2fa8015d` adds `file_lease_v1` with opaque lease IDs,
+  validated desktop/temporary/output paths, POSIX and Android parcel descriptors, Windows handles,
+  monotonic expiry/revocation, and guard access that rechecks state. Domain and FFI tests cover all
+  resource shapes, invalid values, and expiry; local full workspace/strict Clippy and C/C++ Native
+  SDK smoke passed. Core CI `29784269272` passed; Native SDK `29784269356` is pending.
+- Linux `dc1713bf91e0530aa101b9216477593d9baefdf5` pins the exact Core revision, requires the feature
+  during compatibility negotiation, checks leases in asynchronous GIO reads and decoding, maps
+  expiry to the existing localized file-open path, and revokes after bytes are copied into a bounded
+  `DocumentJob`. Local no-default/demo-provider tests passed (`81 passed; 1 ignored` / `145 passed;
+  3 ignored`), as did strict Clippy, localization audits, Flatpak metadata, and diff checks.
+- Linux Native/Flatpak/Foundation runs `29784467971`/`29784467987`/`29784468054` are pending. This
+  is unreleased Linux-first evidence; ABI handle transfer, Android/Windows/macOS clients, human
+  accessibility review, signing, rollback, and stable release remain open. PR #1 remains Draft/Open
+  and Issue #1 remains Open.
+
 ## 2026-07-20 — C ABI compatibility snapshot consumed by Linux
 
 Assumption: native clients must negotiate Core semantic, ABI, protocol, catalog, and feature
-dimensions through one versioned query before starting provider work; file-lease capabilities remain
-outside this checkpoint.
+dimensions through one versioned query before starting provider work; ABI file-lease handle transfer
+remains outside this checkpoint.
 
 - Core `c559b32d3869e01983f2bbf32f1386bad99c3290` adds `CompatibilitySnapshot` and
   `lm_engine_get_compatibility`; Core CI `29782822854` and Native SDK `29782822883` passed.
