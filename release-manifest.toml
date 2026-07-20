@@ -8,6 +8,7 @@ known_limitations = [
   "Linux GTK routing profiles expose Manual, Ordered, and Automatic modes, with Manual normalized to exactly one first provider/model candidate, explicit fallback consent defaulting off, focusable candidate selection, keyboard-focusable up/down controls, row drag-and-drop ordering, existing-profile edit/upsert, bounded multiple profile IDs, duplicate-ID protection for new profiles, catalog-backed accessible names, localized source/output character plus approximate-token metrics, editable Core preference/privacy/streaming/document/provider-model allow-deny/quality/request-size constraints, source-level visible-string and fallback-template placeholder audits, canonical fallback-copy consistency, Flatpak source-pin integrity, CI checksum/SBOM evidence, native release-mode SHA-256/SPDX evidence, repository-only source-archive evidence, machine-contextual performance-baseline evidence, and descriptor-pinned final-database `openat2(RESOLVE_NO_SYMLINKS)` plus `O_NOFOLLOW | O_CLOEXEC` hardening at revision 7df461ec5e0d1cc5736e2c2edef48333fcf5ff14; persistent Secret Service store failures now offer an explicit localized session-only recovery modal that disables Remember and leaves Connect unsubmitted on Close; Core schema 16 persists only the non-secret routing-profile ID, legacy schema-15 snapshots retain provider/model resume, document fallback remains disabled, and cross-client routing is unimplemented.",
   "Linux Flatpak manifest, generated Cargo source set, desktop metadata, icon, localized accessible labels, Manual single-candidate normalization, routing candidate drag ordering, saved-profile edit flow, multiple profile-ID validation, duplicate-ID protection, editor text metrics, routing constraint controls, fallback-send confirmation, visible-string and fallback-template placeholder audits, canonical fallback-copy consistency, compatible Flatpak source-pin validation, CI-only SHA-256/SPDX evidence, native release-mode evidence, repository-only source-archive evidence, performance-baseline evidence, headless Orca Speech Dispatcher integration evidence, opt-in third-party Ollama daemon harness, descriptor-pinned database hardening, read-only-directory fail-closed regression, and explicit Secret Service session-only recovery modal pass local validation at published revision 7df461ec5e0d1cc5736e2c2edef48333fcf5ff14; Push/PR Native, Flatpak, and Foundation runs `29717769144`/`29717769121`/`29717769119` and `29717770780`/`29717770833`/`29717770765` all passed (jobs `88274285611`/`88274285568`/`88274285482` and `88274289941`/`88274290099`/`88274289936`). The first fallback attempt's placeholder-audit and stale-pin failures remain recorded in the implementation status. A Docker Ollama daemon served /api/tags and /api/chat for qwen2.5-0.5b-instruct:latest; the harness reported 1 passed and no credential. Prompted Secret Service/portal unlock UI, parent-directory filesystem/VFS variants, GPU execution, the GTK4/Orca focus handoff limitation, physical compositor/GPU rendering, human listening, signing, source archives as standalone releases, rollback, portable performance budgets, and distributable artifacts remain unverified.",
   "Current Linux/Core evidence is pinned to Linux `f41e14af53b6d2d70b0f1d452ea32eda10d63095` and Core `a87aaf2bef7cca287c4a6faa8addd340e0245b0e`; Core's Anthropic Messages adapter and Linux GTK preset use manual model selection with pre-secret validation. Final Linux push/PR Native, Flatpak, and Foundation runs `29721751141`/`29721751155`/`29721751111` and `29721753040`/`29721753048`/`29721753045` passed. These are unreleased compatibility checkpoints only.",
+  "Linux now includes a deterministic Google Gemini Generate Content fixture and GTK preset at Core `638713c34ce7d5bcc8003bb0d7e54c514ab49ea7`, Linux `df9b0fe261bcbb3cba8d4b8660baa94c891ea44c`, and l10n `f9d74a8f83a89540a58bba65477a5031031bd619`; live Gemini credentials, quota, account behavior, human copy/accessibility review, signing, rollback, and stable release remain unverified.",
   "Localization 0.1.0 is a 393-message development bundle whose non-English packs remain unreviewed machine-generated drafts; Linux consumes immutable l10n revision e1ee15a5e9470e2c49077e52b4969597a5c8283f with provider/model allow-deny, quality, request-size routing controls, and Anthropic GTK copy. Localization/Foundation runs 29720509844/29720509865 passed at that revision.",
   "Only mandatory acceptance Scenario 1 has complete release evidence; Linux Scenario 7 has Linux client and remote gate evidence for explicit and ordered/automatic ordinary-text fallback, and no scenario has stable-release evidence.",
   "The Ollama-compatible OpenAI /v1/ and native /api loopback wire contracts are verified with deterministic Linux/Core fixtures; Linux GTK now exposes localized preset selection and a passed opt-in third-party daemon harness. Docker Ollama /api/tags and /api/chat interoperability passed with qwen2.5-0.5b-instruct:latest without a credential; GPU acceleration and stable release remain unverified. Linux DOCX/XLSX wrapper regression fixtures now cover bounded office-package reconstruction, non-text part retention, selected-string boundaries, formula/number preservation, DOCX ZIP path-traversal rejection, and oversized-uncompressed-entry rejection; the worker queue lists multiple pending jobs for explicit selection, and worker end-to-end regressions translate persisted DOCX/XLSX jobs before reconstructing resources, formulas, and numeric cells."
@@ -22,14 +23,14 @@ localization_schema_version = "1.0.0"
 [components.core]
 repository = "linguamesh-core"
 version = "0.1.0-alpha.2"
-source_revision = "a87aaf2bef7cca287c4a6faa8addd340e0245b0e"
+source_revision = "638713c34ce7d5bcc8003bb0d7e54c514ab49ea7"
 minimum_compatible_version = "0.1.0-alpha.2"
 artifacts = []
 
 [components.localization]
 repository = "linguamesh-l10n"
 version = "0.1.0"
-source_revision = "e1ee15a5e9470e2c49077e52b4969597a5c8283f"
+source_revision = "f9d74a8f83a89540a58bba65477a5031031bd619"
 minimum_compatible_version = "0.1.0"
 artifacts = []
 
@@ -57,6 +58,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "f41e14af53b6d2d70b0f1d452ea32eda10d63095"
+source_revision = "df9b0fe261bcbb3cba8d4b8660baa94c891ea44c"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

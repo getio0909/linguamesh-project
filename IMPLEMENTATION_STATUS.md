@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux Google Gemini Generate Content provider
+
+Assumption: Linux remains the priority client; Android, Windows, and macOS stay deferred while this
+shared provider slice is validated.
+
+- Core `638713c34ce7d5bcc8003bb0d7e54c514ab49ea7` adds deterministic Gemini model discovery and
+  fragmented SSE Generate Content streaming with cancellation, protected-span/glossary
+  restoration, endpoint policy, and redacted API-key diagnostics. Linux `df9b0fe261bcbb3cba8d4b8660baa94c891ea44c`
+  exposes the localized Google Gemini preset; l10n `f9d74a8f83a89540a58bba65477a5031031bd619`
+  contains the 396-message generated bundle.
+- Local Core workspace tests and strict Clippy passed. Linux formatting, GUI all-target check,
+  strict Clippy, demo-provider tests (`136 passed; 3 ignored`), localization synchronization and
+  three audits, Flatpak metadata validation, and diff checks passed. The deterministic fixture does
+  not claim live Gemini account, credential, quota, or visual-copy coverage.
+- Linux push/PR Native, Flatpak, and Foundation checks are pending for final head `df9b0fe`; PR #1
+  remains Draft/Open, Issue #1 remains Open, and `release-manifest.toml` remains `unreleased` with
+  the Core/Linux/l10n pins updated to these exact revisions. Stable signing, rollback, human review,
+  complete acceptance scenarios, and other clients remain open.
+
 ## 2026-07-20 — Linux bounded concurrent document execution
 
 Assumption: Linux is the first delivery target, so bounded worker concurrency can advance without

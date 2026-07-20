@@ -128,6 +128,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Expose Linux GTK routing-profile mode selection (`Manual`, `Ordered`, `Automatic`) and an
   explicit fallback-consent checkbox defaulting off; verify the Core mode order and local routing
   validation without expanding scope to other clients.
+- [x] Add and verify the Linux-first Google Gemini Generate Content provider slice with deterministic
+  model discovery, SSE streaming, cancellation, redacted diagnostics, localized GTK preset copy,
+  and pinned Core/l10n compatibility revisions.
 - [x] Add Linux routing-profile candidate selection for enabled saved provider/model pairs, preserve
   the displayed order, reject unknown IDs and empty selections, and verify the remote Linux gates.
 - [x] Add keyboard-focusable Linux up/down controls for routing candidate ordering, persist the
@@ -186,6 +189,24 @@ Flatpak, and Foundation runs `29730049695`/`29730049744`/`29730049648` and
 then passed push/PR Native, Flatpak, and Foundation runs
 `29730511966`/`29730512095`/`29730511907` and `29730513799`/`29730513772`/`29730513834`.
 Central coordination run `29730453936` passed.
+
+## Completed Linux-first checkpoint — Google Gemini Generate Content provider
+
+Assumption: Gemini is an opt-in Linux provider slice; deterministic loopback coverage proves the
+wire contract without claiming live account, quota, or stable-release evidence.
+
+Core `638713c34ce7d5bcc8003bb0d7e54c514ab49ea7` adds `gemini_generate_content` with `/v1beta/models`
+discovery, `:streamGenerateContent?alt=sse` candidate streaming, cancellation, protected-span and
+glossary restoration, endpoint policy, and redacted `x-goog-api-key` handling. Linux
+`df9b0fe261bcbb3cba8d4b8660baa94c891ea44c` exposes the localized Google Gemini preset and keeps
+manual-model controls Anthropic-only. l10n `f9d74a8f83a89540a58bba65477a5031031bd619` supplies the
+396-message generated Linux bundle.
+
+Core workspace tests, strict Clippy, Linux formatting/check/Clippy, demo-provider tests (`136 passed;
+3 ignored`), localization synchronization and three audits, Flatpak metadata validation, and diff
+checks passed locally. Linux push/PR Native, Flatpak, and Foundation checks are pending for the final
+head; the PR remains Draft/Open, the central issue remains Open, and the release train stays
+`unreleased`.
 
 ## Completed Linux-first checkpoint — bounded concurrent document execution
 
