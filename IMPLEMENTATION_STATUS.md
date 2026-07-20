@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux bounded concurrent document execution
+
+Assumption: Linux is the first delivery target, so bounded worker concurrency can advance without
+unfreezing the other clients or claiming a stable release.
+
+- Linux code head `42b5ff36b3629c3001cda9177c1ba939ada1b478` runs up to four document jobs
+  concurrently. Each job owns its event pump, cancellation handle, partial output, provider
+  manager, and segment index; duplicate or fifth starts are rejected before persistence changes the
+  job to Running. The Flatpak source pin follows `3e5b80df851a91c07fbef9cf98c494e142dc4332`.
+- Added regressions for independent concurrent completion and targeted cancellation of one job while
+  its survivor completes. Full local Linux validation passed: formatting, GUI all-target check,
+  strict Clippy, demo-provider tests (`136 passed; 3 ignored`), Flatpak metadata, localization
+  audits, synchronization, and diff checks.
+- Code-head push/PR Native, Flatpak, and Foundation runs
+  `29732668572`/`29732668556`/`29732668568` and `29732671353`/`29732671354`/`29732671362` passed.
+  Documentation head `9dcc5818e757e663d63d2f7b783117057a57a0c0` then passed push/PR runs
+  `29733047267`/`29733047292`/`29733047328` and `29733050760`/`29733050738`/`29733050725`.
+  PR #1 remains Draft/Open and Issue #1 remains Open. Cross-platform clients, human
+  accessibility/visual review, signing, rollback, and stable-release authorization remain open.
+
 ## 2026-07-20 — Linux GTK routing candidate behavior evidence
 
 Assumption: the Linux-first prerelease remains Draft/Open while the candidate-management callbacks

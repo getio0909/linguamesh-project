@@ -188,6 +188,22 @@ then passed push/PR Native, Flatpak, and Foundation runs
 `29730511966`/`29730512095`/`29730511907` and `29730513799`/`29730513772`/`29730513834`.
 Central coordination run `29730453936` passed.
 
+## Completed Linux-first checkpoint — bounded concurrent document execution
+
+Assumption: Linux remains the priority client, so bounded worker concurrency can advance while the
+other clients, stable release, signing, and rollback work stay explicitly open.
+
+Linux code head `42b5ff36b3629c3001cda9177c1ba939ada1b478` (Flatpak source pin `3e5b80df851a91c07fbef9cf98c494e142dc4332`) runs up to four document jobs concurrently. Each job has an isolated event pump, cancellation handle, partial output, provider manager, and segment index; duplicate or fifth starts are rejected before a Running snapshot is persisted. Regressions cover independent completion and targeted cancellation of one job while its survivor completes.
+
+Local formatting, GUI all-target check, strict Clippy, demo-provider tests (`136 passed; 3 ignored`),
+Flatpak metadata, l10n synchronization, three localization audits, and diff checks passed. Code-head
+push/PR Native, Flatpak, and Foundation runs `29732668572`/`29732668556`/`29732668568` and
+`29732671353`/`29732671354`/`29732671362` passed. Documentation head
+`9dcc5818e757e663d63d2f7b783117057a57a0c0` then passed push/PR runs
+`29733047267`/`29733047292`/`29733047328` and `29733050760`/`29733050738`/`29733050725`.
+The Linux PR remains Draft/Open and central Issue #1 remains Open; cross-platform clients, human
+accessibility/visual review, signing, rollback, and stable-release authorization remain open.
+
 ## Completed Linux-first checkpoint — GTK routing candidate reorder behavior
 
 Assumption: Linux candidate-management evidence must exercise the real GTK callbacks and resulting
