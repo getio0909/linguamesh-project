@@ -36,6 +36,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
   and stable release remain open. Central coordination `29785760751` passed Linux/PowerShell jobs
   `88496851860`/`88496851914`.
 
+- [x] Project the bounded FileLease lifecycle through the Core ABI and repin Linux. Core
+  `0396736235d4dc5c8992d3bfef5aded3abadf457` adds engine-scoped create, active-state, expire,
+  revoke, and destroy calls for validated paths and platform descriptors; resource values remain
+  private to Core. Core CI/Native SDK `29787040329`/`29787040314` passed. Linux
+  `8f52685ade7cfbe29f0cafa42263bb3b0a725259` consumes the exact pin; local no-default/demo-provider
+  suites (`81 passed; 1 ignored` / `145 passed; 3 ignored`), strict Clippy, localization audits,
+  Flatpak metadata, and PR Native/Flatpak/Foundation `29787357289`/`29787357304`/`29787357315`
+  passed. ABI document-command resource consumption, OS-handle transfer, other clients, signing,
+  rollback, and stable release remain open; PR #1 and Issue #1 stay open.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with

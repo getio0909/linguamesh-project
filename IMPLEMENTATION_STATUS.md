@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Core ABI FileLease lifecycle controls pinned to Linux
+
+Assumption: native hosts need bounded lease lifecycle control before document commands can consume
+platform resources; resource values must remain private to Core.
+
+- Core `0396736235d4dc5c8992d3bfef5aded3abadf457` adds C ABI create calls for validated paths,
+  POSIX descriptors, Android parcel descriptors, and Windows handles, returning only engine-scoped
+  numeric tokens. Active-state, expire, revoke, and destroy calls are panic-safe, bounded to 64
+  leases per engine, isolated between engines, and cleanable after shutdown. Core local fmt/check,
+  strict Clippy, workspace tests/build, cargo-deny, and C/C++ SDK smoke passed; CI `29787040329`
+  and Native SDK `29787040314` passed.
+- Linux `8f52685ade7cfbe29f0cafa42263bb3b0a725259` pins the exact Core revision in Native and
+  Flatpak workflows and documents that the direct Rust portal-read path remains authoritative until
+  document commands consume ABI tokens. Local no-default/demo-provider suites passed (`81 passed;
+  1 ignored` / `145 passed; 3 ignored`), strict Clippy, localization audits, Flatpak metadata, and
+  diff checks passed. PR Native/Flatpak/Foundation `29787357289`/`29787357304`/`29787357315` passed.
+- This is unreleased Linux-first evidence. ABI document-command resource consumption, OS-handle
+  transfer, Android/Windows/macOS clients, human review, signing, rollback, stable artifacts, and
+  stable release remain open. Linux PR #1 remains Draft/Open and central Issue #1 remains Open.
+
 ## 2026-07-20 — Linux FileLease document-import boundary
 
 Assumption: Linux document imports must borrow a bounded Core file resource only for the read and
