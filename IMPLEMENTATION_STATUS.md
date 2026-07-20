@@ -2,6 +2,30 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux Anthropic Messages GTK preset checkpoint
+
+Assumption: Linux remains the priority client and Anthropic model discovery remains manual until a
+provider catalog service is intentionally introduced; the GTK form must validate the model ID
+before any host SecretRef is resolved.
+
+- Linux final evidence head `f41e14af53b6d2d70b0f1d452ea32eda10d63095` consumes Core
+  `a87aaf2bef7cca287c4a6faa8addd340e0245b0e` and l10n
+  `e1ee15a5e9470e2c49077e52b4969597a5c8283f` (393 messages, bundle SHA-256
+  `a30db30a44a16588db3b79b1958c849149677d40939cf5427413539b18d73282`).
+- The GTK provider form now exposes the localized Anthropic Messages preset, HTTPS `/v1/` default,
+  manual Model ID field, saved-model restoration, focus/accessibility wiring, and local empty-model
+  rejection before worker or Secret Service activity. The regression is folded into the existing
+  single GTK lifecycle test to preserve GTK thread ownership.
+- Local Linux formatting, all-target/all-feature check, strict Clippy, no-default-feature tests
+  (`79 passed; 1 ignored`), demo-provider tests (`134 passed; 3 ignored`), localization audits,
+  l10n synchronization, Flatpak metadata validation, and diff checks passed. The host cannot link
+  the all-feature GTK test binary; Native CI is authoritative for that boundary.
+- Initial malformed Flatpak pin and standalone-test attempts are retained as failures in Linux
+  evidence. Final push Native/Flatpak/Foundation `29721751141`/`29721751155`/`29721751111` and PR
+  `29721753040`/`29721753048`/`29721753045` all passed (Native/Flatpak/Foundation jobs
+  `88284977586`/`88284977776`/`88284977563` and PR jobs `88284984553`/`88284984617`/
+  `88284984699`). The Linux PR remains Draft/Open and the release train remains unreleased.
+
 ## 2026-07-20 — Core Anthropic Messages adapter checkpoint
 
 Assumption: Anthropic model discovery is manual because this integration does not rely on a general
@@ -14,9 +38,8 @@ model-list endpoint; a selected model must be validated before any host secret r
 - Core provider tests cover fragmented UTF-8 SSE, headers/body, manual model listing, cancellation,
   and diagnostics redaction. Full Core workspace check, Clippy, tests, build, and cargo-deny passed;
   CI `29718737864` and Native SDK `29718737836` also passed.
-- This is an unreleased provider-family checkpoint. Linux pins the revision, but its GTK form does
-  not yet expose an Anthropic-specific preset; other clients remain deferred by the Linux-first
-  priority.
+- This is an unreleased provider-family checkpoint. Linux pins the revision and binds the GTK
+  preset in the later checkpoint above; other clients remain deferred by the Linux-first priority.
 
 ## 2026-07-20 — Linux Core pin and Flatpak source checkpoint
 

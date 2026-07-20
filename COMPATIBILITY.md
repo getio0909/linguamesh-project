@@ -10,7 +10,7 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | --- | --- | --- | --- |
 | Core | `0.1.0-alpha.2` | ABI `1`, protocol schema `0.1.0` (wire version 1), provider catalog `0.1.0`; `protected_spans_v1` shields common structured spans, applies bounded request-level glossary rules, and restores immutable or required target terms across streamed output; `long_text_chunking_v1` splits oversized UTF-8 input on semantic boundaries, streams chunks in order, and propagates cancellation; `bounded_text_document_v1` validates bounded UTF-8 TXT/Markdown/SRT/WebVTT/CSV/JSON/HTML, bounded DOCX/PPTX/XLSX/EPUB packages, and text-based PDF pages, preserves line endings, cue IDs, headers, timestamps, delimiters, quoted fields, variable-width rows, selected-column boundaries, JSON keys, primitive values, whitespace, escaping, HTML tags, attributes, scripts, styles, supported OOXML text nodes, EPUB metadata/navigation/spine/CSS/resources, PDF page association and available coordinates, and OPF language updates while retaining package non-text resources, classifies Markdown fences and subtitle structure, and reconstructs completed segments; subtitle warnings report cue-level line-length and reading-speed guidance with configurable limits; deterministic glossary CSV import/export validates a fixed schema, 4 MiB bound, and 256-row bound; `TranslationPrivacyMode` carries an explicit Standard/Incognito local persistence policy with serde-default compatibility; schema 3 adds bounded translation history, schema 4 persists its enable/disable policy, schema 5 adds optional bounded translation memory with versioned identity and exact controls, schema 6 adds bounded document-job/segment snapshots, schema 7 adds transactional paused-job state and restart resumability, schema 8 adds validated non-secret document source/target locales, provider/model IDs, and bounded glossary options, schema 9 expands stored document formats for subtitle, CSV, JSON, and HTML jobs, schema 10 persists bounded DOCX package bytes, schema 11 persists bounded PPTX package bytes, schema 12 persists bounded XLSX package bytes, schema 13 persists bounded EPUB package bytes, and schema 14 persists bounded PDF package bytes with structured fidelity warnings; the provider catalog now includes a loopback-only `ollama` preset for native `/api/tags` discovery and `/api/chat` NDJSON streaming alongside the OpenAI-compatible `/v1/` adapter; Core storage also exposes a narrowly validated `/proc/self/fd/<fd>` open for hosts that pin a private inode while ordinary paths retain SQLite no-follow | Functional source `b5febb8daec88ab0401af4d6ceb20ec848f65138` passed CI `29714966974` and Native SDK `29714966969`, unreleased; default budget is an approximate 16 KiB UTF-8 byte bound |
 | Provider catalog | `0.1.0` | Schema `1` | Locally verified, unreleased |
-| Localization | `0.1.0` | Message schema `1.0.0`; resource contract `1`; 387 canonical messages including Linux-only status, partial-output, text-import, opt-in image-only PDF OCR controls and errors, glossary CSV import/export and rule-validation errors, PDF fidelity and subtitle readability warnings, document-job actions/dialog/status/tooltip controls, exported-output open/failure actions, Incognito privacy controls, history and translation-memory controls/status, translation-export, provider-profile, provider preset labels/tooltips, routing-profile ID/edit/save/candidate-order/accessibility/duplicate-ID/routing-constraint labels, provider/model allow-deny lists, quality/request-size limits, source-target, onboarding-stage, active-provider, notification, draft-note, locale selector language names, fixed provider/file/worker errors, reducer-state/category guidance, fixed worker/file/storage/provider-error guidance, construction-stage provider/default-control and request-level glossary copy, diagnostics labels/state values, Secret Service prompt-dismissal guidance, GTK drag-fixture label, built-in provider default names, editor text-metrics labels, and Core/loopback startup plus profile-storage error copy; paired PO/MO Linux resources | CI-verified development bundle at l10n revision `3362732be198450ff1ca00f30ec092aab2cf4189`, 59 generated artifacts, Localization `29703625736`, Foundation `29703625695`, unreleased |
+| Localization | `0.1.0` | Message schema `1.0.0`; resource contract `1`; 393 canonical messages including Linux-only status, partial-output, text-import, opt-in image-only PDF OCR controls and errors, glossary CSV import/export and rule-validation errors, PDF fidelity and subtitle readability warnings, document-job actions/dialog/status/tooltip controls, exported-output open/failure actions, Incognito privacy controls, history and translation-memory controls/status, translation-export, provider-profile, provider preset labels/tooltips, routing-profile ID/edit/save/candidate-order/accessibility/duplicate-ID/routing-constraint labels, provider/model allow-deny lists, quality/request-size limits, source-target, onboarding-stage, active-provider, notification, draft-note, locale selector language names, fixed provider/file/worker errors, reducer-state/category guidance, fixed worker/file/storage/provider-error guidance, construction-stage provider/default-control and request-level glossary copy, diagnostics labels/state values, Secret Service prompt-dismissal guidance, GTK drag-fixture label, built-in provider default names, editor text-metrics labels, Anthropic Messages preset/model validation copy, and Core/loopback startup plus profile-storage error copy; paired PO/MO Linux resources | CI-verified development bundle at l10n revision `e1ee15a5e9470e2c49077e52b4969597a5c8283f`, 59 generated artifacts, unreleased |
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 
 ## Core Anthropic Messages adapter checkpoint
@@ -31,9 +31,9 @@ Local non-GTK checks, demo-provider tests (`134 passed; 3 ignored`), localizatio
 Flatpak metadata validation passed. The host's all-feature test binary could not link against its
 installed GTK runtime, so full GTK/portal/Secret-Service/AT-SPI/Orca/Wayland evidence is taken from
 CI. Final push Native/Flatpak/Foundation runs `29719373604`/`29719373628`/`29719373607` and PR
-runs `29719371860`/`29719371922`/`29719371859` all passed. Linux does not yet expose an
-Anthropic-specific GTK preset; prompted unlock approval, human visual/listening review, other
-clients, signing, rollback, and stable release remain open.
+runs `29719371860`/`29719371922`/`29719371859` all passed. The later Anthropic GTK preset is
+recorded below; prompted unlock approval, human visual/listening review, other clients, signing,
+rollback, and stable release remain open.
 
 ## Linux-first Secret Service session-fallback checkpoint
 
@@ -50,6 +50,18 @@ Native/Flatpak/Foundation runs `29717770780`/`29717770833`/`29717770765` all pas
 `88274285611`/`88274285568`/`88274285482` and `88274289941`/`88274290099`/`88274289936`.
 End-user prompt approval, visual/translated-copy review, other clients, signing, rollback, and
 stable release remain open.
+
+## Linux-first Anthropic GTK preset checkpoint
+
+Linux source revision `f41e14af53b6d2d70b0f1d452ea32eda10d63095` consumes Core
+`a87aaf2bef7cca287c4a6faa8addd340e0245b0e` and l10n
+`e1ee15a5e9470e2c49077e52b4969597a5c8283f` (393 messages, bundle SHA-256
+`a30db30a44a16588db3b79b1958c849149677d40939cf5427413539b18d73282`). The GTK form exposes the
+localized Anthropic Messages preset with an HTTPS `/v1/` default and manual Model ID input; empty
+IDs fail locally before any worker connection or host SecretRef resolution. Final push and PR
+Native/Flatpak/Foundation checks all passed: push `29721751141`/`29721751155`/`29721751111` and
+PR `29721753040`/`29721753048`/`29721753045`. This remains unreleased; human visual/copy review,
+prompt approval, other clients, signing, rollback, and stable release remain open.
 
 ## Linux-first final database no-follow hardening checkpoint
 

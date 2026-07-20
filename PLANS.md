@@ -2030,6 +2030,15 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Prompted unlock approval, human review, other clients, signing, rollback, and stable release
   remain open.
 
+- 2026-07-20: Assumption: Linux Anthropic Messages remains a manual-model provider until a catalog
+  service is intentionally introduced. Linux `f41e14af53b6d2d70b0f1d452ea32eda10d63095` binds the
+  localized Anthropic preset with HTTPS `/v1/`, saved-model restoration, focus/accessibility wiring,
+  and pre-secret empty-model validation. l10n `e1ee15a5e9470e2c49077e52b4969597a5c8283f` contains
+  393 messages and the generated Linux resources. Final push/PR Native/Flatpak/Foundation runs
+  `29721751141`/`29721751155`/`29721751111` and `29721753040`/`29721753048`/`29721753045` all
+  passed. The GTK test-link limitation, visual/copy review, prompt approval, other clients,
+  signing, rollback, and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
