@@ -49,6 +49,19 @@ from the still-unverified concurrent document-execution boundary.
   `29723526302`/`29723526314`/`29723526298` all passed. PR #1 remains Draft/Open and Issue #1
   remains Open; no merge or stable release action was taken.
 
+## 2026-07-20 — Linux Secret Service prompt protocol checkpoint
+
+Assumption: a private D-Bus prompt fixture can verify adapter protocol handling, but cannot replace
+real-user approval or visual/unlock-UX review evidence.
+
+- Linux `8eaf7435094c` records the four-case prompt fixture: approved and dismissed `CreateItem`,
+  plus approved and dismissed `Delete`. Approved cases complete the operation; dismissed cases
+  return typed `SecureStorageUnavailable`. No runtime source pin or release-manifest value changed.
+- Local `bash tools/run-secret-service-prompt-test.sh` passed all four cases. Linux push
+  Native/Flatpak/Foundation `29724116604`/`29724116747`/`29724116697` and PR
+  `29724118466`/`29724118446`/`29724118428` all passed. The Linux PR remains Draft/Open, the
+  central issue remains Open, and the release train remains unreleased.
+
 ## 2026-07-20 — Linux Anthropic Messages GTK preset checkpoint
 
 Assumption: Linux remains the priority client and Anthropic model discovery remains manual until a

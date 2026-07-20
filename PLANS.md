@@ -2057,6 +2057,12 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   and PR `29723526302`/`29723526314`/`29723526298` all passed. PR #1 remains Draft/Open and Issue
   #1 remains Open; no manifest pin or release status changed.
 
+- 2026-07-20: Assumption: prompt fixtures prove Secret Service signal handling only; they do not
+  stand in for real-user desktop approval. Linux `8eaf7435094c` documents approved and dismissed
+  `CreateItem`/`Delete` cases, with the local four-case fixture passing. Push Native/Flatpak/
+  Foundation `29724116604`/`29724116747`/`29724116697` and PR `29724118466`/`29724118446`/
+  `29724118428` all passed. No source pin or release-manifest value changed.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
