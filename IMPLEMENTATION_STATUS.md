@@ -10,13 +10,27 @@ ownership transition can proceed without a binary migration release.
 - Central commit `81d3f3c37e6fde54da21034e60d716c56b67e981` publishes RFC-0001 and ADR-0004. The
   decision requires `lm_engine_buffer_free(engine, buffer)`, a bounded allocation registry owned
   by each engine, monotonic ownership tokens, descriptor validation, and wrapper copy-and-release.
-- Core `638713c34ce7d5bcc8003bb0d7e54c514ab49ea7` already implements ABI major 1 and tests wrong
+- Core `232881263f4f523ce54b3713d83513f2d0170ff2` already implements ABI major 1 and tests wrong
   engine, forged/copied/duplicate descriptors, shutdown release, concurrent controls, and the
   64-buffer bound. Protocol version 1 is unchanged and the central release train remains
   `unreleased` with empty artifact lists.
 - `bash tools/check-workspace.sh` passed before publication; coordination CI is pending for the
   documentation head. Android, Windows, and macOS wrapper conformance, sanitizers/fuzzing, signed
   SDK artifacts, and stable-release authorization remain open.
+
+## 2026-07-20 — Linux Gemini end-to-end worker fixture
+
+Assumption: the Linux-first Gemini acceptance boundary must traverse the same worker and
+`ProviderManager` path used by the GTK client, while live external-account behavior remains out of
+scope for deterministic CI.
+
+- Core `232881263f4f523ce54b3713d83513f2d0170ff2` adds the deterministic Gemini test server;
+  Linux `3edb91c5a17d774edffbd336564cfdc385f75fc5` consumes it and runs
+  `gemini_provider_discovers_and_streams_without_secret`, selecting `gemini-2.0-flash` and
+  producing `你好，Gemini！` through the worker.
+- Core CI passed and Native SDK is still running; Linux push/PR Native, Flatpak, and Foundation
+  gates are still running. The central release manifest now points to these exact Core/Linux pins
+  with l10n `f9d74a8f83a89540a58bba65477a5031031bd619`, while status remains `unreleased`.
 
 ## 2026-07-20 — Linux Google Gemini Generate Content provider
 

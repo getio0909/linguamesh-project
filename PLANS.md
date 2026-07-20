@@ -210,12 +210,14 @@ Central coordination run `29730453936` passed.
 Assumption: Gemini is an opt-in Linux provider slice; deterministic loopback coverage proves the
 wire contract without claiming live account, quota, or stable-release evidence.
 
-Core `638713c34ce7d5bcc8003bb0d7e54c514ab49ea7` adds `gemini_generate_content` with `/v1beta/models`
+Core `232881263f4f523ce54b3713d83513f2d0170ff2` adds `gemini_generate_content` with `/v1beta/models`
 discovery, `:streamGenerateContent?alt=sse` candidate streaming, cancellation, protected-span and
 glossary restoration, endpoint policy, and redacted `x-goog-api-key` handling. Linux
 `df9b0fe261bcbb3cba8d4b8660baa94c891ea44c` exposes the localized Google Gemini preset and keeps
 manual-model controls Anthropic-only. l10n `f9d74a8f83a89540a58bba65477a5031031bd619` supplies the
-396-message generated Linux bundle.
+396-message generated Linux bundle. Linux `3edb91c5a17d774edffbd336564cfdc385f75fc5` runs the
+same fixture through `ProviderManager` and deliberately selects `gemini-2.0-flash` before
+translating `你好，Gemini！` without a credential.
 
 Core workspace tests, strict Clippy, Linux formatting/check/Clippy, demo-provider tests (`136 passed;
 3 ignored`), localization synchronization and three audits, Flatpak metadata validation, and diff
