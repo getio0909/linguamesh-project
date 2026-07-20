@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux explainable routing decision diagnostics
+
+Assumption: Linux routing diagnostics must be inspectable while remaining free of provider
+endpoints, credentials, source text, and translated output; Core's bounded candidate keys, stable
+rejection reasons, and score components are safe to expose.
+
+- Linux source/pin head `ab82f36963a63f43091d94e960541fc173175724` carries eligible candidates,
+  rejected candidates with reason codes, ranking inputs, and configured fallback order from Core
+  through Worker events and `AppState` into the localized GTK diagnostics panel. Model, worker, and
+  serialized GTK lifecycle regressions assert the complete redacted summary.
+- Localization revision `737d890e60fd34f15fd8708698448ef9ab96299f` adds the detail template and
+  regenerated resources for all twelve packs. Local Linux formatting/check/Clippy, no-default and
+  demo-provider tests, l10n synchronization, Flatpak metadata, and diff checks passed.
+- Push Native/Flatpak/Foundation gates `29773735297`/`29773735296`/`29773735294` and PR gates
+  `29773738883`/`29773738887`/`29773738924` passed. Documentation head `458a920321ae16e6d3983213a286a972e34c8a18`
+  then passed push Native/Flatpak/Foundation `29774707677`/`29774707852`/`29774708075` and PR
+  `29774709730`/`29774709849`/`29774710165`. PR #1 remains Draft/Open and the release train
+  remains unreleased.
+
 ## 2026-07-20 — Linux GTK routing candidate accessibility lifecycle
 
 Assumption: candidate-management acceptance requires the production GTK dialog to expose

@@ -56,6 +56,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29771479057`/`29771478869`/`29771478884` passed; the PR remains Draft/Open and the release
   train remains unreleased.
 
+- [x] Add and remotely verify Linux explainable routing diagnostics at source/pin head `ab82f36`.
+  Core-validated eligible candidates, rejected candidates with stable reason codes, ranking inputs,
+  and fallback order now flow through Worker events into the localized GTK diagnostics panel without
+  endpoints, credentials, or translated content. Local no-default/demo-provider suites passed
+  (`80 passed; 1 ignored` and `142 passed; 3 ignored`); push Native/Flatpak/Foundation
+  `29773735297`/`29773735296`/`29773735294` and PR gates `29773738883`/`29773738887`/
+  `29773738924` passed. Documentation head `458a920` passed push Native/Flatpak/Foundation
+  `29774707677`/`29774707852`/`29774708075` and PR gates `29774709730`/`29774709849`/
+  `29774710165`. The Linux PR remains Draft/Open and the release train remains unreleased.
+
 - [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
   Technical/Marketing selector, Core prompt/memory identity propagation, compatibility guard, and
   schema-18 persistence through Linux document creation, routed dispatch, pause, retry, and restart.
