@@ -16,9 +16,9 @@ work. Core advertises `file_lease_v1`; Linux validates the lease around portal/G
 while ABI handle transfer and lease-control calls remain unprojected.
 
 The Linux FileLease checkpoint adds expiry/revocation checks to asynchronous document imports and
-revokes the lease after bounded bytes are copied into a document job. Local Linux suites passed;
-remote Native/Flatpak/Foundation evidence is recorded in `COMPATIBILITY.md` once the current runs
-complete.
+revokes the lease after bounded bytes are copied into a document job. Local Linux suites and PR
+Native/Flatpak/Foundation runs `29784747285`/`29784747337`/`29784747308` passed; ABI handle transfer
+and stable release evidence remain open.
 Linux evidence head `029e7f21322f3d0f3619a8f3a0158e7157972e30` adds official locale-pack switching,
 Arabic RTL direction, Secret Service prompted-flow,
 notification-daemon, portal,

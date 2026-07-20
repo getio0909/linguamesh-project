@@ -11,16 +11,16 @@ must fail closed if that lease expires or is explicitly revoked before decoding 
   validated desktop/temporary/output paths, POSIX and Android parcel descriptors, Windows handles,
   monotonic expiry/revocation, and guard access that rechecks state. Domain and FFI tests cover all
   resource shapes, invalid values, and expiry; local full workspace/strict Clippy and C/C++ Native
-  SDK smoke passed. Core CI `29784269272` passed; Native SDK `29784269356` is pending.
+  SDK smoke passed. Core CI `29784269272` and Native SDK `29784269356` passed.
 - Linux `dc1713bf91e0530aa101b9216477593d9baefdf5` pins the exact Core revision, requires the feature
   during compatibility negotiation, checks leases in asynchronous GIO reads and decoding, maps
   expiry to the existing localized file-open path, and revokes after bytes are copied into a bounded
   `DocumentJob`. Local no-default/demo-provider tests passed (`81 passed; 1 ignored` / `145 passed;
   3 ignored`), as did strict Clippy, localization audits, Flatpak metadata, and diff checks.
-- Linux Native/Flatpak/Foundation runs `29784467971`/`29784467987`/`29784468054` are pending. This
-  is unreleased Linux-first evidence; ABI handle transfer, Android/Windows/macOS clients, human
-  accessibility review, signing, rollback, and stable release remain open. PR #1 remains Draft/Open
-  and Issue #1 remains Open.
+- Linux Native/Flatpak/Foundation runs `29784747285`/`29784747337`/`29784747308` passed with jobs
+  `88493720682`/`88493720915`/`88493720876`. This is unreleased Linux-first evidence; ABI handle
+  transfer, Android/Windows/macOS clients, human accessibility review, signing, rollback, and stable
+  release remain open. PR #1 remains Draft/Open and Issue #1 remains Open.
 
 ## 2026-07-20 — C ABI compatibility snapshot consumed by Linux
 

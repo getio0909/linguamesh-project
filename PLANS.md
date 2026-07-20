@@ -31,8 +31,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
   GIO reads, rejects expired decoding, and revokes the lease after bounded bytes are copied. Local
   no-default/demo-provider suites (`81 passed; 1 ignored` / `145 passed; 3 ignored`), strict Clippy,
   localization audits, Flatpak metadata, Core CI `29784269272`, and Native SDK smoke passed; Linux
-  Native/Flatpak/Foundation runs `29784467971`/`29784467987`/`29784468054` are pending. ABI lease
-  transfer, other clients, signing, rollback, and stable release remain open.
+  Linux PR Native/Flatpak/Foundation runs `29784747285`/`29784747337`/`29784747308` passed with jobs
+  `88493720682`/`88493720915`/`88493720876`. ABI lease transfer, other clients, signing, rollback,
+  and stable release remain open.
 
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
