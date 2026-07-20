@@ -39,6 +39,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
   (`29767075134`/`29767080595`) remain recorded as corrective evidence. The Linux PR remains
   Draft/Open and the release train remains unreleased.
 
+- [x] Add and remotely verify the Linux GTK fallback-approval dialog lifecycle at code/pin head
+  `62d70b1`. The dedicated serialized fixture proves the production modal warning is focusable,
+  `Close` leaves approval and dispatch untouched, and one `Translate` action records one-shot
+  approval and exactly one dispatch. Push Native/Flatpak/Foundation gates
+  `29770058909`/`29770058926`/`29770058895` and PR gates
+  `29770062559`/`29770062414`/`29770062090` passed. The earlier thread-bound GTK, stale-pin, and
+  mnemonic-label failures remain documented; the PR stays Draft/Open and the release train stays
+  unreleased.
+
 - [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
   Technical/Marketing selector, Core prompt/memory identity propagation, compatibility guard, and
   schema-18 persistence through Linux document creation, routed dispatch, pause, retry, and restart.

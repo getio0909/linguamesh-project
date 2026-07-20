@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux fallback approval dialog lifecycle
+
+Assumption: ordinary-text fallback requires explicit one-shot consent; dismissing the modal must
+not dispatch or leave approval armed.
+
+- Linux `62d70b1c57662515fadb447aa625cabe1b5d74e9` documents and tests the production GTK dialog
+  through `gtk_fallback_approval_dialog_requires_an_explicit_one_shot_action`. The dedicated
+  DBus/Xvfb fixture verifies modal/focusable warning controls, `Close` with zero dispatches, and a
+  single `Translate` dispatch that records approval. The full Rust suite keeps this GTK test
+  ignored because GTK initialization is thread-bound; the Native workflow runs it in a separate
+  serialized process.
+- Local Linux no-default tests passed `80 passed; 1 ignored`; demo-provider tests passed
+  `142 passed; 3 ignored`. Formatting, GUI all-target check, strict Clippy, Flatpak metadata, and
+  diff checks passed. This host lacks `xvfb-run`, so local GUI execution is represented by the
+  remote fixture.
+- Final Linux push Native/Flatpak/Foundation gates `29770058909`/`29770058926`/`29770058895` and
+  PR gates `29770062559`/`29770062414`/`29770062090` passed. Earlier corrective failures are
+  retained in the Linux status. PR #1 remains Draft/Open; no merge, signing, rollback, or stable
+  release claim is made.
+
 ## 2026-07-20 — macOS native text slice
 
 Assumption: the macOS SwiftUI/AppKit client may ship as an unreleased prerelease checkpoint

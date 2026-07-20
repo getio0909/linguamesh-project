@@ -14,7 +14,7 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 | Windows client | `0.0.0-dev` | Foundation repository only; no native product slice or artifact | Unreleased |
 | macOS client | `0.1.0-alpha.1` | SwiftUI/AppKit text slice, ABI 1/protocol 1, Core `0db51464`, l10n `7e8c987`; Native CI `29765906044` passed build, tests, bundle, and ad-hoc signing smoke check | Unreleased |
-| Linux client | `0.1.0-alpha.2` | GTK client with provider/routing/document slices at Linux `0e2ae25`, Core `115535c`, and l10n `7e8c987`; Automatic quality-ranked retryable fallback is covered by a worker integration regression; push/PR Native, Flatpak, and Foundation gates passed | Unreleased |
+| Linux client | `0.1.0-alpha.2` | GTK client with provider/routing/document slices at Linux `62d70b1`, Core `115535c`, and l10n `7e8c987`; Automatic quality-ranked retryable fallback and the explicit GTK fallback-approval lifecycle are covered by worker/UI regressions; final push/PR Native, Flatpak, and Foundation gates passed | Unreleased |
 
 ## Core Anthropic Messages adapter checkpoint
 
@@ -131,6 +131,16 @@ unchanged. Push Native/Flatpak/Foundation `29711055269`/`29711055278`/`297110552
 Native/Flatpak/Foundation `29711056550`/`29711056549`/`29711056544` all passed. Prompted Secret
 Service/portal unlock UI, human listening, translated-copy/visual review, other clients, signing,
 rollback, and stable release remain open.
+
+## Linux-first fallback approval lifecycle checkpoint
+
+Linux `62d70b1c57662515fadb447aa625cabe1b5d74e9` adds a dedicated serialized GTK regression for
+the production fallback confirmation window. It verifies modal/focusable warning controls,
+`Close` with no approval or dispatch, and one `Translate` action with one-shot approval and exactly
+one dispatch. Push Native/Flatpak/Foundation `29770058909`/`29770058926`/`29770058895` and PR
+Native/Flatpak/Foundation `29770062559`/`29770062414`/`29770062090` all passed. This remains
+unreleased evidence; human copy/accessibility review, other clients, signing, rollback, and
+stable release remain open.
 
 ## Linux-first third-party Ollama interoperability checkpoint
 
