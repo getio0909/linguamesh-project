@@ -62,6 +62,19 @@ real-user approval or visual/unlock-UX review evidence.
   `29724118466`/`29724118446`/`29724118428` all passed. The Linux PR remains Draft/Open, the
   central issue remains Open, and the release train remains unreleased.
 
+## 2026-07-20 — Linux document release-boundary consistency checkpoint
+
+Assumption: the current Native/Flatpak gates verify queue listing, explicit job selection, and
+sequential document-job execution, but do not establish concurrent document execution or stable
+release readiness.
+
+- Linux `01d7ba7` updates `docs/releasing.md` to distinguish the verified document-job path from
+  the still-open concurrent-execution and stable-release boundaries. Central `PLANS.md` uses the
+  same wording instead of listing already-supported archive formats as future work.
+- No runtime code, source pin, workspace-manifest value, or release-manifest value changed. The
+  Linux PR remains Draft/Open, Issue #1 remains Open, and no merge or stable release action was
+  taken.
+
 ## 2026-07-20 — Linux Anthropic Messages GTK preset checkpoint
 
 Assumption: Linux remains the priority client and Anthropic model discovery remains manual until a

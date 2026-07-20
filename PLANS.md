@@ -610,8 +610,9 @@ remain untouched unless their owner explicitly incorporates them into this check
 
 Assumption: schema-6 document recovery stores only an opaque job ID, source basename, format,
 ordered bounded segments, and lifecycle state. Pending/running jobs are restored on Linux worker
-startup; the Linux GTK queue now presents those bounded snapshots, while archive codecs remain future
-work.
+startup; the Linux GTK queue now presents those bounded snapshots. Supported archive/document
+formats are covered by later bounded import/reconstruction checkpoints; concurrent document
+execution remains outside the current validation gate.
 
 Assumption: exhausting a private Linux tmpfs to `ENOSPC` verifies the implemented SQLite
 transaction-failure boundary, not corruption, read-only media, power loss, or every VFS failure.
@@ -2062,6 +2063,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   `CreateItem`/`Delete` cases, with the local four-case fixture passing. Push Native/Flatpak/
   Foundation `29724116604`/`29724116747`/`29724116697` and PR `29724118466`/`29724118446`/
   `29724118428` all passed. No source pin or release-manifest value changed.
+
+- 2026-07-20: Assumption: the Native/Flatpak gates cover Linux queue listing, explicit selection,
+  and sequential document execution, not concurrent document execution or stable readiness. Linux
+  `01d7ba7` and the active plan now state that boundary accurately; no runtime code or manifest pin
+  changed, and the Linux PR/central issue remain Draft/Open and Open respectively.
 
 ## Checkpoint update protocol
 
