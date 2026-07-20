@@ -24,6 +24,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
+  Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
+  `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with
+  jobs `88488352790`/`88488352708`/`88488352736`. File-lease projection, other clients, and stable
+  release remain open.
+
 - [x] Verify and reconcile the macOS native text slice at PR `getio0909/linguamesh-macos#1`.
   Branch `agent/macos-native-slice` head `cad822c` pins project `b75d4d1`, Core `0db51464`, and
   l10n `7e8c987`; Native CI `29765906044` passed build, tests, bundle, and ad-hoc signing smoke

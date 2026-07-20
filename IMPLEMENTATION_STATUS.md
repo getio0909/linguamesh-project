@@ -2,6 +2,23 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — C ABI compatibility snapshot consumed by Linux
+
+Assumption: native clients must negotiate Core semantic, ABI, protocol, catalog, and feature
+dimensions through one versioned query before starting provider work; file-lease capabilities remain
+outside this checkpoint.
+
+- Core `c559b32d3869e01983f2bbf32f1386bad99c3290` adds `CompatibilitySnapshot` and
+  `lm_engine_get_compatibility`; Core CI `29782822854` and Native SDK `29782822883` passed.
+- Linux documentation/source-pin head `b38a8fd722d4740abd161e30197354793e3de1f6` pins workflow and
+  Flatpak inputs to the exact Core revision. Local no-default/demo-provider suites, strict Clippy,
+  localization audits, Flatpak metadata, and diff checks passed. PR Native `29783023917` (job
+  `88488352790`), Foundation `29783023894` (job `88488352736`), and Flatpak `29783023872` (job
+  `88488352708`) passed.
+- This remains unreleased Linux-first evidence: file leases, other client projections, complete
+  acceptance scenarios, human review, signing, rollback, and stable release remain open. PR #1 is
+  Draft/Open and Issue #1 remains Open.
+
 ## 2026-07-20 — C ABI host-secret response projection consumed by Linux
 
 Assumption: ABI 1 native clients must receive the same one-time, non-persistent secret-broker
