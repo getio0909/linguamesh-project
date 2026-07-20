@@ -17,6 +17,22 @@ human, cross-platform, signing, rollback, and stable-release gates remain incomp
 - The central release manifest remains `status = "unreleased"`; no source revision or artifact
   pin changed during this triage checkpoint, so workspace and release manifests remain consistent.
 
+## 2026-07-20 — Core C ABI concurrent-control regression checkpoint
+
+Assumption: the new Core revision is a test-only descendant for ABI safety evidence; the Linux
+production pin remains unchanged until a functional client slice consumes it.
+
+- Core `7068b1d565177c7541c6d6a35f8d8e7475dd126e` adds a concurrent host-control-call regression
+  covering cancellation, shutdown, polling, engine-scoped buffer cleanup, and fail-closed polling
+  after shutdown. The test joins twelve host threads before destroying the engine.
+- Core local workspace formatting, strict Clippy, all-target/all-feature tests, locked workspace
+  build, and cargo-deny checks passed. CI `29723055135` passed; Native SDK `29723055154` passed
+  Linux, Android, Apple, and Windows jobs (the Windows runner emitted only an existing Node.js
+  action deprecation annotation).
+- This descendant is not promoted into the Linux source pin or release manifests. The Linux PR
+  and central issue remain Draft/Open and the release train remains unreleased while human review,
+  cross-client parity, signing, rollback, and stable-release gates remain incomplete.
+
 ## 2026-07-20 — Linux Anthropic Messages GTK preset checkpoint
 
 Assumption: Linux remains the priority client and Anthropic model discovery remains manual until a

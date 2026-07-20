@@ -2045,6 +2045,11 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   canonical repositories. The PR and issue bodies/comments now reference Linux `f41e14a`, Core
   `a87aaf2`, l10n `e1ee15a`, and coordination run `29722312762`; no stable release action was taken.
 
+- 2026-07-20: Assumption: Core `7068b1d565177c7541c6d6a35f8d8e7475dd126e` is a test-only ABI
+  hardening descendant, so the Linux production pin stays at `a87aaf2bef7cca287c4a6faa8addd340e0245b0e`.
+  The concurrent C ABI control-call regression passed locally; Core CI `29723055135` and Native
+  SDK `29723055154` passed all jobs. No workspace or release-manifest pin changed.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.
