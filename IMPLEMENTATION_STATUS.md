@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Shared Core RetryPolicy consumed by Linux
+
+Assumption: retry and circuit-breaker bounds must be one validated Core contract so native clients
+cannot drift in backoff, jitter, provider hints, or cooldown behavior.
+
+- Core `8790eb41a52c4e2c908044699e8c12597d3c42a5` adds public `RetryPolicy` construction and
+  standard defaults with bounded backoff, jitter, `Retry-After`, failure threshold, and cooldown;
+  Core CI/Native SDK `29778375725`/`29778375728` passed.
+- Linux source/pin `3ff10f4c9f54d82b7c43a0204946033cb063b92f` consumes that policy for routing retry
+  and circuit state. Documentation/source-pin head `eb7e57869580917494d719ac61ec861c1c8bcff4`
+  passed push Native/Flatpak/Foundation `29778624703`/`29778624674`/`29778624715` and PR
+  `29778626906`/`29778626865`/`29778626849`.
+- Local Core full workspace validation and Linux GUI check/Clippy/no-default/demo-provider suites
+  passed; Linux remains the only actively implemented native priority. PR #1 remains Draft/Open,
+  Issue #1 remains Open, and no stable release or artifact promotion is claimed.
+
 ## 2026-07-20 — Linux bounded routing retry and circuit-breaker policy
 
 Assumption: retryable provider failures must advance only through the configured Linux routing

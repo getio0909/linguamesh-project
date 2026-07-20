@@ -77,6 +77,13 @@ Assumption: Planned files and commands are not evidence until they exist and com
   and the release train remains unreleased. Central coordination commit `adaa2a1` passed workflow
   `29777574182`.
 
+- [x] Move bounded retry and circuit-breaker limits into the shared Core `RetryPolicy` contract and
+  consume it from Linux routing. Core `8790eb4` passed CI/Native SDK `29778375725`/`29778375728`;
+  Linux code/pin `3ff10f4` and documentation head `eb7e578` passed push Native/Flatpak/Foundation
+  runs `29778624703`/`29778624674`/`29778624715` and PR runs
+  `29778626906`/`29778626865`/`29778626849`. Local Core and Linux validation is recorded in both
+  repositories. The Linux PR remains Draft/Open and the release train remains unreleased.
+
 - [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
   Technical/Marketing selector, Core prompt/memory identity propagation, compatibility guard, and
   schema-18 persistence through Linux document creation, routed dispatch, pause, retry, and restart.
