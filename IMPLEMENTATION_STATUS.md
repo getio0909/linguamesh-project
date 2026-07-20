@@ -25,6 +25,8 @@ behavior remain unverified.
 - PR #1 remains Draft/Open and central Issue #1 remains Open. The release train stays `unreleased`
   with empty artifact lists; Android, Windows, macOS, signing, rollback, and stable-release gates
   remain open.
+- Central coordination commit `d8387a7fb8f6027a726f9948fcf45a5192246ba5` passed validation run
+  `29740781908` for both Linux and PowerShell checks.
 
 ## 2026-07-20 — Linux Azure OpenAI provider checkpoint
 

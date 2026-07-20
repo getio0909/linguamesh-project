@@ -195,7 +195,9 @@ and secret isolation without claiming live account, quota, or model availability
   ignored, strict Clippy, l10n sync/audits, and Flatpak metadata validation passed.
 - Linux push Native/Flatpak/Foundation `29740264065`/`29740263971`/`29740263996` and PR
   Native/Flatpak/Foundation `29740261207`/`29740261147`/`29740261173` all passed. PR #1 remains
-  Draft/Open; central Issue #1 remains Open; other clients and stable release remain out of scope.
+  Draft/Open; central Issue #1 remains Open. Central coordination commit `d8387a7fb8f6027a726f9948fcf45a5192246ba5`
+  passed validation run `29740781908` for Linux and PowerShell; other clients and stable release
+  remain out of scope.
 
 ## Completed cross-repository checkpoint — ABI 1 engine-bound buffer ownership
 
