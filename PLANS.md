@@ -27,12 +27,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add the Linux-first FileLease document-import vertical slice. Core
   `8b096478b1623bdaf5105e8a8f59e55e2fa8015d` adds `file_lease_v1`, validates all required resource
   shapes, and proves fail-closed access after expiry/revocation through domain and FFI tests. Linux
-  `dc1713bf91e0530aa101b9216477593d9baefdf5` requires the feature, validates the lease around portal/
+  `f95780db3dd05fdccfe47af254f73c5107587077` requires the feature, validates the lease around portal/
   GIO reads, rejects expired decoding, and revokes the lease after bounded bytes are copied. Local
   no-default/demo-provider suites (`81 passed; 1 ignored` / `145 passed; 3 ignored`), strict Clippy,
   localization audits, Flatpak metadata, Core CI `29784269272`, and Native SDK smoke passed; Linux
-  Linux PR Native/Flatpak/Foundation runs `29784747285`/`29784747337`/`29784747308` passed with jobs
-  `88493720682`/`88493720915`/`88493720876`. ABI lease transfer, other clients, signing, rollback,
+  Linux PR Native/Flatpak/Foundation runs `29785377479`/`29785377512`/`29785377513` passed with jobs
+  `88495671317`/`88495671975`/`88495671980`. ABI lease transfer, other clients, signing, rollback,
   and stable release remain open. Central coordination `29785192636` passed Linux/PowerShell jobs
   `88495096183`/`88495096175`.
 

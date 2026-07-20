@@ -10,14 +10,14 @@ A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings,
 
 The current unreleased matrix pins Core functional revision
 `8b096478b1623bdaf5105e8a8f59e55e2fa8015d` and Linux functional revision
-`dc1713bf91e0530aa101b9216477593d9baefdf5`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+`f95780db3dd05fdccfe47af254f73c5107587077`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
 Native clients query `CompatibilitySnapshot` through `lm_engine_get_compatibility` before provider
 work. Core advertises `file_lease_v1`; Linux validates the lease around portal/GIO document reads,
 while ABI handle transfer and lease-control calls remain unprojected.
 
 The Linux FileLease checkpoint adds expiry/revocation checks to asynchronous document imports and
 revokes the lease after bounded bytes are copied into a document job. Local Linux suites and PR
-Native/Flatpak/Foundation runs `29784747285`/`29784747337`/`29784747308` passed; ABI handle transfer
+Native/Flatpak/Foundation runs `29785377479`/`29785377512`/`29785377513` passed; ABI handle transfer
 and stable release evidence remain open. Central coordination `29785192636` passed the Linux and
 PowerShell manifest checks.
 Linux evidence head `029e7f21322f3d0f3619a8f3a0158e7157972e30` adds official locale-pack switching,

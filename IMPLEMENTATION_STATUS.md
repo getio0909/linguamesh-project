@@ -12,13 +12,13 @@ must fail closed if that lease expires or is explicitly revoked before decoding 
   monotonic expiry/revocation, and guard access that rechecks state. Domain and FFI tests cover all
   resource shapes, invalid values, and expiry; local full workspace/strict Clippy and C/C++ Native
   SDK smoke passed. Core CI `29784269272` and Native SDK `29784269356` passed.
-- Linux `dc1713bf91e0530aa101b9216477593d9baefdf5` pins the exact Core revision, requires the feature
+- Linux `f95780db3dd05fdccfe47af254f73c5107587077` pins the exact Core revision, requires the feature
   during compatibility negotiation, checks leases in asynchronous GIO reads and decoding, maps
   expiry to the existing localized file-open path, and revokes after bytes are copied into a bounded
   `DocumentJob`. Local no-default/demo-provider tests passed (`81 passed; 1 ignored` / `145 passed;
   3 ignored`), as did strict Clippy, localization audits, Flatpak metadata, and diff checks.
-- Linux Native/Flatpak/Foundation runs `29784747285`/`29784747337`/`29784747308` passed with jobs
-  `88493720682`/`88493720915`/`88493720876`. This is unreleased Linux-first evidence; ABI handle
+- Linux Native/Flatpak/Foundation runs `29785377479`/`29785377512`/`29785377513` passed with jobs
+  `88495671317`/`88495671975`/`88495671980`. This is unreleased Linux-first evidence; ABI handle
   transfer, Android/Windows/macOS clients, human accessibility review, signing, rollback, and stable
   release remain open. PR #1 remains Draft/Open and Issue #1 remains Open.
 - Central coordination run `29785192636` passed Linux job `88495096183` and PowerShell job

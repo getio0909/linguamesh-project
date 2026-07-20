@@ -14,7 +14,7 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 | Windows client | `0.0.0-dev` | Foundation repository only; no native product slice or artifact | Unreleased |
 | macOS client | `0.1.0-alpha.1` | SwiftUI/AppKit text slice, ABI 1/protocol 1, Core `0db51464`, l10n `7e8c987`; Native CI `29765906044` passed build, tests, bundle, and ad-hoc signing smoke check | Unreleased |
-| Linux client | `0.1.0-alpha.2` | GTK client with provider/routing/document slices at Linux `dc1713b`, Core `8b096478`, and l10n `737d890e`; Linux pins the five-dimension Core compatibility contract through the direct Rust layer and requires `file_lease_v1`; document imports validate the selected URI lease during asynchronous GIO reads and revoke it after bounded bytes are copied; explainable routing diagnostics expose eligible/rejected candidates, stable rejection reasons, ranking inputs, and fallback order without secrets; retryable routing fallback consumes Core `RetryPolicy` for bounded eight-second backoff with stable jitter, optional Retry-After hints, shutdown cancellation, and a two-failure/30-second in-memory circuit breaker; PR Native/Flatpak/Foundation gates `29784747285`/`29784747337`/`29784747308` passed | Unreleased |
+| Linux client | `0.1.0-alpha.2` | GTK client with provider/routing/document slices at Linux `f95780d`, Core `8b096478`, and l10n `737d890e`; Linux pins the five-dimension Core compatibility contract through the direct Rust layer and requires `file_lease_v1`; document imports validate the selected URI lease during asynchronous GIO reads and revoke it after bounded bytes are copied; explainable routing diagnostics expose eligible/rejected candidates, stable rejection reasons, ranking inputs, and fallback order without secrets; retryable routing fallback consumes Core `RetryPolicy` for bounded eight-second backoff with stable jitter, optional Retry-After hints, shutdown cancellation, and a two-failure/30-second in-memory circuit breaker; PR Native/Flatpak/Foundation gates `29785377479`/`29785377512`/`29785377513` passed | Unreleased |
 
 ## Linux FileLease document-import checkpoint
 
@@ -25,13 +25,13 @@ expiry or explicit revocation; the FFI suite includes the expiry regression and 
 passes. The ABI advertises the feature but does not yet expose platform-handle transfer or lease
 creation/revocation calls.
 
-Linux `dc1713bf91e0530aa101b9216477593d9baefdf5` consumes the exact Core pin, requires
+Linux `f95780db3dd05fdccfe47af254f73c5107587077` consumes the exact Core pin, requires
 `file_lease_v1` during compatibility negotiation, validates the lease around asynchronous portal/GIO
 document reads, rejects expired decoding, and revokes the lease after bounded bytes are copied into
 the document job. Local no-default (`81 passed; 1 ignored`) and demo-provider (`145 passed; 3 ignored`)
 tests, strict Clippy, localization audits, Flatpak metadata validation, and diff checks passed.
-Linux PR Native/Flatpak/Foundation runs `29784747285`/`29784747337`/`29784747308` passed with jobs
-`88493720682`/`88493720915`/`88493720876`; this remains unreleased Linux-first evidence and does not
+Linux PR Native/Flatpak/Foundation runs `29785377479`/`29785377512`/`29785377513` passed with jobs
+`88495671317`/`88495671975`/`88495671980`; this remains unreleased Linux-first evidence and does not
 claim native ABI lease transport, other clients, signing, rollback, or stable release. Central
 coordination `29785192636` passed Linux/PowerShell jobs `88495096183`/`88495096175`.
 
