@@ -19,8 +19,9 @@ not dispatch or leave approval armed.
   remote fixture.
 - Final Linux push Native/Flatpak/Foundation gates `29770058909`/`29770058926`/`29770058895` and
   PR gates `29770062559`/`29770062414`/`29770062090` passed. Earlier corrective failures are
-  retained in the Linux status. PR #1 remains Draft/Open; no merge, signing, rollback, or stable
-  release claim is made.
+  retained in the Linux status. Central coordination workflow `29770588175` passed for commit
+  `7f2b1519f58212945ab027e33c0598f739d1d527`. PR #1 remains Draft/Open; no merge, signing,
+  rollback, or stable release claim is made.
 
 ## 2026-07-20 — macOS native text slice
 

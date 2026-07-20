@@ -45,8 +45,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   approval and exactly one dispatch. Push Native/Flatpak/Foundation gates
   `29770058909`/`29770058926`/`29770058895` and PR gates
   `29770062559`/`29770062414`/`29770062090` passed. The earlier thread-bound GTK, stale-pin, and
-  mnemonic-label failures remain documented; the PR stays Draft/Open and the release train stays
-  unreleased.
+  mnemonic-label failures remain documented. Central coordination `29770588175` passed for
+  commit `7f2b151`; the PR stays Draft/Open and the release train stays unreleased.
 
 - [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
   Technical/Marketing selector, Core prompt/memory identity propagation, compatibility guard, and
