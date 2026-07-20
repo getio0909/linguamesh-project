@@ -11,14 +11,13 @@ time and reuses it for every segment after pause, retry, or process restart; leg
 - Core `f62f2df91584eeebdf5c30bd06c5e0893f2345d8` adds schema 17 migration
   `0017_document_quality_mode.sql`, stable-name parsing, and non-secret option round trips. Core
   CI/Native SDK runs `29744643575`/`29744643593` passed.
-- Linux `6a45e7128651a6f0192f2357b22d348ec6bce119` propagates quality mode through plain/routed
+- Linux `c0ac94e25fb7a64b330fee538e64d82405f35aab` propagates quality mode through plain/routed
   document commands, applies it to every segment request, restores it into GTK state, and keeps
   the selector enabled for selected jobs. Local GUI check, strict Clippy, 140 tests with 3 ignored,
   locked build, localization audits, Flatpak metadata, and diff checks passed.
-- Linux push Native/Flatpak/Foundation `29745442484`/`29745442374`/`29745442379` and PR
-  Native/Flatpak/Foundation `29745445634`/`29745445670`/`29745445545` all passed. Central
-  coordination run `29745573599` for commit `5d076e9` passed. This remains an unreleased Linux-first
-  checkpoint; no merge, signing, rollback, or stable-release action is claimed.
+- Linux push Native/Flatpak/Foundation `29746095888`/`29746095985`/`29746095892` and PR
+  Native/Flatpak/Foundation `29746099123`/`29746099062`/`29746099042` all passed. This remains an
+  unreleased Linux-first checkpoint; no merge, signing, rollback, or stable-release action is claimed.
 
 ## 2026-07-20 — Linux translation quality modes checkpoint
 

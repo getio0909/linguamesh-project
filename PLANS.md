@@ -194,15 +194,14 @@ time and reuses it for every segment after pause, retry, or process restart; leg
   `0017_document_quality_mode.sql`, validated stable names, and restart-safe `DocumentJobOptions`
   persistence. Core offline check, 139 workspace tests, strict Clippy, locked build, and diff checks
   passed; Core CI/Native SDK `29744643575`/`29744643593` passed.
-- Linux `6a45e7128651a6f0192f2357b22d348ec6bce119` passes quality mode through plain and routed
+- Linux `c0ac94e25fb7a64b330fee538e64d82405f35aab` passes quality mode through plain and routed
   worker commands, applies it to every document request, restores it into GTK state, and keeps the
   selector enabled for selected jobs. The routed restart regression selects `Best`, resumes after
   shutdown, and asserts the completed snapshot retains `Best`.
 - Local Linux GUI check, strict Clippy, 140 tests with 3 ignored, locked build, localization audits,
   Flatpak metadata, and diff checks passed. Linux push Native/Flatpak/Foundation
-  `29745442484`/`29745442374`/`29745442379` and PR Native/Flatpak/Foundation
-  `29745445634`/`29745445670`/`29745445545` all passed. Central coordination run `29745573599`
-  for commit `5d076e9` also passed; no merge or stable release was authorized.
+  `29746095888`/`29746095985`/`29746095892` and PR Native/Flatpak/Foundation
+  `29746099123`/`29746099062`/`29746099042` all passed. No merge or stable release was authorized.
 
 ## Completed Linux-first checkpoint — translation quality modes
 

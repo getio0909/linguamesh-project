@@ -3,7 +3,7 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
-  "Linux translation quality modes, document-job persistence, and provider-catalog compatibility are an unreleased deterministic checkpoint at Core f62f2df91584eeebdf5c30bd06c5e0893f2345d8, l10n e03d8ccc548d7d2eeeef9163b4b12b8204e68d6d, and Linux 6a45e7128651a6f0192f2357b22d348ec6bce119; Fast, Balanced, and Best are request-level modes with shared translation-prompt-v2, schema-17 document-job quality persistence, output validation, localized GTK selection, translation-memory identity, and routed restart recovery, while Linux validates all GTK preset adapters and model-listing policies against the bundled Core catalog before window creation. Live provider behavior, human copy/accessibility review, other clients, signing, rollback, and stable release remain unverified.",
+  "Linux translation quality modes, document-job persistence, and provider-catalog compatibility are an unreleased deterministic checkpoint at Core f62f2df91584eeebdf5c30bd06c5e0893f2345d8, l10n e03d8ccc548d7d2eeeef9163b4b12b8204e68d6d, and Linux c0ac94e25fb7a64b330fee538e64d82405f35aab; Fast, Balanced, and Best are request-level modes with shared translation-prompt-v2, schema-17 document-job quality persistence, output validation, localized GTK selection, translation-memory identity, and routed restart recovery, while Linux validates all GTK preset adapters and model-listing policies against the bundled Core catalog before window creation. Live provider behavior, human copy/accessibility review, other clients, signing, rollback, and stable release remain unverified.",
   "Linux Azure OpenAI support is an unreleased deterministic loopback checkpoint at Core e46066ccafcd81e50b004c84d7eb8734e77f3279, l10n 8e0e50577f8714b90bcc08a0d22cc790319f9239, and Linux a679d57bf9b4d887d27fdd4c2cb2f87dfd6342db; it uses a pinned 2024-10-21 API version, api-key session authentication, and manual deployment selection. Live Azure account, quota, deployment availability, other clients, signing, rollback, and stable release remain unverified.",
   "Linux OpenAI Responses support is an unreleased deterministic typed-SSE checkpoint at Core 58075c997cecdcd9a179b9397cb493da375d3a50, l10n 95078b1a0c30defe98995a9879c4c669d213e5bc, and Linux 498323ee09a69f3183b903278efcab137836c3fb (Flatpak pin 62385d4228750711f232381805bbdab2f560b309); it uses /v1/models discovery, Bearer session authentication, and /v1/responses response.output_text.delta/response.completed events. Live OpenAI account, quota, model availability, other clients, signing, rollback, and stable release remain unverified.",
   "No compatible stable native-client release has been produced.",
@@ -61,6 +61,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "6a45e7128651a6f0192f2357b22d348ec6bce119"
+source_revision = "c0ac94e25fb7a64b330fee538e64d82405f35aab"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []
