@@ -18,6 +18,8 @@ platform resources; resource values must remain private to Core.
   document commands consume ABI tokens. Local no-default/demo-provider suites passed (`81 passed;
   1 ignored` / `145 passed; 3 ignored`), strict Clippy, localization audits, Flatpak metadata, and
   diff checks passed. PR Native/Flatpak/Foundation `29787357289`/`29787357304`/`29787357315` passed.
+- Coordination commit `9d8e151179da7d323134e3b112cf5daf623b6ed3` passed Validate project
+  coordination workflow `29787744384` for Linux/PowerShell manifest, link, and credential checks.
 - This is unreleased Linux-first evidence. ABI document-command resource consumption, OS-handle
   transfer, Android/Windows/macOS clients, human review, signing, rollback, stable artifacts, and
   stable release remain open. Linux PR #1 remains Draft/Open and central Issue #1 remains Open.
