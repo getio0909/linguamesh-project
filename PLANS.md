@@ -24,6 +24,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Verify and reconcile the macOS native text slice at PR `getio0909/linguamesh-macos#1`.
+  Branch `agent/macos-native-slice` head `cad822c` pins project `b75d4d1`, Core `0db51464`, and
+  l10n `7e8c987`; Native CI `29765906044` passed build, tests, bundle, and ad-hoc signing smoke
+  checks. Typed host-secret transport, model discovery, persisted routing profiles, document jobs,
+  notarization, and stable release remain open.
+
 - [x] Add the Linux-first request-level `TranslationPreset` contract, localized GTK General/
   Technical/Marketing selector, Core prompt/memory identity propagation, compatibility guard, and
   schema-18 persistence through Linux document creation, routed dispatch, pause, retry, and restart.

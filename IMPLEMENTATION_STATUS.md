@@ -2,6 +2,21 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — macOS native text slice
+
+Assumption: the macOS SwiftUI/AppKit client may ship as an unreleased prerelease checkpoint
+while typed host-secret transport, model discovery, persisted routing profiles, document jobs,
+and distribution signing remain outside this slice.
+
+- macOS `cad822c` adds the native SwiftUI/AppKit text workflow, generated Core Swift bridge,
+  protocol/error validation, Keychain credential storage, locale/theme preferences, cancellation,
+  partial-output preservation, diagnostics, source hygiene checks, app assembly, and ad-hoc signing
+  smoke coverage. It pins project `b75d4d1`, Core `0db51464`, and l10n `7e8c987` with ABI 1 and
+  protocol 1.
+- Local source validation and diff checks pass. GitHub PR #1 is Draft/Open; native workflow run
+  `29765906044` is the final remote build/test/package gate for this head. No merge, notarization,
+  stable signing, rollback, or release promotion is claimed.
+
 ## 2026-07-20 — Linux explicit provider connection test
 
 Assumption: an explicit provider test may create a temporary provider session for model discovery,
