@@ -197,8 +197,10 @@ extra provider calls or stable-release readiness.
   metadata validation passed; Linux local GUI/all-target checks, 140 tests with 3 ignored, strict
   Clippy, localization audits, sync, and diff checks passed.
 - Core, l10n, Linux, and central changes are pushed; PR #1 remains Draft/Open and Issue #1 remains
-  Open. Remote workflow evidence is pending for this latest head; no merge or stable release was
-  authorized.
+  Open. Core CI/Native SDK `29742242153`/`29742242102`, l10n Localization/Foundation
+  `29742198569`/`29742198614`, Linux push Native/Flatpak/Foundation `29742596157`/`29742596195`/
+  `29742596247`, Linux PR Native/Flatpak/Foundation `29742602112`/`29742602104`/`29742602095`, and
+  central coordination `29742676456` passed. No merge or stable release was authorized.
 
 ## Completed Linux-first checkpoint — OpenAI Responses typed SSE
 

@@ -19,7 +19,10 @@ provider quality, human review, or stable-release readiness.
   140 tests with 3 ignored, strict Clippy, localization audits/sync, and Flatpak metadata validation
   passed.
 - Core, l10n, Linux, and central pins are pushed. PR #1 remains Draft/Open and Issue #1 remains Open;
-  latest remote workflow evidence is pending. Android, Windows, macOS, live-provider review, signing,
+  Core CI/Native SDK `29742242153`/`29742242102`, l10n Localization/Foundation
+  `29742198569`/`29742198614`, Linux push Native/Flatpak/Foundation `29742596157`/`29742596195`/
+  `29742596247`, Linux PR Native/Flatpak/Foundation `29742602112`/`29742602104`/`29742602095`, and
+  central coordination `29742676456` passed. Android, Windows, macOS, live-provider review, signing,
   rollback, and stable-release gates remain open.
 
 ## 2026-07-20 — Linux OpenAI Responses typed-SSE checkpoint
