@@ -12,6 +12,8 @@ before any host SecretRef is resolved.
   `a87aaf2bef7cca287c4a6faa8addd340e0245b0e` and l10n
   `e1ee15a5e9470e2c49077e52b4969597a5c8283f` (393 messages, bundle SHA-256
   `a30db30a44a16588db3b79b1958c849149677d40939cf5427413539b18d73282`).
+- The l10n revision's Localization/Foundation runs `29720509844`/`29720509865` passed before
+  Linux consumed the generated resources.
 - The GTK provider form now exposes the localized Anthropic Messages preset, HTTPS `/v1/` default,
   manual Model ID field, saved-model restoration, focus/accessibility wiring, and local empty-model
   rejection before worker or Secret Service activity. The regression is folded into the existing
