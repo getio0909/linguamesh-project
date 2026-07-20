@@ -2,6 +2,27 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux third-party Ollama interoperability harness
+
+Assumption: deterministic loopback fixtures prove the wire contract only; third-party daemon
+interoperability requires an installed model and an external daemon that is not treated as a
+release fixture.
+
+- Linux head `cb39b10aec0268aaeeea4fbea897e62316385a7a` adds the opt-in
+  `tools/run-ollama-interop-test.sh` harness and an ignored worker regression covering `/api/tags`
+  discovery, model selection, and translation without serialized secrets. Default CI keeps this
+  external test ignored.
+- Local validation passed with 131 tests passed and 3 ignored; formatting, all-target checks,
+  strict Clippy, localization audits, Flatpak metadata, and diff checks also passed.
+- Push Native/Flatpak/Foundation runs `29711535278`/`29711535284`/`29711535293` (jobs
+  `88256083560`/`88256083563`/`88256083629`) and PR Native/Flatpak/Foundation runs
+  `29711537242`/`29711537244`/`29711537248` (jobs `88256087720`/`88256087639`/`88256087672`)
+  all completed successfully. Native PR evidence includes the fallback-confirmation regression,
+  GTK AT-SPI fixture, and Orca Speech Dispatcher fixture.
+- A Docker `ollama/ollama:0.11.10` daemon answered `/api/tags`, but pulling `smollm:135m` failed
+  with HTTP 500 after the Ollama registry connection timed out. No real third-party translation
+  interoperability claim is made until an installed model is available.
+
 ## 2026-07-20 — Linux fallback-send confirmation remote evidence
 
 - Linux source revisions `af200122e4862f6230d89268f5292f16438449bb` and Flatpak pin correction

@@ -161,6 +161,20 @@ Assumption: Planned files and commands are not evidence until they exist and com
   fallback templates, keeping malformed braces and placeholder drift out of GTK/release gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
+## Completed Linux-first checkpoint — third-party Ollama interoperability harness
+
+Change identifier: `LM-CHANGE-2026-07-OLLAMA-INTEROP-HARNESS-1`
+
+Linux head `cb39b10aec0268aaeeea4fbea897e62316385a7` adds an opt-in
+`tools/run-ollama-interop-test.sh` path plus an ignored worker regression. The harness requires a
+real daemon and installed model, keeps credentials out of the test state, and is intentionally not
+part of the default offline suite. Local validation passed with 131 tests passed and 3 ignored.
+
+Push Native/Flatpak/Foundation `29711535278`/`29711535284`/`29711535293` and PR
+Native/Flatpak/Foundation `29711537242`/`29711537244`/`29711537248` all passed. A temporary Docker
+`ollama/ollama:0.11.10` daemon served `/api/tags`, but the `smollm:135m` pull failed with HTTP 500
+after an Ollama registry timeout; real third-party translation evidence remains open.
+
 ## Active Linux-first checkpoint — approved text fallback routing
 
 Change identifier: `LM-CHANGE-2026-07-LINUX-FALLBACK-1`

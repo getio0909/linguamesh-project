@@ -32,6 +32,17 @@ Native/Flatpak/Foundation `29711056550`/`29711056549`/`29711056544` all passed. 
 Service/portal unlock UI, human listening, translated-copy/visual review, other clients, signing,
 rollback, and stable release remain open.
 
+## Linux-first third-party Ollama interoperability checkpoint
+
+Linux head `cb39b10aec0268aaeeea4fbea897e62316385a7a` adds an opt-in daemon harness and an ignored
+worker regression for native `/api/tags` discovery, model selection, and translation. Local
+validation passed with 131 tests passed and 3 ignored. Push Native/Flatpak/Foundation
+`29711535278`/`29711535284`/`29711535293` and PR Native/Flatpak/Foundation
+`29711537242`/`29711537244`/`29711537248` all passed; the Native PR also records the fallback,
+AT-SPI, and Orca fixtures. A Docker `ollama/ollama:0.11.10` daemon answered `/api/tags`, but the
+`smollm:135m` registry pull timed out with HTTP 500, so third-party model interoperability remains
+unverified and no stable-release claim is made.
+
 ## Linux-first editor text-metrics checkpoint
 
 Linux `7ae70945c60934605d2eca82400a2278c753297f` displays localized source/output character counts
