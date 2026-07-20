@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-20 — Linux final database component no-follow hardening
+
+Assumption: the Linux host should reject a final profile-database path component swapped to a
+symbolic link during open, while the existing Core no-follow gate remains authoritative for SQLite.
+
+- Linux source revision `651767d1493662f0631bf8e4245d0c525b684edc` adds final-component
+  `O_NOFOLLOW | O_CLOEXEC` flags alongside static path checks and post-open inode comparison. A
+  regression proves a symlinked database file is rejected without following or modifying its target.
+- Local `cargo fmt --all -- --check`, all-target/all-feature offline check, strict Clippy, demo-provider
+  tests (`132 passed; 3 ignored`), Flatpak metadata validation, and diff checks passed. Push
+  Native/Flatpak/Foundation `29714091446`/`29714091453`/`29714091474` (jobs
+  `88263531538`/`88263531565`/`88263531611`) and PR Native/Flatpak/Foundation
+  `29714093213`/`29714093215`/`29714093207` (jobs `88263537445`/`88263537464`/`88263537556`)
+  all completed successfully.
+- Parent-directory replacement races still require a future directory-descriptor or `openat2`
+  design. Prompted Secret Service/portal unlock UI, physical visual review, other clients, signing,
+  rollback, and stable release remain open.
+
 ## 2026-07-20 — Linux Manual routing candidate cardinality
 
 Assumption: Manual routing must identify exactly one provider/model; candidate chains belong to

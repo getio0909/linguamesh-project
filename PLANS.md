@@ -1972,6 +1972,16 @@ Complete threat/privacy models, parser hardening, fuzzing, migrations, performan
   Service/portal unlock UI, human listening, translated-copy/visual review, other clients,
   signing, rollback, and stable release remain open.
 
+- 2026-07-20: Assumption: the Linux host must reject a final profile-database path component
+  replaced by a symbolic link during open, while the Core SQLite no-follow gate remains
+  authoritative. Linux `651767d1493662f0631bf8e4245d0c525b684edc` adds `O_NOFOLLOW | O_CLOEXEC`
+  to the final open and a regression that proves the symlink target is neither followed nor
+  modified. Local format/check/Clippy/full-test/Flatpak/diff validation passed. Push
+  Native/Flatpak/Foundation `29714091446`/`29714091453`/`29714091474` and PR
+  `29714093213`/`29714093215`/`29714093207` all passed. Parent-directory replacement races still
+  require a future directory-descriptor or `openat2` design; other clients, signing, rollback,
+  and stable release remain open.
+
 ## Checkpoint update protocol
 
 At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs, `workspace-manifest.toml`, `release-manifest.toml`, and validation evidence. Record failures as failures, distinguish unavailable host builds from successful CI builds, and do not mark a milestone complete from partial or indirect evidence.

@@ -13,6 +13,17 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 | Localization | `0.1.0` | Message schema `1.0.0`; resource contract `1`; 387 canonical messages including Linux-only status, partial-output, text-import, opt-in image-only PDF OCR controls and errors, glossary CSV import/export and rule-validation errors, PDF fidelity and subtitle readability warnings, document-job actions/dialog/status/tooltip controls, exported-output open/failure actions, Incognito privacy controls, history and translation-memory controls/status, translation-export, provider-profile, provider preset labels/tooltips, routing-profile ID/edit/save/candidate-order/accessibility/duplicate-ID/routing-constraint labels, provider/model allow-deny lists, quality/request-size limits, source-target, onboarding-stage, active-provider, notification, draft-note, locale selector language names, fixed provider/file/worker errors, reducer-state/category guidance, fixed worker/file/storage/provider-error guidance, construction-stage provider/default-control and request-level glossary copy, diagnostics labels/state values, Secret Service prompt-dismissal guidance, GTK drag-fixture label, built-in provider default names, editor text-metrics labels, and Core/loopback startup plus profile-storage error copy; paired PO/MO Linux resources | CI-verified development bundle at l10n revision `3362732be198450ff1ca00f30ec092aab2cf4189`, 59 generated artifacts, Localization `29703625736`, Foundation `29703625695`, unreleased |
 | Android client | `0.0.0-dev` | No SDK selected | Unreleased |
 
+## Linux-first final database no-follow hardening checkpoint
+
+Linux source revision `651767d1493662f0631bf8e4245d0c525b684edc` opens the final profile-database
+component with `O_NOFOLLOW | O_CLOEXEC`, retaining static path checks, inode comparison, and the
+Core SQLite no-follow gate. The symlink regression proves the target is not followed or modified;
+local format/check/Clippy/full-test, Flatpak metadata, and diff validation passed. Push
+Native/Flatpak/Foundation `29714091446`/`29714091453`/`29714091474` and PR
+Native/Flatpak/Foundation `29714093213`/`29714093215`/`29714093207` all passed. Parent-directory
+replacement races still require a future directory-descriptor or `openat2` design; this is
+prerelease evidence only and does not advance other clients, signing, rollback, or stable release.
+
 ## Linux-first headless Orca checkpoint
 
 Linux source revision `a3bd4a3229088e24c8f1a6cd9fb6c1574ca55839` adds an isolated Xvfb/private-D-Bus
