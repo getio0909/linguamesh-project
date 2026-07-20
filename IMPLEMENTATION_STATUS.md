@@ -30,8 +30,8 @@ only candidates explicitly exposed by the saved routing profile may receive a re
   reproducible commands and corrective Flatpak source-pin change.
 - Local Linux full tests passed (`142 passed; 3 ignored`), with formatting, GUI all-target check,
   strict Clippy, localization/Flatpak validation, and diff checks. Final documentation-head push/
-  PR Native, Flatpak, and Foundation gates passed: push `29767242226`/`29767242244`/`29767242325`
-  and PR `29767246017`/`29767246202`/`29767246112`. The initial code-head stale-pin Flatpak
+  PR Native, Flatpak, and Foundation gates passed: push `29767680041`/`29767680024`/`29767680047`
+  and PR `29767684643`/`29767684366`/`29767684440`. The initial code-head stale-pin Flatpak
   failures (`29767075134`/`29767080595`) are retained in the Linux status as corrective evidence.
 - PR #1 remains Draft/Open; the release train is unreleased and no merge, signing, rollback, or
   stable-release claim is made.
