@@ -104,6 +104,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add native Linux malicious-DOCX fixtures that reject ZIP path traversal and oversized
   uncompressed entries before import.
 - [x] Verify native Linux queue listing returns multiple pending jobs for explicit selection.
+- [x] Verify Linux rejects an overlapping document start with a typed configuration error while
+  preserving the active job's cancellation path and the second job's pending snapshot; true
+  concurrent document execution remains an explicit open boundary.
 - [x] Verify native Linux worker translation reconstructs DOCX/XLSX jobs end to end while retaining
   binary resources, formulas, and numeric cells.
 - [x] Publish and remotely verify the shared Core `routing_planner_v1` contract and Linux exact
@@ -164,6 +167,19 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add and remotely verify a Linux source-level localization placeholder audit for literal
   fallback templates, keeping malformed braces and placeholder drift out of GTK/release gates.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
+
+## Completed Linux-first checkpoint — document-job concurrency isolation
+
+Assumption: before bounded concurrent document execution exists, overlapping starts must fail closed
+without cancelling or mutating the active job.
+
+Linux adds `concurrent_document_start_is_rejected_without_interrupting_active_job`. The regression
+starts a slow active document, submits a second start during a streamed delta, asserts the typed
+configuration rejection, cancels the active job, and verifies the second snapshot remains pending.
+Local formatting and the filtered demo-provider test passed (`1 passed; 0 failed`). The Flatpak
+source pin follows Linux code head `36b81586b8b148d7adc08ecfc46203b2ef94af4d`; no Core,
+localization, workspace-manifest, or release-manifest pin changed. True concurrent document
+execution, other clients, signing, rollback, and stable release remain open.
 
 ## Completed Linux-first checkpoint — GTK routing candidate reorder behavior
 
