@@ -35,6 +35,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29856808412`/`29856808321`/`29856808250`. Human copy/visual/Orca review, live-provider
   interoperability, other clients, signing, rollback, and stable release remain open.
 
+- [x] Extend Linux Scenario 8 through the real GTK authentication-failure boundary. Linux code
+  `bd3487461e725ec5718636b3c2057aa1edd3315b` adds the serialized
+  `gtk_authentication_failure_shows_localized_redacted_error` fixture: a wrong session credential
+  travels through the GTK Connect button and worker rejection event, then renders Simplified
+  Chinese catalog copy in an `Alert` without the credential or 401/403 detail. Packaging/docs head
+  `b2ec8a29985e6bd754250ef79c1f0822538a4525` consumes that code. Local no-default/demo-provider
+  suites passed (`83/1` and `156/3`), and push Native/Flatpak/Foundation gates
+  `29857952721`/`29857954041`/`29857955602` passed. Human translated-copy/visual/Orca review,
+  live-provider interoperability, other clients, signing, rollback, and stable release remain open.
+
 - [x] Add deterministic Unix WAL process-crash recovery evidence. Core
   `8837e59395742b5385af5037aa36a2596af3b025` starts a child test process with a reader snapshot,
   commits a provider profile under `synchronous=FULL`, terminates abruptly, and verifies parent

@@ -2,6 +2,29 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux GTK authentication-failure presentation
+
+Assumption: Linux Scenario 8 needs evidence across the actual GTK Connect button, worker rejection
+event, localized alert rendering, and credential redaction; a pure model test is not sufficient for
+that boundary.
+
+- Linux code `bd3487461e725ec5718636b3c2057aa1edd3315b` adds the ignored serialized fixture
+  `gtk_authentication_failure_shows_localized_redacted_error`. It starts the deterministic bearer-
+  token provider, enters a wrong session credential through the production form, waits for the
+  401/403 worker rejection, switches to Simplified Chinese, and asserts the visible `Alert` has
+  catalog-backed actionable copy while excluding the wrong credential and backend status numbers.
+  The credential field is cleared immediately and no active provider is committed after failure.
+- Local Linux formatting, all-target/all-feature check, strict Clippy, no-default/demo-provider
+  suites (`83 passed; 1 ignored` and `156 passed; 3 ignored`), localization audits, synchronization,
+  Flatpak metadata, and diff checks passed. The display-backed fixture remains CI-authoritative on
+  this host.
+- Linux packaging/docs head `b2ec8a29985e6bd754250ef79c1f0822538a4525` passed push Native/Flatpak/
+  Foundation gates `29857952721`/`29857954041`/`29857955602`; Native executed the full serialized
+  GTK, Wayland, AT-SPI, Orca, Secret Service, portal, and release-evidence matrix.
+
+This advances unreleased Linux evidence for Scenario 8. Human translated-copy/visual/Orca review,
+live-provider interoperability, other clients, signing, rollback, and stable release remain open.
+
 ## 2026-07-21 — Linux actionable authentication-error localization
 
 Assumption: provider HTTP 401/403 responses are authentication failures; Linux should replace
