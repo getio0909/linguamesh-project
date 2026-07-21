@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add the Linux dependency advisory, license, and provenance gate. Linux `deny.toml` reuses
+  the reviewed Core policy, with duplicate dependency versions warning while advisories, licenses,
+  and sources fail closed. Local `cargo deny --manifest-path Cargo.toml --all-features check` passed;
+  push Native/Flatpak/Foundation `29806613032`/`29806613069`/`29806613012` and PR
+  Native/Flatpak/Foundation `29806615931`/`29806615901`/`29806615910` passed at Linux
+  documentation/status head `ca4d11f89ee9323f18a19b5ccc75e270359705d2`. Stable artifacts,
+  signing, human desktop review, other clients, and stable release remain open.
+
 - [x] Replace the Milestone 8 threat/privacy document skeletons with evidence matrices. The threat
   model now maps required abuse cases to controls, repository evidence, owner roles, and residual
   review boundaries; the privacy model inventories content, credentials, file grants, operational

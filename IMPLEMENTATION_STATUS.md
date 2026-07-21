@@ -2,6 +2,18 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux dependency and provenance gate
+
+Assumption: Linux release candidates need the same dependency advisory, license, and source policy
+as Core, while duplicate GTK graph versions remain warnings during convergence.
+
+- Linux documentation/status head `ca4d11f89ee9323f18a19b5ccc75e270359705d2` adds `deny.toml`,
+  the pinned cargo-deny Native step, and Foundation presence validation. Local cargo-deny passed;
+  duplicate `getrandom`, `hashbrown`, and `windows-sys` versions are warnings.
+- Push Native/Flatpak/Foundation `29806613032`/`29806613069`/`29806613012` and PR
+  Native/Flatpak/Foundation `29806615931`/`29806615901`/`29806615910` all passed. The release
+  manifest now points to this Linux head; no stable release is authorized.
+
 ## 2026-07-21 — Linux localized live AT-SPI fixture
 
 Assumption: live accessibility evidence should include catalog-backed names in a non-English
