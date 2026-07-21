@@ -29,11 +29,13 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `gtk_cancel_translation_preserves_partial_output` fixture: the production Stop action cancels
   after the first streamed `你好` delta, preserves the partial output, reaches `Cancelled`, disables
   Stop, and enables Retry without an error or later output mutation. Packaging/status head
-  `313544ba1085f1be6dc52dbd7c2beb1f78c398c8` records local formatting, locked checks, strict
+  `5e74f79a2b2af049b84c010632aa979a064f9b1c` records local formatting, locked checks, strict
   Clippy, no-default/demo-provider suites (`83/1` and `156/3` ignored), localization audits, l10n
   sync, Flatpak metadata, and diff checks. Code-head push Native/Flatpak/Foundation
   `29866519789`/`29866519798`/`29866519885` and PR gates
-  `29866523643`/`29866523637`/`29866523644` passed; status-head gates are pending. Physical
+  `29866523643`/`29866523637`/`29866523644` passed. Final status-head push/PR gates
+  `29867517962`/`29867519068`/`29867518348` and `29867521905`/`29867521950`/`29867521920`
+  also passed. Physical
   provider transport cancellation, human visual/copy/Orca review, other clients, signed artifacts,
   rollback, and stable release remain open.
 

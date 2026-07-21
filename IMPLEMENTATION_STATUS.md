@@ -13,14 +13,15 @@ cancels a streamed request after a confirmed delta, preserves that partial outpu
   against the bearer-token loopback provider, selects `fake-slow-translator`, clicks Stop after
   the first `你好` delta, and verifies retained output, `Cancelled`, disabled Stop, enabled Retry,
   and no error. Packaging pin `2730a24bc67f9c424b3cce845ced895d9f2710b2` is synchronized at
-  Linux status head `313544ba1085f1be6dc52dbd7c2beb1f78c398c8`.
+  final Linux status head `5e74f79a2b2af049b84c010632aa979a064f9b1c`.
 - Linux local formatting, all-target/all-feature check, strict Clippy, no-default/demo-provider
   suites (`83/1` and `156/3` ignored), localization audits, l10n sync, Flatpak metadata, and diff
   checks passed. The host's installed GTK symbols are older than the Rust bindings, so display-
   backed execution remains CI-authoritative.
 - Final code-head push Native/Flatpak/Foundation `29866519789`/`29866519798`/`29866519885` and
-  PR gates `29866523643`/`29866523637`/`29866523644` passed; the final status-head gates are
-  running for this documentation-only checkpoint.
+  PR gates `29866523643`/`29866523637`/`29866523644` passed. Final status-head push
+  Native/Flatpak/Foundation `29867517962`/`29867519068`/`29867518348` and PR gates
+  `29867521905`/`29867521950`/`29867521920` also passed.
 
 This advances unreleased Linux evidence for mandatory Scenario 6. Physical provider transport
 cancellation, human visual/copy/Orca review, other clients, signed artifacts, rollback, and
