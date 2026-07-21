@@ -62,6 +62,23 @@ This is still unsigned prerelease evidence. No previous stable revision, signing
 or release authorization is present; human review, other clients, handle transfer, and stable release
 remain open. PR #1 and Issue #1 remain open.
 
+## 2026-07-21 — Linux preflight replacement regression verified
+
+Assumption: the deterministic preflight replacement fixture is valid evidence when the exact Linux
+head and all six client gates are recorded, while broader filesystem races remain a separate scope.
+
+- Linux code head `b463e5b94ed6b46ef24aee89ff9887d9dd5c038c` adds the replacement-boundary regression;
+  docs-only head `43b9c5ee11397f5ce7fbf4033615b1609553f3c7` records the verified result. The Flatpak
+  manifest pins the build-input ancestor `b463e5b9` because the later changes are documentation-only.
+- Push Native/Flatpak/Foundation runs `29798721356`/`29798721343`/`29798721336` and PR runs
+  `29798723569`/`29798723560`/`29798723668` passed all jobs. Native covered the preflight test;
+  Flatpak validated the ancestor lineage, uploaded checksum/SPDX/rollback evidence, and completed
+  sandbox smoke.
+
+The canceled runner `29797697833` is not counted; it never started its reported step and was replaced
+by the passing PR run above. Broader filesystem/VFS races, other clients, human review, signing,
+stable artifacts, and stable release remain open; PR #1 and Issue #1 remain open.
+
 ## 2026-07-21 — Security and privacy evidence matrices
 
 Assumption: the Milestone 8 security documents must map each required threat and privacy data

@@ -106,6 +106,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29796870557`/`29796870563`/`29796870547` passed all jobs. The records contain no previous stable
   revision or signing material, so stable release remains open.
 
+- [x] Verify the Linux preflight parent-replacement regression. Code head `b463e5b` and docs-only
+  head `43b9c5e` are covered by push Native/Flatpak/Foundation
+  `29798721356`/`29798721343`/`29798721336` and PR
+  `29798723569`/`29798723560`/`29798723668`; all passed. The canceled stale runner is excluded,
+  and broader filesystem races plus stable release remain open.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with
