@@ -24,6 +24,21 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Extend Linux Scenario 9 through the real GTK glossary/protected-span boundary. Linux runtime
+  `aa0e0206c20e325bf0dd340dab039eea400a9ab0` adds the serialized
+  `gtk_glossary_and_protected_terms_preserve_translation` fixture: a real GTK glossary entry
+  replaces `LinguaMesh` with an opaque marker before dispatch, the loopback provider splits that
+  marker across streamed deltas, and the production reducer restores `你好，凌瓦网！`. Final Linux
+  status/docs head `b6f4fbebc9daf928edccf05ee4b401be2a945658` pins the Flatpak input and records local
+  formatting, locked checks, strict Clippy, no-default/demo-provider suites (`83/1` and `156/3`
+  ignored), localization audits, l10n synchronization, Flatpak metadata, and diff checks. Code-head
+  push/PR Native, Flatpak, and Foundation gates `29868747478`/`29868747474`/`29868747461` and
+  `29868750361`/`29868750281`/`29868750341` passed; final status-head gates
+  `29869815247`/`29869815332`/`29869815462` and `29869819086`/`29869818840`/`29869819166` also
+  passed, with Native explicitly running the exact fixture. Provider-specific glossary semantics,
+  human visual/copy/Orca review, other clients, signed artifacts, rollback, and stable release
+  remain open.
+
 - [x] Extend Linux Scenario 6 through the real GTK translation-cancellation boundary. Linux
   runtime `2730a24bc67f9c424b3cce845ced895d9f2710b2` adds the serialized
   `gtk_cancel_translation_preserves_partial_output` fixture: the production Stop action cancels

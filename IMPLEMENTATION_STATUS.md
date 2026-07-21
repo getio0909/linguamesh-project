@@ -2,6 +2,33 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux GTK glossary and protected-span lifecycle
+
+Assumption: Linux Scenario 9 is evidenced at the production GTK boundary when a request-level
+glossary entry protects a source term before dispatch, the provider receives only the opaque
+protected marker, and the reducer restores the glossary translation even when that marker is split
+across streamed deltas.
+
+- Linux runtime `aa0e0206c20e325bf0dd340dab039eea400a9ab0` adds the serialized ignored fixture
+  `gtk_glossary_and_protected_terms_preserve_translation`. It enters a real glossary mapping through
+  the GTK form, inspects the loopback request to confirm `LinguaMesh` is replaced by a protected
+  marker, streams that marker in two fragments, and verifies the completed output is `你好，凌瓦网！`.
+  Flatpak source pin `aa0e0206c20e325bf0dd340dab039eea400a9ab0` remains synchronized in final
+  Linux status/docs head `b6f4fbebc9daf928edccf05ee4b401be2a945658`.
+- Local Linux `cargo test --all-targets --features demo-provider --locked` passed (`156 passed; 3
+  ignored`), alongside formatting, all-target/all-feature checks, strict Clippy, no-default tests
+  (`83 passed; 1 ignored`), localization audits, l10n synchronization, Flatpak metadata, and diff
+  checks. Display-backed execution remains CI-authoritative on the host.
+- Code-head push Native/Flatpak/Foundation gates `29868747478`/`29868747474`/`29868747461` and PR
+  gates `29868750361`/`29868750281`/`29868750341` passed. Final status-head push
+  Native/Flatpak/Foundation gates `29869815247`/`29869815332`/`29869815462` and PR gates
+  `29869819086`/`29869818840`/`29869819166` also passed; Native explicitly reports the exact
+  serialized glossary/protected-span fixture successful.
+
+This advances unreleased Linux evidence for mandatory Scenario 9. Provider-specific glossary
+semantics, human visual/copy/Orca review, other clients, signed artifacts, rollback authorization,
+and stable release remain open.
+
 ## 2026-07-21 — Linux GTK translation cancellation lifecycle
 
 Assumption: Linux Scenario 6 is evidenced at the GTK boundary when the production Stop action
