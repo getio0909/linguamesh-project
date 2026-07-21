@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux SQLite WAL durability hardening
+
+Assumption: `synchronous=FULL` is the smallest safe storage hardening step for Linux WAL commits;
+physical power-loss simulation and alternate SQLite VFS coverage remain separate acceptance work.
+
+- Core `cfecf17802f022b3dc49cff2917de5a77382aefa` configures SQLite with WAL,
+  `synchronous=FULL`, foreign-key enforcement, and secure deletion. The storage regression now
+  asserts SQLite synchronous mode `2`, while WAL replay and schema checks remain covered.
+- Linux docs/status head `94d57f61c16be45dd18e9a0519d7296cebefcb8f` consumes the exact Core pin.
+  Local Linux formatting, checks, Clippy, no-default/demo-provider tests, localization audits,
+  l10n synchronization, Flatpak metadata, and diff checks passed.
+- Core CI/fuzz/native SDK runs `29852245672`/`29852245746`/`29852246017` passed. Linux push
+  Native/Flatpak/Foundation runs `29853359722`/`29853359731`/`29853360059` and PR runs
+  `29853364106`/`29853364378`/`29853364352` passed.
+
+This remains unreleased Linux durability evidence. Physical power-loss recovery, alternate VFS,
+other clients, human visual/copy/Orca review, signing, rollback, and stable release remain open.
+
 ## 2026-07-21 — provider-reported usage normalization
 
 Assumption: provider usage metadata is advisory and non-sensitive; missing or partial wire values

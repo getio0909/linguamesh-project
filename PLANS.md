@@ -24,6 +24,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Harden Linux-first SQLite WAL commit durability. Core `cfecf17802f022b3dc49cff2917de5a77382aefa`
+  sets `synchronous=FULL` while retaining WAL, foreign-key enforcement, and secure deletion; Linux
+  docs/status head `94d57f61c16be45dd18e9a0519d7296cebefcb8f` pins that Core revision. Core local
+  formatting, checks, Clippy, and full workspace tests passed; Core CI, fuzz/sanitizer, and native
+  SDK runs `29852245672`/`29852245746`/`29852246017` passed. Linux local checks and push gates
+  `29853359722`/`29853359731`/`29853360059`, plus PR gates
+  `29853364106`/`29853364378`/`29853364352`, passed. Physical power-loss recovery and alternate
+  SQLite VFS behavior remain unverified; this is unreleased hardening evidence.
+
 - [x] Add Linux-first normalized usage metadata and provider wire parsing. Core
   `117a72ea80f40258a0abf582ffe1fae93c155786` carries typed provider usage events and normalizes
   OpenAI Chat/Responses, Anthropic, Gemini, and Ollama metadata; l10n
