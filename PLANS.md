@@ -87,11 +87,11 @@ Assumption: Planned files and commands are not evidence until they exist and com
   passed formal PR Native/Flatpak/Foundation `29793663690`/`29793663688`/`29793663685`; OS-handle
   duplication/transfer, other clients, signing, rollback, and stable release remain open.
 
-- [x] Add Linux-first Core POSIX-descriptor document consumption and repin Linux. Core `2c6f959`
-  passed CI/Fuzz/Native SDK `29794688973`/`29794688979`/`29794688942`; the C ABI duplicates a
+- [x] Add Linux-first Core POSIX-descriptor document consumption and repin Linux. Core `1922918`
+  passed CI/Fuzz/Native SDK `29795469293`/`29795469253`/`29795469275`; the C ABI duplicates a
   registered descriptor, reads a bounded document snapshot, and consumes the lease only after
-  shared parsing succeeds. Linux `b6f31cb` passed PR Native/Flatpak/Foundation
-  `29794966472`/`29794966410`/`29794966437`; Android/Windows handle transfer, other clients,
+  shared parsing succeeds. Linux `126699a1` passed PR Native/Flatpak/Foundation
+  `29795527184`/`29795527194`/`29795527187`; Android/Windows handle transfer, other clients,
   signing, rollback, and stable release remain open.
 
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
