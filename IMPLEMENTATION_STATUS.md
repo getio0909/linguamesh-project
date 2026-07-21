@@ -2,6 +2,30 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux GTK offline session preservation
+
+Assumption: Linux Scenario 17 needs the real GTK connection lifecycle to preserve a confirmed
+provider/model session after an unavailable-provider attempt; worker-only offline tests do not
+cover that presentation boundary.
+
+- Linux code `3242133acbf77a7e72374ab680a83f4ff676ff0c` adds the ignored serialized fixture
+  `gtk_offline_connection_failure_preserves_confirmed_session`. It connects the deterministic
+  bearer-token provider, selects `fake-translator`, captures the active provider/models/source,
+  releases a loopback port, and submits a second connection attempt with an unavailable endpoint.
+  The fixture asserts the credential field is cleared, the localized network `Alert` contains no
+  canary, status returns to Ready, and the confirmed provider, model, and source text remain.
+- Local Linux formatting, all-target/all-feature check, no-default/demo-provider suites
+  (`83 passed; 1 ignored` and `156 passed; 3 ignored`), localization audits, Flatpak metadata, and
+  diff checks passed. The host lacks `xvfb-run`, so the display-backed fixture is CI-authoritative.
+- Final Linux status head `97c1f6f9d4e2af9e19193e606b2449dc66161247` passed push
+  Native/Flatpak/Foundation gates `29861846026`/`29861846105`/`29861845971` and PR gates
+  `29861848727`/`29861848911`/`29861848713`. Native explicitly ran the exact offline GTK fixture
+  successfully before the remaining GTK, Wayland, AT-SPI, Orca, portal, and release matrix.
+
+This advances unreleased Linux evidence for Scenario 17. Human offline/visual/copy/Orca review,
+physical outage simulation, other clients, live-provider interoperability, signing, rollback, and
+stable release remain open.
+
 ## 2026-07-21 — Linux GTK authentication-failure presentation
 
 Assumption: Linux Scenario 8 needs evidence across the actual GTK Connect button, worker rejection

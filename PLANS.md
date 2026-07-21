@@ -47,6 +47,18 @@ Assumption: Planned files and commands are not evidence until they exist and com
   authentication-failure GTK fixture. Human translated-copy/visual/Orca review, live-provider
   interoperability, other clients, signing, rollback, and stable release remain open.
 
+- [x] Extend Linux Scenario 17 through the real GTK offline-session boundary. Linux code
+  `3242133acbf77a7e72374ab680a83f4ff676ff0c` adds the serialized
+  `gtk_offline_connection_failure_preserves_confirmed_session` fixture: a confirmed bearer-token
+  session and selected model survive a second connection attempt to a deliberately released
+  loopback port, while the credential field clears, the localized network `Alert` is shown, and
+  source text remains unchanged. Packaging/status head `97c1f6f9d4e2af9e19193e606b2449dc66161247`
+  records the final evidence. Local no-default/demo-provider suites passed (`83/1` and `156/3`),
+  and final push Native/Flatpak/Foundation gates `29861846026`/`29861846105`/`29861845971` plus
+  PR gates `29861848727`/`29861848911`/`29861848713` passed. Native explicitly reports the exact
+  offline GTK fixture successful. Human offline/visual/copy/Orca review, physical outage
+  simulation, other clients, signing, rollback, and stable release remain open.
+
 - [x] Add deterministic Unix WAL process-crash recovery evidence. Core
   `8837e59395742b5385af5037aa36a2596af3b025` starts a child test process with a reader snapshot,
   commits a provider profile under `synchronous=FULL`, terminates abruptly, and verifies parent
