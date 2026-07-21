@@ -100,6 +100,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
   runs `29796240722`/`29796240700`/`29796240751` passed; the PR and Issue remain open and no
   stable-release claim is made.
 
+- [x] Attach bounded rollback evidence to Linux prerelease sidecars. Linux `665eb92` generates
+  exact-pin `ROLLBACK.md` records for Native and Flatpak evidence; local tests/audits passed. Push
+  Native/Flatpak/Foundation `29796868664`/`29796868631`/`29796868628` and PR
+  `29796870557`/`29796870563`/`29796870547` passed all jobs. The records contain no previous stable
+  revision or signing material, so stable release remains open.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with

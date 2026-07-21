@@ -43,6 +43,25 @@ This remains unreleased Linux-first evidence. Human visual/copy review, Android 
 Windows handle transfer, other clients, signing, rollback, stable artifacts, and stable release
 remain open; PR #1 and Issue #1 remain open.
 
+## 2026-07-21 — Linux prerelease rollback evidence sidecars
+
+Assumption: CI can record a future rollback procedure without claiming a signed release or inventing
+an unavailable previous stable revision.
+
+- Linux `665eb928b88c0c6f900d4e74f32e4939e8d64589` adds deterministic `ROLLBACK.md` sidecars to
+  the Native and Flatpak checksum/SPDX evidence generators. Each record carries the exact Linux,
+  Core, and (for Native) localization revisions, stops short of signing, and instructs operators
+  to restore a previously verified manifest/artifact before resuming distribution.
+- Local no-default/demo-provider suites passed (`81 passed; 1 ignored` / `145 passed; 3 ignored`),
+  localization audits, Flatpak metadata, evidence-generator smoke checks, formatting, and diff
+  checks passed. Push Native/Flatpak/Foundation `29796868664`/`29796868631`/`29796868628` and PR
+  runs `29796870557`/`29796870563`/`29796870547` passed all jobs, including uploaded rollback
+  evidence and Flatpak sandbox smoke.
+
+This is still unsigned prerelease evidence. No previous stable revision, signing key, stable artifact,
+or release authorization is present; human review, other clients, handle transfer, and stable release
+remain open. PR #1 and Issue #1 remain open.
+
 ## 2026-07-21 — Security and privacy evidence matrices
 
 Assumption: the Milestone 8 security documents must map each required threat and privacy data
