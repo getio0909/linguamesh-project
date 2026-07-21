@@ -485,6 +485,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
   reports localized typed success/failure results.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
+- [x] Verify the Core SQLite WAL replay regression through the Linux client. Core
+  `4badabe735499a50265a1260a838df3254622c15` adds a bounded writer-disconnect test that restores a
+  committed provider profile from the WAL sidecar after a reader snapshot; Core workspace tests,
+  Clippy, and the reproducible Linux SDK package smoke passed. Linux `9406d3a` pins that Core
+  revision in Native CI and Flatpak. Push Native/Flatpak/Foundation
+  `29813283713`/`29813283776`/`29813283818` and PR Native/Flatpak/Foundation
+  `29813286614`/`29813286582`/`29813286593` passed all jobs. Power-loss, alternate VFS behavior,
+  cross-client persistence, and stable release remain open.
+
 ## Completed Linux-first checkpoint — explicit provider connection test
 
 Assumption: connection tests are diagnostics only; they never activate, persist, or replace the

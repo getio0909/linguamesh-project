@@ -2,6 +2,27 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Core SQLite WAL replay and Linux compatibility evidence
+
+Assumption: Linux should verify the shared Core writer-disconnect recovery sequence without
+claiming arbitrary power-loss or SQLite VFS behavior.
+
+- Core `4badabe735499a50265a1260a838df3254622c15` adds a storage regression that commits a provider
+  profile while a reader snapshot holds the WAL, disconnects the writer, and verifies the next
+  `Storage::open` restores the profile and non-secret SecretRef/model fields. Core workspace tests,
+  strict Clippy, formatting, and the Linux SDK package smoke passed; the reproducible package SHA-256
+  was `9857c972ce16ae3d0243fecfe76755f301abe94ca3a3c10f880f62a2836914f`.
+- Linux status/docs head `9406d3a4e794ace27582434ad7c941c07749a721` pins that exact Core revision in
+  Native CI and Flatpak. Local Linux no-default/demo-provider suites passed (`81 passed; 1 ignored`
+  / `147 passed; 3 ignored`) with strict Clippy, localization audits, Flatpak metadata, and diff
+  checks.
+- Push Native/Flatpak/Foundation runs `29813283713`/`29813283776`/`29813283818` and pull-request
+  Native/Flatpak/Foundation runs `29813286614`/`29813286582`/`29813286593` passed all jobs,
+  including the Core package smoke and Linux GTK/accessibility fixtures.
+
+This remains unreleased Linux-first persistence evidence. Abrupt power loss, alternate SQLite VFS
+behavior, cross-client persistence, signed artifacts, and stable-release authorization remain open.
+
 # 2026-07-21 — Linux system accessibility preference evidence
 
 Assumption: the Linux client should inherit desktop high-contrast and reduced-motion preferences
