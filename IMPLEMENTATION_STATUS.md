@@ -2,6 +2,27 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux Core compatibility rejection matrix
+
+Assumption: the Linux client must fail closed for every reviewed Core compatibility dimension
+before provider work begins, while keeping the release train unreleased.
+
+- Linux source/docs head `92b5136b53ee5042aba26a07ea039b626dd1afdf` expands
+  `reviewed_core_contract_is_required_exactly` to reject Core semantic-version, ABI-major,
+  protocol-version, provider-catalog, and required-feature mismatches with typed
+  `ProtocolIncompatible` errors. The Flatpak manifest pins the build-input source to code head
+  `f53c44de3e36a432d8cca75a02e354a941fb564b`.
+- Local Linux no-default/demo-provider suites passed (`81 passed; 1 ignored` / `147 passed; 3
+  ignored`), with formatting, all-target/all-feature check, strict Clippy, localization audits,
+  Flatpak metadata, synchronization, and diff checks.
+- The initial push/PR Flatpak gates failed honestly because the manifest still referenced ancestor
+  `12e810b`; after repinning, final push Native/Flatpak/Foundation runs
+  `29815397653`/`29815397736`/`29815397742` and PR Native/Flatpak/Foundation runs
+  `29815402318`/`29815402263`/`29815402242` all passed.
+
+This strengthens Linux Scenario 16 evidence only. Other clients, human review, broader filesystem
+and power-loss behavior, signed artifacts, and stable-release authorization remain open.
+
 ## 2026-07-21 — Core SQLite WAL replay and Linux compatibility evidence
 
 Assumption: Linux should verify the shared Core writer-disconnect recovery sequence without

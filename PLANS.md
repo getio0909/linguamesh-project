@@ -485,6 +485,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
   reports localized typed success/failure results.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
+- [x] Strengthen Linux Scenario 16 compatibility rejection. Linux code head `f53c44d` now rejects
+  Core semantic-version, ABI-major, protocol-version, provider-catalog, and required-feature
+  mismatches before provider work; docs/status head `92b5136` records the evidence. The first
+  Flatpak attempt failed because its manifest still referenced ancestor `12e810b`; corrected pin
+  `f53c44d` passed the replacement gate. Final push Native/Flatpak/Foundation
+  `29815397653`/`29815397736`/`29815397742` and PR Native/Flatpak/Foundation
+  `29815402318`/`29815402263`/`29815402242` passed. Other clients, human review, broader VFS/power
+  loss behavior, signing, and stable release remain open.
+
 - [x] Verify the Core SQLite WAL replay regression through the Linux client. Core
   `4badabe735499a50265a1260a838df3254622c15` adds a bounded writer-disconnect test that restores a
   committed provider profile from the WAL sidecar after a reader snapshot; Core workspace tests,
