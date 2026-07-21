@@ -24,6 +24,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Widen the Linux visible-string localization audit. Linux code head `56a0812` now scans every
+  Rust source file under `src/**/*.rs` and checks file-filter names in addition to labels, titles,
+  tooltips, placeholders, dialog actions, and direct list literals. Local localization audits,
+  l10n synchronization, Flatpak metadata, formatting, locked offline checks, strict Clippy, and
+  81/149 library tests passed. Push Native/Flatpak/Foundation runs
+  `29823219039`/`29823218980`/`29823219144` and pull-request runs
+  `29823221964`/`29823221885`/`29823221874` passed; status/docs head `89d4e22` records the evidence.
+  This is source-level evidence only; translated-copy, plural, visual, and stable-release review
+  remain open.
+
 - [x] Extend the Linux headless Orca fixture to Arabic. Corrected code/docs head `490657b` maps the
   localized Stop control and runs the Arabic private Xvfb/AT-SPI focus path while retaining the full
   English speech-generation assertion; the initial `7c9b7e4` attempt failed only at the unstable
