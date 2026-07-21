@@ -1,6 +1,27 @@
 # Implementation Status
 
-Last updated: 2026-07-20
+Last updated: 2026-07-21
+
+## 2026-07-21 — Core decoder fuzz gate and Linux compatibility repin
+
+Assumption: the next Linux-first compatibility checkpoint must include a reproducible protocol
+decoder fuzz and sanitizer gate, while keeping the stable-release decision blocked on the remaining
+Milestone 8 evidence.
+
+- Core `8b12a650e52e200255204c1926c0efa4e6540857` adds a separate fuzz workspace that bounds
+  untrusted inputs at 1 MiB, dispatches every supported command/event payload decoder, and uses
+  cargo-fuzz's AddressSanitizer instrumentation. Fuzz run `29789910142` completed 2,000 runs on
+  `nightly-2026-07-20`; Core CI `29789910147` and Native SDK `29789910099` passed all jobs.
+- Linux `0a9a98f898744847540d6026907ea50d185ffce6` consumes the exact Core pin in Native and
+  Flatpak metadata and updates compatibility documentation. Local no-default/demo-provider tests
+  passed (`81 passed; 1 ignored` / `145 passed; 3 ignored`), as did strict Clippy, all-target
+  check, localization audits, and Flatpak metadata validation. PR Native `29790092019`, Flatpak
+  `29790092011`, and Foundation `29790091990` passed all jobs, including GTK, portal, Orca,
+  packaging, checksum, SBOM, and sandbox fixtures.
+
+This is unreleased Linux-first evidence. Document-command resource consumption, OS-handle transfer,
+other clients, human visual review, signing, rollback, stable artifacts, and stable release remain
+open; Linux PR #1 remains Draft/Open and central Issue #1 remains Open.
 
 ## 2026-07-21 — Core ABI malformed-input hardening and Linux repin
 

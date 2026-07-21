@@ -57,6 +57,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
   document-command resource consumption, OS-handle transfer, other clients, signing, rollback,
   and stable release remain open; PR #1 and Issue #1 stay open.
 
+- [x] Add a reproducible Core protocol decoder fuzz and sanitizer smoke gate and repin Linux. Core
+  `8b12a65` passed CI/Fuzz/Native SDK `29789910147`/`29789910142`/`29789910099` with 2,000 bounded
+  cargo-fuzz runs on the fixed nightly toolchain. Linux `0a9a98f` consumed the exact pin; local
+  no-default/demo-provider suites, strict Clippy, all-target check, localization audits, and
+  Flatpak metadata passed. Linux PR Native/Flatpak/Foundation `29790092019`/`29790092011`/
+  `29790091990` passed all jobs. Document-parser fuzzing, broader FFI misuse sanitizers, other
+  clients, signing, rollback, and stable release remain open; PR #1 and Issue #1 stay open.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with
