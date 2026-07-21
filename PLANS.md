@@ -47,6 +47,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
   rollback, and stable release remain open; central validation `29787744384` passed; PR #1 and
   Issue #1 stay open.
 
+- [x] Add bounded malformed-input hardening at the Core C ABI boundary and repin Linux. Core
+  `9a959f1` adds a deterministic 4,096-case corpus through `lm_engine_submit`, capped at the 1 MiB
+  protocol limit and requiring controlled results without provider requests; Core CI/Native SDK
+  `29788492719`/`29788492749` passed. Linux `1e631f1` consumes the exact pin; local no-default and
+  demo-provider suites (`81 passed; 1 ignored` / `145 passed; 3 ignored`), strict Clippy, all-target
+  check, localization audits, and Flatpak metadata passed. Linux PR Native/Flatpak/Foundation
+  `29788818095`/`29788818096`/`29788818078` passed. Coverage-guided fuzzing, sanitizer runs,
+  document-command resource consumption, OS-handle transfer, other clients, signing, rollback,
+  and stable release remain open; PR #1 and Issue #1 stay open.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with

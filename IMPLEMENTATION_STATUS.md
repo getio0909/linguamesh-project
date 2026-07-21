@@ -2,6 +2,31 @@
 
 Last updated: 2026-07-20
 
+## 2026-07-21 — Core ABI malformed-input hardening and Linux repin
+
+Assumption: the next Linux-first compatibility checkpoint should exercise the real C ABI submit
+boundary with bounded untrusted bytes while keeping sanitizer and coverage-guided fuzzing as explicit
+Milestone 8 requirements.
+
+- Core `9a959f142f6660f4a736174cb17f8bea6ff332c1` adds a deterministic 4,096-case malformed-input
+  corpus through `lm_engine_submit`, caps each payload at the existing 1 MiB protocol limit, and
+  requires controlled rejection or busy results without provider requests or panics. Targeted FFI,
+  full workspace tests, formatting, strict Clippy, build, cargo-deny, and C/C++ Native SDK smoke
+  passed locally. Core CI `29788492719` and Native SDK `29788492749` passed all jobs.
+- Linux `1e631f1ee02a13b96737fbfb509a9d56fec4f925` pins that exact Core revision in Native and
+  Flatpak inputs and updates architecture, testing, release, and status evidence. Local no-default
+  and demo-provider suites passed (`81 passed; 1 ignored` / `145 passed; 3 ignored`), as did strict
+  Clippy, all-target check, localization audits, and Flatpak metadata validation. Linux PR Native,
+  Flatpak, and Foundation runs `29788818095`/`29788818096`/`29788818078` passed all jobs, including
+  GTK, portal, accessibility, packaging, checksum, SBOM, and sandbox fixtures.
+- A local all-target GUI build remains blocked by the host's installed GTK/Adwaita linker symbols;
+  the remote Native gate completed the corresponding build and release-mode checks successfully.
+
+This is unreleased Linux-first evidence. Coverage-guided fuzzing, sanitizer runs, document-command
+resource consumption, OS-handle transfer, Android/Windows/macOS projections, human review, signing,
+rollback, stable artifacts, and stable release remain open; Linux PR #1 and central Issue #1 remain
+Draft/Open.
+
 ## 2026-07-20 — Core ABI FileLease lifecycle controls pinned to Linux
 
 Assumption: native hosts need bounded lease lifecycle control before document commands can consume
