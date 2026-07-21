@@ -57,6 +57,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29829814249`/`29829814264`/`29829814189` passed. Human accessibility review and stable release
   remain open.
 
+- [x] Verify Linux provider mnemonic activation in the real keyboard fixture. Code `3b2b69c` now
+  records and requires `provider_preset` focus after the fixture sends `Alt+P`, then keeps the
+  existing Tab/Shift+Tab and Arabic RTL traversal checks. Packaging/docs head `123e4e4` repins
+  Flatpak to `1030e88` and records the stale-pin correction. Final docs-head push
+  Native/Flatpak/Foundation runs `29831556653`/`29831556427`/`29831556369` and PR runs
+  `29831559867`/`29831560089`/`29831559828` passed; code-head Native runs also passed after the
+  initial Flatpak pin failure. Physical keyboard and human accessibility review remain open.
+
 - [x] Widen the Linux visible-string localization audit. Linux code head `56a0812` now scans every
   Rust source file under `src/**/*.rs` and checks file-filter names in addition to labels, titles,
   tooltips, placeholders, dialog actions, and direct list literals. Local localization audits,
