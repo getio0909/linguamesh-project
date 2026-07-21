@@ -2,6 +2,30 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux GTK routing candidate edit persistence lifecycle
+
+Assumption: the existing Linux GTK routing-profile editor is the smallest complete slice for
+proving candidate deselection and stable-ID editing without expanding the shared Core protocol or
+other clients.
+
+- Linux code `dda682d0690be77e93d551fcd31d9318f9c741bd` extends the serialized GTK lifecycle test
+  `gtk_routing_profile_candidate_controls_have_accessible_lifecycle`: edit mode locks the profile
+  ID, Candidate B is deselected, the same profile is saved, `RoutingProfileSaved` is observed, the
+  worker lists the record, and the editor reload confirms only Candidate A remains selected.
+- Flatpak pin `70e6074242f58385207884ac8966d4be89a2fa9f` and Linux docs/status head
+  `9cab5ba7d9763df4a63dfe09c9a6519048c33bdd` record the exact source and documentation lineage.
+  Corrected code-head push Native/Flatpak/Foundation runs `29842604602`/`29842604156`/`29842607411`
+  and PR runs `29842605446`/`29842605764`/`29842605418` all passed. Final status-head push
+  Native/Flatpak/Foundation runs `29843266745`/`29843267871`/`29843267747` and PR runs
+  `29843272666`/`29843272809`/`29843272670` also passed.
+- Local formatting, locked all-target/all-feature checks, strict GUI Clippy, demo-provider tests
+  (`155 passed; 3 ignored`), no-default tests (`82 passed; 1 ignored`), localization audits,
+  l10n synchronization, Flatpak metadata, and diff checks passed.
+
+This is unreleased Linux candidate-management automation evidence only. Human visual, translated-
+copy, and end-user Orca review; broader candidate-management release criteria; other clients;
+signed artifacts; rollback authorization; and stable-release approval remain open.
+
 ## 2026-07-21 — Linux SQLite sidecar identity recheck after Core open
 
 Assumption: checking SQLite `-wal` and `-shm` sidecar identities only before Core opens leaves a

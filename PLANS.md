@@ -24,6 +24,19 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Verify Linux GTK routing candidate edit persistence. Linux code `dda682d` adds a serialized
+  lifecycle assertion that locks an existing profile ID in edit mode, deselects a candidate, saves
+  the same record, lists it through the worker, and reopens the editor to confirm the reduced chain
+  persists. Flatpak pin `70e6074` and Linux docs/status head `9cab5ba` record the exact lineage.
+  Local formatting, locked checks, strict GUI Clippy, demo-provider/no-default suites (`155/3`
+  and `82/1` ignored), localization, l10n, Flatpak, and diff checks passed. Corrected code-head
+  push Native/Flatpak/Foundation `29842604602`/`29842604156`/`29842607411` and PR
+  `29842605446`/`29842605764`/`29842605418` passed. Final status-head push Native/Flatpak/Foundation
+  `29843266745`/`29843267871`/`29843267747` and PR `29843272666`/`29843272809`/`29843272670` also
+  passed. This remains unreleased Linux automation evidence; human visual/copy/Orca review,
+  broader candidate-management release criteria, other clients, signing, rollback, and stable
+  release remain open.
+
 - [x] Expose the generated Linux `en-XA` accented and `ar-XB` RTL pseudo-locales in the native GTK
   runtime selector. Linux code `64a2877` adds catalog lookup, plural rules, locale names, and RTL
   metadata after the twelve official packs; packaging/docs head `cf0b689` repins Flatpak exactly.
