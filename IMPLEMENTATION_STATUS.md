@@ -2,6 +2,30 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux AT-SPI action-name coverage
+
+Assumption: the next Linux-first accessibility slice should strengthen the existing live AT-SPI
+tree export without claiming human screen-reader listening or physical-desktop review.
+
+- Linux `ef87a5b1fb6ebbfaaf8b9d4d93f572ae7f4bdf43` expands `tools/gtk-atspi-inspect.py` to require
+  `Open text file`, `Translate`, `Retry translation`, and `Stop translation` as named push-button
+  controls, plus the `Allow approved fallback` label/control and the existing two text-editor roles.
+  GTK exports the fallback name on its associated label node; the GTK role/relation unit coverage
+  remains authoritative for the checkbox itself.
+- Local `python3 -m py_compile tools/gtk-atspi-inspect.py`, `bash -n tools/run-gtk-atspi-test.sh`,
+  `git diff --check`, `cargo test --no-default-features --locked` (81 passed; 1 ignored), and
+  `cargo test --features demo-provider --locked` (146 passed; 3 ignored) passed. This host lacks
+  the Xvfb/AT-SPI runtime packages, so the live fixture is CI-authoritative.
+- The initial remote head `9bda65b` correctly failed when it assumed the checkbox node carried the
+  accessible name; the logs showed the expected label export. Corrected head `ef87a5b` passed all
+  six gates: push Native/Flatpak/Foundation `29799549333`/`29799549300`/`29799549304` and PR
+  Native/Flatpak/Foundation `29799551201`/`29799551179`/`29799551121`.
+
+This remains unreleased Linux-first evidence. Human translated-copy/Orca listening review,
+physical desktop rendering, broader filesystem races, Android/Windows/macOS clients, signing,
+distributable artifacts, and stable-release authorization remain open; PR #1 is Draft/Open and
+Issue #1 is Open.
+
 ## 2026-07-21 — Core POSIX document-descriptor consumption and Linux repin
 
 Assumption: the Linux-first ABI boundary must duplicate a registered POSIX descriptor and apply

@@ -112,6 +112,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29798723569`/`29798723560`/`29798723668`; all passed. The canceled stale runner is excluded,
   and broader filesystem races plus stable release remain open.
 
+- [x] Expand the Linux live AT-SPI action-name fixture. Linux `ef87a5b` requires named Open,
+  Translate, Retry, fallback-consent label/control, and Stop controls with expected roles while
+  retaining text-editor checks. The first `9bda65b` run exposed GTK's label-node export for the
+  fallback checkbox; `ef87a5b` corrects that assertion. Push Native/Flatpak/Foundation
+  `29799549333`/`29799549300`/`29799549304` and PR
+  `29799551201`/`29799551179`/`29799551121` passed all jobs. Human Orca listening, physical review,
+  other clients, signing, and stable release remain open.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with
