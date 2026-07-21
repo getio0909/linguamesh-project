@@ -2,22 +2,41 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — provider-reported usage normalization
+
+Assumption: provider usage metadata is advisory and non-sensitive; missing or partial wire values
+must fall back safely without becoming a pricing claim.
+
+- Core `117a72ea80f40258a0abf582ffe1fae93c155786` carries typed usage events through the provider
+  stream and normalizes OpenAI Chat/Responses, Anthropic, Gemini, and Ollama metadata into the
+  existing `UsageRecord`. Partial records are merged; absent metadata retains bounded local
+  estimation. The stable C ABI/protobuf projection remains unchanged.
+- Linux docs/status and pin head `507e028d10d2c360053d7b06389ceae910dd5fe9` consumes that Core
+  revision; Flatpak keeps the existing Linux code pin `5d59646adeed72750964fa628eb0a3088911ac24`.
+- Core fmt/check/Clippy/full workspace tests passed; Linux no-default/demo-provider suites passed
+  (`82/1` and `155/3` ignored), localization/placeholder/visible audits, l10n sync, and Flatpak
+  metadata validation passed. Core push CI/Native SDK/Fuzz runs `29850220180`/`29850220219`/
+  `29850220238` are still running; Linux push/PR runs are recorded after completion.
+
+This is unreleased provider-wire evidence. Billing equivalence, pricing, stable ABI projection,
+other clients, human visual/copy/Orca review, signing, rollback, and stable release remain open.
+
 ## 2026-07-21 — Linux normalized usage metadata
 
 Assumption: usage counts are non-sensitive metadata and must remain explicitly categorized as
 provider-reported, locally estimated, or unknown; no pricing is inferred.
 
-- Core `cb644ef5d23d20b5e0af4d381bd5b4216d526b12` adds the backward-compatible Rust `UsageRecord`
-  completion field and `usage_records_v1`; l10n `b817ba911c2ffafb35b7a29755681ab39e950368`
-  adds five Linux usage/source labels.
-- Linux docs/status head `1380063a835584c451a9e40635d71b5674c5bd4e` stores and renders the source-
+- Core `117a72ea80f40258a0abf582ffe1fae93c155786` adds the backward-compatible Rust `UsageRecord`
+  completion field, provider wire normalization, and `usage_records_v1`; l10n
+  `b817ba911c2ffafb35b7a29755681ab39e950368` adds five Linux usage/source labels.
+- Linux docs/status head `507e028d10d2c360053d7b06389ceae910dd5fe9` stores and renders the source-
   marked usage line, with Flatpak pin `5d59646adeed72750964fa628eb0a3088911ac24`.
 - Local Core workspace checks, Linux no-default/demo-provider suites (`82/1` and `155/3` ignored),
   localization audits, Flatpak metadata, synchronization, and diff validation passed. Remote push
   Native/Flatpak/Foundation `29848267826`/`29848267890`/`29848267931` and PR
   `29848272071`/`29848272079`/`29848272053` passed.
 
-This is unreleased Linux/Rust-host evidence. Provider wire parsing, pricing, stable ABI projection,
+This is unreleased Linux/Rust-host evidence. Billing equivalence, pricing, stable ABI projection,
 other clients, human visual/copy/Orca review, signed artifacts, rollback, and stable release remain
 open.
 
