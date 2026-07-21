@@ -2,6 +2,28 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux WAL process-crash recovery
+
+Assumption: abrupt Unix process termination after a committed WAL transaction is an automatable
+crash-recovery boundary; it does not emulate physical power loss or every SQLite VFS failure mode.
+
+- Core `8837e59395742b5385af5037aa36a2596af3b025` adds
+  `wal_replay_survives_process_termination_after_commit`: a child process holds a reader snapshot,
+  commits a provider profile with SQLite `synchronous=FULL`, terminates abruptly, and the parent
+  reopens the database to verify the model and persistent `SecretRef`.
+- Linux docs/status head `b9c1c0e2c337eef609656aa1e62bf718068382e1` consumes that exact Core pin.
+  Local Core/Linux validation passed, including full Core tests, strict Clippy, Linux no-default/
+  demo-provider suites (`82/1` and `155/3` ignored), localization audits, synchronization, Flatpak
+  metadata, and diff checks.
+- Core CI/Fuzz/Native SDK runs `29854340447`/`29854339357`/`29854340140` passed. Linux code-head
+  push/PR Native/Flatpak/Foundation runs `29854770351`/`29854770380`/`29854770404` and
+  `29854773408`/`29854773406`/`29854773414` passed; final status-head runs
+  `29855336417`/`29855336358`/`29855336333` and `29855339737`/`29855339709`/`29855339713` passed.
+
+This remains unreleased Linux crash-recovery evidence. Physical power-loss simulation, alternate
+SQLite VFS behavior, other clients, human visual/copy/Orca review, signing, rollback, and stable
+release remain open.
+
 ## 2026-07-21 — Linux SQLite WAL durability hardening
 
 Assumption: `synchronous=FULL` is the smallest safe storage hardening step for Linux WAL commits;

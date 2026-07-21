@@ -24,6 +24,19 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add deterministic Unix WAL process-crash recovery evidence. Core
+  `8837e59395742b5385af5037aa36a2596af3b025` starts a child test process with a reader snapshot,
+  commits a provider profile under `synchronous=FULL`, terminates abruptly, and verifies parent
+  reopen restores the model and persistent `SecretRef`; Core local formatting, checks, Clippy, and
+  full workspace tests passed. Core CI/Fuzz/Native SDK runs
+  `29854340447`/`29854339357`/`29854340140` passed. Linux docs/status head
+  `b9c1c0e2c337eef609656aa1e62bf718068382e1` pins that Core revision; Linux code-head push
+  Native/Flatpak/Foundation `29854770351`/`29854770380`/`29854770404` and PR
+  `29854773408`/`29854773406`/`29854773414` passed, followed by final status-head push
+  `29855336417`/`29855336358`/`29855336333` and PR
+  `29855339737`/`29855339709`/`29855339713`. Physical power-loss and alternate VFS behavior
+  remain unverified; this is unreleased Linux hardening evidence.
+
 - [x] Harden Linux-first SQLite WAL commit durability. Core `cfecf17802f022b3dc49cff2917de5a77382aefa`
   sets `synchronous=FULL` while retaining WAL, foreign-key enforcement, and secure deletion; Linux
   docs/status head `94d57f61c16be45dd18e9a0519d7296cebefcb8f` pins that Core revision. Core local
