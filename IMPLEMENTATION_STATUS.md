@@ -2,6 +2,29 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux Arabic RTL keyboard-focus fixture
+
+Assumption: Scenario 13 requires keyboard traversal to remain usable after the production GTK
+workspace switches to Arabic RTL, not only a unit-level direction flag.
+
+- Linux fixture/runtime code head `743ddaebde9ae3627ba8e8de38d04c6b79ed87c6` runs the existing
+  English Xvfb/xfwm4 focus traversal and a second `LINGUAMESH_TEST_LOCALE=ar` traversal that
+  requires the production workspace to report RTL. Flatpak build input is pinned at
+  `fedc1a9bd28e1ceb54a3d963efb2785354e9f479`.
+- Local rustfmt, all-target/all-feature locked offline check, demo-provider tests (`149 passed; 3
+  ignored`), no-default tests (`81 passed; 1 ignored`), strict Clippy, localization audits,
+  Flatpak metadata, synchronization, and diff checks passed.
+- The first 743 code-head Flatpak attempt failed because its manifest still referenced `59b57c0`;
+  the corrected `fedc1a9` pin passed push Native/Flatpak/Foundation
+  `29818596872`/`29818597026`/`29818596824` and PR Native/Flatpak/Foundation
+  `29818599326`/`29818599257`/`29818599479`.
+- Status/docs head `23c3a56af90917d616660480e267cc537bb7e1ce` then passed push
+  Native/Flatpak/Foundation `29819019804`/`29819019831`/`29819019803` and PR
+  Native/Flatpak/Foundation `29819022552`/`29819022529`/`29819022599`.
+
+This strengthens automated Linux Scenario 13 keyboard evidence only; manual translated-copy/RTL,
+screen-reader, visual/compositor, other clients, signing, and stable-release review remain open.
+
 ## 2026-07-21 — Linux post-preflight regular-file and hard-link race regressions
 
 Assumption: Linux storage validation must reject same-UID replacement of a validated parent or

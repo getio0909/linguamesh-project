@@ -485,6 +485,13 @@ Assumption: Planned files and commands are not evidence until they exist and com
   reports localized typed success/failure results.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
+- [x] Strengthen Linux Scenario 13 keyboard evidence. Code head `743ddae` adds a real Arabic RTL
+  Xvfb/xfwm4 focus traversal with a production workspace-direction assertion; Flatpak pin head
+  `fedc1a9` and status/docs head `23c3a56` passed push Native/Flatpak/Foundation
+  `29819019804`/`29819019831`/`29819019803` and PR Native/Flatpak/Foundation
+  `29819022552`/`29819022529`/`29819022599`. Manual visual, translated-copy, and screen-reader
+  review remain open.
+
 - [x] Correct the Linux storage-race evidence boundary. Code head `59b57c0` now adds regular-file
   parent and hard-link final-component replacement regressions after preflight; docs/status head
   `b078b8e` records the evidence. Final push Native/Flatpak/Foundation
