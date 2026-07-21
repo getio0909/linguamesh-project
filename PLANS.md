@@ -33,6 +33,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29824919512`/`29824919621`/`29824919573` passed. Pseudo-locales remain layout/direction test
   data, not qualified translations.
 
+- [x] Exercise Linux pseudo-locales through the real GTK/AT-SPI fixture. Fixture/docs head `22ff8f8`
+  asserts expanded `en-XA` and bidi-isolated `ar-XB` control names and roles; corrective source head
+  `304e683` uses process-based window discovery after the first title-based attempt failed. Push
+  Native/Flatpak/Foundation runs `29825878061`/`29825878027`/`29825878160` and PR runs
+  `29825880504`/`29825880581`/`29825880584` passed, with the PR Flatpak rerun clearing a transient
+  Flathub fetch failure. This is automation evidence only; human copy, visual, and screen-reader
+  review remain open.
+
 - [x] Widen the Linux visible-string localization audit. Linux code head `56a0812` now scans every
   Rust source file under `src/**/*.rs` and checks file-filter names in addition to labels, titles,
   tooltips, placeholders, dialog actions, and direct list literals. Local localization audits,
