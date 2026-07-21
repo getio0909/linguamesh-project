@@ -588,6 +588,19 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29835705780`/`29835705840`/`29835706300` passed. Broader VFS variants and power-loss behavior
   remain open.
 
+- [x] Reject pre-existing Linux SQLite WAL/SHM sidecar aliases before Core opens a profile
+  database. Code `2077efb3349505b1125c8f0c686fd707ba439628` inspects both sidecars through the
+  pinned parent with `O_PATH|O_NOFOLLOW` and rejects non-regular or hard-linked aliases; the
+  regression covers both suffixes and proves an external hard-link target is unchanged. Packaging
+  pin `a220b18cfadffdcc39d40b9739cc510c66d45880` and status/docs head
+  `2362a5f213098c4cfc0a44580c17ae08dad20094` record the exact lineage. The first code-head
+  Flatpak push/PR runs `29837248939`/`29837255929` failed only on the stale pin; corrected
+  source-pin push `29837460916`/`29837461045`/`29837460822`, PR
+  `29837463776`/`29837464358`/`29837464171`, status-head push
+  `29838016659`/`29838016535`/`29838016509`, and status-head PR
+  `29838022061`/`29838022446`/`29838022044` passed. Sidecar replacement after inspection,
+  broader VFS behavior, and power-loss behavior remain open.
+
 - [x] Strengthen Linux Scenario 16 compatibility rejection. Linux code head `f53c44d` now rejects
   Core semantic-version, ABI-major, protocol-version, provider-catalog, and required-feature
   mismatches before provider work; docs/status head `92b5136` records the evidence. The first

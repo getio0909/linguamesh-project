@@ -2,6 +2,32 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux SQLite WAL/SHM sidecar hard-link guard
+
+Assumption: pre-existing SQLite `-wal` and `-shm` sidecars are part of the trusted profile
+database boundary and must be private regular files before Core opens the database.
+
+- Linux code `2077efb3349505b1125c8f0c686fd707ba439628` inspects both sidecars through the pinned
+  parent descriptor with `O_PATH|O_NOFOLLOW`, ignoring only missing sidecars and rejecting
+  non-regular or hard-linked aliases. The regression covers both suffixes and verifies that an
+  external hard-link target is unchanged; an isolated pre-fix probe demonstrated that SQLite
+  otherwise follows these same-UID hard-link sidecars and writes the external inode.
+- Flatpak packaging pin `a220b18cfadffdcc39d40b9739cc510c66d45880` and Linux status/docs head
+  `2362a5f213098c4cfc0a44580c17ae08dad20094` record the exact lineage. The first code-head
+  push/PR Flatpak runs `29837248939`/`29837255929` failed only on the stale pin; corrected
+  source-pin push Native/Flatpak/Foundation runs `29837460916`/`29837461045`/`29837460822` and
+  PR runs `29837463776`/`29837464358`/`29837464171` passed. Status-head push Native/Flatpak/
+  Foundation runs `29838016659`/`29838016535`/`29838016509` and PR runs
+  `29838022061`/`29838022446`/`29838022044` passed.
+- Local formatting, locked all-target/all-feature checks, strict GUI Clippy, demo-provider tests
+  (`154 passed; 3 ignored`), no-default tests (`82 passed; 1 ignored`), the focused sidecar
+  regression, localization audits, l10n synchronization, Flatpak metadata, and diff checks
+  passed.
+
+This is unreleased Linux storage hardening evidence only. Replacement after sidecar inspection,
+broader filesystem/VFS behavior, abrupt power-loss recovery, other clients, signed artifacts,
+rollback authorization, and stable-release approval remain outside the claim.
+
 ## 2026-07-21 — Linux final database-leaf identity and creation race hardening
 
 Assumption: the final profile-database leaf must remain the exact preflight inode, and a missing
