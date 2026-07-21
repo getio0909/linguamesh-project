@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux normalized usage metadata
+
+Assumption: usage counts are non-sensitive metadata and must remain explicitly categorized as
+provider-reported, locally estimated, or unknown; no pricing is inferred.
+
+- Core `cb644ef5d23d20b5e0af4d381bd5b4216d526b12` adds the backward-compatible Rust `UsageRecord`
+  completion field and `usage_records_v1`; l10n `b817ba911c2ffafb35b7a29755681ab39e950368`
+  adds five Linux usage/source labels.
+- Linux docs/status head `1380063a835584c451a9e40635d71b5674c5bd4e` stores and renders the source-
+  marked usage line, with Flatpak pin `5d59646adeed72750964fa628eb0a3088911ac24`.
+- Local Core workspace checks, Linux no-default/demo-provider suites (`82/1` and `155/3` ignored),
+  localization audits, Flatpak metadata, synchronization, and diff validation passed. Remote push
+  Native/Flatpak/Foundation `29848267826`/`29848267890`/`29848267931` and PR
+  `29848272071`/`29848272079`/`29848272053` passed.
+
+This is unreleased Linux/Rust-host evidence. Provider wire parsing, pricing, stable ABI projection,
+other clients, human visual/copy/Orca review, signed artifacts, rollback, and stable release remain
+open.
+
 ## 2026-07-21 — Linux GTK routing profile deletion cleanup lifecycle
 
 Assumption: deleting the currently selected routing profile must clear the GTK selection and

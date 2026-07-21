@@ -24,6 +24,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add Linux-first normalized usage metadata. Core `cb644ef5d23d20b5e0af4d381bd5b4216d526b12`
+  adds backward-compatible `UsageRecord` completion metadata and `usage_records_v1`; l10n
+  `b817ba911c2ffafb35b7a29755681ab39e950368` adds five source/draft labels; Linux docs/status head
+  `1380063a835584c451a9e40635d71b5674c5bd4e` pins Flatpak to code `5d59646adeed72750964fa628eb0a3088911ac24`
+  and renders provider-reported/local-estimate/unknown usage below completed output. Local Core,
+  Linux, and l10n validation passed. Push Native/Flatpak/Foundation `29848267826`/`29848267890`/
+  `29848267931` and PR `29848272071`/`29848272079`/`29848272053` passed. Provider wire parsing,
+  pricing, other clients, human visual/copy/Orca review, signing, rollback, and stable release
+  remain open.
+
 - [x] Verify Linux GTK routing profile deletion cleanup. Linux code `7f3ed8d` extends the serialized
   candidate lifecycle fixture through Use, Delete, `RoutingProfileDeleted`, selected-ID cleanup,
   and an empty worker reload; Flatpak pin `e4682e4` and Linux docs/status head `a4a17ae` record the
