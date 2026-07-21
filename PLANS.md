@@ -147,12 +147,18 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Cover the Linux final database-component replacement race. Code head `93fd6f2` adds a
   deterministic regression that places a symlink at the final database path after pathname
   preflight and requires the production `O_NOFOLLOW` open to reject it without modifying the
-  target; packaging pin `2ce550d` and evidence head `1c0b1e9` preserve the exact source lineage.
+  target; packaging pin `2ce550d` and evidence head `6b8cdc8` preserve the exact source lineage.
   Local no-default/demo-provider suites, strict Clippy, localization audits, formatting, and
   Flatpak metadata passed. Push Native/Flatpak/Foundation
   `29802525642`/`29802525571`/`29802525612` and PR
   `29802527738`/`29802527705`/`29802527681` passed all jobs. Broader filesystem/VFS and power-loss
   behavior remain outside the claim.
+
+- [x] Refresh the Linux testing-guide suite counts. Documentation head `6b8cdc8` replaces stale
+  54/104-test descriptions with the observed no-default/demo-provider totals (`81 passed; 1
+  ignored` / `147 passed; 3 ignored`) and names the external prerequisites for ignored cases. Final
+  push Native/Flatpak/Foundation `29802930525`/`29802930632`/`29802930547` and PR
+  `29802932689`/`29802932707`/`29802932683` passed all jobs.
 
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux

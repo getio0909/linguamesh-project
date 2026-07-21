@@ -2,6 +2,19 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux testing-guide suite-count refresh
+
+Assumption: contributor-facing test documentation must match the current runnable suite rather
+than historical checkpoint counts.
+
+- Linux documentation head `6b8cdc8426939fd19c7e977d5e0159a9a7fb35ac` updates `docs/testing.md`
+  from stale 54/104-test descriptions to the observed no-default/demo-provider totals
+  (`81 passed; 1 ignored` / `147 passed; 3 ignored`) and names the external prerequisites for the
+  ignored cases.
+- Final push Native/Flatpak/Foundation `29802930525`/`29802930632`/`29802930547` and PR
+  Native/Flatpak/Foundation `29802932689`/`29802932707`/`29802932683` passed all jobs. This is a
+  documentation consistency correction; no release status changes.
+
 ## 2026-07-21 — Linux final database-component race regression
 
 Assumption: the profile database must reject a final-path replacement that occurs after pathname
