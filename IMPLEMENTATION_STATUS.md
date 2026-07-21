@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux fallback-provider label relation
+
+Assumption: every focusable provider-selection control must expose its visible label through both
+the GTK mnemonic path and the exported `LabelledBy` relation, including the disabled fallback
+selector shown before a provider is connected.
+
+- Linux code `c25bd3142644ebe00a1609ca17f4ac7438326126` connects the fallback-provider label to its
+  dropdown and extends the serialized GTK accessibility regression with relation and mnemonic
+  assertions; production fallback-consent behavior is unchanged.
+- Packaging/docs `b74b854d430179866abf134df3fa7052b33947ae` repins Flatpak to the exact code head,
+  documents the fallback-provider relation, and records the first stale-pin failure.
+- Local 82/150 Linux library suites (`1`/`3` ignored), formatting, locked checks, strict Clippy,
+  localization audits, Flatpak metadata, and diff checks passed. Final push Native/Flatpak/Foundation
+  runs `29829811241`/`29829811272`/`29829811222` and pull-request runs
+  `29829814249`/`29829814264`/`29829814189` all passed.
+
+This is automated Linux accessibility evidence only; human Orca listening, physical keyboard and
+visual review, other clients, signing, rollback, and stable release remain open.
+
 ## 2026-07-21 — Linux runtime pseudo-localization
 
 Assumption: the generated Linux `en-XA` and `ar-XB` PO/MO packs are test data for layout and

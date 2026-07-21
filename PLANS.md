@@ -48,6 +48,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
   runs `29828100998`/`29828100985`/`29828100954` passed. Manual visual/text-scaling review remains
   open.
 
+- [x] Verify the fallback-provider dropdown's visible label relation. Linux code `c25bd31` connects
+  the disabled fallback selector to its mnemonic label and extends the serialized GTK regression
+  with `LabelledBy` and mnemonic assertions. Packaging/docs `b74b854` repins Flatpak to the exact
+  code head and records the first stale-pin failure. Local 82/150 suites (`1`/`3` ignored), strict
+  Clippy, localization audits, Flatpak metadata, and diff checks passed. Final push
+  Native/Flatpak/Foundation runs `29829811241`/`29829811272`/`29829811222` and PR runs
+  `29829814249`/`29829814264`/`29829814189` passed. Human accessibility review and stable release
+  remain open.
+
 - [x] Widen the Linux visible-string localization audit. Linux code head `56a0812` now scans every
   Rust source file under `src/**/*.rs` and checks file-filter names in addition to labels, titles,
   tooltips, placeholders, dialog actions, and direct list literals. Local localization audits,
