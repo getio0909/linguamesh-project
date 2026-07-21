@@ -2,6 +2,20 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Reproducible Linux SDK package verification
+
+Assumption: the Linux SDK archive is prerelease evidence only; reproducibility and consumer
+linkage must be verified before any artifact can be considered for a signed release.
+
+- Core documentation head `f09a632` records `bash tools/verify-linux-sdk-package.sh` rebuilding
+  the `0.1.0-alpha.2` archive twice from functional Core pin
+  `19229184a21a6725326a3d30dea9bc72e5ac999f` with SHA-256
+  `487c83c17f80634826437e94ca7d817e83f0addf60999d6789fcb58beb774afc`.
+- The verifier accepted the outer archive and every packaged file, validated `linguamesh-core.pc`,
+  and compiled and ran the packaged static-library C consumer smoke test.
+- This updates prerelease evidence only. Core `source_revision` remains the functional pin and no
+  signed or stable artifact is added to the release manifest.
+
 ## 2026-07-21 — Linux dependency and provenance gate
 
 Assumption: Linux release candidates need the same dependency advisory, license, and source policy

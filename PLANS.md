@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Reverify the reproducible Linux SDK package against the current Core ABI/document pin.
+  Core documentation head `f09a632` passed `bash tools/verify-linux-sdk-package.sh`: the
+  `0.1.0-alpha.2` archive rebuilt twice with SHA-256
+  `487c83c17f80634826437e94ca7d817e83f0addf60999d6789fcb58beb774afc`, all packaged checksums and
+  pkg-config metadata validated, and the packaged static-library C consumer smoke passed. The
+  archive is unsigned local prerelease evidence; the functional Core release pin remains
+  `19229184a21a6725326a3d30dea9bc72e5ac999f` and no stable artifact is claimed.
+
 - [x] Add the Linux dependency advisory, license, and provenance gate. Linux `deny.toml` reuses
   the reviewed Core policy, with duplicate dependency versions warning while advisories, licenses,
   and sources fail closed. Local `cargo deny --manifest-path Cargo.toml --all-features check` passed;
