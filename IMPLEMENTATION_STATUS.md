@@ -2,6 +2,28 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux Arabic headless Orca fixture
+
+Assumption: Linux screen-reader automation should exercise the same production Stop control in
+Arabic as the semantic and keyboard fixtures, while keeping human speech-quality review separate.
+
+- Code/docs head `490657b0751527e5c7fae3ab89993b90bb97f575` maps the test locale to the production
+  Stop accessible name and adds a second private Xvfb/private-D-Bus Orca run with
+  `LINGUAMESH_TEST_LOCALE=ar`. English still requires the application-tree and `SPEECH GENERATOR`
+  records; Arabic requires the localized AT-SPI tree and focus path only because the CI speech backend
+  did not emit a stable locale-specific speech record. The initial `7c9b7e4` attempt failed at that
+  boundary and remains recorded as corrective evidence.
+- Local Python compile, shell syntax, rustfmt, locked offline check, and diff checks passed. Corrected
+  code-head push Native/Flatpak/Foundation runs `29821349008`/`29821349052`/`29821349030` and
+  pull-request runs `29821346477`/`29821346416`/`29821346504` passed, including both Orca fixtures.
+- Status/docs head `b574cc4342944b076f8fbdf993172e639433226c` passed push
+  Native/Flatpak/Foundation `29821778205`/`29821778263`/`29821778215` and pull-request
+  Native/Flatpak/Foundation `29821775327`/`29821775342`/`29821775256`.
+
+This strengthens automated Linux Scenario 13 headless accessibility evidence only; human Orca
+listening, speech quality, translated-copy/RTL, physical visual/compositor review, other clients,
+signing, and stable-release approval remain open.
+
 ## 2026-07-21 — Linux Arabic AT-SPI semantic fixture
 
 Assumption: Scenario 13 requires the Arabic accessibility tree to expose localized names and

@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Extend the Linux headless Orca fixture to Arabic. Corrected code/docs head `490657b` maps the
+  localized Stop control and runs the Arabic private Xvfb/AT-SPI focus path while retaining the full
+  English speech-generation assertion; the initial `7c9b7e4` attempt failed only at the unstable
+  Arabic speech backend and is recorded. Code-head push/PR Native/Flatpak/Foundation runs
+  `29821349008`/`29821349052`/`29821349030` and `29821346477`/`29821346416`/`29821346504` passed;
+  status/docs head `b574cc4` passed `29821778205`/`29821778263`/`29821778215` and
+  `29821775327`/`29821775342`/`29821775256`. Human listening and speech-quality review remain open.
+
 - [x] Add the Linux Arabic live AT-SPI fixture. Code head `3ce10d5` extends the existing semantic
   tree inspection with localized Arabic Open/Translate/Stop names and the catalog's English Retry
   and fallback names, preserving button/checkbox roles and two text-editor checks. Code-head push/
