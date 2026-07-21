@@ -65,6 +65,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29790091990` passed all jobs. Document-parser fuzzing, broader FFI misuse sanitizers, other
   clients, signing, rollback, and stable release remain open; PR #1 and Issue #1 stay open.
 
+- [x] Add bounded Core document-decoder fuzzing and repin Linux. Core `e7ca21d` passed CI/Fuzz/
+  Native SDK `29791113656`/`29791113663`/`29791113659`; protocol and document targets each ran
+  2,000 cargo-fuzz iterations under the fixed nightly AddressSanitizer toolchain. Linux `d70a9b0`
+  consumed the exact pin; local no-default/demo-provider suites, strict Clippy, all-target check,
+  localization audits, and Flatpak metadata passed. Linux PR Native/Flatpak/Foundation
+  `29791487882`/`29791487873`/`29791487927` passed all jobs. Broader FFI misuse sanitizers,
+  document-command resource consumption, other clients, signing, rollback, and stable release
+  remain open; PR #1 and Issue #1 stay open.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with

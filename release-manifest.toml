@@ -3,7 +3,7 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
-  "Core protocol decoder fuzz and AddressSanitizer smoke are verified at Core 8b12a650e52e200255204c1926c0efa4e6540857 and Linux 0a9a98f898744847540d6026907ea50d185ffce6. Core CI/Fuzz/Native SDK 29789910147/29789910142/29789910099 and Linux PR Native/Flatpak/Foundation 29790092019/29790092011/29790091990 passed all jobs; the bounded 1 MiB decoder target completed 2,000 cargo-fuzz runs on the fixed nightly toolchain, while the C ABI malformed-input corpus remains covered by the same Core pin. Document-command resource consumption, OS-handle transfer, other clients, signing, rollback, and stable release remain unverified.",
+  "Core protocol and document decoder fuzz plus AddressSanitizer smoke are verified at Core e7ca21df183b15e10e157f175526a1b7ac0b3ad0 and Linux d70a9b0cbb9dc8633e8fd0259c908fd427d75bbb. Core CI/Fuzz/Native SDK 29791113656/29791113663/29791113659 and Linux PR Native/Flatpak/Foundation 29791487882/29791487873/29791487927 passed all jobs; the bounded 1 MiB protocol and 4 MiB document decoder targets completed 2,000 cargo-fuzz runs each on the fixed nightly toolchain, while the C ABI malformed-input corpus remains covered by the same Core pin. Document-command resource consumption, OS-handle transfer, other clients, signing, rollback, and stable release remain unverified.",
   "Linux-first FileLease lifecycle checkpoint is verified at Core 8b096478b1623bdaf5105e8a8f59e55e2fa8015d and Linux f95780db3dd05fdccfe47af254f73c5107587077. Core local workspace/FFI/native SDK checks, Core CI 29784269272, and Native SDK 29784269356 passed; Linux local no-default/demo-provider, strict Clippy, localization, and Flatpak metadata checks passed; Linux PR Native/Flatpak/Foundation gates 29785377479/29785377512/29785377513 passed with jobs 88495671317/88495671975/88495671980; central coordination 29785760751 passed Linux/PowerShell jobs 88496851860/88496851914. Core exposes file_lease_v1 and Linux validates portal-read expiry/revocation, while ABI handle transfer and other clients remain unverified.",
   "ABI 1 compatibility snapshot projection is verified at Core c559b32d3869e01983f2bbf32f1386bad99c3290 and Linux b38a8fd722d4740abd161e30197354793e3de1f6. Core CI/Native SDK 29782822854/29782822883 passed; Linux PR Native/Flatpak/Foundation 29783023917/29783023872/29783023894 (jobs 88488352790/88488352708/88488352736) passed. The five-dimension query is available through the C ABI, while file leases, other clients, signing, rollback, and stable release remain unverified.",
   "Linux explainable routing diagnostics are verified at source/pin head ab82f36963a63f43091d94e960541fc173175724 with l10n 737d890e60fd34f15fd8708698448ef9ab96299f: typed events expose eligible candidates, rejected candidates with stable reasons, ranking inputs, and fallback order while excluding endpoints, credentials, source text, and translated output. Push Native/Flatpak/Foundation gates 29773735297/29773735296/29773735294 and PR gates 29773738883/29773738887/29773738924 passed; documentation head 458a920321ae16e6d3983213a286a972e34c8a18 also passed push gates 29774707677/29774707852/29774708075 and PR gates 29774709730/29774709849/29774710165. The PR remains Draft/Open and this is unreleased Linux-first evidence; human visual/copy review, end-user Orca acceptance, other clients, signing, rollback, and stable release remain unverified.",
@@ -40,7 +40,7 @@ localization_schema_version = "1.0.0"
 [components.core]
 repository = "linguamesh-core"
 version = "0.1.0-alpha.2"
-source_revision = "8b12a650e52e200255204c1926c0efa4e6540857"
+source_revision = "e7ca21df183b15e10e157f175526a1b7ac0b3ad0"
 minimum_compatible_version = "0.1.0-alpha.2"
 artifacts = []
 
@@ -75,6 +75,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "0a9a98f898744847540d6026907ea50d185ffce6"
+source_revision = "d70a9b0cbb9dc8633e8fd0259c908fd427d75bbb"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

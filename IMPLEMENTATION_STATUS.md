@@ -2,21 +2,22 @@
 
 Last updated: 2026-07-21
 
-## 2026-07-21 — Core decoder fuzz gate and Linux compatibility repin
+## 2026-07-21 — Core document decoder fuzz gate and Linux compatibility repin
 
-Assumption: the next Linux-first compatibility checkpoint must include a reproducible protocol
-decoder fuzz and sanitizer gate, while keeping the stable-release decision blocked on the remaining
-Milestone 8 evidence.
+Assumption: the next Linux-first compatibility checkpoint must include reproducible protocol and
+document-decoder fuzz/sanitizer gates, while keeping the stable-release decision blocked on the
+remaining Milestone 8 evidence.
 
-- Core `8b12a650e52e200255204c1926c0efa4e6540857` adds a separate fuzz workspace that bounds
-  untrusted inputs at 1 MiB, dispatches every supported command/event payload decoder, and uses
-  cargo-fuzz's AddressSanitizer instrumentation. Fuzz run `29789910142` completed 2,000 runs on
-  `nightly-2026-07-20`; Core CI `29789910147` and Native SDK `29789910099` passed all jobs.
-- Linux `0a9a98f898744847540d6026907ea50d185ffce6` consumes the exact Core pin in Native and
+- Core `e7ca21df183b15e10e157f175526a1b7ac0b3ad0` adds bounded document-decoder fuzzing for text,
+  subtitle, CSV, HTML, JSON, DOCX, PPTX, XLSX, EPUB, and PDF dispatch in the separate fuzz
+  workspace. Fuzz run `29791113663` covered protocol and document targets under the fixed
+  `nightly-2026-07-20` AddressSanitizer toolchain; Core CI `29791113656` and Native SDK
+  `29791113659` passed all jobs.
+- Linux `d70a9b0cbb9dc8633e8fd0259c908fd427d75bbb` consumes the exact Core pin in Native and
   Flatpak metadata and updates compatibility documentation. Local no-default/demo-provider tests
   passed (`81 passed; 1 ignored` / `145 passed; 3 ignored`), as did strict Clippy, all-target
-  check, localization audits, and Flatpak metadata validation. PR Native `29790092019`, Flatpak
-  `29790092011`, and Foundation `29790091990` passed all jobs, including GTK, portal, Orca,
+  check, localization audits, and Flatpak metadata validation. PR Native `29791487882`, Flatpak
+  `29791487873`, and Foundation `29791487927` passed all jobs, including GTK, portal, Orca,
   packaging, checksum, SBOM, and sandbox fixtures.
 
 This is unreleased Linux-first evidence. Document-command resource consumption, OS-handle transfer,
