@@ -105,6 +105,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "97c1f6f9d4e2af9e19193e606b2449dc66161247"
+source_revision = "ef83869df4901adbdcb3baaa7ade27c8ad685dd3"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

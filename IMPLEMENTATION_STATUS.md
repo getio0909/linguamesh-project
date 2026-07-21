@@ -2,6 +2,31 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux GTK provider connection-test lifecycle
+
+Assumption: the explicit GTK Test connection action must validate a provider without committing an
+active session, clear entered credentials immediately, and preserve typed authentication errors for
+localized redacted presentation.
+
+- Linux runtime code `2d5f625067fb84af260b664e5e2d9c027095e6d8` adds the serialized ignored fixture
+  `gtk_connection_test_reports_models_and_redacts_credential`. It drives the production GTK button
+  through a bearer-token loopback provider, reports a bounded discovered-model count, clears the
+  credential field, and then rejects a wrong canary without exposing the canary or HTTP 401/403
+  details. `ConnectionTestRejected` now retains the full `TranslationError` category instead of
+  collapsing it into an internal client error.
+- Linux final status head `ef83869df4901adbdcb3baaa7ade27c8ad685dd3` records local formatting,
+  all-target/all-feature check, strict Clippy, no-default/demo-provider suites (`83/1` and `156/3`
+  ignored), localization audits, l10n sync, Flatpak metadata, and diff checks. The host cannot
+  link the GTK test binary against its older installed GTK symbols; display-backed execution is
+  CI-authoritative.
+- Final push Native/Flatpak/Foundation gates `29864753592`/`29864753479`/`29864753370` and PR
+  gates `29864757307`/`29864757739`/`29864757412` passed. Native explicitly ran the new provider
+  connection-test fixture before the remaining accessibility and release matrix.
+
+This advances unreleased Linux Provider Hub and Scenario 8 evidence. Live-provider interoperability,
+human visual/copy/Orca review, other clients, signed artifacts, rollback authorization, and stable
+release remain open.
+
 ## 2026-07-21 — Linux GTK offline session preservation
 
 Assumption: Linux Scenario 17 needs the real GTK connection lifecycle to preserve a confirmed

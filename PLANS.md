@@ -24,6 +24,19 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Extend Linux Provider Hub and Scenario 8 through the production GTK Test connection action.
+  Linux runtime `2d5f625067fb84af260b664e5e2d9c027095e6d8` adds the serialized
+  `gtk_connection_test_reports_models_and_redacts_credential` fixture: a bearer-token probe reports
+  a bounded model count without committing a session, clears the credential field, and preserves
+  typed authentication errors for localized redacted failure copy. Linux status head
+  `ef83869df4901adbdcb3baaa7ade27c8ad685dd3` records local no-default/demo-provider suites
+  (`83/1` and `156/3` ignored), formatting, all-target/all-feature check, strict Clippy,
+  localization audits, l10n synchronization, Flatpak metadata, and diff checks. Final push
+  Native/Flatpak/Foundation `29864753592`/`29864753479`/`29864753370` and PR
+  `29864757307`/`29864757739`/`29864757412` all passed; Native explicitly ran the new fixture.
+  Human copy/visual/Orca review, live-provider interoperability, other clients, signing, rollback,
+  and stable release remain open.
+
 - [x] Make Linux authentication failures actionable and localized. Linux code
   `c66f6df42fd03c67b3991c5b7fb4229dccadce97` maps provider HTTP 401/403 failures to the canonical
   `error.authentication` copy before GTK rendering, with a regression for Simplified Chinese and
