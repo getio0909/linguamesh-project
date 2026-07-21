@@ -2,6 +2,20 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux storage-race validation boundary correction
+
+Assumption: status documentation must distinguish tested Linux path races from broader
+filesystem/VFS and power-loss behavior that remains unverified.
+
+- Linux docs/status head `488575e7e5ba15b2836d7a8c7e9f0afed49fa9d4` clarifies that parent-directory
+  and final-database-component replacement races are covered by descriptor-pinned `openat2` and
+  Core `O_NOFOLLOW`; broader same-UID variants, alternate VFS behavior, and power loss remain
+  outside the claim. No runtime source or compatibility pin changed.
+- Push Native/Flatpak/Foundation runs `29816104837`/`29816104784`/`29816104797` and pull-request
+  Native/Flatpak/Foundation runs `29816107833`/`29816107893`/`29816107760` all passed.
+
+This is documentation-boundary evidence only; Linux remains unreleased.
+
 ## 2026-07-21 — Linux Core compatibility rejection matrix
 
 Assumption: the Linux client must fail closed for every reviewed Core compatibility dimension
