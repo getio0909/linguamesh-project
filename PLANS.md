@@ -24,6 +24,24 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Extend Linux Scenario 12 through the production GTK interrupted document-job restart path.
+  Linux runtime `ca67c8b6b50cd79700c6be505bd7a950c73ed870` adds the serialized
+  `gtk_interrupted_document_job_restores_and_resumes` fixture: a two-segment TXT job is translated
+  through the real GTK form, paused after one committed segment, persisted in a private database,
+  restored by a second GTK worker, reconnected with a fresh session credential under the same
+  non-secret provider identity, and resumed without duplicating completed output. Linux evidence
+  documentation head `1be587b2d910690cb3fdc07c0342fd0bb9c55ef4` records local formatting, locked
+  all-target checks, strict Clippy, no-default/demo-provider suites (`83/1` and `156/3` ignored),
+  localization audits, l10n synchronization, Flatpak metadata, and diff checks. Code-head push
+  Native/Flatpak/Foundation gates `29873822240`/`29873822363`/`29873822338` and PR gates
+  `29873825162`/`29873825141`/`29873825142` passed; evidence-head push gates
+  `29874337974`/`29874337743`/`29874337869` and PR gates
+  `29874339972`/`29874339969`/`29874339977` passed; final documentation-head push gates
+  `29874798901`/`29874798855`/`29874798868` and PR gates
+  `29874801196`/`29874801209`/`29874801193` also passed. Physical power-loss recovery, live
+  provider interoperability, human visual/copy/Orca review, other clients, signing, rollback,
+  and stable-release approval remain open.
+
 - [x] Extend Linux Scenario 9 through the real GTK glossary/protected-span boundary. Linux runtime
   `aa0e0206c20e325bf0dd340dab039eea400a9ab0` adds the serialized
   `gtk_glossary_and_protected_terms_preserve_translation` fixture: a real GTK glossary entry

@@ -2,6 +2,35 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux GTK interrupted document-job restart/resume lifecycle
+
+Assumption: Linux Scenario 12 is evidenced at the production GTK boundary when a persisted
+multi-segment document pauses after committed progress, a second worker restores the same database,
+and Resume completes only the remaining segments without duplicating output.
+
+- Runtime code `ca67c8b6b50cd79700c6be505bd7a950c73ed870` adds the serialized ignored fixture
+  `gtk_interrupted_document_job_restores_and_resumes`. It drives real GTK Translate/Pause controls
+  on a two-segment TXT job, verifies one committed segment and an unchanged source buffer, shuts
+  down the first worker, restores the private database in a second GTK worker, reconnects the same
+  non-secret provider identity with a fresh session credential, and completes the remaining segment
+  through the production Resume action. Linux final evidence head
+  `1be587b2d910690cb3fdc07c0342fd0bb9c55ef4` keeps the Flatpak source pin synchronized.
+- Local formatting, all-target/all-feature check, strict Clippy, no-default/demo-provider tests
+  (`83 passed; 1 ignored` and `156 passed; 3 ignored`), localization key/placeholder/visible audits,
+  l10n synchronization, Flatpak metadata, and diff checks passed. Display-backed execution is
+  CI-authoritative on this host.
+- Code-head push/PR Native, Flatpak, and Foundation gates
+  `29873822240`/`29873822363`/`29873822338` and `29873825162`/`29873825141`/`29873825142` passed.
+  Evidence-head gates `29874337974`/`29874337743`/`29874337869` and
+  `29874339972`/`29874339969`/`29874339977` passed. Final documentation-head gates
+  `29874798901`/`29874798855`/`29874798868` and
+  `29874801196`/`29874801209`/`29874801193` passed; Native explicitly reports the exact fixture
+  successful.
+
+This advances unreleased Linux evidence for mandatory Scenario 12. Physical power-loss recovery,
+live-provider interoperability, human visual/copy/Orca review, other clients, signing, rollback,
+and stable-release approval remain open.
+
 ## 2026-07-21 — Linux GTK glossary and protected-span lifecycle
 
 Assumption: Linux Scenario 9 is evidenced at the production GTK boundary when a request-level
