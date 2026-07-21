@@ -2,6 +2,33 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux SQLite sidecar identity recheck after Core open
+
+Assumption: checking SQLite `-wal` and `-shm` sidecar identities only before Core opens leaves a
+residual replacement window, so the pinned parent descriptor and any pre-existing sidecar
+identities must remain available for a second check after Core migration/open.
+
+- Linux code `c6c5528314ddef98f2ac5f24aac8202b0e0d62d1` retains the parent descriptor and sidecar
+  identity snapshot through `Storage::open_from_trusted_descriptor`, then fails closed when an
+  existing sidecar changes identity or becomes an invalid alias. Sidecars absent at preflight may
+  be created by SQLite, but the post-open inspection still rejects non-regular or hard-linked files.
+  `replaced_database_sidecar_is_rejected_after_snapshot` uses an atomic rename from a pre-existing
+  different inode so the race regression is deterministic; the earlier CI attempt
+  `29839491260` exposed inode reuse in the test and was corrected rather than counted as evidence.
+- Flatpak pin `1432242c96fad806094bf295703dc0df992d882a` and Linux docs/status head
+  `49ea6212eba69c614403edf90d1e5ad9f044c26f` record the exact build and boundary. Corrected push
+  Native/Flatpak/Foundation runs `29839920685`/`29839920594`/`29839920501` and PR runs
+  `29839923879`/`29839924044`/`29839923994` passed; final status-head push Native/Flatpak/
+  Foundation runs `29840468206`/`29840467826`/`29840468229` and PR runs
+  `29840473167`/`29840473177`/`29840473045` also passed.
+- Local formatting, locked all-target/all-feature checks, strict GUI Clippy, demo-provider tests
+  (`155 passed; 3 ignored`), no-default tests (`82 passed; 1 ignored`), both sidecar regressions,
+  localization audits, l10n synchronization, Flatpak metadata, and diff checks passed.
+
+This is unreleased Linux storage hardening evidence only. Replacement after the second inspection,
+broader filesystem/VFS behavior, abrupt power-loss recovery, other clients, signed artifacts,
+rollback authorization, and stable-release approval remain outside the claim.
+
 ## 2026-07-21 — Linux SQLite WAL/SHM sidecar hard-link guard
 
 Assumption: pre-existing SQLite `-wal` and `-shm` sidecars are part of the trusted profile

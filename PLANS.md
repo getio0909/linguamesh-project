@@ -601,6 +601,19 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29838022061`/`29838022446`/`29838022044` passed. Sidecar replacement after inspection,
   broader VFS behavior, and power-loss behavior remain open.
 
+- [x] Recheck Linux SQLite sidecar identities after Core migration/open. Code
+  `c6c5528314ddef98f2ac5f24aac8202b0e0d62d1` retains the pinned parent descriptor and pre-open
+  `-wal`/`-shm` identities, failing closed when an existing sidecar changes identity or becomes an
+  invalid alias; absent sidecars may still be created by SQLite and are validated after open. The
+  deterministic atomic-rename regression corrected the inode-reuse failure in PR run
+  `29839491260`. Flatpak pin `1432242c96fad806094bf295703dc0df992d882a` and Linux docs/status
+  head `49ea6212eba69c614403edf90d1e5ad9f044c26f` record the lineage. Corrected push/PR six-gate
+  runs `29839920685`/`29839920594`/`29839920501` and
+  `29839923879`/`29839924044`/`29839923994`, plus final status-head push/PR six-gate runs
+  `29840468206`/`29840467826`/`29840468229` and
+  `29840473167`/`29840473177`/`29840473045`, passed. Replacement after the second inspection,
+  broader VFS behavior, and power-loss behavior remain open.
+
 - [x] Strengthen Linux Scenario 16 compatibility rejection. Linux code head `f53c44d` now rejects
   Core semantic-version, ABI-major, protocol-version, provider-catalog, and required-feature
   mismatches before provider work; docs/status head `92b5136` records the evidence. The first
