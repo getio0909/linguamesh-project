@@ -13,11 +13,11 @@ remaining Milestone 8 evidence.
   workspace. Fuzz run `29791113663` covered protocol and document targets under the fixed
   `nightly-2026-07-20` AddressSanitizer toolchain; Core CI `29791113656` and Native SDK
   `29791113659` passed all jobs.
-- Linux `d70a9b0cbb9dc8633e8fd0259c908fd427d75bbb` consumes the exact Core pin in Native and
+- Linux `e71edf55ede238d729fc2fd34936dcd2ad8d4459` consumes the exact Core pin in Native and
   Flatpak metadata and updates compatibility documentation. Local no-default/demo-provider tests
   passed (`81 passed; 1 ignored` / `145 passed; 3 ignored`), as did strict Clippy, all-target
-  check, localization audits, and Flatpak metadata validation. PR Native `29791487882`, Flatpak
-  `29791487873`, and Foundation `29791487927` passed all jobs, including GTK, portal, Orca,
+  check, localization audits, and Flatpak metadata validation. PR Native `29792553415`, Flatpak
+  `29792553389`, and Foundation `29792553385` passed all jobs, including GTK, portal, Orca,
   packaging, checksum, SBOM, and sandbox fixtures.
 
 This is unreleased Linux-first evidence. Document-command resource consumption, OS-handle transfer,
