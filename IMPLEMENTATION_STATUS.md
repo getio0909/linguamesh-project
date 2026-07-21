@@ -18,11 +18,11 @@ that boundary.
   suites (`83 passed; 1 ignored` and `156 passed; 3 ignored`), localization audits, synchronization,
   Flatpak metadata, and diff checks passed. The display-backed fixture remains CI-authoritative on
   this host.
-- Linux packaging/docs head `b2ec8a29985e6bd754250ef79c1f0822538a4525` passed push Native/Flatpak/
-  Foundation gates `29857952721`/`29857954041`/`29857955602`; Native executed the full serialized
-  GTK, Wayland, AT-SPI, Orca, Secret Service, portal, and release-evidence matrix. The matching
-  PR Native/Flatpak/Foundation gates `29858411718`/`29858411727`/`29858411817` and central
-  coordination workflow `29858511174` also passed.
+- Linux packaging/docs/status head `9e45b2a8b721cf0f316d94009d66390677dac480` passed push
+  Native/Flatpak/Foundation gates `29859661736`/`29859661796`/`29859661669` and PR gates
+  `29859664966`/`29859664991`/`29859665005`. Native explicitly ran the exact authentication-
+  failure GTK fixture before the remaining GTK, Wayland, AT-SPI, Orca, Secret Service, portal,
+  and release-evidence matrix.
 
 This advances unreleased Linux evidence for Scenario 8. Human translated-copy/visual/Orca review,
 live-provider interoperability, other clients, signing, rollback, and stable release remain open.

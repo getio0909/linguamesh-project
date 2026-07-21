@@ -40,12 +40,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `gtk_authentication_failure_shows_localized_redacted_error` fixture: a wrong session credential
   travels through the GTK Connect button and worker rejection event, then renders Simplified
   Chinese catalog copy in an `Alert` without the credential or 401/403 detail. Packaging/docs head
-  `b2ec8a29985e6bd754250ef79c1f0822538a4525` consumes that code. Local no-default/demo-provider
+  `9e45b2a8b721cf0f316d94009d66390677dac480` consumes that code. Local no-default/demo-provider
   suites passed (`83/1` and `156/3`), and push Native/Flatpak/Foundation gates
-  `29857952721`/`29857954041`/`29857955602`, PR Native/Flatpak/Foundation gates
-  `29858411718`/`29858411727`/`29858411817`, and central validation `29858511174` passed. Human
-  translated-copy/visual/Orca review, live-provider interoperability, other clients, signing,
-  rollback, and stable release remain open.
+  `29859661736`/`29859661796`/`29859661669`, PR Native/Flatpak/Foundation gates
+  `29859664966`/`29859664991`/`29859665005` passed. Native explicitly runs the exact
+  authentication-failure GTK fixture. Human translated-copy/visual/Orca review, live-provider
+  interoperability, other clients, signing, rollback, and stable release remain open.
 
 - [x] Add deterministic Unix WAL process-crash recovery evidence. Core
   `8837e59395742b5385af5037aa36a2596af3b025` starts a child test process with a reader snapshot,
