@@ -2,6 +2,31 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux final database-leaf identity and creation race hardening
+
+Assumption: the final profile-database leaf must remain the exact preflight inode, and a missing
+leaf must be created exclusively so a same-UID replacement cannot be accepted between validation
+and descriptor open.
+
+- Linux code `a7cee699bd973c8f05893c37b5583dd8c4998471` records the parent and existing-leaf
+  device/inode, opens an existing leaf without creation flags, rejects distinct regular-file
+  replacement after `fstat`, and uses `O_CREAT|O_EXCL|O_NOFOLLOW` when the leaf was absent.
+  Packaging pin `87361ec9fbe37417dbf83f64b181cb834a5a4aa7` and status/docs head
+  `5ae3b579d7393511d1a8fbdeedbdc86f1678df98` preserve the exact source lineage.
+- Local formatting, locked all-target/all-feature check, strict GUI Clippy, demo-provider tests
+  (`153 passed; 3 ignored`), no-default tests (`82 passed; 1 ignored`), targeted
+  replacement/database/parent tests (`3`/`5`/`1` passed), localization audits, l10n
+  synchronization, Flatpak metadata, and diff checks passed. Corrected source-pin push
+  Native/Flatpak/Foundation runs `29835149907`/`29835149914`/`29835149955` and pull-request
+  runs `29835154608`/`29835154630`/`29835155142` passed. The first code-head Flatpak run
+  `29834999139` failed only on the stale source pin.
+- Status-head push Native/Flatpak/Foundation runs `29835701523`/`29835701634`/`29835701563` and
+  pull-request runs `29835705780`/`29835705840`/`29835706300` passed.
+
+This is unreleased Linux storage hardening evidence only. Broader same-UID filesystem/VFS
+variants, abrupt power-loss recovery, other clients, signed artifacts, rollback authorization,
+and stable-release approval remain outside the claim.
+
 ## 2026-07-21 — Linux alternate-directory replacement race hardening
 
 Assumption: replacing a validated private profile-database parent with a distinct private

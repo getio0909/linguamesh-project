@@ -577,6 +577,17 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29833858405`/`29833858644`/`29833858612` also passed. Broader VFS variants and power-loss
   behavior remain open.
 
+- [x] Harden the Linux final database leaf against same-UID replacement and creation races. Code
+  `a7cee699bd973c8f05893c37b5583dd8c4998471` pins the preflight leaf device/inode, rejects a
+  distinct regular-file replacement after descriptor acquisition, and uses exclusive creation
+  for a missing leaf; packaging pin `87361ec9fbe37417dbf83f64b181cb834a5a4aa7` and status/docs
+  head `5ae3b579d7393511d1a8fbdeedbdc86f1678df98` record the exact lineage. The first code-head
+  Flatpak run `29834999139` failed only on the stale source pin; corrected push Native/Flatpak/
+  Foundation `29835149907`/`29835149914`/`29835149955`, PR `29835154608`/`29835154630`/
+  `29835155142`, status-head push `29835701523`/`29835701634`/`29835701563`, and status-head PR
+  `29835705780`/`29835705840`/`29835706300` passed. Broader VFS variants and power-loss behavior
+  remain open.
+
 - [x] Strengthen Linux Scenario 16 compatibility rejection. Linux code head `f53c44d` now rejects
   Core semantic-version, ABI-major, protocol-version, provider-catalog, and required-feature
   mismatches before provider work; docs/status head `92b5136` records the evidence. The first
