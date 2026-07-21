@@ -24,6 +24,20 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Extend Linux Scenario 14 through the production GTK Incognito privacy boundary.
+  Linux runtime code `47bbe58bf16ecac11976828575c5964f511198fb` adds the serialized
+  `gtk_incognito_translation_bypasses_memory_and_persistence` fixture. It drives the GTK Incognito
+  toggle, authenticated connection, model selection, standard translation, and repeated private
+  translation; the provider request counter increases for the Incognito repeat, while reopened
+  SQLite history and translation-memory counts remain exactly one each. Final Linux status/docs
+  head `ca130eec9643c4bf08d9a5877a921d26ef20e9cb` pins the runtime source and records local
+  formatting, locked checks, strict Clippy, no-default/demo-provider suites (`83 passed; 1 ignored`
+  and `157 passed; 3 ignored`), localization audits, l10n synchronization, Flatpak metadata, and
+  diff checks. Final status-head push Native/Flatpak/Foundation runs
+  `29878453604`/`29878453311`/`29878453609` and PR runs
+  `29878456310`/`29878456278`/`29878456340` passed. Human privacy review, other clients, signing,
+  rollback, and stable release remain open.
+
 - [x] Extend Linux Scenario 14 through worker-level Incognito translation-memory isolation.
   Linux runtime `0203b2183ee79d3ba4d836cddeb714ad64091231` keeps Incognito requests out of
   translation-memory lookup and out of history/memory persistence. The regression

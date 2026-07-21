@@ -2,6 +2,28 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux GTK Incognito privacy boundary
+
+Assumption: Scenario 14 is evidenced at the production GTK boundary when a standard translation
+creates local history and translation-memory rows, an identical Incognito request reaches the
+provider again, and the reopened database contains no additional private rows.
+
+- Linux runtime code `47bbe58bf16ecac11976828575c5964f511198fb` adds the serialized fixture
+  `gtk_incognito_translation_bypasses_memory_and_persistence`. It drives the GTK Incognito toggle,
+  authenticated connection, deliberate model selection, standard Translate action, repeated
+  Incognito Translate action, and direct Storage reopen assertions. The provider request counter
+  increases for the private repeat; history and translation-memory counts remain exactly one each.
+- Final Linux status/docs head `ca130eec9643c4bf08d9a5877a921d26ef20e9cb` pins the Flatpak runtime
+  source and records local formatting, all-target/all-feature checks, strict Clippy, no-default and
+  demo-provider suites (`83 passed; 1 ignored` and `157 passed; 3 ignored`), localization audits,
+  l10n synchronization, Flatpak metadata, and diff checks.
+- Final status-head push Native/Flatpak/Foundation runs `29878453604`/`29878453311`/`29878453609`
+  and PR runs `29878456310`/`29878456278`/`29878456340` passed; Native explicitly ran the GTK
+  Incognito fixture. Release status remains `unreleased`.
+
+This advances unreleased Linux evidence for mandatory Scenario 14. Human privacy review, other
+clients, signed artifacts, rollback authorization, and stable-release approval remain open.
+
 ## 2026-07-21 — Linux Incognito translation-memory isolation
 
 Assumption: Incognito means a request must neither consult existing translation memory nor write
