@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux Incognito translation-memory isolation
+
+Assumption: Incognito means a request must neither consult existing translation memory nor write
+history or memory, while standard translation keeps the existing persistence behavior.
+
+- Linux runtime and packaging head `0203b2183ee79d3ba4d836cddeb714ad64091231` guards the worker's
+  translation-memory lookup with the request privacy mode. The regression
+  `incognito_translation_bypasses_existing_memory_and_persists_nothing` performs a standard
+  translation, repeats the same source in Incognito, proves the provider receives a second request,
+  and reopens the database to confirm exactly one history row and one memory row.
+- Local formatting, locked all-target/all-feature checks, strict Clippy, no-default/demo-provider
+  suites (`83 passed; 1 ignored` and `160 passed; 3 ignored`), localization key/placeholder/visible
+  audits, l10n synchronization, Flatpak metadata, and diff checks passed.
+- Push Native/Flatpak/Foundation runs `29876038029`/`29876038007`/`29876038060` and PR runs
+  `29876035413`/`29876035445`/`29876035433` passed. Release status remains `unreleased`.
+
+This advances unreleased Linux evidence for mandatory Scenario 14. Human privacy review, other
+clients, signed artifacts, rollback authorization, and stable-release approval remain open.
+
 ## 2026-07-21 — Linux GTK interrupted document-job restart/resume lifecycle
 
 Assumption: Linux Scenario 12 is evidenced at the production GTK boundary when a persisted

@@ -24,6 +24,19 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Extend Linux Scenario 14 through worker-level Incognito translation-memory isolation.
+  Linux runtime `0203b2183ee79d3ba4d836cddeb714ad64091231` keeps Incognito requests out of
+  translation-memory lookup and out of history/memory persistence. The regression
+  `incognito_translation_bypasses_existing_memory_and_persists_nothing` first records a standard
+  request, then requires an identical Incognito request to reach the provider again while the
+  reopened database remains at one history row and one memory row. Local formatting, locked
+  all-target/all-feature checks, strict Clippy, no-default/demo-provider suites (`83 passed; 1
+  ignored` and `160 passed; 3 ignored`), localization audits, l10n synchronization, Flatpak
+  metadata, and diff checks passed. Push Native/Flatpak/Foundation runs
+  `29876038029`/`29876038007`/`29876038060` and PR runs
+  `29876035413`/`29876035445`/`29876035433` passed. This remains unreleased Linux evidence;
+  physical privacy review, other clients, signing, rollback, and stable release remain open.
+
 - [x] Extend Linux Scenario 12 through the production GTK interrupted document-job restart path.
   Linux runtime `ca67c8b6b50cd79700c6be505bd7a950c73ed870` adds the serialized
   `gtk_interrupted_document_job_restores_and_resumes` fixture: a two-segment TXT job is translated
