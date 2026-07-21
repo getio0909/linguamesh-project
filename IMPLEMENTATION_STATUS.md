@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux AT-SPI status-role fixture boundary
+
+Assumption: a live AT-SPI assertion must match the roles exported by the pinned GTK runtime; a
+failed semantic assertion is evidence of a fixture/runtime boundary, not permission to weaken it.
+
+- Attempted Linux head `995c9fa2435f710a540a861a1ccace08d6fca728` required live `ROLE_STATUS` and
+  `ROLE_ALERT`; Native push `29803564933` and PR `29803567256` failed because the GTK/AT-SPI bridge
+  exported empty status/error regions as `ROLE_LABEL`.
+- Corrected Linux head `a4c9d3fde77e91f0655784d296f3a957367613a2` reverts the incompatible live-tree
+  assertion, retains existing GTK unit-level `AccessibleRole::Status`/`AccessibleRole::Alert`
+  checks, and documents the runtime limitation. Corrected push Native/Flatpak/Foundation
+  `29803843127`/`29803843131`/`29803843157` and PR `29803845060`/`29803845055`/`29803845046`
+  passed all jobs.
+
+This remains unreleased Linux-first evidence. A runtime-compatible live status/error fixture, human
+Orca listening, translated-copy/RTL review, physical desktop rendering, other clients, signing,
+distributable artifacts, and stable release remain open.
+
 ## 2026-07-21 — Linux testing-guide suite-count refresh
 
 Assumption: contributor-facing test documentation must match the current runnable suite rather

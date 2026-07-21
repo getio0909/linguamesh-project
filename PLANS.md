@@ -160,6 +160,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
   push Native/Flatpak/Foundation `29802930525`/`29802930632`/`29802930547` and PR
   `29802932689`/`29802932707`/`29802932683` passed all jobs.
 
+- [x] Validate the Linux AT-SPI status/error role boundary without weakening evidence. Attempted
+  head `995c9fa` required live `ROLE_STATUS`/`ROLE_ALERT` and failed Native because the pinned GTK
+  bridge exported empty regions as `ROLE_LABEL`; corrected head `a4c9d3f` reverts that incompatible
+  assertion and records the failure while retaining GTK unit-level semantic-role checks. Corrected
+  push Native/Flatpak/Foundation `29803843127`/`29803843131`/`29803843157` and PR
+  `29803845060`/`29803845055`/`29803845046` passed all jobs. A runtime-compatible live status/error
+  fixture and human Orca review remain open.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with
