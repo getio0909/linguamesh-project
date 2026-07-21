@@ -16,8 +16,9 @@ database leaf even when the replacement is not a symbolic link, without widening
 - The first push/PR Flatpak gates failed because the manifest still referenced ancestor `f53c44d`; after
   repinning, final push Native/Flatpak/Foundation runs `29817292493`/`29817292344`/`29817292390`
   and PR Native/Flatpak/Foundation runs `29817295183`/`29817295210`/`29817295244` all passed.
-- Linux docs/status follow-up head is `b078b8e5862fad3a3a4aae8ef78fcf3273562d1b`; its status-only
-  rerun is tracked separately in the Linux repository and remains pending at this checkpoint.
+- Linux docs/status follow-up head is `b078b8e5862fad3a3a4aae8ef78fcf3273562d1b`; status-only
+  push Native/Flatpak/Foundation runs `29817714165`/`29817714101`/`29817714200` and PR
+  Native/Flatpak/Foundation runs `29817717903`/`29817717896`/`29817717877` all passed.
 
 This expands automated Linux storage-race evidence only. Broader filesystem/VFS variants, power
 loss, human review, other clients, signing, and stable release remain open.

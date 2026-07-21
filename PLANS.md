@@ -489,7 +489,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
   parent and hard-link final-component replacement regressions after preflight; docs/status head
   `b078b8e` records the evidence. Final push Native/Flatpak/Foundation
   `29817292493`/`29817292344`/`29817292390` and PR Native/Flatpak/Foundation
-  `29817295183`/`29817295210`/`29817295244` passed. Broader same-UID filesystem/VFS variants and
+  `29817295183`/`29817295210`/`29817295244` passed. Status-only docs head `b078b8e` then passed
+  push Native/Flatpak/Foundation `29817714165`/`29817714101`/`29817714200` and PR
+  `29817717903`/`29817717896`/`29817717877`. Broader same-UID filesystem/VFS variants and
   power-loss behavior remain open.
 
 - [x] Strengthen Linux Scenario 16 compatibility rejection. Linux code head `f53c44d` now rejects
