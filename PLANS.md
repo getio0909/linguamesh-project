@@ -41,6 +41,13 @@ Assumption: Planned files and commands are not evidence until they exist and com
   Flathub fetch failure. This is automation evidence only; human copy, visual, and screen-reader
   review remain open.
 
+- [x] Verify Linux desktop text scaling alongside high contrast and reduced motion. Code `62c72fa`
+  applies an isolated `Sans 24` GTK preference and asserts the production title's Pango context
+  receives the requested size; packaging/docs head `ed196d1` and status head `d92e1a4` document the
+  fixture. Push Native/Flatpak/Foundation runs `29828098608`/`29828098596`/`29828098740` and PR
+  runs `29828100998`/`29828100985`/`29828100954` passed. Manual visual/text-scaling review remains
+  open.
+
 - [x] Widen the Linux visible-string localization audit. Linux code head `56a0812` now scans every
   Rust source file under `src/**/*.rs` and checks file-filter names in addition to labels, titles,
   tooltips, placeholders, dialog actions, and direct list literals. Local localization audits,

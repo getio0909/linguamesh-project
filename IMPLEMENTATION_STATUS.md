@@ -37,6 +37,23 @@ fixtures, while process-based window discovery keeps the test independent of exp
   hit a transient Flathub network fetch failure and passed on rerun; this remains automation evidence,
   not human translated-copy, visual, or screen-reader review.
 
+## 2026-07-21 — Linux desktop text-scaling preference fixture
+
+Assumption: Linux must inherit desktop text scaling through GTK/Pango without replacing the user's
+font preference, alongside high contrast and reduced motion.
+
+- Linux code `62c72fa` extends the serialized `gtk_accessibility_preferences_follow_desktop_settings`
+  fixture with a process-local `Sans 24` font and asserts that the onboarding title's Pango context
+  receives at least the requested 24-point size; theme, animation, and font settings are restored.
+  Packaging/docs head `ed196d1` pins Flatpak to the code head and documents the isolated fixture.
+- Local formatting, all-target/all-feature locked offline check, strict Clippy, Flatpak metadata,
+  shell syntax, and diff checks passed. The real GTK fixture is CI-only on this host because the
+  matching Xvfb/GTK runtime is unavailable locally.
+- Final push Native/Flatpak/Foundation runs `29828098608`/`29828098596`/`29828098740` and
+  pull-request Native/Flatpak/Foundation runs `29828100998`/`29828100985`/`29828100954` passed,
+  including the isolated high-contrast, reduced-motion, and text-scaling assertions. Manual visual
+  review remains a separate release gate.
+
 ## 2026-07-21 — Linux visible GTK localization audit scope
 
 Assumption: the Linux source audit must cover every Rust UI module, including file-filter names,
