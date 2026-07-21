@@ -24,6 +24,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add and verify Linux desktop accessibility preference evidence. Linux `53cd41f` adds the
+  isolated GTK high-contrast/reduced-motion fixture; push Native/Flatpak/Foundation
+  `29811402708`/`29811402703`/`29811402563` and PR
+  `29811404883`/`29811404846`/`29811404855` passed. Manual visual, RTL, screen-reader, and
+  compositor review plus other-client and stable-release work remain open.
+
 - [x] Verify the clean-bootstrap acceptance path in a disposable workspace. A fresh clone of
   `linguamesh-project` ran `GITHUB_OWNER=getio0909 bash tools/bootstrap.sh`, cloned all seven
   canonical public repositories, and passed strict workspace validation, global-goal pin checks,

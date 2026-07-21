@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-21
 
+# 2026-07-21 — Linux system accessibility preference evidence
+
+Assumption: the Linux client should inherit desktop high-contrast and reduced-motion preferences
+through GTK/libadwaita without introducing a private contrast or animation policy.
+
+- Linux status/docs head `53cd41f` adds a serialized GTK component fixture that applies a temporary
+  `HighContrast` theme, disables `gtk-enable-animations`, asserts libadwaita detection, and restores
+  both process-local settings. Native CI runs it in a private Xvfb/DBus session.
+- Linux push Native/Flatpak/Foundation runs `29811402708`/`29811402703`/`29811402563` and PR
+  Native/Flatpak/Foundation runs `29811404883`/`29811404846`/`29811404855` passed. The Native logs
+  include the high-contrast and reduced-motion assertions.
+- Local Linux formatting, all-target check, strict Clippy, no-default tests (`81 passed; 1 ignored`),
+  shell syntax, and diff checks passed; the display-backed fixture is CI evidence because this host
+  lacks `xvfb-run`.
+
+This is Linux prerelease accessibility evidence only. Manual visual, RTL, screen-reader, and
+compositor review, other clients, signed artifacts, and stable-release approval remain open.
+
 # 2026-07-21 — Clean bootstrap acceptance evidence
 
 Assumption: Scenario 19 must be proven from a disposable workspace, not inferred from the already
