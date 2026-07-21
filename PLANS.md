@@ -24,6 +24,19 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Extend Linux Scenario 6 through the real GTK translation-cancellation boundary. Linux
+  runtime `2730a24bc67f9c424b3cce845ced895d9f2710b2` adds the serialized
+  `gtk_cancel_translation_preserves_partial_output` fixture: the production Stop action cancels
+  after the first streamed `你好` delta, preserves the partial output, reaches `Cancelled`, disables
+  Stop, and enables Retry without an error or later output mutation. Packaging/status head
+  `313544ba1085f1be6dc52dbd7c2beb1f78c398c8` records local formatting, locked checks, strict
+  Clippy, no-default/demo-provider suites (`83/1` and `156/3` ignored), localization audits, l10n
+  sync, Flatpak metadata, and diff checks. Code-head push Native/Flatpak/Foundation
+  `29866519789`/`29866519798`/`29866519885` and PR gates
+  `29866523643`/`29866523637`/`29866523644` passed; status-head gates are pending. Physical
+  provider transport cancellation, human visual/copy/Orca review, other clients, signed artifacts,
+  rollback, and stable release remain open.
+
 - [x] Extend Linux Provider Hub and Scenario 8 through the production GTK Test connection action.
   Linux runtime `2d5f625067fb84af260b664e5e2d9c027095e6d8` adds the serialized
   `gtk_connection_test_reports_models_and_redacts_credential` fixture: a bearer-token probe reports
