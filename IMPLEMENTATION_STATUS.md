@@ -26,6 +26,23 @@ This closes the Linux/POSIX descriptor document-consumption sub-boundary only. A
 Windows handle transfer, other clients, human visual and prompt review, signing, rollback, stable
 artifacts, and stable release remain open; PR #1 and Issue #1 remain open.
 
+## 2026-07-21 — Linux Flatpak pin exactness and evidence refresh
+
+Assumption: a packaging source pin should identify the exact reviewed Linux revision recorded by
+the central release manifest, even when a validator can safely accept an unchanged ancestor.
+
+- Linux `2fb277411822e348e8ef5d0444ee2aaa14cb78a2` updates the Flatpak source manifest from an
+  unchanged ancestor to the exact Linux head and corrects the testing guide's historical Core
+  command example. No runtime behavior or release status changed.
+- Local Flatpak metadata, formatting, and diff checks passed. Push Native/Flatpak/Foundation runs
+  `29796238918`/`29796238922`/`29796238931` and pull-request runs
+  `29796240722`/`29796240700`/`29796240751` passed all jobs, including GTK, portal, Orca,
+  packaging, checksum, SBOM, and sandbox fixtures.
+
+This remains unreleased Linux-first evidence. Human visual/copy review, Android ParcelFileDescriptor,
+Windows handle transfer, other clients, signing, rollback, stable artifacts, and stable release
+remain open; PR #1 and Issue #1 remain open.
+
 ## 2026-07-21 — Security and privacy evidence matrices
 
 Assumption: the Milestone 8 security documents must map each required threat and privacy data
