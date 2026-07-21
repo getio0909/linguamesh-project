@@ -2,6 +2,29 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Core POSIX document-descriptor consumption and Linux repin
+
+Assumption: the Linux-first ABI boundary must duplicate a registered POSIX descriptor and apply
+the shared bounded document parser before consuming the engine-scoped lease.
+
+- Core `2c6f9596f33e9ede3af65262e27c9ce8f8ff38b9` adds
+  `lm_engine_file_lease_consume_posix_document`. It duplicates the registered descriptor, reads at
+  most `MAX_DOCUMENT_BYTES + 1`, validates the shared document contract, consumes the lease only
+  after successful parsing, and keeps oversized input retryable. Core local workspace tests,
+  strict Clippy, and C/C++ Native SDK smoke passed.
+- Core CI/Fuzz/Native SDK runs `29794688973`/`29794688979`/`29794688942` passed for the exact
+  commit, retaining the protocol/document decoder AddressSanitizer gate.
+- Linux `b6f31cb553872ede55cc29711ef7dd6170d46975` pins the exact Core revision in Native and
+  Flatpak metadata. Local no-default/demo-provider suites passed (`81 passed; 1 ignored` /
+  `145 passed; 3 ignored`), strict Clippy, all-target check, localization audits, and Flatpak
+  metadata validation passed. Linux PR Native/Flatpak/Foundation `29794966472`/`29794966410`/
+  `29794966437` passed all jobs, including GTK, portal, Orca, packaging, checksum, SBOM, and
+  sandbox fixtures.
+
+This closes the Linux/POSIX descriptor document-consumption sub-boundary only. Android ParcelFileDescriptor,
+Windows handle transfer, other clients, human visual and prompt review, signing, rollback, stable
+artifacts, and stable release remain open; PR #1 and Issue #1 remain open.
+
 ## 2026-07-21 — Security and privacy evidence matrices
 
 Assumption: the Milestone 8 security documents must map each required threat and privacy data
