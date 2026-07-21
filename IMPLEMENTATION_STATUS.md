@@ -2,6 +2,29 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux alternate-directory replacement race hardening
+
+Assumption: replacing a validated private profile-database parent with a distinct private
+directory must fail closed even when owner, permissions, and directory type remain valid.
+
+- Linux code `14bb30e814d6d4ffcbf55c5a409d3729db2af967` retains the preflight parent device/inode,
+  compares both after `openat2(RESOLVE_NO_SYMLINKS)`, and adds the deterministic alternate-directory
+  replacement regression. Existing symlink/regular-file parent and symlink/hard-link final-component
+  regressions remain covered.
+- Local formatting, all-target/all-feature locked offline check, strict GUI Clippy, demo-provider
+  tests (`151 passed; 3 ignored`), targeted storage tests, localization audits, l10n synchronization,
+  Flatpak metadata, and diff checks passed. Packaging pin is `2dc3e49db9489eeaa2f9f3ec8fd70eb639bfb118`;
+  status/docs head is `b3019913751bdbff7580a98708792fd84a5e6dea`.
+- The first code-head Flatpak push/PR runs `29833169613`/`29833171987` failed only on the stale
+  `3b2b69c` source pin. Corrected source-pin push Native/Flatpak/Foundation runs
+  `29833316179`/`29833316220`/`29833316231` and PR runs `29833318520`/`29833318770`/`29833318526`
+  passed. Status-head push Native/Flatpak/Foundation runs `29833853428`/`29833853406`/`29833853465`
+  and PR runs `29833858405`/`29833858644`/`29833858612` also passed.
+
+This is unreleased Linux storage hardening evidence only. Broader same-UID filesystem/VFS variants,
+abrupt power-loss recovery, other clients, signed artifacts, rollback authorization, and stable
+release approval remain outside the claim.
+
 ## 2026-07-21 — Linux provider mnemonic focus fixture
 
 Assumption: Linux keyboard accessibility must verify both the provider form's explicit Tab order

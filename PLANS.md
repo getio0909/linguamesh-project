@@ -568,6 +568,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29817717903`/`29817717896`/`29817717877`. Broader same-UID filesystem/VFS variants and
   power-loss behavior remain open.
 
+- [x] Harden the Linux storage race against same-UID alternate-directory replacement. Code
+  `14bb30e814d6d4ffcbf55c5a409d3729db2af967` retains the preflight parent device/inode and rejects
+  a distinct private directory after descriptor acquisition; packaging pin `2dc3e49` and status/docs
+  head `b301991` record the evidence. Corrected source-pin push/PR Native/Flatpak/Foundation runs
+  `29833316179`/`29833316220`/`29833316231` and `29833318520`/`29833318770`/`29833318526` passed;
+  status-head push/PR runs `29833853428`/`29833853406`/`29833853465` and
+  `29833858405`/`29833858644`/`29833858612` also passed. Broader VFS variants and power-loss
+  behavior remain open.
+
 - [x] Strengthen Linux Scenario 16 compatibility rejection. Linux code head `f53c44d` now rejects
   Core semantic-version, ABI-major, protocol-version, provider-catalog, and required-feature
   mismatches before provider work; docs/status head `92b5136` records the evidence. The first
