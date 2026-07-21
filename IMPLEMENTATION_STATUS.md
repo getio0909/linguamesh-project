@@ -41,6 +41,28 @@ This is unreleased Linux-first evidence. Document-command resource consumption, 
 other clients, human visual review, signing, rollback, stable artifacts, and stable release remain
 open; Linux PR #1 remains Draft/Open and central Issue #1 remains Open.
 
+## 2026-07-21 — Core ABI one-shot document lease consumption
+
+Assumption: ABI hosts need a bounded document-byte handoff that consumes a validated lease exactly
+once, while platform-specific handle duplication remains an explicit later boundary.
+
+- Core `1e0ae8d3fcf8bd5fead244ebf78cb3ea4a0ec300` adds
+  `lm_engine_file_lease_consume_document`. The call bounds the source name and document snapshot,
+  parses with the shared `linguamesh-document` contract, rejects malformed or expired input without
+  consuming the lease, and removes the lease after successful validation. FFI regression coverage
+  verifies one-shot consumption and retry-after-parse-failure; C and C++ Native SDK smoke passed.
+- Core CI `29793500441`, Fuzz/ASAN `29793500440`, and Native SDK `29793500462` passed all jobs.
+- Linux `37e9b74d79c414958e228bdb25dd84681981fb85` pins the exact Core revision in Native and
+  Flatpak inputs. Local no-default/demo-provider suites passed (`81 passed; 1 ignored` /
+  `145 passed; 3 ignored`), strict Clippy, all-target check, localization audits, and Flatpak
+  metadata validation passed. Formal PR Native/Flatpak/Foundation `29793663690`/`29793663688`/
+  `29793663685` passed all jobs; push Native/Foundation also passed and push Flatpak was still
+  completing when this status was written.
+
+This closes the bounded ABI document-byte consumption sub-boundary only. Linux's production GTK
+path remains direct typed Rust; OS-handle duplication/transfer, other clients, signing, rollback,
+stable artifacts, and stable release remain unverified. PR #1 and Issue #1 remain open.
+
 ## 2026-07-21 — Core ABI malformed-input hardening and Linux repin
 
 Assumption: the next Linux-first compatibility checkpoint should exercise the real C ABI submit

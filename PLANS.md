@@ -81,6 +81,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
   document-command resource consumption, other clients, signing, rollback, and stable release
   remain open; PR #1 and Issue #1 stay open.
 
+- [x] Add bounded Core ABI document-byte consumption and repin Linux. Core `1e0ae8d` passed
+  CI/Fuzz/Native SDK `29793500441`/`29793500440`/`29793500462`; the C ABI validates a bounded
+  document snapshot under an engine-scoped lease and consumes it once on success. Linux `37e9b74`
+  passed formal PR Native/Flatpak/Foundation `29793663690`/`29793663688`/`29793663685`; OS-handle
+  duplication/transfer, other clients, signing, rollback, and stable release remain open.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with
