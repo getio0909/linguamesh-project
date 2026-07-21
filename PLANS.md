@@ -24,6 +24,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Expose the generated Linux `en-XA` accented and `ar-XB` RTL pseudo-locales in the native GTK
+  runtime selector. Linux code `64a2877` adds catalog lookup, plural rules, locale names, and RTL
+  metadata after the twelve official packs; packaging/docs head `cf0b689` repins Flatpak exactly.
+  Local formatting, all-target/all-feature check, strict Clippy, localization audits, l10n sync,
+  Flatpak metadata, and 82/150 library suites passed (`1`/`3` ignored). Final push/PR Native,
+  Flatpak, and Foundation gates `29824916845`/`29824916822`/`29824916804` and
+  `29824919512`/`29824919621`/`29824919573` passed. Pseudo-locales remain layout/direction test
+  data, not qualified translations.
+
 - [x] Widen the Linux visible-string localization audit. Linux code head `56a0812` now scans every
   Rust source file under `src/**/*.rs` and checks file-filter names in addition to labels, titles,
   tooltips, placeholders, dialog actions, and direct list literals. Local localization audits,

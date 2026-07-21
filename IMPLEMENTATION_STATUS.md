@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux runtime pseudo-localization
+
+Assumption: the generated Linux `en-XA` and `ar-XB` PO/MO packs are test data for layout and
+direction coverage, not qualified translations.
+
+- Linux code `64a28771873cc9fa1e30451ecb5ed40bb497ca30` adds both pseudo-locales to the GTK runtime
+  selector after the twelve official packs, wires catalog lookup, plural rules, locale names, and
+  RTL metadata, and preserves the existing official order and language tags. Packaging/docs head
+  `cf0b689070dc554584209638704b25db11943b18` repins Flatpak to the exact code head.
+- Local formatting, all-target/all-feature check, strict Clippy, localization key/placeholder/
+  visible audits, l10n synchronization, Flatpak metadata, and library suites passed: 82 passed
+  with 1 ignored (no demo provider) and 150 passed with 3 ignored (demo provider).
+- Final Linux push Native/Flatpak/Foundation runs `29824916845`/`29824916822`/`29824916804` and
+  pull-request runs `29824919512`/`29824919621`/`29824919573` all passed. The first `64a2877`
+  Flatpak attempt was correctly rejected for a stale build-input pin and is superseded by the
+  exact-pin `cf0b689` head.
+
+This is automated pseudo-localization evidence only; human translated-copy, plural, visual,
+compositor, and screen-reader review remain separate release gates.
+
 ## 2026-07-21 — Linux visible GTK localization audit scope
 
 Assumption: the Linux source audit must cover every Rust UI module, including file-filter names,
