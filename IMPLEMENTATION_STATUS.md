@@ -14,7 +14,8 @@ linkage must be verified before any artifact can be considered for a signed rele
 - The verifier accepted the outer archive and every packaged file, validated `linguamesh-core.pc`,
   and compiled and ran the packaged static-library C consumer smoke test.
 - This updates prerelease evidence only. Core `source_revision` remains the functional pin and no
-  signed or stable artifact is added to the release manifest.
+  signed or stable artifact is added to the release manifest. Central coordination workflow
+  `29807730525` passed both Linux and PowerShell validation jobs.
 
 ## 2026-07-21 — Linux dependency and provenance gate
 

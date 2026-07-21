@@ -29,7 +29,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `0.1.0-alpha.2` archive rebuilt twice with SHA-256
   `487c83c17f80634826437e94ca7d817e83f0addf60999d6789fcb58beb774afc`, all packaged checksums and
   pkg-config metadata validated, and the packaged static-library C consumer smoke passed. The
-  archive is unsigned local prerelease evidence; the functional Core release pin remains
+  archive is unsigned local prerelease evidence; central coordination workflow `29807730525`
+  passed Linux and PowerShell validation. The functional Core release pin remains
   `19229184a21a6725326a3d30dea9bc72e5ac999f` and no stable artifact is claimed.
 
 - [x] Add the Linux dependency advisory, license, and provenance gate. Linux `deny.toml` reuses
