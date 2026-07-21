@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux final database-component race regression
+
+Assumption: the profile database must reject a final-path replacement that occurs after pathname
+preflight but before the descriptor is opened, not only a replaced parent directory.
+
+- Linux code head `93fd6f2b7d258c2c9902386ee1edb7a94c45fd9b` adds
+  `replaced_database_file_is_rejected_between_preflight_and_descriptor_open`; the test creates a
+  post-preflight final-component symlink, opens the validated parent by descriptor, and requires
+  the production `O_NOFOLLOW` path to reject it without modifying the target. Packaging pin head
+  `2ce550da4c195ad6e93d0fb7a6924b1aafa6b008` points exactly to that code lineage, and final docs
+  head is `1c0b1e98efd478df225ab2a95f6a10288da5ada6`.
+- Local no-default tests (`81 passed; 1 ignored`), demo-provider tests (`147 passed; 3 ignored`),
+  strict Clippy, localization audits, formatting, diff checks, and Flatpak metadata passed.
+- Push Native/Flatpak/Foundation `29802525642`/`29802525571`/`29802525612` and PR
+  Native/Flatpak/Foundation `29802527738`/`29802527705`/`29802527681` passed all jobs.
+
+This remains unreleased Linux-first hardening evidence. Broader filesystem/VFS and power-loss
+behavior, human review, other clients, signing, distributable artifacts, and stable release remain
+open.
+
 ## 2026-07-21 — Linux validation boundary refresh
 
 Assumption: the testing guide must distinguish completed automated evidence from the manual,
