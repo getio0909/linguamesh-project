@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add the Linux Arabic live AT-SPI fixture. Code head `3ce10d5` extends the existing semantic
+  tree inspection with localized Arabic Open/Translate/Stop names and the catalog's English Retry
+  and fallback names, preserving button/checkbox roles and two text-editor checks. Code-head push/
+  PR Native/Flatpak/Foundation runs `29819765571`/`29819765594`/`29819765609` and
+  `29819762498`/`29819762505`/`29819762534` passed; status/docs head `c5db4e4` passed
+  `29820197646`/`29820197676`/`29820197652` and `29820195059`/`29820195042`/`29820194969`.
+  Human Orca speech, copy/RTL and physical review, other clients, signing, and stable release remain open.
+
 - [x] Add and verify Linux desktop accessibility preference evidence. Linux `53cd41f` adds the
   isolated GTK high-contrast/reduced-motion fixture; push Native/Flatpak/Foundation
   `29811402708`/`29811402703`/`29811402563` and PR

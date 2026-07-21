@@ -2,6 +2,28 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux Arabic AT-SPI semantic fixture
+
+Assumption: Scenario 13 requires the Arabic accessibility tree to expose localized names and
+stable roles for the production controls, while preserving explicit English fallback names where
+the pinned Arabic catalog remains untranslated.
+
+- Linux code head `3ce10d576bc2b0835daffd2aa5bb19fc9d9e6dc4` adds Arabic expectations to the live
+  AT-SPI inspector: localized Open (`فتح ملف نصي`), Translate (`ترجمة`), and Stop (`إيقاف الترجمة`),
+  plus English Retry and fallback names; the fixture still requires button/checkbox roles and two
+  text-editor roles. Native CI runs the real binary in a private Xvfb/AT-SPI session.
+- Local Python compile, shell syntax, rustfmt, locked offline check, localization audits, and diff
+  checks passed. Code-head push Native/Flatpak/Foundation runs
+  `29819765571`/`29819765594`/`29819765609` and pull-request runs
+  `29819762498`/`29819762505`/`29819762534` all passed, including the Arabic fixture output.
+- Status/docs head `c5db4e417a50220dee6481d8a53bc3a43186477c` passed push
+  Native/Flatpak/Foundation `29820197646`/`29820197676`/`29820197652` and pull-request
+  Native/Flatpak/Foundation `29820195059`/`29820195042`/`29820194969`.
+
+This strengthens automated Linux Scenario 13 accessibility evidence only; human Orca speech,
+translated-copy/RTL, physical visual/compositor review, other clients, signing, and stable-release
+approval remain open.
+
 ## 2026-07-21 — Linux Arabic RTL keyboard-focus fixture
 
 Assumption: Scenario 13 requires keyboard traversal to remain usable after the production GTK
