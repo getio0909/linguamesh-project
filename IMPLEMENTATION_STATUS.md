@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux post-preflight regular-file and hard-link race regressions
+
+Assumption: Linux storage validation must reject same-UID replacement of a validated parent or
+database leaf even when the replacement is not a symbolic link, without widening the release claim.
+
+- Linux code head `59b57c00f9f4745154f3fe2daa93a49d94a445e0` adds regressions for a regular-file
+  parent replacement and a hard-linked final database component after preflight; both fail closed,
+  and the linked target remains unchanged. Flatpak build input is pinned at `751ac1eb069aee06c69abc2c63d2a7a7c46e3bd6`.
+- Local Linux formatting, targeted regressions, demo-provider tests (`149 passed; 3 ignored`),
+  no-default tests (`81 passed; 1 ignored`), strict Clippy, localization audits, Flatpak metadata,
+  synchronization, and diff checks passed.
+- The first push/PR Flatpak gates failed because the manifest still referenced ancestor `f53c44d`; after
+  repinning, final push Native/Flatpak/Foundation runs `29817292493`/`29817292344`/`29817292390`
+  and PR Native/Flatpak/Foundation runs `29817295183`/`29817295210`/`29817295244` all passed.
+- Linux docs/status follow-up head is `b078b8e5862fad3a3a4aae8ef78fcf3273562d1b`; its status-only
+  rerun is tracked separately in the Linux repository and remains pending at this checkpoint.
+
+This expands automated Linux storage-race evidence only. Broader filesystem/VFS variants, power
+loss, human review, other clients, signing, and stable release remain open.
+
 ## 2026-07-21 — Linux storage-race validation boundary correction
 
 Assumption: status documentation must distinguish tested Linux path races from broader

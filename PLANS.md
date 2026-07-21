@@ -485,11 +485,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
   reports localized typed success/failure results.
 - [ ] Continue through Milestones 2–8 and all 20 mandatory acceptance scenarios.
 
-- [x] Correct the Linux storage-race evidence boundary. Docs/status head `488575e7` now records
-  the tested parent-directory and final-database-component replacement races separately from
-  broader same-UID filesystem/VFS variants and power-loss behavior. Push Native/Flatpak/Foundation
-  `29816104837`/`29816104784`/`29816104797` and PR Native/Flatpak/Foundation
-  `29816107833`/`29816107893`/`29816107760` passed.
+- [x] Correct the Linux storage-race evidence boundary. Code head `59b57c0` now adds regular-file
+  parent and hard-link final-component replacement regressions after preflight; docs/status head
+  `b078b8e` records the evidence. Final push Native/Flatpak/Foundation
+  `29817292493`/`29817292344`/`29817292390` and PR Native/Flatpak/Foundation
+  `29817295183`/`29817295210`/`29817295244` passed. Broader same-UID filesystem/VFS variants and
+  power-loss behavior remain open.
 
 - [x] Strengthen Linux Scenario 16 compatibility rejection. Linux code head `f53c44d` now rejects
   Core semantic-version, ABI-major, protocol-version, provider-catalog, and required-feature
