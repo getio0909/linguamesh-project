@@ -2,6 +2,27 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux fallback-consent accessible name
+
+Assumption: an explicit fallback-consent checkbox must expose its localized accessible name on the
+checkbox node itself, not only through a related label, while preserving runtime locale switching.
+
+- Linux code `6c1d89f9c015e65a98568f71f40ade260554018b` sets and tests GTK
+  `AccessibleProperty::Label` on the fallback checkbox; packaging head
+  `e0eb47119cd63a3c9521af13e833b9051cacf43e` repins Flatpak to that exact source, and final
+  documentation head is `5bc870b2c48c6d116a375382e83568e1900d99ba`.
+- Local formatting, GUI all-target check, strict Clippy, key/placeholder/visible localization audits,
+  no-default tests (`81 passed; 1 ignored`), and demo-provider tests (`146 passed; 3 ignored`)
+  passed. The live Xvfb/AT-SPI fixture is CI-authoritative on this host.
+- Push Native/Flatpak/Foundation `29801182286`/`29801182297`/`29801182271` and PR
+  Native/Flatpak/Foundation `29801183970`/`29801183976`/`29801183979` passed all jobs. The prior
+  PR Native run `29800755130` failed at the existing keyboard-focus fixture and was superseded by
+  the passing rerun job `88541746697`; the final docs-head runs above are the authoritative evidence.
+
+This remains unreleased Linux-first accessibility evidence. Human Orca listening, translated-copy/
+RTL review, physical desktop rendering, other clients, signing, distributable artifacts, and stable
+release remain open; PR #1 is Draft/Open and Issue #1 is Open.
+
 ## 2026-07-21 — Linux error-mapping localization coverage
 
 Assumption: catalog completeness must include error-category and error-state mappings, not only

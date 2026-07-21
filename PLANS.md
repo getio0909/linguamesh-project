@@ -127,6 +127,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29800106522`/`29800106523`/`29800106590` passed all jobs. Human copy/RTL review, other clients,
   signing, and stable release remain open.
 
+- [x] Export the fallback-consent accessible name on the Linux checkbox itself. Code head `6c1d89f`
+  adds the localized GTK Accessible Label property and test assertion; packaging head `e0eb471`
+  repins Flatpak to the exact source, and final docs head `5bc870b` records the result. Final push
+  Native/Flatpak/Foundation `29801182286`/`29801182297`/`29801182271` and PR
+  `29801183970`/`29801183976`/`29801183979` passed all jobs. The earlier PR Native keyboard-focus
+  race and rerun are retained in Linux status. Human Orca listening, physical review, other
+  clients, signing, and stable release remain open.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with
