@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux error-mapping localization coverage
+
+Assumption: catalog completeness must include error-category and error-state mappings, not only
+call sites that directly invoke a localization helper.
+
+- Linux `37539e7d4af4c207355e99ea7ea21f9949a52ab7` extends `tools/check-localization-keys.py` to
+  collect every `error.*` key declared in `src/model.rs` and `src/main.rs`, in addition to direct
+  localization calls and diagnostics keys. The canonical catalog audit now covers 381 keys.
+- Local placeholder and visible-string audits passed; Linux no-default tests passed (`81 passed;
+  1 ignored`) and demo-provider tests passed (`146 passed; 3 ignored`).
+- Push Native/Flatpak/Foundation `29800104908`/`29800104899`/`29800104894` and pull-request
+  Native/Flatpak/Foundation `29800106522`/`29800106523`/`29800106590` passed all jobs. The Linux
+  PR remains Draft/Open with no review requests.
+
+This is unreleased Linux-first source-level evidence. Dynamic provider details, human translated-
+copy/RTL review, Orca listening, other clients, signing, distributable artifacts, and stable-release
+authorization remain open; central Issue #1 remains Open.
+
 ## 2026-07-21 — Linux AT-SPI action-name coverage
 
 Assumption: the next Linux-first accessibility slice should strengthen the existing live AT-SPI

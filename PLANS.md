@@ -120,6 +120,13 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29799551201`/`29799551179`/`29799551121` passed all jobs. Human Orca listening, physical review,
   other clients, signing, and stable release remain open.
 
+- [x] Extend Linux localization key coverage to error mappings. Linux `37539e7` makes the source
+  audit verify every declared `error.*` mapping against the canonical catalog; the checked set is
+  now 381 keys, with placeholder and visible-string audits still passing. Push Native/Flatpak/
+  Foundation `29800104908`/`29800104899`/`29800104894` and PR
+  `29800106522`/`29800106523`/`29800106590` passed all jobs. Human copy/RTL review, other clients,
+  signing, and stable release remain open.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with
