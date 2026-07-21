@@ -2,6 +2,30 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux GTK routing profile deletion cleanup lifecycle
+
+Assumption: deleting the currently selected routing profile must clear the GTK selection and
+refresh the persisted list through the existing worker event boundary before another profile can
+be used.
+
+- Linux code `7f3ed8dcbed3f6e2eeda72b1c271992e36af65e5` extends the serialized
+  `gtk_routing_profile_candidate_controls_have_accessible_lifecycle` fixture through Use, Delete,
+  `RoutingProfileDeleted`, selected-ID cleanup, and an empty worker list refresh. The fixture keeps
+  its private temporary database and worker shutdown boundary; it remains ignored locally because
+  this host lacks the full GTK/Xvfb runtime.
+- Flatpak pin `e4682e4ce4c8bd1d0b1874939b2a00fe698ea469` and Linux docs/status head
+  `a4a17ae62132c62884e88ffdd47f76d17bf7c31f` record the exact lineage. Code-head push/PR
+  Native/Flatpak/Foundation runs `29844751533`/`29844750810`/`29844750926` and
+  `29844754143`/`29844754151`/`29844754090` passed; final status-head push/PR runs
+  `29845371082`/`29845371250`/`29845370967` and `29845374385`/`29845374215`/`29845374014` passed.
+- Local formatting, locked all-target/all-feature checks, strict GUI Clippy, demo-provider tests
+  (`155 passed; 3 ignored`), no-default tests (`82 passed; 1 ignored`), localization audits,
+  l10n synchronization, Flatpak metadata, and diff checks passed.
+
+This is unreleased Linux candidate-management automation evidence only. Human visual, translated-
+copy, and end-user Orca review; broader candidate-management release criteria; other clients;
+signed artifacts; rollback authorization; and stable-release approval remain open.
+
 ## 2026-07-21 — Linux GTK routing candidate edit persistence lifecycle
 
 Assumption: the existing Linux GTK routing-profile editor is the smallest complete slice for

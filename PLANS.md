@@ -24,6 +24,17 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Verify Linux GTK routing profile deletion cleanup. Linux code `7f3ed8d` extends the serialized
+  candidate lifecycle fixture through Use, Delete, `RoutingProfileDeleted`, selected-ID cleanup,
+  and an empty worker reload; Flatpak pin `e4682e4` and Linux docs/status head `a4a17ae` record the
+  exact lineage. Local formatting, locked checks, strict GUI Clippy, demo-provider/no-default
+  suites (`155/3` and `82/1` ignored), localization, l10n, Flatpak, and diff checks passed.
+  Code-head push Native/Flatpak/Foundation `29844751533`/`29844750810`/`29844750926`, PR
+  `29844754143`/`29844754151`/`29844754090`, and final status-head push Native/Flatpak/Foundation
+  `29845371082`/`29845371250`/`29845370967`, PR `29845374385`/`29845374215`/`29845374014` all
+  passed. This remains unreleased Linux automation evidence; visual/copy/Orca review, broader
+  candidate-management criteria, other clients, signing, rollback, and stable release remain open.
+
 - [x] Verify Linux GTK routing candidate edit persistence. Linux code `dda682d` adds a serialized
   lifecycle assertion that locks an existing profile ID in edit mode, deselects a candidate, saves
   the same record, lists it through the worker, and reopens the editor to confirm the reduced chain
