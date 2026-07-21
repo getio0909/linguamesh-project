@@ -2,6 +2,23 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Security and privacy evidence matrices
+
+Assumption: the Milestone 8 security documents must map each required threat and privacy data
+category to an implemented control, repository evidence, owner role, and residual review boundary;
+an inventory without that mapping is not sufficient for stable-release review.
+
+- Replaced the threat-model skeleton with an auditable abuse-case matrix covering credential/log
+  leakage, endpoint redirects, prompt injection/output validation, archive/parser attacks,
+  malformed protocol streams, local persistence/temporary files, fallback disclosure, locale and
+  catalog tampering, FFI misuse, and supply-chain/stale-core risks.
+- Replaced the brief privacy model with a data inventory covering content, credentials, file grants,
+  operational metadata, preferences, and explicit diagnostic exports. Each category records its
+  destination, retention/deletion behavior, user control, and current evidence boundary.
+- The workspace and repository validators passed after the update; automated evidence points to
+  Core/Linux tests and workflows while prompted UI approval, physical rendering, live provider
+  privacy, other clients, signing, rollback, and stable-release review remain explicitly open.
+
 ## 2026-07-21 — Core document decoder fuzz gate and Linux compatibility repin
 
 Assumption: the next Linux-first compatibility checkpoint must include reproducible protocol and

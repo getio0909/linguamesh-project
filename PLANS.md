@@ -24,6 +24,13 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Replace the Milestone 8 threat/privacy document skeletons with evidence matrices. The threat
+  model now maps required abuse cases to controls, repository evidence, owner roles, and residual
+  review boundaries; the privacy model inventories content, credentials, file grants, operational
+  metadata, preferences, and explicit diagnostic exports with retention and user controls. Workspace
+  and repository validation passed. Manual UI/physical review, other clients, signing, rollback,
+  and stable-release approval remain open.
+
 - [x] Add the Linux-first FileLease document-import vertical slice. Core
   `8b096478b1623bdaf5105e8a8f59e55e2fa8015d` adds `file_lease_v1`, validates all required resource
   shapes, and proves fail-closed access after expiry/revocation through domain and FFI tests. Linux
