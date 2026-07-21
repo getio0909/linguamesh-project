@@ -17,6 +17,24 @@ linkage must be verified before any artifact can be considered for a signed rele
   signed or stable artifact is added to the release manifest. Central coordination workflow
   `29807730525` passed both Linux and PowerShell validation jobs.
 
+## 2026-07-21 — Linux Native CI pinned Core SDK package smoke
+
+Assumption: Linux Native CI must verify the exact Core package consumed by the client before
+client tests run; the generated archive remains prerelease evidence until release authorization.
+
+- Linux commit `cef6ac1` runs `bash tools/verify-linux-sdk-package.sh` from the checked-out Core
+  tree at `19229184a21a6725326a3d30dea9bc72e5ac999f`. The verifier rebuilt the release archive
+  twice, checked the outer and per-file SHA-256 manifests, validated pkg-config metadata, and ran
+  the packaged static C consumer; archive SHA-256 was
+  `3b42d10a347a32e45abb63f3ddb4bf052f90da26f940d2436256f66baae0c9f5`.
+- Push Native/Flatpak/Foundation `29808320946`/`29808320963`/`29808320962` and PR
+  Native/Flatpak/Foundation `29808324340`/`29808324366`/`29808324395` passed. Follow-up status
+  head `bd9559c` reran push `29808700811`/`29808700809`/`29808700814` and PR
+  `29808703288`/`29808703310`/`29808703348` successfully.
+
+This confirms Linux/Core prerelease compatibility inputs only; no signed, published, or stable
+artifact is claimed.
+
 ## 2026-07-21 — Linux dependency and provenance gate
 
 Assumption: Linux release candidates need the same dependency advisory, license, and source policy

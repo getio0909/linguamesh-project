@@ -33,6 +33,18 @@ Assumption: Planned files and commands are not evidence until they exist and com
   passed Linux and PowerShell validation. The functional Core release pin remains
   `19229184a21a6725326a3d30dea9bc72e5ac999f` and no stable artifact is claimed.
 
+- [x] Add the pinned Core Linux SDK package smoke to Linux Native CI. Linux commit `cef6ac1`
+  runs `bash tools/verify-linux-sdk-package.sh` from the exact Core revision
+  `19229184a21a6725326a3d30dea9bc72e5ac999f`; the release archive rebuilt twice, every external
+  and packaged SHA-256 entry passed, pkg-config validated, and the packaged static C consumer
+  passed with archive SHA-256
+  `3b42d10a347a32e45abb63f3ddb4bf052f90da26f940d2436256f66baae0c9f5`. Push Native/Flatpak/
+  Foundation `29808320946`/`29808320963`/`29808320962` and PR
+  Native/Flatpak/Foundation `29808324340`/`29808324366`/`29808324395` passed; the follow-up
+  status head `bd9559c` reran push `29808700811`/`29808700809`/`29808700814` and PR
+  `29808703288`/`29808703310`/`29808703348` successfully. This is prerelease coordination
+  evidence only; no signed or stable artifact is authorized.
+
 - [x] Add the Linux dependency advisory, license, and provenance gate. Linux `deny.toml` reuses
   the reviewed Core policy, with duplicate dependency versions warning while advisories, licenses,
   and sources fail closed. Local `cargo deny --manifest-path Cargo.toml --all-features check` passed;
