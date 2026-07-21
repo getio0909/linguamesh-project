@@ -31,9 +31,11 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `507e028d10d2c360053d7b06389ceae910dd5fe9` pins Core and keeps Flatpak Linux code at
   `5d59646adeed72750964fa628eb0a3088911ac24`. Local Core/Linux/l10n validation passed, including
   provider decoder regressions, 82/1 and 155/3 Linux suites, audits, and Flatpak metadata. Core
-  push CI/Native SDK/Fuzz `29850220180`/`29850220219`/`29850220238` and Linux push/PR gates are
-  recorded below after completion. Billing equivalence, pricing, other clients, human visual/
-  copy/Orca review, signing, rollback, and stable release remain open.
+  push CI/Native SDK/Fuzz `29850220180`/`29850220219`/`29850220238`, Linux push
+  Native/Flatpak/Foundation `29850547006`/`29850546971`/`29850548756`, and Linux PR
+  Native/Flatpak/Foundation `29850550865`/`29850550890`/`29850550591` passed. Central coordination
+  commit `5fd7eb8` and workflow `29850894225` passed. Billing equivalence, pricing, other clients,
+  human visual/copy/Orca review, signing, rollback, and stable release remain open.
 
 - [x] Verify Linux GTK routing profile deletion cleanup. Linux code `7f3ed8d` extends the serialized
   candidate lifecycle fixture through Use, Delete, `RoutingProfileDeleted`, selected-ID cleanup,

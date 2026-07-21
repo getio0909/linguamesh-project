@@ -16,7 +16,10 @@ must fall back safely without becoming a pricing claim.
 - Core fmt/check/Clippy/full workspace tests passed; Linux no-default/demo-provider suites passed
   (`82/1` and `155/3` ignored), localization/placeholder/visible audits, l10n sync, and Flatpak
   metadata validation passed. Core push CI/Native SDK/Fuzz runs `29850220180`/`29850220219`/
-  `29850220238` are still running; Linux push/PR runs are recorded after completion.
+  `29850220238` passed. Linux push Native/Flatpak/Foundation runs
+  `29850547006`/`29850546971`/`29850548756` and PR runs
+  `29850550865`/`29850550890`/`29850550591` passed. Central coordination commit `5fd7eb8` and
+  workflow `29850894225` passed.
 
 This is unreleased provider-wire evidence. Billing equivalence, pricing, stable ABI projection,
 other clients, human visual/copy/Orca review, signing, rollback, and stable release remain open.
