@@ -135,6 +135,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
   race and rerun are retained in Linux status. Human Orca listening, physical review, other
   clients, signing, and stable release remain open.
 
+- [x] Refresh the Linux testing-guide validation boundary. Documentation head `175eb00` records
+  the automated GTK/AT-SPI, headless Orca, portal, Flatpak, localization-invariant, and storage
+  evidence already exercised, and narrows the remaining list to human screen-reader/copy/RTL
+  review, physical desktop and broader X11 coverage, prompted Secret Service approval, broader
+  filesystem races, dependency/license/advisory automation, signed artifacts, stable-release
+  authorization, and other native clients. Push Native/Flatpak/Foundation
+  `29801687294`/`29801687305`/`29801687356` and PR
+  `29801689279`/`29801689288`/`29801689275` passed all jobs.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with

@@ -2,6 +2,23 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux validation boundary refresh
+
+Assumption: the testing guide must distinguish completed automated evidence from the manual,
+platform, and release work that still prevents a supported Linux release.
+
+- Linux documentation head `175eb00c19176ac8ff24c05843a62a81e7908c02` updates `docs/testing.md`
+  to name the automated GTK/AT-SPI semantic tree, headless Orca, portal, Flatpak,
+  localization-invariant, and storage-boundary coverage already exercised by this branch.
+- The residual list now explicitly covers human screen-reader and translated-copy/RTL review,
+  physical compositor/GPU and broader X11 coverage, prompted Secret Service approval, broader
+  filesystem/VFS and power-loss races, dependency/license/advisory automation, signed artifacts,
+  stable-release authorization, and the other native clients.
+- Linux push/PR Native, Flatpak, and Foundation runs
+  `29801687294`/`29801687305`/`29801687356` and
+  `29801689279`/`29801689288`/`29801689275` passed all jobs. This is documentation evidence only;
+  the release manifest remains unreleased.
+
 ## 2026-07-21 — Linux fallback-consent accessible name
 
 Assumption: an explicit fallback-consent checkbox must expose its localized accessible name on the
