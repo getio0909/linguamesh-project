@@ -2,6 +2,21 @@
 
 Last updated: 2026-07-21
 
+# 2026-07-21 — Clean bootstrap acceptance evidence
+
+Assumption: Scenario 19 must be proven from a disposable workspace, not inferred from the already
+prepared local checkout.
+
+- A fresh clone of `linguamesh-project` ran `GITHUB_OWNER=getio0909 bash tools/bootstrap.sh` in a
+  temporary directory. The script cloned all seven canonical public repositories and then passed
+  strict workspace validation, global-goal pin checks, release-manifest schema/compatibility checks,
+  documentation-link checks, and credential-signature scanning.
+- The temporary workspace was removed after the run. Existing repositories, user changes, and
+  remotes were not modified.
+
+This proves the reproducible bootstrap path only; native client parity, signed artifacts, and stable
+release evidence remain open.
+
 ## 2026-07-21 — Reproducible Linux SDK package verification
 
 Assumption: the Linux SDK archive is prerelease evidence only; reproducibility and consumer

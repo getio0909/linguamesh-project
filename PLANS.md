@@ -24,6 +24,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Verify the clean-bootstrap acceptance path in a disposable workspace. A fresh clone of
+  `linguamesh-project` ran `GITHUB_OWNER=getio0909 bash tools/bootstrap.sh`, cloned all seven
+  canonical public repositories, and passed strict workspace validation, global-goal pin checks,
+  release-manifest validation, documentation-link checks, and credential-signature scanning. The
+  temporary workspace was removed afterward; no existing user worktree was changed.
+
 - [x] Reverify the reproducible Linux SDK package against the current Core ABI/document pin.
   Core documentation head `f09a632` passed `bash tools/verify-linux-sdk-package.sh`: the
   `0.1.0-alpha.2` archive rebuilt twice with SHA-256

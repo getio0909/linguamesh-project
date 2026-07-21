@@ -17,6 +17,22 @@ git diff --check
 
 The central checker validates required files and directories, the exact canonical repository set, release components and unreleased/stable invariants, release-manifest schema presence, Markdown links, `.codex/` exclusion, and common credential signatures. Strict mode also requires every sibling directory and its minimum policy files.
 
+### Clean bootstrap acceptance check
+
+To verify Scenario 19 from a disposable workspace, clone only the central repository and let the
+bootstrap script fetch the seven canonical siblings:
+
+```sh
+tmp_root="$(mktemp -d)"
+trap 'find "$tmp_root" -depth -delete' EXIT
+git clone --depth=1 https://github.com/getio0909/linguamesh-project.git "$tmp_root/linguamesh-project"
+GITHUB_OWNER=getio0909 bash "$tmp_root/linguamesh-project/tools/bootstrap.sh"
+```
+
+On 2026-07-21 this cloned all seven public repositories and passed strict workspace, goal-pin,
+manifest, documentation-link, and credential-signature validation. The temporary workspace must be
+removed after the check; it does not modify an existing checkout.
+
 ## Cross-repository evidence
 
 Every code repository owns format, lint, unit, integration, security, packaging, and platform commands. Default CI uses a local fake provider and no paid credentials. A release record must cite exact commands, runner platform, revision, result, and artifact checksum. Unsupported host builds must be identified as unavailable, not passed.
