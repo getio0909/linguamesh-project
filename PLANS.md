@@ -24,6 +24,17 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Make Linux authentication failures actionable and localized. Linux code
+  `c66f6df42fd03c67b3991c5b7fb4229dccadce97` maps provider HTTP 401/403 failures to the canonical
+  `error.authentication` copy before GTK rendering, with a regression for Simplified Chinese and
+  backend-status redaction. Local no-default/demo-provider suites passed (`83/1` and `156/3`),
+  localization key/placeholder/visible audits and Flatpak metadata passed. The first c66f6df
+  Flatpak push/PR runs `29856562427`/`29856565472` exposed a stale source pin; corrected packaging
+  head `5a18ba9bc04b2430b7d07a30fdb2c64d82df8a26` passed push Native/Flatpak/Foundation
+  `29856805455`/`29856805550`/`29856805478` and PR
+  `29856808412`/`29856808321`/`29856808250`. Human copy/visual/Orca review, live-provider
+  interoperability, other clients, signing, rollback, and stable release remain open.
+
 - [x] Add deterministic Unix WAL process-crash recovery evidence. Core
   `8837e59395742b5385af5037aa36a2596af3b025` starts a child test process with a reader snapshot,
   commits a provider profile under `synchronous=FULL`, terminates abruptly, and verifies parent

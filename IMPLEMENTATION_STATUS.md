@@ -2,6 +2,28 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux actionable authentication-error localization
+
+Assumption: provider HTTP 401/403 responses are authentication failures; Linux should replace
+backend status detail with catalog-backed retry guidance before GTK renders the error, without
+exposing credentials or backend status numbers.
+
+- Linux code `c66f6df42fd03c67b3991c5b7fb4229dccadce97` maps HTTP 401/403 messages to
+  `error.authentication`; `http_authentication_failures_use_localized_actionable_copy` verifies
+  Simplified Chinese `身份验证: 请检查提供商凭据，然后重试。` for both statuses and confirms the
+  numeric status detail is absent. The corrected Flatpak source/status head is
+  `5a18ba9bc04b2430b7d07a30fdb2c64d82df8a26`.
+- Local Linux no-default/demo-provider suites passed (`83 passed; 1 ignored` and `156 passed; 3
+  ignored`), along with formatting, checks, strict Clippy, localization key/placeholder/visible
+  audits, synchronization, Flatpak metadata, and diff checks.
+- The first c66f6df Flatpak push/PR runs `29856562427`/`29856565472` failed only because the
+  manifest still referenced the old `5d59646` source pin. Corrected push Native/Flatpak/Foundation
+  runs `29856805455`/`29856805550`/`29856805478` and PR runs
+  `29856808412`/`29856808321`/`29856808250` passed.
+
+This advances unreleased Linux evidence for Scenario 8. Human translated-copy/visual/Orca review,
+live-provider interoperability, other clients, signing, rollback, and stable release remain open.
+
 ## 2026-07-21 — Linux WAL process-crash recovery
 
 Assumption: abrupt Unix process termination after a committed WAL transaction is an automatable
