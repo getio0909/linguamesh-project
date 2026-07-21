@@ -42,8 +42,10 @@ Assumption: Planned files and commands are not evidence until they exist and com
   Chinese catalog copy in an `Alert` without the credential or 401/403 detail. Packaging/docs head
   `b2ec8a29985e6bd754250ef79c1f0822538a4525` consumes that code. Local no-default/demo-provider
   suites passed (`83/1` and `156/3`), and push Native/Flatpak/Foundation gates
-  `29857952721`/`29857954041`/`29857955602` passed. Human translated-copy/visual/Orca review,
-  live-provider interoperability, other clients, signing, rollback, and stable release remain open.
+  `29857952721`/`29857954041`/`29857955602`, PR Native/Flatpak/Foundation gates
+  `29858411718`/`29858411727`/`29858411817`, and central validation `29858511174` passed. Human
+  translated-copy/visual/Orca review, live-provider interoperability, other clients, signing,
+  rollback, and stable release remain open.
 
 - [x] Add deterministic Unix WAL process-crash recovery evidence. Core
   `8837e59395742b5385af5037aa36a2596af3b025` starts a child test process with a reader snapshot,

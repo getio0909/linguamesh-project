@@ -20,7 +20,9 @@ that boundary.
   this host.
 - Linux packaging/docs head `b2ec8a29985e6bd754250ef79c1f0822538a4525` passed push Native/Flatpak/
   Foundation gates `29857952721`/`29857954041`/`29857955602`; Native executed the full serialized
-  GTK, Wayland, AT-SPI, Orca, Secret Service, portal, and release-evidence matrix.
+  GTK, Wayland, AT-SPI, Orca, Secret Service, portal, and release-evidence matrix. The matching
+  PR Native/Flatpak/Foundation gates `29858411718`/`29858411727`/`29858411817` and central
+  coordination workflow `29858511174` also passed.
 
 This advances unreleased Linux evidence for Scenario 8. Human translated-copy/visual/Orca review,
 live-provider interoperability, other clients, signing, rollback, and stable release remain open.
