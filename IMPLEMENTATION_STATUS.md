@@ -56,8 +56,8 @@ once, while platform-specific handle duplication remains an explicit later bound
   Flatpak inputs. Local no-default/demo-provider suites passed (`81 passed; 1 ignored` /
   `145 passed; 3 ignored`), strict Clippy, all-target check, localization audits, and Flatpak
   metadata validation passed. Formal PR Native/Flatpak/Foundation `29793663690`/`29793663688`/
-  `29793663685` passed all jobs; push Native/Foundation also passed and push Flatpak was still
-  completing when this status was written.
+  `29793663685` passed all jobs; push Native/Flatpak/Foundation `29793660915`/`29793660941`/
+  `29793660945` also passed.
 
 This closes the bounded ABI document-byte consumption sub-boundary only. Linux's production GTK
 path remains direct typed Rust; OS-handle duplication/transfer, other clients, signing, rollback,
