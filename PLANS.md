@@ -34,8 +34,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
   push CI/Native SDK/Fuzz `29850220180`/`29850220219`/`29850220238`, Linux push
   Native/Flatpak/Foundation `29850547006`/`29850546971`/`29850548756`, and Linux PR
   Native/Flatpak/Foundation `29850550865`/`29850550890`/`29850550591` passed. Central coordination
-  commit `c60b1752dc969f270a40d857895f028b789c7d86` and workflow `29851043287` passed. Billing
-  equivalence, pricing, other clients,
+  implementation checkpoint `c60b1752dc969f270a40d857895f028b789c7d86` and documentation
+  alignment commit `7efe0ebf1981b3930628ad0c6aa0fc33447d53b1` passed workflows
+  `29851043287`/`29851347134`. Billing equivalence, pricing, other clients,
   human visual/copy/Orca review, signing, rollback, and stable release remain open.
 
 - [x] Verify Linux GTK routing profile deletion cleanup. Linux code `7f3ed8d` extends the serialized

@@ -18,8 +18,9 @@ must fall back safely without becoming a pricing claim.
   metadata validation passed. Core push CI/Native SDK/Fuzz runs `29850220180`/`29850220219`/
   `29850220238` passed. Linux push Native/Flatpak/Foundation runs
   `29850547006`/`29850546971`/`29850548756` and PR runs
-  `29850550865`/`29850550890`/`29850550591` passed. Central coordination commit
-  `c60b1752dc969f270a40d857895f028b789c7d86` and workflow `29851043287` passed.
+  `29850550865`/`29850550890`/`29850550591` passed. Central coordination implementation
+  checkpoint `c60b1752dc969f270a40d857895f028b789c7d86` and documentation alignment commit
+  `7efe0ebf1981b3930628ad0c6aa0fc33447d53b1` passed workflows `29851043287`/`29851347134`.
 
 This is unreleased provider-wire evidence. Billing equivalence, pricing, stable ABI projection,
 other clients, human visual/copy/Orca review, signing, rollback, and stable release remain open.
