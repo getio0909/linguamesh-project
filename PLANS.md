@@ -168,6 +168,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29803845060`/`29803845055`/`29803845046` passed all jobs. A runtime-compatible live status/error
   fixture and human Orca review remain open.
 
+- [x] Verify localized names in the Linux live AT-SPI tree. The test-only
+  `LINGUAMESH_TEST_LOCALE` override runs the existing English fixture and a second Simplified
+  Chinese fixture without changing ordinary startup defaults; both retain the named-control role
+  and two-text-editor assertions. The first run exposed the expected stale Flatpak source pin;
+  final head `b2a3f47` documents the corrected pin `346b949`. Push Native/Flatpak/Foundation
+  `29804861125`/`29804861156`/`29804861132` and PR
+  `29804863422`/`29804863440`/`29804863421` passed, and the Native log records all five Chinese
+  accessible names. Human Orca listening, visual/RTL review, other clients, signing, and stable
+  release remain open.
+
 - [x] Project the five-dimension Core compatibility snapshot through ABI 1 and consume the exact
   Core pin from Linux. Core `c559b32` passed CI `29782822854` and Native SDK `29782822883`; Linux
   `b38a8fd` passed PR Native/Flatpak/Foundation `29783023917`/`29783023872`/`29783023894` with

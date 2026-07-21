@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-21
 
+## 2026-07-21 — Linux localized live AT-SPI fixture
+
+Assumption: live accessibility evidence should include catalog-backed names in a non-English
+locale while retaining the English baseline and strict role assertions.
+
+- Linux final head `b2a3f476138d9b70569525acf066e9120a7b21b5` adds the test-only
+  `LINGUAMESH_TEST_LOCALE` override, explicit English/Simplified Chinese expected names, and a
+  second Native CI fixture with `LINGUAMESH_TEST_LOCALE=zh-CN`. Ordinary startup remains English.
+- Push Native/Flatpak/Foundation `29804861125`/`29804861156`/`29804861132` and PR
+  Native/Flatpak/Foundation `29804863422`/`29804863440`/`29804863421` passed all jobs. The Native
+  log records the five Chinese names and their roles; Flatpak validates the exact reviewed source
+  pin at `346b9499261da31d092c04703918195ba2678b14`.
+- The preceding code-head Flatpak runs failed only because the packaging manifest still pointed at
+  `93fd6f2`; the failure is retained as corrective evidence and the pin was updated before the
+  passing run.
+
+This remains unreleased Linux-first accessibility evidence. Human Orca listening, translated-copy/
+RTL review, physical desktop rendering, other clients, signing, distributable artifacts, and stable
+release remain open.
+
 ## 2026-07-21 — Linux AT-SPI status-role fixture boundary
 
 Assumption: a live AT-SPI assertion must match the roles exported by the pinned GTK runtime; a
