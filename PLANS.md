@@ -24,6 +24,21 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Complete the Linux local export pipeline with temporary output and atomic finalization.
+  Runtime commit `26263b7ae81b766ed4a76238d31bf8b7233eee13` keeps non-local URIs on the existing
+  GIO exclusive-create fallback, while local paths write and close a same-directory UUID temporary
+  file and use GIO's non-overwriting move; failed finalization removes the temporary artifact.
+  The ignored GTK fixture is now `gtk_atomic_output_writer_never_replaces_existing_file` and
+  checks both occupied-destination preservation and cleanup. Packaging/workflow commit
+  `9460a0aa678b2dd604db6bd6170054fef36537df` updates the Flatpak source pin and Native workflow.
+  Local formatting, locked checks, strict Clippy, demo-provider tests (`157 passed; 3 ignored`),
+  Flatpak metadata, and diff checks passed. Push Native/Flatpak/Foundation runs
+  `29893635774`/`29893635715`/`29893635769` and PR runs
+  `29893637984`/`29893637956`/`29893637957` all passed; Native executed the exact atomic fixture,
+  full GTK suite, release build, performance baseline, and checksum/SBOM evidence. This remains
+  unreleased Linux Scenario 18 evidence; local full-feature GUI linking, human visual/copy/Orca
+  review, other clients, signing, rollback, and stable release remain open.
+
 - [x] Close remaining Linux user-visible export overwrite paths. Runtime commit
   `c11e80bbb69b869b1d021d07e1f97247cf0ae7b4` routes glossary CSV, routing-profile JSON,
   translation-history TSV, and translation-memory TSV through the same GIO exclusive asynchronous

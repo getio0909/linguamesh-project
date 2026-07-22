@@ -2,6 +2,33 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux atomic export finalization
+
+Assumption: the canonical document pipeline's temporary-output and atomic-finalization steps apply
+to every local user-visible export, while non-local URI destinations retain an exclusive-create
+fallback because GIO cannot provide a same-directory local rename there.
+
+- Runtime commit `26263b7ae81b766ed4a76238d31bf8b7233eee13` writes local exports to a same-directory
+  UUID temporary file, closes the stream, and finalizes with GIO `move_async` and
+  `FileCopyFlags::NONE`; a destination occupied during the race remains unchanged and failed moves
+  asynchronously delete the temporary artifact. Non-local URIs continue through the exclusive
+  create/write/close helper. The shared path covers translated output, document reports, glossary
+  CSV, routing-profile JSON, translation-history TSV, and translation-memory TSV.
+- The ignored GTK fixture `gtk_atomic_output_writer_never_replaces_existing_file` verifies occupied
+  destinations preserve their sentinel and leave no temporary artifact, while a new destination is
+  created successfully. Local formatting, locked all-target/all-feature checks, strict Clippy,
+  demo-provider tests (`157 passed; 3 ignored`), Flatpak metadata, and diff checks passed; full GTK
+  linking remains unavailable on this host.
+- Packaging/workflow commit `9460a0aa678b2dd604db6bd6170054fef36537df` updates the Flatpak source
+  pin and dedicated Native fixture name. Push Native/Flatpak/Foundation runs
+  `29893635774`/`29893635715`/`29893635769` and PR runs
+  `29893637984`/`29893637956`/`29893637957` all passed; Native completed the exact fixture, full
+  GTK suite, release build, performance baseline, and checksum/SBOM evidence.
+
+This closes the Linux temporary-output/atomic-finalization evidence for unreleased Scenario 18.
+Human visual/copy/Orca review, non-local VFS atomicity, other clients, signed artifacts, rollback
+authorization, and stable release approval remain open; release status is `unreleased`.
+
 ## 2026-07-22 — Linux auxiliary export overwrite protection
 
 Assumption: every user-visible export must fail closed on an occupied destination, not only
