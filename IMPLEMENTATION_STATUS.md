@@ -2,6 +2,21 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux current-head regression refresh
+
+Assumption: the Linux status-only checkpoint records reproducible evidence for the published
+source head without promoting an unsigned artifact or changing the draft PR/release posture.
+
+- Linux status head `ad46609159c830579551923228211414450df130` records local `cargo fmt --check`,
+  GUI all-target checks, locked offline demo-provider tests (`158 passed; 3 ignored`), strict
+  Clippy, l10n synchronization, Flatpak metadata validation, and `git diff --check` results.
+- Push Native/Flatpak/Foundation runs `29934332522`/`29934332455`/`29934332613` passed. PR
+  Native/Flatpak/Foundation runs `29934338922`/`29934338014`/`29934336973` also passed, including
+  the full GTK, portal, accessibility, release, checksum/SBOM, and performance suites.
+- Linux PR #1 remains Draft/Open/mergeable; Central Issue #1 remains Open. Human visual/copy/Orca
+  review, physical VFS and power-loss evidence, signing, rollback authorization, and stable
+  release acceptance remain open; release status stays `unreleased`.
+
 ## 2026-07-22 — Android native foundation slice
 
 Assumption: Android is being advanced as a prerelease preparation slice while Linux remains the

@@ -24,6 +24,13 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Refresh the Linux current-head regression evidence after the approved-fallback checkpoint.
+  Linux status head `ad46609159c830579551923228211414450df130` passed local formatting, GUI
+  all-target checks, locked offline demo-provider tests (`158 passed; 3 ignored`), strict Clippy,
+  l10n synchronization, Flatpak metadata, and diff checks. Push Native/Flatpak/Foundation
+  `29934332522`/`29934332455`/`29934332613` and PR `29934338922`/`29934338014`/`29934336973` all
+  passed. PR #1 remains Draft/Open and Issue #1 remains Open; the release train stays `unreleased`.
+
 - [x] Add explicit Linux evidence for LM Studio-style generic OpenAI compatibility. Runtime
   `74e817f07b5d386706999fdc66a21a357286af6c` adds the deterministic `/v1/` fixture; packaging/status
   head `4154aaef160a0578624f581063dbd62a29cadb79` pins Flatpak and documents the protocol boundary.
