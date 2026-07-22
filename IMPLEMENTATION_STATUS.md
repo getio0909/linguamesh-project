@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux document report usage estimate
+
+Assumption: persisted document segments are the only local, non-sensitive source available for a
+report usage field; retry attempt history remains unavailable and is not inferred.
+
+- Linux runtime `ae4750beec1d9aa1c2d53c96754a6ca5a4e55c66` serializes a bounded
+  `UsageRecord::locally_estimated` JSON object from persisted source and translated segment lengths.
+  The report contains only a source marker and token counts; document text, credentials, and paths
+  remain excluded, while `retried_count` remains explicit `unknown`.
+- Linux packaging/docs head `130dc051e61250ff6c029afedb490f4eea4863b9` pins the runtime and records
+  the regression `document_translation_report_is_redacted_and_counts_segments`.
+- Local formatting, locked all-target/all-feature check, strict Clippy, localization audits, Flatpak
+  metadata, and diff checks passed. Push Native/Flatpak/Foundation `29899915398`/`29899915416`/
+  `29899915427` and PR `29899917681`/`29899917650`/`29899917663` all passed; Native completed the
+  full GTK, accessibility, release, checksum/SBOM, and performance suites.
+
+This advances unreleased Linux Milestone 3/6 report evidence. Provider-reported usage, retry history,
+human visual/copy/Orca review, other clients, signed artifacts, rollback authorization, and stable
+release approval remain open. PR #1 remains Draft/Open and Issue #1 remains Open.
+
 ## 2026-07-22 — Linux non-local source-alias protection
 
 Assumption: source-preservation checks must reject an identical non-local URI before export even

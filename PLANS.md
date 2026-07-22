@@ -24,6 +24,17 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add non-sensitive Linux document-report usage estimation. Runtime
+  `ae4750beec1d9aa1c2d53c96754a6ca5a4e55c66` derives bounded local token estimates from persisted
+  source/translated segments and serializes only usage metadata; `retried_count` remains explicit
+  `unknown` because attempt history is not persisted. Packaging/docs head `130dc051e61250ff6c029afedb490f4eea4863b9`
+  pins the runtime and records the redacted report contract. Local formatting, locked all-target/all-
+  feature checks, strict Clippy, localization audits, Flatpak metadata, and diff checks passed.
+  Push Native/Flatpak/Foundation `29899915398`/`29899915416`/`29899915427` and PR
+  `29899917681`/`29899917650`/`29899917663` all passed; Native completed the full GTK, accessibility,
+  release, checksum/SBOM, and performance suites. PR #1 remains Draft/Open and Issue #1 remains
+  Open; release status is `unreleased`.
+
 - [x] Strengthen Linux Scenario 18 source preservation for non-local URIs. Runtime
   `dc5304c679feedce407981ea67d832979d81157e` adds
   `non_local_source_alias_is_rejected_by_uri_identity`, proving the production export guard rejects
