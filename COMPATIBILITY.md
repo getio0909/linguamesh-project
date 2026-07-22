@@ -16,7 +16,10 @@ Provider and application loopback regressions prove safe headers are applied wit
 l10n `294e593ab2c71b9ab0ea3475c35ebc61bca2bbc6` remains source revision 51 with 459 messages.
 Linux `61a7317746adea35f35a88f948a94f7e8223bac1` pins the exact Core/l10n/Flatpak inputs and
 records local GUI, Clippy, 158-pass/3-ignored demo-provider, localization-audit, synchronization,
-and metadata evidence. Remote gates are pending for this new pin; release remains `unreleased`.
+and metadata evidence. Core CI/Fuzz/Native SDK `29958775964`/`29958776018`/`29958776042` and Linux
+push/PR Native/Flatpak/Foundation `29959014144`/`29959014132`/`29959014154` and
+`29959016415`/`29959016426`/`29959016416` passed; coordination `29959149744` also passed.
+Release remains `unreleased`.
 
 ### Linux provider profile bounded custom headers
 

@@ -20,10 +20,13 @@ Chat Completions and Responses.
 - Linux local evidence passed: GUI all-target check, strict Clippy, locked demo-provider tests
   (`158 passed; 3 ignored`), localization key/visible/placeholder audits, l10n synchronization,
   Flatpak metadata validation, and `git diff --check`.
-- Remote Core CI/Fuzz/Native SDK and Linux Native/Flatpak/Foundation push/PR gates are pending for
-  this new source pin; no release artifact or stable promotion is claimed. Manual visual/copy/Orca
-  review, live provider interoperability, other clients, signing, rollback, and stable-release
-  acceptance remain open; release remains `unreleased`.
+- Remote Core CI/Fuzz/Native SDK `29958775964`/`29958776018`/`29958776042` and Linux
+  Native/Flatpak/Foundation push gates `29959014144`/`29959014132`/`29959014154` plus PR gates
+  `29959016415`/`29959016426`/`29959016416` all passed. Central coordination workflow
+  `29959149744` passed the synchronized manifest/document head. No release artifact or stable
+  promotion is claimed; manual visual/copy/Orca review, live provider interoperability, other
+  clients, signing, rollback, and stable-release acceptance remain open; release remains
+  `unreleased`.
 
 ## 2026-07-22 — Linux provider-project application wiring correction
 
