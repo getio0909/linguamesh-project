@@ -2,6 +2,31 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux About compatibility dialog
+
+Assumption: the primary Linux About surface is localized, read-only, and limited to application
+and shared-Core compatibility fields; it does not expose endpoints, credentials, model identifiers,
+or translation content.
+
+- Linux runtime/packaging head `0d7b3927fb98e461317feaefeb4c806676e6acc0` adds the About action,
+  modal, bounded Core semantic version/ABI/protocol display, pure formatter regression, and
+  serialized GTK lifecycle fixture. l10n revision `a65a327a8418332e50d9ab302fca24508e7266ef`
+  supplies four catalog-backed messages across 441 synchronized messages.
+- Local formatting, GUI all-target check, strict locked offline Clippy, demo-provider tests
+  (`158 passed; 3 ignored`), localization audits, Flatpak metadata, and `git diff --check` passed.
+  The host full-feature GUI link remains limited by missing GTK4/GDK/Graphene symbols; CI supplies
+  the executable GUI evidence.
+- Final status head `b227502` passed push Native/Flatpak/Foundation
+  `29939078035`/`29939076992`/`29939076888` and PR Native/Flatpak/Foundation
+  `29939078893`/`29939080507`/`29939080561`, including About, accessibility, release,
+  checksum/SBOM, performance, Flatpak sandbox, and localization checks. The earlier GTK mnemonic
+  assertion failure `29937509002` and stale-pin Flatpak failure `29937961470` are superseded by
+  corrected commits `b2627ae` and `0d7b392`.
+- Linux PR #1 remains Draft/Open/mergeable with no submitted reviews or unresolved threads;
+  Central Issue #1 remains Open. Human visual/copy/Orca review, physical VFS/power-loss evidence,
+  signing, rollback authorization, and stable-release acceptance remain open; release status stays
+  `unreleased`.
+
 ## 2026-07-22 — Linux current-head regression refresh
 
 Assumption: the Linux status-only checkpoint records reproducible evidence for the published
