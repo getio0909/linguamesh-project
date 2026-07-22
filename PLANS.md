@@ -24,6 +24,21 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Extend Linux document-job queue evidence through the production paused-job Resume action.
+  Linux runtime commit `7b92bd43915ebefde3e29463252aacb94d064691` extends the serialized
+  `gtk_document_jobs_dialog_selects_between_multiple_jobs` fixture: after selecting the paused
+  second snapshot it reopens the production queue, requires the single `Resume document` action,
+  activates it, and verifies the same job ID/state remains selected while the dialog closes after
+  sending the command. Packaging/docs commit `ea5bf4768a9f8b40fd04fbc929d8ea788ead32bc` pins
+  Flatpak and documents the assertion; final Linux status head `755ed9a87ee3034c282ef655915a8ad0ec4fe941`
+  records the evidence. Local formatting, locked all-target/all-feature check, strict Clippy,
+  157-pass demo-provider tests (3 ignored), localization audits, l10n sync, Flatpak metadata, and
+  diff checks passed. Final status-head push Native/Flatpak/Foundation runs
+  `29883868226`/`29883868326`/`29883868256` and PR runs `29883870536`/`29883870487`/`29883870484`
+  all passed; Native executed the exact queue fixture successfully. This remains unreleased Linux
+  evidence; human visual/copy/Orca review, physical interruption behavior, other clients, signing,
+  rollback, and stable release remain open.
+
 - [x] Extend Linux document-job queue evidence through the production GTK selection boundary. Linux
   runtime commit `c652232196f09ee9a2cbf69f7eaa9e01ca7672e7` adds the ignored serialized
   `gtk_document_jobs_dialog_selects_between_multiple_jobs` fixture, which creates two persisted
