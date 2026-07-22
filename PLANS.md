@@ -24,6 +24,21 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Extend Linux document-job queue evidence through the production cancelled-job Retry action.
+  Linux runtime commit `819eff7cff79b8e6514120d550f72658ff276bf9` extends the serialized
+  `gtk_document_jobs_dialog_selects_between_multiple_jobs` fixture with a cancelled third
+  snapshot: it verifies the three-file queue, requires the single `Retry document` action, emits
+  it, and confirms `gtk-queue-cancelled` remains selected with `Cancelled` state while the dialog
+  closes after sending the command. Packaging/docs commit `8fae49ee451c5df22ec766eabe14c1ad0dc71ee2`
+  pins Flatpak and documents the assertion; final Linux status head `5432b021d3073a703d3d8824dd3fbd00118ba66d` records the evidence. Local
+  formatting, locked all-target/all-feature check, strict Clippy, 157-pass demo-provider tests
+  (3 ignored), localization audits, l10n sync, Flatpak metadata, and diff checks passed. Final
+  status-head push Native/Flatpak/Foundation runs `29884616494`/`29884616511`/`29884616504` and
+  PR runs `29884618885`/`29884618826`/`29884618821` all passed; Native executed the exact queue
+  fixture successfully. This remains unreleased Linux evidence; human visual/copy/Orca review,
+  physical interruption behavior, other clients, signing, rollback, and stable release remain
+  open.
+
 - [x] Extend Linux document-job queue evidence through the production paused-job Resume action.
   Linux runtime commit `7b92bd43915ebefde3e29463252aacb94d064691` extends the serialized
   `gtk_document_jobs_dialog_selects_between_multiple_jobs` fixture: after selecting the paused
