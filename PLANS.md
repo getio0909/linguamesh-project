@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Close and record the Linux Azure OpenAI custom-header application wiring gap. Core
+  `cf08384c829ca1b95ecfc79d23bc5b0feb3a701f` adds `AzureOpenAiConfig.custom_headers` and forwards
+  the persisted bounded value through `ProviderManager` without replacing Azure `api-key`.
+  Provider/application loopback regressions, Core workspace tests, strict Clippy, and Linux local
+  GUI/demo-provider/localization/Flatpak checks passed. Linux `61a7317746adea35f35a88f948a94f7e8223bac1`
+  pins the new Core revision; remote Core and Linux gates are pending before the checkpoint is
+  considered remotely verified. Release remains `unreleased`.
+
 - [x] Add and remotely verify the Linux-first bounded custom provider-header slice. Core
   `be5b7220587289be78b7654d979099c57ea4cc6d` adds schema 23 persistence, canonical bounded
   non-secret header validation, and OpenAI Chat/Responses application with reserved-header and

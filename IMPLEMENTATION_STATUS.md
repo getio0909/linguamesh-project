@@ -2,29 +2,28 @@
 
 Last updated: 2026-07-22
 
-## 2026-07-22 — Linux provider custom-header checkpoint
+## 2026-07-22 — Linux Azure custom-header application wiring
 
 Assumption: custom request headers are optional, bounded, non-secret ProviderProfile metadata;
-proxy settings and secret custom headers remain outside this slice.
+proxy settings and secret custom headers remain outside this slice. Azure OpenAI may reuse the
+same safe header application path, while OpenAI organization/project headers remain limited to
+Chat Completions and Responses.
 
-- Core `be5b7220587289be78b7654d979099c57ea4cc6d` adds schema 23 persistence, canonical JSON
-  validation with 16-header/128-byte-name/2 KiB-value bounds, redacted debug presence reporting,
-  storage round-trip coverage, and OpenAI Chat/Responses request application. Authorization,
-  credential-shaped, and built-in metadata names are rejected before persistence or adapter use.
-- l10n `294e593ab2c71b9ab0ea3475c35ebc61bca2bbc6` adds the Linux label, placeholder, and safety
-  tooltip at source revision 51; the bundle contains 459 messages and passed all 26 tests and
-  deterministic generation checks.
-- Linux `1e3a96b18990ea4f7b8ba85faed2df4407ed18b9` binds the GTK form, saved-profile restoration,
-  Test connection/Connect forwarding, PO/MO synchronization, and exact Core/l10n/Flatpak pins.
-  Local Core workspace tests/Clippy, Linux GUI checks/Clippy/demo-provider suite (`158 passed;
-  3 ignored`), l10n checks, localization audits, Flatpak metadata, and diff checks passed.
-- Remote Core CI/Fuzz/Native SDK runs `29956720294`/`29956720284`/`29956720340`, l10n
-  Localization/Foundation runs `29956431231`/`29956431233`, and Linux push
-  Native/Flatpak/Foundation runs `29956837428`/`29956837112`/`29956837081` plus pull-request
-  runs `29956840773`/`29956840966`/`29956840730` all passed. Central coordination workflow
-  `29957596432` also passed. This is reproducible remote evidence; manual visual/copy/Orca review,
-  live provider interoperability, other clients, signing, rollback, and stable-release acceptance
-  remain open. Release remains `unreleased`.
+- Core `cf08384c829ca1b95ecfc79d23bc5b0feb3a701f` adds `AzureOpenAiConfig.custom_headers` and
+  forwards it through `ProviderManager` into the existing Azure Chat adapter. Provider-level
+  and application-level loopback regressions prove safe headers are applied without replacing the
+  Azure `api-key`; Core workspace tests and strict all-feature Clippy passed locally.
+- l10n `294e593ab2c71b9ab0ea3475c35ebc61bca2bbc6` remains the source-revision-51, 459-message
+  bundle. Linux `61a7317746adea35f35a88f948a94f7e8223bac1` pins the exact Core/l10n inputs in
+  Native and Flatpak metadata and
+  updates the architecture/testing records.
+- Linux local evidence passed: GUI all-target check, strict Clippy, locked demo-provider tests
+  (`158 passed; 3 ignored`), localization key/visible/placeholder audits, l10n synchronization,
+  Flatpak metadata validation, and `git diff --check`.
+- Remote Core CI/Fuzz/Native SDK and Linux Native/Flatpak/Foundation push/PR gates are pending for
+  this new source pin; no release artifact or stable promotion is claimed. Manual visual/copy/Orca
+  review, live provider interoperability, other clients, signing, rollback, and stable-release
+  acceptance remain open; release remains `unreleased`.
 
 ## 2026-07-22 — Linux provider-project application wiring correction
 

@@ -6,6 +6,18 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 ## Unreleased compatibility matrix
 
+### Linux Azure custom-header application wiring
+
+Core `cf08384c829ca1b95ecfc79d23bc5b0feb3a701f` adds the existing bounded custom-header contract
+to `AzureOpenAiConfig` and forwards it through `ProviderManager` into Azure Chat Completions.
+Provider and application loopback regressions prove safe headers are applied without replacing the
+`api-key`; organization/project headers remain limited to Chat Completions and Responses.
+
+l10n `294e593ab2c71b9ab0ea3475c35ebc61bca2bbc6` remains source revision 51 with 459 messages.
+Linux `61a7317746adea35f35a88f948a94f7e8223bac1` pins the exact Core/l10n/Flatpak inputs and
+records local GUI, Clippy, 158-pass/3-ignored demo-provider, localization-audit, synchronization,
+and metadata evidence. Remote gates are pending for this new pin; release remains `unreleased`.
+
 ### Linux provider profile bounded custom headers
 
 Core `be5b7220587289be78b7654d979099c57ea4cc6d` adds schema 23 persistence and canonical JSON
