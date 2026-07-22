@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux source-level visible-string gettext coverage
+
+Assumption: source-level gettext coverage is a reproducible CI gate, while translated-copy, plural,
+and visual review remain human acceptance boundaries.
+
+- Linux head `9460a0aa678b2dd604db6bd6170054fef36537df` passes all three dependency-free audits:
+  `check-localization-keys.py` finds 390 catalog-backed source keys,
+  `check-localization-placeholders.py` checks 448 literal fallback calls, and
+  `check-visible-localization.py` finds no non-empty hard-coded GTK strings across `src/**/*.rs`
+  (three intentional empty/reset call sites).
+- The generated official and pseudo-locale catalogs remain pinned to l10n
+  `88765d3358450ccfac12f396caf5290230a83577`; the existing runtime localization suite and Native
+  accessibility fixtures provide the corresponding CI evidence. This closes the source-level
+  visible-string gap without claiming human translated-copy or plural quality.
+
+Source-level Linux gettext coverage is now verified for the unreleased checkpoint. Human translated
+copy, plural, visual/Orca review, other clients, signed artifacts, rollback authorization, and
+stable release approval remain open; release status is `unreleased`.
+
 ## 2026-07-22 — Linux atomic export finalization
 
 Assumption: the canonical document pipeline's temporary-output and atomic-finalization steps apply

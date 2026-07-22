@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Close the Linux source-level visible-string gettext coverage gap. Linux head
+  `9460a0aa678b2dd604db6bd6170054fef36537df` passes the dependency-free key, placeholder, and
+  visible-control audits: 390 catalog-backed source keys, 448 placeholder calls, and no non-empty
+  hard-coded GTK strings across `src/**/*.rs` (three intentional empty/reset call sites). The
+  generated official and pseudo-locale catalogs remain covered by the existing runtime suite at
+  l10n `88765d3358450ccfac12f396caf5290230a83577`. This is source-level evidence; human translated
+  copy, plural, visual, other-client, signing, rollback, and stable-release review remain open.
+
 - [x] Complete the Linux local export pipeline with temporary output and atomic finalization.
   Runtime commit `26263b7ae81b766ed4a76238d31bf8b7233eee13` keeps non-local URIs on the existing
   GIO exclusive-create fallback, while local paths write and close a same-directory UUID temporary
@@ -781,8 +789,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
   isolated prompted store/delete fail-closed fixture; end-user Secret Service prompt approval
   remains a later Linux boundary.
 - [x] Expose all twelve official Linux PO packs through runtime locale switching, preserve active
-  state during action-label changes, and apply Arabic RTL root direction; complete visible-string
-  gettext coverage remains a later Linux slice.
+  state during action-label changes, and apply Arabic RTL root direction. Source-level visible
+  gettext coverage is now separately verified above; human translated-copy and plural review remain
+  explicit boundaries.
 - [x] Add Linux translation export through the native GTK save dialog, asynchronous UTF-8 writing,
   localized success/error messages, and source-file overwrite protection; cross-platform export
   remains out of scope for this Linux-first checkpoint.
