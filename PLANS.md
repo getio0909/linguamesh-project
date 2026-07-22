@@ -31,7 +31,7 @@ Assumption: Planned files and commands are not evidence until they exist and com
   GUI/demo-provider/localization/Flatpak checks passed. Linux `61a7317746adea35f35a88f948a94f7e8223bac1`
   pins the new Core revision; Core CI/Fuzz/Native SDK `29958775964`/`29958776018`/`29958776042`,
   Linux push/PR Native/Flatpak/Foundation `29959014144`/`29959014132`/`29959014154` and
-  `29959016415`/`29959016426`/`29959016416`, and central coordination `29959149744` passed.
+  `29959016415`/`29959016426`/`29959016416`, and central coordination `29959537603` passed.
   Release remains `unreleased`.
 
 - [x] Add and remotely verify the Linux-first bounded custom provider-header slice. Core

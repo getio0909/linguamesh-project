@@ -18,7 +18,7 @@ Linux `61a7317746adea35f35a88f948a94f7e8223bac1` pins the exact Core/l10n/Flatpa
 records local GUI, Clippy, 158-pass/3-ignored demo-provider, localization-audit, synchronization,
 and metadata evidence. Core CI/Fuzz/Native SDK `29958775964`/`29958776018`/`29958776042` and Linux
 push/PR Native/Flatpak/Foundation `29959014144`/`29959014132`/`29959014154` and
-`29959016415`/`29959016426`/`29959016416` passed; coordination `29959149744` also passed.
+`29959016415`/`29959016426`/`29959016416` passed; coordination `29959537603` also passed.
 Release remains `unreleased`.
 
 ### Linux provider profile bounded custom headers

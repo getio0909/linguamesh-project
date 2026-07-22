@@ -23,7 +23,7 @@ Chat Completions and Responses.
 - Remote Core CI/Fuzz/Native SDK `29958775964`/`29958776018`/`29958776042` and Linux
   Native/Flatpak/Foundation push gates `29959014144`/`29959014132`/`29959014154` plus PR gates
   `29959016415`/`29959016426`/`29959016416` all passed. Central coordination workflow
-  `29959149744` passed the synchronized manifest/document head. No release artifact or stable
+  `29959537603` passed the synchronized manifest/document head. No release artifact or stable
   promotion is claimed; manual visual/copy/Orca review, live provider interoperability, other
   clients, signing, rollback, and stable-release acceptance remain open; release remains
   `unreleased`.
