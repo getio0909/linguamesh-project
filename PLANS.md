@@ -24,6 +24,25 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add the Linux production document translation report surface. Assumption: the first
+  report format is a redacted, deterministic TSV snapshot; provider usage and retry counts are
+  explicit `unknown` because the persisted document-job schema does not retain them. Linux runtime
+  commit `cc5beeea530e500ee2d42b6d05d26dc34a26c7ab` adds the per-job GTK export action and safe
+  report builder; packaging/workflow commits `4407ce947f86af070f986e4c4ee0fee6b2305683` and
+  `c14760c4c14fe26681c2f11a22a5dd8e9af6b1e9` pin the tested Linux and l10n revisions. Canonical
+  l10n `88765d3358450ccfac12f396caf5290230a83577` passed its full 26-test/generated-resource
+  validation. Local Linux formatting, locked checks, strict Clippy, 157-pass demo-provider tests
+  (3 ignored), localization audits, Flatpak metadata, and diff checks passed. The initial Native
+  CI failure `29887678331` was a stale workflow pin to l10n `b817ba9`; after correction, push
+  Native/Flatpak/Foundation runs `29887890227`/`29887890202`/`29887890226` and PR runs
+  `29887892891`/`29887892948`/`29887892894` all passed, with Native completing the full GTK,
+  release-build, checksum/SBOM, and performance-baseline suite. Final status head
+  `a3af4c40a01db6256e5549cdd08ecf78be3ad1d1` also passed push Native/Flatpak/Foundation runs
+  `29888261417`/`29888261423`/`29888261426` and PR runs `29888264002`/`29888263976`/`29888263981`.
+  This remains unreleased Linux evidence;
+  output identifiers are `<not-exported>` until an output is persisted, and human visual/copy/
+  Orca review, other clients, signing, rollback, and stable release remain open.
+
 - [x] Extend Linux document-job queue evidence through the production pending-job Pause action.
   Linux runtime commit `8c05797011a04cdc11988cfbe9c35c2d05d2269b` extends the serialized
   `gtk_document_jobs_dialog_selects_between_multiple_jobs` fixture so pending, paused, and

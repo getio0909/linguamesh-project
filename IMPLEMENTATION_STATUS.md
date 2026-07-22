@@ -2,6 +2,35 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux document translation report export
+
+Assumption: the first report surface is a Linux-only, redacted TSV snapshot; persisted
+document jobs do not retain provider usage or retry counts, so those fields stay explicitly
+unknown instead of being inferred.
+
+- Linux runtime commit `cc5beeea530e500ee2d42b6d05d26dc34a26c7ab` adds a localized Export
+  translation report action to each production Document jobs row. The deterministic report
+  includes stable identifiers, locales, provider/model, routing/preset/glossary metadata,
+  application/Core/prompt versions, segment counts, warnings, state, and Unix timestamps while
+  excluding credentials, source/translated text, and local paths; source-alias protection prevents
+  overwriting the imported source file.
+- Flatpak/workflow commits `4407ce947f86af070f986e4c4ee0fee6b2305683` and
+  `c14760c4c14fe26681c2f11a22a5dd8e9af6b1e9` pin the tested Linux/l10n inputs. Canonical l10n
+  revision `88765d3358450ccfac12f396caf5290230a83577` passed its full 26-test/generated-resource
+  validation. Local Linux formatting, locked all-target/all-feature checks, strict Clippy,
+  demo-provider tests (`157 passed; 3 ignored`), localization audits, Flatpak metadata, and diff
+  checks passed. After correcting the stale workflow pin (old Native run `29887678331`), push
+  Native/Flatpak/Foundation runs `29887890227`/`29887890202`/`29887890226` and PR runs
+  `29887892891`/`29887892948`/`29887892894` all passed; Native completed the full GTK fixture,
+  release-build, checksum/SBOM, and performance-baseline suite.
+
+This advances the Linux document-workspace report requirement for Milestone 3. Final status head
+`a3af4c40a01db6256e5549cdd08ecf78be3ad1d1` passed push Native/Flatpak/Foundation runs
+`29888261417`/`29888261423`/`29888261426` and PR runs `29888264002`/`29888263976`/`29888263981`.
+Output identifiers remain `<not-exported>` until an output is persisted. Human visual/copy/Orca
+review, physical interruption behavior, other clients, signed artifacts, rollback authorization,
+and stable release approval remain open; release status is `unreleased`.
+
 ## 2026-07-22 — Linux GTK pending document-job Pause action
 
 Assumption: a pending row in the production document queue must dispatch Pause for that exact
