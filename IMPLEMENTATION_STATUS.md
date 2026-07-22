@@ -23,6 +23,20 @@ priority client; no device or stable-release evidence is implied.
 This is an Android compatibility-preparation checkpoint; it does not change the Linux-first release
 posture or imply cross-client acceptance-scenario completion.
 
+## 2026-07-22 — GitHub PR and issue triage
+
+Assumption: draft PRs with green checks remain open while their documented manual, signing, and
+release boundaries are incomplete.
+
+- Linux PR #1 remains Draft/Open/mergeable with no submitted reviews or inline review threads; its
+  six current-head Native, Flatpak, and Foundation push/PR checks pass.
+- macOS PR #1 remains Draft/Open/mergeable with no submitted reviews or inline review threads;
+  foundation checks and Native run `29765906044` pass. A triage comment was added at
+  [macOS PR comment](https://github.com/getio0909/linguamesh-macos/pull/1#issuecomment-5048104677).
+- Central Issue #1 remains Open. Android evidence and the current PR state were recorded in the
+  [coordination issue comment](https://github.com/getio0909/linguamesh-project/issues/1#issuecomment-5048106840).
+  No merge, force-push, or stable-release action was taken.
+
 ## 2026-07-22 — Linux LM Studio-style compatibility checkpoint
 
 Assumption: LM Studio-style local servers satisfy the required generic OpenAI-compatible `/v1/`

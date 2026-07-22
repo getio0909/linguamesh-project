@@ -3267,3 +3267,9 @@ At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs
   builds, 16 JVM tests per variant, instrumentation compilation, and lint. Device execution,
   provider credentials, document/history/routing/background flows, signing, and stable release
   remain open; the first metadata assertion failure `29931908407` is retained as superseded evidence.
+
+- 2026-07-22: GitHub triage found no actionable reviews or unresolved threads on Linux PR #1 or
+  macOS PR #1. Linux's six current-head gates and macOS foundation/Native run `29765906044` pass;
+  both remain Draft/Open. Central Issue #1 remains Open for device/manual review, signing,
+  rollback, cross-client, and stable-release boundaries. Triage comments were recorded on the
+  macOS PR and central issue; no merge or stable-release action was taken.
