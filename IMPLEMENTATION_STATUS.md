@@ -2,6 +2,27 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Android native foundation slice
+
+Assumption: Android is being advanced as a prerelease preparation slice while Linux remains the
+priority client; no device or stable-release evidence is implied.
+
+- Android source `afe7a566bac77a16243f70295d17a4d9cab1151f` pins Core
+  `8837e59395742b5385af5037aa36a2596af3b025` and l10n
+  `3724cc9d436ebdbac3b8ebf0df9bce9af1b41b15`. The native Kotlin/Compose slice includes the
+  application-scoped gateway, Keystore credential broker, generated resources, cancellation and
+  event-sequence guards, and release adapter source.
+- Android workflow `29932649692` (job `88966082464`) passed clean Core AAR build plus metadata,
+  checksum, generated-wrapper, and JNI verification; debug/release builds, 16 JVM tests per
+  variant, instrumentation compilation, and debug/release lint also passed. The prior run
+  `29931908407` failed only on a stale `alpha.1` metadata assertion and was corrected before the
+  authoritative run.
+- Android remains unreleased. Device instrumentation, real Core/provider credential flow, document
+  and history workflows, routing/background work, signing, and distribution are not verified.
+
+This is an Android compatibility-preparation checkpoint; it does not change the Linux-first release
+posture or imply cross-client acceptance-scenario completion.
+
 ## 2026-07-22 — Linux LM Studio-style compatibility checkpoint
 
 Assumption: LM Studio-style local servers satisfy the required generic OpenAI-compatible `/v1/`
