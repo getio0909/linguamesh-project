@@ -3,7 +3,7 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
-  "Linux-first secret custom-header references are implemented at Core `28baaa2f85bb70b4fc6ecc4c07566e7004a659c5` (schema 24) and Linux `9d0ffc10a5ee9dd114e40b95db277679969d2593`: a separate ProviderProfile SecretRef is resolved through the host broker and applied in memory to OpenAI-compatible Chat, Responses, and Azure requests, while secret values remain absent from storage and diagnostics. The second GTK secret editor/onboarding flow, other clients, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
+  "Linux-first secret custom-header references and GTK onboarding are implemented at Core `28baaa2f85bb70b4fc6ecc4c07566e7004a659c5` (schema 24), l10n `32397a72c267677f04419a5084514f025f94a0bc` (462 messages), and Linux `e52a43cb361c5a395aa4e8ecd4d8d5252192d384`: a separate ProviderProfile SecretRef is resolved through the host broker and applied in memory to OpenAI-compatible Chat, Responses, and Azure requests; Linux clears the GTK secret-header field, persists only Secret Service references when Remember is selected, and passes a session-only one-shot value otherwise. Secret values remain absent from storage and diagnostics. Other clients, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "ABI 1 provider metadata projection is verified at Core `530e6ea75ef3ccba5defd264227fb6dd6802e17a` and Linux `5cf0fcd133c7df823d4c33f934786a1c940670bb`: optional organization, project, and bounded custom-header JSON fields remain non-secret, are rejected when credential-shaped or unsafe before host-secret requests, and are forwarded through the C ABI to the OpenAI-compatible adapter; Android wrapper parameters are source-compatible. Core CI/Fuzz/Native SDK `29961301539`/`29961301501`/`29961301583`, Linux push/PR Native/Flatpak/Foundation `29961456792`/`29961456832`/`29961456791` and `29961459180`/`29961459196`/`29961459185` passed. Other clients, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux Azure OpenAI custom-header application wiring is verified at Core `cf08384c829ca1b95ecfc79d23bc5b0feb3a701f` and Linux `61a7317746adea35f35a88f948a94f7e8223bac1`: the bounded non-secret custom-header contract reaches Azure Chat Completions without replacing `api-key`, with provider/application loopback regressions and local Linux GUI, Clippy, 158-pass/3-ignored demo-provider, localization-audit, synchronization, and Flatpak metadata evidence. Core CI/Fuzz/Native SDK `29958775964`/`29958776018`/`29958776042`, Linux push/PR Native/Flatpak/Foundation `29959014144`/`29959014132`/`29959014154` and `29959016415`/`29959016426`/`29959016416`, and coordination `29959537603` passed. Organization/project headers remain limited to Chat/Responses, while manual review, other clients, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux provider profiles now support bounded canonical JSON custom request headers at Core schema 23. Core `be5b7220587289be78b7654d979099c57ea4cc6d`, l10n `294e593ab2c71b9ab0ea3475c35ebc61bca2bbc6` (source revision 51, 459 messages), and Linux `1e3a96b18990ea4f7b8ba85faed2df4407ed18b9` implement and locally validate a 16-header, 128-byte-name, 2 KiB-value contract. Authorization, credential-shaped, and built-in metadata names are rejected; safe headers are applied without replacing authentication metadata. Core CI/Fuzz/Native SDK `29956720294`/`29956720284`/`29956720340`, l10n Localization/Foundation `29956431231`/`29956431233`, Linux push/PR Native, Flatpak, and Foundation gates `29956837428`/`29956837112`/`29956837081` and `29956840773`/`29956840966`/`29956840730`, and central coordination workflow `29957596432` passed. Proxy settings, manual visual/Orca review, other clients, signing, rollback, and stable release remain open; status stays `unreleased`.",
@@ -113,7 +113,7 @@ artifacts = []
 [components.localization]
 repository = "linguamesh-l10n"
 version = "0.1.0"
-source_revision = "294e593ab2c71b9ab0ea3475c35ebc61bca2bbc6"
+source_revision = "32397a72c267677f04419a5084514f025f94a0bc"
 minimum_compatible_version = "0.1.0"
 artifacts = []
 
@@ -141,6 +141,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "9d0ffc10a5ee9dd114e40b95db277679969d2593"
+source_revision = "e52a43cb361c5a395aa4e8ecd4d8d5252192d384"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

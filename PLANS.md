@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Complete the Linux secret custom-header GTK onboarding slice. l10n
+  `32397a72c267677f04419a5084514f025f94a0bc` adds the three Linux messages and regenerates the
+  462-message bundle. Linux `e52a43cb361c5a395aa4e8ecd4d8d5252192d384` adds masked input,
+  immediate clearing, persistent Secret Service storage, session-only WorkerCommand transport,
+  l10n/Flatpak pins, and a Core-validation regression for malformed session headers. Local Linux,
+  l10n, localization, Flatpak, and diff checks passed; remote gate IDs follow in the implementation
+  record. Other clients, human review, signing, rollback, and stable release remain open.
+
 - [x] Verify and record the Linux-first secret custom-header SecretRef slice. Core
   `28baaa2f85bb70b4fc6ecc4c07566e7004a659c5` adds schema 24 persistence and host-broker-backed
   in-memory application for OpenAI-compatible Chat/Responses/Azure; Linux

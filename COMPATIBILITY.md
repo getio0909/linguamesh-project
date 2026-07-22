@@ -11,11 +11,15 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 Core `28baaa2f85bb70b4fc6ecc4c07566e7004a659c5` adds schema 24 persistence for an optional
 `ProviderProfile.secret_custom_headers_ref`. The host secret broker resolves that reference only
 for an active connection; the OpenAI-compatible Chat, Responses, and Azure adapters parse the
-bounded JSON in memory and never serialize or expose its values. Linux `9d0ffc10a5ee9dd114e40b95db277679969d2593`
-preserves persistent references, rejects session-only persistence, and cleans up both Secret
-Service references when a saved profile is deleted. This slice deliberately does not claim a
-second GTK secret editor/onboarding flow. Local Core/Linux checks, Core/Linux remote gates, and
-central coordination `29963944562` passed. Release remains `unreleased`.
+bounded JSON in memory and never serialize or expose its values. Linux `e52a43cb361c5a395aa4e8ecd4d8d5252192d384`
+adds a dedicated masked GTK field, clears it immediately, stores only a persistent Secret Service
+reference when Remember is selected, and passes a session-only one-shot value otherwise. l10n
+`32397a72c267677f04419a5084514f025f94a0bc` supplies the three Linux messages in the 462-message
+bundle. Local Core/Linux/l10n checks and Linux push Native/Flatpak/Foundation runs
+`29965156891`/`29965156910`/`29965156886` plus PR runs
+`29965159879`/`29965159874`/`29965159952` passed for the exact Linux head. The PR and Issue remain
+open. Other clients, human review, signing, rollback, and stable release remain open. Release
+remains `unreleased`.
 
 ### ABI 1 provider metadata projection
 

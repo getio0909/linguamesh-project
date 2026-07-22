@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux secret custom-header GTK onboarding
+
+Assumption: Linux remains the active implementation scope; the masked secret-header field follows
+the existing credential boundary and never restores Secret Service contents into the form.
+
+- l10n `32397a72c267677f04419a5084514f025f94a0bc` adds the three Linux-only messages and regenerates
+  the 462-message PO/MO bundle. Linux `e52a43cb361c5a395aa4e8ecd4d8d5252192d384` adds the
+  `PasswordEntry`, clears it after Test connection/Connect, preserves only persistent references,
+  and routes session-only secret headers through `WorkerCommand` into the existing host-secret
+  broker. A focused worker regression proves malformed session header JSON reaches Core validation.
+- Local Linux evidence passed `cargo fmt --all -- --check`, all-target locked check, strict all-feature
+  Clippy, full demo-provider tests (`159 passed; 3 ignored`), localization key/placeholder audits,
+  l10n synchronization, Flatpak metadata validation, and `git diff --check`. The GUI test binary
+  remains linker-limited on this host by missing GTK/GDK/Graphene symbols; source compilation passed.
+- Linux push Native/Flatpak/Foundation runs `29965156891`/`29965156910`/`29965156886` and PR runs
+  `29965159879`/`29965159874`/`29965159952` passed for the exact head. The release remains
+  `unreleased`; other clients, human visual/copy/Orca review, signing, rollback, stable artifacts,
+  and PR/Issue closure remain open.
+
 ## 2026-07-22 — Cross-repository completion gap audit
 
 Assumption: Linux remains the active implementation scope for this checkpoint; deterministic
