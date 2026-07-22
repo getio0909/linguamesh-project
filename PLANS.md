@@ -29,7 +29,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   head `4154aaef160a0578624f581063dbd62a29cadb79` pins Flatpak and documents the protocol boundary.
   Push Native/Flatpak/Foundation `29930209615`/`29930209070`/`29930209231` and PR
   `29930217543`/`29930215088`/`29930217498` all passed. PR #1 remains Draft/Open and Issue #1
-  remains Open; the release train stays `unreleased`.
+  remains Open; central synchronization `78f4724e6ccd976ded93765723013f02d8d4f847` passed
+  workflow `29930966325`; the release train stays `unreleased`.
 
 - [x] Add the Linux bundled open-source license-notices surface. Runtime `909083dee4c436d0f343785a4c95f1cda4207e35`
   adds a catalog-backed action and read-only focusable GTK dialog over `THIRD_PARTY_NOTICES.md`; l10n

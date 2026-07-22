@@ -17,6 +17,8 @@ installation or GUI integration.
   Native/Flatpak/Foundation runs `29930217543`/`29930215088`/`29930217498` all passed. PR #1
   remains Draft/Open/mergeable; Issue #1 remains Open; no merge, release, signing, or stable
   artifact promotion occurred.
+- Central synchronization commit `78f4724e6ccd976ded93765723013f02d8d4f847` passed coordination
+  workflow `29930966325` on Linux and PowerShell.
 
 ## 2026-07-22 — Linux bundled open-source notices checkpoint
 
