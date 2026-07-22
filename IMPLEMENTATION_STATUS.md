@@ -2,6 +2,27 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux GTK multi-document queue selection boundary
+
+Assumption: the production document-jobs dialog must expose each persisted job's identity and
+source metadata, and selecting one row must return that exact snapshot without cross-row state.
+
+- Linux runtime commit `c652232196f09ee9a2cbf69f7eaa9e01ca7672e7` adds the serialized ignored
+  fixture `gtk_document_jobs_dialog_selects_between_multiple_jobs`. It creates two persisted
+  snapshots (`first.txt` pending and `second.md` paused), opens the production dialog, asserts the
+  `2 files` summary and both filenames, clicks the second Select action, and verifies the selected
+  job ID, paused state, and source text before shutdown.
+- Packaging/CI commit `e21cd11e5d3518a8248bf95712cad55c6bef57ec` adds the dedicated DBus/Xvfb
+  Native step so this fixture is not merely ignored in the general test suite. Local formatting,
+  locked all-target/all-feature checks, strict Clippy, 157-pass demo-provider tests (3 ignored),
+  localization audits, l10n sync, Flatpak metadata, and diff checks passed. Push/PR Native,
+  Flatpak, and Foundation runs `29882794626`/`29882794606`/`29882794617` and
+  `29882796272`/`29882796303`/`29882796264` all passed; Native executed the exact fixture
+  successfully.
+
+This advances unreleased Linux queue evidence for Milestones 3 and 6. Human visual/copy/Orca
+review, other clients, signed artifacts, rollback authorization, and stable release remain open.
+
 ## 2026-07-22 — Linux GTK OOXML macro and signature import boundary
 
 Assumption: production GTK/GIO import must reject unsupported OOXML macro and digital-signature

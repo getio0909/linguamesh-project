@@ -24,6 +24,19 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Extend Linux document-job queue evidence through the production GTK selection boundary. Linux
+  runtime commit `c652232196f09ee9a2cbf69f7eaa9e01ca7672e7` adds the ignored serialized
+  `gtk_document_jobs_dialog_selects_between_multiple_jobs` fixture, which creates two persisted
+  jobs, asserts both filenames and metadata are visible in the real dialog, selects the second
+  row, and verifies the selected snapshot ID, paused state, and source text. Packaging/CI commit
+  `e21cd11e5d3518a8248bf95712cad55c6bef57ec` adds the dedicated DBus/Xvfb Native step. Local
+  formatting, locked all-target/all-feature check, strict Clippy, 157-pass demo-provider tests
+  (3 ignored), localization audits, l10n sync, Flatpak metadata, and diff checks passed. Push
+  Native/Flatpak/Foundation runs `29882794626`/`29882794606`/`29882794617` and PR runs
+  `29882796272`/`29882796303`/`29882796264` are the authoritative six-gate set and all passed;
+  Native executed the exact fixture successfully. This remains unreleased Linux evidence; human visual/copy/Orca
+  review, other clients, signing, rollback, and stable release remain open.
+
 - [x] Extend Linux Scenario 15 through the production GTK OOXML safety boundary. The serialized
   `gtk_malicious_archive_import_fails_closed_before_document_job` fixture now drives DOCX
   traversal, suspicious-compression, macro (`word/vbaProject.bin`), and digital-signature
