@@ -13,7 +13,8 @@ boundaries require manual or external evidence.
 - Central Issue #1 remains the single open coordination issue. It records the outstanding manual
   Secret Service/desktop review, physical VFS and power-loss coverage, cross-client work, signing,
   rollback authorization, and stable-release evidence. Triage comments were added to both records;
-  no merge, force-push, or release action was taken.
+  coordination workflow `29905044867` passed Linux and PowerShell validation; no merge, force-push,
+  or release action was taken.
 
 This checkpoint records GitHub state only and does not promote the unreleased Linux evidence.
 

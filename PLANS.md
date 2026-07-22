@@ -29,7 +29,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   and Foundation push/PR checks passed. The PR remains Draft/Open and mergeable. Central Issue #1
   remains Open for manual desktop approval/review, physical VFS and power-loss coverage,
   cross-client work, signing, rollback authorization, and stable-release evidence. Triage comments
-  are recorded on the PR and issue; no merge or release action was taken.
+  are recorded on the PR and issue; coordination workflow `29905044867` passed Linux and
+  PowerShell validation; no merge or release action was taken.
 
 - [x] Verify Linux prerelease checksum and SBOM evidence before artifact upload. Workflow head
   `48ccbca9523fb4c633e3d806c23104c34b5fa623` adds Native and Flatpak upload gates that re-check all
