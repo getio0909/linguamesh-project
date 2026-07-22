@@ -24,6 +24,21 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Verify the Linux Secret Service session-only recovery UX at the production GTK boundary.
+  Runtime test commit `64909399aa55de6b3dc70b69b46e01ae34bc0606` adds the serialized
+  `gtk_secret_storage_fallback_dialog_requires_explicit_session_only_action` fixture. It verifies
+  the localized modal warning, focusable controls, explicit Remember clearing only after the
+  session-only action, and unchanged Remember state on Close. Packaging/docs/status head
+  `804c72ac39bcfa1bdc4ba0127c9352db3bb2f396` pins the tested runtime and documents the
+  window-manager focus limitation. Local checks passed; the host lacks `xvfb-run`, so display
+  evidence is CI-authoritative. Push Native/Flatpak/Foundation runs
+  `29896626177`/`29896626188`/`29896626170` and PR runs
+  `29896629236`/`29896629228`/`29896629219` all passed, with Native executing the exact fixture
+  and the complete GTK, Secret Service, accessibility, release, and evidence suites. This closes
+  the automatable Linux recovery-UX boundary without claiming end-user prompt approval or visual
+  review; human review, non-local VFS/power-loss evidence, other clients, signing, rollback, and
+  stable release remain open.
+
 - [x] Close the Linux source-level visible-string gettext coverage gap. Linux head
   `31f3a874918aaf867b8d2434385157bff4a62877` passes the dependency-free key, placeholder, and
   visible-control audits: 390 catalog-backed source keys, 448 placeholder calls, and no non-empty
