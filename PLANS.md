@@ -35,7 +35,7 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29956431231`/`29956431233`, and Linux push Native/Flatpak/Foundation runs
   `29956837428`/`29956837112`/`29956837081` plus PR runs
   `29956840773`/`29956840966`/`29956840730` all passed. Central coordination workflow
-  `29957446384` also passed; release remains `unreleased`.
+  `29957596432` also passed; release remains `unreleased`.
 
 - [x] Close and remotely verify the Linux provider-project application wiring gap. Core
   `8717251375290cc3f825cee86d467ab1c60dd508` now forwards the persisted project value into both

@@ -22,7 +22,7 @@ proxy settings and secret custom headers remain outside this slice.
   Localization/Foundation runs `29956431231`/`29956431233`, and Linux push
   Native/Flatpak/Foundation runs `29956837428`/`29956837112`/`29956837081` plus pull-request
   runs `29956840773`/`29956840966`/`29956840730` all passed. Central coordination workflow
-  `29957446384` also passed. This is reproducible remote evidence; manual visual/copy/Orca review,
+  `29957596432` also passed. This is reproducible remote evidence; manual visual/copy/Orca review,
   live provider interoperability, other clients, signing, rollback, and stable-release acceptance
   remain open. Release remains `unreleased`.
 
