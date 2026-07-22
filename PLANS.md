@@ -30,7 +30,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   head `c2c1f24c872fdc7a314986376e399ce24788df68` records the corrected full Flatpak pin and local
   validation. Final push Native/Flatpak/Foundation `29928729926`/`29928727256`/`29928727822` and
   PR `29928731491`/`29928731735`/`29928730487` all passed. PR #1 remains Draft/Open and Issue #1
-  remains Open; release status stays `unreleased`.
+  remains Open; central synchronization commit `c9495526d46af65cd800cacd47883a6abd69f017` passed
+  coordination workflow `29929324598` on Linux and PowerShell; release status stays `unreleased`.
 
 - [x] Triage the Linux pull request and coordination issue. On 2026-07-22, Linux PR #1 had no
   submitted reviews, change requests, or unresolved threads; all six current-head Native, Flatpak,

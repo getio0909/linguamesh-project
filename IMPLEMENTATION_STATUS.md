@@ -19,6 +19,8 @@ Linux prerelease surface; rendering it must not fetch network content or expose 
   Native/Flatpak/Foundation runs `29928731491`/`29928731735`/`29928730487` all passed. PR #1
   remains Draft/Open/mergeable; Issue #1 remains Open; no merge, release, signing, or stable
   artifact promotion occurred.
+- Central synchronization commit `c9495526d46af65cd800cacd47883a6abd69f017` passed coordination
+  workflow `29929324598` on Linux and PowerShell validation jobs.
 
 This is unreleased Linux-first evidence. Human visual/copy/Orca review, end-user Secret Service
 approval, remote VFS/power-loss evidence, other clients, signing, rollback authorization, and
