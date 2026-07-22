@@ -2,6 +2,21 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — GitHub Linux-first PR and issue triage
+
+Assumption: an open draft PR with green gates should remain open when the remaining release
+boundaries require manual or external evidence.
+
+- Linux PR #1 has no submitted reviews, change requests, or unresolved review threads. Its six
+  current-head Native, Flatpak, and Foundation push/PR checks pass, and the PR remains Draft/Open
+  with a clean merge state.
+- Central Issue #1 remains the single open coordination issue. It records the outstanding manual
+  Secret Service/desktop review, physical VFS and power-loss coverage, cross-client work, signing,
+  rollback authorization, and stable-release evidence. Triage comments were added to both records;
+  no merge, force-push, or release action was taken.
+
+This checkpoint records GitHub state only and does not promote the unreleased Linux evidence.
+
 ## 2026-07-22 — Linux CI evidence integrity verification
 
 Assumption: prerelease evidence is useful only when uploaded checksum and SBOM sidecars are
