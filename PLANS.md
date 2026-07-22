@@ -24,6 +24,22 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Implement Linux collision-safe translation output naming. Runtime commits
+  `c8ff5be178d4f85709d8f6e4efe991dd180b3837` and
+  `193ca90b94302f7ae42e2b919576d2ffd68f0aae` derive
+  `<original-base-name>.<target-bcp47-tag>.<extension>`, sanitize path/control characters, carry
+  the persisted target locale through document export, select deterministic `-1`, `-2`, ...
+  collision suffixes, and expose the stable output identifier in reports. Packaging/status head
+  `56c71b21aedcefbf91ad64c85672d5436ca91a6f` pins the tested runtime input. Local formatting,
+  locked checks, strict Clippy, 157-pass demo-provider library tests (3 ignored), localization
+  audits, l10n sync, Flatpak metadata, and diff checks passed; the full-feature binary target is
+  linker-limited on this host by incomplete GTK/GDK/Graphene symbols. Final push
+  Native/Flatpak/Foundation `29890568417`/`29890568416`/`29890568445` and PR runs
+  `29890570161`/`29890570133`/`29890570165` all passed, with Native completing the full GTK,
+  release-build, checksum/SBOM, and performance-baseline suite. This remains unreleased Linux
+  evidence; human visual/copy/Orca review, other clients, signing, rollback, and stable release
+  remain open.
+
 - [x] Close the Linux production report-action evidence gap. Runtime/docs commit
   `e28981870563970549ca88c4faa691451ed710e7` extends the serialized
   `gtk_document_jobs_dialog_selects_between_multiple_jobs` fixture to require exactly one

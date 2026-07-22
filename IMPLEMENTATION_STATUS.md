@@ -2,6 +2,32 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux collision-safe translation output naming
+
+Assumption: the output contract applies to plain-text and persisted document exports, while the
+report export uses the same source/target stem with a `.report.tsv` suffix.
+
+- Runtime commits `c8ff5be178d4f85709d8f6e4efe991dd180b3837` and
+  `193ca90b94302f7ae42e2b919576d2ffd68f0aae` derive
+  `<original-base-name>.<target-bcp47-tag>.<extension>`, sanitize control characters and path
+  separators, carry the persisted document target locale through the worker event, and expose a
+  stable report output identifier with `und` fallback. Existing local destinations choose the
+  first deterministic `-1`, `-2`, ... sibling path instead of replacing any file; focused tests
+  cover multi-dot stems, hidden-file fallback, invalid names, unknown locales, and occupied
+  collision slots.
+- Linux status/packaging head `56c71b21aedcefbf91ad64c85672d5436ca91a6f` records the evidence.
+  Local formatting, locked checks, strict Clippy, demo-provider tests (`157 passed; 3 ignored`),
+  localization audits, l10n synchronization at `88765d3358450ccfac12f396caf5290230a83577`,
+  Flatpak metadata, and diff checks passed. The full-feature binary target is linker-limited on
+  this host by incomplete GTK/GDK/Graphene symbols; Native CI is authoritative for those fixtures.
+  Final push Native/Flatpak/Foundation runs `29890568417`/`29890568416`/`29890568445` and PR runs
+  `29890570161`/`29890570133`/`29890570165` all passed, with Native completing the full GTK,
+  release-build, checksum/SBOM, and performance-baseline suite.
+
+This advances unreleased Linux Milestones 3 and 6. Human visual/copy/Orca review, other clients,
+signed artifacts, rollback authorization, and stable release approval remain open; release status
+is `unreleased`.
+
 ## 2026-07-22 — Linux GTK document report action fixture
 
 Assumption: every persisted queue row must expose the same safe report action at the production
