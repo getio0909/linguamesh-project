@@ -24,6 +24,19 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Close the Linux translation-export race window. Runtime commit
+  `a48dafe259b794211ed2d1bec0a858b647dcd3d3` replaces plain-text, document-report, and binary
+  export replacement writes with GIO exclusive creation plus asynchronous write-and-close, so a
+  destination occupied after collision selection is preserved and the export fails closed.
+  Packaging/workflow commit `95a47ef6dcec45bb55feb967076cc2bfcb5f5919` adds the serialized GTK
+  `gtk_exclusive_output_writer_never_replaces_existing_file` fixture and pins the Flatpak source;
+  final status head `a6ddc4766a89f4ad9bf87df773d5f53ea4fa82dd` records the evidence. Local formatting,
+  locked checks, strict Clippy, demo-provider tests (`157 passed; 3 ignored`), Flatpak metadata,
+  and diff checks passed. Push Native/Flatpak/Foundation `29891347377`/`29891347329`/`29891347335`
+  and PR runs `29891349140`/`29891349152`/`29891349162` all passed, with Native executing the
+  exclusive fixture and the full release/evidence suite. This remains unreleased Linux evidence;
+  human visual/copy/Orca review, other clients, signing, rollback, and stable release remain open.
+
 - [x] Implement Linux collision-safe translation output naming. Runtime commits
   `c8ff5be178d4f85709d8f6e4efe991dd180b3837` and
   `193ca90b94302f7ae42e2b919576d2ffd68f0aae` derive
