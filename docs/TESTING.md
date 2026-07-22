@@ -41,7 +41,7 @@ Cross-repository conformance runs the same fake-provider scenarios against pinne
 
 The current Linux-first TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF document slice is pinned to Core
 `8b096478b1623bdaf5105e8a8f59e55e2fa8015d`, l10n `3724cc9d436ebdbac3b8ebf0df9bce9af1b41b15`, and
-Linux `909083dee4c436d0f343785a4c95f1cda4207e35`. Core CI `29784269272` and Native SDK
+Linux `74e817f07b5d386706999fdc66a21a357286af6c`. Core CI `29784269272` and Native SDK
 `29784269356` passed. Linux Native `29785377479`, Foundation `29785377513`, and Flatpak
 `29785377512` passed with jobs `88495671317`/`88495671975`/`88495671980` for the lease-enabled
 revision. Central coordination `29785760751` passed Linux/PowerShell jobs

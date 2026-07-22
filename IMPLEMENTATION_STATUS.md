@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux LM Studio-style compatibility checkpoint
+
+Assumption: LM Studio-style local servers satisfy the required generic OpenAI-compatible `/v1/`
+Chat Completions contract; the Linux fixture proves protocol behavior without claiming a desktop
+installation or GUI integration.
+
+- Linux runtime commit `74e817f07b5d386706999fdc66a21a357286af6c` adds
+  `lm_studio_style_openai_compatible_provider_translates_without_secret`, covering model discovery,
+  deliberate selection, streaming translation, and credential-free loopback operation.
+- Linux packaging/status commit `4154aaef160a0578624f581063dbd62a29cadb79` pins the Flatpak source
+  to that runtime checkpoint and records the protocol boundary in `README.md` and `docs/testing.md`.
+- Final push Native/Flatpak/Foundation runs `29930209615`/`29930209070`/`29930209231` and PR
+  Native/Flatpak/Foundation runs `29930217543`/`29930215088`/`29930217498` all passed. PR #1
+  remains Draft/Open/mergeable; Issue #1 remains Open; no merge, release, signing, or stable
+  artifact promotion occurred.
+
 ## 2026-07-22 — Linux bundled open-source notices checkpoint
 
 Assumption: the bundled `THIRD_PARTY_NOTICES.md` file is the authoritative legal text for this

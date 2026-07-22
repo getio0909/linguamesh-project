@@ -24,6 +24,13 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add explicit Linux evidence for LM Studio-style generic OpenAI compatibility. Runtime
+  `74e817f07b5d386706999fdc66a21a357286af6c` adds the deterministic `/v1/` fixture; packaging/status
+  head `4154aaef160a0578624f581063dbd62a29cadb79` pins Flatpak and documents the protocol boundary.
+  Push Native/Flatpak/Foundation `29930209615`/`29930209070`/`29930209231` and PR
+  `29930217543`/`29930215088`/`29930217498` all passed. PR #1 remains Draft/Open and Issue #1
+  remains Open; the release train stays `unreleased`.
+
 - [x] Add the Linux bundled open-source license-notices surface. Runtime `909083dee4c436d0f343785a4c95f1cda4207e35`
   adds a catalog-backed action and read-only focusable GTK dialog over `THIRD_PARTY_NOTICES.md`; l10n
   `3724cc9d436ebdbac3b8ebf0df9bce9af1b41b15` adds the action/dialog/tooltip labels. Status/packaging
