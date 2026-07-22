@@ -6,6 +6,18 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 ## Unreleased compatibility matrix
 
+### Linux provider profile organization checkpoint
+
+Core `1b8737bbad3d1bb6df7cd5c852d51838f72b9ca1` adds schema 20 optional bounded non-secret
+`ProviderProfile.organization`, with validation, persistence, and an OpenAI-compatible
+`OpenAI-Organization` request header for Chat Completions and Responses. Linux head
+`88114a7a08e814e6b75ee0fe0a5814573104fd08` binds and restores the localized field; l10n
+`94438a6a9ff8148cadad605c4760f88110d78984` contains 447 messages. Core and l10n checks passed;
+Linux push/PR Native, Flatpak, and Foundation gates
+`29946828234`/`29946829779`/`29946829000` and
+`29946831489`/`29946831590`/`29946832071` passed. This remains unreleased Linux-first evidence;
+other clients, human review, signing, rollback, and stable-release acceptance remain open.
+
 ### Linux provider profile notes checkpoint
 
 Core revision `072d6b92df875153a60a9d1256ab814891fe775b` adds schema 19 optional bounded

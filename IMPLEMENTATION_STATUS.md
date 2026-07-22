@@ -2,11 +2,29 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux provider organization checkpoint
+
+Assumption: `organization` is an optional bounded non-secret OpenAI-compatible routing/account
+identifier. Core forwards it only as `OpenAI-Organization` for Chat Completions and Responses;
+other adapters ignore it until their own contract is specified.
+
+- Core `1b8737bbad3d1bb6df7cd5c852d51838f72b9ca1` adds schema 20 persistence, validation, storage
+  round-trip coverage, and redacted debug metadata; CI/Fuzz/Native SDK runs
+  `29945917593`/`29945917625`/`29945917579` passed.
+- Linux head `88114a7a08e814e6b75ee0fe0a5814573104fd08` binds the localized GTK field, preserves it
+  through saved/runtime profiles, and pins Core/l10n/Flatpak inputs. l10n
+  `94438a6a9ff8148cadad605c4760f88110d78984` contains 447 messages; Localization/Foundation runs
+  `29945592293`/`29945590422` passed. Linux push Native/Flatpak/Foundation
+  `29946828234`/`29946829779`/`29946829000` and PR
+  `29946831489`/`29946831590`/`29946832071` are the final status-head gates.
+- PR #1 remains Draft/Open/mergeable and Issue #1 remains Open. Human visual/copy/Orca review,
+  physical VFS/power-loss, other clients, signing, rollback, and stable release remain open;
+  release status stays `unreleased`.
+
 ## 2026-07-22 — Linux provider profile notes checkpoint
 
 Assumption: the optional profile note is a bounded non-secret Linux-first slice of the global
-ProviderProfile contract; organization, region, proxy, and custom-header metadata remain separate
-follow-up work.
+ProviderProfile contract; region, proxy, and custom-header metadata remain separate follow-up work.
 
 - Core `072d6b92df875153a60a9d1256ab814891fe775b` adds schema 19 `user_notes` persistence with
   2 KiB and credential-shaped-value validation, redacted debug behavior, and round-trip tests.

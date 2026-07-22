@@ -30,6 +30,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
   and l10n `6aa074e48058bb411d09b2783cd27ba415dc7c55` are published; Core/l10n CI and all six
   Linux Native/Flatpak/Foundation push/PR gates passed.
 
+- [x] Add the Linux-first ProviderProfile organization slice. Core `1b8737bbad3d1bb6df7cd5c852d51838f72b9ca1`
+  persists bounded non-secret `organization` metadata in schema 20 and sends it only as the
+  `OpenAI-Organization` header for Chat/Responses; Linux/l10n head `88114a7a08e814e6b75ee0fe0a5814573104fd08`/
+  `94438a6a9ff8148cadad605c4760f88110d78984` binds the GTK field and 447-message catalog. Final
+  Linux push Native/Flatpak/Foundation `29946828234`/`29946829779`/`29946829000` and PR
+  `29946831489`/`29946831590`/`29946832071` passed; PR #1 remains Draft/Open and the release train
+  remains `unreleased`.
+
 - [x] Add the Linux About compatibility dialog and final CI evidence. Runtime/packaging head
   `0d7b3927fb98e461317feaefeb4c806676e6acc0`, l10n `a65a327a8418332e50d9ab302fca24508e7266ef`,
   and final status head `b71e209` passed local Linux checks plus push Native/Flatpak/Foundation
