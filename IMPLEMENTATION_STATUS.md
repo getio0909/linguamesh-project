@@ -12,11 +12,11 @@ Linux prerelease surface; rendering it must not fetch network content or expose 
   file. The regression requires representative `GTK 4`, `LGPL-2.1-or-later`, `MIT`, and `LinguaMesh
   Core` entries; l10n revision `3724cc9d436ebdbac3b8ebf0df9bce9af1b41b15` supplies the action/dialog/
   tooltip labels.
-- Linux status/packaging head `73438f5a3faf044edc1ffe02de8ad1595b5a4e61` records the corrected
+- Linux status/packaging head `c2c1f24c872fdc7a314986376e399ce24788df68` records the corrected
   Flatpak source pin and the superseded stale-hash attempt. Local format, GUI check, localization
   key/placeholder/visible audits, l10n synchronization, Flatpak metadata, and diff checks passed.
-- Final push Native/Flatpak/Foundation runs `29927296292`/`29927295801`/`29927295513` and PR
-  Native/Flatpak/Foundation runs `29927302247`/`29927302376`/`29927302257` all passed. PR #1
+- Final push Native/Flatpak/Foundation runs `29928729926`/`29928727256`/`29928727822` and PR
+  Native/Flatpak/Foundation runs `29928731491`/`29928731735`/`29928730487` all passed. PR #1
   remains Draft/Open/mergeable; Issue #1 remains Open; no merge, release, signing, or stable
   artifact promotion occurred.
 

@@ -27,9 +27,9 @@ Assumption: Planned files and commands are not evidence until they exist and com
 - [x] Add the Linux bundled open-source license-notices surface. Runtime `909083dee4c436d0f343785a4c95f1cda4207e35`
   adds a catalog-backed action and read-only focusable GTK dialog over `THIRD_PARTY_NOTICES.md`; l10n
   `3724cc9d436ebdbac3b8ebf0df9bce9af1b41b15` adds the action/dialog/tooltip labels. Status/packaging
-  head `73438f5a3faf044edc1ffe02de8ad1595b5a4e61` records the corrected full Flatpak pin and local
-  validation. Final push Native/Flatpak/Foundation `29927296292`/`29927295801`/`29927295513` and
-  PR `29927302247`/`29927302376`/`29927302257` all passed. PR #1 remains Draft/Open and Issue #1
+  head `c2c1f24c872fdc7a314986376e399ce24788df68` records the corrected full Flatpak pin and local
+  validation. Final push Native/Flatpak/Foundation `29928729926`/`29928727256`/`29928727822` and
+  PR `29928731491`/`29928731735`/`29928730487` all passed. PR #1 remains Draft/Open and Issue #1
   remains Open; release status stays `unreleased`.
 
 - [x] Triage the Linux pull request and coordination issue. On 2026-07-22, Linux PR #1 had no
