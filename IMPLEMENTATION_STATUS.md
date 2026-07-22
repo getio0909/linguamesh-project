@@ -1,6 +1,31 @@
 # Implementation Status
 
-Last updated: 2026-07-21
+Last updated: 2026-07-22
+
+## 2026-07-22 — Linux GTK malicious archive import boundary
+
+Assumption: Scenario 15 requires the production asynchronous GTK/GIO import path to reject
+traversal and suspicious compression while keeping a fixed error visible after UI refresh and before
+any document job or extracted content is created.
+
+- Linux runtime code `acb15c2b17bc58f311a31edd57f8793fb7f90e7f` adds
+  `gtk_malicious_archive_import_fails_closed_before_document_job`. The serialized fixture drives
+  DOCX archives containing `../outside.txt` and a highly compressed repetitive entry through
+  `load_source_file`, and verifies fixed rejection, no document-job ID, an empty source editor, and
+  no forbidden extracted filename. The loader fix preserves the visible error instead of clearing it
+  during the final UI refresh.
+- Local formatting, locked all-target/all-feature checks, strict Clippy, no-default/demo-provider
+  suites (`83 passed; 1 ignored` and `157 passed; 3 ignored`), localization audits, l10n sync,
+  Flatpak metadata, diff checks, and cargo-deny passed. The host lacks `xvfb-run` and matching GTK
+  development symbols, so display-backed execution is CI-authoritative.
+- Final Linux status/docs head `2900f19c1fe70b184e2d5fd2de1c40627c26a80f` passed push
+  Native/Flatpak/Foundation `29880789834`/`29880789824`/`29880789819` and PR
+  Native/Flatpak/Foundation `29880792162`/`29880792135`/`29880792142`; Native reports the exact
+  malicious-archive fixture successful.
+
+This advances unreleased Linux evidence for Scenario 15. Macro/signature review, human desktop and
+Orca review, other clients, signed artifacts, rollback authorization, and stable release remain
+open.
 
 ## 2026-07-21 — Linux GTK Incognito privacy boundary
 

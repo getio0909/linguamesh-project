@@ -24,6 +24,18 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Extend Linux Scenario 15 through the production GTK malicious-archive boundary. Linux
+  runtime code `acb15c2b17bc58f311a31edd57f8793fb7f90e7f` adds the serialized
+  `gtk_malicious_archive_import_fails_closed_before_document_job` fixture and feeds the real
+  asynchronous GIO loader DOCX archives containing a `../outside.txt` traversal entry and a highly
+  compressed repetitive resource, then verifies fixed rejection remains visible, no document-job
+  snapshot, an unchanged source editor, and no forbidden extraction. Local locked checks, strict Clippy,
+  no-default/demo-provider suites (`83/1` and `157/3` ignored), localization audits, l10n sync,
+  Flatpak metadata, diff checks, and cargo-deny passed; display-backed execution is CI-authoritative
+  because this host lacks xvfb/GTK development symbols. Final packaging/status head `2900f19c1fe70b184e2d5fd2de1c40627c26a80f` pins Flatpak to the runtime fix; push
+  Native/Flatpak/Foundation `29880789834`/`29880789824`/`29880789819` and PR
+  `29880792162`/`29880792135`/`29880792142` passed. This remains unreleased Linux evidence.
+
 - [x] Extend Linux Scenario 14 through the production GTK Incognito privacy boundary.
   Linux runtime code `47bbe58bf16ecac11976828575c5964f511198fb` adds the serialized
   `gtk_incognito_translation_bypasses_memory_and_persistence` fixture. It drives the GTK Incognito
