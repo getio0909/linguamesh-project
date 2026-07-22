@@ -6,6 +6,19 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 ## Unreleased compatibility matrix
 
+### Linux provider profile project application wiring correction
+
+Core `8717251375290cc3f825cee86d467ab1c60dd508` corrects the application-layer construction of
+both OpenAI Chat Completions and Responses configurations so persisted `ProviderProfile.project`
+is forwarded as `OpenAI-Project`. Header-enforced Chat and Responses regressions passed locally;
+Core CI/Fuzz/Native SDK runs `29953260332`/`29953260318`/`29953260372` passed. Linux code head
+`69b2d4510c51e9f34d7807687e6536ec411b1611` consumes that Core revision with l10n
+`ec538de57c1edc198fa13d3dfc1de576ee9b2c12`; final status head
+`ec4b32d7dd0efd6d00d27d3a60750307b9c6ff31` passed Linux push/PR Native, Flatpak, and Foundation
+gates `29954097684`/`29954097694`/`29954097748` and `29954100960`/`29954102119`/`29954100976`.
+This corrects the earlier project persistence checkpoint; release remains `unreleased` and
+other clients, human review, signing, rollback, and stable-release acceptance remain open.
+
 ### Linux provider profile region/account checkpoint
 
 Core `158ade12cf1e3284d4b8a0883e771dd62abcff97` adds schema 22 optional bounded non-secret

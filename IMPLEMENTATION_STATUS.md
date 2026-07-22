@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux provider-project application wiring correction
+
+Assumption: persisted non-secret `project` metadata must reach both OpenAI-compatible Chat
+Completions and Responses requests; storage and adapter-level support alone are insufficient.
+
+- Core correction `8717251375290cc3f825cee86d467ab1c60dd508` forwards
+  `ProviderProfile.project` through `ProviderManager` into both adapter configurations. Core's
+  header-enforced Chat and Responses regressions passed locally; workspace tests and strict
+  all-feature Clippy passed. Remote CI/Fuzz/Native SDK runs
+  `29953260332`/`29953260318`/`29953260372` passed.
+- Linux code head `69b2d4510c51e9f34d7807687e6536ec411b1611` repins Core and retains l10n
+  `ec538de57c1edc198fa13d3dfc1de576ee9b2c12`. Local formatting, GUI checks, strict Clippy,
+  demo-provider tests (`158 passed; 3 ignored`), l10n synchronization, Flatpak metadata, and
+  diff checks passed. Final status head `ec4b32d7dd0efd6d00d27d3a60750307b9c6ff31` passed push
+  Native/Flatpak/Foundation `29954097684`/`29954097694`/`29954097748` and pull-request
+  Native/Flatpak/Foundation `29954100960`/`29954102119`/`29954100976`. Release remains
+  `unreleased`; PR #1 stays Draft/Open and Issue #1 stays Open.
+
 ## 2026-07-22 — Linux provider region/account checkpoint
 
 Assumption: `region` and `account_identifier` are optional bounded, non-secret provider metadata;

@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Close and remotely verify the Linux provider-project application wiring gap. Core
+  `8717251375290cc3f825cee86d467ab1c60dd508` now forwards the persisted project value into both
+  OpenAI Chat and Responses adapters, with header-enforced application regressions and full
+  workspace validation passing locally. Linux code head `69b2d4510c51e9f34d7807687e6536ec411b1611`
+  and final status head `ec4b32d7dd0efd6d00d27d3a60750307b9c6ff31` passed all six Native/Flatpak/
+  Foundation push/PR gates (`29954097684`/`29954097694`/`29954097748` and
+  `29954100960`/`29954102119`/`29954100976`). Release remains `unreleased`.
+
 - [x] Add the Linux-first ProviderProfile notes slice to the central compatibility record after
   remote Linux gates complete. Core `072d6b92df875153a60a9d1256ab814891fe775b`, Linux runtime/
   packaging `eaa9dc3e6bf07222fe3b2da5c078d39e9419b88d`, final status `3c1a4ad5e9f8d8ae613c5b2f8aa447d057212de0`,
