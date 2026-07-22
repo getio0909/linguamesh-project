@@ -31,8 +31,8 @@ older clients omit them, while native clients validate bounded metadata before a
 - Core CI/Fuzz/Native SDK `29961301539`/`29961301501`/`29961301583` and Linux push/PR
   Native/Flatpak/Foundation `29961456792`/`29961456832`/`29961456791` and
   `29961459180`/`29961459196`/`29961459185` passed. Other-client integration, human review,
-  signing, rollback, and stable release remain open. Central coordination workflow
-  `29961593831` passed the synchronized manifest and documentation head.
+  signing, rollback, and stable release remain open. Central coordination workflows
+  `29961593831` and `29961793515` passed the synchronized manifest and documentation head.
 
 ## 2026-07-22 — Linux Azure custom-header application wiring
 
