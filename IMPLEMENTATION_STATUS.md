@@ -19,7 +19,8 @@ the existing credential boundary and never restores Secret Service contents into
 - Linux push Native/Flatpak/Foundation runs `29965156891`/`29965156910`/`29965156886` and PR runs
   `29965159879`/`29965159874`/`29965159952` passed for the exact head. The release remains
   `unreleased`; other clients, human visual/copy/Orca review, signing, rollback, stable artifacts,
-  and PR/Issue closure remain open.
+  and PR/Issue closure remain open. Central coordination validation `29965562185` passed for the
+  synchronized manifest and documentation head.
 
 ## 2026-07-22 — Cross-repository completion gap audit
 
