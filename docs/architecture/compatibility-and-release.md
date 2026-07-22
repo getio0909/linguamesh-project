@@ -10,7 +10,7 @@ A breaking ABI change requires an RFC, ADR, new ABI major, regenerated bindings,
 
 The current unreleased matrix pins Core functional revision
 `8b096478b1623bdaf5105e8a8f59e55e2fa8015d` and Linux functional revision
-`f95780db3dd05fdccfe47af254f73c5107587077`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
+`909083dee4c436d0f343785a4c95f1cda4207e35`, both at `0.1.0-alpha.2`, ABI 1, and wire protocol 1.
 Native clients query `CompatibilitySnapshot` through `lm_engine_get_compatibility` before provider
 work. Core advertises `file_lease_v1`; Linux validates the lease around portal/GIO document reads,
 while ABI handle transfer and lease-control calls remain unprojected.

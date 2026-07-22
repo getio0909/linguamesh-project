@@ -2,6 +2,28 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux bundled open-source notices checkpoint
+
+Assumption: the bundled `THIRD_PARTY_NOTICES.md` file is the authoritative legal text for this
+Linux prerelease surface; rendering it must not fetch network content or expose privileged state.
+
+- Linux runtime commit `909083dee4c436d0f343785a4c95f1cda4207e35` adds a catalog-backed
+  **Open-source licenses** action and a focusable, read-only GTK dialog backed by the bundled notice
+  file. The regression requires representative `GTK 4`, `LGPL-2.1-or-later`, `MIT`, and `LinguaMesh
+  Core` entries; l10n revision `3724cc9d436ebdbac3b8ebf0df9bce9af1b41b15` supplies the action/dialog/
+  tooltip labels.
+- Linux status/packaging head `73438f5a3faf044edc1ffe02de8ad1595b5a4e61` records the corrected
+  Flatpak source pin and the superseded stale-hash attempt. Local format, GUI check, localization
+  key/placeholder/visible audits, l10n synchronization, Flatpak metadata, and diff checks passed.
+- Final push Native/Flatpak/Foundation runs `29927296292`/`29927295801`/`29927295513` and PR
+  Native/Flatpak/Foundation runs `29927302247`/`29927302376`/`29927302257` all passed. PR #1
+  remains Draft/Open/mergeable; Issue #1 remains Open; no merge, release, signing, or stable
+  artifact promotion occurred.
+
+This is unreleased Linux-first evidence. Human visual/copy/Orca review, end-user Secret Service
+approval, remote VFS/power-loss evidence, other clients, signing, rollback authorization, and
+stable-release acceptance remain open.
+
 ## 2026-07-22 — GitHub Linux-first PR and issue triage
 
 Assumption: an open draft PR with green gates should remain open when the remaining release

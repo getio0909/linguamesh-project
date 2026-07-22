@@ -3,6 +3,7 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
+  "Linux bundled open-source license notices are verified at runtime `909083dee4c436d0f343785a4c95f1cda4207e35`, localization `3724cc9d436ebdbac3b8ebf0df9bce9af1b41b15`, and documentation/status head `73438f5a3faf044edc1ffe02de8ad1595b5a4e61`. The GTK action opens a focusable read-only dialog backed by bundled `THIRD_PARTY_NOTICES.md`; the regression requires representative GTK 4, LGPL-2.1-or-later, MIT, and LinguaMesh Core entries. Local formatting, locked GUI check, localization audits, l10n synchronization, Flatpak metadata, and diff checks passed. Corrected push Native/Flatpak/Foundation `29927296292`/`29927295801`/`29927295513` and PR `29927302247`/`29927302376`/`29927302257` all passed. The first Flatpak pin attempt `29926503929`/`29926504980` failed on a non-existent source hash and was superseded by the corrected pin; release remains `unreleased` and no stable artifact was promoted.",
   "Linux prerelease evidence integrity is verified by workflow head `48ccbca9523fb4c633e3d806c23104c34b5fa623` and documentation/status head `3bd2c7a0b9cae2e7de55b700e7863b9fcf3805ff`. Native and Flatpak jobs re-check every SHA256SUMS entry and parse SPDX JSON before upload; the Native source archive checksum uses an evidence-directory-relative path. Initial Native path attempts `29902104277`/`29902106668` failed at the new check and were corrected; final push Native/Flatpak/Foundation `29903015347`/`29903015532`/`29903015352` and PR `29903018444`/`29903018422`/`29903018395` passed. Evidence remains unsigned prerelease material; signing, distributable promotion, rollback, and stable release remain open; status remains `unreleased`.",
   "Linux document-report body redaction is verified at runtime regression `89de426c6fcfce77a395fc066017c01a5bb7c247` and packaging/docs head `b50a69a61436535e196e2d8f5c997f491e726c74`. The report test rejects translated and pending source-segment bodies while retaining deterministic local usage metadata. Local checks passed. Push Native/Flatpak/Foundation `29901156887`/`29901156926`/`29901156939` and PR `29901160007`/`29901159988`/`29901160074` all passed, including the full Native GTK, accessibility, release, checksum/SBOM, and performance suites. Provider-reported usage, retry history, human visual/copy/Orca review, other clients, signing, rollback, and stable release remain open; status remains `unreleased`.",
   "Linux document report usage is verified at runtime `ae4750beec1d9aa1c2d53c96754a6ca5a4e55c66` and packaging/docs head `130dc051e61250ff6c029afedb490f4eea4863b9`. Persisted source/translated segment lengths produce a bounded, non-sensitive local usage JSON object; source text, credentials, and paths are excluded, while `retried_count` remains explicit `unknown` because attempt history is not persisted. Local checks passed. Push Native/Flatpak/Foundation `29899915398`/`29899915416`/`29899915427` and PR `29899917681`/`29899917650`/`29899917663` all passed, including the full Native GTK, accessibility, release, checksum/SBOM, and performance suites. Provider-reported usage, human visual/copy/Orca review, other clients, signing, rollback, and stable release remain open; status remains `unreleased`.",
@@ -99,7 +100,7 @@ artifacts = []
 [components.localization]
 repository = "linguamesh-l10n"
 version = "0.1.0"
-source_revision = "88765d3358450ccfac12f396caf5290230a83577"
+source_revision = "3724cc9d436ebdbac3b8ebf0df9bce9af1b41b15"
 minimum_compatible_version = "0.1.0"
 artifacts = []
 
@@ -127,6 +128,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "ae4750beec1d9aa1c2d53c96754a6ca5a4e55c66"
+source_revision = "909083dee4c436d0f343785a4c95f1cda4207e35"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

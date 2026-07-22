@@ -40,8 +40,8 @@ Every code repository owns format, lint, unit, integration, security, packaging,
 Cross-repository conformance runs the same fake-provider scenarios against pinned SDK/client versions. Tests and checkboxes count only when their scope covers the claimed behavior.
 
 The current Linux-first TXT/Markdown/CSV/JSON/HTML/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF document slice is pinned to Core
-`8b096478b1623bdaf5105e8a8f59e55e2fa8015d`, l10n `737d890e60fd34f15fd8708698448ef9ab96299f`, and
-Linux `f95780db3dd05fdccfe47af254f73c5107587077`. Core CI `29784269272` and Native SDK
+`8b096478b1623bdaf5105e8a8f59e55e2fa8015d`, l10n `3724cc9d436ebdbac3b8ebf0df9bce9af1b41b15`, and
+Linux `909083dee4c436d0f343785a4c95f1cda4207e35`. Core CI `29784269272` and Native SDK
 `29784269356` passed. Linux Native `29785377479`, Foundation `29785377513`, and Flatpak
 `29785377512` passed with jobs `88495671317`/`88495671975`/`88495671980` for the lease-enabled
 revision. Central coordination `29785760751` passed Linux/PowerShell jobs
