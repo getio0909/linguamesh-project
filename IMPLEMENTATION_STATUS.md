@@ -16,12 +16,12 @@ or translation content.
   (`158 passed; 3 ignored`), localization audits, Flatpak metadata, and `git diff --check` passed.
   The host full-feature GUI link remains limited by missing GTK4/GDK/Graphene symbols; CI supplies
   the executable GUI evidence.
-- Final status head `b227502` passed push Native/Flatpak/Foundation
-  `29939078035`/`29939076992`/`29939076888` and PR Native/Flatpak/Foundation
-  `29939078893`/`29939080507`/`29939080561`, including About, accessibility, release,
-  checksum/SBOM, performance, Flatpak sandbox, and localization checks. The earlier GTK mnemonic
-  assertion failure `29937509002` and stale-pin Flatpak failure `29937961470` are superseded by
-  corrected commits `b2627ae` and `0d7b392`.
+- Final status head `b71e209` passed push Native/Flatpak/Foundation
+  `29939876568`/`29939877021`/`29939876501` and PR Native/Flatpak/Foundation
+  `29939879474`/`29939879969`/`29939879856`, including About, accessibility, release,
+  checksum/SBOM, performance, Flatpak sandbox, and localization checks. The earlier l10n-pin
+  failure `29937178278`, GTK mnemonic assertion failure `29937509002`, and stale-pin Flatpak
+  failure `29937961470` are superseded by corrected commits `c0a989f`, `b2627ae`, and `0d7b392`.
 - Linux PR #1 remains Draft/Open/mergeable with no submitted reviews or unresolved threads;
   Central Issue #1 remains Open. Human visual/copy/Orca review, physical VFS/power-loss evidence,
   signing, rollback authorization, and stable-release acceptance remain open; release status stays

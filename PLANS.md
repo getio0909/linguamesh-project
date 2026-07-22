@@ -26,12 +26,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 - [x] Add the Linux About compatibility dialog and final CI evidence. Runtime/packaging head
   `0d7b3927fb98e461317feaefeb4c806676e6acc0`, l10n `a65a327a8418332e50d9ab302fca24508e7266ef`,
-  and status head `b227502` passed local Linux checks plus push Native/Flatpak/Foundation
-  `29939078035`/`29939076992`/`29939076888` and PR
-  `29939078893`/`29939080507`/`29939080561`. The localized read-only dialog exposes only app
-  version and Core semantic version/ABI/protocol compatibility. The initial GTK mnemonic failure
-  and stale Flatpak pin are recorded as superseded; PR #1 remains Draft/Open and release status is
-  `unreleased`.
+  and final status head `b71e209` passed local Linux checks plus push Native/Flatpak/Foundation
+  `29939876568`/`29939877021`/`29939876501` and PR
+  `29939879474`/`29939879969`/`29939879856`. The localized read-only dialog exposes only app
+  version and Core semantic version/ABI/protocol compatibility. The l10n-pin, GTK mnemonic, and
+  stale Flatpak pin failures are recorded as superseded; PR #1 remains Draft/Open and release
+  status is `unreleased`.
 
 - [x] Refresh the Linux current-head regression evidence after the approved-fallback checkpoint.
   Linux runtime/packaging head `4154aaef160a0578624f581063dbd62a29cadb79` and status head
@@ -3279,12 +3279,12 @@ At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs
 
 - 2026-07-22: Assumption: the Linux About surface should expose only localized, read-only app and
   shared-Core compatibility fields. Runtime/packaging `0d7b3927fb98e461317feaefeb4c806676e6acc0`,
-  l10n `a65a327a8418332e50d9ab302fca24508e7266ef`, and status head `b227502` passed local checks
-  and final push/PR Native, Flatpak, and Foundation gates
-  `29939078035`/`29939076992`/`29939076888` and
-  `29939078893`/`29939080507`/`29939080561`. The mnemonic assertion and stale Flatpak pin
-  failures are retained as superseded evidence; PR #1 remains Draft/Open and release status stays
-  `unreleased`.
+  l10n `a65a327a8418332e50d9ab302fca24508e7266ef`, and final status head `b71e209` passed local
+  checks and final push/PR Native, Flatpak, and Foundation gates
+  `29939876568`/`29939877021`/`29939876501` and
+  `29939879474`/`29939879969`/`29939879856`. The l10n-pin, mnemonic assertion, and stale Flatpak
+  pin failures are retained as superseded evidence; PR #1 remains Draft/Open and release status
+  stays `unreleased`.
 
 - 2026-07-22: Assumption: Android can advance as a prerelease preparation slice without displacing
   the user's Linux-first priority. Android `afe7a566bac77a16243f70295d17a4d9cab1151f` pins Core
