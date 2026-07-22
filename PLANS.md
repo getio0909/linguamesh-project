@@ -24,6 +24,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Verify Linux prerelease checksum and SBOM evidence before artifact upload. Workflow head
+  `48ccbca9523fb4c633e3d806c23104c34b5fa623` adds Native and Flatpak upload gates that re-check all
+  `SHA256SUMS` entries and parse SPDX JSON; the Native source archive checksum is normalized to the
+  evidence directory. Documentation/status head `3bd2c7a0b9cae2e7de55b700e7863b9fcf3805ff` records
+  the correction. The first two Native path attempts failed honestly (`29902104277`/`29902106668`);
+  final push Native/Flatpak/Foundation `29903015347`/`29903015532`/`29903015352` and PR
+  `29903018444`/`29903018422`/`29903018395` all passed. Artifacts remain unsigned prerelease
+  evidence; PR #1 remains Draft/Open and Issue #1 remains Open.
+
 - [x] Strengthen Linux document-report body redaction evidence. Runtime regression commit
   `89de426c6fcfce77a395fc066017c01a5bb7c247` explicitly asserts that translated and pending source
   segment bodies do not appear in the report, alongside the deterministic local usage JSON check.

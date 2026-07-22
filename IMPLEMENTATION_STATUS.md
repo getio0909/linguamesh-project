@@ -2,6 +2,23 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux CI evidence integrity verification
+
+Assumption: prerelease evidence is useful only when uploaded checksum and SBOM sidecars are
+validated in the same job that produced them; this does not replace signing or release approval.
+
+- Linux workflow head `48ccbca9523fb4c633e3d806c23104c34b5fa623` verifies every `SHA256SUMS` entry
+  and parses `SBOM.spdx.json` before Native or Flatpak evidence upload. The Native source archive
+  checksum is written with an evidence-directory-relative name.
+- Documentation/status head `3bd2c7a0b9cae2e7de55b700e7863b9fcf3805ff` records the initial path
+  failures and correction. Final push Native/Flatpak/Foundation `29903015347`/`29903015532`/
+  `29903015352` and PR `29903018444`/`29903018422`/`29903018395` all passed; Native completed the
+  full GTK, accessibility, release, checksum/SBOM, and performance suites.
+
+This strengthens unreleased Linux Milestone 8 artifact evidence. Sidecars remain unsigned CI
+prerelease evidence; signing, distributable promotion, rollback authorization, and stable release
+approval remain open. PR #1 remains Draft/Open and Issue #1 remains Open.
+
 ## 2026-07-22 — Linux document-report body redaction regression
 
 Assumption: report redaction must be protected against future changes that accidentally serialize
