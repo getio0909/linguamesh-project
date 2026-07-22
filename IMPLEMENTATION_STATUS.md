@@ -7,11 +7,12 @@ Last updated: 2026-07-22
 Assumption: the Linux status-only checkpoint records reproducible evidence for the published
 source head without promoting an unsigned artifact or changing the draft PR/release posture.
 
-- Linux status head `ad46609159c830579551923228211414450df130` records local `cargo fmt --check`,
+- Linux runtime/packaging head `4154aaef160a0578624f581063dbd62a29cadb79` and status head
+  `3ef694d97caab7de8f98eac177d77ed29fe2a40c` record local `cargo fmt --check`,
   GUI all-target checks, locked offline demo-provider tests (`158 passed; 3 ignored`), strict
   Clippy, l10n synchronization, Flatpak metadata validation, and `git diff --check` results.
-- Push Native/Flatpak/Foundation runs `29934332522`/`29934332455`/`29934332613` passed. PR
-  Native/Flatpak/Foundation runs `29934338922`/`29934338014`/`29934336973` also passed, including
+- Push Native/Flatpak/Foundation runs `29935017464`/`29935017253`/`29935017458` passed. PR
+  Native/Flatpak/Foundation runs `29935021969`/`29935020280`/`29935020571` also passed, including
   the full GTK, portal, accessibility, release, checksum/SBOM, and performance suites.
 - Linux PR #1 remains Draft/Open/mergeable; Central Issue #1 remains Open. Human visual/copy/Orca
   review, physical VFS and power-loss evidence, signing, rollback authorization, and stable
