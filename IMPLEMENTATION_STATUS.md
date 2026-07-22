@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux provider proxy settings
+
+Assumption: proxy authentication is intentionally out of scope; only bounded non-secret proxy
+URLs without embedded credentials are supported in the Linux-first slice.
+
+- Core `7a9da3f467c5dec539dd8f7850b90b54ae712331` adds schema 25 `proxy_url` validation,
+  persistence, and transport wiring for OpenAI Chat/Responses/Azure, Anthropic, Gemini, and
+  Ollama. Debug output exposes only whether a proxy is configured.
+- l10n `bba90a89089c954bdfe1dcda19c210e6ea230b9e` regenerates the 465-message bundle. Linux
+  `c03535f82f07ed10c273fb250654c984540ed935` adds the localized GTK field and repins Native and
+  Flatpak inputs. Local Linux checks passed formatting, locked all-target check, strict Clippy,
+  `159 passed; 3 ignored` demo-provider tests, localization audits, l10n synchronization,
+  Flatpak metadata validation, and `git diff --check`.
+- Core CI/Fuzz/Native SDK runs `29966758398`/`29966758388`/`29966758389` passed. Linux
+  push Native/Flatpak/Foundation runs `29966869662`/`29966869643`/`29966869658` and PR
+  Native/Flatpak/Foundation runs `29966872082`/`29966872046`/`29966872048` all passed for the
+  exact head.
+  Release remains `unreleased`; proxy authentication, other clients, human review, signing,
+  rollback, stable artifacts, and PR/Issue closure remain open.
+
 ## 2026-07-22 — Linux secret custom-header GTK onboarding
 
 Assumption: Linux remains the active implementation scope; the masked secret-header field follows

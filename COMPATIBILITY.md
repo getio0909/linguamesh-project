@@ -6,6 +6,21 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 ## Unreleased compatibility matrix
 
+### Linux-first provider proxy settings
+
+Core `7a9da3f467c5dec539dd8f7850b90b54ae712331` adds schema 25 persistence for an optional,
+bounded non-secret `ProviderProfile.proxy_url`. Linux `c03535f82f07ed10c273fb250654c984540ed935`
+adds the localized GTK field and pins Core/l10n in Native and Flatpak metadata; l10n
+`bba90a89089c954bdfe1dcda19c210e6ea230b9e` supplies the 465-message bundle. Supported
+schemes are HTTP, HTTPS, SOCKS5, and SOCKS5H. Userinfo, credentials, query strings, and non-root
+paths are rejected before persistence. Core applies the URL to OpenAI Chat/Responses/Azure,
+Anthropic, Gemini, and Ollama transports without emitting the value in diagnostics. Local Core
+workspace tests and strict Clippy, Linux locked checks/tests (`159 passed; 3 ignored`), l10n
+audits/synchronization, and Flatpak metadata validation passed. Linux push/PR Native, Flatpak, and
+Foundation runs are `29966869662`/`29966869643`/`29966869658` and
+`29966872082`/`29966872046`/`29966872048`, all passed for the exact Linux head. Proxy authentication, other clients, human review, signing, rollback,
+and stable release remain open; status stays `unreleased`.
+
 ### Linux-first secret custom-header references
 
 Core `28baaa2f85bb70b4fc6ecc4c07566e7004a659c5` adds schema 24 persistence for an optional

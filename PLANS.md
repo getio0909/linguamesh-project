@@ -24,6 +24,17 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Implement the Linux-first bounded provider proxy settings slice. Core
+  `7a9da3f467c5dec539dd8f7850b90b54ae712331` adds schema 25 persistence and applies validated
+  HTTP/HTTPS/SOCKS5/SOCKS5H URLs to all four provider transport families; l10n
+  `bba90a89089c954bdfe1dcda19c210e6ea230b9e` adds the 465-message bundle; Linux
+  `c03535f82f07ed10c273fb250654c984540ed935` adds GTK onboarding and exact source pins. Local
+  Core/Linux/l10n/Flatpak checks passed. Core CI/Fuzz/Native SDK
+  `29966758398`/`29966758388`/`29966758389` and Linux push Native/Flatpak/Foundation
+  `29966869662`/`29966869643`/`29966869658` plus PR
+  `29966872082`/`29966872046`/`29966872048` all passed. Proxy auth, cross-client parity, manual
+  review, signing, rollback, and stable release remain open.
+
 - [x] Complete the Linux secret custom-header GTK onboarding slice. l10n
   `32397a72c267677f04419a5084514f025f94a0bc` adds the three Linux messages and regenerates the
   462-message bundle. Linux `e52a43cb361c5a395aa4e8ecd4d8d5252192d384` adds masked input,
