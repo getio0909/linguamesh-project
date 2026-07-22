@@ -2,6 +2,28 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux non-local GIO export policy guard
+
+Assumption: a non-local destination URI must retain the exclusive-create safety boundary because
+the Linux client cannot verify a local parent directory or atomic rename-capable VFS.
+
+- Linux runtime `54003159107919f5c9c55b4637aa45054d457c4d` makes the `ExportWriteStrategy` split
+  explicit. Local paths with a parent use same-directory temporary finalization; non-local or
+  parentless URIs use GIO exclusive creation, and collision selection preserves the URI. The
+  `non_local_export_uses_exclusive_create_fallback` regression covers this policy.
+- Linux packaging/docs head `e8d301694709ef2737ad92383300018e7c4a5e24` pins the runtime. Local
+  formatting, locked all-target/all-feature check, strict Clippy, localization key/placeholder/
+  visible audits, Flatpak metadata, and diff checks passed. The focused GUI test target reaches the
+  linker but cannot run on this host because installed GTK/GDK/Graphene libraries lack symbols
+  required by the current Rust bindings; Native CI is authoritative for the display-backed suite.
+- Push Native/Flatpak/Foundation `29897680877`/`29897680772`/`29897680880` and PR
+  `29897682852`/`29897682904`/`29897682859` all passed. Native completed the full GTK, release,
+  checksum/SBOM, and performance suites.
+
+This narrows unreleased Linux Scenario 18 evidence without claiming remote VFS atomicity, physical
+power-loss recovery, human visual/copy/Orca review, other clients, signing, rollback authorization,
+or stable-release evidence. PR #1 remains Draft/Open and Issue #1 remains Open.
+
 ## 2026-07-22 — Linux Secret Service session-only recovery UX
 
 Assumption: a failed persistent Secret Service write must preserve the user's Remember intent

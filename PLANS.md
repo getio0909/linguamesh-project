@@ -24,6 +24,18 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Make the Linux non-local GIO export boundary explicit. Runtime commit
+  `54003159107919f5c9c55b4637aa45054d457c4d` introduces `ExportWriteStrategy`: local paths with a
+  parent retain same-directory atomic finalization, while non-local or parentless URIs use GIO
+  exclusive creation and preserve the original URI. The `non_local_export_uses_exclusive_create_fallback`
+  regression protects this policy. Linux packaging/docs head `e8d301694709ef2737ad92383300018e7c4a5e24`
+  pins the tested runtime and records that remote VFS atomicity is unverified. Local formatting,
+  locked all-target/all-feature check, strict Clippy, localization audits, Flatpak metadata, and
+  diff checks passed. Push Native/Flatpak/Foundation `29897680877`/`29897680772`/`29897680880` and
+  PR `29897682852`/`29897682904`/`29897682859` all passed; Native completed the full GTK, release,
+  checksum/SBOM, and performance suites. PR #1 remains Draft/Open and Issue #1 remains Open;
+  release status is `unreleased`.
+
 - [x] Verify the Linux Secret Service session-only recovery UX at the production GTK boundary.
   Runtime test commit `64909399aa55de6b3dc70b69b46e01ae34bc0606` adds the serialized
   `gtk_secret_storage_fallback_dialog_requires_explicit_session_only_action` fixture. It verifies
