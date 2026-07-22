@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux provider profile notes checkpoint
+
+Assumption: the optional profile note is a bounded non-secret Linux-first slice of the global
+ProviderProfile contract; organization, region, proxy, and custom-header metadata remain separate
+follow-up work.
+
+- Core `072d6b92df875153a60a9d1256ab814891fe775b` adds schema 19 `user_notes` persistence with
+  2 KiB and credential-shaped-value validation, redacted debug behavior, and round-trip tests.
+- Linux runtime/packaging `eaa9dc3e6bf07222fe3b2da5c078d39e9419b88d` adds the localized GTK Profile
+  notes field, restores/clears it with saved/new profiles, and preserves it through runtime session
+  transforms; final status head `3c1a4ad5e9f8d8ae613c5b2f8aa447d057212de0` records the evidence.
+- l10n `6aa074e48058bb411d09b2783cd27ba415dc7c55` contains 444 messages; Core CI/Fuzz/Native SDK
+  runs `29941753725`/`29941753413`/`29941753631` and l10n Localization/Foundation
+  `29941762786`/`29941762915` passed. Linux status-head push Native/Flatpak/Foundation
+  `29942842016`/`29942841964`/`29942842049` and PR Native/Flatpak/Foundation
+  `29942844853`/`29942844878`/`29942848089` passed.
+- Release status remains `unreleased`; PR #1 remains Draft/Open and Issue #1 remains Open. Human
+  visual/copy/Orca review, prompted desktop approval, physical VFS/power-loss, other clients,
+  signing, rollback authorization, and the remaining acceptance scenarios remain open.
+
 ## 2026-07-22 — Linux About compatibility dialog
 
 Assumption: the primary Linux About surface is localized, read-only, and limited to application

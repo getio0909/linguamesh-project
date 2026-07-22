@@ -24,6 +24,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add the Linux-first ProviderProfile notes slice to the central compatibility record after
+  remote Linux gates complete. Core `072d6b92df875153a60a9d1256ab814891fe775b`, Linux runtime/
+  packaging `eaa9dc3e6bf07222fe3b2da5c078d39e9419b88d`, final status `3c1a4ad5e9f8d8ae613c5b2f8aa447d057212de0`,
+  and l10n `6aa074e48058bb411d09b2783cd27ba415dc7c55` are published; Core/l10n CI and all six
+  Linux Native/Flatpak/Foundation push/PR gates passed.
+
 - [x] Add the Linux About compatibility dialog and final CI evidence. Runtime/packaging head
   `0d7b3927fb98e461317feaefeb4c806676e6acc0`, l10n `a65a327a8418332e50d9ab302fca24508e7266ef`,
   and final status head `b71e209` passed local Linux checks plus push Native/Flatpak/Foundation
