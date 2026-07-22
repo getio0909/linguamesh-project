@@ -22,8 +22,8 @@ passed. Core CI/Fuzz/Native SDK `29956720294`/`29956720284`/`29956720340`, l10n
 Localization/Foundation `29956431231`/`29956431233`, and Linux push/PR Native, Flatpak, and
 Foundation gates `29956837428`/`29956837112`/`29956837081` and
 `29956840773`/`29956840966`/`29956840730` passed. Release remains `unreleased`, and
-cross-client compatibility, manual visual/Orca review, signing, rollback, and stable-release
-acceptance remain open.
+central coordination workflow `29957446384` passed. Cross-client compatibility, manual
+visual/Orca review, signing, rollback, and stable-release acceptance remain open.
 
 ### Linux provider profile project application wiring correction
 

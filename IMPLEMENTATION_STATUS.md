@@ -21,9 +21,10 @@ proxy settings and secret custom headers remain outside this slice.
 - Remote Core CI/Fuzz/Native SDK runs `29956720294`/`29956720284`/`29956720340`, l10n
   Localization/Foundation runs `29956431231`/`29956431233`, and Linux push
   Native/Flatpak/Foundation runs `29956837428`/`29956837112`/`29956837081` plus pull-request
-  runs `29956840773`/`29956840966`/`29956840730` all passed. This is reproducible remote evidence;
-  manual visual/copy/Orca review, live provider interoperability, other clients, signing,
-  rollback, and stable-release acceptance remain open. Release remains `unreleased`.
+  runs `29956840773`/`29956840966`/`29956840730` all passed. Central coordination workflow
+  `29957446384` also passed. This is reproducible remote evidence; manual visual/copy/Orca review,
+  live provider interoperability, other clients, signing, rollback, and stable-release acceptance
+  remain open. Release remains `unreleased`.
 
 ## 2026-07-22 — Linux provider-project application wiring correction
 
