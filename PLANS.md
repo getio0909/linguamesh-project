@@ -24,6 +24,17 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Strengthen Linux Scenario 18 source preservation for non-local URIs. Runtime
+  `dc5304c679feedce407981ea67d832979d81157e` adds
+  `non_local_source_alias_is_rejected_by_uri_identity`, proving the production export guard rejects
+  an identical SMB URI and allows a distinct sibling URI without relying on local inode checks.
+  Packaging/docs head `6de5e2eb89e493c770376e6c55721f429024f651` pins the runtime and records the
+  remote VFS boundary. Local formatting, locked all-target/all-feature checks, strict Clippy,
+  localization audits, Flatpak metadata, and diff checks passed. Push Native/Flatpak/Foundation
+  `29898746678`/`29898746646`/`29898746643` and PR `29898749118`/`29898749101`/`29898749056` all
+  passed; Native completed the full GTK, release, checksum/SBOM, and performance suites. PR #1
+  remains Draft/Open and Issue #1 remains Open; release status is `unreleased`.
+
 - [x] Make the Linux non-local GIO export boundary explicit. Runtime commit
   `54003159107919f5c9c55b4637aa45054d457c4d` introduces `ExportWriteStrategy`: local paths with a
   parent retain same-directory atomic finalization, while non-local or parentless URIs use GIO
