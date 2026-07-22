@@ -2,6 +2,23 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux document-report body redaction regression
+
+Assumption: report redaction must be protected against future changes that accidentally serialize
+persisted segment bodies, even though the usage field is derived from those lengths.
+
+- Linux runtime regression `89de426c6fcfce77a395fc066017c01a5bb7c247` asserts that translated and
+  pending source-segment bodies are absent from the deterministic report, while the local usage JSON
+  remains present. Packaging/docs head `b50a69a61436535e196e2d8f5c997f491e726c74` pins this head.
+- Local formatting, locked all-target/all-feature check, strict Clippy, localization audits, Flatpak
+  metadata, and diff checks passed. Push Native/Flatpak/Foundation `29901156887`/`29901156926`/
+  `29901156939` and PR `29901160007`/`29901159988`/`29901160074` all passed; Native completed the
+  full GTK, accessibility, release, checksum/SBOM, and performance suites.
+
+This strengthens unreleased Linux Milestone 3/6 report evidence. Provider-reported usage, retry
+history, human visual/copy/Orca review, other clients, signed artifacts, rollback authorization, and
+stable release approval remain open. PR #1 remains Draft/Open and Issue #1 remains Open.
+
 ## 2026-07-22 — Linux document report usage estimate
 
 Assumption: persisted document segments are the only local, non-sensitive source available for a

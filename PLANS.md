@@ -24,6 +24,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Strengthen Linux document-report body redaction evidence. Runtime regression commit
+  `89de426c6fcfce77a395fc066017c01a5bb7c247` explicitly asserts that translated and pending source
+  segment bodies do not appear in the report, alongside the deterministic local usage JSON check.
+  Packaging/docs head `b50a69a61436535e196e2d8f5c997f491e726c74` pins that tested source and records
+  the contract. Local formatting, locked all-target/all-feature checks, strict Clippy, localization
+  audits, Flatpak metadata, and diff checks passed. Push Native/Flatpak/Foundation
+  `29901156887`/`29901156926`/`29901156939` and PR `29901160007`/`29901159988`/`29901160074` all
+  passed; Native completed the full GTK, accessibility, release, checksum/SBOM, and performance
+  suites. PR #1 remains Draft/Open and Issue #1 remains Open; release status is `unreleased`.
+
 - [x] Add non-sensitive Linux document-report usage estimation. Runtime
   `ae4750beec1d9aa1c2d53c96754a6ca5a4e55c66` derives bounded local token estimates from persisted
   source/translated segments and serializes only usage metadata; `retried_count` remains explicit
