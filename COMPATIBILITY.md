@@ -15,7 +15,7 @@ bounded JSON in memory and never serialize or expose its values. Linux `9d0ffc10
 preserves persistent references, rejects session-only persistence, and cleans up both Secret
 Service references when a saved profile is deleted. This slice deliberately does not claim a
 second GTK secret editor/onboarding flow. Local Core/Linux checks, Core/Linux remote gates, and
-central coordination `29963890574` passed. Release remains `unreleased`.
+central coordination `29963944562` passed. Release remains `unreleased`.
 
 ### ABI 1 provider metadata projection
 

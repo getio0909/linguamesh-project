@@ -30,7 +30,7 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `9d0ffc10a5ee9dd114e40b95db277679969d2593` preserves and cleans up persistent references.
   Local Core/Linux validation passed; Core remote runs `29963034872`/`29963034867`/`29963034863`,
   Linux push/PR runs `29963506897`/`29963506924`/`29963506877` and
-  `29963509821`/`29963509808`/`29963509782`, and central coordination `29963890574` passed.
+  `29963509821`/`29963509808`/`29963509782`, and central coordination `29963944562` passed.
   The second GTK secret editor/onboarding flow and cross-client support remain open.
 
 - [x] Add the cross-repository completion gap audit in [`docs/GAP_ANALYSIS.md`](docs/GAP_ANALYSIS.md),
