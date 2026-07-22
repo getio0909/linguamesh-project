@@ -24,14 +24,18 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
-- [ ] Add and remotely verify the Linux-first bounded custom provider-header slice. Core
+- [x] Add and remotely verify the Linux-first bounded custom provider-header slice. Core
   `be5b7220587289be78b7654d979099c57ea4cc6d` adds schema 23 persistence, canonical bounded
   non-secret header validation, and OpenAI Chat/Responses application with reserved-header and
   credential-shape rejection. l10n `294e593ab2c71b9ab0ea3475c35ebc61bca2bbc6` adds the three
   Linux messages at source revision 51 (459 messages). Linux `1e3a96b18990ea4f7b8ba85faed2df4407ed18b9`
   binds/restores/clears the GTK field, synchronizes PO/MO resources, and pins Core/l10n/Flatpak.
-  Local Core, Linux, l10n, localization, Flatpak, and diff validation passed; remote Linux gates
-  and central coordination evidence remain pending. Release remains `unreleased`.
+  Local Core, Linux, l10n, localization, Flatpak, and diff validation passed. Core CI/Fuzz/Native
+  SDK runs `29956720294`/`29956720284`/`29956720340`, l10n Localization/Foundation runs
+  `29956431231`/`29956431233`, and Linux push Native/Flatpak/Foundation runs
+  `29956837428`/`29956837112`/`29956837081` plus PR runs
+  `29956840773`/`29956840966`/`29956840730` all passed. Central coordination validation is
+  recorded separately; release remains `unreleased`.
 
 - [x] Close and remotely verify the Linux provider-project application wiring gap. Core
   `8717251375290cc3f825cee86d467ab1c60dd508` now forwards the persisted project value into both

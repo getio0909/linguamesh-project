@@ -18,9 +18,12 @@ out of scope.
 l10n `294e593ab2c71b9ab0ea3475c35ebc61bca2bbc6` contains source revision 51 and 459 messages.
 Linux `1e3a96b18990ea4f7b8ba85faed2df4407ed18b9` binds and restores the localized field and pins
 the exact Core/l10n/Flatpak inputs. Local Core, Linux, l10n, localization, and Flatpak checks
-passed. Remote Linux gates and central coordination evidence are pending; release remains
-`unreleased`, and cross-client compatibility, manual visual/Orca review, signing, rollback, and
-stable-release acceptance remain open.
+passed. Core CI/Fuzz/Native SDK `29956720294`/`29956720284`/`29956720340`, l10n
+Localization/Foundation `29956431231`/`29956431233`, and Linux push/PR Native, Flatpak, and
+Foundation gates `29956837428`/`29956837112`/`29956837081` and
+`29956840773`/`29956840966`/`29956840730` passed. Release remains `unreleased`, and
+cross-client compatibility, manual visual/Orca review, signing, rollback, and stable-release
+acceptance remain open.
 
 ### Linux provider profile project application wiring correction
 

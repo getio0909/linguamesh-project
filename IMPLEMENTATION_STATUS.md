@@ -18,9 +18,12 @@ proxy settings and secret custom headers remain outside this slice.
   Test connection/Connect forwarding, PO/MO synchronization, and exact Core/l10n/Flatpak pins.
   Local Core workspace tests/Clippy, Linux GUI checks/Clippy/demo-provider suite (`158 passed;
   3 ignored`), l10n checks, localization audits, Flatpak metadata, and diff checks passed.
-- Remote Core CI and Fuzz gates passed (`29956720294`/`29956720284`); Core Native SDK and Linux
-  Native/Flatpak/Foundation push and pull-request gates are still running. No remote or manual
-  evidence is claimed until those runs complete. Release remains `unreleased`.
+- Remote Core CI/Fuzz/Native SDK runs `29956720294`/`29956720284`/`29956720340`, l10n
+  Localization/Foundation runs `29956431231`/`29956431233`, and Linux push
+  Native/Flatpak/Foundation runs `29956837428`/`29956837112`/`29956837081` plus pull-request
+  runs `29956840773`/`29956840966`/`29956840730` all passed. This is reproducible remote evidence;
+  manual visual/copy/Orca review, live provider interoperability, other clients, signing,
+  rollback, and stable-release acceptance remain open. Release remains `unreleased`.
 
 ## 2026-07-22 — Linux provider-project application wiring correction
 
