@@ -6,6 +6,21 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 ## Unreleased compatibility matrix
 
+### Linux provider profile region/account checkpoint
+
+Core `158ade12cf1e3284d4b8a0883e771dd62abcff97` adds schema 22 optional bounded non-secret
+`ProviderProfile.region` and `ProviderProfile.account_identifier`, with validation and persistence
+but no provider-specific wire interpretation. Linux status head `69fb128` (runtime/packaging
+head `761a931538fc49c30d759089185cdf21cf2015ab`)
+binds, restores, clears, and preserves both fields through GTK Test connection and Connect; l10n
+`ec538de57c1edc198fa13d3dfc1de576ee9b2c12` contains 456 messages. Local Core, l10n, and Linux
+checks passed. The final status head `69fb128` passed push Native/Flatpak/Foundation runs
+`29952240768`/`29952240852`/`29952240819` and pull-request Native/Flatpak/Foundation runs
+`29952245004`/`29952244151`/`29952244148`. An earlier stale-pin Flatpak attempt (`29951517923`,
+`29951520086`) was superseded. This remains unreleased Linux-first evidence; other clients,
+provider-specific semantics, human review, signing, rollback, and stable-release acceptance remain
+open.
+
 ### Linux provider profile project checkpoint
 
 Core `17342ba0bf19dd4978707a7875bc7dbe85efae54` adds schema 21 optional bounded non-secret

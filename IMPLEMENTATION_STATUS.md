@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux provider region/account checkpoint
+
+Assumption: `region` and `account_identifier` are optional bounded, non-secret provider metadata;
+Core persists and restores them, while Linux keeps them adapter-neutral until provider-specific
+semantics are defined.
+
+- Core revision `158ade12cf1e3284d4b8a0883e771dd62abcff97` adds schema 22 migration,
+  validation, storage round-trip coverage, and redacted debug presence reporting.
+- l10n revision `ec538de57c1edc198fa13d3dfc1de576ee9b2c12` adds six Linux form messages and
+  generated resources; the catalog is source revision 50 with 456 messages.
+- Linux runtime/packaging head `761a931538fc49c30d759089185cdf21cf2015ab` binds, restores, clears,
+  and preserves both fields through Test connection and Connect; status head
+  `69fb128b92a0683434d6978c038c7c2ebc48d6ad` records the final gate evidence. Local Linux/Core/l10n
+  checks, synchronization, and Flatpak metadata validation passed. Push Native/Flatpak/Foundation
+  runs `29952240768`/`29952240852`/`29952240819` and pull-request Native/Flatpak/Foundation runs
+  `29952245004`/`29952244151`/`29952244148` all passed. Earlier stale-pin Flatpak runs
+  `29951517923`/`29951520086` were superseded; release remains `unreleased`.
+
 ## 2026-07-22 — Linux provider project checkpoint
 
 Assumption: `project` is an optional bounded non-secret OpenAI-compatible identifier. Core sends

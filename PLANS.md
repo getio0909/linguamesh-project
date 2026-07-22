@@ -48,6 +48,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29949462141`/`29949462126`/`29949462107` and `29949468527`/`29949466704`/`29949468689`.
   Release remains `unreleased`.
 
+- [x] Add and remotely verify the Linux-first ProviderProfile region/account metadata slice. Core
+  `158ade12cf1e3284d4b8a0883e771dd62abcff97` adds schema 22 bounded non-secret fields and storage
+  tests; l10n `ec538de57c1edc198fa13d3dfc1de576ee9b2c12` adds six Linux messages (456-message
+  bundle); Linux runtime/packaging head `761a931538fc49c30d759089185cdf21cf2015ab` and status head
+  `69fb128` bind/restore/clear both fields and pin the exact inputs. Local checks passed; Linux
+  push Native/Flatpak/Foundation `29952240768`/`29952240852`/`29952240819` and PR
+  `29952245004`/`29952244151`/`29952244148` passed. The earlier stale-pin Flatpak runs
+  `29951517923`/`29951520086` were superseded. Release remains `unreleased`.
+
 - [x] Add the Linux About compatibility dialog and final CI evidence. Runtime/packaging head
   `0d7b3927fb98e461317feaefeb4c806676e6acc0`, l10n `a65a327a8418332e50d9ab302fca24508e7266ef`,
   and final status head `b71e209` passed local Linux checks plus push Native/Flatpak/Foundation
