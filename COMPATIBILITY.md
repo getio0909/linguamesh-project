@@ -6,6 +6,22 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 ## Unreleased compatibility matrix
 
+### Linux provider profile bounded custom headers
+
+Core `be5b7220587289be78b7654d979099c57ea4cc6d` adds schema 23 persistence and canonical JSON
+validation for optional non-secret custom request headers. The contract permits at most 16
+headers, 128-byte token names, and 2 KiB values; authorization, credential-shaped, and built-in
+metadata names are rejected. The OpenAI Chat Completions and Responses adapters apply safe headers
+without replacing authentication metadata, while proxy settings and secret custom headers remain
+out of scope.
+
+l10n `294e593ab2c71b9ab0ea3475c35ebc61bca2bbc6` contains source revision 51 and 459 messages.
+Linux `1e3a96b18990ea4f7b8ba85faed2df4407ed18b9` binds and restores the localized field and pins
+the exact Core/l10n/Flatpak inputs. Local Core, Linux, l10n, localization, and Flatpak checks
+passed. Remote Linux gates and central coordination evidence are pending; release remains
+`unreleased`, and cross-client compatibility, manual visual/Orca review, signing, rollback, and
+stable-release acceptance remain open.
+
 ### Linux provider profile project application wiring correction
 
 Core `8717251375290cc3f825cee86d467ab1c60dd508` corrects the application-layer construction of

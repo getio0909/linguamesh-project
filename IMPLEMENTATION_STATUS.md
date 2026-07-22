@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux provider custom-header checkpoint
+
+Assumption: custom request headers are optional, bounded, non-secret ProviderProfile metadata;
+proxy settings and secret custom headers remain outside this slice.
+
+- Core `be5b7220587289be78b7654d979099c57ea4cc6d` adds schema 23 persistence, canonical JSON
+  validation with 16-header/128-byte-name/2 KiB-value bounds, redacted debug presence reporting,
+  storage round-trip coverage, and OpenAI Chat/Responses request application. Authorization,
+  credential-shaped, and built-in metadata names are rejected before persistence or adapter use.
+- l10n `294e593ab2c71b9ab0ea3475c35ebc61bca2bbc6` adds the Linux label, placeholder, and safety
+  tooltip at source revision 51; the bundle contains 459 messages and passed all 26 tests and
+  deterministic generation checks.
+- Linux `1e3a96b18990ea4f7b8ba85faed2df4407ed18b9` binds the GTK form, saved-profile restoration,
+  Test connection/Connect forwarding, PO/MO synchronization, and exact Core/l10n/Flatpak pins.
+  Local Core workspace tests/Clippy, Linux GUI checks/Clippy/demo-provider suite (`158 passed;
+  3 ignored`), l10n checks, localization audits, Flatpak metadata, and diff checks passed.
+- Remote Core CI and Fuzz gates passed (`29956720294`/`29956720284`); Core Native SDK and Linux
+  Native/Flatpak/Foundation push and pull-request gates are still running. No remote or manual
+  evidence is claimed until those runs complete. Release remains `unreleased`.
+
 ## 2026-07-22 — Linux provider-project application wiring correction
 
 Assumption: persisted non-secret `project` metadata must reach both OpenAI-compatible Chat
