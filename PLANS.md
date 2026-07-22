@@ -25,7 +25,7 @@ Assumption: Planned files and commands are not evidence until they exist and com
 ## Progress
 
 - [x] Close the Linux source-level visible-string gettext coverage gap. Linux head
-  `9460a0aa678b2dd604db6bd6170054fef36537df` passes the dependency-free key, placeholder, and
+  `31f3a874918aaf867b8d2434385157bff4a62877` passes the dependency-free key, placeholder, and
   visible-control audits: 390 catalog-backed source keys, 448 placeholder calls, and no non-empty
   hard-coded GTK strings across `src/**/*.rs` (three intentional empty/reset call sites). The
   generated official and pseudo-locale catalogs remain covered by the existing runtime suite at
@@ -33,16 +33,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
   copy, plural, visual, other-client, signing, rollback, and stable-release review remain open.
 
 - [x] Complete the Linux local export pipeline with temporary output and atomic finalization.
-  Runtime commit `26263b7ae81b766ed4a76238d31bf8b7233eee13` keeps non-local URIs on the existing
+  Runtime commit `6e6bc31c7d9d584e9357d272f55132bd02ee367d` keeps non-local URIs on the existing
   GIO exclusive-create fallback, while local paths write and close a same-directory UUID temporary
   file and use GIO's non-overwriting move; failed finalization removes the temporary artifact.
   The ignored GTK fixture is now `gtk_atomic_output_writer_never_replaces_existing_file` and
   checks both occupied-destination preservation and cleanup. Packaging/workflow commit
-  `9460a0aa678b2dd604db6bd6170054fef36537df` updates the Flatpak source pin and Native workflow.
+  `31f3a874918aaf867b8d2434385157bff4a62877` updates the Flatpak source pin and Native workflow.
   Local formatting, locked checks, strict Clippy, demo-provider tests (`157 passed; 3 ignored`),
   Flatpak metadata, and diff checks passed. Push Native/Flatpak/Foundation runs
-  `29893635774`/`29893635715`/`29893635769` and PR runs
-  `29893637984`/`29893637956`/`29893637957` all passed; Native executed the exact atomic fixture,
+  `29894536354`/`29894536297`/`29894536351` and PR runs
+  `29894538235`/`29894538243`/`29894538211` all passed; Native executed the exact atomic fixture,
   full GTK suite, release build, performance baseline, and checksum/SBOM evidence. This remains
   unreleased Linux Scenario 18 evidence; local full-feature GUI linking, human visual/copy/Orca
   review, other clients, signing, rollback, and stable release remain open.

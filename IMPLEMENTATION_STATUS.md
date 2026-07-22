@@ -7,7 +7,7 @@ Last updated: 2026-07-22
 Assumption: source-level gettext coverage is a reproducible CI gate, while translated-copy, plural,
 and visual review remain human acceptance boundaries.
 
-- Linux head `9460a0aa678b2dd604db6bd6170054fef36537df` passes all three dependency-free audits:
+- Linux head `31f3a874918aaf867b8d2434385157bff4a62877` passes all three dependency-free audits:
   `check-localization-keys.py` finds 390 catalog-backed source keys,
   `check-localization-placeholders.py` checks 448 literal fallback calls, and
   `check-visible-localization.py` finds no non-empty hard-coded GTK strings across `src/**/*.rs`
@@ -27,7 +27,7 @@ Assumption: the canonical document pipeline's temporary-output and atomic-finali
 to every local user-visible export, while non-local URI destinations retain an exclusive-create
 fallback because GIO cannot provide a same-directory local rename there.
 
-- Runtime commit `26263b7ae81b766ed4a76238d31bf8b7233eee13` writes local exports to a same-directory
+- Runtime commit `6e6bc31c7d9d584e9357d272f55132bd02ee367d` writes local exports to a same-directory
   UUID temporary file, closes the stream, and finalizes with GIO `move_async` and
   `FileCopyFlags::NONE`; a destination occupied during the race remains unchanged and failed moves
   asynchronously delete the temporary artifact. Non-local URIs continue through the exclusive
@@ -38,10 +38,10 @@ fallback because GIO cannot provide a same-directory local rename there.
   created successfully. Local formatting, locked all-target/all-feature checks, strict Clippy,
   demo-provider tests (`157 passed; 3 ignored`), Flatpak metadata, and diff checks passed; full GTK
   linking remains unavailable on this host.
-- Packaging/workflow commit `9460a0aa678b2dd604db6bd6170054fef36537df` updates the Flatpak source
+- Packaging/workflow commit `31f3a874918aaf867b8d2434385157bff4a62877` updates the Flatpak source
   pin and dedicated Native fixture name. Push Native/Flatpak/Foundation runs
-  `29893635774`/`29893635715`/`29893635769` and PR runs
-  `29893637984`/`29893637956`/`29893637957` all passed; Native completed the exact fixture, full
+  `29894536354`/`29894536297`/`29894536351` and PR runs
+  `29894538235`/`29894538243`/`29894538211` all passed; Native completed the exact fixture, full
   GTK suite, release build, performance baseline, and checksum/SBOM evidence.
 
 This closes the Linux temporary-output/atomic-finalization evidence for unreleased Scenario 18.
