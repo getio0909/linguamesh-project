@@ -15,6 +15,24 @@ Linux evidence must not be promoted to global acceptance evidence for the other 
 - No implementation, compatibility pin, or release artifact is being claimed from an indirect or
   unavailable validation result.
 
+## 2026-07-22 — ABI 1 provider metadata projection
+
+Assumption: optional `TranslateTextCommand` fields are backward-compatible under protocol 1;
+older clients omit them, while native clients validate bounded metadata before any secret request.
+
+- Core `530e6ea75ef3ccba5defd264227fb6dd6802e17a` adds optional non-secret `organization`,
+  `project`, and `custom_headers_json` fields, shared credential-shape validation, C ABI forwarding,
+  and source-compatible Android wrapper parameters. Domain/protocol/FFI tests, strict Clippy, full
+  workspace tests, C/C++ SDK smoke, and reproducible Linux SDK packaging passed.
+- Linux `5cf0fcd133c7df823d4c33f934786a1c940670bb` pins the exact Core revision in Native and
+  Flatpak inputs and records the direct typed-Rust integration boundary. Local formatting, GUI
+  check, strict Clippy, `158 passed; 3 ignored` demo-provider tests, localization audits, l10n
+  synchronization, Flatpak metadata, and diff checks passed.
+- Core CI/Fuzz/Native SDK `29961301539`/`29961301501`/`29961301583` and Linux push/PR
+  Native/Flatpak/Foundation `29961456792`/`29961456832`/`29961456791` and
+  `29961459180`/`29961459196`/`29961459185` passed. Other-client integration, human review,
+  signing, rollback, and stable release remain open.
+
 ## 2026-07-22 — Linux Azure custom-header application wiring
 
 Assumption: custom request headers are optional, bounded, non-secret ProviderProfile metadata;

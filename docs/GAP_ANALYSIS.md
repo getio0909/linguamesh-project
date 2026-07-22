@@ -12,7 +12,7 @@ Android, Windows, and macOS evidence must still be completed before a stable rel
 | --- | --- | --- |
 | 0 — Foundation | Verified for all seven public repositories | Keep manifests and goal pins synchronized |
 | 1 — Core vertical slice | Verified Core CLI, fake streaming, cancellation, ABI/protocol, storage, tests, and CI | Stable-release conformance and cross-client consumers |
-| 2 — SDK artifacts | Prerelease Linux, Android, Apple artifacts and ABI 1 wrappers are CI-verified | Windows/Android/Apple host-service conformance, lease transfer, signed artifacts |
+| 2 — SDK artifacts | Prerelease Linux, Android, Apple artifacts and ABI 1 wrappers are CI-verified; Core ABI 1 now projects bounded provider metadata | Windows/Android/Apple host-service conformance, lease transfer, signed artifacts |
 | 3 — Native clients | Linux GTK slice is substantially verified; Android and macOS are partial; Windows is foundation-only | Real provider/secret/model/translation flows on all four clients, device and desktop evidence |
 | 4–5 — Providers and quality | Linux catalog, local models, routing, fallback, glossary, chunking, history, memory, and presets have deterministic evidence | Cross-client parity, live-provider interoperability, provider-specific semantics |
 | 6 — Documents | Linux supports the bounded TXT/Markdown/HTML/JSON/CSV/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF slice | Native document workflows on the other clients and broader format acceptance |

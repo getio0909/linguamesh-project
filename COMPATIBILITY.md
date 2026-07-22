@@ -6,6 +6,19 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 ## Unreleased compatibility matrix
 
+### ABI 1 provider metadata projection
+
+Core `530e6ea75ef3ccba5defd264227fb6dd6802e17a` adds optional non-secret `organization`, `project`,
+and bounded `custom_headers_json` fields to `TranslateTextCommand` without changing protocol 1.
+The C ABI validates credential-shaped identifiers and unsafe headers before host-secret requests,
+then forwards accepted metadata to the OpenAI-compatible adapter; Android exposes compatible
+optional parameters. Linux `5cf0fcd133c7df823d4c33f934786a1c940670bb` pins the same Core source in
+Native and Flatpak metadata while retaining the direct typed-Rust path. Core CI/Fuzz/Native SDK
+`29961301539`/`29961301501`/`29961301583` and Linux push/PR Native/Flatpak/Foundation
+`29961456792`/`29961456832`/`29961456791` and `29961459180`/`29961459196`/`29961459185` passed.
+This is prerelease ABI evidence only; other-client conformance, human review, signing, rollback,
+and stable release remain open.
+
 ### Linux Azure custom-header application wiring
 
 Core `cf08384c829ca1b95ecfc79d23bc5b0feb3a701f` adds the existing bounded custom-header contract

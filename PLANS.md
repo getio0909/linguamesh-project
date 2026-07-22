@@ -29,6 +29,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
   the Linux-first scope and records cross-client, manual, physical, signing, rollback, and stable
   release work as explicitly incomplete rather than inferring completion from Linux fixtures.
 
+- [x] Project bounded non-secret provider metadata through ABI 1 and repin Linux. Core
+  `530e6ea75ef3ccba5defd264227fb6dd6802e17a` adds optional organization/project/custom-header
+  command fields with fail-closed validation, Android wrapper parameters, FFI forwarding, and
+  regression coverage. Linux `5cf0fcd133c7df823d4c33f934786a1c940670bb` pins the exact Core
+  revision. Core CI/Fuzz/Native SDK `29961301539`/`29961301501`/`29961301583` and Linux push/PR
+  Native/Flatpak/Foundation `29961456792`/`29961456832`/`29961456791` and
+  `29961459180`/`29961459196`/`29961459185` passed; release remains `unreleased`.
+
 - [x] Close and record the Linux Azure OpenAI custom-header application wiring gap. Core
   `cf08384c829ca1b95ecfc79d23bc5b0feb3a701f` adds `AzureOpenAiConfig.custom_headers` and forwards
   the persisted bounded value through `ProviderManager` without replacing Azure `api-key`.
