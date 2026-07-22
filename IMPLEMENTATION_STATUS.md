@@ -2,6 +2,29 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux GTK document report action fixture
+
+Assumption: every persisted queue row must expose the same safe report action at the production
+GTK boundary, not only through the report-builder unit test.
+
+- Linux runtime/docs commit `e28981870563970549ca88c4faa691451ed710e7` extends
+  `gtk_document_jobs_dialog_selects_between_multiple_jobs` to require exactly one focusable
+  **Export translation report** button per pending, paused, and cancelled row, with the
+  catalog-backed redacted-TSV tooltip. Formatting commit `07208e1b09e42ecec4a184efa69336570f6243dc`
+  and Flatpak pin `ad3012fd0fdf34e81e6cc6bb2e4571e94a324dfc` keep the tested source synchronized.
+- Local formatting, locked all-target/all-feature checks, strict Clippy, demo-provider tests
+  (`157 passed; 3 ignored`), localization audits, l10n synchronization at
+  `88765d3358450ccfac12f396caf5290230a83577`, Flatpak metadata, and diff checks passed. The full
+  GTK fixture binary cannot link on this host because installed GTK/GDK/Graphene symbols are
+  incomplete; Native CI is authoritative. Final head `ad3012fd0fdf34e81e6cc6bb2e4571e94a324dfc`
+  passed push Native/Flatpak/Foundation `29889128173`/`29889128185`/`29889128176` and PR
+  Native/Flatpak/Foundation `29889129723`/`29889129750`/`29889129727`; Native completed the full
+  fixture, release-build, checksum/SBOM, and performance-baseline suite.
+
+This strengthens unreleased Linux Milestones 3 and 6 report evidence. Native chooser interaction,
+visual/copy/Orca review, physical interruption behavior, other clients, signed artifacts, rollback
+authorization, and stable release approval remain open; release status is `unreleased`.
+
 ## 2026-07-22 — Linux document translation report export
 
 Assumption: the first report surface is a Linux-only, redacted TSV snapshot; persisted

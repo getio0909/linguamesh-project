@@ -24,6 +24,21 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Close the Linux production report-action evidence gap. Runtime/docs commit
+  `e28981870563970549ca88c4faa691451ed710e7` extends the serialized
+  `gtk_document_jobs_dialog_selects_between_multiple_jobs` fixture to require exactly one
+  focusable **Export translation report** button and redacted-TSV tooltip for each pending,
+  paused, and cancelled row; formatting commit `07208e1b09e42ecec4a184efa69336570f6243dc` and
+  Flatpak pin `ad3012fd0fdf34e81e6cc6bb2e4571e94a324dfc` keep the source input synchronized. Local
+  formatting, locked all-target/all-feature check, strict Clippy, 157-pass demo-provider tests
+  (3 ignored), localization audits, l10n sync, Flatpak metadata, and diff checks passed. The
+  full GTK binary cannot link on this host because installed GTK/GDK/Graphene symbols are
+  incomplete; Native CI is authoritative. Final head `ad3012fd0fdf34e81e6cc6bb2e4571e94a324dfc`
+  passed push Native/Flatpak/Foundation `29889128173`/`29889128185`/`29889128176` and PR
+  Native/Flatpak/Foundation `29889129723`/`29889129750`/`29889129727`; Native executed the full
+  fixture suite. This remains unreleased Linux evidence; chooser interaction, visual/copy/Orca
+  review, other clients, signing, rollback, and stable release remain open.
+
 - [x] Add the Linux production document translation report surface. Assumption: the first
   report format is a redacted, deterministic TSV snapshot; provider usage and retry counts are
   explicit `unknown` because the persisted document-job schema does not retain them. Linux runtime
