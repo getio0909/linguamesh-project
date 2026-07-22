@@ -16,7 +16,7 @@ priority client; no device or stable-release evidence is implied.
   checksum, generated-wrapper, and JNI verification; debug/release builds, 16 JVM tests per
   variant, instrumentation compilation, and debug/release lint also passed. The prior run
   `29931908407` failed only on a stale `alpha.1` metadata assertion and was corrected before the
-  authoritative run.
+  authoritative run. The status-head rerun `29933216517` (job `88968007647`) also passed.
 - Android remains unreleased. Device instrumentation, real Core/provider credential flow, document
   and history workflows, routing/background work, signing, and distribution are not verified.
 

@@ -3264,7 +3264,8 @@ At every checkpoint, update this plan, `IMPLEMENTATION_STATUS.md`, relevant ADRs
   the user's Linux-first priority. Android `afe7a566bac77a16243f70295d17a4d9cab1151f` pins Core
   `8837e59395742b5385af5037aa36a2596af3b025` and l10n `3724cc9d436ebdbac3b8ebf0df9bce9af1b41b15`.
   Workflow `29932649692` (job `88966082464`) passed clean AAR provenance checks, debug/release
-  builds, 16 JVM tests per variant, instrumentation compilation, and lint. Device execution,
+  builds, 16 JVM tests per variant, instrumentation compilation, and lint; status-head rerun
+  `29933216517` (job `88968007647`) also passed. Device execution,
   provider credentials, document/history/routing/background flows, signing, and stable release
   remain open; the first metadata assertion failure `29931908407` is retained as superseded evidence.
 
