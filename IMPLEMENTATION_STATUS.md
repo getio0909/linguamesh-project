@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux provider project checkpoint
+
+Assumption: `project` is an optional bounded non-secret OpenAI-compatible identifier. Core sends
+it only as `OpenAI-Project` for Chat Completions and Responses; other adapters ignore it until a
+provider-specific contract is defined.
+
+- Core `17342ba0bf19dd4978707a7875bc7dbe85efae54` adds schema 21 persistence, validation, storage
+  round-trip coverage, redacted debug metadata, and OpenAI request-header coverage. Core local
+  targeted tests, formatting, and strict Clippy passed; push CI/Fuzz/Native SDK runs are tracked
+  separately until completion.
+- l10n `fea84439f035f30b009532b40d7f67a30049846c` adds `label/placeholder/tooltip.provider_project`
+  and generated Linux resources; the 450-message bundle passed 26 tests, generation checks,
+  build, and Foundation validation.
+- Linux `58df1345d03acb02fa01aec248f41cea53c0e621` binds/restores/clears the localized GTK field,
+  preserves it through runtime/session profiles, and pins the exact Core/l10n/Flatpak inputs.
+  Local GUI check, strict Clippy, 158 passing demo-provider tests with 3 ignored, l10n sync,
+  Flatpak metadata, and diff checks passed. Release remains `unreleased` pending remote gates,
+  cross-client compatibility, human review, signing, rollback, and mandatory acceptance evidence.
+
 ## 2026-07-22 — Linux provider organization checkpoint
 
 Assumption: `organization` is an optional bounded non-secret OpenAI-compatible routing/account
