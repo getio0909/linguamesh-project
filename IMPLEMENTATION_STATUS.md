@@ -17,7 +17,8 @@ follow-up work.
   runs `29941753725`/`29941753413`/`29941753631` and l10n Localization/Foundation
   `29941762786`/`29941762915` passed. Linux status-head push Native/Flatpak/Foundation
   `29942842016`/`29942841964`/`29942842049` and PR Native/Flatpak/Foundation
-  `29942844853`/`29942844878`/`29942848089` passed.
+  `29942844853`/`29942844878`/`29942848089` passed. Central coordination run
+  `29943525316` passed Linux and PowerShell validation for this record.
 - Release status remains `unreleased`; PR #1 remains Draft/Open and Issue #1 remains Open. Human
   visual/copy/Orca review, prompted desktop approval, physical VFS/power-loss, other clients,
   signing, rollback authorization, and the remaining acceptance scenarios remain open.
