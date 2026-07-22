@@ -24,12 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
-- [ ] Verify and record the Linux-first secret custom-header SecretRef slice. Core
+- [x] Verify and record the Linux-first secret custom-header SecretRef slice. Core
   `28baaa2f85bb70b4fc6ecc4c07566e7004a659c5` adds schema 24 persistence and host-broker-backed
   in-memory application for OpenAI-compatible Chat/Responses/Azure; Linux
   `9d0ffc10a5ee9dd114e40b95db277679969d2593` preserves and cleans up persistent references.
-  Local Core/Linux validation passed; remote Core and Linux gates plus central coordination remain
-  pending. The second GTK secret editor/onboarding flow and cross-client support remain open.
+  Local Core/Linux validation passed; Core remote runs `29963034872`/`29963034867`/`29963034863`,
+  Linux push/PR runs `29963506897`/`29963506924`/`29963506877` and
+  `29963509821`/`29963509808`/`29963509782`, and central coordination `29963890574` passed.
+  The second GTK secret editor/onboarding flow and cross-client support remain open.
 
 - [x] Add the cross-repository completion gap audit in [`docs/GAP_ANALYSIS.md`](docs/GAP_ANALYSIS.md),
   mapping Milestones 0–8 and all 20 mandatory scenarios to current evidence. The audit preserves

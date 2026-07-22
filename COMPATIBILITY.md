@@ -14,8 +14,8 @@ for an active connection; the OpenAI-compatible Chat, Responses, and Azure adapt
 bounded JSON in memory and never serialize or expose its values. Linux `9d0ffc10a5ee9dd114e40b95db277679969d2593`
 preserves persistent references, rejects session-only persistence, and cleans up both Secret
 Service references when a saved profile is deleted. This slice deliberately does not claim a
-second GTK secret editor/onboarding flow. Local Core/Linux checks and Core/Linux remote gates
-passed; central coordination is pending. Release remains `unreleased`.
+second GTK secret editor/onboarding flow. Local Core/Linux checks, Core/Linux remote gates, and
+central coordination `29963890574` passed. Release remains `unreleased`.
 
 ### ABI 1 provider metadata projection
 

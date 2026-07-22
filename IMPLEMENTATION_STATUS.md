@@ -36,7 +36,7 @@ GTK editing/onboarding for the second secret is a follow-up surface.
 - Core CI/Fuzz/Native SDK runs `29963034872`/`29963034867`/`29963034863` passed. Linux push
   Native/Flatpak/Foundation runs `29963506897`/`29963506924`/`29963506877` and PR runs
   `29963509821`/`29963509808`/`29963509782` all passed for the exact heads above. Central
-  coordination remains pending for this documentation update; the separate GTK secret-header
+  coordination `29963890574` passed on Linux and PowerShell. The separate GTK secret-header
   editor/onboarding, other clients, human review, signing, rollback, and stable release remain
   open.
 
