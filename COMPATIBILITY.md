@@ -6,6 +6,17 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 ## Unreleased compatibility matrix
 
+### Linux-first secret custom-header references
+
+Core `28baaa2f85bb70b4fc6ecc4c07566e7004a659c5` adds schema 24 persistence for an optional
+`ProviderProfile.secret_custom_headers_ref`. The host secret broker resolves that reference only
+for an active connection; the OpenAI-compatible Chat, Responses, and Azure adapters parse the
+bounded JSON in memory and never serialize or expose its values. Linux `9d0ffc10a5ee9dd114e40b95db277679969d2593`
+preserves persistent references, rejects session-only persistence, and cleans up both Secret
+Service references when a saved profile is deleted. This slice deliberately does not claim a
+second GTK secret editor/onboarding flow. Local Core/Linux checks and Core/Linux remote gates
+passed; central coordination is pending. Release remains `unreleased`.
+
 ### ABI 1 provider metadata projection
 
 Core `530e6ea75ef3ccba5defd264227fb6dd6802e17a` adds optional non-secret `organization`, `project`,

@@ -15,6 +15,31 @@ Linux evidence must not be promoted to global acceptance evidence for the other 
 - No implementation, compatibility pin, or release artifact is being claimed from an indirect or
   unavailable validation result.
 
+## 2026-07-22 — Linux secret custom-header SecretRef slice
+
+Assumption: secret custom headers use a separate persistent `SecretRef` whose one-shot resolved
+value is a bounded JSON object; the existing API credential reference remains independent, and
+GTK editing/onboarding for the second secret is a follow-up surface.
+
+- Core `28baaa2f85bb70b4fc6ecc4c07566e7004a659c5` adds schema 24 persistence for
+  `ProviderProfile.secret_custom_headers_ref`, resolves the reference through the host secret
+  broker, and applies the in-memory JSON only to OpenAI-compatible Chat, Responses, and Azure
+  requests. Secret values are never persisted or included in debug output; reserved header names
+  remain rejected, while secret values are not copied into non-secret metadata.
+- Linux `9d0ffc10a5ee9dd114e40b95db277679969d2593` preserves persistent secret-header references
+  across runtime/storage transforms, rejects session-only references during persistence, and
+  removes both credential and secret-header Secret Service entries when deleting a profile.
+- Local Core evidence passed full workspace tests, strict Clippy, provider/application/storage
+  regressions, C/C++ Native SDK smoke, and `git diff --check`. Local Linux evidence passed
+  formatting, GUI/all-target check, strict Clippy, `158 passed; 3 ignored` demo-provider tests,
+  the secret-reference persistence regression, Flatpak metadata validation, and diff checks.
+- Core CI/Fuzz/Native SDK runs `29963034872`/`29963034867`/`29963034863` passed. Linux push
+  Native/Flatpak/Foundation runs `29963506897`/`29963506924`/`29963506877` and PR runs
+  `29963509821`/`29963509808`/`29963509782` all passed for the exact heads above. Central
+  coordination remains pending for this documentation update; the separate GTK secret-header
+  editor/onboarding, other clients, human review, signing, rollback, and stable release remain
+  open.
+
 ## 2026-07-22 — ABI 1 provider metadata projection
 
 Assumption: optional `TranslateTextCommand` fields are backward-compatible under protocol 1;
