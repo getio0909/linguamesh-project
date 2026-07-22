@@ -24,6 +24,19 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Extend Linux Scenario 15 through the production GTK OOXML safety boundary. The serialized
+  `gtk_malicious_archive_import_fails_closed_before_document_job` fixture now drives DOCX
+  traversal, suspicious-compression, macro (`word/vbaProject.bin`), and digital-signature
+  (`_xmlsignatures/sig1.xml`) packages through asynchronous GIO import, proving fixed rejection,
+  no document job, an unchanged empty source editor, and no forbidden extraction. Linux commit
+  `ed1d419e4c13e614d5470f500e5d0736390449c6` pins Flatpak to the tested source. Local formatting,
+  locked checks, strict Clippy, 157-pass demo-provider tests (3 ignored), localization audits,
+  l10n synchronization, Flatpak metadata, and diff checks passed. Push Native/Flatpak/Foundation
+  runs `29881709701`/`29881709736`/`29881709671` and PR runs
+  `29881711799`/`29881711798`/`29881711800` all passed; Native executed the exact GTK fixture.
+  This remains unreleased Linux evidence; human review, other clients, signing, rollback, and
+  stable release remain open.
+
 - [x] Extend Linux Scenario 15 through the production GTK malicious-archive boundary. Linux
   runtime code `acb15c2b17bc58f311a31edd57f8793fb7f90e7f` adds the serialized
   `gtk_malicious_archive_import_fails_closed_before_document_job` fixture and feeds the real
