@@ -10,12 +10,13 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 Core `17342ba0bf19dd4978707a7875bc7dbe85efae54` adds schema 21 optional bounded non-secret
 `ProviderProfile.project`, with validation, persistence, and an OpenAI-compatible `OpenAI-Project`
-request header for Chat Completions and Responses. Linux head
-`58df1345d03acb02fa01aec248f41cea53c0e621` binds, restores, and clears the localized field; l10n
+request header for Chat Completions and Responses. Linux status head
+`108cba3e5b1cb128cf77003fc0cb530e822bd7f7` binds, restores, and clears the localized field; l10n
 `fea84439f035f30b009532b40d7f67a30049846c` contains 450 messages. Local Core, l10n, and Linux
-checks passed; remote push/PR Native, Flatpak, and Foundation gates are pending. This remains
-unreleased Linux-first evidence; other clients, human review, signing, rollback, and stable-release
-acceptance remain open.
+checks passed; Core CI/Fuzz/Native SDK, l10n Localization/Foundation, and Linux push/PR
+Native/Flatpak/Foundation gates all passed (`29949462141`/`29949462126`/`29949462107` and
+`29949468527`/`29949466704`/`29949468689`). This remains unreleased Linux-first evidence; other
+clients, human review, signing, rollback, and stable-release acceptance remain open.
 
 ### Linux provider profile organization checkpoint
 

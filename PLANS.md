@@ -38,12 +38,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29946831489`/`29946831590`/`29946832071` passed; PR #1 remains Draft/Open and the release train
   remains `unreleased`.
 
-- [x] Add the Linux-first ProviderProfile project slice. Core `17342ba0bf19dd4978707a7875bc7dbe85efae54`
-  persists bounded non-secret `project` metadata in schema 21 and sends it only as the
-  `OpenAI-Project` header for Chat/Responses; l10n `fea84439f035f30b009532b40d7f67a30049846c`
-  adds the three Linux form messages (450-message bundle), and Linux `58df1345d03acb02fa01aec248f41cea53c0e621`
-  binds the field, runtime copies, and exact Core/l10n/Flatpak pins. Local Core/l10n/Linux checks
-  passed; remote push/PR gates are pending. Release remains `unreleased`.
+- [x] Add and remotely verify the Linux-first ProviderProfile project slice. Core
+  `17342ba0bf19dd4978707a7875bc7dbe85efae54` persists bounded non-secret `project` metadata in
+  schema 21 and sends it only as the `OpenAI-Project` header for Chat/Responses; l10n
+  `fea84439f035f30b009532b40d7f67a30049846c` adds the three Linux form messages (450-message
+  bundle), and Linux status head `108cba3e5b1cb128cf77003fc0cb530e822bd7f7` binds the field,
+  runtime copies, and exact Core/l10n/Flatpak pins. Local checks passed; Core CI/Fuzz/Native SDK,
+  l10n Localization/Foundation, and Linux push/PR Native/Flatpak/Foundation gates all passed:
+  `29949462141`/`29949462126`/`29949462107` and `29949468527`/`29949466704`/`29949468689`.
+  Release remains `unreleased`.
 
 - [x] Add the Linux About compatibility dialog and final CI evidence. Runtime/packaging head
   `0d7b3927fb98e461317feaefeb4c806676e6acc0`, l10n `a65a327a8418332e50d9ab302fca24508e7266ef`,
