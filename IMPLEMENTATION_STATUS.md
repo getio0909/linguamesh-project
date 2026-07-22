@@ -2,6 +2,33 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Linux auxiliary export overwrite protection
+
+Assumption: every user-visible export must fail closed on an occupied destination, not only
+translated document and report output.
+
+- Runtime commit `c11e80bbb69b869b1d021d07e1f97247cf0ae7b4` routes glossary CSV, routing-profile
+  JSON, translation-history TSV, and translation-memory TSV exports through the same GIO exclusive
+  create, asynchronous write, and close helper used by translated output and reports. No
+  `replace_contents_bytes_async` export call sites remain.
+- The ignored GTK fixture `gtk_exclusive_output_writer_never_replaces_existing_file` covers both
+  occupied-file failure with preserved sentinel contents and successful creation of a new file.
+  Local formatting, locked all-target/all-feature checks, strict Clippy, demo-provider tests
+  (`157 passed; 3 ignored`), localization audits, Flatpak metadata, diff checks, and static audit
+  passed; full GTK linking remains unavailable on this host.
+- Packaging/docs commit `c7afb4c351b5a092318dda3ea93f1a1c1043c097` pins Flatpak and documents all
+  protected export paths. Code-head push Native/Flatpak/Foundation runs
+  `29892239963`/`29892239946`/`29892239987` and PR runs
+  `29892242173`/`29892242176`/`29892242188` all passed; Native executed the exclusive fixture and
+  completed release, checksum/SBOM, performance, and accessibility suites. Final status head
+  `831fcf276010419359fb7bf983be1d47de8d3767` then passed push Native/Flatpak/Foundation
+  `29892566477`/`29892566480`/`29892566481` and PR
+  `29892568592`/`29892568596`/`29892568579`.
+
+This closes the Linux user-visible export overwrite call-site gap for unreleased Scenario 18
+evidence. Human visual/copy/Orca review, other clients, signed artifacts, rollback authorization,
+and stable release approval remain open; release status is `unreleased`.
+
 ## 2026-07-22 — Linux exclusive translation output writer
 
 Assumption: collision-safe output naming must remain safe if another process creates the selected

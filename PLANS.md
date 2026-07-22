@@ -24,6 +24,23 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Close remaining Linux user-visible export overwrite paths. Runtime commit
+  `c11e80bbb69b869b1d021d07e1f97247cf0ae7b4` routes glossary CSV, routing-profile JSON,
+  translation-history TSV, and translation-memory TSV through the same GIO exclusive asynchronous
+  writer used by translated output and reports; no `replace_contents_bytes_async` export call sites
+  remain. Packaging/docs commit `c7afb4c351b5a092318dda3ea93f1a1c1043c097` pins Flatpak and
+  documents the shared writer, while final Linux status head
+  `831fcf276010419359fb7bf983be1d47de8d3767` records the evidence. Local formatting, locked checks,
+  strict Clippy, demo-provider tests (`157 passed; 3 ignored`), localization audits, Flatpak
+  metadata, diff checks, and static replacement audit passed. Code-head push Native/Flatpak/
+  Foundation `29892239963`/`29892239946`/`29892239987` and PR runs
+  `29892242173`/`29892242176`/`29892242188` all passed; Native executed the exact fixture and
+  completed the release/evidence suite. Final status-head push Native/Flatpak/Foundation
+  `29892566477`/`29892566480`/`29892566481` and PR
+  `29892568592`/`29892568596`/`29892568579` also passed. This remains unreleased Linux Scenario 18
+  evidence; human
+  visual/copy/Orca review, other clients, signing, rollback, and stable release remain open.
+
 - [x] Close the Linux translation-export race window. Runtime commit
   `a48dafe259b794211ed2d1bec0a858b647dcd3d3` replaces plain-text, document-report, and binary
   export replacement writes with GIO exclusive creation plus asynchronous write-and-close, so a
