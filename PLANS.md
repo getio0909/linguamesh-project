@@ -24,6 +24,11 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add the cross-repository completion gap audit in [`docs/GAP_ANALYSIS.md`](docs/GAP_ANALYSIS.md),
+  mapping Milestones 0–8 and all 20 mandatory scenarios to current evidence. The audit preserves
+  the Linux-first scope and records cross-client, manual, physical, signing, rollback, and stable
+  release work as explicitly incomplete rather than inferring completion from Linux fixtures.
+
 - [x] Close and record the Linux Azure OpenAI custom-header application wiring gap. Core
   `cf08384c829ca1b95ecfc79d23bc5b0feb3a701f` adds `AzureOpenAiConfig.custom_headers` and forwards
   the persisted bounded value through `ProviderManager` without replacing Azure `api-key`.

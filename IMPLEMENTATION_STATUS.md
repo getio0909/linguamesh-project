@@ -2,6 +2,19 @@
 
 Last updated: 2026-07-22
 
+## 2026-07-22 — Cross-repository completion gap audit
+
+Assumption: Linux remains the active implementation scope for this checkpoint; deterministic
+Linux evidence must not be promoted to global acceptance evidence for the other native clients.
+
+- Added [`docs/GAP_ANALYSIS.md`](docs/GAP_ANALYSIS.md), a milestone and mandatory-scenario matrix
+  grounded in the current repository heads and release manifest.
+- The audit confirms that the release remains `unreleased`: Linux has substantial runtime and CI
+  evidence, while cross-client conformance, qualified human accessibility/visual review, physical
+  VFS/power-loss evidence, signing, rollback, and stable-release authorization remain open.
+- No implementation, compatibility pin, or release artifact is being claimed from an indirect or
+  unavailable validation result.
+
 ## 2026-07-22 — Linux Azure custom-header application wiring
 
 Assumption: custom request headers are optional, bounded, non-secret ProviderProfile metadata;

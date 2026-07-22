@@ -40,6 +40,7 @@ Bootstrap preserves existing sibling directories and clones only missing reposit
 
 - [`docs/architecture/overview.md`](docs/architecture/overview.md) describes repository boundaries, providers, documents, ABI, privacy, and extension points.
 - [`COMPATIBILITY.md`](COMPATIBILITY.md) and [`release-manifest.toml`](release-manifest.toml) define the known-good release train.
+- [`docs/GAP_ANALYSIS.md`](docs/GAP_ANALYSIS.md) records the evidence-backed milestone and acceptance gaps.
 - [`SECURITY.md`](SECURITY.md) explains vulnerability reporting and security boundaries.
 - [`PRIVACY.md`](PRIVACY.md) describes local data, provider transmission, credentials, and diagnostics.
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) contains the development and review workflow.
