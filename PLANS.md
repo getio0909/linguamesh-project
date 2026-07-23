@@ -38,8 +38,9 @@ and other-client, human/physical, signing, rollback, and stable-release gates re
   library-test, synchronization, localization-audit, Flatpak, and diff checks.
 - [x] Central coordination workflow `30014149373` passed on Linux and PowerShell after the
   release manifest, gap analysis, status, and plan were synchronized.
-- [ ] Keep PR #1 Draft/Open and Issue #1 Open while synchronizing central manifests and evidence;
-  do not merge or promote a stable release.
+- [x] Keep PR #1 Draft/Open and Issue #1 Open while synchronizing central manifests and evidence;
+  final central coordination workflow `30014321698` passed. No merge or stable release promotion
+  was performed.
 
 ## 2026-07-23 — Linux provider health persistence
 
@@ -1796,7 +1797,7 @@ Native/Flatpak/Foundation `29712166849`/`29712166856`/`29712166851` all passed. 
 `qwen2.5-0.5b-instruct:latest`; the harness reported `1 passed; 0 failed` without a credential.
 The model and daemon were removed after validation; GPU and stable-release evidence remain open.
 
-## Active Linux-first checkpoint — approved text fallback routing
+## Completed Linux-first checkpoint — approved text fallback routing
 
 Change identifier: `LM-CHANGE-2026-07-LINUX-FALLBACK-1`
 
@@ -1810,7 +1811,16 @@ Assumption: this checkpoint remains the explicit single-provider fallback bounda
 multi-provider Ordered/Automatic execution is recorded in the completed routing fallback checkpoint
 below and remains ordinary-text-only.
 
-## Active Linux-first checkpoint — shared routing planner contract
+- [x] Linux `878a9c015d29ce49633046d435f48f5fee4c9a47` implements the opt-in saved-provider
+  fallback path, bounded retry policy, partial-output preservation, cancellation boundary, and
+  localized decision notice without endpoint or content disclosure. l10n
+  `273be8a4e9c3b1084f393ce0086cdf2c42fcd4e9` supplies the six fallback messages.
+- [x] Local no-default/demo-provider suites (`61`/`100` tests with one documented environment
+  skip), strict Clippy, GUI check, synchronization, and diff checks passed; Native/Foundation/
+  Flatpak gates `29659054771`/`29659054755`/`29659054756` passed. The checkpoint remains
+  unreleased and Linux-scoped.
+
+## Completed Linux-first checkpoint — shared routing planner contract
 
 Change identifier: `LM-CHANGE-2026-07-ROUTING-PLANNER-1`
 
@@ -1824,6 +1834,11 @@ Ordered/Automatic chain execution is covered by the completed checkpoint below.
 Evidence: Core CI `29688550094`, Core Native SDK `29688550109`; Linux push Native/Foundation/Flatpak
 `29688581267`/`29688581251`/`29688581258`; Linux PR Native/Foundation/Flatpak
 `29688582602`/`29688582637`/`29688582608` all passed.
+
+- [x] Core `d1c03ba84362c0c672c57045a59fc8092db470be` and Linux
+  `eba4b036649cdb1fb4b466844b5c0429d3ff4de5` are recorded as the compatible Core routing planner
+  contract and Linux feature gate. The contract is shared, bounded, deterministic, and non-secret;
+  complete cross-client parity and stable-release evidence remain open.
 
 ## Completed Linux-first checkpoint — routing profile persistence/editor
 

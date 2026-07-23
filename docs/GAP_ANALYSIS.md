@@ -43,10 +43,11 @@ intentionally `unreleased` and contains no stable artifacts.
 ## Next executable gates
 
 1. Keep the Linux PR, central issue, and release documentation synchronized with the latest
-   verified heads, including the glossary-library selector/localization, bounded TBX import,
-   model-source provenance labels, regional-locale/script presets, provider-switch,
-   Anthropic/Gemini/Azure protocol-preset, proxy-authentication, proxy-settings, timeout,
-   custom-trust-bundle, and client-certificate identity checkpoints.
+   verified heads, including the Provider Hub health UI, shared routing planner and approved
+   fallback, glossary-library selector/localization, bounded TBX import, model-source provenance
+   labels, regional-locale/script presets, provider-switch, Anthropic/Gemini/Azure protocol-preset,
+   proxy-authentication, proxy-settings, timeout, custom-trust-bundle, and client-certificate
+   identity checkpoints.
 2. Do not promote any prerelease evidence to a stable component or release artifact.
 3. When the Linux-first scope is released by the user, implement the next native-client
    conformance slice and repeat the same Core/l10n/manifest/CI evidence loop.
