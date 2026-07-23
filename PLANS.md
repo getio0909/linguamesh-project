@@ -32,6 +32,11 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29992795496`/`29992795837`/`29992795547` and `29992800736`/`29992800675`/`29992800292` passed.
   Other clients, live accounting, human review, signing, rollback, and stable release remain open.
 
+- [x] Refresh the Linux usage-persistence documentation head. Linux `c4966caa37213225c52e7b0ee8a357c5e85becd7`
+  passed push Native/Flatpak/Foundation `29993630277`/`29993630247`/`29993631103` and PR
+  `29993633187`/`29993633058`/`29993633663`; all six PR checks pass and the functional release pin
+  remains `064a6f17e37030351ef27a7bb047db2910167fe3`.
+
 - [x] Refresh the Linux PR documentation-head gate record. Linux status head `90a2753` was
   pushed after the prior propagation-lag observation; PR Native `29990141179` and Repository
   Foundation `29990141145` passed, while PR Flatpak `29990141186` completed build, checksum,

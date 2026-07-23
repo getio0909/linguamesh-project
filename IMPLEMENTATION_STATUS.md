@@ -18,6 +18,16 @@ history policy and Incognito mode are the persistence controls, and no provider 
   `cargo test --features demo-provider --lib --locked -- --nocapture` passed (159 passed, 3
   ignored). Release remains `unreleased`.
 
+## 2026-07-23 — Linux usage persistence documentation-head gates
+
+Assumption: the documentation-only head does not change the functional source pin; its completed
+workflow jobs are recorded separately from the pinned implementation evidence above.
+
+- Linux docs/status head `c4966caa37213225c52e7b0ee8a357c5e85becd7` passed push
+  Native/Flatpak/Foundation `29993630277`/`29993630247`/`29993631103` and PR
+  Native/Flatpak/Foundation `29993633187`/`29993633058`/`29993633663`. `gh pr checks` reports all
+  six checks passing; the PR remains Draft/Open and release remains `unreleased`.
+
 ## 2026-07-23 — Linux PR gate result for status head `90a2753`
 
 Assumption: completed Linux workflow jobs are authoritative for this documentation head; GitHub
