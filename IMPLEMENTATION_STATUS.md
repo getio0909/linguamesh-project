@@ -2,6 +2,23 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Current pinned regression rerun
+
+Assumption: this is a verification-only checkpoint; the functional Core, Linux, and localization
+pins remain unchanged, and ignored tests still require their documented external fixtures.
+
+- Core `53eee86ce0862bcb0b86f86da5e91257b07fe6d7` passed `cargo test --workspace --locked
+  --all-targets` (226 tests passed, 0 failed, 0 ignored) and
+  `cargo clippy --workspace --all-targets --all-features --locked -- -D warnings`.
+- Linux `3eb710ee35c6aa626714a4c8618e37cc831661c3` passed
+  `cargo test --features demo-provider --lib --locked -- --nocapture` (160 passed, 3 ignored;
+  OCR, third-party Ollama, and private storage-fault fixtures remain explicitly gated).
+- Localization `1de68c9568b5c380845089efc9282ff6edd04bc1` passed `make check`: 494 messages, 12
+  official locale packs, 26 tests, deterministic generated resources, bundle creation, and
+  Foundation validation.
+- Central `bash tools/check-workspace.sh` and `git diff --check` passed. Release remains
+  `unreleased`; no component pin or stable-release claim changed.
+
 ## 2026-07-23 — Linux regional-locale and script translation presets
 
 Assumption: Linux remains the active implementation scope; Core's bounded regional-locale and

@@ -22,6 +22,19 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Current pinned regression rerun
+
+Assumption: this checkpoint only refreshes reproducible evidence; it does not change the functional
+release pins or promote prerelease work.
+
+- [x] Re-run the current pinned Core, Linux, localization, and central validation. Core
+  `53eee86ce0862bcb0b86f86da5e91257b07fe6d7` passed the locked workspace tests (226 passed, no
+  failures or ignored tests) and strict Clippy. Linux status head
+  `3eb710ee35c6aa626714a4c8618e37cc831661c3` passed the demo-provider library suite (160 passed,
+  3 environment-gated ignored), and localization `1de68c9568b5c380845089efc9282ff6edd04bc1`
+  passed `make check` with 494 messages and 26 tests. Central workspace validation and diff checks
+  passed; release remains `unreleased`.
+
 ## 2026-07-23 — Linux regional-locale and script translation presets
 
 Assumption: the existing GTK translation-preset selector is the smallest complete Linux surface
