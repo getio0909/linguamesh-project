@@ -24,6 +24,17 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add Linux production GTK Anthropic Messages protocol-preset transport evidence. Core
+  `2f91f313025b189df237294485fd47bafc1f1f53` adds the deterministic `/v1/messages` testkit route
+  with `x-api-key`, usage, fragmented content, and `message_stop` events. Linux implementation
+  `2f12c7482a4d0376bbdd7ea86fd7f25557fea75f` drives Anthropic, Gemini, and Azure through the real
+  GTK lifecycle; packaging head `0a77a14d35fad42d66c812398827b2ca50edb51c` and status head
+  `b218c814c21b6e6a2f4ad691b5f6f09bf33d7bc0` pin and document the final state. Core CI/Fuzz/Native
+  SDK `29982822450`/`29982822441`/`29982822462` and Linux push/PR Native, Flatpak, Foundation
+  `29983438263`/`29983438252`/`29983438279` and `29983440294`/`29983440326`/`29983440348` passed.
+  Live Anthropic interoperability, other clients, human review, signing, rollback, and stable
+  release remain open.
+
 - [x] Add Linux production GTK Gemini/Azure protocol-preset transport evidence. Linux
   implementation `8006f7a37b81db7c547be717b72860ee610ca7d7` drives both native GTK presets
   through real Gemini `/v1beta/` and Azure resource-path handlers, deliberate model selection,

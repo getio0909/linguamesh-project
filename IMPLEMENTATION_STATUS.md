@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux GTK Anthropic Messages preset transport evidence
+
+Assumption: Linux is the active client scope; a deterministic loopback Messages service is the
+smallest complete evidence for the production Anthropic preset, while live account, quota, model,
+and external-network interoperability remain unverified.
+
+- Core `2f91f313025b189df237294485fd47bafc1f1f53` adds `FakeProviderServer::start_anthropic()` with
+  `/v1/messages`, `x-api-key` authentication, usage events, fragmented content deltas, and
+  `message_stop`. Core CI/Fuzz/Native SDK `29982822450`/`29982822441`/`29982822462` passed.
+- Linux implementation `2f12c7482a4d0376bbdd7ea86fd7f25557fea75f` drives Anthropic, Gemini, and
+  Azure through the real GTK Connect, manual/discovered model selection, and streamed Translate
+  handlers. Packaging head `0a77a14d35fad42d66c812398827b2ca50edb51c` and final status head
+  `b218c814c21b6e6a2f4ad691b5f6f09bf33d7bc0` pin the exact Core source and record evidence.
+  Linux push Native/Flatpak/Foundation `29983438263`/`29983438252`/`29983438279` and PR
+  `29983440294`/`29983440326`/`29983440348` passed; the protocol-preset fixture reported `1 passed`.
+- This closes only the Linux deterministic Anthropic protocol-preset evidence gap. Other native
+  clients, live providers, human review, signing, rollback, and stable release remain open;
+  release stays `unreleased`.
+
 ## 2026-07-23 — Linux GTK Gemini and Azure preset transport evidence
 
 Assumption: Linux remains the active client scope; deterministic loopback providers prove
