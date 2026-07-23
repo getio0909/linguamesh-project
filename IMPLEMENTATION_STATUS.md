@@ -10,6 +10,8 @@ Last updated: 2026-07-23
   workflow `30049632598`; Linux and PowerShell validation jobs completed successfully.
 - Central mTLS hostname evidence/manifest commit `8e53d565a81bc042099e55aa556a62349d8dc178` passed
   workflow `30051289289`; Linux and PowerShell validation jobs completed successfully.
+- Central Linux mTLS client-auth evidence/manifest commit `cb4976a9d5e9de6ba6f8228be3139b4d5b4e80fd`
+  passed workflow `30052432141`; Linux and PowerShell validation jobs completed successfully.
 
 ## 2026-07-23 — Linux mTLS client-authentication rejection
 
