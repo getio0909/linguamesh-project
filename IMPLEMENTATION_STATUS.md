@@ -14,9 +14,12 @@ human review on other clients remain open.
   document requests; localization `1de68c9568b5c380845089efc9282ff6edd04bc1` supplies the
   catalog-backed labels in a 494-message bundle.
 - Local Linux tests passed `160 passed; 0 failed; 3 ignored`, with strict Clippy, l10n `make
-  check`, synchronization, Flatpak metadata, formatting, and diff checks passing. Core CI/Fuzz
-  passed (`30000596855`, `30000596731`); Core Native SDK and Linux push/PR gates remain recorded
-  after completion.
+  check`, synchronization, Flatpak metadata, formatting, and diff checks passing. Core CI/Fuzz/
+  Native SDK `30000596855`/`30000596731`/`30000596716`, l10n Localization/Foundation
+  `30000492370`/`30000492390`, Linux push Native/Flatpak/Foundation
+  `30000751775`/`30000751755`/`30000751799`, and Linux PR Native/Flatpak/Foundation
+  `30000748043`/`30000747816`/`30000747915` all completed successfully. Central coordination
+  commit `db8785075dd168096113c0a977b49f1afe09c266` passed workflow `30000926993`.
 - Release remains `unreleased`; cross-client parity, qualified human accessibility/translation
   review, signing, rollback, and stable-release authorization remain open.
 

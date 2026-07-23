@@ -32,7 +32,11 @@ for Core's bounded regional-locale and script preferences; cross-client parity r
 - [x] Expose both choices in Linux GTK at `52a9eb7fc579fff07627c55d7ce0f49eac5048ad`, sync
   localization `1de68c9568b5c380845089efc9282ff6edd04bc1` (494 messages), and repin Native and
   Flatpak inputs. Local 160-test/3-ignore suite, strict Clippy, l10n checks, synchronization,
-  Flatpak metadata, and diff checks passed.
+  Flatpak metadata, and diff checks passed. Core CI/Fuzz/Native SDK
+  `30000596855`/`30000596731`/`30000596716`, l10n Localization/Foundation
+  `30000492370`/`30000492390`, Linux push/PR Native/Flatpak/Foundation
+  `30000751775`/`30000751755`/`30000751799` and `30000748043`/`30000747816`/`30000747915`, and
+  central coordination `30000926993` all passed.
 - [ ] Add equivalent regional/script controls to Android, Windows, and macOS before stable
   release; retain explicit human translation and accessibility review boundaries.
 
