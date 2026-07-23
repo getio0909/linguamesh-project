@@ -20,7 +20,8 @@ human/physical acceptance evidence.
 - Local Linux formatting, strict all-feature Clippy, GUI cargo check, 163 all-feature library
   tests with 12 documented environment-gated ignores, localization synchronization/audits,
   Flatpak metadata, and diff checks passed. The host cannot link GTK/GDK/Graphene test binaries;
-  Native CI is authoritative for display-backed UI. Release remains `unreleased`.
+  Native CI is authoritative for display-backed UI. Central coordination workflow `30014149373`
+  passed on Linux and PowerShell. Release remains `unreleased`.
 
 ## 2026-07-23 — Linux provider health persistence
 

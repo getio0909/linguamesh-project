@@ -36,6 +36,8 @@ and other-client, human/physical, signing, rollback, and stable-release gates re
 - [x] Pass Linux push Native/Flatpak/Foundation `30013497323`/`30013497315`/`30013497291` and PR
   Native/Flatpak/Foundation `30013503182`/`30013503000`/`30013502922`, plus local format, Clippy,
   library-test, synchronization, localization-audit, Flatpak, and diff checks.
+- [x] Central coordination workflow `30014149373` passed on Linux and PowerShell after the
+  release manifest, gap analysis, status, and plan were synchronized.
 - [ ] Keep PR #1 Draft/Open and Issue #1 Open while synchronizing central manifests and evidence;
   do not merge or promote a stable release.
 
