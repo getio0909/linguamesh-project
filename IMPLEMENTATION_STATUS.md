@@ -24,6 +24,18 @@ claiming cross-client or human-review completion.
   display-backed/human accessibility review, live providers, signing, rollback, and stable
   authorization remain open.
 
+## 2026-07-23 — Linux model-provenance documentation head
+
+Assumption: Linux documentation head `99c5c5e` is a non-functional follow-up to the verified
+model-provenance implementation; the release-manifest Linux pin remains `73051b70028359c56654e1260621ada77def67e9`.
+
+- Linux `99c5c5e` synchronizes `IMPLEMENTATION_STATUS.md`, `README.md`, and `docs/architecture.md`
+  with the localized `Discovered`/`Catalog`/`Manual` selector behavior and l10n revision
+  `7c2cb9fd71835ea0f9c6605d82dac87c0df012f0`.
+- Push Native/Flatpak/Foundation `30007622306`/`30007622052`/`30007622063` and PR
+  Native/Flatpak/Foundation `30007624889`/`30007624904`/`30007625187` all passed. The Linux PR
+  remains Draft/Open and mergeable; no merge or stable promotion was performed.
+
 ## 2026-07-23 — Linux/Core bounded TBX glossary import
 
 Assumption: Linux is the active implementation priority; this checkpoint completes the bounded

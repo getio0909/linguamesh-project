@@ -39,6 +39,21 @@ remain open.
 - [x] Synchronize central status, gap analysis, and release pins; retain `unreleased` until
   cross-client parity, manual/physical evidence, signing, rollback, and authorization exist.
 
+## 2026-07-23 — Linux model-provenance documentation head
+
+Assumption: this is a documentation-only follow-up; the functional Linux pin remains the
+verified packaging commit and no release artifact is promoted.
+
+- [x] Synchronize Linux `IMPLEMENTATION_STATUS.md`, `README.md`, and `docs/architecture.md` at
+  documentation head `99c5c5e` with the model-source labels and l10n revision `7c2cb9f`.
+- [x] Re-run local Linux synchronization, formatting, library tests, Clippy, GUI cargo check,
+  localization audits, Flatpak metadata, and diff checks.
+- [x] Confirm all six Linux Push/PR Native, Flatpak, and Foundation gates passed:
+  `30007622306`/`30007622052`/`30007622063` and
+  `30007624889`/`30007624904`/`30007625187`.
+- [x] Keep the PR Draft/Open, issue Open, and release status `unreleased` while cross-client,
+  human/physical, signing, rollback, and stable authorization evidence remains incomplete.
+
 ## 2026-07-23 — Linux/Core bounded TBX glossary import
 
 Assumption: Linux remains the active client priority; a restricted TBX parser and native chooser
