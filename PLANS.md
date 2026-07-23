@@ -29,13 +29,14 @@ state, while other clients and stable-release conditions remain deferred.
 
 - [x] Push Core `460728d79b0e2373445c3d8994793d069b8057b9` with schema-34 profile health fields,
   normalized failure categories, and round-trip storage tests.
-- [x] Push Linux `df25c87f1477caecc00187fd9ac46e69f7aad38d` with explicit connection-test health
+- [x] Push Linux code `fb9b1e6c9bb3703ade5c4b8e4c1993f716d3126c` with explicit connection-test health
   recording, saved-profile refresh, restart coverage, and Core compatibility feature
-  `provider_health_status_v1`; Flatpak pin `e2cf532ceeebca86881dbc49c76c8b036dad89b0` points to
-  the health-aware Core and Linux inputs.
+  `provider_health_status_v1`; Flatpak packaging `4784764b50b4362833e26a1e88b3792a811ae768`
+  points to the health-aware Core and Linux inputs.
 - [x] Pass local Core workspace tests and Linux `cargo test --lib --all-features` (163 passed,
-  12 documented environment-gated ignores). Remote Native/Flatpak/Foundation gates for the final
-  documentation head remain in progress; release stays `unreleased`.
+  12 documented environment-gated ignores). Push Native/Flatpak/Foundation
+  `30010795356`/`30010795221`/`30010795318` and PR Native/Flatpak/Foundation
+  `30010798544`/`30010798478`/`30010798760` passed; release stays `unreleased`.
 
 ## 2026-07-23 — Linux release-document pin alignment
 

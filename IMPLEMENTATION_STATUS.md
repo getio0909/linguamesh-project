@@ -11,13 +11,14 @@ and human/physical evidence remain deferred.
   for the last successful Unix-second check and last normalized `ErrorKind`, with no raw provider
   error text or credentials persisted. The Core compatibility feature is
   `provider_health_status_v1`.
-- Linux `df25c87f1477caecc00187fd9ac46e69f7aad38d` records these fields after explicit cancellable
+- Linux `fb9b1e6c9bb3703ade5c4b8e4c1993f716d3126c` records these fields after explicit cancellable
   connection tests, refreshes saved-profile state, and verifies success/failure/restart behavior
-  in the worker fixture. Flatpak packaging `e2cf532ceeebca86881dbc49c76c8b036dad89b0` pins the
+  in the worker fixture. Flatpak packaging `4784764b50b4362833e26a1e88b3792a811ae768` pins the
   health-aware Core and Linux sources.
 - Local Core workspace tests and Linux all-feature library tests passed (163 Linux tests passed,
-  12 documented environment-gated ignores). The final Linux Native/Flatpak/Foundation runs are
-  still in progress; release remains `unreleased`.
+  12 documented environment-gated ignores). Push Native/Flatpak/Foundation
+  `30010795356`/`30010795221`/`30010795318` and PR Native/Flatpak/Foundation
+  `30010798544`/`30010798478`/`30010798760` passed; release remains `unreleased`.
 
 ## 2026-07-23 — Linux release-document pin alignment
 
