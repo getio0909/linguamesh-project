@@ -17,8 +17,11 @@ adds the localized GTK controls, restores them with saved profiles, defaults new
 before host-secret requests and applied independently to OpenAI Chat/Responses/Azure, Anthropic,
 Gemini, and Ollama transports.
 Local Core workspace tests and strict Clippy, Linux locked checks/tests (`159 passed; 3 ignored`),
-l10n audits/synchronization, and Flatpak metadata validation passed. Linux push Native/Flatpak/
-Foundation and PR runs are pending for the exact head. Streaming-idle and TLS-specific timeout
+l10n audits/synchronization, and Flatpak metadata validation passed. Core CI/Fuzz/Native SDK
+`29969609373`/`29969609372`/`29969609379`, l10n Localization/Foundation
+`29969625867`/`29969625942`, Linux push Native/Flatpak/Foundation
+`29969721769`/`29969721764`/`29969721796`, and PR runs
+`29969720587`/`29969720599`/`29969720634` passed for the exact revisions. Streaming-idle and TLS-specific timeout
 fields, other clients, human review, signing, rollback,
 and stable release remain open; status stays `unreleased`.
 

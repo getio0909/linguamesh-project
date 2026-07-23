@@ -29,8 +29,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
   and independent transport wiring across OpenAI Chat/Responses/Azure, Anthropic, Gemini, and
   Ollama. l10n `46ca70b2863fa951b417eda7ce5848e152c46605` supplies the 469-message bundle. Linux
   `55921b0012729c72ba0fdb07ffb7be820a7f2136` adds the GTK control and exact Core/l10n/Flatpak pins.
-  Local Core/Linux/l10n/Flatpak checks passed; remote Linux gates are pending. Streaming-idle/TLS
-  policy, cross-client parity, human review, signing, rollback, and stable release remain open.
+  Local Core/Linux/l10n/Flatpak checks passed. Core CI/Fuzz/Native SDK
+  `29969609373`/`29969609372`/`29969609379`, l10n Localization/Foundation
+  `29969625867`/`29969625942`, and Linux push/PR Native/Flatpak/Foundation
+  `29969721769`/`29969721764`/`29969721796` and `29969720587`/`29969720599`/`29969720634` passed.
+  Streaming-idle/TLS policy, cross-client parity, human review, signing, rollback, and stable
+  release remain open.
 
 - [x] Add and pin the Linux-first bounded total provider request timeout slice. Core
   `7e78cb0086d85eb5c218d8863b7f11f506bae016` adds schema 26 persistence, 1–600 second validation,
