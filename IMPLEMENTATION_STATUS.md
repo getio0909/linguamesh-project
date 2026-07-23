@@ -11,12 +11,14 @@ while TLS policy remains separate.
 - Core `b247155ad429639fdb65d3b063c3efc580ce46a4` adds schema 28 persistence, domain/storage range
   coverage, and typed per-chunk timeout handling for OpenAI Chat/Responses/Azure, Anthropic,
   Gemini, and Ollama. l10n `2e223f9a416f4b461b72224f12c31cbf7981dae3` regenerates the 471-message
-  bundle. Linux `c9d9a518103e370d4b21343cbe2e46dcd976422d` adds the localized GTK control,
+  bundle. Linux `24b69a646a9463b13710502ce35a1bd0d15ee427` adds the localized GTK control,
   saved-profile restore/default behavior, exact source pins, and documentation.
 - Local Core `cargo check --workspace` and `cargo test --workspace`, Linux `cargo test
-  --no-default-features --lib`, l10n `make check`, synchronization, Flatpak metadata, and diff
-  checks passed. Remote Core/l10n evidence is complete; Linux push/PR gate IDs will be recorded
-  after the current runs settle. Release remains `unreleased`.
+  --no-default-features --lib` and strict Clippy, l10n `make check`, synchronization, Flatpak
+  metadata, and diff checks passed. Full-feature local binary linking remains blocked by missing
+  GTK symbols on this host; Linux push Native/Flatpak/Foundation
+  `29971755022`/`29971755009`/`29971755012` and PR `29971756513`/`29971756522`/`29971756554`
+  passed for final head `24b69a646a9463b13710502ce35a1bd0d15ee427`. Release remains `unreleased`.
 
 ## 2026-07-23 — Linux provider connection timeout settings
 

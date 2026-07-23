@@ -9,7 +9,7 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 ### Linux-first provider timeout settings
 
 Core `b247155ad429639fdb65d3b063c3efc580ce46a4` adds schema 28 persistence for a bounded
-streaming idle timeout. Linux `c9d9a518103e370d4b21343cbe2e46dcd976422d` adds the localized GTK
+streaming idle timeout. Linux `24b69a646a9463b13710502ce35a1bd0d15ee427` adds the localized GTK
 control, restores it with saved profiles, defaults new profiles to 60 seconds, and pins Core/l10n
 in Native and Flatpak metadata; l10n `2e223f9a416f4b461b72224f12c31cbf7981dae3` supplies the
 471-message bundle. Values from 1 through 300 seconds are validated before host-secret requests,

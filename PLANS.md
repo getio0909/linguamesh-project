@@ -30,9 +30,10 @@ Assumption: Planned files and commands are not evidence until they exist and com
   Anthropic, Gemini, and Ollama. l10n `2e223f9a416f4b461b72224f12c31cbf7981dae3` supplies the
   471-message bundle. Linux `c9d9a518103e370d4b21343cbe2e46dcd976422d` adds the GTK control,
   restore/default behavior, exact Core/l10n/Flatpak pins, and release documentation. Local Core,
-  Linux, l10n, synchronization, and Flatpak checks passed; remote gate evidence is pending the
-  current GitHub runs. TLS policy, cross-client parity, human review, signing, rollback, and
-  stable release remain open.
+  Linux, l10n, synchronization, and Flatpak checks passed. Linux push Native/Flatpak/Foundation
+  `29971755022`/`29971755009`/`29971755012` and PR `29971756513`/`29971756522`/`29971756554` passed
+  for final head `24b69a646a9463b13710502ce35a1bd0d15ee427`. TLS policy, cross-client parity, human
+  review, signing, rollback, and stable release remain open.
 
 - [x] Add and pin the Linux-first bounded provider connection-establishment timeout slice. Core
   `e9a569f8bb6d66db4fdb1c9bd1d6834e93d10f39` adds schema 27 persistence, 1–120 second validation,
