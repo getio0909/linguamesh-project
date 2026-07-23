@@ -8,6 +8,16 @@ Android, Windows, and macOS evidence must still be completed before a stable rel
 
 ## Current Linux-first checkpoint
 
+The Linux provider form now exposes an optional manual model field for every preset. Core
+`7d0f61ee528d32a5671c65d3c253c12368cf40c4` preserves a validated selected model as a localized
+`Manual` entry when native/protocol discovery is empty or returns `ModelUnavailable` (including
+HTTP 404); authentication, network, and timeout failures remain typed errors. Linux functional
+code `4997d14d621ecdad5f562059be15b30c9a69c67a` and packaging/status head `6db012971c7e2873dad2de069b2f593f518b9590` carry the UI,
+Flatpak pins, and evidence. Local Core/Linux validation passed; the exact GTK binary is compile-
+verified but cannot link on this host because GTK/GDK/Graphene symbols are unavailable. This remains
+prerelease Linux evidence; other clients, human/physical review, signing, rollback, and stable
+authorization remain open.
+
 The Provider Hub health label now has a serialized GTK lifecycle fixture at Linux
 `1155a224f74da8b2e2b201ad01139ef1df97a2e2`, covering hidden, UTC success, normalized failure,
 clear, and no-selection states without exposing credentials or raw diagnostics. The synchronized

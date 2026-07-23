@@ -22,6 +22,24 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux manual model discovery fallback
+
+Assumption: Linux remains the active implementation priority; provider discovery fallback is bounded
+to an already validated manual model and does not weaken typed authentication, network, or timeout
+errors. Other clients, stable release, and human acceptance remain deferred.
+
+- [x] Push Core `7d0f61ee528d32a5671c65d3c253c12368cf40c4` with empty/404 model-list fallback,
+  manual-source projection, and a manual-only fake-provider translation regression; strict Clippy
+  and all-workspace tests passed.
+- [x] Push Linux functional code `4997d14d621ecdad5f562059be15b30c9a69c67a` and packaging/status head
+  `6db012971c7e2873dad2de069b2f593f518b9590`; expose the optional manual field for all presets while retaining required validation
+  for Anthropic/Azure-style manual deployments.
+- [x] Pass Linux formatting, GUI/all-target checks, 161 demo-provider tests with 3 documented
+  ignores, localization audits, Flatpak metadata, and diff checks; host GTK linker limitation is
+  recorded and Native CI remains authoritative.
+- [ ] Refresh the Linux PR and central Issue with the final CI evidence, then keep the PR Draft/Open,
+  Issue Open, and the release train `unreleased`.
+
 ## 2026-07-23 — Linux Provider Hub health label GTK lifecycle
 
 Assumption: Linux remains the active implementation priority; the fixture uses only persisted,

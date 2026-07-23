@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux manual model discovery fallback
+
+Assumption: Linux remains the active implementation priority; this checkpoint closes only the
+manual-model discovery fallback and does not claim Android, Windows, macOS, stable-release, or
+human acceptance evidence.
+
+- Core `7d0f61ee528d32a5671c65d3c253c12368cf40c4` now preserves a validated selected model as a
+  `Manual` descriptor when native/protocol discovery is empty or returns typed `ModelUnavailable`
+  (including a 404). Authentication, network, and timeout failures remain typed failures.
+- Linux `6db012971c7e2873dad2de069b2f593f518b9590` (functional code `4997d14d621ecdad5f562059be15b30c9a69c67a`) exposes an optional
+  manual-model field for every preset, forwards non-empty values for session and saved-profile
+  connection tests, and keeps mandatory validation only for deployment/model presets that require it.
+  Flatpak pins Core `7d0f61ee528d32a5671c65d3c253c12368cf40c4` and Linux `4997d14d621ecdad5f562059be15b30c9a69c67a`.
+- Local Core strict Clippy/all-workspace tests passed; Linux GUI/all-target checks, 161 demo-provider
+  library tests (3 documented ignores), localization audits, Flatpak validation, and diff checks
+  passed. The exact GTK binary remains compile-verified but host linking lacks GTK/GDK/Graphene
+  symbols; Native CI is authoritative. Release remains `unreleased`.
+
 ## 2026-07-23 — Linux Provider Hub health label GTK lifecycle
 
 Assumption: Linux remains the active implementation priority; this checkpoint covers persisted,
