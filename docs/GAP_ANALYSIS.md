@@ -21,16 +21,18 @@ Android, Windows, and macOS evidence must still be completed before a stable rel
 
 ## Acceptance-scenario matrix
 
-Linux CI/runtime evidence exists for Scenarios 4, 6–18 (with the documented provider,
-display, and human-review boundaries). Scenario 1 and Scenario 19 have central/core
-evidence. Scenarios 2, 3, 5, 8, 13, and 16 have useful Linux or partial-client evidence
-but are not globally complete until every required native client passes. Scenario 10 and
-11 are Linux document evidence only. Scenario 20 is not achieved: the release manifest
-is intentionally `unreleased` and contains no stable artifacts.
+Linux CI/runtime evidence exists for Scenarios 4–18 (with the documented provider, display,
+and human-review boundaries), including the production GTK Scenario 5 A→B switch fixture.
+Scenario 1 and Scenario 19 have central/core evidence. Scenarios 2, 3, 5, 8, 13, and 16
+remain globally incomplete until every required native client passes. Scenario 10 and 11
+are Linux document evidence only. Scenario 20 is not achieved: the release manifest is
+intentionally `unreleased` and contains no stable artifacts.
 
 ## Next executable gates
 
-1. Keep the Linux PR and central issue synchronized with the latest verified heads, including the proxy-authentication, proxy-settings, timeout, custom-trust-bundle, and client-certificate identity checkpoints.
+1. Keep the Linux PR and central issue synchronized with the latest verified heads, including the
+   provider-switch, proxy-authentication, proxy-settings, timeout, custom-trust-bundle, and
+   client-certificate identity checkpoints.
 2. Do not promote any prerelease evidence to a stable component or release artifact.
 3. When the Linux-first scope is released by the user, implement the next native-client
    conformance slice and repeat the same Core/l10n/manifest/CI evidence loop.

@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add Linux production GTK evidence for the one-click provider switch. Linux `988be0c` adds
+  the serialized A→B session switch fixture and Native workflow step; it proves selection alone
+  performs no inference, the active provider remains unchanged until B validates, B receives the
+  next request, A receives no extra request, and both one-shot credential fields are cleared. Push
+  Native/Flatpak/Foundation `29980182737`/`29980182712`/`29980182800` and PR
+  `29980184753`/`29980184796`/`29980184751` passed. Linux Scenario 5 is now deterministic evidence;
+  global completion still requires equivalent evidence on the other native clients.
+
 - [x] Complete in-scope privacy and changelog documentation for Core, l10n, and Linux. Core
   `5a5a4cb89985083d02aac9d9aa226184992f3774`, l10n `538a15f7917f991b4995d3675f3becba1b5008e2`,
   and Linux `0ffb1c1132bbff9534f54354e0e71230963363d0` add the required policy files without

@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux GTK one-click provider switch evidence
+
+Assumption: Linux remains the active client scope; the production switch fixture uses one-shot
+session credentials so CI proves isolation without relying on a developer keyring.
+
+- Linux `988be0ce1f97634b8957fbcc83ca8832173ae86f` adds the serialized GTK fixture
+  `gtk_one_click_provider_switch_uses_new_session_and_isolates_credentials`. It restores two saved
+  rows, connects/translates through A, deliberately selects B, and proves that selection alone sends
+  no inference, B becomes active only after validation, the next request reaches only B, and both
+  credential fields are cleared.
+- Linux push Native/Flatpak/Foundation runs `29980182737`/`29980182712`/`29980182800` and PR
+  Native/Flatpak/Foundation runs `29980184753`/`29980184796`/`29980184751` all passed. The direct
+  GTK fixture passed 1/1 in the Native run; local `cargo check`, strict Clippy, core-library tests,
+  formatting, and Flatpak metadata checks passed. Release remains `unreleased`; Android, Windows,
+  macOS, live-provider, signing, rollback, and human-review evidence remain open.
+
 ## 2026-07-23 — In-scope policy documentation compliance
 
 Assumption: the current Linux-first scope includes the shared Core, localization, and Linux
