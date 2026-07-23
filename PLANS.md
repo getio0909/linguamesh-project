@@ -39,7 +39,7 @@ and other-client, human/physical, signing, rollback, and stable-release gates re
 - [x] Central coordination workflow `30014149373` passed on Linux and PowerShell after the
   release manifest, gap analysis, status, and plan were synchronized.
 - [x] Keep PR #1 Draft/Open and Issue #1 Open while synchronizing central manifests and evidence;
-  final central coordination workflow `30014321698` passed. No merge or stable release promotion
+  final central coordination workflow `30015232878` passed. No merge or stable release promotion
   was performed.
 
 ## 2026-07-23 — Linux provider health persistence
