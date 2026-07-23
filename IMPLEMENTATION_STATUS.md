@@ -2,6 +2,18 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux PR documentation-head gate refresh
+
+Assumption: Linux documentation head `18c019f49965a9e758a0b292748dd38adeafb0e7` is the current
+review target; GitHub check-run propagation is recorded as observed rather than treated as a
+source failure.
+
+- Linux PR Native `29990141179` and Repository Foundation `29990141145` completed successfully.
+- Linux PR Flatpak `29990141186` completed its build, checksum, SBOM, sandbox-smoke, and cleanup
+  steps successfully, while the corresponding check run still reports `in_progress`.
+- The Linux PR remains Draft/Open and no merge or release promotion is inferred. Release remains
+  `unreleased`.
+
 ## 2026-07-23 — Linux demo-provider regression rerun
 
 Assumption: the current Linux documentation head is the authoritative target for this portable
