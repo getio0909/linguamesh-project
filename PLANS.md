@@ -36,7 +36,10 @@ Assumption: Planned files and commands are not evidence until they exist and com
   Linux status head `40091f78f1aca3b13f1f8efda11d359e00fe97ae` passed 159 tests with 3 explicit
   environment-gated ignores and no failures; Native/Flatpak/Foundation workflow dispatch runs
   `29988891946`/`29988892002`/`29988891951` all passed. This is portable Linux evidence only; no
-  stable or cross-client claim is made.
+  stable or cross-client claim is made. The automatic push gates passed after a transient Flathub
+  fetch retry (`29989088159`/`29989088223`/`29989088163`); PR Native/Foundation passed
+  (`29989286385`/`29989286425`), while the PR Flatpak run `29989286410` completed successfully
+  with check aggregation still awaiting GitHub propagation at record time.
 
 - [x] Refresh the Linux/Core crash-recovery evidence at the approved heads. Core
   `2f91f313025b189df237294485fd47bafc1f1f53` passed the focused WAL child-abort regression and the

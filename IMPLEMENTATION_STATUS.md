@@ -13,6 +13,12 @@ separately evidenced and are not inferred from this suite.
   3 ignored (OCR, third-party Ollama, and private storage-fault runners).
 - The same head passed Linux Native, Flatpak, and Repository Foundation workflow dispatch runs
   `29988891946`, `29988892002`, and `29988891951` respectively.
+- Automatic push gates also passed Native/Flatpak/Foundation runs `29989088159`, the rerun of
+  `29989088223`, and `29989088163`; PR Native/Foundation runs `29989286385` and `29989286425`
+  passed. PR Flatpak run `29989286410` completed successfully after its sandbox smoke, although
+  GitHub check aggregation was still reporting that one check as `in_progress` during this update.
+- The first push Flatpak smoke failure was an external Flathub connection error; its rerun passed,
+  so no source or documentation failure is inferred.
 - This is a documentation-only Linux checkpoint; the functional release-manifest pin remains
   unchanged, the Linux PR remains Draft/Open, and release status stays `unreleased`.
 
