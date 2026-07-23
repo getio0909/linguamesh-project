@@ -4,6 +4,20 @@ No compatible stable release train exists yet. The authoritative machine-readabl
 
 Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198`.
 
+### Linux-first provider proxy authentication
+
+Core `cee5bd8abc5b35a50640c484bc4fbeedeb426745` adds schema 30 persistence for an optional
+`ProviderProfile.proxy_auth_ref`. Linux `3264b93b1da7b49ea6fc636729f7a178eef1b436` adds a
+masked proxy credential field, session-only transport, explicit Secret Service persistence, and
+reference-only restore behavior; l10n `f0b1c507d73f540f298a534303d0e6e63d44e87b` supplies the
+source-revision-58 strings and generated catalogs. Credentials are parsed as bounded
+`username:password`, applied as proxy Basic authentication across the built-in adapters, and are
+never embedded in proxy URLs, SQLite, diagnostics, or logs. Linux push Native/Flatpak/Foundation
+runs `29975524486`/`29975524483`/`29975524491` and PR Native/Flatpak/Foundation runs
+`29975526119`/`29975526053`/`29975526074` passed for the exact head. Other clients,
+client-certificate TLS policy, human review,
+signing, rollback, and stable-release authorization remain open; status stays `unreleased`.
+
 ## Unreleased compatibility matrix
 
 ### Linux-first provider custom trusted certificates

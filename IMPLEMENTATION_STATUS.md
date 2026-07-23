@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux provider proxy authentication SecretRef settings
+
+Assumption: Linux is the active client scope; proxy URLs remain credential-free and proxy
+credentials are supplied only as a bounded host-secret value.
+
+- Core `cee5bd8abc5b35a50640c484bc4fbeedeb426745` adds schema 30 `proxy_auth_ref`, bounded
+  `username:password` parsing/redaction, one-time host-broker resolution, and HTTP proxy
+  Basic-auth forwarding for OpenAI Chat/Responses/Azure, Anthropic, Gemini, and Ollama. Storage
+  persists only persistent SecretRefs and rejects session references.
+- l10n `f0b1c507d73f540f298a534303d0e6e63d44e87b` adds three Linux strings at source revision 58
+  and regenerates the native catalogs. Linux `3264b93b1da7b49ea6fc636729f7a178eef1b436`
+  adds masked GTK input, immediate clearing, explicit Secret Service persistence, session-only
+  fallback, restore behavior, localization synchronization, and Flatpak/source pins.
+- Local Core workspace tests/Clippy, Linux demo-provider tests/Clippy plus GUI check, localization
+  `make check`, audits, sync, and Flatpak metadata validation passed. Linux push Native/Flatpak/
+  Foundation `29975524486`/`29975524483`/`29975524491` and PR Native/Flatpak/Foundation
+  `29975526119`/`29975526053`/`29975526074` passed for the exact head; release remains
+  `unreleased`.
+
 ## 2026-07-23 — Linux provider custom trusted certificate settings
 
 Assumption: the Linux-first TLS slice accepts one bounded PEM trust bundle that augments system

@@ -3,6 +3,7 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
+  "Linux-first proxy authentication is implemented at Core `cee5bd8abc5b35a50640c484bc4fbeedeb426745` (schema 30), l10n `f0b1c507d73f540f298a534303d0e6e63d44e87b` (477 messages), and Linux `3264b93b1da7b49ea6fc636729f7a178eef1b436`: the GTK form accepts bounded username:password input separately from the proxy URL, keeps it session-only unless Secret Service persistence is explicitly selected, and Core applies proxy Basic authentication without storing credential values. Linux push Native/Flatpak/Foundation `29975524486`/`29975524483`/`29975524491` and PR Native/Flatpak/Foundation `29975526119`/`29975526053`/`29975526074` passed; other clients, client-certificate TLS policy, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux-first provider custom trusted certificates are implemented at Core `913be49da8bc44f9c53baab7b918f2bb002fd64f` (schema 29), l10n `d315efe808e05ce2fb0ee24c0247076298d57947` (474 messages), and Linux `e8f0bcf2c55032cae59f40dba505c6e66a2fdd89`: GTK persists an optional bounded PEM trust bundle, Core augments system roots while keeping TLS verification enabled, and malformed/private-key input is rejected before provider requests. Core CI/Fuzz/Native SDK `29973111006`/`29973111045`/`29973111016`, l10n Localization/Foundation `29972855206`/`29972855181`, Linux push Native/Flatpak/Foundation `29973126765`/`29973126853`/`29973126883`, Linux PR Native/Flatpak/Foundation `29973129042`/`29973129135`/`29973129087`, and central coordination `29973194356` passed. Client certificates, proxy authentication, other clients, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux-first provider streaming idle timeout settings are implemented at Core `b247155ad429639fdb65d3b063c3efc580ce46a4` (schema 28), l10n `2e223f9a416f4b461b72224f12c31cbf7981dae3` (471 messages), and Linux `24b69a646a9463b13710502ce35a1bd0d15ee427`: GTK persists a bounded streaming idle timeout of 1–300 seconds (default 60), and Core resets the per-chunk budget across OpenAI Chat/Responses/Azure, Anthropic, Gemini, and Ollama streams. Linux push Native/Flatpak/Foundation `29971755022`/`29971755009`/`29971755012` and PR `29971756513`/`29971756522`/`29971756554` passed. TLS policy, proxy authentication, other clients, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux-first provider timeout settings are implemented at Core `e9a569f8bb6d66db4fdb1c9bd1d6834e93d10f39` (schema 27), l10n `46ca70b2863fa951b417eda7ce5848e152c46605` (469 messages), and Linux `6fbf53da024bd37d64f93025222a57f7b0296d47`: GTK persists a bounded total request timeout of 1–600 seconds (default 30) and connection-establishment timeout of 1–120 seconds (default 10), and Core applies them independently to OpenAI Chat/Responses/Azure, Anthropic, Gemini, and Ollama transports. Streaming-idle timeout, TLS policy, proxy authentication, other clients, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
@@ -110,14 +111,14 @@ localization_schema_version = "1.0.0"
 [components.core]
 repository = "linguamesh-core"
 version = "0.1.0-alpha.2"
-source_revision = "913be49da8bc44f9c53baab7b918f2bb002fd64f"
+source_revision = "cee5bd8abc5b35a50640c484bc4fbeedeb426745"
 minimum_compatible_version = "0.1.0-alpha.2"
 artifacts = []
 
 [components.localization]
 repository = "linguamesh-l10n"
 version = "0.1.0"
-source_revision = "d315efe808e05ce2fb0ee24c0247076298d57947"
+source_revision = "f0b1c507d73f540f298a534303d0e6e63d44e87b"
 minimum_compatible_version = "0.1.0"
 artifacts = []
 
@@ -145,6 +146,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "e8f0bcf2c55032cae59f40dba505c6e66a2fdd89"
+source_revision = "3264b93b1da7b49ea6fc636729f7a178eef1b436"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []
