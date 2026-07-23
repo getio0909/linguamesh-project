@@ -22,6 +22,23 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux Provider Hub health status
+
+Assumption: Linux remains the active implementation priority; persisted health data is non-secret,
+and other-client, human/physical, signing, rollback, and stable-release gates remain deferred.
+
+- [x] Push localization `74f773774bdf01ca5d2ab61ce199dbd76cdadb04` with the two health-status
+  templates and regenerated 499-message resources; Localization/Foundation
+  `30013123046`/`30013122894` passed.
+- [x] Add Linux `8a913b263475bec70639c55550bdf9717ded4012` Provider Hub rendering for the selected
+  saved/active profile's UTC success timestamp or normalized failure category, with no raw error or
+  credential exposure; docs and Flatpak pin are at `c75508f887a76e46782a6176e61b560888983c13`.
+- [x] Pass Linux push Native/Flatpak/Foundation `30013497323`/`30013497315`/`30013497291` and PR
+  Native/Flatpak/Foundation `30013503182`/`30013503000`/`30013502922`, plus local format, Clippy,
+  library-test, synchronization, localization-audit, Flatpak, and diff checks.
+- [ ] Keep PR #1 Draft/Open and Issue #1 Open while synchronizing central manifests and evidence;
+  do not merge or promote a stable release.
+
 ## 2026-07-23 — Linux provider health persistence
 
 Assumption: Linux remains the active client priority; provider health metadata is non-secret local

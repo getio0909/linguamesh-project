@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux Provider Hub health status
+
+Assumption: Linux remains the active implementation priority; this slice exposes only persisted,
+non-secret health metadata and does not claim Android, Windows, macOS, stable-release, or
+human/physical acceptance evidence.
+
+- Localization `74f773774bdf01ca5d2ab61ce199dbd76cdadb04` adds localized success/failure templates
+  across all 12 packs and regenerates the 499-message Linux resource bundle. Its Foundation and
+  Localization workflows `30013122894`/`30013123046` passed.
+- Linux code `8a913b263475bec70639c55550bdf9717ded4012` adds the Provider Hub label for the selected
+  saved or active profile, showing a UTC ISO-8601 success timestamp or normalized failure category;
+  raw provider diagnostics and credentials remain excluded. Documentation/Flatpak head is
+  `c75508f887a76e46782a6176e61b560888983c13`, with the Flatpak source manifest pinned to the
+  functional code head. Push Native/Flatpak/Foundation `30013497323`/`30013497315`/`30013497291`
+  and PR Native/Flatpak/Foundation `30013503182`/`30013503000`/`30013502922` all passed.
+- Local Linux formatting, strict all-feature Clippy, GUI cargo check, 163 all-feature library
+  tests with 12 documented environment-gated ignores, localization synchronization/audits,
+  Flatpak metadata, and diff checks passed. The host cannot link GTK/GDK/Graphene test binaries;
+  Native CI is authoritative for display-backed UI. Release remains `unreleased`.
+
 ## 2026-07-23 — Linux provider health persistence
 
 Assumption: Linux is the active implementation scope; Android, Windows, macOS, stable release,
