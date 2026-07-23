@@ -22,6 +22,23 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux local-export durability barriers
+
+Assumption: Linux local exports require bounded crash-durability barriers for file bytes and
+directory metadata; physical power-loss recovery and alternate-VFS behavior remain separate,
+unverified acceptance boundaries.
+
+- [x] Add Linux runtime `cf4246c24e087de870adae4878379512cbaf2b8a` barriers that sync a local
+  export file before the atomic move and sync its parent directory after the move; barrier
+  failures report a save error, while non-local GIO destinations retain the remote-VFS boundary.
+- [x] Document the contract in Linux testing, architecture, and implementation status; pin the
+  Flatpak/source documentation head at `9085ed2f8a3acf39f24930ca2dcf98567427c80f`.
+- [x] Pass local formatting, locked compile, strict Clippy, 163 demo-provider tests with three
+  documented ignores, localization audits, l10n synchronization, Flatpak metadata, and diff checks.
+- [x] Pass push Native/Flatpak/Foundation `30032394587`/`30032394653`/`30032394626` and PR
+  Native/Flatpak/Foundation `30032396787`/`30032396790`/`30032396829`; keep the PR Draft/Open,
+  Issue #1 Open, and release status `unreleased`.
+
 ## 2026-07-23 — Linux localized language swap action
 
 Assumption: Linux is the active implementation priority; swapping is local and request-free for the

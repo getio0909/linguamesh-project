@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux local-export durability barriers
+
+Assumption: the Linux checkpoint provides bounded best-effort crash durability for local export
+bytes and directory metadata; physical power-loss recovery and alternate-VFS behavior are not
+claimed by these tests.
+
+- Linux runtime `cf4246c24e087de870adae4878379512cbaf2b8a` calls `sync_all` on a local temporary
+  export before the non-overwriting move and on the destination directory after the move. A
+  barrier failure cleans up the temporary file and reports save failure; remote GIO destinations
+  remain outside this local filesystem guarantee.
+- Linux documentation/Flatpak pin head `9085ed2f8a3acf39f24930ca2dcf98567427c80f` records the
+  contract. Local format, locked compile, strict Clippy, 163 demo-provider tests with three
+  documented ignores, localization audits, l10n sync, Flatpak metadata, and diff checks passed.
+  The host GTK binary still has incomplete GTK/GDK/Graphene linker symbols; Native CI is
+  authoritative for display-backed execution.
+- Push Native/Flatpak/Foundation runs `30032394587`/`30032394653`/`30032394626` and PR runs
+  `30032396787`/`30032396790`/`30032396829` passed. PR #1 remains Draft/Open, Issue #1 remains
+  Open, and release status remains `unreleased`; power-loss, alternate-VFS, other-client,
+  signing, rollback, and stable-release evidence remain open.
+
 ## 2026-07-23 — Linux localized language swap action
 
 Assumption: Linux remains the active implementation priority; language swapping is a local,

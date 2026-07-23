@@ -6,6 +6,16 @@ Status: Linux-first prerelease audit, 2026-07-23. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The current Linux-first local-export durability checkpoint adds runtime `cf4246c24e087de870adae4878379512cbaf2b8a`
+and packaging/documentation head `9085ed2f8a3acf39f24930ca2dcf98567427c80f`. Local filesystem
+exports sync temporary file bytes before the non-overwriting move and sync the destination
+directory afterward; failures surface as save errors. Local formatting, locked compile, strict
+Clippy, 163 demo-provider tests (three documented ignores), localization, synchronization,
+Flatpak metadata, and diff checks pass. Push Native/Flatpak/Foundation `30032394587`/
+`30032394653`/`30032394626` and PR `30032396787`/`30032396790`/`30032396829` pass. This is
+bounded crash-durability evidence only: physical power-loss recovery, alternate VFS behavior,
+other clients, human review, signing, rollback, and stable authorization remain open.
+
 The current Linux-first language-swap checkpoint adds Linux code
 `4e5a94feef09bbe382a0b6690dc8e8f7b138656f`, packaging/docs head
 `6a9adf472c6ca7afb26311dd0bbe06de2a0f1c05`, and localization
