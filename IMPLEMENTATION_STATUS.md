@@ -4,6 +4,8 @@ Last updated: 2026-07-23
 
 - Central coordination commit `7c4ffa8fe2fa77a24ae61635c9c130c65e22382b` passed workflow
   `30045831148`; Linux and PowerShell validation jobs completed successfully.
+- Central documentation/manifest commit `1288dcc7e848212b89dbeb7c424aedbcff2914f6` passed
+  workflow `30048060092`; Linux and PowerShell validation jobs completed successfully.
 
 ## 2026-07-23 — Linux client-certificate HTTPS transport
 
