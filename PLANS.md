@@ -22,6 +22,27 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux all-SecretRef persistence filtering
+
+Assumption: the worker-level persistence regression is the smallest reproducible evidence that
+session-only secret references cannot reach SQLite; the GTK Secret Service fixture remains the
+runtime integration boundary.
+
+- [x] Extend the Linux profile filter regression at runtime test
+  `bb6bc5bef572eb19d7c066e24a2d48546bf4fb08` across the primary credential, secret custom
+  headers, proxy authentication, and client certificate identity SecretRefs. Persistent refs
+  remain and all three session-only refs are removed before persistence.
+- [x] Pin Flatpak and document the boundary at Linux packaging/docs commit
+  `9dc863eeb9fc5825c7354863c59bb21bf4447381`; local formatting, locked checks, strict Clippy,
+  163 demo-provider tests with three documented ignores, localization, Flatpak metadata, and
+  diff checks passed.
+- [x] Record Linux final status head `2c3212c562eb8d425ee302a329f77ed7821a3231`; push
+  Native/Flatpak/Foundation `30041197129`/`30041196965`/`30041196986` and PR
+  Native/Flatpak/Foundation `30041200604`/`30041200579`/`30041200581` all passed.
+- [ ] Keep interactive prompt approval, human visual/Orca review, cross-client parity, signing,
+  rollback, and stable-release authorization explicitly open; keep PR #1 Draft/Open, Issue #1
+  Open, and release status `unreleased`.
+
 ## 2026-07-23 — Linux Secret Service custom-header onboarding
 
 Assumption: the authenticated loopback and private Secret Service fixture is the smallest

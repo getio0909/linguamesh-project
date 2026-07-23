@@ -6,6 +6,17 @@ Status: Linux-first prerelease audit, 2026-07-23. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The latest Linux-first Secret Service persistence checkpoint adds runtime test
+`bb6bc5bef572eb19d7c066e24a2d48546bf4fb08`, packaging/docs `9dc863eeb9fc5825c7354863c59bb21bf4447381`,
+and final status head `2c3212c562eb8d425ee302a329f77ed7821a3231`. The worker filter now proves that
+persistent primary, secret-header, proxy-auth, and client-certificate SecretRefs survive profile
+persistence while all three session-only refs are removed before SQLite. Local checks pass; push
+Native/Flatpak/Foundation `30041197129`/`30041196965`/`30041196986` and PR
+`30041200604`/`30041200579`/`30041200581` all pass, with Native completing the real GTK Secret
+Service integration fixture. This strengthens unreleased Linux secure-onboarding evidence;
+interactive prompts, human review, cross-client parity, signing, rollback, and stable
+authorization remain open.
+
 The latest Linux-first Secret Service checkpoint adds runtime test
 `f6cdb44dd6e411c2fab1c9f39cd3cd63361a1352`, packaging/docs `d1e7368edcf8426d3986165fc5b2adbd33cabe48`,
 and final status head `e9b7d80e3ecac045eeb10b37ea59871c0ada6198`. The GTK Remember/clear-form

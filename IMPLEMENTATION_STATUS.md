@@ -2,6 +2,33 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux all-SecretRef persistence filtering
+
+Assumption: the worker-level persistence regression is the smallest reproducible evidence that
+session-only secret references cannot reach SQLite; the GTK Secret Service fixture remains the
+runtime integration boundary.
+
+- Linux runtime test `bb6bc5bef572eb19d7c066e24a2d48546bf4fb08` extends the profile filter test
+  across the primary credential, secret custom headers, proxy authentication, and client
+  certificate identity SecretRefs. Persistent references are retained, while all three
+  session-only references are removed before persistence.
+- Linux packaging/docs commit `9dc863eeb9fc5825c7354863c59bb21bf4447381` pins Flatpak to the
+  tested runtime and documents the expanded boundary. Local formatting, locked all-target/test
+  checks, strict Clippy, 163 demo-provider tests with three documented ignores, localization
+  audits/synchronization, Flatpak metadata, and diff checks passed. The focused GTK binary remains
+  compile-checked but cannot link on this host because the installed GTK/GDK/Graphene runtime
+  lacks symbols required by the pinned gtk-rs version.
+- Final status head `2c3212c562eb8d425ee302a329f77ed7821a3231` passed push Native/Flatpak/Foundation
+  runs `30041197129`/`30041196965`/`30041196986` and PR Native/Flatpak/Foundation runs
+  `30041200604`/`30041200579`/`30041200581`. Native explicitly completed the existing real GTK
+  Secret Service integration fixture.
+- PR #1 remains Draft/Open, Issue #1 remains Open, release status remains `unreleased`, and the
+  central coordination workflow is pending this documentation checkpoint.
+
+This strengthens Linux secure-onboarding evidence without claiming interactive prompt approval,
+human visual review, other-client parity, signed artifacts, rollback authorization, or
+stable-release approval.
+
 ## 2026-07-23 — Linux Secret Service custom-header onboarding
 
 Assumption: the existing authenticated loopback and private Secret Service fixture is the
