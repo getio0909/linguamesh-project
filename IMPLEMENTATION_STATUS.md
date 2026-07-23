@@ -11,10 +11,10 @@ human acceptance evidence.
 - Core `7d0f61ee528d32a5671c65d3c253c12368cf40c4` now preserves a validated selected model as a
   `Manual` descriptor when native/protocol discovery is empty or returns typed `ModelUnavailable`
   (including a 404). Authentication, network, and timeout failures remain typed failures.
-- Linux `6db012971c7e2873dad2de069b2f593f518b9590` (functional code `4997d14d621ecdad5f562059be15b30c9a69c67a`) exposes an optional
+- Linux `9bda4c64263167cba271fbf70abec546aa68b3fc` (functional code `871c2da4e5f41cfb8197c7688ee0dd9f11b245fe`) exposes an optional
   manual-model field for every preset, forwards non-empty values for session and saved-profile
   connection tests, and keeps mandatory validation only for deployment/model presets that require it.
-  Flatpak pins Core `7d0f61ee528d32a5671c65d3c253c12368cf40c4` and Linux `4997d14d621ecdad5f562059be15b30c9a69c67a`.
+  Flatpak pins Core `7d0f61ee528d32a5671c65d3c253c12368cf40c4` and Linux `871c2da4e5f41cfb8197c7688ee0dd9f11b245fe`.
 - Local Core strict Clippy/all-workspace tests passed; Linux GUI/all-target checks, 161 demo-provider
   library tests (3 documented ignores), localization audits, Flatpak validation, and diff checks
   passed. The exact GTK binary remains compile-verified but host linking lacks GTK/GDK/Graphene

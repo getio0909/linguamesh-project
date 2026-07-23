@@ -31,13 +31,13 @@ errors. Other clients, stable release, and human acceptance remain deferred.
 - [x] Push Core `7d0f61ee528d32a5671c65d3c253c12368cf40c4` with empty/404 model-list fallback,
   manual-source projection, and a manual-only fake-provider translation regression; strict Clippy
   and all-workspace tests passed.
-- [x] Push Linux functional code `4997d14d621ecdad5f562059be15b30c9a69c67a` and packaging/status head
-  `6db012971c7e2873dad2de069b2f593f518b9590`; expose the optional manual field for all presets while retaining required validation
+- [x] Push Linux functional code `871c2da4e5f41cfb8197c7688ee0dd9f11b245fe` and packaging/status head
+  `9bda4c64263167cba271fbf70abec546aa68b3fc`; expose the optional manual field for all presets while retaining required validation
   for Anthropic/Azure-style manual deployments.
 - [x] Pass Linux formatting, GUI/all-target checks, 161 demo-provider tests with 3 documented
   ignores, localization audits, Flatpak metadata, and diff checks; host GTK linker limitation is
   recorded and Native CI remains authoritative.
-- [ ] Refresh the Linux PR and central Issue with the final CI evidence, then keep the PR Draft/Open,
+- [x] Refresh the Linux PR and central Issue with the final CI evidence, then keep the PR Draft/Open,
   Issue Open, and the release train `unreleased`.
 
 ## 2026-07-23 — Linux Provider Hub health label GTK lifecycle

@@ -12,7 +12,7 @@ The Linux provider form now exposes an optional manual model field for every pre
 `7d0f61ee528d32a5671c65d3c253c12368cf40c4` preserves a validated selected model as a localized
 `Manual` entry when native/protocol discovery is empty or returns `ModelUnavailable` (including
 HTTP 404); authentication, network, and timeout failures remain typed errors. Linux functional
-code `4997d14d621ecdad5f562059be15b30c9a69c67a` and packaging/status head `6db012971c7e2873dad2de069b2f593f518b9590` carry the UI,
+code `871c2da4e5f41cfb8197c7688ee0dd9f11b245fe` and packaging/status head `9bda4c64263167cba271fbf70abec546aa68b3fc` carry the UI,
 Flatpak pins, and evidence. Local Core/Linux validation passed; the exact GTK binary is compile-
 verified but cannot link on this host because GTK/GDK/Graphene symbols are unavailable. This remains
 prerelease Linux evidence; other clients, human/physical review, signing, rollback, and stable
