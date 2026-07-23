@@ -43,6 +43,25 @@ on this filesystem; it does not claim physical power-loss recovery or alternate-
   Draft/Open, Issue #1 remains Open, and release remains `unreleased`; physical power-loss,
   alternate-VFS, other-client, signing, rollback, and stable-release evidence remain open.
 
+## 2026-07-23 — Linux routing candidate-management evidence reconciliation
+
+Assumption: Linux candidate editing, ordered/automatic fallback selection, and one-shot approval
+are complete at the automated GTK/worker boundary; visual, translated-copy, end-user Orca,
+cross-client, signing, rollback, and stable-release qualification remain open.
+
+- Linux status/docs head `e13d6804b7ce17edb1490c5dc6629b9664d6c3b7` records the existing candidate
+  editor lineage `c0cdee8b729a6800904f67535430221feb55f78e`,
+  `a4dd4aa644335a3b6539db4d40473423c6292c71`, and GTK lifecycle test
+  `5c49a3a18c448542bc9cf055cd81b4a0b5f01e15`.
+- Worker fallback-chain and explicit-approval coverage remains anchored by
+  `0e2ae25c321cef243275d1322f2b8271f0602d06` and
+  `af200122e4862f6230d89268f5292f16438449bb`; Manual keeps one candidate while Ordered/Automatic
+  preserve the selected chain.
+- Push Native/Flatpak/Foundation `30035253038`/`30035253264`/`30035253013` and PR
+  Native/Flatpak/Foundation `30035256459`/`30035256435`/`30035256652` passed, including the
+  candidate and fallback GTK fixtures. Release remains `unreleased` and PR #1/Issue #1 remain
+  Draft/Open and Open.
+
 ## 2026-07-23 — Linux localized language swap action
 
 Assumption: Linux remains the active implementation priority; language swapping is a local,

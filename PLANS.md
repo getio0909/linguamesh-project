@@ -56,6 +56,21 @@ filesystem guarantee, but it does not prove physical power-loss recovery or alte
   `unreleased`; physical power-loss, alternate-VFS, other-client, signing, rollback, and stable
   release evidence remain open.
 
+## 2026-07-23 — Linux routing candidate-management evidence reconciliation
+
+Assumption: the automated Linux candidate editor, ordered/automatic fallback selection, and
+one-shot approval boundaries are verified; visual, translated-copy, end-user Orca, cross-client,
+and stable-release qualification remain separate gates.
+
+- [x] Reconcile Linux release documentation with the candidate editor lineage
+  `c0cdee8b729a6800904f67535430221feb55f78e`, `a4dd4aa644335a3b6539db4d40473423c6292c71`, and
+  GTK lifecycle test `5c49a3a18c448542bc9cf055cd81b4a0b5f01e15`.
+- [x] Record worker fallback-chain/approval evidence from `0e2ae25c321cef243275d1322f2b8271f0602d06`
+  and `af200122e4862f6230d89268f5292f16438449bb`; fallback remains disabled by default.
+- [x] Pass the new Linux docs-head gates at `e13d6804b7ce17edb1490c5dc6629b9664d6c3b7`: push
+  Native/Flatpak/Foundation `30035253038`/`30035253264`/`30035253013` and PR
+  Native/Flatpak/Foundation `30035256459`/`30035256435`/`30035256652`.
+
 ## 2026-07-23 — Central localization pin consistency
 
 Assumption: the current canonical localization input is the immutable l10n `c2526bfb3f6ff57895bdc3eeed743e26c8783613`, which includes the earlier copy, clear, and language-swap messages; no new localization content is required for the export durability slice.

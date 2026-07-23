@@ -27,6 +27,18 @@ docs/packaging is `8dc86c50ddd5a03fe223a9eaaa5f2a9326e1175b`, and final status i
 physical power-loss recovery, alternate VFS behavior, other clients, human review, signing,
 rollback, and stable authorization remain open.
 
+The Linux candidate-management reconciliation is now documented at status/docs head
+`e13d6804b7ce17edb1490c5dc6629b9664d6c3b7`. Existing editor commits
+`c0cdee8b729a6800904f67535430221feb55f78e` and `a4dd4aa644335a3b6539db4d40473423c6292c71`
+provide drag ordering and same-ID edit/save; serialized GTK test
+`5c49a3a18c448542bc9cf055cd81b4a0b5f01e15` covers accessible controls, Manual single-candidate
+normalization, Ordered/Automatic chain persistence, and Use lifecycle. Worker fallback-chain and
+one-shot approval are covered by `0e2ae25c321cef243275d1322f2b8271f0602d06` and
+`af200122e4862f6230d89268f5292f16438449bb`. Push Native/Flatpak/Foundation
+`30035253038`/`30035253264`/`30035253013` and PR
+`30035256459`/`30035256435`/`30035256652` passed. Visual/translated-copy/Orca review,
+cross-client parity, signing, rollback, and stable authorization remain open.
+
 The current Linux-first language-swap checkpoint adds Linux code
 `4e5a94feef09bbe382a0b6690dc8e8f7b138656f`, packaging/docs head
 `6a9adf472c6ca7afb26311dd0bbe06de2a0f1c05`, and localization
