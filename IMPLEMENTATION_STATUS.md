@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux/Core bounded TBX glossary import
+
+Assumption: Linux is the active implementation priority; this checkpoint completes the bounded
+Core/Linux glossary-import slice without claiming Android, Windows, macOS, or physical-device
+parity.
+
+- Core `dffa07eca2b006279f99673edff5bd0ae1b24a0f` adds restricted UTF-8 TBX parsing with 4 MiB and
+  256-entry bounds, first-source/subsequent-target language mapping, locale/note preservation,
+  XML entity decoding, and fail-closed DTD, unknown-entity, malformed, missing-term, conflict,
+  credential-shape, and oversized-input handling. Its locked workspace suite passed 228 tests and
+  strict all-feature Clippy passed.
+- Linux `bd072a8bd6e12c37314e7698e5295af905c571c3` adds GTK CSV/TBX MIME/suffix filters, bounded
+  partial reads, and extension-based TBX dispatch. Localization `d8d9084cdf0448039ad0aa7612e8725c6c875036`
+  updates revision-62 chooser/error copy and regenerated PO/MO resources; `make check` passed 494
+  messages, 12 official packs, 26 tests, deterministic generation, bundle, and Foundation checks.
+- Central manifests now pin these exact revisions. Linux local validation passed 160 tests/3
+  documented ignores, strict Clippy, audits, sync, Flatpak metadata, and diff checks. Release stays
+  `unreleased`; PR #1 and Issue #1 remain open, and display-backed chooser review, cross-client
+  parity, physical VFS/power-loss, signing, rollback, and stable authorization remain open.
+
 ## 2026-07-23 — Current pinned regression rerun
 
 Assumption: this is a verification-only checkpoint; the functional Core, Linux, and localization

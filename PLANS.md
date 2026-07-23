@@ -22,6 +22,21 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux/Core bounded TBX glossary import
+
+Assumption: Linux remains the active client priority; a restricted TBX parser and native chooser
+path are sufficient for this slice, while other-client parity and physical evidence remain open.
+
+- [x] Add Core's bounded UTF-8 TBX import contract with deterministic language mapping, locale/note
+  preservation, XML entity decoding, DTD/entity rejection, conflict validation, and focused tests.
+- [x] Wire Linux GTK CSV/TBX filters and extension-based dispatch, synchronize revision-62
+  localization resources, update docs/status, and repin Native/Flatpak inputs.
+- [x] Push Core `dffa07eca2b006279f99673edff5bd0ae1b24a0f`, localization
+  `d8d9084cdf0448039ad0aa7612e8725c6c875036`, and Linux
+  `bd072a8bd6e12c37314e7698e5295af905c571c3`; central manifests now match these heads.
+- [ ] Obtain remote Linux PR/Native/Flatpak/Foundation gate evidence for this new head; keep the
+  release train `unreleased` until all global acceptance and authorization conditions exist.
+
 ## 2026-07-23 — Current pinned regression rerun
 
 Assumption: this checkpoint only refreshes reproducible evidence; it does not change the functional
