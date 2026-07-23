@@ -6,6 +6,16 @@ Status: Linux-first prerelease audit, 2026-07-23. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The latest Linux-first proxy-secret checkpoint adds runtime test
+`911994eb3f4c364af3ea043b783f2aff18e09888`, packaging/docs `968b5c88cdda64ae69a2c80add729bb37ca7548b`,
+and final status head `f78d0939dd78c1646da4f7e3fa7f87665a534bf5`. A worker-level loopback proxy
+fixture verifies the absolute provider request, exact Basic authorization value, and successful
+model response while the profile contains only a session SecretRef. Local checks pass; push
+Native/Flatpak/Foundation `30045229527`/`30045229529`/`30045229541` and PR
+`30045232877`/`30045232887`/`30045232885` all pass. Live proxy deployment, provider accounts,
+interactive prompts, human review, cross-client parity, signing, rollback, and stable authorization
+remain open.
+
 The latest Linux-first secret-boundary checkpoint adds runtime tests
 `f0a65c0d7bd1ddfda6e531db1b93c6be0096d491`, packaging/docs `dcd3f49620b427d460c98082acaf97498f2b98ff`,
 and final status head `4cfa3fa8cfa29f5dc036e53bafa388444b8de94e`. Session-only proxy-authentication

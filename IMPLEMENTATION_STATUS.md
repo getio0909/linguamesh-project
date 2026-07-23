@@ -2,6 +2,27 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux session proxy authentication transport
+
+Assumption: a local HTTP proxy fixture is the smallest reproducible Linux evidence that a
+session-only proxy credential reaches the selected provider transport; live proxy deployment and
+provider interoperability remain separate qualification gates.
+
+- Linux runtime test `911994eb3f4c364af3ea043b783f2aff18e09888` adds a worker-level loopback proxy
+  fixture. It verifies the absolute provider request target, exact Basic authorization header, and
+  successful model response while the profile carries only a session SecretRef.
+- Linux packaging/docs `968b5c88cdda64ae69a2c80add729bb37ca7548b` pins Flatpak to the tested runtime.
+  Local formatting, locked all-target/test checks, strict Clippy, 166 demo-provider tests with
+  three documented ignores, localization synchronization, Flatpak metadata, and diff checks pass.
+- Final Linux status head `f78d0939dd78c1646da4f7e3fa7f87665a534bf5` passed push Native/Flatpak/
+  Foundation `30045229527`/`30045229529`/`30045229541` and PR Native/Flatpak/Foundation
+  `30045232877`/`30045232887`/`30045232885`. Native completed the display-backed GTK suite.
+- PR #1 remains Draft/Open, Issue #1 remains Open, and release status remains `unreleased`.
+
+This strengthens Linux proxy-secret transport evidence without claiming live provider accounts,
+interactive prompt approval, human visual review, other-client parity, signed artifacts, rollback
+authorization, or stable-release approval.
+
 ## 2026-07-23 — Linux session SecretRef validation paths
 
 Assumption: worker-level provider rejection tests are the smallest reproducible evidence that

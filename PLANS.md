@@ -22,6 +22,24 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux session proxy authentication transport
+
+Assumption: a local HTTP proxy fixture is bounded Linux transport evidence; live proxy deployment
+and provider interoperability remain open.
+
+- [x] Add worker-level proxy transport regression at Linux `911994eb3f4c364af3ea043b783f2aff18e09888`;
+  it asserts the absolute provider target, exact Basic header, and model response with a session
+  SecretRef.
+- [x] Pin Flatpak and release documentation at `968b5c88cdda64ae69a2c80add729bb37ca7548b`; local
+  formatting, locked checks, strict Clippy, 166 tests with three documented ignores, l10n sync,
+  Flatpak metadata, and diff checks passed.
+- [x] Record final Linux status head `f78d0939dd78c1646da4f7e3fa7f87665a534bf5`; push
+  Native/Flatpak/Foundation `30045229527`/`30045229529`/`30045229541` and PR
+  `30045232877`/`30045232887`/`30045232885` all passed.
+- [ ] Keep live provider interoperability, prompt approval, human review, cross-client parity,
+  signing, rollback, and stable-release authorization open; keep PR #1 Draft/Open, Issue #1 Open,
+  and release status `unreleased`.
+
 ## 2026-07-23 — Linux session SecretRef validation paths
 
 Assumption: worker-level rejection tests are bounded evidence for session-only proxy-authentication
