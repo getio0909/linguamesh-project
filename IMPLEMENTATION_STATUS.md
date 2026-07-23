@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux/Core crash-recovery and portable test refresh
+
+Assumption: a Unix child-process abort after a committed SQLite WAL transaction is an automatable
+crash-recovery boundary; it strengthens the Linux hardening record but does not emulate physical
+power loss or every alternate SQLite VFS.
+
+- Core `2f91f313025b189df237294485fd47bafc1f1f53` passed the focused
+  `wal_replay_survives_process_termination_after_commit` test (`1 passed`) and the locked workspace
+  test suite (`227 passed`, no failures). The regression commits a provider profile with
+  `synchronous=FULL`, aborts the child process, and verifies that the parent reopens the model and
+  persistent `SecretRef` from the WAL.
+- Linux `04478701e3b0192cc7f90228c47badd9f6bb2d2b` passed the no-default library suite (`83 passed;
+  1 ignored`), with the only ignore requiring separately installed `pdftoppm`, `tesseract`, and an
+  explicit OCR fixture. Existing remote Native/Flatpak/Foundation gates for this head remain green
+  (`29984727975`/`29984727998`/`29984727932` push and `29984730138`/`29984730127`/`29984730117` PR).
+- This refresh strengthens reproducible process-crash evidence only. Physical power-loss and
+  alternate-VFS behavior, cross-client parity, human review, signing, rollback, and stable-release
+  authorization remain open; release stays `unreleased`.
+
 ## 2026-07-23 — Linux GTK candidate-chain and fallback-consent evidence audit
 
 Assumption: the Linux routing-profile editor is the authoritative UI for user-approved candidate
