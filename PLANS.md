@@ -33,9 +33,8 @@ supported English/Chinese pair, and unsupported Auto/Japanese combinations remai
   and 26 tests; synchronize Linux PO/MO resources and Native workflow pin.
 - [x] Pass local format, GUI/all-target checks, strict Clippy, 163 demo-provider library tests with
   three documented ignores, localization audits, Flatpak metadata, sync, and diff checks.
-- [x] Record PR Native/Flatpak/Foundation `30030245422`/`30030245461`/`30030245538` and push
-  Flatpak/Foundation `30030242763`/`30030242764` as green; keep push Native `30030243332` explicitly
-  pending rather than treating it as evidence.
+- [x] Record green PR Native/Flatpak/Foundation `30030245422`/`30030245461`/`30030245538` and push
+  Native/Flatpak/Foundation `30030243332`/`30030242763`/`30030242764`.
 - [x] Keep PR #1 Draft/Open, Issue #1 Open, manifests synchronized, and release status `unreleased`.
 
 ## 2026-07-23 — Linux explicit Clear workspace action

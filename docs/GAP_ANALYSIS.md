@@ -13,8 +13,8 @@ The current Linux-first language-swap checkpoint adds Linux code
 control exchanges only the supported English/Chinese selector pair locally, preserves editor
 contents, and remains disabled for Auto-source or Japanese-target combinations. Local Linux/l10n
 checks pass. PR #1 Native/Flatpak/Foundation runs `30030245422`/`30030245461`/`30030245538` passed;
-push Flatpak/Foundation `30030242763`/`30030242764` passed while push Native `30030243332` remains
-pending. The PR stays Draft/Open and Issue #1 stays Open; human visual/Orca review, cross-client
+push Native/Flatpak/Foundation `30030243332`/`30030242763`/`30030242764` all passed. The PR stays
+Draft/Open and Issue #1 stays Open; human visual/Orca review, cross-client
 parity, signing, rollback, and stable authorization remain open.
 
 The current Linux-first text workspace checkpoint adds Linux code `38275fd96f0b9ed00b7d3269974780fd61874936`,

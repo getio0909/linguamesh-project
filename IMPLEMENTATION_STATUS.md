@@ -19,9 +19,8 @@ combinations remain intentionally disabled.
   Flatpak metadata, and diff checks passed. The local GTK binary could not link because the host's
   GTK symbols are incomplete; Native CI is authoritative for that boundary.
 - PR #1 Native/Flatpak/Foundation runs `30030245422`/`30030245461`/`30030245538` passed. Push
-  Flatpak/Foundation runs `30030242763`/`30030242764` passed; push Native `30030243332` remains
-  pending in dependency installation and is not treated as passing. PR #1 remains Draft/Open and
-  Issue #1 remains Open; release stays `unreleased`.
+  Native/Flatpak/Foundation runs `30030243332`/`30030242763`/`30030242764` all passed. PR #1 remains
+  Draft/Open and Issue #1 remains Open; release stays `unreleased`.
 
 ## 2026-07-23 — Linux explicit Clear workspace action
 
