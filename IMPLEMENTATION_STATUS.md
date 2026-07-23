@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux release-document pin alignment
+
+Assumption: the Linux release guide must describe the same functional and localization pins that
+the verified Native/Flatpak workflows consume; this is a documentation-only follow-up and does not
+promote the prerelease.
+
+- Linux `99ae05daa82d8317b4fcf7f6de792d10d349d3bc` corrects `docs/releasing.md` to l10n
+  `7c2cb9fd71835ea0f9c6605d82dac87c0df012f0` (497 messages), Linux code
+  `00186c29fc4e3e6682114ee29cd587d31610a1d6`, and functional packaging pin
+  `73051b70028359c56654e1260621ada77def67e9`, matching the central release manifest.
+- Local `git diff --check`, `bash tools/validate-flatpak-metadata.sh`, `bash tools/sync-l10n.sh
+  --check`, and `cargo fmt --all -- --check` passed. Push and PR Native/Flatpak/Foundation runs
+  `30008592951`/`30008592908`/`30008592945` and `30008596468`/`30008596531`/`30008596470`
+  all completed successfully; the Native job ran the full GTK, portal, accessibility, release-
+  evidence, and performance steps.
+- GitHub PR #1 remains Draft/Open and mergeable; central Issue #1 remains Open. Their descriptions
+  now reflect the current Linux-first pins and explicit cross-client, human/physical, signing,
+  rollback, and stable-release boundaries. Release remains `unreleased`.
+
 ## 2026-07-23 — Linux model provenance labels
 
 Assumption: Linux remains the active client priority; Core's existing `ModelSource` contract is

@@ -22,6 +22,21 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux release-document pin alignment
+
+Assumption: release documentation must match the exact Linux/l10n pins used by the green workflows;
+this follow-up changes no functional release pin and keeps the train `unreleased`.
+
+- [x] Correct Linux `docs/releasing.md` at `99ae05daa82d8317b4fcf7f6de792d10d349d3bc` to the
+  497-message l10n revision `7c2cb9fd71835ea0f9c6605d82dac87c0df012f0`, Linux code head
+  `00186c29fc4e3e6682114ee29cd587d31610a1d6`, and packaging pin `73051b70028359c56654e1260621ada77def67e9`.
+- [x] Pass local diff, Flatpak metadata, l10n synchronization, and formatting checks.
+- [x] Confirm Push/PR Native, Flatpak, and Foundation runs
+  `30008592951`/`30008592908`/`30008592945` and
+  `30008596468`/`30008596531`/`30008596470` all passed.
+- [x] Refresh the Linux PR and central Issue descriptions without merging, closing, signing, or
+  promoting a stable release.
+
 ## 2026-07-23 — Linux model provenance labels
 
 Assumption: Linux remains the active client priority; the existing Core `ModelSource` contract is
