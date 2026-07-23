@@ -2,6 +2,19 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux PR gate result for status head `90a2753`
+
+Assumption: completed Linux workflow jobs are authoritative for this documentation head; GitHub
+check aggregation is recorded separately when it lags.
+
+- Push Native `29990602946`, Flatpak `29990602971`, and Repository Foundation `29990602947`
+  completed successfully.
+- PR Native `29990604854`, Flatpak `29990604856`, and Repository Foundation `29990604877`
+  completed successfully. The PR summary may briefly retain a pending Native check during
+  propagation.
+- The Linux PR remains Draft/Open; no merge or release promotion was performed. Release remains
+  `unreleased`.
+
 ## 2026-07-23 — Linux PR documentation-head gate refresh
 
 Assumption: Linux documentation head `18c019f49965a9e758a0b292748dd38adeafb0e7` is the current

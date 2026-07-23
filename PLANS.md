@@ -31,6 +31,11 @@ Assumption: Planned files and commands are not evidence until they exist and com
   The PR remains Draft/Open and the release remains `unreleased`; no merge or promotion was
   performed.
 
+- [x] Complete the Linux status-head gate refresh for `90a2753`. Push Native/Flatpak/Foundation
+  `29990602946`/`29990602971`/`29990602947` and PR Native/Flatpak/Foundation
+  `29990604854`/`29990604856`/`29990604877` completed successfully. The PR remains Draft/Open;
+  no merge or release promotion was performed while GitHub check aggregation propagated.
+
 - [x] Re-run the exact current Core/Linux regression gates before advancing the active goal. Core
   `2f91f313025b189df237294485fd47bafc1f1f53` passed
   `cargo test --workspace --locked --all-targets` with 222 passing tests and no failures or
