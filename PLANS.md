@@ -28,9 +28,10 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `2f91f313025b189df237294485fd47bafc1f1f53` passed the focused WAL child-abort regression and the
   locked workspace suite (`227 passed`); Linux `04478701e3b0192cc7f90228c47badd9f6bb2d2b` passed
   `cargo test --no-default-features --lib` (`83 passed; 1 ignored`), formatting, GUI check, strict
-  Clippy, cargo-deny policy, l10n synchronization/audits, and Flatpak metadata validation. This is
-  process-crash evidence, not physical power-loss or alternate-VFS evidence; the release remains
-  `unreleased`.
+  Clippy, cargo-deny policy, l10n synchronization/audits, Flatpak metadata validation, and the
+  explicit image-only PDF OCR fixture (`bash tools/run-ocr-test.sh`, `1 passed`). This is
+  process-crash/OCR fixture evidence, not physical power-loss or alternate-VFS evidence; the release
+  remains `unreleased`.
 
 - [x] Record the verified Linux GTK candidate-chain editor and one-shot fallback-consent
   lifecycle. Documentation head `04478701e3b0192cc7f90228c47badd9f6bb2d2b` is covered by passing
