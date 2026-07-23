@@ -22,8 +22,8 @@ runtime integration boundary.
   runs `30041197129`/`30041196965`/`30041196986` and PR Native/Flatpak/Foundation runs
   `30041200604`/`30041200579`/`30041200581`. Native explicitly completed the existing real GTK
   Secret Service integration fixture.
-- PR #1 remains Draft/Open, Issue #1 remains Open, release status remains `unreleased`, and the
-  central coordination workflow is pending this documentation checkpoint.
+- PR #1 remains Draft/Open, Issue #1 remains Open, release status remains `unreleased`, and
+  central coordination workflow `30042137334` passed on Linux and PowerShell.
 
 This strengthens Linux secure-onboarding evidence without claiming interactive prompt approval,
 human visual review, other-client parity, signed artifacts, rollback authorization, or
