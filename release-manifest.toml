@@ -3,6 +3,7 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
+  "Linux-first provider streaming idle timeout settings are implemented at Core `b247155ad429639fdb65d3b063c3efc580ce46a4` (schema 28), l10n `2e223f9a416f4b461b72224f12c31cbf7981dae3` (471 messages), and Linux `c9d9a518103e370d4b21343cbe2e46dcd976422d`: GTK persists a bounded streaming idle timeout of 1–300 seconds (default 60), and Core resets the per-chunk budget across OpenAI Chat/Responses/Azure, Anthropic, Gemini, and Ollama streams. TLS policy, proxy authentication, other clients, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux-first provider timeout settings are implemented at Core `e9a569f8bb6d66db4fdb1c9bd1d6834e93d10f39` (schema 27), l10n `46ca70b2863fa951b417eda7ce5848e152c46605` (469 messages), and Linux `6fbf53da024bd37d64f93025222a57f7b0296d47`: GTK persists a bounded total request timeout of 1–600 seconds (default 30) and connection-establishment timeout of 1–120 seconds (default 10), and Core applies them independently to OpenAI Chat/Responses/Azure, Anthropic, Gemini, and Ollama transports. Streaming-idle timeout, TLS policy, proxy authentication, other clients, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux-first provider proxy settings are implemented at Core `7a9da3f467c5dec539dd8f7850b90b54ae712331` (schema 25), l10n `bba90a89089c954bdfe1dcda19c210e6ea230b9e` (465 messages), and Linux `c03535f82f07ed10c273fb250654c984540ed935`: GTK accepts optional HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URLs, rejects embedded credentials/query/unsupported path components, persists only the bounded non-secret URL, and applies it to OpenAI Chat/Responses/Azure, Anthropic, Gemini, and Ollama transports. Proxy authentication, other clients, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux-first secret custom-header references and GTK onboarding are implemented at Core `28baaa2f85bb70b4fc6ecc4c07566e7004a659c5` (schema 24), l10n `32397a72c267677f04419a5084514f025f94a0bc` (462 messages), and Linux `e52a43cb361c5a395aa4e8ecd4d8d5252192d384`: a separate ProviderProfile SecretRef is resolved through the host broker and applied in memory to OpenAI-compatible Chat, Responses, and Azure requests; Linux clears the GTK secret-header field, persists only Secret Service references when Remember is selected, and passes a session-only one-shot value otherwise. Secret values remain absent from storage and diagnostics. Other clients, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
@@ -108,14 +109,14 @@ localization_schema_version = "1.0.0"
 [components.core]
 repository = "linguamesh-core"
 version = "0.1.0-alpha.2"
-source_revision = "e9a569f8bb6d66db4fdb1c9bd1d6834e93d10f39"
+source_revision = "b247155ad429639fdb65d3b063c3efc580ce46a4"
 minimum_compatible_version = "0.1.0-alpha.2"
 artifacts = []
 
 [components.localization]
 repository = "linguamesh-l10n"
 version = "0.1.0"
-source_revision = "46ca70b2863fa951b417eda7ce5848e152c46605"
+source_revision = "2e223f9a416f4b461b72224f12c31cbf7981dae3"
 minimum_compatible_version = "0.1.0"
 artifacts = []
 
@@ -143,6 +144,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "6fbf53da024bd37d64f93025222a57f7b0296d47"
+source_revision = "c9d9a518103e370d4b21343cbe2e46dcd976422d"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []
