@@ -23,6 +23,8 @@ prompts, human visual review, and other clients remain separate qualification ga
   `30039409339` all passed. Native explicitly completed the real GTK Secret Service integration
   fixture. PR #1 remains Draft/Open, Issue #1 remains Open, and release status remains
   `unreleased`.
+- Central coordination commit `78149f1a69ef1c37f587d763b1837a0bd4894599` passed workflow
+  `30040013930` with Linux job `89317340977` and PowerShell job `89317340904`.
 
 This strengthens Linux secure-onboarding evidence without claiming interactive prompt approval,
 human accessibility review, other-client parity, signed artifacts, rollback authorization, or
