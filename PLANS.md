@@ -44,7 +44,7 @@ unverified acceptance boundaries.
 Assumption: the direct file-and-parent-directory sync regression strengthens the bounded local
 filesystem guarantee, but it does not prove physical power-loss recovery or alternate-VFS behavior.
 
-- [x] Add direct Linux regression `3a84352b7fbb9b4b5e3f98ac6f819b3241df1737` for file and parent
+- [x] Add direct Linux regression `3a84352410271ce53f01cfed162d83aad8c33719` for file and parent
   directory synchronization, with runtime `cf4246c24e087de870adae4878379512cbaf2b8a`.
 - [x] Record the regression and host GTK linker boundary in Linux docs/status at `8dc86c5` and
   `d52ab2f7bd339f360a26497d5a42bb7184b742e9`; pin the Flatpak source input at `8dc86c5`.

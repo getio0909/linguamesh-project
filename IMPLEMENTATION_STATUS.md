@@ -30,7 +30,7 @@ Assumption: the direct file-and-parent-directory regression verifies the request
 on this filesystem; it does not claim physical power-loss recovery or alternate-VFS behavior.
 
 - Linux runtime remains `cf4246c24e087de870adae4878379512cbaf2b8a`; regression
-  `3a84352b7fbb9b4b5e3f98ac6f819b3241df1737` exercises file and parent-directory sync barriers.
+  `3a84352410271ce53f01cfed162d83aad8c33719` exercises file and parent-directory sync barriers.
 - Linux docs/packaging commit `8dc86c50ddd5a03fe223a9eaaa5f2a9326e1175b` and status head
   `d52ab2f7bd339f360a26497d5a42bb7184b742e9` record the contract and host GTK linker boundary.
   The Flatpak source pin is exact at `8dc86c50ddd5a03fe223a9eaaa5f2a9326e1175b`.
