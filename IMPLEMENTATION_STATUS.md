@@ -7,6 +7,27 @@ Last updated: 2026-07-23
 - Central documentation/manifest commit `1288dcc7e848212b89dbeb7c424aedbcff2914f6` passed
   workflow `30048060092`; Linux and PowerShell validation jobs completed successfully.
 
+## 2026-07-23 — Linux mTLS trust-bundle rejection
+
+Assumption: a second local HTTPS endpoint signed by an unrelated CA is the smallest reproducible
+evidence that the configured trust bundle is enforced; enterprise-provider interoperability and
+cross-client certificate handling remain separate qualification gates.
+
+- Linux runtime/test `896cd2352aef73a86ca80d7d92e2b5c7850af7d7` extends the client-certificate
+  fixture runner with trusted and untrusted-server endpoints. The session-only certificate
+  identity succeeds against the trusted endpoint and is rejected with a network error by the
+  untrusted endpoint without leaking the secret name. The exact local runner passed once for each
+  regression (`1 passed; 0 failed` each), and the library suite passed `166 passed; 0 failed;
+  5 ignored`.
+- Linux source-pin/status commits `cb6a3b166344c240c135a829ef32d14e6b5214e6` and
+  `6113f4898a3d81fedd103b413d739797238c8490` align Flatpak/release documentation and record the
+  evidence. Final status-head push Native/Flatpak/Foundation runs
+  `30049361416`/`30049361411`/`30049361698` and PR Native/Flatpak/Foundation runs
+  `30049363915`/`30049363922`/`30049363912` all passed.
+- PR #1 remains Draft/Open, Issue #1 remains Open, and release status remains `unreleased`.
+  This does not claim enterprise interoperability, interactive prompt approval, human review,
+  cross-client parity, signing, rollback, or stable-release authorization.
+
 ## 2026-07-23 — Linux client-certificate HTTPS transport
 
 Assumption: a temporary local mutual-TLS endpoint is the smallest reproducible Linux evidence

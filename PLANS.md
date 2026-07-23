@@ -22,6 +22,23 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux mTLS trust-bundle rejection
+
+Assumption: a second local HTTPS endpoint signed by an unrelated CA is bounded evidence that the
+configured trust bundle rejects an untrusted server; enterprise interoperability remains open.
+
+- [x] Extend the Linux client-certificate fixture at runtime/test commit
+  `896cd2352aef73a86ca80d7d92e2b5c7850af7d7` with trusted and unrelated-CA endpoints; the local
+  runner passed both positive and negative regressions (`1 passed; 0 failed` each).
+- [x] Align Flatpak/release source pins at `cb6a3b166344c240c135a829ef32d14e6b5214e6` and record
+  status evidence at `6113f4898a3d81fedd103b413d739797238c8490`; local library validation passed
+  `166 passed; 0 failed; 5 ignored`.
+- [x] Pass final status-head push Native/Flatpak/Foundation `30049361416`/`30049361411`/
+  `30049361698` and PR Native/Flatpak/Foundation `30049363915`/`30049363922`/`30049363912`.
+- [ ] Keep enterprise interoperability, prompt approval, human review, cross-client parity,
+  signing, rollback, and stable-release authorization open; keep PR #1 Draft/Open, Issue #1 Open,
+  and release status `unreleased`.
+
 ## 2026-07-23 — Linux client-certificate HTTPS transport
 
 Assumption: a temporary local mutual-TLS endpoint is bounded Linux transport evidence; live

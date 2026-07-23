@@ -6,6 +6,16 @@ Status: Linux-first prerelease audit, 2026-07-23. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The latest Linux-first mTLS checkpoint adds runtime/test `896cd2352aef73a86ca80d7d92e2b5c7850af7d7`,
+source-pin commit `cb6a3b166344c240c135a829ef32d14e6b5214e6`, and final status head
+`6113f4898a3d81fedd103b413d739797238c8490`. The fixture proves that the session-only client
+certificate reaches a trusted endpoint and that the configured trust bundle rejects an endpoint
+signed by an unrelated CA, without exposing the secret name. Local positive and negative runners
+each pass once, and final status-head push/PR Native, Flatpak, and Foundation runs
+`30049361416`/`30049361411`/`30049361698` and `30049363915`/`30049363922`/`30049363912` all pass.
+Enterprise-provider interoperability, human review, cross-client parity, signing, rollback, and
+stable authorization remain open.
+
 The latest Linux-first client-certificate HTTPS checkpoint adds runtime/test
 `4b5a3f2ec0e65060d104068be6a6f31446007ee4`, packaging/docs `7b69933e1b0b92e1ee2136e01b6d39fa765ec761`,
 certificate hardening `e9406d56e1345be765c01ecfe2600e8e0d10dde9`, and final status head
