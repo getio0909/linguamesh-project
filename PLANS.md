@@ -2228,7 +2228,7 @@ Native/Flatpak/Foundation runs `29696349676`/`29696349689`/`29696349695` all pas
 This checkpoint advances Linux routing configuration only; complete candidate management, other
 clients, visual/Orca review, distributable artifacts, and stable-release evidence remain open.
 
-## Active Linux-first checkpoint — secure provider foundation
+## Completed Linux-first checkpoint — secure provider foundation
 
 Change identifier: `LM-CHANGE-2026-07-LINUX-SECURE-PROVIDER-1`
 
