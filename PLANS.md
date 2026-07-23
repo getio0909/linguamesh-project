@@ -33,9 +33,10 @@ Assumption: Planned files and commands are not evidence until they exist and com
   explicit image-only PDF OCR fixture (`bash tools/run-ocr-test.sh`, `1 passed`) plus the private
   mount ENOSPC regression (`bash tools/run-storage-fault-test.sh`, `1 passed`). Push Native/Flatpak/
   Foundation `29987023670`/`29987023696`/`29987023655` and PR
-  `29987026057`/`29987026021`/`29987026006` all passed. This is controlled process-crash/OCR/
-  storage-fault evidence, not physical power-loss or alternate-VFS evidence; the release remains
-  `unreleased`.
+  `29987026057`/`29987026021`/`29987026006` all passed. A temporary host-network
+  `ollama/ollama:0.11.10` daemon with `smollm:135m` also passed the real third-party `/api` regression
+  once without credentials. This is controlled process-crash/OCR/storage-fault/provider evidence,
+  not physical power-loss or alternate-VFS evidence; the release remains `unreleased`.
 
 - [x] Record the verified Linux GTK candidate-chain editor and one-shot fallback-consent
   lifecycle. Documentation head `04478701e3b0192cc7f90228c47badd9f6bb2d2b` is covered by passing

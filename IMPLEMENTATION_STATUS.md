@@ -28,6 +28,10 @@ power loss or every alternate SQLite VFS.
 - The private mount storage-fault runner also passed the exact ENOSPC regression (`1 passed`),
   confirming the Linux session-only degradation and false-commit guard under a bounded write fault.
   This is controlled ENOSPC evidence, not physical power-loss or broad VFS coverage.
+- The same Linux documentation head also records a temporary host-network
+  `ollama/ollama:0.11.10` daemon pulling `smollm:135m`; the real third-party `/api/tags` and
+  `/api/chat` regression passed once without credentials. This does not claim live account, quota,
+  GPU, or distribution behavior.
 - This refresh strengthens reproducible process-crash evidence only. Physical power-loss and
   alternate-VFS behavior, cross-client parity, human review, signing, rollback, and stable-release
   authorization remain open; release stays `unreleased`.
