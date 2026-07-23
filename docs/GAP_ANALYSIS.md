@@ -15,6 +15,8 @@ Flatpak metadata, and diff checks pass. Push Native/Flatpak/Foundation `30032394
 `30032394653`/`30032394626` and PR `30032396787`/`30032396790`/`30032396829` pass. This is
 bounded crash-durability evidence only: physical power-loss recovery, alternate VFS behavior,
 other clients, human review, signing, rollback, and stable authorization remain open.
+The canonical localization input is `c2526bfb3f6ff57895bdc3eeed743e26c8783613`, matching Linux's
+checked synchronization script and generated resources; no new l10n strings were needed here.
 
 The current Linux-first language-swap checkpoint adds Linux code
 `4e5a94feef09bbe382a0b6690dc8e8f7b138656f`, packaging/docs head

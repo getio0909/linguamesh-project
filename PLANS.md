@@ -39,6 +39,15 @@ unverified acceptance boundaries.
   Native/Flatpak/Foundation `30032396787`/`30032396790`/`30032396829`; keep the PR Draft/Open,
   Issue #1 Open, and release status `unreleased`.
 
+## 2026-07-23 — Central localization pin consistency
+
+Assumption: the current canonical localization input is the immutable l10n `c2526bfb3f6ff57895bdc3eeed743e26c8783613`, which includes the earlier copy, clear, and language-swap messages; no new localization content is required for the export durability slice.
+
+- [x] Correct `release-manifest.toml` to use the l10n revision consumed by Linux's checked
+  `tools/sync-l10n.sh` and the generated PO/MO resources.
+- [x] Re-run central manifest, documentation-link, credential-hygiene, and diff validation; keep
+  all release components `unreleased` and do not change the Linux PR or stable-release state.
+
 ## 2026-07-23 — Linux localized language swap action
 
 Assumption: Linux is the active implementation priority; swapping is local and request-free for the

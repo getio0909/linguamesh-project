@@ -22,6 +22,8 @@ claimed by these tests.
   Open, and release status remains `unreleased`; power-loss, alternate-VFS, other-client,
   signing, rollback, and stable-release evidence remain open.
 
+The canonical l10n input for this and the preceding Linux checkpoints is `c2526bfb3f6ff57895bdc3eeed743e26c8783613`; the Linux synchronization script and generated PO/MO resources pass against that exact revision. The central release component now records the same pin.
+
 ## 2026-07-23 — Linux localized language swap action
 
 Assumption: Linux remains the active implementation priority; language swapping is a local,
