@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux regional-locale and script translation presets
+
+Assumption: Linux remains the active implementation scope; Core's bounded regional-locale and
+script fields are exposed through the existing GTK translation-preset selector, while parity and
+human review on other clients remain open.
+
+- Core `53eee86ce0862bcb0b86f86da5e91257b07fe6d7` adds validated `english_us` and
+  `chinese_simplified` presets carrying `en-US`/`Latn` and `zh-CN`/`Hans` metadata. Linux
+  `52a9eb7fc579fff07627c55d7ce0f49eac5048ad` exposes both choices and preserves them for text and
+  document requests; localization `1de68c9568b5c380845089efc9282ff6edd04bc1` supplies the
+  catalog-backed labels in a 494-message bundle.
+- Local Linux tests passed `160 passed; 0 failed; 3 ignored`, with strict Clippy, l10n `make
+  check`, synchronization, Flatpak metadata, formatting, and diff checks passing. Core CI/Fuzz
+  passed (`30000596855`, `30000596731`); Core Native SDK and Linux push/PR gates remain recorded
+  after completion.
+- Release remains `unreleased`; cross-client parity, qualified human accessibility/translation
+  review, signing, rollback, and stable-release authorization remain open.
+
 ## 2026-07-23 — Linux GTK glossary-library selector and localized resources
 
 Assumption: Linux remains the active implementation scope; a bounded GTK selector is the smallest

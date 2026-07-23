@@ -22,6 +22,20 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux regional-locale and script translation presets
+
+Assumption: the existing GTK translation-preset selector is the smallest complete Linux surface
+for Core's bounded regional-locale and script preferences; cross-client parity remains open.
+
+- [x] Add Core `english_us` (`en-US`/`Latn`) and `chinese_simplified` (`zh-CN`/`Hans`) presets
+  at `53eee86ce0862bcb0b86f86da5e91257b07fe6d7`, with domain validation and round-trip tests.
+- [x] Expose both choices in Linux GTK at `52a9eb7fc579fff07627c55d7ce0f49eac5048ad`, sync
+  localization `1de68c9568b5c380845089efc9282ff6edd04bc1` (494 messages), and repin Native and
+  Flatpak inputs. Local 160-test/3-ignore suite, strict Clippy, l10n checks, synchronization,
+  Flatpak metadata, and diff checks passed.
+- [ ] Add equivalent regional/script controls to Android, Windows, and macOS before stable
+  release; retain explicit human translation and accessibility review boundaries.
+
 ## 2026-07-23 — Linux GTK glossary-library selector checkpoint
 
 Assumption: the request-level glossary editor remains authoritative; the new GTK selector is a
