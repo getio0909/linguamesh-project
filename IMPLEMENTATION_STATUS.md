@@ -2,6 +2,9 @@
 
 Last updated: 2026-07-23
 
+- Central coordination commit `7c4ffa8fe2fa77a24ae61635c9c130c65e22382b` passed workflow
+  `30045831148`; Linux and PowerShell validation jobs completed successfully.
+
 ## 2026-07-23 — Linux session proxy authentication transport
 
 Assumption: a local HTTP proxy fixture is the smallest reproducible Linux evidence that a
