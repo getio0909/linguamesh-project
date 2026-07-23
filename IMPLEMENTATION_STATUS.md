@@ -13,7 +13,8 @@ streaming-idle timeout, and TLS policy fields remain separate follow-up work.
 - Linux `c5db93676128e84a577f628906aad2980f919909` adds the localized GTK control, profile
   restore/default behavior, exact Core/l10n pins, and Flatpak source-head pin. Local Core,
   Linux, l10n, synchronization, localization-audit, Flatpak metadata, and diff checks passed.
-- Core CI/Fuzz/Native SDK and l10n Localization/Foundation passed for the exact revisions. Linux
+- Core CI/Fuzz/Native SDK `29967953180`/`29967953114`/`29967953129` and l10n
+  Localization/Foundation `29967968439`/`29967968461` passed for the exact revisions. Linux
   push Native/Flatpak/Foundation `29968376701`/`29968376654`/`29968376661` and PR
   `29968379682`/`29968379660`/`29968379655` passed for the exact head. Release remains
   `unreleased`; cross-client parity, human review, signing, rollback, and stable-release
