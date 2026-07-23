@@ -18,6 +18,15 @@ other clients, human review, signing, rollback, and stable authorization remain 
 The canonical localization input is `c2526bfb3f6ff57895bdc3eeed743e26c8783613`, matching Linux's
 checked synchronization script and generated resources; no new l10n strings were needed here.
 
+The follow-up Linux export regression adds direct file/parent-directory sync coverage at
+`3a84352b7fbb9b4b5e3f98ac6f819b3241df1737`; runtime remains `cf4246c24e087de870adae4878379512cbaf2b8a`,
+docs/packaging is `8dc86c50ddd5a03fe223a9eaaa5f2a9326e1175b`, and final status is
+`d52ab2f7bd339f360a26497d5a42bb7184b742e9`. Push Native/Flatpak/Foundation
+`30034083462`/`30034083390`/`30034083610` and PR
+`30034086699`/`30034087655`/`30034086738` passed. This remains bounded local-filesystem evidence;
+physical power-loss recovery, alternate VFS behavior, other clients, human review, signing,
+rollback, and stable authorization remain open.
+
 The current Linux-first language-swap checkpoint adds Linux code
 `4e5a94feef09bbe382a0b6690dc8e8f7b138656f`, packaging/docs head
 `6a9adf472c6ca7afb26311dd0bbe06de2a0f1c05`, and localization

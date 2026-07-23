@@ -39,6 +39,23 @@ unverified acceptance boundaries.
   Native/Flatpak/Foundation `30032396787`/`30032396790`/`30032396829`; keep the PR Draft/Open,
   Issue #1 Open, and release status `unreleased`.
 
+## 2026-07-23 — Linux local-export barrier regression evidence
+
+Assumption: the direct file-and-parent-directory sync regression strengthens the bounded local
+filesystem guarantee, but it does not prove physical power-loss recovery or alternate-VFS behavior.
+
+- [x] Add direct Linux regression `3a84352b7fbb9b4b5e3f98ac6f819b3241df1737` for file and parent
+  directory synchronization, with runtime `cf4246c24e087de870adae4878379512cbaf2b8a`.
+- [x] Record the regression and host GTK linker boundary in Linux docs/status at `8dc86c5` and
+  `d52ab2f7bd339f360a26497d5a42bb7184b742e9`; pin the Flatpak source input at `8dc86c5`.
+- [x] Pass local format, locked all-target and test checks, strict Clippy, 163 demo-provider
+  tests with three documented ignores, localization audits/sync, Flatpak metadata, and diff checks.
+- [x] Pass push Native/Flatpak/Foundation `30034083462`/`30034083390`/`30034083610` and PR
+  Native/Flatpak/Foundation `30034086699`/`30034087655`/`30034086738`.
+- [x] Keep PR #1 Draft/Open, Issue #1 Open, manifests synchronized, and release status
+  `unreleased`; physical power-loss, alternate-VFS, other-client, signing, rollback, and stable
+  release evidence remain open.
+
 ## 2026-07-23 — Central localization pin consistency
 
 Assumption: the current canonical localization input is the immutable l10n `c2526bfb3f6ff57895bdc3eeed743e26c8783613`, which includes the earlier copy, clear, and language-swap messages; no new localization content is required for the export durability slice.

@@ -24,6 +24,25 @@ claimed by these tests.
 
 The canonical l10n input for this and the preceding Linux checkpoints is `c2526bfb3f6ff57895bdc3eeed743e26c8783613`; the Linux synchronization script and generated PO/MO resources pass against that exact revision. The central release component now records the same pin.
 
+## 2026-07-23 — Linux local-export barrier regression evidence
+
+Assumption: the direct file-and-parent-directory regression verifies the requested sync barriers
+on this filesystem; it does not claim physical power-loss recovery or alternate-VFS behavior.
+
+- Linux runtime remains `cf4246c24e087de870adae4878379512cbaf2b8a`; regression
+  `3a84352b7fbb9b4b5e3f98ac6f819b3241df1737` exercises file and parent-directory sync barriers.
+- Linux docs/packaging commit `8dc86c50ddd5a03fe223a9eaaa5f2a9326e1175b` and status head
+  `d52ab2f7bd339f360a26497d5a42bb7184b742e9` record the contract and host GTK linker boundary.
+  The Flatpak source pin is exact at `8dc86c50ddd5a03fe223a9eaaa5f2a9326e1175b`.
+- Local format, locked all-target/test checks, strict Clippy, 163 demo-provider tests with three
+  documented ignores, localization audits/sync, Flatpak metadata, and diff checks passed. The
+  focused GUI binary remains blocked only by missing host GTK/GDK/Graphene linker symbols; Native
+  CI is authoritative for display-backed execution.
+- Push Native/Flatpak/Foundation `30034083462`/`30034083390`/`30034083610` and PR
+  Native/Flatpak/Foundation `30034086699`/`30034087655`/`30034086738` all passed. PR #1 remains
+  Draft/Open, Issue #1 remains Open, and release remains `unreleased`; physical power-loss,
+  alternate-VFS, other-client, signing, rollback, and stable-release evidence remain open.
+
 ## 2026-07-23 — Linux localized language swap action
 
 Assumption: Linux remains the active implementation priority; language swapping is a local,
