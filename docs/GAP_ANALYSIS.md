@@ -6,6 +6,16 @@ Status: Linux-first prerelease audit, 2026-07-23. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The latest Linux-first mTLS hostname checkpoint adds runtime/test `ec6c9971e0271e5eddc89bdc64121761a9cb46df`,
+source-pin commit `9fc633feeca328b356b8f98eead03e29d28d0d46`, and final status head
+`1629547c0eca1a5aabcd06cb7a96ecdfeaf97e80`. The fixture proves that a session-only client
+certificate reaches a trusted endpoint, that an unrelated-CA endpoint is rejected, and that a
+wrong-SAN endpoint is rejected even when its signing CA is trusted; no secret name is exposed.
+Local runners pass once for all three cases, and final status-head push/PR Native, Flatpak, and
+Foundation runs `30050789607`/`30050789609`/`30050789567` and `30050792424`/`30050792455`/
+`30050792453` all pass. Enterprise-provider interoperability, human review, cross-client parity,
+signing, rollback, and stable authorization remain open.
+
 The latest Linux-first mTLS checkpoint adds runtime/test `896cd2352aef73a86ca80d7d92e2b5c7850af7d7`,
 source-pin commit `cb6a3b166344c240c135a829ef32d14e6b5214e6`, and final status head
 `6113f4898a3d81fedd103b413d739797238c8490`. The fixture proves that the session-only client

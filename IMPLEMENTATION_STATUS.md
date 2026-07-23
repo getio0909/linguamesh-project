@@ -9,6 +9,26 @@ Last updated: 2026-07-23
 - Central mTLS evidence/manifest commit `b9eddb695c4726122ff93e56d1b53bcab6da670f` passed
   workflow `30049632598`; Linux and PowerShell validation jobs completed successfully.
 
+## 2026-07-23 — Linux mTLS hostname verification
+
+Assumption: a server certificate signed by the trusted test CA but carrying a wrong SAN is the
+smallest reproducible evidence that hostname verification remains enabled; enterprise-provider
+interoperability and cross-client certificate handling remain separate qualification gates.
+
+- Linux runtime/test `ec6c9971e0271e5eddc89bdc64121761a9cb46df` adds a third ignored worker
+  regression and extends the HTTPS runner. The trusted endpoint succeeds, the unrelated-CA
+  endpoint is rejected, and the wrong-SAN endpoint is rejected with a network error without
+  leaking the secret name. The exact local runner passed once for all three cases (`1 passed;
+  0 failed` each), and the library suite passed `166 passed; 0 failed; 6 ignored`.
+- Linux source-pin/status commits `9fc633feeca328b356b8f98eead03e29d28d0d46` and
+  `1629547c0eca1a5aabcd06cb7a96ecdfeaf97e80` align Flatpak/release documentation and record the
+  evidence. Final status-head push Native/Flatpak/Foundation runs
+  `30050789607`/`30050789609`/`30050789567` and PR Native/Flatpak/Foundation runs
+  `30050792424`/`30050792455`/`30050792453` all passed.
+- PR #1 remains Draft/Open, Issue #1 remains Open, and release status remains `unreleased`.
+  This does not claim enterprise interoperability, interactive prompt approval, human review,
+  cross-client parity, signing, rollback, or stable-release authorization.
+
 ## 2026-07-23 — Linux mTLS trust-bundle rejection
 
 Assumption: a second local HTTPS endpoint signed by an unrelated CA is the smallest reproducible

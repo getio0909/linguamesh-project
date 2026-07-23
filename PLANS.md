@@ -22,6 +22,22 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux mTLS hostname verification
+
+Assumption: a trusted-CA server certificate with a wrong SAN is bounded evidence that hostname
+verification remains enabled; enterprise interoperability remains open.
+
+- [x] Add the ignored hostname-mismatch worker regression and temporary HTTPS fixture at Linux
+  runtime/test commit `ec6c9971e0271e5eddc89bdc64121761a9cb46df`; trusted, untrusted-CA, and
+  wrong-SAN runners each passed `1 passed; 0 failed` locally.
+- [x] Align the Flatpak/release source pin at `9fc633feeca328b356b8f98eead03e29d28d0d46` after
+  the stale-pin validation failure, and record status evidence at `1629547c0eca1a5aabcd06cb7a96ecdfeaf97e80`.
+- [x] Pass final status-head push Native/Flatpak/Foundation `30050789607`/`30050789609`/
+  `30050789567` and PR Native/Flatpak/Foundation `30050792424`/`30050792455`/`30050792453`.
+- [ ] Keep enterprise interoperability, prompt approval, human review, cross-client parity,
+  signing, rollback, and stable-release authorization open; keep PR #1 Draft/Open, Issue #1 Open,
+  and release status `unreleased`.
+
 ## 2026-07-23 — Linux mTLS trust-bundle rejection
 
 Assumption: a second local HTTPS endpoint signed by an unrelated CA is bounded evidence that the
