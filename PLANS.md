@@ -22,6 +22,20 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux Provider Hub health label GTK lifecycle
+
+Assumption: Linux remains the active implementation priority; the fixture uses only persisted,
+non-secret health state and does not substitute for other-client or human acceptance evidence.
+
+- [x] Add the serialized GTK lifecycle fixture at Linux `1155a224f74da8b2e2b201ad01139ef1df97a2e2`
+  and document its hidden/success/failure/clear/no-selection assertions.
+- [x] Repin the Linux Flatpak source and documentation head at `c39a5566ae0c87ef892cf9ba38f446b3a16429e5`;
+  Core remains `460728d79b0e2373445c3d8994793d069b8057b9` and l10n remains `74f773774bdf01ca5d2ab61ce199dbd76cdadb04`.
+- [x] Pass local format, GUI/all-target compile, demo-provider library, localization, Flatpak, and
+  diff checks; push Native/Flatpak/Foundation `30016302142`/`30016302028`/`30016302180` passed.
+- [ ] Finish GitHub PR check aggregation for PR runs `30016306021`/`30016305892`/`30016305878`, then
+  synchronize the Draft PR and open central Issue #1 without merging or promoting a stable release.
+
 ## 2026-07-23 — Linux Provider Hub health status
 
 Assumption: Linux remains the active implementation priority; persisted health data is non-secret,

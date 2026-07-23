@@ -2,6 +2,27 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux Provider Hub health label GTK lifecycle
+
+Assumption: Linux remains the active implementation priority; this checkpoint covers persisted,
+non-secret Provider Hub health metadata and does not claim Android, Windows, macOS, stable-release,
+or human/physical acceptance evidence.
+
+- Linux `c39a5566ae0c87ef892cf9ba38f446b3a16429e5` adds a serialized GTK fixture covering hidden,
+  successful UTC timestamp, normalized failure, cleared health, and no-selected-profile states.
+  The fixture verifies localized output without exposing credentials or raw provider diagnostics.
+- The Flatpak manifest now pins this Linux head with Core
+  `460728d79b0e2373445c3d8994793d069b8057b9` and l10n
+  `74f773774bdf01ca5d2ab61ce199dbd76cdadb04`. Push Native/Flatpak/Foundation runs
+  `30016302142`/`30016302028`/`30016302180` passed; PR Native/Flatpak/Foundation runs
+  `30016306021`/`30016305892`/`30016305878` have successful workflow jobs (the Flatpak check
+  aggregation is still pending on GitHub at this update).
+- Local formatting, GUI/all-target compilation, demo-provider library tests (`161 passed; 0 failed;
+  3 ignored`), localization audits, Flatpak metadata validation, and diff checks passed. The exact
+  GTK binary test is compile-verified but cannot link on this host because GTK/GDK/Graphene symbols
+  are unavailable; Native CI is authoritative for display-backed execution. Release remains
+  `unreleased`.
+
 ## 2026-07-23 — Linux Provider Hub health status
 
 Assumption: Linux remains the active implementation priority; this slice exposes only persisted,
