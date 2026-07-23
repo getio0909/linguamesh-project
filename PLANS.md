@@ -22,6 +22,21 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux provider health persistence
+
+Assumption: Linux remains the active client priority; provider health metadata is non-secret local
+state, while other clients and stable-release conditions remain deferred.
+
+- [x] Push Core `460728d79b0e2373445c3d8994793d069b8057b9` with schema-34 profile health fields,
+  normalized failure categories, and round-trip storage tests.
+- [x] Push Linux `df25c87f1477caecc00187fd9ac46e69f7aad38d` with explicit connection-test health
+  recording, saved-profile refresh, restart coverage, and Core compatibility feature
+  `provider_health_status_v1`; Flatpak pin `e2cf532ceeebca86881dbc49c76c8b036dad89b0` points to
+  the health-aware Core and Linux inputs.
+- [x] Pass local Core workspace tests and Linux `cargo test --lib --all-features` (163 passed,
+  12 documented environment-gated ignores). Remote Native/Flatpak/Foundation gates for the final
+  documentation head remain in progress; release stays `unreleased`.
+
 ## 2026-07-23 — Linux release-document pin alignment
 
 Assumption: release documentation must match the exact Linux/l10n pins used by the green workflows;

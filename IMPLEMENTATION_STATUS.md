@@ -2,6 +2,23 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux provider health persistence
+
+Assumption: Linux is the active implementation scope; Android, Windows, macOS, stable release,
+and human/physical evidence remain deferred.
+
+- Core `460728d79b0e2373445c3d8994793d069b8057b9` adds schema-34 `ProviderProfile` health fields
+  for the last successful Unix-second check and last normalized `ErrorKind`, with no raw provider
+  error text or credentials persisted. The Core compatibility feature is
+  `provider_health_status_v1`.
+- Linux `df25c87f1477caecc00187fd9ac46e69f7aad38d` records these fields after explicit cancellable
+  connection tests, refreshes saved-profile state, and verifies success/failure/restart behavior
+  in the worker fixture. Flatpak packaging `e2cf532ceeebca86881dbc49c76c8b036dad89b0` pins the
+  health-aware Core and Linux sources.
+- Local Core workspace tests and Linux all-feature library tests passed (163 Linux tests passed,
+  12 documented environment-gated ignores). The final Linux Native/Flatpak/Foundation runs are
+  still in progress; release remains `unreleased`.
+
 ## 2026-07-23 — Linux release-document pin alignment
 
 Assumption: the Linux release guide must describe the same functional and localization pins that
