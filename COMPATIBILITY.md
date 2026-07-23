@@ -9,7 +9,7 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 ### Linux-first provider timeout settings
 
 Core `e9a569f8bb6d66db4fdb1c9bd1d6834e93d10f39` adds schema 27 persistence for bounded total
-request and connection-establishment timeouts. Linux `55921b0012729c72ba0fdb07ffb7be820a7f2136`
+request and connection-establishment timeouts. Linux `6fbf53da024bd37d64f93025222a57f7b0296d47`
 adds the localized GTK controls, restores them with saved profiles, defaults new profiles to 30 and
 10 seconds respectively, and pins Core/l10n in Native and Flatpak metadata; l10n
 `46ca70b2863fa951b417eda7ce5848e152c46605` supplies the 469-message bundle. Values from 1 through
@@ -19,9 +19,9 @@ Gemini, and Ollama transports.
 Local Core workspace tests and strict Clippy, Linux locked checks/tests (`159 passed; 3 ignored`),
 l10n audits/synchronization, and Flatpak metadata validation passed. Core CI/Fuzz/Native SDK
 `29969609373`/`29969609372`/`29969609379`, l10n Localization/Foundation
-`29969625867`/`29969625942`, Linux push Native/Flatpak/Foundation
-`29969721769`/`29969721764`/`29969721796`, and PR runs
-`29969720587`/`29969720599`/`29969720634` passed for the exact revisions. Streaming-idle and TLS-specific timeout
+`29969625867`/`29969625942`, Linux documentation-head push Native/Flatpak/Foundation
+`29970072910`/`29970072901`/`29970072923`, and PR runs
+`29970070485`/`29970070480`/`29970070516` passed for the exact revisions. Streaming-idle and TLS-specific timeout
 fields, other clients, human review, signing, rollback,
 and stable release remain open; status stays `unreleased`.
 
