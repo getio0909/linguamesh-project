@@ -22,6 +22,22 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux client-certificate HTTPS transport
+
+Assumption: a temporary local mutual-TLS endpoint is bounded Linux transport evidence; live
+enterprise endpoints and cross-client certificate handling remain open.
+
+- [x] Add the Linux worker regression and temporary HTTPS fixture at runtime/test commit
+  `4b5a3f2ec0e65060d104068be6a6f31446007ee4`; the exact local runner passed with `1 passed; 0 failed`.
+- [x] Pin Flatpak and document the fixture at `7b69933e1b0b92e1ee2136e01b6d39fa765ec761`, then
+  harden generated certificate extensions at `e9406d56e1345be765c01ecfe2600e8e0d10dde9`.
+- [x] Record final status head `14b601ae1ac11e98e09a4d2727f6ebb584f32ad4`; push
+  Native/Flatpak/Foundation `30047564119`/`30047564124`/`30047564131` and PR
+  `30047567575`/`30047567392`/`30047567456` all passed.
+- [ ] Keep enterprise interoperability, prompt approval, human review, cross-client parity,
+  signing, rollback, and stable-release authorization open; keep PR #1 Draft/Open, Issue #1 Open,
+  and release status `unreleased`.
+
 ## 2026-07-23 — Linux session proxy authentication transport
 
 Assumption: a local HTTP proxy fixture is bounded Linux transport evidence; live proxy deployment

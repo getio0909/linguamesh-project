@@ -5,6 +5,29 @@ Last updated: 2026-07-23
 - Central coordination commit `7c4ffa8fe2fa77a24ae61635c9c130c65e22382b` passed workflow
   `30045831148`; Linux and PowerShell validation jobs completed successfully.
 
+## 2026-07-23 — Linux client-certificate HTTPS transport
+
+Assumption: a temporary local mutual-TLS endpoint is the smallest reproducible Linux evidence
+that the session-only client-certificate identity reaches the real provider transport; live
+enterprise endpoints and cross-client certificate handling remain separate qualification gates.
+
+- Linux runtime/test `4b5a3f2ec0e65060d104068be6a6f31446007ee4` adds an ignored worker regression
+  and a Python HTTPS fixture. It requires a client certificate during the TLS handshake, serves
+  `/v1/models`, and verifies the worker supplies a session SecretRef identity plus bounded trust
+  bundle. Local checks include `166 passed; 0 failed; 4 ignored`, and the exact fixture runner
+  passed `1 passed; 0 failed` with generated key material removed.
+- Linux packaging/docs `7b69933e1b0b92e1ee2136e01b6d39fa765ec761` pins Flatpak to the tested runtime.
+  Certificate-hardening `e9406d56e1345be765c01ecfe2600e8e0d10dde9` adds explicit CA,
+  server-authentication, and client-authentication extensions after the first remote Native run
+  rejected the handshake. Final status head `14b601ae1ac11e98e09a4d2727f6ebb584f32ad4` passed
+  push Native/Flatpak/Foundation `30047564119`/`30047564124`/`30047564131` and PR
+  Native/Flatpak/Foundation `30047567575`/`30047567392`/`30047567456`.
+- PR #1 remains Draft/Open, Issue #1 remains Open, and release status remains `unreleased`.
+
+This is Linux rustls wiring and server-side client-authentication evidence only; it does not claim
+enterprise-provider interoperability, human review, other-client parity, signing, rollback, or
+stable-release authorization.
+
 ## 2026-07-23 — Linux session proxy authentication transport
 
 Assumption: a local HTTP proxy fixture is the smallest reproducible Linux evidence that a

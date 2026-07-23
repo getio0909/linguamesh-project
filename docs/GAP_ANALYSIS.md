@@ -6,6 +6,17 @@ Status: Linux-first prerelease audit, 2026-07-23. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The latest Linux-first client-certificate HTTPS checkpoint adds runtime/test
+`4b5a3f2ec0e65060d104068be6a6f31446007ee4`, packaging/docs `7b69933e1b0b92e1ee2136e01b6d39fa765ec761`,
+certificate hardening `e9406d56e1345be765c01ecfe2600e8e0d10dde9`, and final status head
+`14b601ae1ac11e98e09a4d2727f6ebb584f32ad4`. A temporary Python HTTPS endpoint requires a client
+certificate and serves `/v1/models`; the Linux worker supplies the session-only identity and bounded
+trust bundle. The exact local fixture runner passes, and push Native/Flatpak/Foundation
+`30047564119`/`30047564124`/`30047564131` plus PR `30047567575`/`30047567392`/`30047567456` all pass.
+This is bounded rustls and server-side client-authentication evidence: enterprise-provider
+interoperability, human review, cross-client parity, signing, rollback, and stable authorization
+remain open.
+
 The latest Linux-first proxy-secret checkpoint adds runtime test
 `911994eb3f4c364af3ea043b783f2aff18e09888`, packaging/docs `968b5c88cdda64ae69a2c80add729bb37ca7548b`,
 and final status head `f78d0939dd78c1646da4f7e3fa7f87665a534bf5`. A worker-level loopback proxy
