@@ -3,6 +3,7 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
+  "Linux-first provider rate-limit handling is implemented at Core `8623b2c8829e4d9cf7299c74440dcfabb4e320db`, l10n `630a8f36d96be358d81b72e2efc87cd527e66974` (500 messages), and Linux `a7ac73d6fe8707519dd02698c26ebf8ca78a4246`: HTTP 429 responses normalize to the shared RateLimited category across OpenAI-compatible, Anthropic, Gemini, and Ollama adapters; bounded Retry-After hints are preserved through storage/ABI boundaries and Linux renders localized plural retry guidance. Local Core locked tests/strict Clippy, l10n make check, and Linux 162-test/3-ignore validation pass; remote CI, live quota behavior, cross-client parity, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux-first manual model discovery fallback is implemented at Core `7d0f61ee528d32a5671c65d3c253c12368cf40c4`, Linux functional code `871c2da4e5f41cfb8197c7688ee0dd9f11b245fe`, and packaging/status head `9bda4c64263167cba271fbf70abec546aa68b3fc`: every Linux provider preset exposes an optional manual model field; Core keeps a validated selected model as a localized Manual descriptor when native/protocol discovery is empty or returns typed ModelUnavailable, including HTTP 404, while authentication, network, and timeout failures remain typed errors. Local Core strict Clippy/all-workspace tests, Linux GUI/all-target checks, 161 demo-provider tests with 3 documented ignores, localization audits, Flatpak metadata validation, and diff checks passed. The exact GTK binary is compile-verified but host linking lacks GTK/GDK/Graphene symbols; Native CI remains authoritative. Cross-client parity, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux-first bounded TBX glossary import is implemented at Core `dffa07eca2b006279f99673edff5bd0ae1b24a0f`, Linux `73051b70028359c56654e1260621ada77def67e9` (code head `00186c29fc4e3e6682114ee29cd587d31610a1d6`), and localization `7c2cb9fd71835ea0f9c6605d82dac87c0df012f0` (497 messages): the restricted UTF-8 parser and GTK chooser enforce the 4 MiB/256-entry limits, preserve language locales and notes, and reject DTDs, unknown entities, malformed entries, conflicts, and credential-shaped terms. Linux tests, Flatpak metadata validation, and l10n make check pass locally; Linux push Native/Flatpak/Foundation `30006418545`/`30006418485`/`30006418554` and PR Native/Flatpak/Foundation `30006415855`/`30006415873`/`30006415861` passed, while cross-client parity, display-backed chooser review, human translation review, physical VFS/power-loss, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux-first model provenance labels are implemented against Core's existing `ModelSource` contract at Core `dffa07eca2b006279f99673edff5bd0ae1b24a0f`, Linux code `00186c29fc4e3e6682114ee29cd587d31610a1d6` with packaging pin `73051b70028359c56654e1260621ada77def67e9`, and localization `7c2cb9fd71835ea0f9c6605d82dac87c0df012f0`: the GTK model selector identifies every entry as Discovered, Catalog, or Manual with localized labels. Linux local tests passed 160 tests/3 documented ignores, strict Clippy, GUI cargo check, synchronization, localization audits, and Flatpak metadata; push Native/Flatpak/Foundation `30006418545`/`30006418485`/`30006418554` and PR Native/Flatpak/Foundation `30006415855`/`30006415873`/`30006415861` passed. Cross-client parity, display-backed and human accessibility review, live-provider evidence, signing, rollback, and stable release remain open; status stays `unreleased`.",
@@ -120,14 +121,14 @@ localization_schema_version = "1.0.0"
 [components.core]
 repository = "linguamesh-core"
 version = "0.1.0-alpha.2"
-source_revision = "460728d79b0e2373445c3d8994793d069b8057b9"
+source_revision = "8623b2c8829e4d9cf7299c74440dcfabb4e320db"
 minimum_compatible_version = "0.1.0-alpha.2"
 artifacts = []
 
 [components.localization]
 repository = "linguamesh-l10n"
 version = "0.1.0"
-source_revision = "74f773774bdf01ca5d2ab61ce199dbd76cdadb04"
+source_revision = "630a8f36d96be358d81b72e2efc87cd527e66974"
 minimum_compatible_version = "0.1.0"
 artifacts = []
 
@@ -155,6 +156,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "c39a5566ae0c87ef892cf9ba38f446b3a16429e5"
+source_revision = "a7ac73d6fe8707519dd02698c26ebf8ca78a4246"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

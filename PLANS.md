@@ -57,6 +57,20 @@ non-secret health state and does not substitute for other-client or human accept
 - [x] Validate the synchronized central manifests and documentation with coordination workflow
   `30017427553` on Linux and PowerShell.
 
+## 2026-07-23 — Linux typed provider rate-limit handling
+
+Assumption: HTTP 429 is the stable cross-provider signal for temporary throttling; quota/billing,
+live-provider behavior, other clients, and stable-release evidence remain open.
+
+- [x] Push Core `8623b2c8829e4d9cf7299c74440dcfabb4e320db` with shared `RateLimited` mapping,
+  bounded retry-hint preservation, storage/ABI round trips, and locked workspace validation.
+- [x] Push l10n `630a8f36d96be358d81b72e2efc87cd527e66974` with the Linux category in all official
+  packs and deterministic PO/MO resources; `make check` passed 500 messages and 26 tests.
+- [x] Push Linux `a7ac73d6fe8707519dd02698c26ebf8ca78a4246` with localized plural retry guidance,
+  Flatpak source pins, 162 local demo-provider tests, and all local audits.
+- [ ] Wait for and record Linux push/PR Native, Flatpak, and Foundation CI before claiming remote
+  verification; keep PR #1 Draft/Open and Issue #1 Open.
+
 ## 2026-07-23 — Linux Provider Hub health status
 
 Assumption: Linux remains the active implementation priority; persisted health data is non-secret,
