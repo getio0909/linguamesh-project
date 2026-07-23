@@ -6,6 +6,14 @@ Status: Linux-first prerelease audit, 2026-07-23. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The 2026-07-23 GitHub triage refresh confirms Linux PR #1 and macOS PR #1 are both Draft/Open and
+mergeable with their current checks successful, and neither has submitted reviews or unresolved
+inline threads. macOS Native `29765906044` and Foundation `29765906715`/`29765904969` passed;
+Linux's current six push/PR gates also passed. Triage comments were recorded on the macOS PR and
+central Issue #1. No merge or stable promotion is authorized; Linux remains the active priority and
+the release stays `unreleased` while cross-client, human, signing, rollback, and stable-release
+boundaries remain open.
+
 The latest Linux-first mTLS client-authentication checkpoint adds runtime/test
 `7513d983011fdd81374cfb879b23647aef388f7e`, source-pin `deffb80df01cb9f6c76a8b46e0ad725080e07ea6`,
 and final status head `597ccc961f9530836f8cef4c9a12a64b5c0a311c`. A temporary endpoint with a

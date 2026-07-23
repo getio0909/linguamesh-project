@@ -13,6 +13,20 @@ Last updated: 2026-07-23
 - Central Linux mTLS client-auth evidence/manifest commit `cb4976a9d5e9de6ba6f8228be3139b4d5b4e80fd`
   passed workflow `30052432141`; Linux and PowerShell validation jobs completed successfully.
 
+## 2026-07-23 — GitHub PR and Issue triage refresh
+
+Assumption: completed check runs and authenticated review metadata are sufficient for repository
+triage, but do not replace human, cross-client, signing, rollback, or stable-release evidence.
+
+- Linux PR #1 remains Draft/Open and mergeable at `597ccc961f9530836f8cef4c9a12a64b5c0a311c`.
+  Its current Native/Flatpak/Foundation push and PR checks all passed.
+- macOS PR #1 remains Draft/Open and mergeable at `cad822c69dcf1ad20f8cab2151f407866a577420`.
+  Native `29765906044` and Foundation runs `29765906715`/`29765904969` completed successfully.
+- Authenticated GitHub triage found no submitted reviews or unresolved inline threads on either
+  open PR. The macOS PR and central Issue #1 now contain the current triage comments.
+- Linux remains the active implementation priority. No merge, stable promotion, or release-manifest
+  status change was performed; the release remains `unreleased`.
+
 ## 2026-07-23 — Linux mTLS client-authentication rejection
 
 Assumption: a temporary endpoint that trusts a different client CA is the smallest reproducible

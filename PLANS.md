@@ -22,6 +22,24 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — GitHub PR and Issue triage refresh
+
+Assumption: authenticated connector metadata and completed check runs are authoritative for review
+triage, while Draft/Open state remains the safe posture until the explicitly open qualification gates
+are complete.
+
+- [x] Recheck Linux PR #1 at head `597ccc961f9530836f8cef4c9a12a64b5c0a311c`: it remains
+  Draft/Open and mergeable; Native/Flatpak/Foundation push and PR checks all passed.
+- [x] Recheck macOS PR #1 at head `cad822c69dcf1ad20f8cab2151f407866a577420`: it remains
+  Draft/Open and mergeable; Native `29765906044` and Foundation runs `29765906715`/
+  `29765904969` passed.
+- [x] Confirm both PRs have no submitted reviews or unresolved inline threads, and record the
+  result on macOS PR #1 and central Issue #1. No merge, stable promotion, or release-manifest
+  status change was performed.
+- [ ] Keep Linux as the active implementation priority; Android, Windows, macOS parity, live
+  provider interoperability, prompted approval, qualified human review, signing, rollback, and
+  stable-release acceptance remain open.
+
 ## 2026-07-23 — Linux mTLS client-authentication rejection
 
 Assumption: a temporary endpoint that trusts a different client CA is bounded evidence that the
