@@ -39,8 +39,10 @@ remain deferred.
 - [x] Record green Linux push/PR Native, Flatpak, and Foundation gates:
   `30024453944`/`30024454262`/`30024454369` and
   `30024457039`/`30024457175`/`30024457027` for Linux `89f0f2d4fe9f748f34ea388daf91c52228b92b74`.
-- [ ] Synchronize the Draft PR, open Issue #1, central manifests, and `unreleased` release
-  boundary without merging, then record the resulting central coordination run.
+- [x] Synchronize the Draft PR, open Issue #1, central manifests, and `unreleased` release
+  boundary without merging; central commit `555c83e00b5556101d95465771c23617cb909192` passed
+  coordination workflow `30025928902` on Linux and PowerShell. PR #1 remains Draft/Open and
+  mergeable; Issue #1 remains Open.
 
 ## 2026-07-23 — Linux manual model discovery fallback
 

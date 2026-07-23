@@ -20,6 +20,8 @@ diagnostics, notifications, or logs. Other clients and stable-release evidence r
 - Current-head Linux push Native/Flatpak/Foundation runs `30024453944`/`30024454262`/`30024454369`
   and PR Native/Flatpak/Foundation runs `30024457039`/`30024457175`/`30024457027` all passed for
   Linux `89f0f2d4fe9f748f34ea388daf91c52228b92b74` (documentation/Flatpak pin head).
+- Central commit `555c83e00b5556101d95465771c23617cb909192` synchronized the evidence; coordination
+  workflow `30025928902` passed both Linux and PowerShell validation.
 - Release remains `unreleased`; this checkpoint does not claim cross-client parity, human review,
   signing, rollback, or stable-release authorization.
 
