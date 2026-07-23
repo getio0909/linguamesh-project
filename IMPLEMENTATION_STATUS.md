@@ -20,7 +20,7 @@ or human/physical acceptance evidence.
   3 ignored`), localization audits, Flatpak metadata validation, and diff checks passed. The exact
   GTK binary test is compile-verified but cannot link on this host because GTK/GDK/Graphene symbols
   are unavailable; Native CI is authoritative for display-backed execution. Release remains
-  `unreleased`.
+  `unreleased`. Central coordination workflow `30017427553` passed Linux and PowerShell validation.
 
 ## 2026-07-23 — Linux Provider Hub health status
 

@@ -36,6 +36,8 @@ non-secret health state and does not substitute for other-client or human accept
 - [x] Finish GitHub PR check aggregation for PR runs `30016306021`/`30016305892`/`30016305878`; all
   six push/PR gates are green. Synchronize the Draft PR and open central Issue #1 without merging
   or promoting a stable release.
+- [x] Validate the synchronized central manifests and documentation with coordination workflow
+  `30017427553` on Linux and PowerShell.
 
 ## 2026-07-23 — Linux Provider Hub health status
 
