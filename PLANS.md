@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Re-run the exact current Core/Linux regression gates before advancing the active goal. Core
+  `2f91f313025b189df237294485fd47bafc1f1f53` passed
+  `cargo test --workspace --locked --all-targets` with 222 passing tests and no failures or
+  ignored tests; Linux `dffc87f4e1499ce7adcc803123db4dfdac4eec1e` passed the no-default library
+  suite with 83 passed and 1 environment-gated OCR test ignored. Central `bash
+  tools/check-workspace.sh` and `git diff --check` passed. Earlier 227-test evidence is retained as
+  historical checkpoint data; no functional pin or release-manifest value changed.
+
 - [x] Refresh the Linux/Core crash-recovery evidence at the approved heads. Core
   `2f91f313025b189df237294485fd47bafc1f1f53` passed the focused WAL child-abort regression and the
   locked workspace suite (`227 passed`); Linux runtime `04478701e3b0192cc7f90228c47badd9f6bb2d2b`

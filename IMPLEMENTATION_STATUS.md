@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Current Core/Linux regression rerun
+
+Assumption: the exact commands run against the currently pinned Core and Linux checkouts are the
+authoritative regression evidence for this checkpoint; earlier test totals are retained as
+historical records rather than rewritten.
+
+- Core `2f91f313025b189df237294485fd47bafc1f1f53` passed
+  `cargo test --workspace --locked --all-targets`: 222 tests passed, with no failures or ignored
+  tests, including storage WAL replay, FileLease, ABI, provider, document, and protocol suites.
+- Linux `dffc87f4e1499ce7adcc803123db4dfdac4eec1e` passed
+  `cargo test --no-default-features --lib`: 83 passed, 1 environment-gated OCR test ignored, and
+  no failures. The central `bash tools/check-workspace.sh` and `git diff --check` gates also passed.
+- This rerun changes no functional pins or release-manifest values. Linux CI remains green at the
+  published head, while physical/human, cross-client, signing, rollback, and stable-release
+  evidence remain open; release stays `unreleased`.
+
 ## 2026-07-23 — Linux/Core crash-recovery and portable test refresh
 
 Assumption: a Unix child-process abort after a committed SQLite WAL transaction is an automatable
