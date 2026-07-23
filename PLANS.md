@@ -36,8 +36,11 @@ remain deferred.
   26 tests, with generated Linux resources synchronized into the client.
 - [x] Pass local Linux format, GUI/all-target checks, strict Clippy, 162 demo-provider tests with 3
   documented ignores, localization audits, Flatpak metadata, and diff checks.
-- [ ] Record green Linux push/PR Native, Flatpak, and Foundation gates, then synchronize the Draft
-  PR, open Issue #1, central manifests, and `unreleased` release boundary without merging.
+- [x] Record green Linux push/PR Native, Flatpak, and Foundation gates:
+  `30024453944`/`30024454262`/`30024454369` and
+  `30024457039`/`30024457175`/`30024457027` for Linux `89f0f2d4fe9f748f34ea388daf91c52228b92b74`.
+- [ ] Synchronize the Draft PR, open Issue #1, central manifests, and `unreleased` release
+  boundary without merging, then record the resulting central coordination run.
 
 ## 2026-07-23 — Linux manual model discovery fallback
 

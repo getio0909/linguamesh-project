@@ -17,6 +17,9 @@ diagnostics, notifications, or logs. Other clients and stable-release evidence r
 - Local Linux formatting, GUI/all-target checks, strict Clippy, 162 demo-provider tests with 3
   documented environment-gated ignores, localization audits, Flatpak metadata, and diff checks
   passed. Native CI remains authoritative for display-backed clipboard execution on this host.
+- Current-head Linux push Native/Flatpak/Foundation runs `30024453944`/`30024454262`/`30024454369`
+  and PR Native/Flatpak/Foundation runs `30024457039`/`30024457175`/`30024457027` all passed for
+  Linux `89f0f2d4fe9f748f34ea388daf91c52228b92b74` (documentation/Flatpak pin head).
 - Release remains `unreleased`; this checkpoint does not claim cross-client parity, human review,
   signing, rollback, or stable-release authorization.
 

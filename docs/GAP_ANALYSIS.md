@@ -10,9 +10,11 @@ The current Linux-first clipboard checkpoint adds Linux `e56e56bec0bcea9fe963ca3
 and l10n `0ee87720a8613d3dc130dfb379ab4dc7bc1e1f62` (502 messages): completed output has an explicit
 localized GTK Copy translation action, empty output keeps the action disabled, and a headless GTK
 regression reads the copied text back through the display clipboard. Clipboard contents never enter
-Core persistence, diagnostics, or notifications. Local Linux/l10n checks pass; Native/Flatpak/PR
-display gates are pending for this new head. Cross-client parity, human review, signing, rollback,
-and stable authorization remain open.
+Core persistence, diagnostics, or notifications. Local Linux/l10n checks pass; current-head Linux
+push Native/Flatpak/Foundation runs `30024453944`/`30024454262`/`30024454369` and PR
+Native/Flatpak/Foundation runs `30024457039`/`30024457175`/`30024457027` all passed for the
+documentation/Flatpak pin head `89f0f2d4fe9f748f34ea388daf91c52228b92b74`. Cross-client parity,
+human review, signing, rollback, and stable authorization remain open.
 
 The current Linux-first provider error checkpoint adds Core `8623b2c8829e4d9cf7299c74440dcfabb4e320db`,
 l10n `630a8f36d96be358d81b72e2efc87cd527e66974`, and Linux `a7ac73d6fe8707519dd02698c26ebf8ca78a4246`:
