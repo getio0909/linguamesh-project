@@ -13,13 +13,13 @@ parity.
   XML entity decoding, and fail-closed DTD, unknown-entity, malformed, missing-term, conflict,
   credential-shape, and oversized-input handling. Its locked workspace suite passed 228 tests and
   strict all-feature Clippy passed.
-- Linux `bd072a8bd6e12c37314e7698e5295af905c571c3` adds GTK CSV/TBX MIME/suffix filters, bounded
-  partial reads, and extension-based TBX dispatch. Localization `d8d9084cdf0448039ad0aa7612e8725c6c875036`
+- Linux `d61a96f` adds GTK CSV/TBX MIME/suffix filters, bounded partial reads, extension-based TBX
+  dispatch, and the matching Flatpak source pin. Localization `d8d9084cdf0448039ad0aa7612e8725c6c875036`
   updates revision-62 chooser/error copy and regenerated PO/MO resources; `make check` passed 494
   messages, 12 official packs, 26 tests, deterministic generation, bundle, and Foundation checks.
 - Central manifests now pin these exact revisions. Linux local validation passed 160 tests/3
   documented ignores, strict Clippy, audits, sync, Flatpak metadata, and diff checks. Release stays
-  `unreleased`; PR #1 and Issue #1 remain open, and display-backed chooser review, cross-client
+  `unreleased`; PR #1 and Issue #1 remain open, and remote gates for the new head, display-backed chooser review, cross-client
   parity, physical VFS/power-loss, signing, rollback, and stable authorization remain open.
 
 ## 2026-07-23 — Current pinned regression rerun
