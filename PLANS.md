@@ -22,6 +22,23 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux Secret Service custom-header onboarding
+
+Assumption: the authenticated loopback and private Secret Service fixture is the smallest
+reproducible evidence for the second GTK secret editor path; interactive prompts, human review,
+and other clients remain separate qualification gates.
+
+- [x] Extend the GTK Remember/clear-form regression to enter bounded secret custom-header JSON,
+  verify a second persistent SecretRef and active-profile restoration, clear both sensitive fields,
+  scan SQLite artifacts for both canaries, and delete both Secret Service items. Linux runtime test
+  `f6cdb44dd6e411c2fab1c9f39cd3cd63361a1352` and packaging/docs `d1e7368edcf8426d3986165fc5b2adbd33cabe48`
+  implement and document the slice.
+- [x] Record final status head `e9b7d80e3ecac045eeb10b37ea59871c0ada6198`; push Native/Flatpak/
+  Foundation `30039406785`/`30039406821`/`30039406753` and PR Native/Flatpak/Foundation
+  `30039409345`/`30039409381`/`30039409339` all passed.
+- [ ] Keep interactive prompt approval, visual/translated-copy/Orca review, cross-client parity,
+  signing, rollback, and stable-release authorization explicitly open.
+
 ## 2026-07-23 — Linux process-interruption export regression
 
 Assumption: terminating a dedicated GTK child after temporary-file synchronization is the
@@ -561,7 +578,11 @@ bounded Linux client surface over Core schema 33, and TBX/cross-client parity re
   Local Core/Linux validation passed; Core remote runs `29963034872`/`29963034867`/`29963034863`,
   Linux push/PR runs `29963506897`/`29963506924`/`29963506877` and
   `29963509821`/`29963509808`/`29963509782`, and central coordination `29963944562` passed.
-  The second GTK secret editor/onboarding flow and cross-client support remain open.
+  The second GTK editor/onboarding regression is now covered by Linux runtime test
+  `f6cdb44dd6e411c2fab1c9f39cd3cd63361a1352` and final status head
+  `e9b7d80e3ecac045eeb10b37ea59871c0ada6198`; push/PR Native, Flatpak, and Foundation gates
+  `30039406785`/`30039406821`/`30039406753` and `30039409345`/`30039409381`/`30039409339`
+  passed. Cross-client support, human review, signing, rollback, and stable release remain open.
 
 - [x] Add the cross-repository completion gap audit in [`docs/GAP_ANALYSIS.md`](docs/GAP_ANALYSIS.md),
   mapping Milestones 0–8 and all 20 mandatory scenarios to current evidence. The audit preserves

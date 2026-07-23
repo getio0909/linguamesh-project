@@ -6,6 +6,17 @@ Status: Linux-first prerelease audit, 2026-07-23. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The latest Linux-first Secret Service checkpoint adds runtime test
+`f6cdb44dd6e411c2fab1c9f39cd3cd63361a1352`, packaging/docs `d1e7368edcf8426d3986165fc5b2adbd33cabe48`,
+and final status head `e9b7d80e3ecac045eeb10b37ea59871c0ada6198`. The GTK Remember/clear-form
+fixture enters bounded secret custom-header JSON, verifies a second persistent SecretRef and
+active-profile restoration, clears both sensitive fields, scans SQLite artifacts for both canaries,
+and deletes both Secret Service items. Local checks pass; push Native/Flatpak/Foundation
+`30039406785`/`30039406821`/`30039406753` and PR `30039409345`/`30039409381`/`30039409339` all
+pass, with Native explicitly completing the real GTK Secret Service integration fixture. This
+strengthens unreleased Linux secure-onboarding evidence; interactive prompts, human review,
+cross-client parity, signing, rollback, and stable authorization remain open.
+
 The latest Linux-first export checkpoint adds runtime/test commit
 `361ac7ba9d6a18c26de4487ab424d6500fbbeafd` and packaging/status head
 `71b6fa34d536ec5753160ad270b507bd9fffa518`. A serialized GTK child-process fixture is killed

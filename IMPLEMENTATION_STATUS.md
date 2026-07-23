@@ -2,6 +2,32 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux Secret Service custom-header onboarding
+
+Assumption: the existing authenticated loopback and private Secret Service fixture is the
+smallest reproducible evidence for the second GTK secret editor path; interactive desktop
+prompts, human visual review, and other clients remain separate qualification gates.
+
+- Linux runtime test `f6cdb44dd6e411c2fab1c9f39cd3cd63361a1352` extends the GTK
+  Remember/clear-form fixture with bounded secret custom-header JSON. It verifies a second
+  persistent SecretRef, active-profile restoration, immediate clearing of both sensitive fields,
+  SQLite canary absence, and deletion of both Secret Service items.
+- Linux packaging/docs commit `d1e7368edcf8426d3986165fc5b2adbd33cabe48` pins Flatpak to the
+  tested runtime and documents the expanded fixture. Linux status head is
+  `e9b7d80e3ecac045eeb10b37ea59871c0ada6198`; local formatting, locked all-target/test checks,
+  strict Clippy, 163 demo-provider tests with three documented ignores, localization audits,
+  synchronization, Flatpak metadata, and diff checks passed. The host GTK linker limitation
+  remains confined to the focused display-backed binary.
+- Final status-head push Native/Flatpak/Foundation runs `30039406785`/`30039406821`/
+  `30039406753` and PR Native/Flatpak/Foundation runs `30039409345`/`30039409381`/
+  `30039409339` all passed. Native explicitly completed the real GTK Secret Service integration
+  fixture. PR #1 remains Draft/Open, Issue #1 remains Open, and release status remains
+  `unreleased`.
+
+This strengthens Linux secure-onboarding evidence without claiming interactive prompt approval,
+human accessibility review, other-client parity, signed artifacts, rollback authorization, or
+stable-release approval.
+
 ## 2026-07-23 — Linux process-interruption export regression
 
 Assumption: the process-kill fixture is bounded crash-durability evidence only; it does not
