@@ -23,6 +23,9 @@ power loss or every alternate SQLite VFS.
   l10n `552d87e88a8df42055b1ac76e4dfbaadca92e291`, the 436-key/537-placeholder/visible-string
   audits, and Flatpak metadata validation. The l10n sibling worktree itself remains on its user's
   clean `main` branch and was not modified.
+- The private mount storage-fault runner also passed the exact ENOSPC regression (`1 passed`),
+  confirming the Linux session-only degradation and false-commit guard under a bounded write fault.
+  This is controlled ENOSPC evidence, not physical power-loss or broad VFS coverage.
 - This refresh strengthens reproducible process-crash evidence only. Physical power-loss and
   alternate-VFS behavior, cross-client parity, human review, signing, rollback, and stable-release
   authorization remain open; release stays `unreleased`.
