@@ -22,6 +22,22 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux mTLS client-authentication rejection
+
+Assumption: a temporary endpoint that trusts a different client CA is bounded evidence that the
+Linux worker rejects an untrusted client certificate; enterprise interoperability remains open.
+
+- [x] Add the fourth ignored worker regression and client-CA fixture at runtime/test commit
+  `7513d983011fdd81374cfb879b23647aef388f7e`; all four exact local runners passed once.
+- [x] Align Flatpak/release source pins at `deffb80df01cb9f6c76a8b46e0ad725080e07ea6` and record
+  status evidence at `597ccc961f9530836f8cef4c9a12a64b5c0a311c`; local library validation passed
+  `166 passed; 0 failed; 7 ignored`.
+- [x] Pass final status-head push Native/Flatpak/Foundation `30052187039`/`30052187036`/
+  `30052187043` and PR Native/Flatpak/Foundation `30052189474`/`30052189521`/`30052189488`.
+- [ ] Keep enterprise interoperability, prompt approval, human review, cross-client parity,
+  signing, rollback, and stable-release authorization open; keep PR #1 Draft/Open, Issue #1 Open,
+  and release status `unreleased`.
+
 ## 2026-07-23 — Linux mTLS hostname verification
 
 Assumption: a trusted-CA server certificate with a wrong SAN is bounded evidence that hostname

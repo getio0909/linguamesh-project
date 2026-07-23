@@ -11,6 +11,29 @@ Last updated: 2026-07-23
 - Central mTLS hostname evidence/manifest commit `8e53d565a81bc042099e55aa556a62349d8dc178` passed
   workflow `30051289289`; Linux and PowerShell validation jobs completed successfully.
 
+## 2026-07-23 — Linux mTLS client-authentication rejection
+
+Assumption: a temporary endpoint that trusts a different client CA is the smallest reproducible
+evidence that the Linux worker rejects an untrusted client certificate at the TLS handshake;
+enterprise-provider interoperability and cross-client certificate handling remain separate gates.
+
+- Linux runtime/test `7513d983011fdd81374cfb879b23647aef388f7e` adds a fourth ignored worker
+  regression. The session-only client certificate succeeds against the trusted endpoint, while
+  an endpoint with a different client-CA trust chain rejects the identity without exposing the
+  secret name.
+- The exact local runner passed once for all four cases (`1 passed; 0 failed` each): trusted
+  endpoint, unrelated server CA, trusted CA with wrong SAN, and untrusted client CA. The library
+  suite passed `166 passed; 0 failed; 7 ignored`; formatting, locked checks, strict Clippy,
+  localization synchronization, Flatpak metadata, and diff checks also passed.
+- Linux source-pin correction `deffb80df01cb9f6c76a8b46e0ad725080e07ea6` and final status head
+  `597ccc961f9530836f8cef4c9a12a64b5c0a311c` align the Flatpak/release documentation and record
+  the evidence. Final status-head push Native/Flatpak/Foundation runs
+  `30052187039`/`30052187036`/`30052187043` and PR Native/Flatpak/Foundation runs
+  `30052189474`/`30052189521`/`30052189488` all passed.
+- PR #1 remains Draft/Open and Issue #1 remains Open; release status remains `unreleased`. This
+  does not claim enterprise interoperability, interactive prompt approval, human review,
+  cross-client parity, signing, rollback, or stable-release authorization.
+
 ## 2026-07-23 — Linux mTLS hostname verification
 
 Assumption: a server certificate signed by the trusted test CA but carrying a wrong SAN is the

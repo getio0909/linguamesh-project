@@ -6,6 +6,16 @@ Status: Linux-first prerelease audit, 2026-07-23. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The latest Linux-first mTLS client-authentication checkpoint adds runtime/test
+`7513d983011fdd81374cfb879b23647aef388f7e`, source-pin `deffb80df01cb9f6c76a8b46e0ad725080e07ea6`,
+and final status head `597ccc961f9530836f8cef4c9a12a64b5c0a311c`. A temporary endpoint with a
+different client-CA trust chain rejects the session-only identity at the TLS handshake, while
+the trusted endpoint succeeds; the unrelated server CA and wrong-SAN cases remain covered, with
+no secret-name leakage. All four exact local runners pass once, and final status-head push/PR
+Native, Flatpak, and Foundation runs `30052187039`/`30052187036`/`30052187043` and
+`30052189474`/`30052189521`/`30052189488` all pass. Enterprise-provider interoperability, human
+review, cross-client parity, signing, rollback, and stable authorization remain open.
+
 The latest Linux-first mTLS hostname checkpoint adds runtime/test `ec6c9971e0271e5eddc89bdc64121761a9cb46df`,
 source-pin commit `9fc633feeca328b356b8f98eead03e29d28d0d46`, and final status head
 `1629547c0eca1a5aabcd06cb7a96ecdfeaf97e80`. The fixture proves that a session-only client
