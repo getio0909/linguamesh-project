@@ -24,6 +24,17 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add Linux production GTK Gemini/Azure protocol-preset transport evidence. Linux
+  implementation `8006f7a37b81db7c547be717b72860ee610ca7d7` drives both native GTK presets
+  through real Gemini `/v1beta/` and Azure resource-path handlers, deliberate model selection,
+  credential clearing, and streamed translation with deterministic loopback providers. Final
+  packaging/status head `5f1634c615f9e1a7ca3de8e37a99e4efc1f02b9e` repins the Flatpak source.
+  Local format, GUI source check, strict Clippy, core-library tests (`83 passed; 1 ignored`), and
+  diff checks passed; the full GTK link is unavailable on this host. Push Native/Flatpak/Foundation
+  `29981441794`/`29981441765`/`29981441767` and PR `29981443146`/`29981443162`/`29981443177` all
+  passed. Live provider account/quota/deployment behavior, other clients, human review, signing,
+  rollback, and stable release remain open.
+
 - [x] Add Linux production GTK evidence for the one-click provider switch. Linux `988be0c` adds
   the serialized A→B session switch fixture and Native workflow step; it proves selection alone
   performs no inference, the active provider remains unchanged until B validates, B receives the

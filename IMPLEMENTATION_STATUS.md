@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux GTK Gemini and Azure preset transport evidence
+
+Assumption: Linux remains the active client scope; deterministic loopback providers prove
+production GTK request shaping and lifecycle without claiming live account, quota, or deployment
+interoperability.
+
+- Linux implementation `8006f7a37b81db7c547be717b72860ee610ca7d7` adds the serialized ignored
+  fixture `gtk_provider_protocol_presets_use_native_transports`. It drives Gemini discovery and
+  streaming through `/v1beta/`, and Azure manual deployment discovery/streaming through the
+  resource endpoint with a one-shot `api-key`; both flows require deliberate model selection and
+  clear the GTK credential field immediately after capture.
+- Final packaging/status head `5f1634c615f9e1a7ca3de8e37a99e4efc1f02b9e` repins the Flatpak
+  source. Push Native/Flatpak/Foundation `29981441794`/`29981441765`/`29981441767` and PR
+  `29981443146`/`29981443162`/`29981443177` all passed, including the Xvfb/DBus serialized
+  fixture. Local formatting, GUI source check, strict Clippy, core-library tests (`83 passed;
+  1 ignored`), and diff checks passed; full GTK linking is host-limited by missing GTK symbols.
+- This closes only the Linux deterministic protocol-preset evidence gap. Other native clients,
+  live providers, human review, signing, rollback, and stable release remain open; release stays
+  `unreleased`.
+
 ## 2026-07-23 — Linux GTK one-click provider switch evidence
 
 Assumption: Linux remains the active client scope; the production switch fixture uses one-shot
