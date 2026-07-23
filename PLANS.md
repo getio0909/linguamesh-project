@@ -40,6 +40,8 @@ headless slice is still automatable; missing host dependencies must remain expli
 - [x] Check the available GNOME SDK container: it provides `xvfb-run` and `flatpak-builder` but
   not Rust/Cargo, so it cannot be substituted for the pinned Linux build without changing the
   toolchain. No dependency installation or claim of local GTK execution was made.
+- [x] Push the audit at central revision `d492233dd65944ec72b2b6cece4e2c1702a137c2`;
+  coordination workflow `30053493214` passed both Linux and PowerShell validation jobs.
 - [ ] Keep the release `unreleased` and continue only with authorized cross-client or external
   qualification work when its required environment and scope are available.
 

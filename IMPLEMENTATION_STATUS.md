@@ -30,6 +30,8 @@ results; remote Native CI remains authoritative for display-backed Linux executi
 - The available GNOME SDK container has `xvfb-run` and `flatpak-builder` but no Rust/Cargo, so it
   cannot reproduce the pinned Linux build without a toolchain change. No host packages were
   installed and no project code was changed by this audit.
+- Central audit revision `d492233dd65944ec72b2b6cece4e2c1702a137c2` passed coordination workflow
+  `30053493214`; Linux job `89360331502` and PowerShell job `89360331530` completed successfully.
 - Current plan/gap review finds no additional deterministic Linux slice ready within the user's
   Linux-first scope; live-provider, human/physical, other-client, signing, rollback, and stable
   release evidence remain open. Release stays `unreleased`.
