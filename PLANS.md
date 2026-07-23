@@ -22,6 +22,23 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux session SecretRef validation paths
+
+Assumption: worker-level rejection tests are bounded evidence for session-only proxy-authentication
+and client-certificate identity handling; live proxy/certificate interoperability remains open.
+
+- [x] Add runtime regressions at Linux `f0a65c0d7bd1ddfda6e531db1b93c6be0096d491`; invalid
+  session-only values reach Core validation and their canaries remain absent from diagnostics.
+- [x] Pin Flatpak and release documentation at `dcd3f49620b427d460c98082acaf97498f2b98ff`; local
+  formatting, locked checks, strict Clippy, 165 tests with three documented ignores, l10n sync,
+  Flatpak metadata, and diff checks passed.
+- [x] Record final Linux status head `4cfa3fa8cfa29f5dc036e53bafa388444b8de94e`; push
+  Native/Flatpak/Foundation `30043522421`/`30043522574`/`30043521477` and PR
+  `30043524643`/`30043524550`/`30043524574` all passed.
+- [ ] Keep live provider interoperability, prompt approval, human review, cross-client parity,
+  signing, rollback, and stable-release authorization open; keep PR #1 Draft/Open, Issue #1 Open,
+  and release status `unreleased`.
+
 ## 2026-07-23 — Linux all-SecretRef persistence filtering
 
 Assumption: the worker-level persistence regression is the smallest reproducible evidence that

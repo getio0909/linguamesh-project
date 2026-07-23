@@ -6,6 +6,15 @@ Status: Linux-first prerelease audit, 2026-07-23. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The latest Linux-first secret-boundary checkpoint adds runtime tests
+`f0a65c0d7bd1ddfda6e531db1b93c6be0096d491`, packaging/docs `dcd3f49620b427d460c98082acaf97498f2b98ff`,
+and final status head `4cfa3fa8cfa29f5dc036e53bafa388444b8de94e`. Session-only proxy-authentication
+and client-certificate identity canaries reach Core validation and are absent from surfaced
+diagnostics. Local checks pass; push Native/Flatpak/Foundation `30043522421`/`30043522574`/
+`30043521477` and PR `30043524643`/`30043524550`/`30043524574` all pass. Live proxy/certificate
+interoperability, interactive prompts, human review, cross-client parity, signing, rollback, and
+stable authorization remain open.
+
 The latest Linux-first Secret Service persistence checkpoint adds runtime test
 `bb6bc5bef572eb19d7c066e24a2d48546bf4fb08`, packaging/docs `9dc863eeb9fc5825c7354863c59bb21bf4447381`,
 and final status head `2c3212c562eb8d425ee302a329f77ed7821a3231`. The worker filter now proves that
