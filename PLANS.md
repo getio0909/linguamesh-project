@@ -22,6 +22,23 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux native clipboard copy action
+
+Assumption: Linux remains the active implementation priority; a dedicated GTK clipboard action is
+the smallest complete native surface for copying finished output, and clipboard bytes must remain
+outside Core persistence, diagnostics, notifications, and logs. Other clients and stable release
+remain deferred.
+
+- [x] Add Linux `e56e56bec0bcea9fe963ca326e3918da54f50790` Copy translation action, empty-output
+  sensitivity gating, localized accessible labels/tooltips, asynchronous clipboard-read regression,
+  and synchronized README/architecture/testing/release documentation.
+- [x] Push l10n `0ee87720a8613d3dc130dfb379ab4dc7bc1e1f62`; local `make check` passed 502 messages and
+  26 tests, with generated Linux resources synchronized into the client.
+- [x] Pass local Linux format, GUI/all-target checks, strict Clippy, 162 demo-provider tests with 3
+  documented ignores, localization audits, Flatpak metadata, and diff checks.
+- [ ] Record green Linux push/PR Native, Flatpak, and Foundation gates, then synchronize the Draft
+  PR, open Issue #1, central manifests, and `unreleased` release boundary without merging.
+
 ## 2026-07-23 — Linux manual model discovery fallback
 
 Assumption: Linux remains the active implementation priority; provider discovery fallback is bounded

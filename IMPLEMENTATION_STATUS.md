@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux native clipboard copy action
+
+Assumption: Linux remains the active implementation priority; completed translation output needs an
+explicit native clipboard action, while clipboard bytes must never enter Core persistence,
+diagnostics, notifications, or logs. Other clients and stable-release evidence remain deferred.
+
+- Linux `e56e56bec0bcea9fe963ca326e3918da54f50790` adds the localized, focusable **Copy translation**
+  action. It stays disabled for empty output, copies only the read-only GTK output buffer through
+  `GdkClipboard`, and its GTK regression reads the clipboard asynchronously after a completed fake
+  translation.
+- l10n `0ee87720a8613d3dc130dfb379ab4dc7bc1e1f62` adds the action and tooltip to all official packs
+  and generated pseudo-locales; `make check` passed 502 messages and 26 tests.
+- Local Linux formatting, GUI/all-target checks, strict Clippy, 162 demo-provider tests with 3
+  documented environment-gated ignores, localization audits, Flatpak metadata, and diff checks
+  passed. Native CI remains authoritative for display-backed clipboard execution on this host.
+- Release remains `unreleased`; this checkpoint does not claim cross-client parity, human review,
+  signing, rollback, or stable-release authorization.
+
 ## 2026-07-23 — Linux typed provider rate-limit handling
 
 Assumption: Linux remains the active implementation priority; HTTP 429 is the stable provider

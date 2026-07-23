@@ -6,6 +6,14 @@ Status: Linux-first prerelease audit, 2026-07-23. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The current Linux-first clipboard checkpoint adds Linux `e56e56bec0bcea9fe963ca326e3918da54f50790`
+and l10n `0ee87720a8613d3dc130dfb379ab4dc7bc1e1f62` (502 messages): completed output has an explicit
+localized GTK Copy translation action, empty output keeps the action disabled, and a headless GTK
+regression reads the copied text back through the display clipboard. Clipboard contents never enter
+Core persistence, diagnostics, or notifications. Local Linux/l10n checks pass; Native/Flatpak/PR
+display gates are pending for this new head. Cross-client parity, human review, signing, rollback,
+and stable authorization remain open.
+
 The current Linux-first provider error checkpoint adds Core `8623b2c8829e4d9cf7299c74440dcfabb4e320db`,
 l10n `630a8f36d96be358d81b72e2efc87cd527e66974`, and Linux `a7ac73d6fe8707519dd02698c26ebf8ca78a4246`:
 HTTP 429 responses normalize to `RateLimited`, bounded `Retry-After` hints survive the provider
