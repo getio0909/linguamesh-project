@@ -48,8 +48,8 @@ Assumption: Planned files and commands are not evidence until they exist and com
   and exact Core/l10n/Flatpak pins. Local Core/Linux/l10n/Flatpak checks passed. Linux push
   Native/Flatpak/Foundation `29976201970`/`29976201964`/`29976201962` and PR
   Native/Flatpak/Foundation `29976204361`/`29976204358`/`29976204331` passed for the exact final
-  documentation head. Other clients,
-  client-certificate TLS policy, human review, signing, rollback, and stable release remain open.
+  documentation head. Other clients, live-provider interoperability, human review, signing,
+  rollback, and stable release remain open.
 
 - [x] Add and pin the Linux-first bounded custom trusted-certificate bundle slice. Core
   `913be49da8bc44f9c53baab7b918f2bb002fd64f` adds schema 29 persistence, PEM validation, and
