@@ -31,9 +31,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
   supplies the 474-message bundle. Linux `e8f0bcf2c55032cae59f40dba505c6e66a2fdd89` adds the
   GTK field, restore/default behavior, Test connection/Connect forwarding, and exact source pins.
   Local Core/Linux/l10n/Flatpak checks passed; full-feature GTK linking is host-limited by missing
-  GTK symbols. Remote gates and central coordination evidence remain to be recorded. Client
-  certificates, proxy authentication, cross-client parity, review, signing, rollback, and stable
-  release remain open.
+  GTK symbols. Core CI/Fuzz/Native SDK `29973111006`/`29973111045`/`29973111016`, l10n
+  Localization/Foundation `29972855206`/`29972855181`, and Linux push Native/Flatpak/Foundation
+  `29973126765`/`29973126853`/`29973126883` plus PR
+  `29973129042`/`29973129135`/`29973129087` passed. Central coordination commit `b431d626ca3ce04b6d06f65d2e2d8973e7c65708`
+  and run `29973194356` passed. Client certificates, proxy authentication, cross-client parity,
+  review, signing, rollback, and stable release remain open.
 
 - [x] Add and pin the Linux-first bounded provider streaming-idle timeout slice. Core
   `b247155ad429639fdb65d3b063c3efc580ce46a4` adds schema 28 persistence, 1–300 second validation,
