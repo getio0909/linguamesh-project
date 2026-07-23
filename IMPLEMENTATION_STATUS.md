@@ -13,11 +13,13 @@ power loss or every alternate SQLite VFS.
   test suite (`227 passed`, no failures). The regression commits a provider profile with
   `synchronous=FULL`, aborts the child process, and verifies that the parent reopens the model and
   persistent `SecretRef` from the WAL.
-- Linux `04478701e3b0192cc7f90228c47badd9f6bb2d2b` passed the no-default library suite (`83 passed;
-  1 ignored`); the ignored unit case is environment-gated, and the explicit image-only PDF OCR
-  fixture `bash tools/run-ocr-test.sh` passed (`1 passed`) with system `pdftoppm` and `tesseract`.
-  Existing remote Native/Flatpak/Foundation gates for this head remain green
-  (`29984727975`/`29984727998`/`29984727932` push and `29984730138`/`29984730127`/`29984730117` PR).
+- Linux runtime implementation remains `04478701e3b0192cc7f90228c47badd9f6bb2d2b`; current
+  documentation/status head `aab5d84db71bb2ee0fc942ec78bfce053e356f2d` passed the no-default library
+  suite (`83 passed; 1 ignored`). The ignored unit case is environment-gated, and the explicit
+  image-only PDF OCR fixture `bash tools/run-ocr-test.sh` passed (`1 passed`) with system
+  `pdftoppm` and `tesseract`. Push Native/Flatpak/Foundation runs
+  `29986248622`/`29986248558`/`29986248557` and PR runs `29986250297`/`29986250290`/`29986250291`
+  all passed.
 - The same Linux checkout passed `cargo fmt --all --check`, GUI `cargo check`, strict Clippy,
   `cargo-deny check` (advisories, bans, licenses, and sources), localization synchronization against
   l10n `552d87e88a8df42055b1ac76e4dfbaadca92e291`, the 436-key/537-placeholder/visible-string

@@ -26,13 +26,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 - [x] Refresh the Linux/Core crash-recovery evidence at the approved heads. Core
   `2f91f313025b189df237294485fd47bafc1f1f53` passed the focused WAL child-abort regression and the
-  locked workspace suite (`227 passed`); Linux `04478701e3b0192cc7f90228c47badd9f6bb2d2b` passed
+  locked workspace suite (`227 passed`); Linux runtime `04478701e3b0192cc7f90228c47badd9f6bb2d2b`
+  and current documentation/status head `aab5d84db71bb2ee0fc942ec78bfce053e356f2d` passed
   `cargo test --no-default-features --lib` (`83 passed; 1 ignored`), formatting, GUI check, strict
   Clippy, cargo-deny policy, l10n synchronization/audits, Flatpak metadata validation, and the
   explicit image-only PDF OCR fixture (`bash tools/run-ocr-test.sh`, `1 passed`) plus the private
-  mount ENOSPC regression (`bash tools/run-storage-fault-test.sh`, `1 passed`). This is controlled
-  process-crash/OCR/storage-fault evidence, not physical power-loss or alternate-VFS evidence; the
-  release remains `unreleased`.
+  mount ENOSPC regression (`bash tools/run-storage-fault-test.sh`, `1 passed`). Push Native/Flatpak/
+  Foundation `29986248622`/`29986248558`/`29986248557` and PR
+  `29986250297`/`29986250290`/`29986250291` all passed. This is controlled process-crash/OCR/
+  storage-fault evidence, not physical power-loss or alternate-VFS evidence; the release remains
+  `unreleased`.
 
 - [x] Record the verified Linux GTK candidate-chain editor and one-shot fallback-consent
   lifecycle. Documentation head `04478701e3b0192cc7f90228c47badd9f6bb2d2b` is covered by passing
