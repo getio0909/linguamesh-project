@@ -8,12 +8,12 @@ Assumption: the Linux-first TLS slice accepts one bounded PEM trust bundle that 
 roots; verification remains enabled, private-key material is rejected, and malformed/control-heavy
 input fails before any provider client is built.
 
-- Core `60bd3d5c9c79358f80c47da391141342e9cf5712` adds schema 29 persistence, validation, and
+- Core `913be49da8bc44f9c53baab7b918f2bb002fd64f` adds schema 29 persistence, validation, and
   additive root-certificate wiring across OpenAI Chat/Responses/Azure, Anthropic, Gemini, and
   Ollama. Core `cargo check --workspace` and `cargo test --workspace` passed.
 - l10n `d315efe808e05ce2fb0ee24c0247076298d57947` adds three Linux messages and regenerates 474
   messages; `make check` passed.
-- Linux `ee037697ab4be2b66ed8f56ccc72252d3eaa20ad` adds the GTK field, saved-profile restore,
+- Linux `e8f0bcf2c55032cae59f40dba505c6e66a2fdd89` adds the GTK field, saved-profile restore,
   Test connection/Connect forwarding, and Flatpak/source pins. Local no-default tests (83 passed,
   1 ignored), strict Clippy, localization sync, and Flatpak metadata validation passed. Full GTK
   test linking remains host-limited by missing GTK symbols; remote Ubuntu gates are required.

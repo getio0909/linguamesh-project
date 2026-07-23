@@ -8,9 +8,9 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 ### Linux-first provider custom trusted certificates
 
-Core `60bd3d5c9c79358f80c47da391141342e9cf5712` adds schema 29 persistence and bounded PEM
+Core `913be49da8bc44f9c53baab7b918f2bb002fd64f` adds schema 29 persistence and bounded PEM
 validation for an optional `ProviderProfile.trusted_certificates_pem`. Linux
-`ee037697ab4be2b66ed8f56ccc72252d3eaa20ad` exposes the field, restores it with saved profiles,
+`e8f0bcf2c55032cae59f40dba505c6e66a2fdd89` exposes the field, restores it with saved profiles,
 and forwards it through Test connection and Connect; l10n
 `d315efe808e05ce2fb0ee24c0247076298d57947` supplies the 474-message bundle. Core appends valid
 certificates to system roots with TLS verification enabled; malformed bundles, private-key

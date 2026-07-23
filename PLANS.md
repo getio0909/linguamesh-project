@@ -25,10 +25,10 @@ Assumption: Planned files and commands are not evidence until they exist and com
 ## Progress
 
 - [x] Add and pin the Linux-first bounded custom trusted-certificate bundle slice. Core
-  `60bd3d5c9c79358f80c47da391141342e9cf5712` adds schema 29 persistence, PEM validation, and
+  `913be49da8bc44f9c53baab7b918f2bb002fd64f` adds schema 29 persistence, PEM validation, and
   additive reqwest root-certificate wiring across OpenAI Chat/Responses/Azure, Anthropic, Gemini,
   and Ollama without disabling TLS verification. l10n `d315efe808e05ce2fb0ee24c0247076298d57947`
-  supplies the 474-message bundle. Linux `ee037697ab4be2b66ed8f56ccc72252d3eaa20ad` adds the
+  supplies the 474-message bundle. Linux `e8f0bcf2c55032cae59f40dba505c6e66a2fdd89` adds the
   GTK field, restore/default behavior, Test connection/Connect forwarding, and exact source pins.
   Local Core/Linux/l10n/Flatpak checks passed; full-feature GTK linking is host-limited by missing
   GTK symbols. Remote gates and central coordination evidence remain to be recorded. Client
