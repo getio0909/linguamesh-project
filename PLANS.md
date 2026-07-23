@@ -36,6 +36,8 @@ are complete.
 - [x] Confirm both PRs have no submitted reviews or unresolved inline threads, and record the
   result on macOS PR #1 and central Issue #1. No merge, stable promotion, or release-manifest
   status change was performed.
+- [x] Push the central triage documentation at `c5bbe3520a73feacbc43c9d94a05b136dc20a3d2`;
+  coordination workflow `30053066918` passed both Linux and PowerShell validation jobs.
 - [ ] Keep Linux as the active implementation priority; Android, Windows, macOS parity, live
   provider interoperability, prompted approval, qualified human review, signing, rollback, and
   stable-release acceptance remain open.
