@@ -17,6 +17,8 @@ session credentials so CI proves isolation without relying on a developer keyrin
   GTK fixture passed 1/1 in the Native run; local `cargo check`, strict Clippy, core-library tests,
   formatting, and Flatpak metadata checks passed. Release remains `unreleased`; Android, Windows,
   macOS, live-provider, signing, rollback, and human-review evidence remain open.
+- Central coordination commit `4c128a6e692d6c3dd8f1615fc4300fa561dc4c14` passed Linux and
+  PowerShell validation run `29980627136`.
 
 ## 2026-07-23 — In-scope policy documentation compliance
 
