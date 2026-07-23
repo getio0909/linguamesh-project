@@ -24,6 +24,13 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Refresh the Linux PR documentation-head gate record. Linux status head `90a2753` was
+  pushed after the prior propagation-lag observation; PR Native `29990141179` and Repository
+  Foundation `29990141145` passed, while PR Flatpak `29990141186` completed build, checksum,
+  SBOM, sandbox-smoke, and cleanup steps with its check-run aggregation still `in_progress`.
+  The PR remains Draft/Open and the release remains `unreleased`; no merge or promotion was
+  performed.
+
 - [x] Re-run the exact current Core/Linux regression gates before advancing the active goal. Core
   `2f91f313025b189df237294485fd47bafc1f1f53` passed
   `cargo test --workspace --locked --all-targets` with 222 passing tests and no failures or
