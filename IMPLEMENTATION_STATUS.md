@@ -2,6 +2,28 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux model provenance labels
+
+Assumption: Linux remains the active client priority; Core's existing `ModelSource` contract is
+authoritative, and this slice closes the Linux selector's source-identification gap without
+claiming cross-client or human-review completion.
+
+- Core `dffa07eca2b006279f99673edff5bd0ae1b24a0f` already exposes `Discovered`, `Catalog`, and
+  `Manual` model sources. Linux code `00186c29fc4e3e6682114ee29cd587d31610a1d6` now renders the
+  localized source beside every GTK model name and adds a regression test; packaging pin
+  `73051b70028359c56654e1260621ada77def67e9` points at that implementation.
+- Localization `7c2cb9fd71835ea0f9c6605d82dac87c0df012f0` adds the three source labels and keeps
+  all 12 generated packs at 497 catalog messages. Its full `make check` passed (26 tests).
+- Linux local validation passed synchronization, formatting, 163 library tests (160 passed, 3
+  documented ignores), strict Clippy, GUI cargo check, localization audits, Flatpak metadata,
+  and diff checks. The host could not link the full GTK binary because required GTK/GDK/Graphene
+  symbols are unavailable; Native CI is authoritative for that GUI test.
+- Linux push Native/Flatpak/Foundation `30006418545`/`30006418485`/`30006418554` and PR
+  Native/Flatpak/Foundation `30006415855`/`30006415873`/`30006415861` all passed. PR #1 remains
+  Draft/Open, Issue #1 remains Open, and release status stays `unreleased`; other clients,
+  display-backed/human accessibility review, live providers, signing, rollback, and stable
+  authorization remain open.
+
 ## 2026-07-23 — Linux/Core bounded TBX glossary import
 
 Assumption: Linux is the active implementation priority; this checkpoint completes the bounded

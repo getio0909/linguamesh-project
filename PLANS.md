@@ -22,6 +22,23 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux model provenance labels
+
+Assumption: Linux remains the active client priority; the existing Core `ModelSource` contract is
+the source of truth for selector provenance, while other-client and human-review requirements
+remain open.
+
+- [x] Audit Core's existing `Discovered`, `Catalog`, and `Manual` model-source contract and add
+  localized source labels to all 12 l10n packs (`7c2cb9fd71835ea0f9c6605d82dac87c0df012f0`,
+  497 messages).
+- [x] Render the source beside every GTK model entry, add the regression test, and repin Linux
+  packaging (`00186c29fc4e3e6682114ee29cd587d31610a1d6`, pin `73051b70028359c56654e1260621ada77def67e9`).
+- [x] Pass local Linux/l10n validation and all six Linux push/PR gates:
+  `30006418545`/`30006418485`/`30006418554` and
+  `30006415855`/`30006415873`/`30006415861`.
+- [x] Synchronize central status, gap analysis, and release pins; retain `unreleased` until
+  cross-client parity, manual/physical evidence, signing, rollback, and authorization exist.
+
 ## 2026-07-23 — Linux/Core bounded TBX glossary import
 
 Assumption: Linux remains the active client priority; a restricted TBX parser and native chooser
