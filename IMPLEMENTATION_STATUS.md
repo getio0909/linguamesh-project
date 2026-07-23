@@ -19,7 +19,7 @@ human review on other clients remain open.
   `30000492370`/`30000492390`, Linux push Native/Flatpak/Foundation
   `30000751775`/`30000751755`/`30000751799`, and Linux PR Native/Flatpak/Foundation
   `30000748043`/`30000747816`/`30000747915` all completed successfully. Central coordination
-  commit `db8785075dd168096113c0a977b49f1afe09c266` passed workflow `30000926993`.
+  commit `781dc286d9cbc86e75d954bfe09653f2b6891b61` passed workflow `30001370175`.
 - Release remains `unreleased`; cross-client parity, qualified human accessibility/translation
   review, signing, rollback, and stable-release authorization remain open.
 
