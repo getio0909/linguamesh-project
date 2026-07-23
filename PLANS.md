@@ -28,12 +28,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `cee5bd8abc5b35a50640c484bc4fbeedeb426745` adds schema 30, bounded/redacted proxy credential
   parsing, storage rejection of session references, and proxy Basic-auth forwarding across the
   built-in adapters. l10n `f0b1c507d73f540f298a534303d0e6e63d44e87b` supplies the source-revision-58
-  Linux strings and generated resources. Linux `3264b93b1da7b49ea6fc636729f7a178eef1b436` adds
+  Linux strings and generated resources. Linux `34b3194c5445f640141de8ad57195768aaa6c3d0` adds
   the masked GTK field, immediate clearing, session/Secret Service handling, localization sync,
   and exact Core/l10n/Flatpak pins. Local Core/Linux/l10n/Flatpak checks passed. Linux push
-  Native/Flatpak/Foundation `29975524486`/`29975524483`/`29975524491` and PR
-  Native/Flatpak/Foundation `29975526119`/`29975526053`/`29975526074` passed for the exact final
-  head. Other clients,
+  Native/Flatpak/Foundation `29976201970`/`29976201964`/`29976201962` and PR
+  Native/Flatpak/Foundation `29976204361`/`29976204358`/`29976204331` passed for the exact final
+  documentation head. Other clients,
   client-certificate TLS policy, human review, signing, rollback, and stable release remain open.
 
 - [x] Add and pin the Linux-first bounded custom trusted-certificate bundle slice. Core
