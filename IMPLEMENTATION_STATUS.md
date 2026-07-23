@@ -14,11 +14,11 @@ power loss or every alternate SQLite VFS.
   `synchronous=FULL`, aborts the child process, and verifies that the parent reopens the model and
   persistent `SecretRef` from the WAL.
 - Linux runtime implementation remains `04478701e3b0192cc7f90228c47badd9f6bb2d2b`; current
-  documentation/status head `aab5d84db71bb2ee0fc942ec78bfce053e356f2d` passed the no-default library
+  documentation/status head `dffc87f4e1499ce7adcc803123db4dfdac4eec1e` passed the no-default library
   suite (`83 passed; 1 ignored`). The ignored unit case is environment-gated, and the explicit
   image-only PDF OCR fixture `bash tools/run-ocr-test.sh` passed (`1 passed`) with system
   `pdftoppm` and `tesseract`. Push Native/Flatpak/Foundation runs
-  `29986248622`/`29986248558`/`29986248557` and PR runs `29986250297`/`29986250290`/`29986250291`
+  `29987023670`/`29987023696`/`29987023655` and PR runs `29987026057`/`29987026021`/`29987026006`
   all passed.
 - The same Linux checkout passed `cargo fmt --all --check`, GUI `cargo check`, strict Clippy,
   `cargo-deny check` (advisories, bans, licenses, and sources), localization synchronization against
