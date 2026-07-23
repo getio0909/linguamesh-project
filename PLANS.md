@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add and pin the Linux-first bounded provider connection-establishment timeout slice. Core
+  `e9a569f8bb6d66db4fdb1c9bd1d6834e93d10f39` adds schema 27 persistence, 1–120 second validation,
+  and independent transport wiring across OpenAI Chat/Responses/Azure, Anthropic, Gemini, and
+  Ollama. l10n `46ca70b2863fa951b417eda7ce5848e152c46605` supplies the 469-message bundle. Linux
+  `55921b0012729c72ba0fdb07ffb7be820a7f2136` adds the GTK control and exact Core/l10n/Flatpak pins.
+  Local Core/Linux/l10n/Flatpak checks passed; remote Linux gates are pending. Streaming-idle/TLS
+  policy, cross-client parity, human review, signing, rollback, and stable release remain open.
+
 - [x] Add and pin the Linux-first bounded total provider request timeout slice. Core
   `7e78cb0086d85eb5c218d8863b7f11f506bae016` adds schema 26 persistence, 1–600 second validation,
   and transport wiring across OpenAI Chat/Responses/Azure, Anthropic, Gemini, and Ollama. l10n

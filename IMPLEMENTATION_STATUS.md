@@ -2,6 +2,20 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux provider connection timeout settings
+
+Assumption: a bounded connection-establishment timeout of 1–120 seconds (default 10) is persisted
+and applied independently of the existing total request timeout; streaming-idle and TLS policy
+remain follow-up work.
+
+- Core `e9a569f8bb6d66db4fdb1c9bd1d6834e93d10f39` adds schema 27 persistence, domain/storage range
+  coverage, and connection-timeout wiring for OpenAI Chat/Responses/Azure, Anthropic, Gemini, and
+  Ollama. l10n `46ca70b2863fa951b417eda7ce5848e152c46605` regenerates the 469-message bundle.
+- Linux `55921b0012729c72ba0fdb07ffb7be820a7f2136` adds the localized GTK control, saved-profile
+  restore/default behavior, validation before Test connection/Connect, and exact Core/l10n/Flatpak
+  pins. Local Core, Linux, l10n, synchronization, localization-audit, Flatpak metadata, and diff
+  checks passed; remote Linux gates are pending. Release remains `unreleased`.
+
 ## 2026-07-23 — Linux provider request timeout settings
 
 Assumption: this checkpoint implements only a bounded total request timeout; connection timeout,

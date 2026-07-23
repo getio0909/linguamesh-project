@@ -6,19 +6,20 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 ## Unreleased compatibility matrix
 
-### Linux-first provider request timeout settings
+### Linux-first provider timeout settings
 
-Core `7e78cb0086d85eb5c218d8863b7f11f506bae016` adds schema 26 persistence for a bounded total
-`ProviderProfile.request_timeout_secs`. Linux `c5db93676128e84a577f628906aad2980f919909` adds
-the localized GTK control, restores it with saved profiles, defaults new profiles to 30 seconds,
-and pins Core/l10n in Native and Flatpak metadata; l10n `65bf0c8772f75649b2be2e2f9cea610772657c93`
-supplies the 467-message bundle. Values from 1 through 600 seconds are validated before host-secret
-requests and applied to OpenAI Chat/Responses/Azure, Anthropic, Gemini, and Ollama transports.
+Core `e9a569f8bb6d66db4fdb1c9bd1d6834e93d10f39` adds schema 27 persistence for bounded total
+request and connection-establishment timeouts. Linux `55921b0012729c72ba0fdb07ffb7be820a7f2136`
+adds the localized GTK controls, restores them with saved profiles, defaults new profiles to 30 and
+10 seconds respectively, and pins Core/l10n in Native and Flatpak metadata; l10n
+`46ca70b2863fa951b417eda7ce5848e152c46605` supplies the 469-message bundle. Values from 1 through
+600 seconds for total requests and 1 through 120 seconds for connection establishment are validated
+before host-secret requests and applied independently to OpenAI Chat/Responses/Azure, Anthropic,
+Gemini, and Ollama transports.
 Local Core workspace tests and strict Clippy, Linux locked checks/tests (`159 passed; 3 ignored`),
 l10n audits/synchronization, and Flatpak metadata validation passed. Linux push Native/Flatpak/
-Foundation runs `29968376701`/`29968376654`/`29968376661` and PR runs
-`29968379682`/`29968379660`/`29968379655` passed for the exact head. Connection, streaming-idle,
-and TLS-specific timeout fields, other clients, human review, signing, rollback,
+Foundation and PR runs are pending for the exact head. Streaming-idle and TLS-specific timeout
+fields, other clients, human review, signing, rollback,
 and stable release remain open; status stays `unreleased`.
 
 ### Linux-first provider proxy settings
