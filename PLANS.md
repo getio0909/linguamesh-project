@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Complete in-scope privacy and changelog documentation for Core, l10n, and Linux. Core
+  `5a5a4cb89985083d02aac9d9aa226184992f3774`, l10n `538a15f7917f991b4995d3675f3becba1b5008e2`,
+  and Linux `0ffb1c1132bbff9534f54354e0e71230963363d0` add the required policy files without
+  changing runtime behavior. Core CI/Fuzz/Native SDK `29979348220`/`29979348138`/`29979348170`,
+  l10n `29979357957`/`29979357930`, and Linux push/PR gates
+  `29979370911`/`29979370877`/`29979370915` and `29979372688`/`29979372682`/`29979372622`
+  passed. Android and Windows policy files remain deferred under the explicit Linux-first scope.
+
 - [x] Add and pin the Linux-first client-certificate TLS identity SecretRef slice. Core
   `2a3534faa9a2531cbbc6cc06d325ad7c82c69394` adds schema 31, bounded/redacted combined PEM
   identity parsing, persistent/session SecretRef resolution, and rustls identity wiring across

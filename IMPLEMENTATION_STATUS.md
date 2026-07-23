@@ -2,6 +2,21 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — In-scope policy documentation compliance
+
+Assumption: the current Linux-first scope includes the shared Core, localization, and Linux
+repositories; Android and Windows policy-document additions remain deferred with their platform
+implementation work.
+
+- Core `5a5a4cb89985083d02aac9d9aa226184992f3774`, l10n
+  `538a15f7917f991b4995d3675f3becba1b5008e2`, and Linux
+  `0ffb1c1132bbff9534f54354e0e71230963363d0` add concise `PRIVACY.md` and `CHANGELOG.md` files
+  covering secret handling, content flow, draft translations, and the unreleased posture.
+- Core CI/Fuzz/Native SDK `29979348220`/`29979348138`/`29979348170`, l10n
+  Localization/Foundation `29979357957`/`29979357930`, and Linux push/PR Native, Flatpak, and
+  Foundation `29979370911`/`29979370877`/`29979370915` and
+  `29979372688`/`29979372682`/`29979372622` passed. The release remains `unreleased`.
+
 ## 2026-07-23 — Linux client-certificate TLS identity checkpoint
 
 Assumption: Linux is the active client scope; mutual-TLS material is handled as one bounded
