@@ -15,8 +15,7 @@ or human/physical acceptance evidence.
   `460728d79b0e2373445c3d8994793d069b8057b9` and l10n
   `74f773774bdf01ca5d2ab61ce199dbd76cdadb04`. Push Native/Flatpak/Foundation runs
   `30016302142`/`30016302028`/`30016302180` passed; PR Native/Flatpak/Foundation runs
-  `30016306021`/`30016305892`/`30016305878` have successful workflow jobs (the Flatpak check
-  aggregation is still pending on GitHub at this update).
+  `30016306021`/`30016305892`/`30016305878` also completed successfully.
 - Local formatting, GUI/all-target compilation, demo-provider library tests (`161 passed; 0 failed;
   3 ignored`), localization audits, Flatpak metadata validation, and diff checks passed. The exact
   GTK binary test is compile-verified but cannot link on this host because GTK/GDK/Graphene symbols

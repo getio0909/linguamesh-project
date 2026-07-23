@@ -14,9 +14,8 @@ clear, and no-selection states without exposing credentials or raw diagnostics. 
 documentation/Flatpak head is `c39a5566ae0c87ef892cf9ba38f446b3a16429e5`, with Core
 `460728d79b0e2373445c3d8994793d069b8057b9` and l10n
 `74f773774bdf01ca5d2ab61ce199dbd76cdadb04`. Push Native/Flatpak/Foundation runs
-`30016302142`/`30016302028`/`30016302180` passed; PR Native/Flatpak/Foundation jobs for
-`30016306021`/`30016305892`/`30016305878` completed successfully while the GitHub check
-aggregation remains pending for the Flatpak check. This remains prerelease evidence; other clients,
+`30016302142`/`30016302028`/`30016302180` passed; PR Native/Flatpak/Foundation runs
+`30016306021`/`30016305892`/`30016305878` also completed successfully. This remains prerelease evidence; other clients,
 qualified human/physical review, signing, rollback, and stable authorization remain open.
 
 The Linux Provider Hub now renders persisted provider-health outcomes without exposing raw

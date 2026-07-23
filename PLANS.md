@@ -33,8 +33,9 @@ non-secret health state and does not substitute for other-client or human accept
   Core remains `460728d79b0e2373445c3d8994793d069b8057b9` and l10n remains `74f773774bdf01ca5d2ab61ce199dbd76cdadb04`.
 - [x] Pass local format, GUI/all-target compile, demo-provider library, localization, Flatpak, and
   diff checks; push Native/Flatpak/Foundation `30016302142`/`30016302028`/`30016302180` passed.
-- [ ] Finish GitHub PR check aggregation for PR runs `30016306021`/`30016305892`/`30016305878`, then
-  synchronize the Draft PR and open central Issue #1 without merging or promoting a stable release.
+- [x] Finish GitHub PR check aggregation for PR runs `30016306021`/`30016305892`/`30016305878`; all
+  six push/PR gates are green. Synchronize the Draft PR and open central Issue #1 without merging
+  or promoting a stable release.
 
 ## 2026-07-23 — Linux Provider Hub health status
 
