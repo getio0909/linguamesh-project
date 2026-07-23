@@ -12,15 +12,19 @@ combined PEM identity behind a persistent or session `SecretRef`, never as a pro
   resolution, and reqwest rustls identity wiring across Chat/Responses/Azure, Anthropic, Gemini,
   and Ollama while preserving system roots and TLS verification.
 - l10n `552d87e88a8df42055b1ac76e4dfbaadca92e291` adds source revision 59 and the 480-message
-  generated Linux bundle. Linux `b4bd13c1ec778e62ef466b7fa9d106de87731f29` adds masked GTK
-  capture/clear, Secret Service or session-only handling, restore semantics, and exact pins.
+  generated Linux bundle. Linux implementation `b4bd13c1ec778e62ef466b7fa9d106de87731f29` adds
+  masked GTK capture/clear, Secret Service or session-only handling, restore semantics, and
+  exact pins; final status head is `bf5398de6b747841d779b72a9ac51752a19047ef`.
 - Local Core workspace tests/strict Clippy/secret-pattern scan, Linux 162-test demo-provider
   suite (159 passed, 3 ignored), strict Clippy, GUI check, l10n checks/audits/sync, and Flatpak
   metadata validation passed. Core CI/Fuzz/Native SDK `29978060455`/`29978060459`/`29978060500`,
   l10n `29977582751`/`29977582767`, and Linux push Native/Flatpak/Foundation
   `29978367171`/`29978367181`/`29978367167` plus PR
-  `29978368905`/`29978368870`/`29978368862` are the exact remote gates for this checkpoint;
-  release remains `unreleased`.
+  `29978368905`/`29978368870`/`29978368862` passed for the implementation head, and the final
+  status-head push Native/Flatpak/Foundation `29978696500`/`29978696556`/`29978696510` plus PR
+  `29978698516`/`29978698538`/`29978698523` also passed. Central coordination commit
+  `dfcecee8fde665d1cc6e4d9f0d2b1681072e100f` passed run `29978472198`; release remains
+  `unreleased`.
 
 ## 2026-07-23 — Linux provider proxy authentication SecretRef settings
 

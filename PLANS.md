@@ -28,12 +28,15 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `2a3534faa9a2531cbbc6cc06d325ad7c82c69394` adds schema 31, bounded/redacted combined PEM
   identity parsing, persistent/session SecretRef resolution, and rustls identity wiring across
   all built-in adapters. l10n `552d87e88a8df42055b1ac76e4dfbaadca92e291` supplies source revision 59
-  and 480 generated messages. Linux `b4bd13c1ec778e62ef466b7fa9d106de87731f29` adds the masked
-  GTK field, immediate clearing, Secret Service/session handling, restore behavior, and exact
-  Flatpak/source pins. Local Core/Linux/l10n/Flatpak checks passed; Core CI/Fuzz/Native SDK
-  `29978060455`/`29978060459`/`29978060500`, l10n `29977582751`/`29977582767`, and Linux push/PR
-  Native/Flatpak/Foundation gates `29978367171`/`29978367181`/`29978367167` and
-  `29978368905`/`29978368870`/`29978368862` are recorded. Other clients, live-provider
+  and 480 generated messages. Linux implementation `b4bd13c1ec778e62ef466b7fa9d106de87731f29`
+  adds the masked GTK field, immediate clearing, Secret Service/session handling, restore
+  behavior, and exact Flatpak/source pins. Local Core/Linux/l10n/Flatpak checks passed; Core
+  CI/Fuzz/Native SDK `29978060455`/`29978060459`/`29978060500`, l10n `29977582751`/`29977582767`,
+  and Linux implementation push/PR Native/Flatpak/Foundation gates
+  `29978367171`/`29978367181`/`29978367167` and `29978368905`/`29978368870`/`29978368862`
+  passed. Final status head `bf5398de6b747841d779b72a9ac51752a19047ef` passed push/PR gates
+  `29978696500`/`29978696556`/`29978696510` and `29978698516`/`29978698538`/`29978698523`.
+  Central coordination `dfcecee8fde665d1cc6e4d9f0d2b1681072e100f`/`29978472198` passed. Other clients, live-provider
   interoperability, manual review, signing, rollback, and stable release remain open.
 
 - [x] Add and pin the Linux-first proxy-authentication SecretRef slice. Core
