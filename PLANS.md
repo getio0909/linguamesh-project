@@ -22,6 +22,21 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux explicit Clear workspace action
+
+Assumption: Linux remains the active implementation priority; clearing the text workspace must not
+send a worker command or alter provider, locale, glossary, or history settings.
+
+- [x] Add Linux `38275fd96f0b9ed00b7d3269974780fd61874936` Clear workspace reducer/UI behavior,
+  localized focusable action, document-job/active-request sensitivity guards, and GTK/model regressions.
+- [x] Push l10n `99e0e04d200a03b2de79a8dd4a8d018847519ea2`; `make check` passed 504 messages and 26
+  tests; synchronize the Linux PO/MO resources and workflow revision pin.
+- [x] Pass local format, GUI/all-target checks, strict Clippy, 163 demo-provider tests with 3
+  documented ignores, localization audits, l10n synchronization, Flatpak metadata, and diff checks.
+- [x] Record green current-head push/PR Native, Flatpak, and Foundation gates
+  `30027666940`/`30027665976`/`30027665616` and `30027667935`/`30027667025`/`30027666925`.
+- [x] Keep PR #1 Draft/Open, Issue #1 Open, manifests synchronized, and release status `unreleased`.
+
 ## 2026-07-23 — Linux native clipboard copy action
 
 Assumption: Linux remains the active implementation priority; a dedicated GTK clipboard action is

@@ -2,6 +2,31 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux explicit Clear workspace action
+
+Assumption: Linux remains the active implementation priority; the text workspace `clear` action
+must be local and network-free, while provider, locale, glossary, history, and cross-client work
+remain outside this checkpoint.
+
+- Linux code `38275fd96f0b9ed00b7d3269974780fd61874936` adds a localized, focusable **Clear workspace**
+  button and reducer operation. It clears source/output text, partial usage/error/routing diagnostics,
+  transient export and document notices, and file URIs without sending a worker command; it stays
+  disabled during active work or a persisted document job. The GTK regression verifies Simplified
+  Chinese labels, focusability, sensitivity, state reset, and empty editors after completion.
+- l10n `99e0e04d200a03b2de79a8dd4a8d018847519ea2` adds the action and tooltip to all twelve official
+  packs and generated pseudo-locales; `make check` passed 504 messages and 26 tests. Linux resources
+  are synchronized at the same revision, and the Native workflow pin is updated.
+- Local Linux formatting, GUI/all-target checks, strict Clippy, 163 demo-provider tests with 3
+  documented environment-gated ignores, three localization audits, l10n synchronization, Flatpak
+  metadata, and diff checks passed. Linux final packaging/workflow head is
+  `54b9a29b6a72db38ae8eabcb91e1cf98dd73ecab` with Flatpak source pin
+  `f832a2a04b502c06b6df606d5d6eb4d99b8cbf15`.
+- Current-head Linux push Native/Flatpak/Foundation runs `30027666940`/`30027665976`/`30027665616`
+  and PR Native/Flatpak/Foundation runs `30027667935`/`30027667025`/`30027666925` all passed. An
+  earlier run was superseded after it exposed a stale workflow l10n pin; no failed run is used as
+  evidence. Release remains `unreleased` and human visual/Orca review, cross-client parity, signing,
+  rollback, and stable-release authorization remain open.
+
 ## 2026-07-23 — Linux native clipboard copy action
 
 Assumption: Linux remains the active implementation priority; completed translation output needs an

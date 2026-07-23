@@ -6,6 +6,16 @@ Status: Linux-first prerelease audit, 2026-07-23. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The current Linux-first text workspace checkpoint adds Linux code `38275fd96f0b9ed00b7d3269974780fd61874936`,
+packaging/workflow head `54b9a29b6a72db38ae8eabcb91e1cf98dd73ecab`, and l10n
+`99e0e04d200a03b2de79a8dd4a8d018847519ea2` (504 messages): the localized, focusable Clear workspace
+action removes source/output text, request diagnostics, transient notices, and file URIs locally
+without a worker command, while preserving provider, locale, glossary, and history settings. The
+reducer and GTK regressions pass locally; current-head Linux push/PR Native, Flatpak, and Foundation
+gates `30027666940`/`30027665976`/`30027665616` and `30027667935`/`30027667025`/`30027666925` passed.
+The PR remains Draft/Open and Issue #1 remains Open; visual/Orca review, cross-client parity, signing,
+rollback, and stable authorization remain open.
+
 The current Linux-first clipboard checkpoint adds Linux `e56e56bec0bcea9fe963ca326e3918da54f50790`
 and l10n `0ee87720a8613d3dc130dfb379ab4dc7bc1e1f62` (502 messages): completed output has an explicit
 localized GTK Copy translation action, empty output keeps the action disabled, and a headless GTK
