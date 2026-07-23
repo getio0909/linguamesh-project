@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux GTK candidate-chain and fallback-consent evidence audit
+
+Assumption: the Linux routing-profile editor is the authoritative UI for user-approved candidate
+chains; this coordination record covers deterministic Linux evidence only and does not promote the
+release train.
+
+- Linux implementation `b218c814c21b6e6a2f4ad691b5f6f09bf33d7bc0` (documentation head
+  `04478701e3b0192cc7f90228c47badd9f6bb2d2b`) records the production GTK
+  candidate-chain lifecycle: Manual/Ordered/Automatic mode, candidate selection/order, Edit/Save,
+  Use, Delete cleanup, and localized accessible controls. The same serialized Native workflow
+  reports one passing `gtk_routing_profile_candidate_controls_have_accessible_lifecycle` fixture
+  and one passing `gtk_fallback_approval_dialog_requires_an_explicit_one_shot_action` fixture.
+- Linux push Native/Flatpak/Foundation runs `29984727975`/`29984727998`/`29984727932` passed;
+  the corresponding PR runs `29984730138`/`29984730127`/`29984730117` also passed. This closes
+  the Linux deterministic candidate-chain/fallback-consent evidence gap only.
+- Cross-client parity, live provider interoperability, human visual/copy/Orca review, physical
+  VFS/power-loss evidence, signing, rollback, and stable-release authorization remain open;
+  release stays `unreleased`.
+
 ## 2026-07-23 — Linux GTK Anthropic Messages preset transport evidence
 
 Assumption: Linux is the active client scope; a deterministic loopback Messages service is the

@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Record the verified Linux GTK candidate-chain editor and one-shot fallback-consent
+  lifecycle. Documentation head `04478701e3b0192cc7f90228c47badd9f6bb2d2b` is covered by passing
+  push Native/Flatpak/Foundation runs `29984727975`/`29984727998`/`29984727932` and PR runs
+  `29984730138`/`29984730127`/`29984730117`; the production fixture reports one passing
+  candidate-chain fixture and one passing fallback-approval fixture. This closes only the Linux
+  deterministic UI evidence gap; cross-client parity, live providers, human review, signing,
+  rollback, and stable release remain open.
+
 - [x] Add Linux production GTK Anthropic Messages protocol-preset transport evidence. Core
   `2f91f313025b189df237294485fd47bafc1f1f53` adds the deterministic `/v1/messages` testkit route
   with `x-api-key`, usage, fragmented content, and `message_stop` events. Linux implementation
