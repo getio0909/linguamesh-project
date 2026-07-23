@@ -33,7 +33,8 @@ release pins or promote prerelease work.
   `3eb710ee35c6aa626714a4c8618e37cc831661c3` passed the demo-provider library suite (160 passed,
   3 environment-gated ignored), and localization `1de68c9568b5c380845089efc9282ff6edd04bc1`
   passed `make check` with 494 messages and 26 tests. Central workspace validation and diff checks
-  passed; release remains `unreleased`.
+  passed, and coordination workflow `30002603575` passed on Linux and PowerShell; release remains
+  `unreleased`.
 
 ## 2026-07-23 — Linux regional-locale and script translation presets
 

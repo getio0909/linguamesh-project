@@ -16,8 +16,9 @@ pins remain unchanged, and ignored tests still require their documented external
 - Localization `1de68c9568b5c380845089efc9282ff6edd04bc1` passed `make check`: 494 messages, 12
   official locale packs, 26 tests, deterministic generated resources, bundle creation, and
   Foundation validation.
-- Central `bash tools/check-workspace.sh` and `git diff --check` passed. Release remains
-  `unreleased`; no component pin or stable-release claim changed.
+- Central `bash tools/check-workspace.sh` and `git diff --check` passed; coordination workflow
+  `30002603575` passed on Linux and PowerShell. Release remains `unreleased`; no component pin or
+  stable-release claim changed.
 
 ## 2026-07-23 — Linux regional-locale and script translation presets
 
