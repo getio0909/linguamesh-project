@@ -1,6 +1,23 @@
 # Implementation Status
 
-Last updated: 2026-07-22
+Last updated: 2026-07-23
+
+## 2026-07-23 — Linux provider request timeout settings
+
+Assumption: this checkpoint implements only a bounded total request timeout; connection timeout,
+streaming-idle timeout, and TLS policy fields remain separate follow-up work.
+
+- Core `7e78cb0086d85eb5c218d8863b7f11f506bae016` adds schema 26 persistence, 1–600 second
+  validation, and request-timeout wiring for OpenAI Chat/Responses/Azure, Anthropic, Gemini, and
+  Ollama. l10n `65bf0c8772f75649b2be2e2f9cea610772657c93` regenerates the 467-message bundle.
+- Linux `c5db93676128e84a577f628906aad2980f919909` adds the localized GTK control, profile
+  restore/default behavior, exact Core/l10n pins, and Flatpak source-head pin. Local Core,
+  Linux, l10n, synchronization, localization-audit, Flatpak metadata, and diff checks passed.
+- Core CI/Fuzz/Native SDK and l10n Localization/Foundation passed for the exact revisions. Linux
+  push Native/Flatpak/Foundation `29968376701`/`29968376654`/`29968376661` and PR
+  `29968379682`/`29968379660`/`29968379655` passed for the exact head. Release remains
+  `unreleased`; cross-client parity, human review, signing, rollback, and stable-release
+  authorization remain open.
 
 ## 2026-07-22 — Linux provider proxy settings
 

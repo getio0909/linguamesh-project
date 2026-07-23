@@ -6,6 +6,21 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 ## Unreleased compatibility matrix
 
+### Linux-first provider request timeout settings
+
+Core `7e78cb0086d85eb5c218d8863b7f11f506bae016` adds schema 26 persistence for a bounded total
+`ProviderProfile.request_timeout_secs`. Linux `c5db93676128e84a577f628906aad2980f919909` adds
+the localized GTK control, restores it with saved profiles, defaults new profiles to 30 seconds,
+and pins Core/l10n in Native and Flatpak metadata; l10n `65bf0c8772f75649b2be2e2f9cea610772657c93`
+supplies the 467-message bundle. Values from 1 through 600 seconds are validated before host-secret
+requests and applied to OpenAI Chat/Responses/Azure, Anthropic, Gemini, and Ollama transports.
+Local Core workspace tests and strict Clippy, Linux locked checks/tests (`159 passed; 3 ignored`),
+l10n audits/synchronization, and Flatpak metadata validation passed. Linux push Native/Flatpak/
+Foundation runs `29968376701`/`29968376654`/`29968376661` and PR runs
+`29968379682`/`29968379660`/`29968379655` passed for the exact head. Connection, streaming-idle,
+and TLS-specific timeout fields, other clients, human review, signing, rollback,
+and stable release remain open; status stays `unreleased`.
+
 ### Linux-first provider proxy settings
 
 Core `7a9da3f467c5dec539dd8f7850b90b54ae712331` adds schema 25 persistence for an optional,

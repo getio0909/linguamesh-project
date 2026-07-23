@@ -24,6 +24,17 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Add and pin the Linux-first bounded total provider request timeout slice. Core
+  `7e78cb0086d85eb5c218d8863b7f11f506bae016` adds schema 26 persistence, 1–600 second validation,
+  and transport wiring across OpenAI Chat/Responses/Azure, Anthropic, Gemini, and Ollama. l10n
+  `65bf0c8772f75649b2be2e2f9cea610772657c93` supplies the 467-message bundle. Linux
+  `c5db93676128e84a577f628906aad2980f919909` adds the GTK control and exact Core/l10n/Flatpak pins.
+  Local Core/Linux/l10n/Flatpak checks passed. Linux push Native/Flatpak/Foundation
+  `29968376701`/`29968376654`/`29968376661` and PR
+  `29968379682`/`29968379660`/`29968379655` passed for the exact head. Connection/idle/TLS
+  timeout fields, cross-client parity, human review, signing, rollback, and stable release remain
+  open.
+
 - [x] Implement the Linux-first bounded provider proxy settings slice. Core
   `7a9da3f467c5dec539dd8f7850b90b54ae712331` adds schema 25 persistence and applies validated
   HTTP/HTTPS/SOCKS5/SOCKS5H URLs to all four provider transport families; l10n
