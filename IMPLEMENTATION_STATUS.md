@@ -2,6 +2,27 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux localized language swap action
+
+Assumption: Linux remains the active implementation priority; language swapping is a local,
+request-free action for the supported English/Chinese pair, while Auto-source and Japanese-target
+combinations remain intentionally disabled.
+
+- Linux code `4e5a94feef09bbe382a0b6690dc8e8f7b138656f` adds the localized, focusable **Swap languages**
+  control, safe sensitivity gating, runtime locale refresh, and GTK/unit regressions. It exchanges
+  only the supported selector pair and preserves editor contents.
+- Localization `c2526bfb3f6ff57895bdc3eeed743e26c8783613` adds the action and tooltip to all twelve
+  official packs and generated pseudo-locales; `make check` passed 506 messages and 26 tests.
+  Linux resources and the Native workflow pin consume that exact revision.
+- Linux packaging/docs head `6a9adf472c6ca7afb26311dd0bbe06de2a0f1c05` pins Flatpak source `d6c1c51c3707bf367d4b6b1a06e9cf8faa37ebc5`. Local format, GUI/all-target checks, strict Clippy,
+  163 demo-provider library tests with three documented ignores, localization audits, sync checks,
+  Flatpak metadata, and diff checks passed. The local GTK binary could not link because the host's
+  GTK symbols are incomplete; Native CI is authoritative for that boundary.
+- PR #1 Native/Flatpak/Foundation runs `30030245422`/`30030245461`/`30030245538` passed. Push
+  Flatpak/Foundation runs `30030242763`/`30030242764` passed; push Native `30030243332` remains
+  pending in dependency installation and is not treated as passing. PR #1 remains Draft/Open and
+  Issue #1 remains Open; release stays `unreleased`.
+
 ## 2026-07-23 — Linux explicit Clear workspace action
 
 Assumption: Linux remains the active implementation priority; the text workspace `clear` action

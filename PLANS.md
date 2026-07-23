@@ -22,6 +22,22 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux localized language swap action
+
+Assumption: Linux is the active implementation priority; swapping is local and request-free for the
+supported English/Chinese pair, and unsupported Auto/Japanese combinations remain disabled.
+
+- [x] Add Linux `4e5a94feef09bbe382a0b6690dc8e8f7b138656f` localized Swap languages UI, sensitivity
+  gating, locale refresh, and unit/GTK regression coverage.
+- [x] Push localization `c2526bfb3f6ff57895bdc3eeed743e26c8783613`; `make check` passed 506 messages
+  and 26 tests; synchronize Linux PO/MO resources and Native workflow pin.
+- [x] Pass local format, GUI/all-target checks, strict Clippy, 163 demo-provider library tests with
+  three documented ignores, localization audits, Flatpak metadata, sync, and diff checks.
+- [x] Record PR Native/Flatpak/Foundation `30030245422`/`30030245461`/`30030245538` and push
+  Flatpak/Foundation `30030242763`/`30030242764` as green; keep push Native `30030243332` explicitly
+  pending rather than treating it as evidence.
+- [x] Keep PR #1 Draft/Open, Issue #1 Open, manifests synchronized, and release status `unreleased`.
+
 ## 2026-07-23 — Linux explicit Clear workspace action
 
 Assumption: Linux remains the active implementation priority; clearing the text workspace must not
