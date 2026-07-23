@@ -8,6 +8,8 @@ Last updated: 2026-07-23
   workflow `30048060092`; Linux and PowerShell validation jobs completed successfully.
 - Central mTLS evidence/manifest commit `b9eddb695c4726122ff93e56d1b53bcab6da670f` passed
   workflow `30049632598`; Linux and PowerShell validation jobs completed successfully.
+- Central mTLS hostname evidence/manifest commit `8e53d565a81bc042099e55aa556a62349d8dc178` passed
+  workflow `30051289289`; Linux and PowerShell validation jobs completed successfully.
 
 ## 2026-07-23 — Linux mTLS hostname verification
 
