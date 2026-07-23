@@ -18,8 +18,10 @@ parity.
   updates revision-62 chooser/error copy and regenerated PO/MO resources; `make check` passed 494
   messages, 12 official packs, 26 tests, deterministic generation, bundle, and Foundation checks.
 - Central manifests now pin these exact revisions. Linux local validation passed 160 tests/3
-  documented ignores, strict Clippy, audits, sync, Flatpak metadata, and diff checks. Release stays
-  `unreleased`; PR #1 and Issue #1 remain open, and remote gates for the new head, display-backed chooser review, cross-client
+  documented ignores, strict Clippy, audits, sync, Flatpak metadata, and diff checks. Linux push
+  Native/Flatpak/Foundation `30004896060`/`30004896007`/`30004896045` and PR
+  Native/Flatpak/Foundation `30004893289`/`30004893240`/`30004893064` passed. Release stays
+  `unreleased`; PR #1 and Issue #1 remain open, while display-backed chooser review, cross-client
   parity, physical VFS/power-loss, signing, rollback, and stable authorization remain open.
 
 ## 2026-07-23 — Current pinned regression rerun

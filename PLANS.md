@@ -34,8 +34,10 @@ path are sufficient for this slice, while other-client parity and physical evide
 - [x] Push Core `dffa07eca2b006279f99673edff5bd0ae1b24a0f`, localization
   `d8d9084cdf0448039ad0aa7612e8725c6c875036`, and Linux `d61a96f`; central manifests now match
   these heads.
-- [ ] Obtain remote Linux PR/Native/Flatpak/Foundation gate evidence for this new head; keep the
-  release train `unreleased` until all global acceptance and authorization conditions exist.
+- [x] Obtain remote Linux gate evidence for this new head: push Native/Flatpak/Foundation
+  `30004896060`/`30004896007`/`30004896045` and PR Native/Flatpak/Foundation
+  `30004893289`/`30004893240`/`30004893064` all passed. Keep the release train `unreleased` until
+  all global acceptance and authorization conditions exist.
 
 ## 2026-07-23 — Current pinned regression rerun
 
