@@ -3,6 +3,7 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
+  "Linux-first normalized usage persistence is implemented at Core `e48d1040a992b2fd3daaa27af2ae6bd700b25fc5` (schema 32) and Linux `064a6f17e37030351ef27a7bb047db2910167fe3`: completed standard history writes bounded provider-reported or local-estimate usage atomically, with sanitized provider IDs and no source/output text, endpoints, credentials, or pricing. Incognito and disabled-history requests skip persistence; history trimming, deletion, and clear remove usage rows. Core CI/Fuzz/Native SDK `29992377731`/`29992376984`/`29992377385` passed; Linux push Native/Flatpak/Foundation `29992795496`/`29992795837`/`29992795547` and PR Native/Flatpak/Foundation `29992800736`/`29992800675`/`29992800292` passed. Other clients, live-provider accounting, human review, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux GTK Anthropic Messages protocol-preset transport evidence is verified at Core `2f91f313025b189df237294485fd47bafc1f1f53`, Linux implementation `2f12c7482a4d0376bbdd7ea86fd7f25557fea75f`, packaging head `0a77a14d35fad42d66c812398827b2ca50edb51c`, and final status head `b218c814c21b6e6a2f4ad691b5f6f09bf33d7bc0`: the serialized Xvfb/DBus fixture drives Anthropic `/v1/messages` with manual model selection, `x-api-key` session handling, fragmented SSE, usage, and `message_stop`, alongside Gemini and Azure. Core CI/Fuzz/Native SDK `29982822450`/`29982822441`/`29982822462`, Linux push Native/Flatpak/Foundation `29983438263`/`29983438252`/`29983438279`, and PR `29983440294`/`29983440326`/`29983440348` passed. This is deterministic loopback evidence only; live provider interoperability, other clients, human review, signing, rollback, and stable release remain open, so status stays `unreleased`.",
   "Linux GTK Gemini/Azure protocol-preset transport evidence is verified at implementation `8006f7a37b81db7c547be717b72860ee610ca7d7`, packaging head `5f1634c615f9e1a7ca3de8e37a99e4efc1f02b9e`, and status head `d0e188f1018dc2f004edf2b1332469625c876913`: the serialized Xvfb/DBus fixture drives Gemini `/v1beta/` discovery/streaming and Azure resource-path manual-deployment streaming with deliberate model selection and one-shot credential clearing. Push Native/Flatpak/Foundation `29981956481`/`29981956167`/`29981956171` and PR `29981958289`/`29981958303`/`29981958352` passed. This is deterministic loopback evidence only; live provider interoperability, other clients, human review, signing, rollback, and stable release remain open, so status stays `unreleased`.",
   "Linux-first client-certificate TLS identity support is implemented at Core `2a3534faa9a2531cbbc6cc06d325ad7c82c69394` (schema 31), l10n `552d87e88a8df42055b1ac76e4dfbaadca92e291` (480 messages), and Linux implementation `b4bd13c1ec778e62ef466b7fa9d106de87731f29` with final status head `bf5398de6b747841d779b72a9ac51752a19047ef`: GTK captures one bounded combined certificate/private-key PEM identity, clears the field immediately, persists only a SecretRef when explicitly remembered, and Core applies reqwest rustls identities without disabling system-root or hostname verification. Core CI/Fuzz/Native SDK `29978060455`/`29978060459`/`29978060500`, l10n Localization/Foundation `29977582751`/`29977582767`, and final Linux push/PR Native, Flatpak, and Foundation gates `29978696500`/`29978696556`/`29978696510` and `29978698516`/`29978698538`/`29978698523` passed. Other clients, live-provider interoperability, prompted desktop review, signing, rollback, and stable release remain open; status stays `unreleased`.",
@@ -114,7 +115,7 @@ localization_schema_version = "1.0.0"
 [components.core]
 repository = "linguamesh-core"
 version = "0.1.0-alpha.2"
-source_revision = "2f91f313025b189df237294485fd47bafc1f1f53"
+source_revision = "e48d1040a992b2fd3daaa27af2ae6bd700b25fc5"
 minimum_compatible_version = "0.1.0-alpha.2"
 artifacts = []
 
@@ -149,6 +150,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "0a77a14d35fad42d66c812398827b2ca50edb51c"
+source_revision = "064a6f17e37030351ef27a7bb047db2910167fe3"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

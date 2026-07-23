@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux normalized usage-record persistence
+
+Assumption: usage metadata is safe to retain only as bounded, non-secret accounting metadata; the
+history policy and Incognito mode are the persistence controls, and no provider pricing is inferred.
+
+- Core `e48d1040a992b2fd3daaa27af2ae6bd700b25fc5` adds schema 32 `usage_records`, atomic history
+  plus usage writes, bounded token counts, source labels, sanitized provider IDs, and cleanup on
+  trim/delete/clear. It never stores source/output text, endpoints, credentials, or prices.
+- Linux `064a6f17e37030351ef27a7bb047db2910167fe3` persists provider-reported completion usage and
+  local translation-memory estimates, while Incognito and disabled-history requests persist nothing.
+- Core CI/Fuzz/Native SDK `29992377731`/`29992376984`/`29992377385` passed. Linux push
+  Native/Flatpak/Foundation `29992795496`/`29992795837`/`29992795547` and PR
+  `29992800736`/`29992800675`/`29992800292` passed. Local Core workspace tests and Linux
+  `cargo test --features demo-provider --lib --locked -- --nocapture` passed (159 passed, 3
+  ignored). Release remains `unreleased`.
+
 ## 2026-07-23 — Linux PR gate result for status head `90a2753`
 
 Assumption: completed Linux workflow jobs are authoritative for this documentation head; GitHub

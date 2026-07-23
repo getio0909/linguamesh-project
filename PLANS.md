@@ -24,6 +24,14 @@ Assumption: Planned files and commands are not evidence until they exist and com
 
 ## Progress
 
+- [x] Implement and verify Linux-first normalized usage-record persistence. Core `e48d1040a992b2fd3daaa27af2ae6bd700b25fc5`
+  adds schema 32 and atomic history/usage cleanup with endpoint and credential redaction; Linux
+  `064a6f17e37030351ef27a7bb047db2910167fe3` wires provider-reported and local-estimate records,
+  Incognito, history policy, deletion, and restart coverage. Core CI/Fuzz/Native SDK
+  `29992377731`/`29992376984`/`29992377385` and Linux push/PR Native, Flatpak, Foundation
+  `29992795496`/`29992795837`/`29992795547` and `29992800736`/`29992800675`/`29992800292` passed.
+  Other clients, live accounting, human review, signing, rollback, and stable release remain open.
+
 - [x] Refresh the Linux PR documentation-head gate record. Linux status head `90a2753` was
   pushed after the prior propagation-lag observation; PR Native `29990141179` and Repository
   Foundation `29990141145` passed, while PR Flatpak `29990141186` completed build, checksum,
