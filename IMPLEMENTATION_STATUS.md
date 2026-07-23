@@ -6,6 +6,8 @@ Last updated: 2026-07-23
   `30045831148`; Linux and PowerShell validation jobs completed successfully.
 - Central documentation/manifest commit `1288dcc7e848212b89dbeb7c424aedbcff2914f6` passed
   workflow `30048060092`; Linux and PowerShell validation jobs completed successfully.
+- Central mTLS evidence/manifest commit `b9eddb695c4726122ff93e56d1b53bcab6da670f` passed
+  workflow `30049632598`; Linux and PowerShell validation jobs completed successfully.
 
 ## 2026-07-23 — Linux mTLS trust-bundle rejection
 
