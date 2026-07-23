@@ -16,7 +16,10 @@ remain open.
   regenerated PO/MO resources; `make check` passed with 500 messages and 26 tests.
 - Linux `a7ac73d6fe8707519dd02698c26ebf8ca78a4246` renders localized plural retry guidance from the
   bounded hint. Local Linux checks passed with 162 demo-provider tests, 3 documented ignores,
-  localization audits, Flatpak validation, and diff checks. Remote CI evidence is pending.
+  localization audits, Flatpak validation, and diff checks. Current-head Push Native/Flatpak/
+  Foundation runs `30022122318`/`30022122787`/`30022122379` and PR Native/Flatpak/Foundation runs
+  `30022125925`/`30022125926`/`30022126939` all passed after the workflow pin refresh in Linux
+  `c19a7872823af6b7b6da022e0acfba63a0ab2ac9`.
 - Release remains `unreleased`; live quota behavior, human visual/Orca review, cross-client parity,
   signing, rollback, and stable-release authorization are not claimed.
 

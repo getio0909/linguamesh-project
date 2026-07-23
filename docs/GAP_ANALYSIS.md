@@ -10,8 +10,9 @@ The current Linux-first provider error checkpoint adds Core `8623b2c8829e4d9cf72
 l10n `630a8f36d96be358d81b72e2efc87cd527e66974`, and Linux `a7ac73d6fe8707519dd02698c26ebf8ca78a4246`:
 HTTP 429 responses normalize to `RateLimited`, bounded `Retry-After` hints survive the provider
 boundary, and Linux renders localized plural retry guidance. Local Core/Linux/l10n checks pass;
-remote CI, live quota behavior, cross-client parity, human review, signing, rollback, and stable
-authorization remain open.
+current-head Push Native/Flatpak/Foundation runs `30022122318`/`30022122787`/`30022122379` and PR
+Native/Flatpak/Foundation runs `30022125925`/`30022125926`/`30022126939` all passed. Live quota
+behavior, cross-client parity, human review, signing, rollback, and stable authorization remain open.
 
 ## Current Linux-first checkpoint
 

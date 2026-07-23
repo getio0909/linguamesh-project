@@ -68,8 +68,9 @@ live-provider behavior, other clients, and stable-release evidence remain open.
   packs and deterministic PO/MO resources; `make check` passed 500 messages and 26 tests.
 - [x] Push Linux `a7ac73d6fe8707519dd02698c26ebf8ca78a4246` with localized plural retry guidance,
   Flatpak source pins, 162 local demo-provider tests, and all local audits.
-- [ ] Wait for and record Linux push/PR Native, Flatpak, and Foundation CI before claiming remote
-  verification; keep PR #1 Draft/Open and Issue #1 Open.
+- [x] Record green current-head Linux push/PR Native, Flatpak, and Foundation CI:
+  `30022122318`/`30022122787`/`30022122379` and
+  `30022125925`/`30022125926`/`30022126939`; keep PR #1 Draft/Open and Issue #1 Open.
 
 ## 2026-07-23 — Linux Provider Hub health status
 
