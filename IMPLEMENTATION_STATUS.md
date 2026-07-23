@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux process-interruption export regression
+
+Assumption: the process-kill fixture is bounded crash-durability evidence only; it does not
+stand in for physical power-loss, filesystem-specific recovery, or alternate GIO/VFS behavior.
+
+- Linux runtime `361ac7ba9d6a18c26de4487ab424d6500fbbeafd` adds a test-only barrier immediately
+  after the synchronized same-directory temporary export and before the final non-overwriting
+  move. The parent test terminates the child and requires the destination to be absent while the
+  durable temporary bytes remain inspectable.
+- Linux packaging/status head `07f7fe52c63091e2283430c7326626076d474932` pins Flatpak to the
+  runtime commit and documents the boundary. Local formatting, locked all-target/test checks,
+  strict Clippy, 163 demo-provider tests with three documented ignores, localization audits,
+  l10n synchronization, Flatpak metadata, and diff checks passed; the host GTK linker limitation
+  remains confined to the focused display-backed binary.
+- Final push Native/Flatpak/Foundation runs `30037048659`/`30037048738`/`30037048273` and PR
+  Native/Flatpak/Foundation runs `30037051790`/`30037051767`/`30037051905` passed. Native
+  explicitly reported `Run GTK interrupted export writer fixture` successful. PR #1 remains
+  Draft/Open, Issue #1 remains Open, and release status remains `unreleased`.
+
 ## 2026-07-23 — Linux local-export durability barriers
 
 Assumption: the Linux checkpoint provides bounded best-effort crash durability for local export

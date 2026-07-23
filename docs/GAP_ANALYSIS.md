@@ -6,6 +6,17 @@ Status: Linux-first prerelease audit, 2026-07-23. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The latest Linux-first export checkpoint adds runtime/test commit
+`361ac7ba9d6a18c26de4487ab424d6500fbbeafd` and packaging/status head
+`07f7fe52c63091e2283430c7326626076d474932`. A serialized GTK child-process fixture is killed
+after its same-directory temporary file is synchronized and before final move; the final
+destination remains absent while the durable temporary bytes remain intact. Local checks pass,
+and final push Native/Flatpak/Foundation `30037048659`/`30037048738`/`30037048273` plus PR
+`30037051790`/`30037051767`/`30037051905` all pass, with Native explicitly completing the new
+fixture. This remains bounded process/crash-durability evidence: physical power-loss recovery,
+alternate VFS behavior, other clients, human review, signing, rollback, and stable authorization
+remain open.
+
 The current Linux-first local-export durability checkpoint adds runtime `cf4246c24e087de870adae4878379512cbaf2b8a`
 and packaging/documentation head `9085ed2f8a3acf39f24930ca2dcf98567427c80f`. Local filesystem
 exports sync temporary file bytes before the non-overwriting move and sync the destination
