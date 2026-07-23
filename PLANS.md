@@ -32,6 +32,16 @@ Assumption: Planned files and commands are not evidence until they exist and com
   `29992795496`/`29992795837`/`29992795547` and `29992800736`/`29992800675`/`29992800292` passed.
   Other clients, live accounting, human review, signing, rollback, and stable release remain open.
 
+- [x] Implement and verify the Linux-first persistent glossary-library slice. Core
+  `1bd150b3063b6471dbf8a279db1fccb03d2c916c` adds schema 33 normalized `glossaries` and
+  `glossary_terms` storage with bounded IDs, atomic replacement, revalidated reads, and cascading
+  deletion. Linux `cc74e61` adds worker save/list/delete commands and restart/delete coverage;
+  packaging/status head `35fea77` aligns the Flatpak source pin. Core CI/Fuzz/Native SDK
+  `29995295648`/`29995295576`/`29995295577` and Linux Push/PR Native, Flatpak, Foundation
+  `29996102525`/`29996102475`/`29996102477` and `29996105093`/`29996105285`/`29996105371`
+  passed. GTK library selection, TBX import, other clients, signing, rollback, and stable release
+  remain open.
+
 - [x] Refresh the Linux usage-persistence documentation head. Linux `c4966caa37213225c52e7b0ee8a357c5e85becd7`
   passed push Native/Flatpak/Foundation `29993630277`/`29993630247`/`29993631103` and PR
   `29993633187`/`29993633058`/`29993633663`; all six PR checks pass and the functional release pin

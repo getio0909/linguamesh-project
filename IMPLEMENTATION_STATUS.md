@@ -2,6 +2,21 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux persistent glossary-library vertical slice
+
+Assumption: bounded Core-owned glossary storage plus a Linux worker CRUD path is the smallest
+complete persistence slice; a GTK library selector and TBX import remain separate requirements.
+
+- Core `1bd150b3063b6471dbf8a279db1fccb03d2c916c` adds schema 33 normalized `glossaries` and
+  `glossary_terms` tables, 32-library and validated-ID bounds, atomic term replacement, revalidated
+  reads, cascading deletion, and no credential/endpoint storage. Linux `cc74e61` exposes save/list/
+  delete commands and the restart/delete worker regression; packaging/status head is `35fea77`.
+- Local Core workspace tests and strict Clippy passed; Linux demo-provider tests passed (`159
+  passed; 3 ignored`) and strict Clippy passed. Core CI/Fuzz/Native SDK
+  `29995295648`/`29995295576`/`29995295577` passed. Linux Push Native/Flatpak/Foundation
+  `29996102525`/`29996102475`/`29996102477` and PR Native/Flatpak/Foundation
+  `29996105093`/`29996105285`/`29996105371` passed. Release remains `unreleased`.
+
 ## 2026-07-23 — Linux normalized usage-record persistence
 
 Assumption: usage metadata is safe to retain only as bounded, non-secret accounting metadata; the
