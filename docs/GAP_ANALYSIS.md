@@ -14,6 +14,14 @@ central Issue #1. No merge or stable promotion is authorized; Linux remains the 
 the release stays `unreleased` while cross-client, human, signing, rollback, and stable-release
 boundaries remain open.
 
+The latest Linux automation audit re-ran the four mTLS cases, the 166-test library suite, all
+localization/Clippy/Flatpak/workspace checks, and the Secret Service prompt/persistence fixtures
+successfully. Display-backed Secret Service execution remains host-limited by missing `xvfb-run`,
+and the document portal cannot mount its FUSE path under this unprivileged session. The available
+GNOME SDK image lacks Rust/Cargo, so it is not a drop-in replacement for the pinned build. These
+are recorded as unavailable evidence; no deterministic Linux implementation gap was inferred and
+no stable-release claim was made.
+
 The latest Linux-first mTLS client-authentication checkpoint adds runtime/test
 `7513d983011fdd81374cfb879b23647aef388f7e`, source-pin `deffb80df01cb9f6c76a8b46e0ad725080e07ea6`,
 and final status head `597ccc961f9530836f8cef4c9a12a64b5c0a311c`. A temporary endpoint with a

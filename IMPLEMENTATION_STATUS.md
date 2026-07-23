@@ -15,6 +15,25 @@ Last updated: 2026-07-23
 - Central GitHub triage documentation commit `c5bbe3520a73feacbc43c9d94a05b136dc20a3d2` passed
   coordination workflow `30053066918`; Linux and PowerShell validation jobs completed successfully.
 
+## 2026-07-23 — Linux automation boundary audit
+
+Assumption: missing local GUI/portal dependencies are evidence limitations, not successful test
+results; remote Native CI remains authoritative for display-backed Linux execution.
+
+- The current mTLS fixture was re-run with four exact passing cases. The Linux library suite passed
+  `166 passed; 0 failed; 7 ignored`; formatting, strict Clippy, localization audits, Flatpak
+  metadata, and central workspace validation passed.
+- Secret Service prompted store/delete cases and persistent store/restart checks passed locally.
+  The full display-backed Secret Service runner stopped because `xvfb-run` is not installed; the
+  document-portal runner failed when the host denied the `/run/user/1000/doc` FUSE mount. No GUI,
+  portal, or physical-desktop success is inferred from those failures.
+- The available GNOME SDK container has `xvfb-run` and `flatpak-builder` but no Rust/Cargo, so it
+  cannot reproduce the pinned Linux build without a toolchain change. No host packages were
+  installed and no project code was changed by this audit.
+- Current plan/gap review finds no additional deterministic Linux slice ready within the user's
+  Linux-first scope; live-provider, human/physical, other-client, signing, rollback, and stable
+  release evidence remain open. Release stays `unreleased`.
+
 ## 2026-07-23 — GitHub PR and Issue triage refresh
 
 Assumption: completed check runs and authenticated review metadata are sufficient for repository

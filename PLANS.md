@@ -22,6 +22,27 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux automation boundary audit
+
+Assumption: the current Linux plan and gap matrix are authoritative for deciding whether another
+headless slice is still automatable; missing host dependencies must remain explicit failures.
+
+- [x] Re-run the current mTLS client-certificate fixture: all four exact cases passed once; the
+  Linux library suite passed `166 passed; 0 failed; 7 ignored`; formatting, Clippy, localization,
+  Flatpak metadata, and workspace checks passed.
+- [x] Re-run Secret Service coverage: prompted store/delete approval and dismissal cases passed;
+  persistent store/restart checks passed. The complete display-backed runner stopped at the missing
+  local `xvfb-run` command, and the document-portal runner could not mount `/run/user/1000/doc`
+  because this host denied the FUSE mount.
+- [x] Audit the Linux gap matrix and open PRs: Linux PR #1 and macOS PR #1 have no reviews or
+  unresolved threads; remaining Linux gaps are human/physical, live-provider, signing, rollback,
+  or release-authorization boundaries rather than an unimplemented deterministic Linux slice.
+- [x] Check the available GNOME SDK container: it provides `xvfb-run` and `flatpak-builder` but
+  not Rust/Cargo, so it cannot be substituted for the pinned Linux build without changing the
+  toolchain. No dependency installation or claim of local GTK execution was made.
+- [ ] Keep the release `unreleased` and continue only with authorized cross-client or external
+  qualification work when its required environment and scope are available.
+
 ## 2026-07-23 — GitHub PR and Issue triage refresh
 
 Assumption: authenticated connector metadata and completed check runs are authoritative for review
