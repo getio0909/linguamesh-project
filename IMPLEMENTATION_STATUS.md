@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux GTK glossary-library selector and localized resources
+
+Assumption: Linux remains the active implementation scope; a bounded GTK selector is the smallest
+complete client slice for Core schema 33, while TBX and other-client parity remain open.
+
+- Core schema 33 remains pinned at `1bd150b3063b6471dbf8a279db1fccb03d2c916c`. Linux worker/UI
+  implementation is `cb17d52254db03614929db38228c5f482716f6c0`; packaging/source-pin head is
+  `e21629584394fb313c8af8bc95d1fb6ddf885508`. The GTK workspace now saves, lists, loads, and
+  deletes bounded glossary libraries through the Core-owned validation path.
+- Localization `c4173bf52a5f44ebcf387de2d5dc6fcccc07338e` supplies 492 canonical messages, including
+  twelve Linux glossary-library labels, tooltips, dialog strings, and empty-state copy. Linux
+  resources are synchronized and the Native workflow pins this exact l10n revision.
+- Local Linux `cargo test --features demo-provider --lib --locked -- --nocapture` passed `160
+  passed; 0 failed; 3 ignored`; strict Clippy, format, sync, Flatpak metadata, and diff checks
+  passed. l10n `make check` passed all 26 tests, generation, bundle, and Foundation validation.
+- Final Linux push and PR Native/Flatpak/Foundation gates all passed: `29999190331`, `29999193186`,
+  `29999193181`, `29999190239`, `29999193188`, and `29999190245`. PR #1 remains Draft/Open and
+  release remains `unreleased`; TBX import, other clients, manual accessibility review, signing,
+  rollback, and stable release evidence remain open.
+
 ## 2026-07-23 — Linux persistent glossary-library vertical slice
 
 Assumption: bounded Core-owned glossary storage plus a Linux worker CRUD path is the smallest

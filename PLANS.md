@@ -22,6 +22,20 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-23 — Linux GTK glossary-library selector checkpoint
+
+Assumption: the request-level glossary editor remains authoritative; the new GTK selector is a
+bounded Linux client surface over Core schema 33, and TBX/cross-client parity remain separate work.
+
+- [x] Complete the Linux glossary-library UI and localization slice. Core is pinned to
+  `1bd150b3063b6471dbf8a279db1fccb03d2c916c`; Linux UI/worker `cb17d52254db03614929db38228c5f482716f6c0`,
+  packaging head `e21629584394fb313c8af8bc95d1fb6ddf885508`, and l10n `c4173bf52a5f44ebcf387de2d5dc6fcccc07338e`
+  (492 messages). Local Linux tests (`160 passed; 3 ignored`), strict Clippy, l10n `make check`,
+  synchronization, and Flatpak metadata passed. Final push/PR Native, Flatpak, and Foundation
+  gates `29999190331`/`29999193186`/`29999193181` and `29999190239`/`29999193188`/`29999190245`
+  passed. TBX import, other clients, human accessibility review, signing, rollback, and stable
+  release remain open; release stays `unreleased`.
+
 ## Progress
 
 - [x] Implement and verify Linux-first normalized usage-record persistence. Core `e48d1040a992b2fd3daaa27af2ae6bd700b25fc5`
