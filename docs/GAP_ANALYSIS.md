@@ -8,11 +8,11 @@ Android, Windows, and macOS evidence must still be completed before a stable rel
 
 The latest Linux-first export checkpoint adds runtime/test commit
 `361ac7ba9d6a18c26de4487ab424d6500fbbeafd` and packaging/status head
-`07f7fe52c63091e2283430c7326626076d474932`. A serialized GTK child-process fixture is killed
+`71b6fa34d536ec5753160ad270b507bd9fffa518`. A serialized GTK child-process fixture is killed
 after its same-directory temporary file is synchronized and before final move; the final
 destination remains absent while the durable temporary bytes remain intact. Local checks pass,
-and final push Native/Flatpak/Foundation `30037048659`/`30037048738`/`30037048273` plus PR
-`30037051790`/`30037051767`/`30037051905` all pass, with Native explicitly completing the new
+and final status-head push Native/Flatpak/Foundation `30037853956`/`30037853881`/`30037853988` plus PR
+`30037855907`/`30037855888`/`30037855890` all pass, with Native explicitly completing the new
 fixture. This remains bounded process/crash-durability evidence: physical power-loss recovery,
 alternate VFS behavior, other clients, human review, signing, rollback, and stable authorization
 remain open.

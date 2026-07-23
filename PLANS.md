@@ -31,11 +31,11 @@ recovery remain unverified.
 - [x] Add Linux runtime/test commit `361ac7ba9d6a18c26de4487ab424d6500fbbeafd`; the child-process
   fixture kills the writer before the final move and verifies no final destination appears while
   the synced `.linguamesh-export-*` bytes remain intact.
-- [x] Pin Linux packaging/docs at `07f7fe52c63091e2283430c7326626076d474932`; local formatting,
+- [x] Pin Linux packaging/docs at `71b6fa34d536ec5753160ad270b507bd9fffa518`; local formatting,
   locked checks, strict Clippy, 163 demo-provider tests with three documented ignores, and
   Flatpak metadata/diff validation passed. The host GTK linker limitation remains documented.
-- [x] Pass final push Native/Flatpak/Foundation `30037048659`/`30037048738`/`30037048273` and
-  PR Native/Flatpak/Foundation `30037051790`/`30037051767`/`30037051905`; Native explicitly
+- [x] Pass final status-head push Native/Flatpak/Foundation `30037853956`/`30037853881`/`30037853988` and
+  PR Native/Flatpak/Foundation `30037855907`/`30037855888`/`30037855890`; Native explicitly
   completed the interrupted export fixture. Keep PR #1 Draft/Open, Issue #1 Open, and release
   status `unreleased`.
 
