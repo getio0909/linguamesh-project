@@ -18,6 +18,8 @@ without being persisted; real proxy and certificate interoperability remains a s
   Foundation `30043522421`/`30043522574`/`30043521477` and PR Native/Flatpak/Foundation
   `30043524643`/`30043524550`/`30043524574`. Native completed the existing display-backed GTK suite.
 - PR #1 remains Draft/Open, Issue #1 remains Open, and release status remains `unreleased`.
+- Central coordination commit `d9325f37e6f0b9fdca78c3b6c5f00af43523c41f` passed workflow
+  `30043737660` with the Linux and PowerShell validation jobs successful.
 
 This strengthens Linux secret-boundary evidence without claiming live proxy or certificate
 interoperability, interactive prompt approval, human visual review, other-client parity, signed
