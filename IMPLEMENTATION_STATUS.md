@@ -2,6 +2,20 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux demo-provider regression rerun
+
+Assumption: the current Linux documentation head is the authoritative target for this portable
+regression; environment-gated GUI, OCR, storage-fault, and third-party-daemon fixtures remain
+separately evidenced and are not inferred from this suite.
+
+- Linux documentation/status `40091f78f1aca3b13f1f8efda11d359e00fe97ae` passed
+  `cargo test --features demo-provider --lib --locked -- --nocapture`: 159 passed, 0 failed, and
+  3 ignored (OCR, third-party Ollama, and private storage-fault runners).
+- The same head passed Linux Native, Flatpak, and Repository Foundation workflow dispatch runs
+  `29988891946`, `29988892002`, and `29988891951` respectively.
+- This is a documentation-only Linux checkpoint; the functional release-manifest pin remains
+  unchanged, the Linux PR remains Draft/Open, and release status stays `unreleased`.
+
 ## 2026-07-23 — Current Core/Linux regression rerun
 
 Assumption: the exact commands run against the currently pinned Core and Linux checkouts are the

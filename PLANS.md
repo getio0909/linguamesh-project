@@ -32,6 +32,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
   tools/check-workspace.sh` and `git diff --check` passed. Earlier 227-test evidence is retained as
   historical checkpoint data; no functional pin or release-manifest value changed.
 
+- [x] Re-run the current Linux `demo-provider` library suite after the documentation checkpoint.
+  Linux status head `40091f78f1aca3b13f1f8efda11d359e00fe97ae` passed 159 tests with 3 explicit
+  environment-gated ignores and no failures; Native/Flatpak/Foundation workflow dispatch runs
+  `29988891946`/`29988892002`/`29988891951` all passed. This is portable Linux evidence only; no
+  stable or cross-client claim is made.
+
 - [x] Refresh the Linux/Core crash-recovery evidence at the approved heads. Core
   `2f91f313025b189df237294485fd47bafc1f1f53` passed the focused WAL child-abort regression and the
   locked workspace suite (`227 passed`); Linux runtime `04478701e3b0192cc7f90228c47badd9f6bb2d2b`
