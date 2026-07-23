@@ -17,6 +17,11 @@ power loss or every alternate SQLite VFS.
   1 ignored`), with the only ignore requiring separately installed `pdftoppm`, `tesseract`, and an
   explicit OCR fixture. Existing remote Native/Flatpak/Foundation gates for this head remain green
   (`29984727975`/`29984727998`/`29984727932` push and `29984730138`/`29984730127`/`29984730117` PR).
+- The same Linux checkout passed `cargo fmt --all --check`, GUI `cargo check`, strict Clippy,
+  `cargo-deny check` (advisories, bans, licenses, and sources), localization synchronization against
+  l10n `552d87e88a8df42055b1ac76e4dfbaadca92e291`, the 436-key/537-placeholder/visible-string
+  audits, and Flatpak metadata validation. The l10n sibling worktree itself remains on its user's
+  clean `main` branch and was not modified.
 - This refresh strengthens reproducible process-crash evidence only. Physical power-loss and
   alternate-VFS behavior, cross-client parity, human review, signing, rollback, and stable-release
   authorization remain open; release stays `unreleased`.
