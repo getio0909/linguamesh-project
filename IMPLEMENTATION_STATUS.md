@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-23
 
+## 2026-07-23 — Linux client-certificate TLS identity checkpoint
+
+Assumption: Linux is the active client scope; mutual-TLS material is handled as one bounded
+combined PEM identity behind a persistent or session `SecretRef`, never as a profile value.
+
+- Core `2a3534faa9a2531cbbc6cc06d325ad7c82c69394` adds schema 31 identity-reference storage,
+  bounded certificate/private-key parsing with redacted diagnostics, one-shot host-broker
+  resolution, and reqwest rustls identity wiring across Chat/Responses/Azure, Anthropic, Gemini,
+  and Ollama while preserving system roots and TLS verification.
+- l10n `552d87e88a8df42055b1ac76e4dfbaadca92e291` adds source revision 59 and the 480-message
+  generated Linux bundle. Linux `b4bd13c1ec778e62ef466b7fa9d106de87731f29` adds masked GTK
+  capture/clear, Secret Service or session-only handling, restore semantics, and exact pins.
+- Local Core workspace tests/strict Clippy/secret-pattern scan, Linux 162-test demo-provider
+  suite (159 passed, 3 ignored), strict Clippy, GUI check, l10n checks/audits/sync, and Flatpak
+  metadata validation passed. Core CI/Fuzz/Native SDK `29978060455`/`29978060459`/`29978060500`,
+  l10n `29977582751`/`29977582767`, and Linux push Native/Flatpak/Foundation
+  `29978367171`/`29978367181`/`29978367167` plus PR
+  `29978368905`/`29978368870`/`29978368862` are the exact remote gates for this checkpoint;
+  release remains `unreleased`.
+
 ## 2026-07-23 — Linux provider proxy authentication SecretRef settings
 
 Assumption: Linux is the active client scope; proxy URLs remain credential-free and proxy

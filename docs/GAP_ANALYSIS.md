@@ -14,7 +14,7 @@ Android, Windows, and macOS evidence must still be completed before a stable rel
 | 1 — Core vertical slice | Verified Core CLI, fake streaming, cancellation, ABI/protocol, storage, tests, and CI | Stable-release conformance and cross-client consumers |
 | 2 — SDK artifacts | Prerelease Linux, Android, Apple artifacts and ABI 1 wrappers are CI-verified; Core ABI 1 now projects bounded provider metadata | Windows/Android/Apple host-service conformance, lease transfer, signed artifacts |
 | 3 — Native clients | Linux GTK slice is substantially verified; Android and macOS are partial; Windows is foundation-only | Real provider/secret/model/translation flows on all four clients, device and desktop evidence |
-| 4–5 — Providers and quality | Linux catalog, local models, routing, fallback, glossary, chunking, history, memory, presets, bounded proxy transport settings and SecretRef authentication, bounded total/connection/streaming-idle timeout settings, and additive custom PEM trust bundles have deterministic evidence | Cross-client parity, live-provider interoperability, client-certificate TLS policy, provider-specific semantics |
+| 4–5 — Providers and quality | Linux catalog, local models, routing, fallback, glossary, chunking, history, memory, presets, bounded proxy transport settings and SecretRef authentication, bounded total/connection/streaming-idle timeout settings, additive custom PEM trust bundles, and client-certificate SecretRef identities have deterministic evidence | Cross-client parity, live-provider interoperability, provider-specific semantics |
 | 6 — Documents | Linux supports the bounded TXT/Markdown/HTML/JSON/CSV/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF slice | Native document workflows on the other clients and broader format acceptance |
 | 7 — Localization/accessibility | Generated packs, runtime switching, RTL, pseudo-locales, keyboard and headless AT-SPI/Orca checks exist | Qualified translation review, human screen-reader/visual review, other-client checks |
 | 8 — Hardening/release | Fuzzing, sanitizers, migrations, parser limits, checksums, SBOMs, and performance evidence exist | Physical VFS/power-loss evidence, signing, rollback rehearsal, stable release authorization |
@@ -30,7 +30,7 @@ is intentionally `unreleased` and contains no stable artifacts.
 
 ## Next executable gates
 
-1. Keep the Linux PR and central issue synchronized with the latest verified heads, including the proxy-authentication, proxy-settings, timeout, and custom-trust-bundle checkpoints.
+1. Keep the Linux PR and central issue synchronized with the latest verified heads, including the proxy-authentication, proxy-settings, timeout, custom-trust-bundle, and client-certificate identity checkpoints.
 2. Do not promote any prerelease evidence to a stable component or release artifact.
 3. When the Linux-first scope is released by the user, implement the next native-client
    conformance slice and repeat the same Core/l10n/manifest/CI evidence loop.
