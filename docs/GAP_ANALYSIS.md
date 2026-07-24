@@ -46,6 +46,11 @@ Linux worker commit `c03c7e2065c1a0f74f6326d9e5071ee3cbde6299` and Flatpak sourc
 and Foundation `30058395669`. The Native gate completed all GTK, accessibility, portal, mTLS,
 build, performance, checksum, and SBOM steps; Flatpak completed its sandbox smoke.
 
+The central release manifest now points `[components.linux].source_revision` at the same verified
+Linux head `1c513e2e52236fce03a60548dbcab242c6878bed`; central commit
+`ae9dcee854dc74af0cf8414850145de39be11057` passed coordination workflow `30059016853` on Linux
+and PowerShell. This synchronization does not change the `unreleased` posture.
+
 The 2026-07-23 GitHub triage refresh confirms Linux PR #1 and macOS PR #1 are both Draft/Open and
 mergeable with their current checks successful, and neither has submitted reviews or unresolved
 inline threads. macOS Native `29765906044` and Foundation `29765906715`/`29765904969` passed;

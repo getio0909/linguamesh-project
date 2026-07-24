@@ -72,6 +72,19 @@ toolchain, and container capability failures remain unverified rather than passi
 - [ ] Keep release `unreleased`; human/physical review, live providers, other clients, signing,
   rollback, and stable-release authorization remain open.
 
+## 2026-07-24 — Linux release-manifest synchronization
+
+Assumption: the verified Linux branch head is the source revision for the prerelease component,
+while the release train remains unreleased until every cross-client and qualification gate passes.
+
+- [x] Align `[components.linux].source_revision` with verified Linux head
+  `1c513e2e52236fce03a60548dbcab242c6878bed`; the previous `597ccc...` pin was stale.
+- [x] Run `bash tools/check-workspace.sh` and push central commit `ae9dcee854dc74af0cf8414850145de39be11057`;
+  coordination workflow `30059016853` passed Linux job `89376633187` and PowerShell job
+  `89376633215`.
+- [ ] Keep the release `unreleased`; no stable artifact or client merge is authorized by this
+  manifest-only synchronization.
+
 ## 2026-07-23 — Linux automation boundary audit
 
 Assumption: the current Linux plan and gap matrix are authoritative for deciding whether another

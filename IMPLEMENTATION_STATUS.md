@@ -61,6 +61,17 @@ Assumption: this is disposable Debian trixie evidence with Rust 1.93.1 (the repo
 - Central GitHub triage documentation commit `c5bbe3520a73feacbc43c9d94a05b136dc20a3d2` passed
   coordination workflow `30053066918`; Linux and PowerShell validation jobs completed successfully.
 
+## 2026-07-24 — Linux release-manifest synchronization
+
+Assumption: the Linux prerelease component must point at the exact verified branch head; this does
+not constitute a stable-release decision.
+
+- Corrected `[components.linux].source_revision` from stale `597ccc961f9530836f8cef4c9a12a64b5c0a311c`
+  to verified head `1c513e2e52236fce03a60548dbcab242c6878bed`.
+- `bash tools/check-workspace.sh` passed all manifest, link, and credential-hygiene checks.
+- Central commit `ae9dcee854dc74af0cf8414850145de39be11057` passed coordination workflow
+  `30059016853` (Linux `89376633187`, PowerShell `89376633215`). Release remains `unreleased`.
+
 ## 2026-07-23 — Linux automation boundary audit
 
 Assumption: missing local GUI/portal dependencies are evidence limitations, not successful test
