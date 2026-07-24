@@ -35,8 +35,8 @@ user-selected output directories remain outside its scope.
   cargo-deny checks. The focused GUI binary test is compiled but local GTK linking is blocked by
   the host runtime; Native CI remains authoritative for display-backed execution.
 - [x] Push Linux functional commit `1547485795e75c8b1a0fcffb16ef1b72f0374496`, workflow l10n-pin
-  correction `7ce5c60`, localization-test completion `e15f19b`, and final status/Flatpak pin commit
-  `f1ab65f`; update central component
+  correction `7ce5c60`, localization-test completion `e15f19b`, and consolidated status/Flatpak pin
+  commit `e12ecf3`; update central component
   pins while keeping release `unreleased`.
 - [x] Complete hosted push/PR checks, re-audit PR #1 and Issue #1, and record final evidence
   comments PR `5068303923` and Issue `5068305127`; pin-complete checks passed under runs
