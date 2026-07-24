@@ -11,12 +11,12 @@ and must not be promoted without the acceptance and authorization gates listed b
 
 | Component | Version | Source revision |
 | --- | --- | --- |
-| Core | `0.1.0-alpha.2` | `900b0a90113b75dd0f49e535900b9af8e75ef0f3` |
+| Core | `0.1.0-alpha.2` | `f5b818c3598d78e7cac30604577fa8057d380737` |
 | Localization | `0.1.0` | `c2526bfb3f6ff57895bdc3eeed743e26c8783613` |
 | Android | `0.1.0-alpha.1` | `afe7a566bac77a16243f70295d17a4d9cab1151f` |
 | Windows | `0.0.0-dev` | `unreleased` |
 | macOS | `0.1.0-alpha.1` | `cad822c69dcf1ad20f8cab2151f407866a577420` |
-| Linux | `0.1.0-alpha.2` | `4f4472ee9ef5ceef821301f4b2af71f54372174d` |
+| Linux | `0.1.0-alpha.2` | `4612827d0ce78b9629fbbc24853677e18ee9d0a1` |
 
 Contracts: ABI major `1`, protocol schema `0.1.0`, provider catalog `0.1.0`, and localization
 schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
@@ -32,6 +32,15 @@ completed the GTK/portal/Wayland/Orca gates and Flatpak sandbox smoke, and passe
 validation. These remain CI artifacts, not signed releases.
 
 ## Validation evidence
+
+- Current Linux-first VFS checkpoint uses Core `f5b818c3598d78e7cac30604577fa8057d380737` and
+  Linux `4612827d0ce78b9629fbbc24853677e18ee9d0a1`. Core's `unix-none` regression fails closed
+  before migrations with no schema tables; local storage tests report `59 passed; 0 failed`, and
+  the full Core check, Clippy, tests, build, and cargo-deny validation passed. Core CI/Fuzz/ASAN/
+  Native SDK runs `30070685571`/`30070685557`/`30070685594` passed. Linux local validation passed
+  localization, Flatpak, formatting, checks, Clippy, no-default (`85 passed; 1 ignored`), and
+  demo-provider (`166 passed; 7 ignored`) suites; push and PR Native/Flatpak/Foundation runs
+  `30071367773`/`30071367788`/`30071367816` and `30071369693`/`30071369679`/`30071369672` passed.
 
 - Host-pinned Rust 1.93.0 Core check passed with `cargo check --workspace --locked --offline`.
 - Core FFI ASAN smokes passed locally: valid loopback commands completed 136 time-bounded

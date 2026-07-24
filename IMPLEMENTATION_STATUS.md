@@ -2,6 +2,28 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux-first Core `unix-none` rejection and GitHub triage
+
+Assumption: Core `f5b818c3598d78e7cac30604577fa8057d380737` preserves ABI 1 and Linux application
+contracts while adding a Linux-only fail-closed regression for the bundled non-locking VFS; the
+Linux docs/status head `4612827d0ce78b9629fbbc24853677e18ee9d0a1` changes no runtime code.
+
+- Core's `unix-none` test rejects the VFS before migrations when required WAL cannot be enabled and
+  confirms that the rejected database has zero schema tables. The focused storage test and full
+  Rust 1.93.0 fmt/check/strict-Clippy/workspace-test/build/cargo-deny validation passed; storage
+  reports `59 passed; 0 failed`.
+- Core push CI, Fuzz/ASAN, and Native SDK runs `30070685571`, `30070685557`, and `30070685594`
+  passed all jobs.
+- Linux consumes the exact Core pin in Native/Flatpak/docs/release inputs. Local localization,
+  Flatpak, formatting, locked checks, strict Clippy, no-default tests (`85 passed; 1 ignored`),
+  and demo-provider tests (`166 passed; 7 ignored`) passed.
+- Linux push Native/Flatpak/Foundation runs `30071367773`/`30071367788`/`30071367816` and PR
+  runs `30071369693`/`30071369679`/`30071369672` passed. PR #1 remains Draft/Open/mergeable with
+  no submitted reviews or unresolved inline threads; Issue #1 remains Open.
+- Release remains `unreleased`. Custom/third-party VFS, physical power-loss, cross-client parity,
+  live-provider qualification, human/physical review, signing, rollback, and stable-release
+  evidence remain open.
+
 ## 2026-07-24 — Current-tree Linux/Core revalidation
 
 Assumption: this is reproducibility evidence for the published Linux-first heads, not a new

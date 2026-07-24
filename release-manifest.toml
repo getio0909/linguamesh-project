@@ -3,7 +3,7 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
-  "Linux-first 2026-07-24 bundled-VFS evidence is verified at Core `900b0a90113b75dd0f49e535900b9af8e75ef0f3`: the Linux-only storage regressions exercise SQLite's `unix-excl` VFS with `SQLITE_OPEN_NOFOLLOW`, while the bundled `unix-dotfile` probe fails closed before migrations when required WAL cannot be enabled. Core local storage tests report `58 passed; 0 failed`; Core CI/Fuzz/ASAN/Native SDK `30069351232`/`30069351157`/`30069351240` and Linux head `4f4472ee9ef5ceef821301f4b2af71f54372174d` push/PR Native, Flatpak, and Foundation workflows `30069403841`/`30069403823`/`30069403845` and `30069406482`/`30069406504`/`30069406492` all passed. Custom/third-party VFS, physical power-loss, cross-client, signing, rollback, and stable-release evidence remain open; status stays `unreleased`.",
+  "Linux-first 2026-07-24 bundled-VFS evidence is verified at Core `f5b818c3598d78e7cac30604577fa8057d380737`: the Linux-only storage regression rejects the bundled non-locking `unix-none` VFS before migrations when required WAL cannot be enabled and leaves zero schema tables. Core local storage tests report `59 passed; 0 failed`; Core CI/Fuzz/ASAN/Native SDK `30070685571`/`30070685557`/`30070685594` and Linux head `4612827d0ce78b9629fbbc24853677e18ee9d0a1` push/PR Native, Flatpak, and Foundation workflows `30071367773`/`30071367788`/`30071367816` and `30071369693`/`30071369679`/`30071369672` all passed. Custom/third-party VFS, physical power-loss, cross-client, signing, rollback, and stable-release evidence remain open; status stays `unreleased`.",
   "Core ABI 1 handle-lifetime hardening is pinned at `b54ab4ab7ebcd3a439678ead9c0af1e6b5c5dae8`: the process-local registry uses monotonic opaque tokens and Arc state references so stale, forged, repeated, and concurrent-destroy handles fail closed without dereferencing freed memory. Fuzz/ASAN run `30064410428` job `89392449201`, stable Core CI `30064410443`, and Native SDK `30064410436` passed; the new `ffi_handles` target completed the remote 2,000-iteration/30-second gate. Cross-client parity, live providers, human/physical review, signing, rollback, and stable-release gates remain open; status stays `unreleased`.",
   "Linux-first 2026-07-24 Core handle-lifetime pin synchronization is recorded at Linux `42efabc3746c405136f347de4206e2cc5a13dc98` with Core `b54ab4ab7ebcd3a439678ead9c0af1e6b5c5dae8` and l10n `c2526bfb3f6ff57895bdc3eeed743e26c8783613` consumed immutably. Local Linux checks passed (`85 passed; 0 failed; 1 ignored` and `166 passed; 0 failed; 7 ignored`); Native Clippy remains unavailable locally because GTK development packages are absent. Linux push Native/Flatpak/Foundation `30064750977`/`30064750908`/`30064750909` and Draft PR `30064752313`/`30064752315`/`30064752308` all passed (jobs `89393416764`/`89393416385`/`89393416668` and `89393420520`/`89393420543`/`89393420481`). GTK/accessibility/portal/Wayland/Orca, Flatpak sandbox, checksums, SBOM, and performance evidence remain prerelease evidence; human/physical review, live providers, other clients, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux-first 2026-07-24 runtime evidence is recorded at central docs/status head `5ec26d1047ba032d8b5d3876ecd5343f3f1804de`: privileged document-portal and ENOSPC storage fixtures passed; Ubuntu 24.04 AT-SPI passed for en/zh-CN/ar/en-XA/ar-XB; Native Flatpak run `30052187036` produced bundle checksum `a01177a9a1a3d84ac8e3de0cc509305f71494307134281ce42882a0e40e2dc02`, an SPDX 2.3 SBOM with 234 packages, and GNOME 49 sandbox smoke passed; Ollama `ollama/ollama:0.11.10` with `smollm:135m` passed warm-start interoperability without a credential after a cold five-second timeout. Exact Rust 1.93.0 build, cold-start performance, human/physical review, other clients, signing, rollback, and stable release remain open; status stays `unreleased`.",
@@ -140,7 +140,7 @@ localization_schema_version = "1.0.0"
 [components.core]
 repository = "linguamesh-core"
 version = "0.1.0-alpha.2"
-source_revision = "900b0a90113b75dd0f49e535900b9af8e75ef0f3"
+source_revision = "f5b818c3598d78e7cac30604577fa8057d380737"
 minimum_compatible_version = "0.1.0-alpha.2"
 artifacts = []
 
@@ -175,6 +175,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "4f4472ee9ef5ceef821301f4b2af71f54372174d"
+source_revision = "4612827d0ce78b9629fbbc24853677e18ee9d0a1"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

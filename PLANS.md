@@ -22,6 +22,25 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux-first Core `unix-none` rejection and GitHub triage
+
+Assumption: Core `f5b818c3598d78e7cac30604577fa8057d380737` preserves ABI 1 and Linux application
+contracts while rejecting the bundled non-locking `unix-none` VFS before migrations; the Linux
+docs-only head `4612827d0ce78b9629fbbc24853677e18ee9d0a1` does not alter runtime behavior.
+
+- [x] Complete Core local Rust 1.93.0 fmt/check/strict-Clippy/workspace-test/build/cargo-deny
+  validation; storage reports `59 passed; 0 failed` and the focused `unix-none` regression passes.
+- [x] Push Core and pass CI/Fuzz/ASAN/Native SDK `30070685571`/`30070685557`/`30070685594`.
+- [x] Repin Linux documentation, Flatpak, and release inputs to Core `f5b818c…`; local
+  localization, metadata, format, check, Clippy, no-default (`85 passed; 1 ignored`), and
+  demo-provider (`166 passed; 7 ignored`) validation passes.
+- [x] Pass Linux push/PR Native, Flatpak, and Foundation gates
+  `30071367773`/`30071367788`/`30071367816` and `30071369693`/`30071369679`/`30071369672`.
+- [x] Refresh Linux PR #1 and central Issue #1 evidence; retain Draft/Open and Open states and
+  keep the release `unreleased`.
+- [ ] Keep custom/third-party VFS, physical power-loss, cross-client parity, human/physical
+  review, signing, rollback authorization, and stable-release acceptance open.
+
 ## 2026-07-24 — Current-tree Linux/Core revalidation
 
 Assumption: a fresh offline revalidation of the already reviewed heads strengthens reproducibility

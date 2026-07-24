@@ -3,6 +3,22 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux/Core checkpoint
+
+Assumption: Core `f5b818c3598d78e7cac30604577fa8057d380737` preserves ABI 1 and Linux application
+contracts while rejecting the bundled non-locking `unix-none` VFS before migrations; Linux
+`4612827d0ce78b9629fbbc24853677e18ee9d0a1` is a documentation/status-only descendant.
+
+The focused Core regression rejects the unsupported VFS with a persistence error and leaves zero
+SQLite schema tables. Core local storage reports `59 passed; 0 failed`; full fmt, check, strict
+Clippy, workspace tests, build, and cargo-deny pass. Core CI/Fuzz/ASAN/Native SDK
+`30070685571`/`30070685557`/`30070685594` pass. Linux local localization, Flatpak, formatting,
+locked checks, Clippy, no-default (`85 passed; 1 ignored`), and demo-provider (`166 passed; 7
+ignored`) validation pass; push/PR Native, Flatpak, and Foundation runs
+`30071367773`/`30071367788`/`30071367816` and `30071369693`/`30071369679`/`30071369672` pass.
+Custom/third-party VFS, physical power-loss, cross-client, live-provider, human/physical, signing,
+rollback, and stable-release evidence remain open; release stays `unreleased`.
+
 The current-tree revalidation passed without changing source or dependency pins: Core's pinned
 Rust 1.93.0 fmt/check/strict-Clippy/workspace-test set is green, and Linux's localization audits,
 Flatpak metadata, formatting, all-target check, strict Clippy, no-default suite (`85 passed; 1
