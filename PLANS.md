@@ -22,6 +22,16 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux CI evidence documentation head
+
+Assumption: Linux `26c88b0` changes only status wording after the corrected Core pin was verified at
+`dfe30a2`; the runtime and compatibility pins remain unchanged.
+
+- [x] Record the corrected dfe30a2 push/PR Native, Flatpak, and Foundation evidence.
+- [ ] Finish the documentation-only descendant workflow set
+  `30078731326`/`30078731415`/`30078731405` and `30078727061`/`30078727008`/`30078727028`.
+- [ ] Keep release `unreleased` until all required platform and stable-release evidence exists.
+
 ## 2026-07-24 — Linux Native CI Core pin alignment
 
 Assumption: Native CI must check out the approved Core revision used by the runtime and release

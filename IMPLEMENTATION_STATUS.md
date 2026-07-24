@@ -2,6 +2,20 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux CI evidence documentation head
+
+Assumption: `26c88b026a9cf0de1ab585de979a0e2576df805c` is a documentation-only descendant of the
+verified Linux CI pin correction; it does not change runtime code or the approved Core revision.
+
+- Linux status head `26c88b026a9cf0de1ab585de979a0e2576df805c` records the corrected Native CI
+  evidence. The preceding corrected head `dfe30a2618311a820451a4748e2acff49ffd2b93` passed push
+  Native/Flatpak/Foundation `30078310878`/`30078310868`/`30078310871` and PR
+  Native/Flatpak/Foundation `30078307212`/`30078307159`/`30078307167`.
+- Documentation-only descendant checks are push Native/Flatpak/Foundation
+  `30078731326`/`30078731415`/`30078731405` and PR Native/Flatpak/Foundation
+  `30078727061`/`30078727008`/`30078727028`; Native/Flatpak were still running when recorded.
+- Release remains `unreleased`; this status-only head does not promote a stable artifact.
+
 ## 2026-07-24 — Linux Native CI Core pin alignment
 
 Assumption: Linux Native CI must consume the same immutable Core `77c6bf426ace65c6bd960120b253e10e59a70a13`

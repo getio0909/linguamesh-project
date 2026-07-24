@@ -5,6 +5,15 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 
 ## Latest Linux/Core checkpoint
 
+### Linux CI evidence documentation head
+
+Linux status head `26c88b026a9cf0de1ab585de979a0e2576df805c` is documentation-only after corrected
+Core pin head `dfe30a2618311a820451a4748e2acff49ffd2b93` passed push/PR Native, Flatpak, and Foundation
+runs `30078310878`/`30078310868`/`30078310871` and `30078307212`/`30078307159`/`30078307167`.
+Its own push runs `30078731326`/`30078731415`/`30078731405` and PR runs
+`30078727061`/`30078727008`/`30078727028` were still running when recorded; no runtime claim is
+based on those pending checks. Release remains `unreleased`.
+
 ### Linux Native CI Core pin alignment
 
 Linux head `dfe30a2618311a820451a4748e2acff49ffd2b93` corrects `.github/workflows/native.yml` to
