@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — GitHub PR and Issue triage refresh
+
+Assumption: GitHub's authenticated review state is authoritative for PR/Issue status, while the
+local release manifest remains authoritative for the unreleased release posture.
+
+- Linux PR #1 body and triage comment now identify head
+  `42efabc3746c405136f347de4206e2cc5a13dc98`, Core `b54ab4ab7ebcd3a439678ead9c0af1e6b5c5dae8`,
+  and push/PR Native, Flatpak, and Foundation runs
+  `30064750977`/`30064750908`/`30064750909` and
+  `30064752313`/`30064752315`/`30064752308`.
+- `gh` verification shows PR #1 is Draft/Open/mergeable with no submitted reviews or unresolved
+  inline threads. Central Issue #1 remains Open; no merge, stable promotion, or release action was
+  taken.
+- Central triage comment records commit `2f28203cd4c259b75116155f772cc0230004809f` and coordination
+  workflow `30065621622`, which passed Linux and PowerShell validation. The release remains
+  `unreleased`; cross-client, live-provider, human/physical, signing, rollback, and stable-release
+  evidence remain open.
+
 ## 2026-07-24 — Central Linux source-pin consistency follow-up
 
 Assumption: Linux `42efabc3746c405136f347de4206e2cc5a13dc98` is the current reviewed source head;

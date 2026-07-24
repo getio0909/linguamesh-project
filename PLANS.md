@@ -22,6 +22,20 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — GitHub PR and Issue triage refresh
+
+Assumption: the authenticated GitHub state is authoritative for review status, while the
+repository release posture remains governed by the local manifest and required acceptance gates.
+
+- [x] Refresh Linux PR #1 to head `42efabc3746c405136f347de4206e2cc5a13dc98`, Core
+  `b54ab4ab7ebcd3a439678ead9c0af1e6b5c5dae8`, and the latest green push/PR gate evidence.
+- [x] Confirm PR #1 is Draft/Open/mergeable with no submitted reviews or unresolved inline threads;
+  keep Issue #1 Open and the release `unreleased`.
+- [x] Post current triage comments to Linux PR #1 and central Issue #1, including central commit
+  `2f28203cd4c259b75116155f772cc0230004809f` and workflow `30065621622`.
+- [ ] Keep cross-client parity, live-provider interoperability, human/physical review, signing,
+  rollback authorization, and stable-release acceptance open.
+
 ## 2026-07-24 — Central Linux source-pin consistency follow-up
 
 Assumption: the current Linux branch head `42efabc3746c405136f347de4206e2cc5a13dc98` is the
