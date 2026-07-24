@@ -55,6 +55,8 @@ run `30058395669` passed repository validation. These remain CI artifacts, not s
   the rehearsal does not modify its manifest or repository fixture.
 - Core FFI manifest synchronization commit `adab809ed7d265aac85e7cd53393d5b9ba0dfdef` passed
   coordination workflow `30060907288` (Linux `89382183919`, PowerShell `89382183959`).
+- Final Core pin synchronization commit `62085d82b4aa2fe7efd3e635e1f2868c9e66bf8d` passed
+  coordination workflow `30061527364` (Linux `89383965632`, PowerShell `89383965670`).
 
 ## Acceptance scenarios
 

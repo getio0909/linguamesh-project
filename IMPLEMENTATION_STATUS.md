@@ -15,8 +15,9 @@ arbitrary raw-engine-pointer use-after-free, cross-client parity, signed artifac
 authorization, and stable release remain open.
 
 Central commit `adab809ed7d265aac85e7cd53393d5b9ba0dfdef` passed coordination workflow
-`30060907288` with Linux job `89382183919` and PowerShell job `89382183959`; this checkpoint's
-follow-up synchronization is validated after the Core pin update below.
+`30060907288` with Linux job `89382183919` and PowerShell job `89382183959`. Final Core pin
+synchronization commit `62085d82b4aa2fe7efd3e635e1f2868c9e66bf8d` passed workflow `30061527364`
+with Linux job `89383965632` and PowerShell job `89383965670`.
 
 ## 2026-07-24 — Core storage durability regression
 

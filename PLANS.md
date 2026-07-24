@@ -35,6 +35,8 @@ commands, forged raw handles, cross-client parity, and release qualification req
   four jobs.
 - [x] Pin central commit `adab809ed7d265aac85e7cd53393d5b9ba0dfdef`; coordination workflow
   `30060907288` passed Linux `89382183919` and PowerShell `89382183959`.
+- [x] Synchronize the final Core pin in central commit `62085d82b4aa2fe7efd3e635e1f2868c9e66bf8d`;
+  coordination workflow `30061527364` passed Linux `89383965632` and PowerShell `89383965670`.
 - [ ] Keep valid-command/raw-handle misuse fuzzing, signing, production rollback authorization,
   physical/alternate-VFS recovery, and stable release authorization open.
 
