@@ -29,9 +29,9 @@ git clone --depth=1 https://github.com/getio0909/linguamesh-project.git "$tmp_ro
 GITHUB_OWNER=getio0909 bash "$tmp_root/linguamesh-project/tools/bootstrap.sh"
 ```
 
-On 2026-07-21 this cloned all seven public repositories and passed strict workspace, goal-pin,
-manifest, documentation-link, and credential-signature validation. The temporary workspace must be
-removed after the check; it does not modify an existing checkout.
+On 2026-07-24 this cloned all seven public repositories and passed strict workspace, goal-pin,
+manifest, documentation-link, and credential-signature validation. The temporary workspace was
+removed after the check; it did not modify an existing checkout.
 
 ## Cross-repository evidence
 

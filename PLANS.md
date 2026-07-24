@@ -97,6 +97,17 @@ Linux-first checkpoint is a stable release.
 - [ ] Keep the record Draft and release status `unreleased` until all four native clients,
   physical/qualified human review, signing, rollback rehearsal, and stable authorization pass.
 
+## 2026-07-24 — Clean bootstrap acceptance rerun
+
+Assumption: a disposable clone of the public central repository and its seven canonical siblings
+is the appropriate evidence for Scenario 19; it must not alter any existing checkout.
+
+- [x] Run the documented `git clone --depth=1` plus `GITHUB_OWNER=getio0909 tools/bootstrap.sh`
+  flow in a temporary workspace. All seven repositories cloned and strict workspace, goal-pin,
+  manifest, documentation-link, and credential-signature checks passed.
+- [ ] Keep commercial credentials, stable publication, and unsupported platform execution outside
+  the default bootstrap acceptance path.
+
 ## 2026-07-23 — Linux automation boundary audit
 
 Assumption: the current Linux plan and gap matrix are authoritative for deciding whether another

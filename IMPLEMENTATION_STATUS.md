@@ -83,6 +83,13 @@ or stable publication was performed.
 - The record commit `6168bd5e067e6839aa35fd7f16ec1834809573b0` passed coordination workflow
   `30059285976` (Linux `89377421652`, PowerShell `89377421691`).
 
+## 2026-07-24 — Clean bootstrap acceptance rerun
+
+The documented clean-bootstrap command was rerun from a temporary workspace using a shallow clone
+of central `main` and `GITHUB_OWNER=getio0909`. All seven public canonical repositories cloned;
+strict workspace, global-goal pin, release-manifest, documentation-link, and credential-signature
+validation passed. The temporary workspace was removed and the existing checkouts were untouched.
+
 ## 2026-07-23 — Linux automation boundary audit
 
 Assumption: missing local GUI/portal dependencies are evidence limitations, not successful test

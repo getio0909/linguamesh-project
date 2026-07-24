@@ -35,6 +35,8 @@ run `30058395669` passed repository validation. These remain CI artifacts, not s
   checksum, and SBOM gates because this host lacks GTK4/Graphene development packages.
 - Central workflow `30059285976` passed Linux and PowerShell validation for the synchronized
   coordination documents and release manifest.
+- The documented clean-bootstrap flow cloned all seven public repositories in a disposable
+  workspace and passed strict workspace, goal-pin, manifest, link, and credential-signature checks.
 
 ## Acceptance scenarios
 

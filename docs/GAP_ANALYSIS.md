@@ -55,6 +55,11 @@ The Draft release-train record `docs/releases/bootstrap.md` now captures the sam
 contract versions, CI provenance, unsigned-artifact status, known limitations, and manifest-only
 rollback procedure. It is documentation evidence only; it does not close the stable-release gate.
 
+Scenario 19 was rerun from a temporary shallow clone of central `main`: the bootstrap script cloned
+all seven public canonical repositories and passed strict workspace, goal-pin, manifest, link, and
+credential-signature validation. This strengthens clean-bootstrap evidence without changing the
+existing checkouts or claiming unsupported platform builds.
+
 The 2026-07-23 GitHub triage refresh confirms Linux PR #1 and macOS PR #1 are both Draft/Open and
 mergeable with their current checks successful, and neither has submitted reviews or unresolved
 inline threads. macOS Native `29765906044` and Foundation `29765906715`/`29765904969` passed;
