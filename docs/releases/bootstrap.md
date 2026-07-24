@@ -11,7 +11,7 @@ and must not be promoted without the acceptance and authorization gates listed b
 
 | Component | Version | Source revision |
 | --- | --- | --- |
-| Core | `0.1.0-alpha.2` | `5e22931d5772231b0a8183cbf05ba0cbda0dfebf` |
+| Core | `0.1.0-alpha.2` | `b29067b78d420c96f57d670d3dd860cba3abc703` |
 | Localization | `0.1.0` | `c2526bfb3f6ff57895bdc3eeed743e26c8783613` |
 | Android | `0.1.0-alpha.1` | `afe7a566bac77a16243f70295d17a4d9cab1151f` |
 | Windows | `0.0.0-dev` | `unreleased` |
@@ -23,18 +23,19 @@ schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
 
 ## Artifact provenance and checksums
 
-No stable artifacts are published. Core Fuzz/ASAN run `30061241972` (job `89383142786`) passed
-protocol, document, bounded FFI input, and FFI lifecycle targets; Core CI `30061241968` and Native
-SDK run `30061241961` passed all four platform jobs. Linux Native run `30058395686` and Flatpak run `30058395689`
+No stable artifacts are published. Core Fuzz/ASAN run `30062160452` (job `89385804125`) passed
+protocol, document, bounded FFI input, FFI lifecycle, and valid loopback-command targets; Core CI
+`30062160464` and Native SDK run `30062161560` passed all four platform jobs. Linux Native run `30058395686` and Flatpak run `30058395689`
 generated and verified checksum/SBOM evidence and completed the Flatpak sandbox smoke; Foundation
 run `30058395669` passed repository validation. These remain CI artifacts, not signed releases.
 
 ## Validation evidence
 
 - Host-pinned Rust 1.93.0 Core check passed with `cargo check --workspace --locked --offline`.
-- Core FFI ASAN smokes passed 200 local runs with 299 and 2,326 coverage features and 29- and
-  47-file minimized corpora. The targets bound input at 1 MiB, skip valid translation envelopes,
-  cover safe lifecycle/control sequences, and assert controlled results without provider/network work.
+- Core FFI ASAN smokes passed locally: valid loopback commands completed 136 time-bounded
+  iterations with 10,653 coverage features and a 49-file corpus; malformed-input and lifecycle
+  targets passed 200 iterations each. The valid fixture uses no commercial credentials and does not
+  claim raw-pointer, live-provider, or cross-client coverage.
 - Host-pinned Rust 1.93.0 Core storage regression passed `55 passed; 0 failed` with
   `cargo +1.93.0 test -p linguamesh-storage --locked --offline`, covering WAL replay,
   abrupt-process recovery, busy-checkpoint retry, migrations, secure deletion, symlink rejection,
@@ -57,6 +58,9 @@ run `30058395669` passed repository validation. These remain CI artifacts, not s
   coordination workflow `30060907288` (Linux `89382183919`, PowerShell `89382183959`).
 - Final Core pin synchronization commit `62085d82b4aa2fe7efd3e635e1f2868c9e66bf8d` passed
   coordination workflow `30061527364` (Linux `89383965632`, PowerShell `89383965670`).
+- Core valid-command pin `b29067b78d420c96f57d670d3dd860cba3abc703` passed Core CI
+  `30062160464`, Fuzz/ASAN `30062160452`, and Native SDK `30062161560`; the central synchronization
+  commit and coordination result will be recorded after this manifest update.
 
 ## Acceptance scenarios
 

@@ -6,6 +6,14 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+Core commit `b29067b78d420c96f57d670d3dd860cba3abc703` adds a valid-command `ffi_commands` fuzz
+target backed by the loopback `FakeProviderServer`. Local pinned-nightly smoke completed 136
+time-bounded iterations with 10,653 coverage features and a 49-file corpus; the existing FFI input
+and lifecycle targets passed 200 iterations each. Core CI `30062160464`, Fuzz/ASAN `30062160452`,
+and Native SDK `30062161560` all passed, including Linux `89385808651`. This closes only the
+bounded loopback command path; raw-pointer use-after-free, live providers, cross-client parity,
+physical/alternate-VFS recovery, signing, rollback authorization, and stable release remain open.
+
 Core commit `5e22931d5772231b0a8183cbf05ba0cbda0dfebf` adds bounded C ABI `ffi_inputs` and
 `ffi_sequences` libFuzzer targets. Local pinned-nightly ASAN smokes passed 200 runs with 299 and
 2,326 coverage features and 29- and 47-file minimized corpora; Core CI `30061241968`, Fuzz/ASAN

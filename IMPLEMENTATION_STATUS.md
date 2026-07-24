@@ -2,6 +2,23 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Core valid-command FFI fuzz checkpoint
+
+Core commit `b29067b78d420c96f57d670d3dd860cba3abc703` adds `ffi_commands`, a bounded libFuzzer
+target that uses the loopback `FakeProviderServer` to submit valid ABI 1 `TranslateText` commands,
+free every event buffer, require exactly one terminal event, and destroy the engine. The fixture is
+credential-free and bounds source text and event polling; it is not live-provider or cross-client
+evidence.
+
+- Local pinned-nightly smoke completed without a crash after 136 time-bounded iterations, reaching
+  10,653 coverage features and a 49-file minimized corpus. The existing `ffi_inputs` and
+  `ffi_sequences` smokes also passed 200 iterations each; Core FFI tests passed 20/20.
+- Core CI `30062160464` Rust job `89385822201`, Fuzz/ASAN `30062160452` job `89385804125`, and
+  Native SDK `30062161560` Linux `89385808651`, Windows `89385808682`, Android `89385808659`,
+  and Apple `89385808696` jobs all passed. The central Core pin is updated in the release manifest.
+- Raw engine-pointer use-after-free, cross-client parity, signed artifacts, rollback authorization,
+  and stable release remain open; status stays `unreleased`.
+
 ## 2026-07-24 — Core FFI fuzz and sanitizer checkpoint
 
 Core commit `5e22931d5772231b0a8183cbf05ba0cbda0dfebf` adds bounded `ffi_inputs` and `ffi_sequences`
@@ -12,7 +29,8 @@ coverage features and 29- and 47-file minimized corpora. Core CI `30061241968`, 
 `30061241972` (job `89383142786`), and Native SDK `30061241961` (Windows `89383142743`, Android
 `89383142706`, Apple `89383142744`, Linux `89383142774`) all passed. Valid-command behavior,
 arbitrary raw-engine-pointer use-after-free, cross-client parity, signed artifacts, rollback
-authorization, and stable release remain open.
+authorization, and stable release remain open; valid-command evidence is tracked separately in the
+loopback-only checkpoint above.
 
 Central commit `adab809ed7d265aac85e7cd53393d5b9ba0dfdef` passed coordination workflow
 `30060907288` with Linux job `89382183919` and PowerShell job `89382183959`. Final Core pin

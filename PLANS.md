@@ -22,6 +22,22 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Core valid-command FFI fuzz checkpoint
+
+Assumption: the local `FakeProviderServer` is a deterministic loopback fixture; it proves the C ABI
+submit/event/buffer lifecycle without commercial credentials, live-provider behavior, or client parity.
+
+- [x] Add Core `ffi_commands` libFuzzer coverage for bounded valid `TranslateText` commands,
+  terminal-event uniqueness, buffer release, and engine destruction; retain its minimized corpus.
+- [x] Pass local pinned-nightly fuzz smokes: `ffi_commands` completed 136 time-bounded iterations
+  with 10,653 coverage features and 49 corpus files; `ffi_inputs` and `ffi_sequences` passed 200
+  iterations each. Core FFI unit tests passed 20/20 and locked/offline checks passed.
+- [x] Push Core `b29067b78d420c96f57d670d3dd860cba3abc703`; CI `30062160464`, Fuzz/ASAN
+  `30062160452`, and Native SDK `30062161560` all passed, including Linux, Windows, Android, and
+  Apple jobs. Update the central Core source pin after these results.
+- [ ] Keep raw engine-pointer use-after-free, cross-client parity, signing, production rollback
+  authorization, physical/alternate-VFS recovery, and stable release authorization open.
+
 ## 2026-07-24 — Core FFI fuzz and sanitizer checkpoint
 
 Assumption: malformed and unsupported C ABI inputs are the safe automated boundary; valid provider
@@ -37,8 +53,9 @@ commands, forged raw handles, cross-client parity, and release qualification req
   `30060907288` passed Linux `89382183919` and PowerShell `89382183959`.
 - [x] Synchronize the final Core pin in central commit `62085d82b4aa2fe7efd3e635e1f2868c9e66bf8d`;
   coordination workflow `30061527364` passed Linux `89383965632` and PowerShell `89383965670`.
-- [ ] Keep valid-command/raw-handle misuse fuzzing, signing, production rollback authorization,
-  physical/alternate-VFS recovery, and stable release authorization open.
+- [x] Move valid-command fuzzing to the separate loopback gate above.
+- [ ] Keep raw-handle misuse, signing, production rollback authorization, physical/alternate-VFS
+  recovery, and stable release authorization open.
 
 ## 2026-07-24 — Core storage durability regression
 
