@@ -22,6 +22,23 @@ release gates.
 - Release remains `unreleased`; custom VFS, physical power-loss, cross-client, human/physical,
   signing, rollback, and stable-release evidence remain open.
 
+## 2026-07-24 — Latest GitHub PR and Issue evidence
+
+Assumption: GitHub's authenticated review state is authoritative for the current Draft/Open review
+state, while the local release manifest remains authoritative for the unreleased posture.
+
+- Linux PR #1 and its latest evidence comment now identify head
+  `ab64b237f83f401389d5426e58eaadb092e12f17`, Core `fed6c138d398a69866512090ced3c4e062631c0d`,
+  and passing push/PR Native, Flatpak, and Foundation runs
+  `30067077382`/`30067077380`/`30067077394` and
+  `30067079180`/`30067079189`/`30067079182`.
+- `gh` verification confirms PR #1 is Draft/Open/mergeable with no submitted reviews or unresolved
+  inline threads. Central Issue #1 remains Open; no merge, stable promotion, or release action was
+  taken.
+- Central commit `c49c17f805e81d85b897aab327373259ba3e248e` passed coordination workflow
+  `30067475801` with Linux job `89401163179` and PowerShell job `89401163148`; matching comments
+  were posted to PR #1 and Issue #1. Release remains `unreleased`.
+
 ## 2026-07-24 — GitHub PR and Issue triage refresh
 
 Assumption: GitHub's authenticated review state is authoritative for PR/Issue status, while the

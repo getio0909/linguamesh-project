@@ -38,6 +38,21 @@ release gates.
 - [ ] Keep custom/third-party VFS, physical power-loss, cross-client parity, human/physical review,
   signing, rollback authorization, and stable-release acceptance open.
 
+## 2026-07-24 — Latest GitHub PR and Issue evidence
+
+Assumption: GitHub's authenticated review state is authoritative for the current Draft/Open review
+state; no merge or stable promotion is authorized by this checkpoint.
+
+- [x] Refresh Linux PR #1 to head `ab64b237f83f401389d5426e58eaadb092e12f17`, Core
+  `fed6c138d398a69866512090ced3c4e062631c0d`, and the six passing push/PR gate runs
+  `30067077382`/`30067077380`/`30067077394` and `30067079180`/`30067079189`/`30067079182`.
+- [x] Confirm PR #1 remains Draft/Open/mergeable with no submitted reviews or unresolved inline
+  threads; confirm Issue #1 remains Open and release status remains `unreleased`.
+- [x] Post the current evidence to Linux PR #1 and central Issue #1; central commit
+  `c49c17f805e81d85b897aab327373259ba3e248e` passed coordination workflow `30067475801`.
+- [ ] Keep cross-client parity, live-provider interoperability, human/physical review, signing,
+  rollback authorization, and stable-release acceptance open.
+
 ## 2026-07-24 — GitHub PR and Issue triage refresh
 
 Assumption: the authenticated GitHub state is authoritative for review status, while the
