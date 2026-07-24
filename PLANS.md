@@ -35,6 +35,8 @@ monotonic registry token; native callers still stop and join workers before dest
   including Fuzz job `89392449201` and Linux Native job `89392449213`.
 - [x] Repin Linux to `42efabc…`; push/PR Native, Flatpak, and Foundation runs
   `30064750977`/`30064750908`/`30064750909` and `30064752313`/`30064752315`/`30064752308` passed.
+- [x] Central commit `59c9cc4…` passed coordination workflow `30065102174` (Linux
+  `89394395492`, PowerShell `89394395538`).
 - [ ] Keep cross-client parity, human/physical review, signed artifacts, rollback authorization,
   and stable release authorization open.
 
