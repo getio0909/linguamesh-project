@@ -8,7 +8,7 @@ Assumption: Android may retain bounded non-secret provider-profile metadata in D
 generated Core wrapper exposes Core-owned profile persistence; credential bytes remain only in the
 Keystore-backed broker and are represented in DataStore by an opaque `secretRef`.
 
-- Android code head `df8320e1898981814fe3135bcd41024e5d2e006e` adds the DataStore repository, background
+- Android code head `535e4485ff555b04702c0390ca76428ff995d457` adds the DataStore repository, background
   restore and Core re-registration, active-profile persistence, duplicate/oversize filtering, and
   JVM coverage for restart-style restoration and the secret-reference-only boundary.
 - Local Foundation, l10n synchronization, debug/release builds, 18 debug and 18 release JVM tests,
@@ -17,9 +17,10 @@ Keystore-backed broker and are represented in DataStore by an opaque `secretRef`
   staged AAR remains prior-pin provenance and is not treated as a clean Core rebuild.
 - Android status head `4b2093bc94b8016c5eca721a18b5f049ac7330d8` records hosted workflow
   `30091714901`, which passed clean Core AAR provenance checks, debug/release builds, 18 JVM tests
-  per variant, instrumentation compilation, and debug/release lint. Its earlier superseded run
-  `30091670253` failed at the stale foundation l10n pin before build execution. Release remains
-  `unreleased`.
+  per variant, instrumentation compilation, and debug/release lint. The bounded-write follow-up is
+  hosted as run `30092613918`; the prior status-head run `30092193402` also passed. Its earlier
+  superseded run `30091670253` failed at the stale foundation l10n pin before build execution.
+  Release remains `unreleased`.
 - Central coordination workflow `30092269717` passed the synchronized manifest, compatibility,
   documentation, and credential-scan checks.
 - Core-owned persistence, device restoration, document/background workflows, real-provider

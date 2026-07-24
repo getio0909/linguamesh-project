@@ -158,7 +158,7 @@ artifacts = []
 [components.android]
 repository = "linguamesh-android"
 version = "0.1.0-alpha.1"
-source_revision = "4b2093bc94b8016c5eca721a18b5f049ac7330d8"
+source_revision = "535e4485ff555b04702c0390ca76428ff995d457"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []
 

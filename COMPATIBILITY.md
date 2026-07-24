@@ -6,12 +6,12 @@ Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19e
 
 ### Android persisted provider-profile metadata — 2026-07-24
 
-Android code head `df8320e1898981814fe3135bcd41024e5d2e006e` consumes Core ABI 1 and persists bounded
+Android code head `535e4485ff555b04702c0390ca76428ff995d457` consumes Core ABI 1 and persists bounded
 non-secret provider-profile metadata in DataStore, restoring and re-registering profiles at
 startup while keeping credentials in the Android Keystore broker. Local debug/release builds,
 18-test JVM suites, instrumentation compilation, l10n synchronization, Foundation checks, and
 lint pass; status head `4b2093bc94b8016c5eca721a18b5f049ac7330d8` records hosted validation
-`30091714901` as passed. This is an unreleased client
+`30091714901` as passed, and bounded-write follow-up run `30092613918` is in progress. This is an unreleased client
 checkpoint; Core-owned persistence, device restoration, document/background workflows, signing,
 and stable-release evidence remain open. Central coordination workflow `30092269717` passed the
 synchronized manifest, compatibility, documentation, and credential-scan checks.
