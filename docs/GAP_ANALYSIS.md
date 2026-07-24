@@ -1,10 +1,26 @@
 # LinguaMesh Completion Gap Analysis
 
-Status: Linux-first prerelease audit, 2026-07-23. This document complements
+Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
+
+The 2026-07-24 disposable Debian trixie checkpoint expands local Linux evidence without changing
+release posture. Under a non-root Xvfb/DBus session, the locked suite passed with library
+`168 passed; 0 failed; 16 ignored` and binary `30 passed; 0 failed; 21 ignored`; all 18 dedicated
+ignored GTK lifecycle fixtures passed. Notification transport and dunst delivery, file chooser,
+drag-and-drop, English/Arabic keyboard focus, headless Wayland, OCR, four mTLS cases, Secret
+Service prompt/persistence, performance baseline, and debug/optimized builds passed. The
+container used Rust 1.93.1 rather than the pinned 1.93.0 and mounted source read-only with named
+cache volumes, so this is bounded supplementary evidence.
+
+AT-SPI role inspection remains unverified on this Debian image: the bridge exported button names
+as `label` roles, although the Orca focus fixture passed. The document portal and storage-fault
+fixtures remain unverified because Docker lacks `/dev/fuse` and the required mount capability;
+Flatpak smoke still needs a produced bundle. These limitations do not justify a stable-release
+claim, and human/physical review, live providers, other clients, signing, rollback, and release
+authorization remain open.
 
 The 2026-07-23 GitHub triage refresh confirms Linux PR #1 and macOS PR #1 are both Draft/Open and
 mergeable with their current checks successful, and neither has submitted reviews or unresolved

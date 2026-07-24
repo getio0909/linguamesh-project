@@ -22,6 +22,33 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Containerized Linux validation checkpoint
+
+Assumption: the disposable Debian trixie container is bounded Linux evidence only; its Rust
+1.93.1 toolchain is compatible with, but does not replace, the repository's pinned 1.93.0
+toolchain, and container capability failures remain unverified rather than passing results.
+
+- [x] Run the locked all-target test suite as a non-root user under Xvfb/DBus: the library passed
+  `168 passed; 0 failed; 16 ignored` and the binary passed `30 passed; 0 failed; 21 ignored`.
+  All 18 dedicated ignored GTK lifecycle fixtures passed, including fallback approval, Secret
+  Service fallback, redacted authentication errors, offline recovery, provider switching,
+  cancellation, glossary/protected spans, incognito mode, document resume, atomic output, and
+  malicious archive rejection.
+- [x] Pass notification transport and dunst delivery, interactive file chooser, GTK file chooser,
+  drag-and-drop, English and Arabic keyboard focus, headless Wayland, OCR, four-case mTLS,
+  performance-baseline generation, debug build, and optimized release build (`2m 36s`).
+- [x] Re-run Secret Service persistence/prompt fixtures; store/delete, restart, locked-item, and
+  cleanup cases passed. The Debian container also passed the notification daemon desktop-shell
+  rendering fixture with generic, non-content payloads.
+- [ ] Keep AT-SPI role inspection explicitly unverified on this container: Debian trixie's GTK
+  bridge exposed the expected button names as `label` roles, while the Orca focus fixture passed.
+  Do not infer a product regression without reproducing on the pinned Ubuntu CI image.
+- [ ] Keep document-portal lease and storage-fault evidence open: Docker lacks `/dev/fuse` and
+  the mount namespace lacks the required capability. Flatpak smoke still requires a produced
+  bundle; no bundle was available for this checkpoint.
+- [ ] Keep release `unreleased`; human/physical review, live providers, other clients, signing,
+  rollback, and stable-release authorization remain open.
+
 ## 2026-07-23 — Linux automation boundary audit
 
 Assumption: the current Linux plan and gap matrix are authoritative for deciding whether another

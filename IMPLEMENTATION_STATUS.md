@@ -1,6 +1,28 @@
 # Implementation Status
 
-Last updated: 2026-07-23
+Last updated: 2026-07-24
+
+## 2026-07-24 — Containerized Linux validation checkpoint
+
+Assumption: this is disposable Debian trixie evidence with Rust 1.93.1 (the repository pins
+1.93.0); host and Ubuntu CI results remain authoritative for the exact pinned environment.
+
+- The non-root Xvfb/DBus run passed the locked all-target suite: library `168 passed; 0 failed;
+  16 ignored`, binary `30 passed; 0 failed; 21 ignored`. Eighteen dedicated ignored GTK
+  lifecycle fixtures passed, covering fallback approval, Secret Service fallback, redacted
+  authentication/offline recovery, provider switching, cancellation, glossary/protected spans,
+  incognito, document resume, atomic output, and malicious archive rejection.
+- Notification transport and dunst desktop-shell delivery, interactive and application file
+  chooser, drag-and-drop, English/Arabic keyboard focus, headless Wayland, OCR, four mTLS cases,
+  performance baseline, debug build, and optimized release build passed. Secret Service prompt,
+  persistence, restart, locked-item, and cleanup fixtures also passed.
+- The local AT-SPI role inspector is not claimed as passed: on Debian trixie the bridge exported
+  expected button names as `label` roles; the Orca focus fixture passed. This is an environment
+  difference to reproduce on the pinned Ubuntu CI image before changing product code.
+- Document-portal lease and storage-fault fixtures remain unverified because the container lacks
+  `/dev/fuse` and the mount capability. Flatpak smoke was not run because no bundle was available.
+  Release remains `unreleased`; human/physical, live-provider, cross-client, signing, rollback,
+  and stable-release evidence remain open.
 
 - Central coordination commit `7c4ffa8fe2fa77a24ae61635c9c130c65e22382b` passed workflow
   `30045831148`; Linux and PowerShell validation jobs completed successfully.
