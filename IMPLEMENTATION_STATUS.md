@@ -13,6 +13,9 @@ SDK `30060612972` (Windows `89381326909`, Android `89381326913`, Apple `89381326
 `89381326956`) all passed. Valid-command behavior, forged or stale raw-handle misuse, cross-client
 parity, signed artifacts, rollback authorization, and stable release remain open.
 
+Central commit `adab809ed7d265aac85e7cd53393d5b9ba0dfdef` passed coordination workflow
+`30060907288` with Linux job `89382183919` and PowerShell job `89382183959`.
+
 ## 2026-07-24 — Core storage durability regression
 
 The host-pinned Rust 1.93.0 command `cargo +1.93.0 test -p linguamesh-storage --locked --offline`

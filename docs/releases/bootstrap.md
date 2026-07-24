@@ -53,6 +53,8 @@ run `30058395669` passed repository validation. These remain CI artifacts, not s
 - The disposable-fixture regression `python3 tools/test-release-rollback.py` passed and is part of
   central workflow `30060144548` (Linux `89379970142`, PowerShell `89379970114`); it asserts that
   the rehearsal does not modify its manifest or repository fixture.
+- Core FFI manifest synchronization commit `adab809ed7d265aac85e7cd53393d5b9ba0dfdef` passed
+  coordination workflow `30060907288` (Linux `89382183919`, PowerShell `89382183959`).
 
 ## Acceptance scenarios
 
