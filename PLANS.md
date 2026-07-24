@@ -61,6 +61,21 @@ or human review gates.
   human/physical accessibility, signing, rollback authorization, and stable release acceptance
   open.
 
+## 2026-07-24 — Linux current-head security fixture recheck
+
+Assumption: isolated HTTPS and Secret Service fixtures are Linux prerelease evidence only; they
+cannot replace live enterprise interoperability, human prompt review, or display-backed keyring UI
+evidence.
+
+- [x] On status head `084ba10`, `bash tools/run-client-certificate-interop-test.sh` passed all
+  four client-certificate tests exactly once, covering trust success and three rejection paths.
+- [x] `bash tools/run-secret-service-prompt-test.sh` passed all four store/delete prompt
+  acceptance and dismissal tests exactly once. The persistent runner's library restart and worker
+  onboarding tests also passed before its GTK step stopped at missing `xvfb-run`.
+- [ ] Keep the display-backed Secret Service flow, live enterprise/provider qualification, human
+  prompt/accessibility review, other clients, signing, rollback authorization, and stable release
+  acceptance open.
+
 ## 2026-07-24 — Linux preset loopback default alignment
 
 Assumption: preset switching must recognize every Core-accepted HTTP loopback authority when the

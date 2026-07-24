@@ -3,6 +3,16 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux current-head security fixture recheck
+
+Linux status head `084ba101b07206aebd890258b3b61967eaf5fe15` passed all four client-certificate
+HTTPS interoperability tests exactly once and all four Secret Service prompt acceptance/dismissal
+tests exactly once. The persistent Secret Service runner also passed its library restart and worker
+onboarding tests before stopping at the host's missing `xvfb-run`; the display-backed Remember/
+clear-form flow remains unverified locally. These results strengthen Linux prerelease security
+evidence only; live enterprise/provider interoperability, human prompt/accessibility review, other
+clients, signing, rollback, and stable-release evidence remain open.
+
 ## Latest Linux environment-gated fixture recheck
 
 Linux status head `084ba101b07206aebd890258b3b61967eaf5fe15` (source/test head

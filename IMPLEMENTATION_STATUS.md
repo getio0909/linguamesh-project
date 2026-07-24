@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux current-head security fixture recheck
+
+Assumption: isolated HTTPS and Secret Service fixtures strengthen Linux prerelease evidence only;
+they do not replace live enterprise interoperability, human prompt review, or display-backed keyring
+UI evidence.
+
+- Linux status head `084ba101b07206aebd890258b3b61967eaf5fe15` passed
+  `bash tools/run-client-certificate-interop-test.sh` with all four HTTPS tests exactly once:
+  trusted client authentication plus untrusted-server, hostname-mismatch, and untrusted-client-CA
+  rejection.
+- `bash tools/run-secret-service-prompt-test.sh` passed all four store/delete acceptance and
+  dismissal tests exactly once. The persistent runner's library restart and worker onboarding tests
+  passed before the host stopped at missing `xvfb-run`; its GTK flow is not claimed locally.
+- Release remains `unreleased`; human prompt/accessibility review, live-provider qualification,
+  other clients, signing, rollback, and stable-release evidence remain open.
+
 ## 2026-07-24 — Linux environment-gated fixture recheck
 
 Assumption: the dedicated OCR and private-mount storage-fault runners are reproducible Linux
