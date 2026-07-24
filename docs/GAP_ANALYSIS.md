@@ -25,6 +25,14 @@ status audit found no additional deterministic Linux implementation slice within
 Linux-first scope. The remaining gaps are therefore cross-client, physical/manual, custom-VFS and
 power-loss, signing, rollback, and stable-release evidence; the release remains `unreleased`.
 
+The current host revalidation for Linux `4612827d0ce78b9629fbbc24853677e18ee9d0a1` and Core
+`f5b818c3598d78e7cac30604577fa8057d380737` passed localization, Flatpak metadata, formatting,
+locked checks, strict Clippy, cargo-deny, no-default tests (`85 passed; 1 ignored`), and
+demo-provider tests (`166 passed; 7 ignored`) plus the demo-provider build. Core storage has no
+source diff from the pinned runtime. Native GTK display execution remains CI-backed because the
+host lacks GTK development headers; this does not close the manual, physical, cross-client,
+signing, rollback, or stable-release gaps.
+
 Assumption: Core `f5b818c3598d78e7cac30604577fa8057d380737` preserves ABI 1 and Linux application
 contracts while rejecting the bundled non-locking `unix-none` VFS before migrations; Linux
 `4612827d0ce78b9629fbbc24853677e18ee9d0a1` is a documentation/status-only descendant.

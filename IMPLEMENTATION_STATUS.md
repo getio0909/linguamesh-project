@@ -31,6 +31,21 @@ Assumption: this is a current GitHub and local-scope audit, not a stable-release
   current authorized scope. Remaining gaps are cross-client, physical/manual, custom-VFS/power-loss,
   signing, rollback, and stable-release boundaries; release remains `unreleased`.
 
+## 2026-07-24 — Fresh Linux host revalidation
+
+Assumption: this is supplementary host evidence for unchanged Linux head
+`4612827d0ce78b9629fbbc24853677e18ee9d0a1` and Core runtime pin
+`f5b818c3598d78e7cac30604577fa8057d380737`; it does not claim a local GTK build.
+
+- Localization synchronization, the 460-key/source audit, visible-string audit, 578-placeholder
+  audit, Flatpak metadata validation, Rust 1.93.0 formatting, demo-provider all-target check,
+  `DOCS_RS=1` strict all-feature Clippy, and cargo-deny all passed.
+- Linux tests passed: no-default features `85 passed; 0 failed; 1 ignored`; demo-provider library
+  `166 passed; 0 failed; 7 ignored`; and the demo-provider build completed successfully.
+- Linux and Core worktrees were clean, and the Core storage tree had no source diff from the pinned
+  runtime. Native GTK display execution remains CI-backed because this host lacks GTK development
+  headers. Release remains `unreleased`.
+
 ## 2026-07-24 — Linux-first Core `unix-none` rejection and GitHub triage
 
 Assumption: Core `f5b818c3598d78e7cac30604577fa8057d380737` preserves ABI 1 and Linux application

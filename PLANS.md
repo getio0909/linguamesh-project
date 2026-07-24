@@ -54,6 +54,22 @@ this audit; Linux remains the only active implementation scope in the current us
 - [ ] Keep cross-client parity, physical/manual review, custom VFS and power-loss evidence, signing,
   rollback authorization, and stable-release acceptance open. Release remains `unreleased`.
 
+## 2026-07-24 — Fresh Linux host revalidation
+
+Assumption: this host run is supplementary evidence for unchanged Linux head
+`4612827d0ce78b9629fbbc24853677e18ee9d0a1` and Core runtime pin
+`f5b818c3598d78e7cac30604577fa8057d380737`; it does not replace display-backed CI evidence.
+
+- [x] Re-run localization synchronization, 460-key/source, visible-string, and 578-placeholder
+  audits, Flatpak metadata, Rust 1.93.0 formatting, demo-provider all-target check, strict
+  all-feature Clippy with `DOCS_RS=1`, and cargo-deny. All passed.
+- [x] Re-run Linux tests: no-default features `85 passed; 0 failed; 1 ignored`, demo-provider
+  library `166 passed; 0 failed; 7 ignored`, and the demo-provider build passed.
+- [x] Confirm Linux and Core worktrees are clean and Core storage has no source diff from the
+  pinned runtime revision.
+- [ ] Keep native GTK display execution, physical/manual review, cross-client parity, signing,
+  rollback authorization, and stable-release acceptance open.
+
 ## 2026-07-24 — Linux-first Core `unix-none` rejection and GitHub triage
 
 Assumption: Core `f5b818c3598d78e7cac30604577fa8057d380737` preserves ABI 1 and Linux application
