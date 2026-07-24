@@ -3,6 +3,19 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux-first current-tree validation audit
+
+The reviewed Linux head `e1a2ba9130a198212098e93276e5d16bdfec8e3b` was revalidated without source
+or manifest changes. Central workspace validation, Core offline checking, Linux formatting and
+strict Clippy, localization synchronization plus key/placeholder/visible-string audits, Flatpak
+metadata validation, and the demo-provider suite (`166 passed; 7 ignored`) passed. Linux PR #1 is
+still Draft/Open/mergeable with all six current-head push/PR gates green, and central coordination
+workflow `30118146404` passed for documentation commit `4b584289c658391e7a111fd6a6dfef3f8d256fd2`.
+
+This audit found no additional deterministic Linux gap. Manual/physical accessibility, live
+provider/quota behavior, cross-client parity, signing, rollback authorization, and stable-release
+evidence remain explicitly open; the release manifest remains `unreleased`.
+
 ## Latest Linux provider-form keyboard traversal completion
 
 Linux runtime source `195664199d1884c53940a4c78f2c15bd500ad8a3` now includes the optional

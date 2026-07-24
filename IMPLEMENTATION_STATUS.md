@@ -2,6 +2,27 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux-first current-tree validation audit
+
+Assumption: re-running the reviewed heads verifies reproducibility only; it is not a substitute
+for manual/physical accessibility review, live-provider quotas, other native clients, signing,
+rollback authorization, or stable-release evidence.
+
+- Central `bash tools/check-workspace.sh --require-repositories` passed workspace manifest, global
+  goal pin, release/compatibility, documentation links, credential scan, and canonical-layout
+  validation. `git diff --check` also passed.
+- Core `cargo check --workspace --locked --offline` passed. Linux head
+  `e1a2ba9130a198212098e93276e5d16bdfec8e3b` passed rustfmt, strict Clippy, localization sync,
+  key/placeholder/visible-string audits, Flatpak metadata validation, and the demo-provider suite
+  (`166 passed; 7 ignored`).
+- Linux PR #1 remains Draft/Open/mergeable with no review requests; its six Native, Flatpak, and
+  Foundation push/PR checks remain green (`30117422502`/`30117422386`/`30117422399` and
+  `30117426489`/`30117426644`/`30117426431`). Central coordination workflow `30118146404`
+  completed successfully after documentation commit `4b584289c658391e7a111fd6a6dfef3f8d256fd2`.
+- No source or workspace/release-manifest pin changed in this audit. The host still lacks the
+  display-backed GTK fixture dependencies; hosted Native remains authoritative for that boundary.
+  Release stays `unreleased` and no merge or stable promotion is claimed.
+
 ## 2026-07-24 — Linux provider-form keyboard traversal completion
 
 Assumption: every visible, enabled provider-form control must remain reachable through the

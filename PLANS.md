@@ -22,6 +22,25 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux-first current-tree validation audit
+
+Assumption: a clean revalidation of the reviewed Linux head is evidence that the existing
+automation remains reproducible, but it does not close manual, physical, cross-client, signing,
+rollback, or stable-release gates.
+
+- [x] Re-read the authoritative goal, repository instructions, and active plan; confirm all seven
+  canonical repositories and the authenticated GitHub owner without changing user work.
+- [x] Re-run central `bash tools/check-workspace.sh --require-repositories`: manifest, goal pin,
+  release/compatibility, documentation links, credential scan, and canonical layout all passed.
+- [x] Re-run Core `cargo check --workspace --locked --offline` and Linux formatting, strict Clippy,
+  localization synchronization/three audits, Flatpak metadata validation, and the demo-provider
+  suite (`166 passed; 7 ignored`).
+- [x] Confirm Linux PR #1 remains Draft/Open/mergeable with all six current-head checks green and
+  no review requests; central coordination workflow `30118146404` remains successful.
+- [ ] Keep the release `unreleased` and retain the documented manual/physical, live-provider,
+  cross-client, signing, rollback, and stable-release boundaries; no new deterministic Linux gap
+  was identified by this audit.
+
 ## 2026-07-24 — Linux provider-form keyboard traversal completion
 
 Assumption: every visible, enabled provider-form control must remain reachable through the
