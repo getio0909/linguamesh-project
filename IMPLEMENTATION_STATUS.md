@@ -35,8 +35,8 @@ state, while the local release manifest remains authoritative for the unreleased
 - `gh` verification confirms PR #1 is Draft/Open/mergeable with no submitted reviews or unresolved
   inline threads. Central Issue #1 remains Open; no merge, stable promotion, or release action was
   taken.
-- Central commit `c49c17f805e81d85b897aab327373259ba3e248e` passed coordination workflow
-  `30067475801` with Linux job `89401163179` and PowerShell job `89401163148`; matching comments
+- Central commit `df918971f0624a741f0d87058f473f64688bf00d` passed coordination workflow
+  `30068278673` with Linux job `89403448415` and PowerShell job `89403448370`; matching comments
   were posted to PR #1 and Issue #1. Release remains `unreleased`.
 
 ## 2026-07-24 — GitHub PR and Issue triage refresh

@@ -49,7 +49,7 @@ state; no merge or stable promotion is authorized by this checkpoint.
 - [x] Confirm PR #1 remains Draft/Open/mergeable with no submitted reviews or unresolved inline
   threads; confirm Issue #1 remains Open and release status remains `unreleased`.
 - [x] Post the current evidence to Linux PR #1 and central Issue #1; central commit
-  `c49c17f805e81d85b897aab327373259ba3e248e` passed coordination workflow `30067475801`.
+  `df918971f0624a741f0d87058f473f64688bf00d` passed coordination workflow `30068278673`.
 - [ ] Keep cross-client parity, live-provider interoperability, human/physical review, signing,
   rollback authorization, and stable-release acceptance open.
 
