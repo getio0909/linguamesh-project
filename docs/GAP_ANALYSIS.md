@@ -5,6 +5,21 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 
 ## Latest Linux/Core checkpoint
 
+### Explicit source-locale prompt and Linux pin
+
+Core `77c6bf426ace65c6bd960120b253e10e59a70a13` now forwards an optional explicit source locale
+as a bounded English hint to every built-in provider adapter, while omitted source locale remains
+auto-detect. Prompt and translation-memory identity are v3. Linux
+`b8bbfa865a0a9c1199c88ad88c15e9a3d490e5a2` updates report metadata and the Flatpak source pin.
+Core local fmt/check/strict-Clippy/tests/build/cargo-deny and Linux localization, metadata,
+formatting, check, Clippy, no-default (`85 passed; 1 ignored`), and demo-provider
+(`166 passed; 7 ignored`) validation passed. Core CI/Fuzz/Native SDK
+`30073841816`/`30073841796`/`30073841790` and Linux push/PR Native, Flatpak, and Foundation
+`30074447292`/`30074447281`/`30074447301` and `30074449163`/`30074449164`/`30074449176`
+passed. PR #1 remains Draft/Open/mergeable with no reviews; Issue #1 remains Open. Cross-client,
+live-provider, custom-VFS/power-loss, manual/physical, signing, rollback, and stable-release
+evidence remain gaps, so the release stays `unreleased`.
+
 ### Core ABI status reconciliation
 
 Core `3397eafb4a4a23cfbedb8d0b0c8b086dd34f5d6a` corrects a stale status entry without changing
@@ -25,8 +40,8 @@ status audit found no additional deterministic Linux implementation slice within
 Linux-first scope. The remaining gaps are therefore cross-client, physical/manual, custom-VFS and
 power-loss, signing, rollback, and stable-release evidence; the release remains `unreleased`.
 
-The current host revalidation for Linux `4612827d0ce78b9629fbbc24853677e18ee9d0a1` and Core
-`f5b818c3598d78e7cac30604577fa8057d380737` passed localization, Flatpak metadata, formatting,
+The current host revalidation for Linux `b8bbfa865a0a9c1199c88ad88c15e9a3d490e5a2` and Core
+`77c6bf426ace65c6bd960120b253e10e59a70a13` passed localization, Flatpak metadata, formatting,
 locked checks, strict Clippy, cargo-deny, no-default tests (`85 passed; 1 ignored`), and
 demo-provider tests (`166 passed; 7 ignored`) plus the demo-provider build. Core storage has no
 source diff from the pinned runtime. Native GTK display execution remains CI-backed because the

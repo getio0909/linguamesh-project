@@ -22,6 +22,24 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Core explicit source-locale prompt and Linux pin
+
+Assumption: Core `77c6bf426ace65c6bd960120b253e10e59a70a13` keeps ABI 1 and Linux compatibility;
+an explicit source locale becomes a bounded English provider hint, while `None` keeps auto-detect.
+Linux `b8bbfa865a0a9c1199c88ad88c15e9a3d490e5a2` carries the matching report and Flatpak pin.
+
+- [x] Implement and test prompt propagation through all built-in Core adapters; bump prompt and
+  translation-memory identity to v3. Core local fmt/check/strict-Clippy/tests/build/cargo-deny pass.
+- [x] Repin Linux docs, report metadata, Flatpak, and central release inputs; local localization,
+  metadata, formatting, checks, Clippy, no-default, and demo-provider validation pass.
+- [x] Pass Core CI/Fuzz/Native SDK `30073841816`/`30073841796`/`30073841790` and Linux push/PR
+  Native/Flatpak/Foundation `30074447292`/`30074447281`/`30074447301` and
+  `30074449163`/`30074449164`/`30074449176`.
+- [x] Audit PR #1 and Issue #1: PR remains Draft/Open/mergeable with no reviews and Issue remains
+  Open. Synchronize central manifests and evidence, then retain the `unreleased` release status.
+- [ ] Keep cross-client parity, live-provider, custom/third-party VFS, physical/manual review,
+  signing, rollback authorization, and stable-release acceptance open.
+
 ## 2026-07-24 — Core ABI status reconciliation
 
 Assumption: Core `3397eafb4a4a23cfbedb8d0b0c8b086dd34f5d6a` is a documentation-only correction on top

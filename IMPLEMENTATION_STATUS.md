@@ -2,6 +2,27 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Explicit source-locale prompt and Linux pin
+
+Assumption: Core `77c6bf426ace65c6bd960120b253e10e59a70a13` preserves ABI 1 and Linux contracts
+while making an explicitly supplied source locale an English provider prompt hint; `None` remains
+auto-detect. Linux `b8bbfa865a0a9c1199c88ad88c15e9a3d490e5a2` is the matching report and Flatpak
+source-pin update.
+
+- Core forwards the optional source locale through all built-in adapters, bumps the prompt identity
+  to v3, and updates translation-memory identity. Rust 1.93.0 fmt, locked offline check, strict
+  all-feature Clippy, workspace tests, build, and cargo-deny all passed; storage reported
+  `59 passed; 0 failed`.
+- Core CI/Fuzz/Native SDK `30073841816`/`30073841796`/`30073841790` passed. Linux localization,
+  visible-string, placeholder, Flatpak, formatting, check, Clippy, no-default (`85 passed; 0 failed;
+  1 ignored`), demo-provider (`166 passed; 0 failed; 7 ignored`), build, and cargo-deny checks passed.
+- Linux push Native/Flatpak/Foundation `30074447292`/`30074447281`/`30074447301` and PR
+  `30074449163`/`30074449164`/`30074449176` passed, including the rerun after the initial hosted
+  package-install stall. PR #1 is Draft/Open/mergeable with zero reviews; Issue #1 is Open.
+- Release remains `unreleased`. Cross-client parity, live-provider qualification, custom or
+  third-party VFS, physical power-loss, manual/physical review, signing, rollback, and stable
+  release evidence remain open.
+
 ## 2026-07-24 — Core ABI status reconciliation
 
 Assumption: Core `3397eafb4a4a23cfbedb8d0b0c8b086dd34f5d6a` changes status documentation only; Linux
