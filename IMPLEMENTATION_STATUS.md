@@ -14,7 +14,7 @@ release gates.
   open `unix-excl` with `SQLITE_OPEN_NOFOLLOW`, verify schema/WAL/profile recovery after reopen and
   child-process abort, and reject file and parent-path symbolic-link aliases. Host-pinned full workspace/storage tests
   passed, including `57 passed; 0 failed` for `linguamesh-storage`.
-- Core CI `30066150481`, Fuzz/ASAN `30066150469`, and Native SDK `30066150422` passed all jobs.
+- Core CI `30067774797`, Fuzz/ASAN `30067774823`, and Native SDK `30067774805` passed all jobs.
 - Linux `5904d2be68dee4ee8e02e137ba3c9ae9cf6568a4` consumes the Core pin. Local Linux audits,
   checks, and tests passed (`85 passed; 1 ignored` and `166 passed; 7 ignored`); push Native,
   Flatpak, Foundation `30067853996`/`30067853960`/`30067853957` and PR

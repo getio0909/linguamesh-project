@@ -57,8 +57,8 @@ validation. These remain CI artifacts, not signed releases.
   workflow `30065425740` passed Linux `89395294587` and PowerShell `89395294630`.
 - Core `01e228ca251252de331b285e5381cbb4fe0c30da` adds the Linux-only bundled `unix-excl` VFS
   storage migrations, file/parent-path symlink, and process-crash WAL-replay regressions. Host-pinned storage tests
-  passed `57 passed; 0 failed`; Core CI `30066150481`, Fuzz/ASAN `30066150469`, and Native SDK
-  `30066150422` all passed. Linux `5904d2be68dee4ee8e02e137ba3c9ae9cf6568a4` passed push
+  passed `57 passed; 0 failed`; Core CI `30067774797`, Fuzz/ASAN `30067774823`, and Native SDK
+  `30067774805` all passed. Linux `5904d2be68dee4ee8e02e137ba3c9ae9cf6568a4` passed push
   Native/Flatpak/Foundation `30067853996`/`30067853960`/`30067853957` and PR
   `30067852102`/`30067852064`/`30067852097`. This remains unsigned prerelease evidence; custom
   VFS, physical power-loss, signing, rollback, and stable-release evidence remain open.

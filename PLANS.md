@@ -31,7 +31,7 @@ release gates.
 - [x] Add Core's Linux-only `unix-excl` migration/WAL/profile-reopen, file/parent-path
   symlink-rejection, and process-crash WAL-replay regressions in
   `01e228ca251252de331b285e5381cbb4fe0c30da`; host-pinned storage tests pass `57/57`.
-- [x] Pass Core CI `30066150481`, Fuzz/ASAN `30066150469`, and Native SDK `30066150422`.
+- [x] Pass Core CI `30067774797`, Fuzz/ASAN `30067774823`, and Native SDK `30067774805`.
 - [x] Repin Linux docs, Flatpak, and release evidence to `5904d2be68dee4ee8e02e137ba3c9ae9cf6568a4`;
   push Native/Flatpak/Foundation `30067853996`/`30067853960`/`30067853957` and PR
   `30067852102`/`30067852064`/`30067852097` all pass.
