@@ -64,8 +64,11 @@ retains partial output, and never applies to document jobs, cancellation, authen
 or unapproved/session-only profiles; its focused worker test passes locally.
 The Linux keyboard fixture runs the real GTK binary under Xvfb with `xfwm4`, injects Tab/Shift+Tab,
 and asserts focus events for the tested onboarding/workspace controls. Provider fields are checked as
-enabled, mapped, and focusable, but their omission from the default Tab chain is recorded as an open
-Linux accessibility item.
+enabled, mapped, and focusable; the explicit provider order now includes the optional client-certificate
+identity and the non-mutating Test connection action. Final push/PR Native, Flatpak, and Foundation
+gates `30117422502`/`30117422386`/`30117422399` and `30117426489`/`30117426644`/`30117426431` passed
+the updated fixture, including the Arabic RTL run. Manual accessibility and physical desktop review
+remain separate gates.
 Central coordination run `29659286541` passed Linux validation job `88118991875` and PowerShell
 validation job `88118991823` after the approved-fallback manifest and compatibility updates.
 
