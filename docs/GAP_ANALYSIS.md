@@ -16,6 +16,17 @@ This audit found no additional deterministic Linux gap. Manual/physical accessib
 provider/quota behavior, cross-client parity, signing, rollback authorization, and stable-release
 evidence remain explicitly open; the release manifest remains `unreleased`.
 
+## Latest Core ABI host-secret documentation reconciliation
+
+Core documentation head `35c353f` corrects stale README and architecture statements: ABI 1 already
+implements `lm_engine_send_host_response` for the correlated, bounded, one-shot host-secret flow.
+The existing FFI regression covers the required event, response, replay rejection, and streamed
+loopback translation without persisting the secret. Core rustfmt, strict Clippy, all locked offline
+workspace tests, and locked offline build passed; the functional Core pin remains
+`9e69d01cbae1ca0421923e059aa3252c4ecbe1be`, so Linux behavior and release-manifest compatibility
+are unchanged. Generated typed projections, platform secure-storage integration, cross-client
+conformance, signing, rollback, and stable-release evidence remain open.
+
 ## Latest Linux provider-form keyboard traversal completion
 
 Linux runtime source `195664199d1884c53940a4c78f2c15bd500ad8a3` now includes the optional

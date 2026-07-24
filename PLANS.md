@@ -41,6 +41,24 @@ rollback, or stable-release gates.
   cross-client, signing, rollback, and stable-release boundaries; no new deterministic Linux gap
   was identified by this audit.
 
+## 2026-07-24 — Core ABI host-secret documentation reconciliation
+
+Assumption: the current Core ABI implementation and focused tests are authoritative for the
+one-shot host-secret boundary; a documentation-only descendant must not move the functional
+release pin or imply a stable release.
+
+- [x] Verify `lm_engine_send_host_response` and its correlated `secret_required`/one-shot response
+  flow in the current FFI implementation and existing protocol/FFI regressions.
+- [x] Correct Core README, architecture, and implementation-status text that incorrectly described
+  the C ABI host-secret projection as future work; generated typed projections and platform secure
+  storage remain separate boundaries.
+- [x] Pass Core rustfmt, strict Clippy, all locked offline workspace tests, and locked offline
+  workspace build; FFI (22), protocol (5), and storage (60) test groups passed.
+- [x] Push Core documentation head `35c353f` without changing ABI, protocol, Linux functional pin
+  `9e69d01cbae1ca0421923e059aa3252c4ecbe1be`, or release status.
+- [ ] Keep generated projections, cross-client conformance, signed artifacts, rollback
+  authorization, and stable-release evidence open.
+
 ## 2026-07-24 — Linux provider-form keyboard traversal completion
 
 Assumption: every visible, enabled provider-form control must remain reachable through the

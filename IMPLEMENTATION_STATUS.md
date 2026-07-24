@@ -23,6 +23,23 @@ rollback authorization, or stable-release evidence.
   display-backed GTK fixture dependencies; hosted Native remains authoritative for that boundary.
   Release stays `unreleased` and no merge or stable promotion is claimed.
 
+## 2026-07-24 — Core ABI host-secret documentation reconciliation
+
+Assumption: the reviewed Core FFI implementation and focused tests define the current one-shot
+host-secret boundary; this is a documentation-only descendant and does not alter the functional
+release pin.
+
+- Core documentation head `35c353f` now accurately describes the implemented
+  `lm_engine_send_host_response` path: correlated `secret_required`, bounded one-shot resolutions,
+  identity checks, replay/late rejection, and runtime-only secret handling.
+- Core rustfmt, strict Clippy, all locked offline workspace tests, and locked offline workspace
+  build passed. The FFI, protocol, and storage groups reported 22, 5, and 60 passing tests;
+  `ffi_host_secret_flow_emits_required_and_accepts_one_shot_response` passed.
+- Functional Core pin `9e69d01cbae1ca0421923e059aa3252c4ecbe1be`, Linux pins, ABI/protocol versions,
+  and release status were unchanged. Generated typed projections, platform secure-storage
+  integration, cross-client conformance, signed artifacts, rollback, and stable-release evidence
+  remain open.
+
 ## 2026-07-24 — Linux provider-form keyboard traversal completion
 
 Assumption: every visible, enabled provider-form control must remain reachable through the
