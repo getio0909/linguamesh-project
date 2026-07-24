@@ -32,6 +32,9 @@ retained as historical status evidence, not as the current release-manifest sour
   `42efabc3746c405136f347de4206e2cc5a13dc98`.
 - [x] Run workspace validation, commit `d17f47a9f85fce9583167560216ef333dd426247`, push, and
   verify coordination workflow `30065425740` (Linux `89395294587`, PowerShell `89395294630`).
+- [x] Reconcile the Milestone 8 gap summary in `dd3c25f866eaa79038eb52541d491863ca417626`; the
+  follow-up coordination workflow `30065568779` passed (Linux `89395725086`, PowerShell
+  `89395725114`).
 - [x] Keep PR #1 Draft/Open, Issue #1 Open, and release status `unreleased`.
 
 ## 2026-07-24 — Core ABI 1 handle-lifetime hardening

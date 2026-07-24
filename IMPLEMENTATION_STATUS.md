@@ -12,6 +12,9 @@ the earlier `4b592e7` commit remains historical status evidence only.
 - `bash tools/check-workspace.sh --require-repositories` and `git diff --check` passed locally.
 - Central commit `d17f47a9f85fce9583167560216ef333dd426247` passed coordination workflow
   `30065425740` with Linux job `89395294587` and PowerShell job `89395294630`.
+- The Milestone 8 gap summary was reconciled in central commit `dd3c25f866eaa79038eb52541d491863ca417626`
+  so valid-command and opaque-handle lifetime fuzzing are recorded as completed; follow-up workflow
+  `30065568779` passed Linux `89395725086` and PowerShell `89395725114`.
 - Linux PR #1 remains Draft/Open/mergeable and Issue #1 remains Open; release status remains
   `unreleased`.
 
