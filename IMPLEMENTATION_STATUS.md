@@ -15,6 +15,8 @@ without depending on Linux VFS behavior.
   passed debug/release assembly, 19 JVM tests per variant, instrumentation compilation, and
   debug/release lint. Release remains `unreleased` because device, document, signing, rollback,
   and distribution evidence is incomplete.
+- Central coordination workflow `30100580395` passed Linux and PowerShell manifest, compatibility,
+  documentation-link, and credential-scan validation for this synchronized checkpoint.
 - Android Foundation and l10n checks plus local debug checks passed; local release compilation is
   not treated as exact-pin provenance because the ignored staged AAR predates this rebuild.
 

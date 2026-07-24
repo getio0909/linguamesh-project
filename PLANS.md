@@ -32,6 +32,8 @@ behavior.
 - [x] Push Android heads `4ac0b1f` (pin) and `240afae` (status/docs); hosted Foundation run
   `30099769434` rebuilt and verified the exact AAR, then passed debug/release builds, 19 JVM tests
   per variant, instrumentation compilation, and debug/release lint.
+- [x] Central coordination workflow `30100580395` passed manifest, compatibility, documentation,
+  and credential-scan validation.
 - [ ] Keep device/instrumentation execution, Core-owned persistence, document/background workflows,
   signing, rollback, cross-client conformance, and stable-release evidence open; release remains
   `unreleased`.

@@ -12,6 +12,8 @@ checksum-verified the exact Core AAR, then passed debug/release assembly, 19 JVM
 instrumentation compilation, and debug/release lint. The release gateway's typed host-secret flow
 remains ABI/protocol 1 compatible. Device execution, Core-owned persistence, document/background
 workflows, signing, rollback, cross-client conformance, and stable-release evidence remain open.
+Central coordination workflow `30100580395` passed the synchronized manifest and documentation
+checks.
 
 ### Linux registered custom VFS compatibility probe — 2026-07-24
 
