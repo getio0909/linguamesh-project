@@ -14,9 +14,10 @@ alternate VFS enforcement and physical power-loss behavior remain unverified.
 
 `tools/test-release-rollback.py` creates a disposable Git fixture, runs the manifest-only rollback
 rehearsal, and asserts that the manifest and repository files are unchanged. The host run passed
-with Python 3.13, and the test is wired into the central Linux validation job. It strengthens the
-rehearsal invariant only; production rollback authorization, signed-artifact rollback, alternate
-VFS, and physical power-loss behavior remain open.
+with Python 3.13, and central workflow `30060144548` passed Linux `89379970142` and PowerShell
+`89379970114` with the regression enabled. It strengthens the rehearsal invariant only; production
+rollback authorization, signed-artifact rollback, alternate VFS, and physical power-loss behavior
+remain open.
 
 ## 2026-07-24 — Containerized Linux validation checkpoint
 

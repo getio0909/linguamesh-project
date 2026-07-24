@@ -42,7 +42,8 @@ without standing in for production rollback authorization or physical storage re
 - [x] Add `tools/test-release-rollback.py`, which creates a disposable Git repository, runs the
   rollback rehearsal, and asserts that neither the manifest nor repository files change.
 - [x] Run `/home/wangtinghu/miniconda3/envs/py313/bin/python tools/test-release-rollback.py`; the
-  unittest passed, and the test is now part of the central Linux validation workflow.
+  unittest passed, and the test is now part of the central Linux validation workflow
+  `30060144548` (Linux `89379970142`, PowerShell `89379970114`).
 - [ ] Keep production rollback authorization, signed-artifact rollback, alternate VFS, and
   physical power-loss behavior open.
 

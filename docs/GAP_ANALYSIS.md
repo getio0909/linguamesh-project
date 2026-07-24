@@ -75,9 +75,9 @@ rollback authorization.
 
 The new `tools/test-release-rollback.py` regression also passed with Python 3.13. It creates a
 temporary Git repository and asserts that the rehearsal leaves both the manifest and repository
-files unchanged; the central Linux validation workflow now runs this regression. This strengthens
-the manifest-only invariant but does not close production rollback authorization or physical and
-alternate-VFS gaps.
+files unchanged; central workflow `30060144548` passed Linux `89379970142` and PowerShell
+`89379970114` with this regression enabled. This strengthens the manifest-only invariant but does
+not close production rollback authorization or physical and alternate-VFS gaps.
 
 The 2026-07-23 GitHub triage refresh confirms Linux PR #1 and macOS PR #1 are both Draft/Open and
 mergeable with their current checks successful, and neither has submitted reviews or unresolved
