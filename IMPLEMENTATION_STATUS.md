@@ -21,6 +21,8 @@ follow-up contracts.
   Core AAR provenance, debug/release builds, 19 JVM tests per variant, instrumentation compilation,
   and debug/release lint. Superseded release-compile failure `30093907047` was caused by the typed
   data-class match and is fixed in `ab81a9b`.
+- Central coordination workflow `30094924852` passed its Linux and PowerShell manifest,
+  compatibility, documentation, and credential-scan jobs for this checkpoint.
 - Release remains `unreleased`; Core-owned persistence, device restoration, document/background
   workflows, device Keystore execution, signing, rollback, and stable-release evidence remain open.
 

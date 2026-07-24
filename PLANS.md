@@ -35,6 +35,8 @@ Core-owned profile persistence and file leases remain separate milestones.
   `30094317628` (AAR provenance, debug/release, 19 JVM tests per variant, instrumentation, lint).
 - [x] Rerun the transient Core cargo-deny Docker-image timeout; CI/Fuzz/Native SDK
   `30093800179`/`30093801435`/`30093800230` passed.
+- [x] Pass central coordination workflow `30094924852` for the synchronized manifest,
+  compatibility, documentation, and credential-scan checks.
 - [ ] Keep Core-owned persistence, device restoration, document/background workflows, cross-client
   conformance, signing, rollback, and stable-release evidence open.
 
