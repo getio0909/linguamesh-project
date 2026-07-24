@@ -5,6 +5,19 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 
 ## Latest Android checkpoint
 
+Android head `ab81a9b8b7c416c54e543968ef50723c8df0ee7b` consumes Core
+`b39dbdc2877a60c6666697cc0817f31225496cb2` and adds typed host-secret transport: the release
+gateway passes the opaque profile `secretRef`, consumes `SecretRequired`, validates the reference,
+resolves one-shot Keystore bytes, sends bounded typed responses, and clears resolved byte arrays.
+Core wrapper and Android local non-native checks passed; the local AAR rebuild is blocked by an
+incomplete NDK installation. Hosted run `30094317628` passed clean Core AAR provenance, debug and
+release builds, 19 JVM tests per variant, instrumentation compilation, and debug/release lint;
+the superseded typed-event compile failure `30093907047` is recorded as corrected. Core-owned
+persistence, device restoration, document/background workflows, device Keystore execution,
+signing, and stable release remain open. Central coordination is pending this documentation sync.
+
+### Prior Android metadata checkpoint
+
 Android code head `535e4485ff555b04702c0390ca76428ff995d457` adds bounded DataStore persistence for
 non-secret provider-profile metadata, background restore and Core re-registration, active-profile
 selection persistence, and JVM coverage. Local Foundation, l10n sync, debug/release builds, 18

@@ -22,6 +22,22 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Android typed host-secret transport
+
+Assumption: Android's Keystore-backed broker is the host for Core ABI 1's one-shot secret channel;
+Core-owned profile persistence and file leases remain separate milestones.
+
+- [x] Extend Core's Android wrapper with `secret_ref`, typed `SecretRequired`, bounded typed host
+  responses, and wrapper tests at Core `b39dbdc2877a60c6666697cc0817f31225496cb2`.
+- [x] Update Android release gateway to validate references, resolve and clear one-shot secrets,
+  and pin the new Core revision at Android `ab81a9b8b7c416c54e543968ef50723c8df0ee7b`.
+- [x] Pass local Core Rust checks, Android Foundation/l10n/debug checks, and hosted Android run
+  `30094317628` (AAR provenance, debug/release, 19 JVM tests per variant, instrumentation, lint).
+- [x] Rerun the transient Core cargo-deny Docker-image timeout; CI/Fuzz/Native SDK
+  `30093800179`/`30093801435`/`30093800230` passed.
+- [ ] Keep Core-owned persistence, device restoration, document/background workflows, cross-client
+  conformance, signing, rollback, and stable-release evidence open.
+
 ## 2026-07-24 — Android persisted provider-profile metadata
 
 Assumption: Android can persist only bounded non-secret profile metadata locally until the generated

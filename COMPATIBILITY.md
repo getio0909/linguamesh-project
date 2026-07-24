@@ -4,6 +4,18 @@ No compatible stable release train exists yet. The authoritative machine-readabl
 
 Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198`.
 
+### Android typed host-secret transport — 2026-07-24
+
+Android head `ab81a9b8b7c416c54e543968ef50723c8df0ee7b` consumes Core
+`b39dbdc2877a60c6666697cc0817f31225496cb2` at ABI major 1/protocol 1. The generated wrapper
+projects `TranslateTextCommand.secret_ref`, typed `SecretRequired` events, and bounded one-shot
+host responses; the release gateway validates the opaque profile reference, resolves through the
+Keystore broker, clears returned byte arrays, and never persists or logs secret bytes. Hosted run
+`30094317628` passed Core AAR provenance, debug/release builds, 19 JVM tests per variant,
+instrumentation compilation, and debug/release lint. This is unreleased cross-client evidence;
+Core-owned persistence, device execution, file leases, document/background workflows, signing,
+rollback, and stable release remain open.
+
 ### Android persisted provider-profile metadata — 2026-07-24
 
 Android code head `535e4485ff555b04702c0390ca76428ff995d457` consumes Core ABI 1 and persists bounded

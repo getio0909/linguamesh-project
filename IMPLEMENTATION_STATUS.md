@@ -2,6 +2,28 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Android typed host-secret transport checkpoint
+
+Assumption: Android's Keystore-backed credential broker is the host for Core ABI 1's existing
+one-shot secret channel; Core-owned profile persistence and file-lease projections remain separate
+follow-up contracts.
+
+- Core wrapper `b39dbdc2877a60c6666697cc0817f31225496cb2` now carries `secret_ref`, decodes typed
+  `SecretRequired` events, and encodes bounded `HostSecretResponse` values through a typed API.
+  Core local fmt, strict all-feature Clippy, locked offline workspace tests/build, CI
+  `30093800179`, Fuzz `30093801435`, and Native SDK `30093800230` passed.
+- Android release head `ab81a9b8b7c416c54e543968ef50723c8df0ee7b` consumes the typed wrapper event,
+  validates the requested reference, resolves once, sends unavailable/storage-unavailable
+  responses when appropriate, rejects oversized or invalid UTF-8 values, and clears resolved
+  byte arrays. No credential value enters DataStore, UI state, diagnostics, or logs.
+- Local Android Foundation/l10n checks and debug JVM tests passed; the local AAR build remains
+  blocked by an incomplete NDK 28.2 installation. Hosted Android run `30094317628` passed clean
+  Core AAR provenance, debug/release builds, 19 JVM tests per variant, instrumentation compilation,
+  and debug/release lint. Superseded release-compile failure `30093907047` was caused by the typed
+  data-class match and is fixed in `ab81a9b`.
+- Release remains `unreleased`; Core-owned persistence, device restoration, document/background
+  workflows, device Keystore execution, signing, rollback, and stable-release evidence remain open.
+
 ## 2026-07-24 — Android persisted provider-profile metadata checkpoint
 
 Assumption: Android may retain bounded non-secret provider-profile metadata in DataStore until the
