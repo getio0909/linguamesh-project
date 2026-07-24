@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux preset loopback default alignment
+
+Assumption: preset switching must use Core's complete HTTP loopback policy so a local endpoint on
+`127.0.0.2`, `[::1]`, or `localhost` is treated like the existing `127.0.0.1` default when its
+preset path matches.
+
+- Linux code head `0af3b73598841c2a9f001546f2152324998cd036` reuses the loopback classifier for
+  Ollama `/api/` and OpenAI-compatible `/v1/` preset detection, with regression coverage for all
+  three authorities.
+- Local formatting, GUI all-target checking, strict Clippy, demo-provider tests (`167 passed;
+  7 ignored`), localization synchronization and audits, Flatpak metadata validation, and diff
+  checks passed. The focused GUI binary remains blocked by missing host GTK/GDK/Graphene symbols.
+- Final packaging/status head `f8194be9d7ee2f30bfe3bc253a444d6c9a29e1fc` pins Flatpak to the code
+  head. Hosted push Native/Flatpak/Foundation `30124317422`/`30124317586`/`30124317434` and PR
+  `30124319562`/`30124319556`/`30124319590` all passed. The earlier stale-pin Flatpak run
+  `30124268086` is superseded by the corrected pin.
+- Release remains `unreleased`; manual/physical accessibility, broader VFS/power-loss, other
+  clients, signing, rollback authorization, and stable-release evidence remain open.
+
 ## 2026-07-24 — Linux loopback routing locality alignment
 
 Assumption: Linux routing locality must match Core's accepted HTTP endpoint policy; HTTPS loopback

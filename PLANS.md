@@ -22,6 +22,26 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux preset loopback default alignment
+
+Assumption: preset switching must recognize every Core-accepted HTTP loopback authority when the
+endpoint path matches the selected preset, while preserving custom remote endpoints.
+
+- [x] Replaced `127.0.0.1` prefix checks in Linux preset-default detection with the shared Core-
+  aligned loopback classifier for Ollama `/api/` and OpenAI-compatible `/v1/` endpoints; added
+  regression coverage for `127.0.0.2`, `[::1]`, and `localhost`.
+- [x] Local formatting, GUI all-target checking, strict Clippy, demo-provider tests (`167 passed;
+  7 ignored`), localization audits, Flatpak metadata validation, and diff checks passed. The
+  focused GUI binary remains linker-limited on this host by missing GTK/GDK/Graphene symbols.
+- [x] Runtime code head `0af3b73598841c2a9f001546f2152324998cd036` is pinned by final packaging/
+  status head `f8194be9d7ee2f30bfe3bc253a444d6c9a29e1fc`. Hosted push Native/Flatpak/Foundation
+  `30124317422`/`30124317586`/`30124317434` and PR Native/Flatpak/Foundation
+  `30124319562`/`30124319556`/`30124319590` all passed; the first stale-pin Flatpak attempt
+  `30124268086` is superseded.
+- [ ] Keep the release `unreleased`; manual/physical accessibility, broader VFS/power-loss,
+  live-provider, other-client, signing, rollback authorization, and stable-release evidence remain
+  open.
+
 ## 2026-07-24 — Linux loopback routing locality alignment
 
 Assumption: routing locality must follow Core's accepted endpoint policy so every IPv4/IPv6

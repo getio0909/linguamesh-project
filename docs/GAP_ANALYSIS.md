@@ -3,6 +3,21 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux preset loopback default alignment
+
+Linux code head `0af3b73598841c2a9f001546f2152324998cd036` now uses the Core-aligned HTTP loopback
+classifier when deciding whether Ollama `/api/` and OpenAI-compatible `/v1/` endpoints are still
+preset defaults. Regression coverage includes `127.0.0.2`, `[::1]`, and `localhost`, preventing
+custom loopback addresses from being treated differently from the existing `127.0.0.1` behavior.
+Local formatting, GUI all-target checking, strict Clippy, 167 passing demo-provider tests with 7
+ignored, localization audits, Flatpak metadata validation, and diff checks passed; the focused GUI
+binary remains linker-limited by the host's incomplete GTK/GDK/Graphene libraries. Final packaging/
+status head `f8194be9d7ee2f30bfe3bc253a444d6c9a29e1fc` pins Flatpak to the code head. Push/PR Native,
+Flatpak, and Foundation runs `30124317422`/`30124317586`/`30124317434` and
+`30124319562`/`30124319556`/`30124319590` all passed. The stale-pin Flatpak attempt `30124268086`
+is superseded. Broader manual/physical, VFS/power-loss, live-provider, cross-client, signing,
+rollback, and stable-release evidence remains open.
+
 ## Latest Linux loopback routing locality alignment
 
 Linux code head `307bbbae8cf3275cd6c67ece166f5beb139e63c9` now parses the validated HTTP authority
