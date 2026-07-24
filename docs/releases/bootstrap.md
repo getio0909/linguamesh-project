@@ -16,7 +16,7 @@ and must not be promoted without the acceptance and authorization gates listed b
 | Android | `0.1.0-alpha.1` | `240afaeebe22dc13dea988591dbdd87aa233fc79` |
 | Windows | `0.0.0-dev` | `unreleased` |
 | macOS | `0.1.0-alpha.1` | `a039bcbd39c032fabb58adb389eec1e68ae9c2c6` |
-| Linux | `0.1.0-alpha.2` | `920c0c5439fcfe5825fd6ecbe6d57158377c583d` |
+| Linux | `0.1.0-alpha.2` | `1407f0daa2b87b58b74adde9e71e7390d96d302e` |
 
 Contracts: ABI major `1`, protocol schema `0.1.0`, provider catalog `0.1.0`, and localization
 schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
@@ -53,17 +53,14 @@ validation. These remain CI artifacts, not signed releases.
   PasswordVault, accessibility, generated C++/WinRT projection, device, signing, and distribution
   evidence remain open.
 
-- Current Linux-first VFS checkpoint uses Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and
-  Linux `920c0c5439fcfe5825fd6ecbe6d57158377c583d`. The head is a documentation-only Flatpak
-  release-pin correction. Core's registered custom-VFS regression
-  exercises a distinct name over validated `unix-excl` callbacks, migration, profile persistence/
-  reopen, and symlink/no-follow rejection; the `unix-none` regression still fails closed before
-  migrations with no schema tables. Core storage tests report `60 passed; 0 failed`; full Rust
-  workspace checks, strict Clippy, cargo-deny, CI/Fuzz/ASAN/Native SDK
-  `30097756099`/`30097756186`/`30097756137` passed. Linux local validation passed localization,
-  Flatpak, formatting, checks, Clippy, no-default (`85 passed; 1 ignored`), and demo-provider
-  (`166 passed; 7 ignored`) suites; push and PR Native/Flatpak/Foundation runs
-  `30103724040`/`30103724131`/`30103723982` and `30103720635`/`30103720724`/`30103720669` passed.
+- Current Linux-first storage checkpoint uses Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and
+  Linux status head `1407f0d`. The implementation head `e75317015e970a283f9a3d4ae47718b12e557e32`
+  performs a final `-wal`/`-shm` identity check after profile hydration and before storage
+  publication; the reviewed Flatpak/documentation descendant is `d3244ff017fb7178017310065f8d7708dd41a9ea`.
+  The deterministic replacement regression, local Linux validation, and hosted Native/Flatpak/
+  Foundation runs `30108528343`/`30108528414`/`30108528360` passed. Post-publish replacement,
+  physical power loss, broader VFS variants, cross-client parity, signing, rollback, and stable
+  release remain open.
 
 - Host-pinned Rust 1.93.0 Core check passed with `cargo check --workspace --locked --offline`.
 - Core FFI ASAN smokes passed locally: valid loopback commands completed 136 time-bounded

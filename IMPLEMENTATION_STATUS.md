@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux final SQLite sidecar stability recheck
+
+Assumption: the startup storage boundary should reject a SQLite sidecar identity change after
+hydration and before publication, without claiming post-publish runtime or physical power-loss
+protection.
+
+- Linux implementation `e75317015e970a283f9a3d4ae47718b12e557e32` performs the final `-wal`/`-shm`
+  identity check immediately before returning hydrated storage; `d3244ff017fb7178017310065f8d7708dd41a9ea`
+  is the reviewed Flatpak-pin/documentation descendant.
+- The replacement regression passes the post-open check, atomically replaces each sidecar with a
+  distinct inode, and requires the final pre-publish check to fail closed. Local formatting,
+  focused/all tests, strict Clippy, GUI all-target check, localization audits, Flatpak metadata,
+  and diff checks passed; hosted Native `30108528343`, Flatpak `30108528414`, and Foundation
+  `30108528360` passed for the reviewed head.
+- Post-publish runtime replacement, broader same-UID filesystem/VFS variants, physical power loss,
+  manual review, signing, rollback, and stable-release approval remain open; release stays
+  `unreleased`.
+
 ## 2026-07-24 — Windows pinned Core C++ wrapper conformance
 
 Assumption: hosted Windows is authoritative for MSVC and Windows SDK checks because this Linux

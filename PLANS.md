@@ -22,6 +22,22 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux final SQLite sidecar stability recheck
+
+Assumption: Linux startup storage must reject a sidecar identity change after Core opens the
+database and again immediately before hydrated storage is published; this bounded check does not
+cover post-publish replacement or physical power loss.
+
+- [x] Add the final `-wal`/`-shm` identity recheck and deterministic atomic-replacement regression
+  at implementation `e75317015e970a283f9a3d4ae47718b12e557e32`.
+- [x] Repin the reviewed Flatpak source and release documentation at descendant
+  `d3244ff017fb7178017310065f8d7708dd41a9ea`; local Linux validation passed, including 166 demo
+  provider tests with 7 documented ignores and strict Clippy.
+- [x] Hosted Native `30108528343`, Flatpak `30108528414`, and Foundation `30108528360` passed.
+- [ ] Keep post-publish runtime replacement, broader VFS variants, physical/manual review,
+  signing, rollback, cross-client parity, and stable-release evidence open; release remains
+  `unreleased`.
+
 ## 2026-07-24 — Windows pinned Core C++ wrapper conformance smoke
 
 Assumption: hosted Windows is authoritative for MSVC and Windows SDK checks because the Linux host

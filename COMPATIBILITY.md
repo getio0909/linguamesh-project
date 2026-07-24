@@ -4,6 +4,15 @@ No compatible stable release train exists yet. The authoritative machine-readabl
 
 Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198`.
 
+### Linux final SQLite sidecar stability recheck — 2026-07-24
+
+Linux implementation `e75317015e970a283f9a3d4ae47718b12e557e32` adds a final `-wal`/`-shm`
+identity check after profile hydration and immediately before storage publication; the reviewed
+Flatpak pin and release-documentation descendant is `d3244ff017fb7178017310065f8d7708dd41a9ea`.
+The deterministic replacement regression and hosted Native `30108528343`, Flatpak `30108528414`,
+and Foundation `30108528360` runs passed. Post-publish replacement, physical power loss, broader
+VFS variants, other clients, signing, rollback, and stable-release evidence remain open.
+
 ### Windows Core compatibility pin alignment — 2026-07-24
 
 Windows head `c7053e5de3d4a97b4705c8f6737cc97daaf6afb7` consumes Core

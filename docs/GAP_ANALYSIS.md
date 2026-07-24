@@ -3,6 +3,15 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux final SQLite sidecar stability recheck
+
+Linux implementation `e75317015e970a283f9a3d4ae47718b12e557e32` performs a final `-wal`/`-shm`
+identity check after profile hydration and before storage publication. The reviewed packaging and
+documentation descendant is `d3244ff017fb7178017310065f8d7708dd41a9ea`; local focused/all-feature
+checks passed, and hosted Native `30108528343`, Flatpak `30108528414`, and Foundation `30108528360`
+passed. Post-publish replacement, broader VFS variants, physical power loss, cross-client parity,
+manual review, signing, rollback, and stable release remain open.
+
 ## Latest Linux Flatpak release-pin documentation alignment
 
 Linux head `920c0c5439fcfe5825fd6ecbe6d57158377c583d` corrects the release guide to the exact
