@@ -37,6 +37,7 @@ store.
 - [x] Complete hosted Android run `30091714901` (clean Core AAR provenance, debug/release builds,
   18 JVM tests per variant, instrumentation compilation, and debug/release lint), record status
   head `4b2093bc94b8016c5eca721a18b5f049ac7330d8`, and synchronize manifests.
+- [x] Pass central coordination workflow `30092269717` for the synchronized Android checkpoint.
 - [ ] Keep Core-owned persistence, device/background/document flows, signing, rollback, and stable
   release evidence open.
 

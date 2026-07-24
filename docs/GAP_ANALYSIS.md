@@ -12,7 +12,8 @@ debug/release JVM tests, instrumentation compilation, and debug/release lint pas
 `4b2093bc94b8016c5eca721a18b5f049ac7330d8` records hosted run `30091714901` as passed; the
 superseded stale-pin run `30091670253` failed before build execution. Core-owned persistence,
 device restoration, document and background workflows, real-provider credentials, signing, and
-stable release remain open.
+stable release remain open. Central coordination workflow `30092269717` passed the synchronized
+manifest, compatibility, documentation, and credential-scan checks.
 
 ## Latest Windows checkpoint
 

@@ -20,6 +20,8 @@ Keystore-backed broker and are represented in DataStore by an opaque `secretRef`
   per variant, instrumentation compilation, and debug/release lint. Its earlier superseded run
   `30091670253` failed at the stale foundation l10n pin before build execution. Release remains
   `unreleased`.
+- Central coordination workflow `30092269717` passed the synchronized manifest, compatibility,
+  documentation, and credential-scan checks.
 - Core-owned persistence, device restoration, document/background workflows, real-provider
   credentials, signing, and stable-release evidence remain open.
 
