@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux final current-head Native evidence artifact verification
+
+Assumption: a downloadable CI evidence bundle proves reproducible prerelease packaging inputs and
+checksums, but unsigned artifacts and machine-specific performance data do not authorize a stable
+release.
+
+- Linux documentation/status head `fd89f6e4e4c1d52b1634426005c7ff0ccf611e56` is published.
+- Native push run `30132806085` produced the unexpired artifact
+  `linguamesh-linux-native-evidence-fd89f6e4e4c1d52b1634426005c7ff0ccf611e56` (artifact ID
+  `8611818432`). Download-time `SHA256SUMS` verification passed for the native binary
+  `35c1878648dc81db3f474c24a0dbfa8fcd6bd0840fafef453ff686eeaadc52e9` and source archive
+  `c00609605de3a4012194c01453e697b79b20d0ac98da4a0a1595876879faaaec`.
+- The bundle contains a 234-package SPDX-2.3 SBOM and a 140-entry source archive. Its build and
+  rollback records classify it as unsigned release-mode prerelease evidence with no stable
+  revision, signing key, or release authorization; its performance file is machine-specific.
+- Push Native/Flatpak/Foundation `30132806085`/`30132806113`/`30132806111` and PR
+  Native/Flatpak/Foundation `30132807823`/`30132807827`/`30132807824` all passed.
+- Release remains `unreleased`; signing, rollback authorization, distributable promotion, and
+  stable-release evidence remain open.
+
 ## 2026-07-24 — Linux current-head Native evidence artifact verification
 
 Assumption: a downloadable CI evidence bundle proves reproducible prerelease packaging inputs and

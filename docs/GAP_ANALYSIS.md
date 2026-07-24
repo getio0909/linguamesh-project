@@ -3,6 +3,20 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux final current-head Native evidence artifact verification
+
+Linux documentation/status head `fd89f6e4e4c1d52b1634426005c7ff0ccf611e56` is published. Native
+push run `30132806085` produced the unexpired artifact
+`linguamesh-linux-native-evidence-fd89f6e4e4c1d52b1634426005c7ff0ccf611e56` (artifact ID
+`8611818432`). Download-time `SHA256SUMS` verification passed for the native binary
+(`35c1878648dc81db3f474c24a0dbfa8fcd6bd0840fafef453ff686eeaadc52e9`) and source archive
+(`c00609605de3a4012194c01453e697b79b20d0ac98da4a0a1595876879faaaec`). The bundle contains a
+234-package SPDX-2.3 SBOM and a 140-entry source archive; its records classify it as unsigned
+release-mode prerelease evidence and its performance file is machine-specific. Push
+Native/Flatpak/Foundation `30132806085`/`30132806113`/`30132806111` and PR
+Native/Flatpak/Foundation `30132807823`/`30132807827`/`30132807824` all passed. Signing, rollback
+authorization, distributable promotion, and stable-release evidence remain open.
+
 ## Latest Linux current-head Native evidence artifact verification
 
 Native push run `30132151011` produced the unexpired artifact
