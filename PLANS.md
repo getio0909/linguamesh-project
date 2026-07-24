@@ -37,8 +37,8 @@ durability; `unix-excl` remains the supported bundled alternate-VFS path.
   Core-source-pin checks pass.
 - [x] Core CI/Fuzz/ASAN/Native SDK `30069351232`/`30069351157`/`30069351240` and Linux push
   Native/Flatpak/Foundation `30069403841`/`30069403823`/`30069403845` plus PR
-  `30069406482`/`30069406504`/`30069406492` all pass. Central follow-up validation is recorded
-  after the manifest pin commit below.
+  `30069406482`/`30069406504`/`30069406492` all pass. Central commit
+  `f79dbd2217d63c7c95b3da91367e4f77b79b68cc` passed coordination workflow `30069776643`.
 - [x] Record the same run evidence in the Draft PR #1 and open Issue #1 comments; both remain
   unmerged/open and release status remains `unreleased`.
 - [ ] Keep custom/third-party VFS, physical power-loss, cross-client parity, human/physical review,

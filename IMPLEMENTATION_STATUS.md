@@ -18,8 +18,10 @@ remains the supported bundled alternate-VFS path.
   demo-provider tests (`166 passed; 7 ignored`), and the exact Core-source-pin check passed.
 - Core CI/Fuzz/ASAN/Native SDK `30069351232`/`30069351157`/`30069351240` and Linux push
   Native/Flatpak/Foundation `30069403841`/`30069403823`/`30069403845` plus PR
-  `30069406482`/`30069406504`/`30069406492` all passed. PR #1 and Issue #1 evidence comments
-  will be refreshed after the central manifest pin commit; release remains `unreleased`.
+  `30069406482`/`30069406504`/`30069406492` all passed. Central commit
+  `f79dbd2217d63c7c95b3da91367e4f77b79b68cc` passed coordination workflow `30069776643`.
+- PR #1 and Issue #1 evidence comments are refreshed; PR remains Draft/Open/mergeable, Issue #1
+  remains Open, and release remains `unreleased`.
 - Custom/third-party VFS, physical power-loss, cross-client conformance, human/physical review,
   signing, rollback, and stable-release evidence remain open.
 

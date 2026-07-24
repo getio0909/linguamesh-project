@@ -67,8 +67,8 @@ validation. These remain CI artifacts, not signed releases.
   schema tables. Linux `4f4472ee9ef5ceef821301f4b2af71f54372174d` passes all local non-GUI
   validation. Core CI/Fuzz/ASAN/Native SDK `30069351232`/`30069351157`/`30069351240` and Linux
   push Native/Flatpak/Foundation `30069403841`/`30069403823`/`30069403845` plus PR
-  `30069406482`/`30069406504`/`30069406492` all passed. Central coordination will be recorded
-  after the manifest pin commit.
+  `30069406482`/`30069406504`/`30069406492` all passed. Central commit
+  `f79dbd2217d63c7c95b3da91367e4f77b79b68cc` passed coordination workflow `30069776643`.
 - The current handle-lifetime manifest synchronization commit `59c9cc4d16610d18559d2bab96c1518e242c0d7e`
   passed coordination workflow `30065102174` on Linux `89394395492` and PowerShell `89394395538`.
 - Central workflow `30059904373` passed Linux and PowerShell validation for the synchronized

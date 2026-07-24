@@ -13,8 +13,8 @@ gates passed (`30069403841`/`30069403823`/`30069403845` and
 `30069406482`/`30069406504`/`30069406492`). The bundled `unix-dotfile` VFS is also probed and
 rejected before migrations when it cannot provide required WAL, with no schema tables created;
 Core does not silently downgrade durability. Central coordination commit
-The central manifest pin follow-up will record its own coordination workflow after this update.
-This closes only the tested bundled `unix-excl` path; custom/third-party VFS,
+Central commit `f79dbd2217d63c7c95b3da91367e4f77b79b68cc` passed coordination workflow
+`30069776643`. This closes only the tested bundled `unix-excl` path; custom/third-party VFS,
 physical power-loss, cross-client, signing, rollback, and stable-release evidence remain open.
 
 Core ABI 1 handle-lifetime hardening is now verified at Core
