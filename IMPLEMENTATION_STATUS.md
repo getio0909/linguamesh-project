@@ -2,6 +2,21 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux Native CI Core pin alignment
+
+Assumption: Linux Native CI must consume the same immutable Core `77c6bf426ace65c6bd960120b253e10e59a70a13`
+revision used by Flatpak, documentation, and the central release manifest; this is a workflow-only
+consistency correction.
+
+- Linux head `dfe30a2618311a820451a4748e2acff49ffd2b93` records CI pin commit
+  `b02d3853791f06ff4b042fed430a0e4ab5947b3a`, replacing stale Native workflow Core
+  `b29067b78d420c96f57d670d3dd860cba3abc703` with the approved revision.
+- Local `git diff --check`, Core commit existence, and Flatpak metadata validation passed. New push
+  runs are Native `30078310878`, Flatpak `30078310868`, Foundation `30078310871`; PR runs are
+  Native `30078307212`, Flatpak `30078307159`, Foundation `30078307167`. Both Native runs remain
+  in progress at hosted dependency installation; the prior code-head Native matrix passed.
+- Release remains `unreleased`; no stable artifact or release promotion was performed.
+
 ## 2026-07-24 — Linux persisted document-job metadata deletion
 
 Assumption: Linux document-job deletion removes only the persisted snapshot and segment metadata;

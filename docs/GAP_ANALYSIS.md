@@ -5,6 +5,16 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 
 ## Latest Linux/Core checkpoint
 
+### Linux Native CI Core pin alignment
+
+Linux head `dfe30a2618311a820451a4748e2acff49ffd2b93` corrects `.github/workflows/native.yml` to
+check out approved Core `77c6bf426ace65c6bd960120b253e10e59a70a13`, matching Flatpak, documentation,
+and the release manifest instead of stale `b29067…`. Local commit-existence, diff, and Flatpak
+metadata checks passed. Corrected push runs are Native `30078310878`, Flatpak `30078310868`, and
+Foundation `30078310871`; corrected PR runs are Native `30078307212`, Flatpak `30078307159`, and
+Foundation `30078307167`. Native remains in hosted dependency installation, so the corrected
+checkout is not yet fully hosted-verified; release remains `unreleased`.
+
 ### Linux persisted document-job metadata deletion
 
 Linux status head `7d0970cc90a9170f6be59b2e75bad672e5ace0bf` adds a Core-backed worker delete

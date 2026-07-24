@@ -22,6 +22,17 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux Native CI Core pin alignment
+
+Assumption: Native CI must check out the approved Core revision used by the runtime and release
+manifest.
+
+- [x] Replace the stale Linux Native workflow Core pin with `77c6bf426ace65c6bd960120b253e10e59a70a13`
+  and record the correction at Linux head `dfe30a2618311a820451a4748e2acff49ffd2b93`.
+- [x] Pass local diff, Core commit-existence, and Flatpak metadata validation.
+- [ ] Complete hosted Native/Flatpak/Foundation push and PR checks for the corrected workflow; the
+  Native jobs are currently blocked in hosted dependency installation.
+
 ## 2026-07-24 — Linux persisted document-job metadata deletion
 
 Assumption: deleting a saved Linux document job deletes only persisted snapshot/segment metadata;
