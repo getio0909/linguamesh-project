@@ -14,6 +14,19 @@ preparation; Foundation run `30105208019` passed. This confirms only build/packa
 Windows UI runtime, UI automation, PasswordVault behavior, accessibility, generated-wrapper
 conformance, cross-client parity, signing, rollback, and stable-release evidence remain open.
 
+### Windows pinned Core C++ wrapper conformance — 2026-07-24
+
+Windows code head `718ee51cdeb774f6150eb1e2a1da54a04fd219fe` (status-only descendant
+`ba1451ad91fdc58c58fdacc7731b96409cfc5fd8`) consumes Core
+`9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n
+`7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`. Hosted Native Windows run `30106874477`
+passed the immutable-Core C++20 wrapper smoke, source boundary, portable reference, WinUI
+Debug/Release, and unsigned MSIX preparation; Foundation run `30106874484` passed. The smoke
+checks ABI/protocol compatibility, a Windows desktop lease, typed malformed-message handling,
+and clean shutdown. Windows UI runtime, UI automation, PasswordVault behavior, accessibility,
+generated C++/WinRT projection, device coverage, signing, rollback, cross-client conformance,
+and stable-release evidence remain open.
+
 ### macOS Core VFS-descendant compatibility checkpoint — 2026-07-24
 
 macOS head `a039bcbd39c032fabb58adb389eec1e68ae9c2c6` consumes Core

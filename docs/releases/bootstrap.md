@@ -45,11 +45,13 @@ validation. These remain CI artifacts, not signed releases.
   instrumentation compilation, and debug/release lint. Device, document, signing, and distribution
   evidence remain open.
 
-- Windows head `c7053e5de3d4a97b4705c8f6737cc97daaf6afb7` consumes Core
+- Windows code head `718ee51cdeb774f6150eb1e2a1da54a04fd219fe` (status-only descendant
+  `ba1451ad91fdc58c58fdacc7731b96409cfc5fd8`) consumes Core
   `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`.
-  Hosted Native Windows `30105207544` and Foundation `30105208019` passed portable reference,
-  WinUI Debug/Release, and unsigned MSIX preparation. UI runtime, PasswordVault, accessibility,
-  generated-wrapper, signing, and distribution evidence remain open.
+  Hosted Native Windows `30106874477` passed pinned-Core C++ wrapper smoke, portable reference,
+  WinUI Debug/Release, and unsigned MSIX preparation; Foundation `30106874484` passed. UI runtime,
+  PasswordVault, accessibility, generated C++/WinRT projection, device, signing, and distribution
+  evidence remain open.
 
 - Current Linux-first VFS checkpoint uses Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and
   Linux `920c0c5439fcfe5825fd6ecbe6d57158377c583d`. The head is a documentation-only Flatpak

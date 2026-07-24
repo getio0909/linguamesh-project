@@ -22,6 +22,20 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Windows pinned Core C++ wrapper conformance smoke
+
+Assumption: hosted Windows is authoritative for MSVC and Windows SDK checks because the Linux host
+has no `pwsh` or Visual Studio; this bounded slice keeps the release `unreleased`.
+
+- [x] Add the immutable-Core C++20 wrapper smoke and run it after loading the pinned MSVC
+  environment; validate ABI/protocol compatibility, a desktop lease, typed malformed input, and
+  clean shutdown.
+- [x] Push Windows code head `718ee51cdeb774f6150eb1e2a1da54a04fd219fe` and pass Native Windows
+  `30106874477` plus Foundation `30106874484`, including WinUI Debug/Release and unsigned MSIX.
+- [x] Record the status-only documentation descendant `ba1451ad91fdc58c58fdacc7731b96409cfc5fd8`.
+- [ ] Keep Windows UI runtime, UI automation, PasswordVault, accessibility, generated C++/WinRT
+  projection, device, cross-client, signing, rollback, stable-release, and manual evidence open.
+
 ## 2026-07-24 — Windows Core compatibility pin alignment
 
 Assumption: Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` preserves the Windows ABI-1 typed

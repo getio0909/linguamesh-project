@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Windows pinned Core C++ wrapper conformance
+
+Assumption: hosted Windows is authoritative for MSVC and Windows SDK checks because this Linux
+host lacks `pwsh` and Visual Studio. This checkpoint proves a bounded pinned-Core C++ wrapper
+contract, not complete Windows application integration.
+
+- Windows code head `718ee51cdeb774f6150eb1e2a1da54a04fd219fe` consumes Core
+  `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n
+  `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; status-only descendant `ba1451a` records it.
+- Native Windows `30106874477` passed pinned Core C++20 wrapper compilation/smoke, source
+  boundary, portable C++ reference, WinUI Debug, WinUI Release, and unsigned MSIX preparation.
+  Foundation `30106874484` passed.
+- Local Foundation/source-boundary/CMake Release/CTest (1/1)/diff checks passed. Local
+  PowerShell execution was unavailable; hosted output is the Windows-script evidence.
+- The smoke validates ABI/protocol compatibility, a Windows desktop path lease, typed malformed
+  message handling, timeout behavior, and clean shutdown. UI runtime, UI automation,
+  PasswordVault, accessibility, generated C++/WinRT projection, device, signing, rollback,
+  cross-client parity, and stable-release gates remain open; release stays `unreleased`.
+
 ## 2026-07-24 — Windows Core compatibility pin alignment
 
 Assumption: Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` preserves the Windows ABI-1 typed

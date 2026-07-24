@@ -82,13 +82,15 @@ manifest, compatibility, documentation, and credential-scan checks.
 
 ## Latest Windows checkpoint
 
-Windows head `c7053e5de3d4a97b4705c8f6737cc97daaf6afb7` consumes Core
+Windows code head `718ee51cdeb774f6150eb1e2a1da54a04fd219fe` (status-only descendant
+`ba1451ad91fdc58c58fdacc7731b96409cfc5fd8`) consumes Core
 `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`.
-Local Foundation/source-boundary, CMake Release, and CTest (1/1) checks passed. Hosted push run
-`30105207544` passed portable C++ plus WinUI/MSIX Debug and Release preparation; Foundation run
-`30105208019` also passed. Windows UI runtime, UI automation, PasswordVault integration,
-accessibility, signing, generated Core-wrapper conformance, full client capabilities, and
-cross-client parity remain open. Release remains `unreleased`.
+Local Foundation/source-boundary, CMake Release, and CTest (1/1) checks passed. Hosted Native
+Windows `30106874477` passed immutable-Core C++ wrapper smoke, portable C++, WinUI Debug/Release,
+and unsigned MSIX preparation; Foundation `30106874484` passed. Windows UI runtime, UI
+automation, PasswordVault integration, accessibility, generated C++/WinRT projection, device,
+signing, rollback, full client capabilities, and cross-client parity remain open. Release remains
+`unreleased`.
 
 ## Latest Linux/Core checkpoint
 
