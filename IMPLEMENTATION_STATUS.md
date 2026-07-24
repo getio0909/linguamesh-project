@@ -8,9 +8,9 @@ Assumption: this audit records current evidence only; it does not convert hosted
 automated fixtures into human, physical, cross-client, signing, rollback, or stable-release proof.
 
 - Re-read the task attachment and completely re-read `PROJECT_GOAL.md`, `AGENTS.md`, and `PLANS.md`.
-  Current repository heads are central `4490433cedbebeef8daaa7f7e6f3d10ca03d28ed`, Linux
+  Current repository heads are central `e7511c6ae553d6144360309e20834e71dd3b4938`, Linux
   `8ab718a2174d65a6ec33a1b4bcc3d8a4c52db48b`, Core `c518c9bd1208e134fd2502857fcccebd8112cd42`,
-  and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; central workflow `30134013795` passed.
+  and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; central workflow `30134323483` passed.
 - All six Linux current-head Native/Flatpak/Foundation Push/PR workflows passed. The local Linux
   and Core validation matrix is recorded above; no new deterministic Linux gap was found in the
   implementation, tests, or gap analysis.

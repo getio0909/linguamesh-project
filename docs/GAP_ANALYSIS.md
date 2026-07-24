@@ -5,9 +5,9 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 
 ## Latest continuation audit and GitHub triage
 
-The current published heads are central `4490433cedbebeef8daaa7f7e6f3d10ca03d28ed`, Linux
+The current published heads are central `e7511c6ae553d6144360309e20834e71dd3b4938`, Linux
 `8ab718a2174d65a6ec33a1b4bcc3d8a4c52db48b`, Core `c518c9bd1208e134fd2502857fcccebd8112cd42`,
-and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; central workflow `30134013795` passed. The
+and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; central workflow `30134323483` passed. The
 six Linux current-head Push/PR Native, Flatpak, and Foundation workflows are green, and the
 current source/tests reveal no additional deterministic Linux implementation slice. Linux PR #1
 and macOS PR #1 remain Draft/Open with no submitted reviews or inline review comments; central
