@@ -3,6 +3,15 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Android checkpoint
+
+Android head `240afae` consumes Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n
+`7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`. Hosted workflow `30099769434` rebuilt and verified
+the exact Core AAR, then passed debug/release assembly, 19 JVM tests per variant, instrumentation
+compilation, and debug/release lint. The typed ABI-1 host-secret gateway is compatible with the
+Linux-only Core VFS descendant. Device execution, Core-owned persistence, document/background
+workflows, signing, rollback, cross-client conformance, and stable release remain open.
+
 ## Latest macOS checkpoint
 
 macOS head `75b5bfe` consumes Core `b39dbdc2877a60c6666697cc0817f31225496cb2` and implements

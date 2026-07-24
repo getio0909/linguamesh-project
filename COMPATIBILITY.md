@@ -4,6 +4,15 @@ No compatible stable release train exists yet. The authoritative machine-readabl
 
 Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198`.
 
+### Android Core VFS-descendant compatibility checkpoint — 2026-07-24
+
+Android head `240afae` consumes Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n
+`7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`. Hosted Foundation run `30099769434` rebuilt and
+checksum-verified the exact Core AAR, then passed debug/release assembly, 19 JVM tests per variant,
+instrumentation compilation, and debug/release lint. The release gateway's typed host-secret flow
+remains ABI/protocol 1 compatible. Device execution, Core-owned persistence, document/background
+workflows, signing, rollback, cross-client conformance, and stable-release evidence remain open.
+
 ### Linux registered custom VFS compatibility probe — 2026-07-24
 
 Linux head `402b97ac50bf62e89f9c27caedebff10d2ae7b8c` consumes Core

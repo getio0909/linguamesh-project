@@ -13,7 +13,7 @@ and must not be promoted without the acceptance and authorization gates listed b
 | --- | --- | --- |
 | Core | `0.1.0-alpha.2` | `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` |
 | Localization | `0.1.0` | `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c` |
-| Android | `0.1.0-alpha.1` | `afe7a566bac77a16243f70295d17a4d9cab1151f` |
+| Android | `0.1.0-alpha.1` | `240afaeebe22dc13dea988591dbdd87aa233fc79` |
 | Windows | `0.0.0-dev` | `unreleased` |
 | macOS | `0.1.0-alpha.1` | `cad822c69dcf1ad20f8cab2151f407866a577420` |
 | Linux | `0.1.0-alpha.2` | `402b97ac50bf62e89f9c27caedebff10d2ae7b8c` |
@@ -32,6 +32,12 @@ completed the GTK/portal/Wayland/Orca gates and Flatpak sandbox smoke, and passe
 validation. These remain CI artifacts, not signed releases.
 
 ## Validation evidence
+
+- Android head `240afae` consumes Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n
+  `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`. Hosted workflow `30099769434` rebuilt and
+  checksum-verified the AAR, then passed debug/release assembly, 19 JVM tests per variant,
+  instrumentation compilation, and debug/release lint. Device, document, signing, and distribution
+  evidence remain open.
 
 - Current Linux-first VFS checkpoint uses Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and
   Linux `402b97ac50bf62e89f9c27caedebff10d2ae7b8c`. Core's registered custom-VFS regression

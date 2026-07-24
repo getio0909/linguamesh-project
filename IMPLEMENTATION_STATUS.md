@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Android Core VFS-descendant compatibility checkpoint
+
+Assumption: Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` preserves the Android ABI-1 typed
+host-secret contract while adding Linux-only storage tests; Android consumes the exact revision
+without depending on Linux VFS behavior.
+
+- Android head `240afae` pins Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n
+  `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; release gateway source uses typed
+  `SecretRequired`/`sendHostResponse` and clears resolved secret bytes.
+- Hosted Android workflow `30099769434` rebuilt and checksum-verified the exact Core AAR, then
+  passed debug/release assembly, 19 JVM tests per variant, instrumentation compilation, and
+  debug/release lint. Release remains `unreleased` because device, document, signing, rollback,
+  and distribution evidence is incomplete.
+- Android Foundation and l10n checks plus local debug checks passed; local release compilation is
+  not treated as exact-pin provenance because the ignored staged AAR predates this rebuild.
+
 ## 2026-07-24 — Linux registered custom VFS compatibility probe
 
 Assumption: the Linux client may consume a host-registered SQLite VFS only when Core's storage

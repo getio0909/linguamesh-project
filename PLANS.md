@@ -22,6 +22,20 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Android Core VFS-descendant compatibility checkpoint
+
+Assumption: Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` preserves the Android ABI-1 typed
+host-secret contract while adding Linux-only storage coverage; Android does not depend on Linux VFS
+behavior.
+
+- [x] Repin Android Core checkout, revision file, and Foundation validation to Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`.
+- [x] Push Android heads `4ac0b1f` (pin) and `240afae` (status/docs); hosted Foundation run
+  `30099769434` rebuilt and verified the exact AAR, then passed debug/release builds, 19 JVM tests
+  per variant, instrumentation compilation, and debug/release lint.
+- [ ] Keep device/instrumentation execution, Core-owned persistence, document/background workflows,
+  signing, rollback, cross-client conformance, and stable-release evidence open; release remains
+  `unreleased`.
+
 ## 2026-07-24 — Linux registered custom VFS compatibility probe
 
 Assumption: the Linux client may use a host-registered SQLite VFS only when the Core storage
