@@ -34,6 +34,10 @@ Assumption: this is disposable Debian trixie evidence with Rust 1.93.1 (the repo
   model download and warm-up, the exact ignored worker test passed `1 passed; 0 failed` without a
   credential. A cold first invocation exceeded the fixture's five-second deadline, so no cold-start
   performance claim is made.
+- An exact Rust 1.93.0 Linux build was attempted in a disposable container. Rustup timed out
+  fetching `channel-rust-1.93.0.toml.sha256` from both the official distribution endpoint and the
+  configured Tuna mirror. This remains unavailable evidence; the disposable Rust 1.93.1 build and
+  Ubuntu Native CI must not be conflated with a local 1.93.0 result.
 
 - Central coordination commit `7c4ffa8fe2fa77a24ae61635c9c130c65e22382b` passed workflow
   `30045831148`; Linux and PowerShell validation jobs completed successfully.

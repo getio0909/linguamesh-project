@@ -33,6 +33,11 @@ The pinned third-party Ollama fixture was also re-run with `ollama/ollama:0.11.1
 without a credential. Its first cold invocation exceeded the five-second test deadline, so the
 result is warm-start interoperability evidence only and not a cold-start performance claim.
 
+An exact Rust 1.93.0 Linux build was attempted in a disposable container, but Rustup timed out
+fetching `channel-rust-1.93.0.toml.sha256` from both the official distribution endpoint and the
+configured Tuna mirror. This is unavailable evidence rather than a passing build; the exact
+pinned toolchain remains CI-authoritative.
+
 The 2026-07-23 GitHub triage refresh confirms Linux PR #1 and macOS PR #1 are both Draft/Open and
 mergeable with their current checks successful, and neither has submitted reviews or unresolved
 inline threads. macOS Native `29765906044` and Foundation `29765906715`/`29765904969` passed;

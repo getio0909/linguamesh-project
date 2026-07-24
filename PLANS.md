@@ -55,6 +55,10 @@ toolchain, and container capability failures remain unverified rather than passi
   `smollm:135m`: after model download/warm-up, the exact ignored worker test passed `1 passed;
   0 failed` without a credential. The first cold invocation exceeded the fixture's five-second
   deadline, so this is warm-start interoperability evidence, not a cold-start latency claim.
+- [x] Attempt the exact Rust 1.93.0 Linux build in a disposable container. Rustup timed out while
+  fetching `channel-rust-1.93.0.toml.sha256` from both the official distribution endpoint and the
+  configured Tuna mirror; this is recorded as unavailable evidence, not a passing build. No
+  source or dependency files were changed, and Ubuntu Native CI remains authoritative.
 - [ ] Keep the exact pinned Rust 1.93.0 build and full Ubuntu Native workflow CI-authoritative.
 - [ ] Keep release `unreleased`; human/physical review, live providers, other clients, signing,
   rollback, and stable-release authorization remain open.
