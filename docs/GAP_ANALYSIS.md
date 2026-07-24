@@ -3,6 +3,17 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux runtime AT-SPI status/error export fixture
+
+Linux runtime/test head `8713bdc23b81263e1bdbc65e8d010ce57673877a` preserves production GTK
+`Status`/`Alert` roles and adds a test-only fixed invalid-UTF-8 state/error fixture. Standard
+`ROLE_LABEL` nodes are checked through AT-SPI name, description, or Text exports for localized
+status/error prefixes without printing arbitrary content. Flatpak/release-pin head
+`21ea284660aa23302127234abade2b1ba5fe79b7` and hosted push Native/Flatpak/Foundation
+`30114122907`/`30114122836`/`30114122881` passed. Human Orca listening, visual/RTL review,
+physical compositor/GPU coverage, other clients, signing, rollback, and stable release remain
+open.
+
 ## Latest Linux final SQLite sidecar stability recheck
 
 Linux implementation `e75317015e970a283f9a3d4ae47718b12e557e32` performs a final `-wal`/`-shm`

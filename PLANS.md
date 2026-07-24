@@ -22,6 +22,23 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux runtime AT-SPI status/error export fixture
+
+Assumption: the GTK bridge's runtime tree is the authoritative automated boundary for localized
+status/error content, while a test-only fixture must not be reported as human screen-reader review.
+
+- [x] Keep production `Status`/`Alert` semantic roles and normal refresh updates; add a test-only
+  fixed invalid-UTF-8 error path and standard `ROLE_LABEL` runtime fixture driven by the reducer.
+- [x] Inspect AT-SPI name, description, and Text exports for localized status/error prefixes without
+  printing arbitrary application content; retain GTK unit-role assertions.
+- [x] Push Linux runtime/test head `8713bdc23b81263e1bdbc65e8d010ce57673877a` and final
+  Flatpak/release-pin head `21ea284660aa23302127234abade2b1ba5fe79b7`.
+- [x] Pass local formatting, GUI checks, localization/metadata/syntax checks, focused worker test,
+  and the `173`-test demo-provider suite; hosted push Native/Flatpak/Foundation
+  `30114122907`/`30114122836`/`30114122881` passed.
+- [ ] Keep human Orca listening, visual/RTL review, physical compositor/GPU coverage, other-client
+  parity, signing, rollback, and stable-release approval open; release remains `unreleased`.
+
 ## 2026-07-24 — Linux final SQLite sidecar stability recheck
 
 Assumption: Linux startup storage must reject a sidecar identity change after Core opens the

@@ -4,6 +4,17 @@ No compatible stable release train exists yet. The authoritative machine-readabl
 
 Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198`.
 
+### Linux runtime AT-SPI status/error export fixture — 2026-07-24
+
+Linux runtime/test head `8713bdc23b81263e1bdbc65e8d010ce57673877a` preserves production GTK
+`Status`/`Alert` roles and adds a test-only fixed invalid-UTF-8 state/error fixture. Standard
+`ROLE_LABEL` nodes are checked through AT-SPI name, description, or Text exports for localized
+status/error prefixes; no arbitrary content is printed. Flatpak/release-pin head
+`21ea284660aa23302127234abade2b1ba5fe79b7` and hosted push Native `30114122907`, Flatpak
+`30114122836`, and Foundation `30114122881` passed. Human Orca listening, visual/RTL review,
+physical compositor/GPU coverage, other clients, signing, rollback, and stable release remain
+open; release stays `unreleased`.
+
 ### Linux final SQLite sidecar stability recheck — 2026-07-24
 
 Linux implementation `e75317015e970a283f9a3d4ae47718b12e557e32` adds a final `-wal`/`-shm`

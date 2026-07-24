@@ -16,7 +16,7 @@ and must not be promoted without the acceptance and authorization gates listed b
 | Android | `0.1.0-alpha.1` | `240afaeebe22dc13dea988591dbdd87aa233fc79` |
 | Windows | `0.0.0-dev` | `unreleased` |
 | macOS | `0.1.0-alpha.1` | `a039bcbd39c032fabb58adb389eec1e68ae9c2c6` |
-| Linux | `0.1.0-alpha.2` | `1407f0daa2b87b58b74adde9e71e7390d96d302e` |
+| Linux | `0.1.0-alpha.2` | `21ea284660aa23302127234abade2b1ba5fe79b7` |
 
 Contracts: ABI major `1`, protocol schema `0.1.0`, provider catalog `0.1.0`, and localization
 schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
@@ -61,6 +61,14 @@ validation. These remain CI artifacts, not signed releases.
   Foundation runs `30108528343`/`30108528414`/`30108528360` passed. Post-publish replacement,
   physical power loss, broader VFS variants, cross-client parity, signing, rollback, and stable
   release remain open.
+
+- Current Linux accessibility checkpoint uses runtime/test head
+  `8713bdc23b81263e1bdbc65e8d010ce57673877a` and packaging/status head
+  `21ea284660aa23302127234abade2b1ba5fe79b7`. It preserves production `Status`/`Alert` roles,
+  adds a test-only fixed invalid-UTF-8 `ROLE_LABEL` fixture, and verifies localized status/error
+  prefixes through AT-SPI name, description, or Text exports. Hosted push Native/Flatpak/Foundation
+  `30114122907`/`30114122836`/`30114122881` passed. Human listening/visual review, physical
+  compositor/GPU, other clients, signing, rollback, and stable-release evidence remain open.
 
 - Host-pinned Rust 1.93.0 Core check passed with `cargo check --workspace --locked --offline`.
 - Core FFI ASAN smokes passed locally: valid loopback commands completed 136 time-bounded
