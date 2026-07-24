@@ -2,6 +2,21 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux contributor pin alignment
+
+Assumption: the Linux contributor guide must name the same immutable Core revision consumed by the
+Native workflow, Flatpak source manifest, and central release manifest; this documentation-only
+descendant does not change the runtime or ABI contract.
+
+- Linux head `8d9a378d34e35e14a5618ad51b4787c616b7ae70` updates `AGENTS.md` from superseded Core
+  `77c6bf` to `9e69d01cbae1ca0421923e059aa3252c4ecbe1be`.
+- Local `git diff --check`, l10n synchronization/audits, Flatpak metadata validation, Rust
+  formatting, strict demo-provider Clippy, no-default and demo-provider tests, cargo-deny, and the
+  private-mount storage-fault regression passed.
+- Push Native/Flatpak/Foundation runs `30102784838`/`30102784832`/`30102784964` and PR
+  Native/Flatpak/Foundation runs `30102781098`/`30102781136`/`30102781145` passed. Release remains
+  `unreleased`.
+
 ## 2026-07-24 — macOS Core VFS-descendant compatibility checkpoint
 
 Assumption: Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` preserves the macOS ABI-1 typed

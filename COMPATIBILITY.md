@@ -24,6 +24,16 @@ workflows, signing, rollback, cross-client conformance, and stable-release evide
 Central coordination workflow `30100580395` passed the synchronized manifest and documentation
 checks.
 
+### Linux contributor pin alignment — 2026-07-24
+
+Linux head `8d9a378d34e35e14a5618ad51b4787c616b7ae70` is a documentation-only descendant of the
+registered custom-VFS checkpoint. It aligns contributor instructions with Core
+`9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`.
+Push Native/Flatpak/Foundation runs `30102784838`/`30102784832`/`30102784964` and PR
+Native/Flatpak/Foundation runs `30102781098`/`30102781136`/`30102781145` passed. No runtime
+contract changed; physical power loss, manual review, cross-client parity, signing, rollback, and
+stable-release evidence remain open.
+
 ### Linux registered custom VFS compatibility probe — 2026-07-24
 
 Linux head `402b97ac50bf62e89f9c27caedebff10d2ae7b8c` consumes Core

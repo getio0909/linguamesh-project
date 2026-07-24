@@ -22,6 +22,19 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux contributor pin alignment
+
+Assumption: Linux contributor instructions must match the immutable Core revision consumed by the
+Native workflow and Flatpak source; this is a documentation-only descendant of the registered
+custom-VFS checkpoint.
+
+- [x] Update Linux `AGENTS.md` to Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` at head
+  `8d9a378d34e35e14a5618ad51b4787c616b7ae70`.
+- [x] Pass Linux push/PR Native, Flatpak, and Foundation runs
+  `30102784838`/`30102784832`/`30102784964` and `30102781098`/`30102781136`/`30102781145`.
+- [ ] Keep physical power-loss, manual review, cross-client parity, signing, rollback, and stable
+  release evidence open; release remains `unreleased`.
+
 ## 2026-07-24 — Android Core VFS-descendant compatibility checkpoint
 
 Assumption: Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` preserves the Android ABI-1 typed
