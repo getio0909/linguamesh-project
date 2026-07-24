@@ -15,6 +15,16 @@ to Core `f5b818c3598d78e7cac30604577fa8057d380737`. Generated platform projectio
 artifacts, cross-client conformance, manual/physical review, signing, rollback, and stable-release
 evidence remain gaps, so release status stays `unreleased`.
 
+### Final Linux PR and Issue audit
+
+Linux PR #1 remains Draft/Open and mergeable at head `4612827d0ce78b9629fbbc24853677e18ee9d0a1`;
+all six current push/PR Native, Flatpak, and Foundation checks passed, with zero submitted reviews
+and no unresolved review threads. Central Issue #1 remains Open with no external review feedback;
+the final evidence comments are Linux `5066899799` and central `5066899925`. A current source and
+status audit found no additional deterministic Linux implementation slice within the authorized
+Linux-first scope. The remaining gaps are therefore cross-client, physical/manual, custom-VFS and
+power-loss, signing, rollback, and stable-release evidence; the release remains `unreleased`.
+
 Assumption: Core `f5b818c3598d78e7cac30604577fa8057d380737` preserves ABI 1 and Linux application
 contracts while rejecting the bundled non-locking `unix-none` VFS before migrations; Linux
 `4612827d0ce78b9629fbbc24853677e18ee9d0a1` is a documentation/status-only descendant.

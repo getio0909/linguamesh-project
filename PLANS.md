@@ -37,6 +37,23 @@ manifest therefore remain unchanged.
   hosted jobs (Linux, Android, Apple, and Windows).
 - [ ] Keep the release `unreleased`; do not change the Linux runtime pin or promote stable artifacts.
 
+## 2026-07-24 — Final Linux PR and Issue audit
+
+Assumption: the authenticated GitHub review state and completed check runs are authoritative for
+this audit; Linux remains the only active implementation scope in the current user instruction.
+
+- [x] Verify Linux PR #1 at head `4612827d0ce78b9629fbbc24853677e18ee9d0a1`: Draft/Open, mergeable,
+  zero submitted reviews, and no unresolved review threads. Push and PR Native, Flatpak, and
+  Foundation runs `30071367773`/`30071367788`/`30071367816` and
+  `30071369693`/`30071369679`/`30071369672` all passed.
+- [x] Verify central Issue #1 remains Open with no external review feedback; final evidence comments
+  are recorded at Linux comment `5066899799` and central comment `5066899925`.
+- [x] Confirm the Linux source/status audit exposes no remaining deterministic implementation slice
+  within the authorized Linux-first scope; no user changes, provider credentials, or release state
+  were modified.
+- [ ] Keep cross-client parity, physical/manual review, custom VFS and power-loss evidence, signing,
+  rollback authorization, and stable-release acceptance open. Release remains `unreleased`.
+
 ## 2026-07-24 — Linux-first Core `unix-none` rejection and GitHub triage
 
 Assumption: Core `f5b818c3598d78e7cac30604577fa8057d380737` preserves ABI 1 and Linux application

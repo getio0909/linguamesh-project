@@ -18,6 +18,19 @@ continues to consume runtime pin `f5b818c3598d78e7cac30604577fa8057d380737`.
   cross-client conformance, manual/physical review, signing, rollback, and stable-release evidence
   remain open. Release status remains `unreleased`.
 
+## 2026-07-24 — Final Linux PR and Issue audit
+
+Assumption: this is a current GitHub and local-scope audit, not a stable-release qualification.
+
+- Linux PR #1 is still Draft/Open and mergeable at head `4612827d0ce78b9629fbbc24853677e18ee9d0a1`,
+  with zero submitted reviews and no unresolved review threads. Its six current push/PR Native,
+  Flatpak, and Foundation workflows all passed.
+- Central Issue #1 remains Open with no external review feedback. Final evidence is recorded in
+  Linux comment `5066899799` and central comment `5066899925`.
+- A source/status audit found no additional deterministic Linux implementation slice within the
+  current authorized scope. Remaining gaps are cross-client, physical/manual, custom-VFS/power-loss,
+  signing, rollback, and stable-release boundaries; release remains `unreleased`.
+
 ## 2026-07-24 — Linux-first Core `unix-none` rejection and GitHub triage
 
 Assumption: Core `f5b818c3598d78e7cac30604577fa8057d380737` preserves ABI 1 and Linux application
