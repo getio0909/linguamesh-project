@@ -34,7 +34,9 @@ store.
   profile changes; add JVM coverage for restoration and secret-reference boundaries.
 - [x] Update the Android l10n revision/workflow to `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`;
   local Foundation, l10n, debug/release build/test/lint, and instrumentation-compilation checks pass.
-- [ ] Complete hosted Android run `30091714901`, then record its result and synchronize manifests.
+- [x] Complete hosted Android run `30091714901` (clean Core AAR provenance, debug/release builds,
+  18 JVM tests per variant, instrumentation compilation, and debug/release lint), record status
+  head `4b2093bc94b8016c5eca721a18b5f049ac7330d8`, and synchronize manifests.
 - [ ] Keep Core-owned persistence, device/background/document flows, signing, rollback, and stable
   release evidence open.
 

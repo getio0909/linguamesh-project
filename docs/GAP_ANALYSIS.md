@@ -5,13 +5,14 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 
 ## Latest Android checkpoint
 
-Android head `df8320e1898981814fe3135bcd41024e5d2e006e` adds bounded DataStore persistence for
+Android code head `df8320e1898981814fe3135bcd41024e5d2e006e` adds bounded DataStore persistence for
 non-secret provider-profile metadata, background restore and Core re-registration, active-profile
 selection persistence, and JVM coverage. Local Foundation, l10n sync, debug/release builds, 18
-debug/release JVM tests, instrumentation compilation, and debug/release lint passed. Hosted run
-`30091714901` is still running after the corrected l10n pin; the superseded stale-pin run
-`30091670253` failed before build execution. Core-owned persistence, device restoration, document
-and background workflows, real-provider credentials, signing, and stable release remain open.
+debug/release JVM tests, instrumentation compilation, and debug/release lint passed. Status head
+`4b2093bc94b8016c5eca721a18b5f049ac7330d8` records hosted run `30091714901` as passed; the
+superseded stale-pin run `30091670253` failed before build execution. Core-owned persistence,
+device restoration, document and background workflows, real-provider credentials, signing, and
+stable release remain open.
 
 ## Latest Windows checkpoint
 
