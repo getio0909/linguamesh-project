@@ -4,6 +4,16 @@ No compatible stable release train exists yet. The authoritative machine-readabl
 
 Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198`.
 
+### Windows Core compatibility pin alignment — 2026-07-24
+
+Windows head `c7053e5de3d4a97b4705c8f6737cc97daaf6afb7` consumes Core
+`9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`.
+Local Foundation/source-boundary, CMake Release, and CTest checks passed. Hosted Native Windows
+run `30105207544` passed the portable C++ job plus WinUI Debug/Release and unsigned MSIX
+preparation; Foundation run `30105208019` passed. This confirms only build/packaging preparation;
+Windows UI runtime, UI automation, PasswordVault behavior, accessibility, generated-wrapper
+conformance, cross-client parity, signing, rollback, and stable-release evidence remain open.
+
 ### macOS Core VFS-descendant compatibility checkpoint — 2026-07-24
 
 macOS head `a039bcbd39c032fabb58adb389eec1e68ae9c2c6` consumes Core

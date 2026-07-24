@@ -82,13 +82,13 @@ manifest, compatibility, documentation, and credential-scan checks.
 
 ## Latest Windows checkpoint
 
-Windows head `d922b40c7db19aadebf77c2ea734ee5779ecc8ef` passes the local Foundation and source
-boundary checks, CMake Release build, CTest (1/1), and hosted push run `30090288192`, including
-portable C++ plus WinUI/MSIX Debug and Release preparation; Foundation run `30090288187` also
-passed. The hosted job generated XAML/PRI resources and an unsigned MSIX layout. Windows UI
-runtime, UI automation, PasswordVault integration, accessibility, signing, generated Core-wrapper
-conformance, full client capabilities, and cross-client parity remain open. Release remains
-`unreleased`.
+Windows head `c7053e5de3d4a97b4705c8f6737cc97daaf6afb7` consumes Core
+`9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`.
+Local Foundation/source-boundary, CMake Release, and CTest (1/1) checks passed. Hosted push run
+`30105207544` passed portable C++ plus WinUI/MSIX Debug and Release preparation; Foundation run
+`30105208019` also passed. Windows UI runtime, UI automation, PasswordVault integration,
+accessibility, signing, generated Core-wrapper conformance, full client capabilities, and
+cross-client parity remain open. Release remains `unreleased`.
 
 ## Latest Linux/Core checkpoint
 

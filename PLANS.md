@@ -22,6 +22,20 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Windows Core compatibility pin alignment
+
+Assumption: Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` preserves the Windows ABI-1 typed
+host-secret contract while adding Linux-only storage coverage; this bounded sync changes only the
+Windows immutable workflow pin and keeps the release `unreleased`.
+
+- [x] Update Windows workflow and status at head `c7053e5de3d4a97b4705c8f6737cc97daaf6afb7` to
+  consume Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n
+  `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`.
+- [x] Pass local Foundation/source-boundary/CMake/CTest checks and hosted Native Windows
+  `30105207544` plus Foundation `30105208019`.
+- [ ] Keep Windows UI runtime, PasswordVault, accessibility, generated-wrapper, cross-client,
+  signing, rollback, stable-release, and remaining manual evidence open.
+
 ## 2026-07-24 — Linux Flatpak release-pin documentation alignment
 
 Assumption: the central release manifest should identify the latest verified Linux head even when

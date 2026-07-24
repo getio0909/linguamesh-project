@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Windows Core compatibility pin alignment
+
+Assumption: Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` preserves the Windows ABI-1 typed
+host-secret contract while adding Linux-only storage coverage; this checkpoint changes only the
+immutable Windows workflow input and does not claim Windows UI or device evidence.
+
+- Windows head `c7053e5de3d4a97b4705c8f6737cc97daaf6afb7` pins Core
+  `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n
+  `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`.
+- Local Foundation/source-boundary, CMake Release, CTest (1/1), and `git diff --check` passed.
+  Hosted Native Windows run `30105207544` passed the portable C++ job plus WinUI Debug/Release
+  and unsigned MSIX preparation; Foundation run `30105208019` passed.
+- This remains build/packaging evidence only. Windows UI runtime, UI automation, PasswordVault,
+  accessibility, generated-wrapper conformance, cross-client parity, signing, rollback, and
+  stable-release evidence remain open; release stays `unreleased`.
+
 ## 2026-07-24 — Linux Flatpak release-pin documentation alignment
 
 Assumption: the central release train must point at the latest verified Linux head while the
