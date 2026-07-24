@@ -22,6 +22,23 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux-first continuation completion audit
+
+Assumption: current-tree automated validation is evidence of reproducibility only; it cannot replace
+the manual, physical, cross-client, signing, rollback-authorization, or stable-release gates named
+by `PROJECT_GOAL.md`.
+
+- [x] Re-read `PROJECT_GOAL.md`, `AGENTS.md`, and this plan completely; verify GitHub owner
+  `getio0909`, all seven canonical remotes, and preserve the user-owned central `AGENTS.md` change.
+- [x] Re-run Linux HEAD `e1a2ba9130a198212098e93276e5d16bdfec8e3b` formatting, GUI all-target check,
+  strict Clippy, the serialized demo-provider suite (`166 passed; 7 ignored`), l10n synchronization,
+  466-key/595-placeholder/visible-string audits, Flatpak metadata validation, and diff checks.
+- [x] Re-run Core HEAD `c518c9bd1208e134fd2502857fcccebd8112cd42` formatting, all locked offline
+  workspace tests (including FFI 22, protocol 5, storage 60), workspace build, and diff checks.
+- [ ] Keep the release `unreleased`: no new deterministic Linux gap was identified, while manual/
+  physical accessibility, live-provider qualification, broader VFS/power-loss, other clients,
+  signing, rollback authorization, and stable-release evidence remain incomplete.
+
 ## 2026-07-24 — Linux-first current-tree validation audit
 
 Assumption: a clean revalidation of the reviewed Linux head is evidence that the existing

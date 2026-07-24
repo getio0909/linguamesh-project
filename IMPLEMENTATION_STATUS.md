@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux-first continuation completion audit
+
+Assumption: current-tree automated checks prove reproducibility only and do not satisfy manual,
+physical, cross-client, signing, rollback-authorization, or stable-release requirements.
+
+- Linux HEAD `e1a2ba9130a198212098e93276e5d16bdfec8e3b` passed formatting, GUI all-target checking,
+  strict Clippy, the demo-provider suite (`166 passed; 7 ignored`), localization synchronization,
+  466-key/595-placeholder/visible-string audits, Flatpak metadata validation, and diff checks.
+- Core HEAD `c518c9bd1208e134fd2502857fcccebd8112cd42` passed formatting, all locked offline
+  workspace tests/build, and diff checks; FFI/protocol/storage groups reported 22/5/60 passes.
+- Central workspace validation passed manifest, goal pin, release/compatibility, documentation-link,
+  credential-scan, and canonical-layout checks. No source or functional pin changed in this audit.
+- No new deterministic Linux gap was found. Manual/physical accessibility, live-provider and
+  broader VFS/power-loss evidence, other clients, signing, rollback authorization, and stable
+  release remain open; release stays `unreleased`.
+
 ## 2026-07-24 — Linux-first current-tree validation audit
 
 Assumption: re-running the reviewed heads verifies reproducibility only; it is not a substitute

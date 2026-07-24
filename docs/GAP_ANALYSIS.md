@@ -3,6 +3,17 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux-first continuation completion audit
+
+Current Linux HEAD `e1a2ba9130a198212098e93276e5d16bdfec8e3b` passed formatting, GUI all-target
+checking, strict Clippy, demo-provider tests (`166 passed; 7 ignored`), l10n synchronization,
+466-key/595-placeholder/visible-string audits, Flatpak metadata validation, and diff checks. Core
+HEAD `c518c9bd1208e134fd2502857fcccebd8112cd42` passed formatting, all locked offline workspace
+tests/build, and diff checks, including 22 FFI, 5 protocol, and 60 storage tests. Central workspace
+validation also passed. No new deterministic Linux gap was identified; manual/physical accessibility,
+live-provider qualification, broader VFS/power-loss, other clients, signing, rollback authorization,
+and stable-release evidence remain open.
+
 ## Latest Linux-first current-tree validation audit
 
 The reviewed Linux head `e1a2ba9130a198212098e93276e5d16bdfec8e3b` was revalidated without source
