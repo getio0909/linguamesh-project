@@ -29,14 +29,22 @@ human/physical review, live providers, other clients, signing, rollback, and rel
 remain open.
 
 The pinned third-party Ollama fixture was also re-run with `ollama/ollama:0.11.10` and
-`smollm:135m`; after download and warm-up the exact ignored worker test passed `1 passed; 0 failed`
-without a credential. Its first cold invocation exceeded the five-second test deadline, so the
-result is warm-start interoperability evidence only and not a cold-start performance claim.
+`smollm:135m`; the worker test now uses a dedicated 30-second deadline for cold model startup.
+The exact ignored worker test passed `1 passed; 0 failed` without a credential after download, and
+the result makes no cold-start performance claim.
 
 An exact Rust 1.93.0 Linux build was attempted in a disposable container, but Rustup timed out
 fetching `channel-rust-1.93.0.toml.sha256` from both the official distribution endpoint and the
-configured Tuna mirror. This is unavailable evidence rather than a passing build; the exact
-pinned toolchain remains CI-authoritative.
+configured Tuna mirror. The host-pinned toolchain was then used after removing only generated
+target caches: Core `cargo check --workspace --locked --offline` passed and Linux's non-GUI
+demo-provider suite passed `166 passed; 0 failed; 7 ignored` with loopback proxy bypassed. The
+host GUI check remains unavailable because `gtk4` and `graphene-gobject-1.0` packages are absent;
+Native CI remains authoritative for display-backed validation.
+
+Linux worker commit `c03c7e2065c1a0f74f6326d9e5071ee3cbde6299` and Flatpak source-pin commit
+`1c513e2e52236fce03a60548dbcab242c6878bed` passed Native `30058395686`, Flatpak `30058395689`,
+and Foundation `30058395669`. The Native gate completed all GTK, accessibility, portal, mTLS,
+build, performance, checksum, and SBOM steps; Flatpak completed its sandbox smoke.
 
 The 2026-07-23 GitHub triage refresh confirms Linux PR #1 and macOS PR #1 are both Draft/Open and
 mergeable with their current checks successful, and neither has submitted reviews or unresolved

@@ -53,13 +53,22 @@ toolchain, and container capability failures remain unverified rather than passi
   SBOM (234 packages), and pass the sandbox smoke on GNOME runtime `org.gnome.Platform/x86_64/49`.
 - [x] Re-run the pinned third-party Ollama interop fixture with `ollama/ollama:0.11.10` and
   `smollm:135m`: after model download/warm-up, the exact ignored worker test passed `1 passed;
-  0 failed` without a credential. The first cold invocation exceeded the fixture's five-second
-  deadline, so this is warm-start interoperability evidence, not a cold-start latency claim.
+  0 failed` without a credential. The worker test now uses a dedicated 30-second harness deadline
+  for cold model startup; the earlier generic five-second helper timed out cold, so no cold-start
+  performance claim is made.
 - [x] Attempt the exact Rust 1.93.0 Linux build in a disposable container. Rustup timed out while
   fetching `channel-rust-1.93.0.toml.sha256` from both the official distribution endpoint and the
   configured Tuna mirror; this is recorded as unavailable evidence, not a passing build. No
   source or dependency files were changed, and Ubuntu Native CI remains authoritative.
-- [ ] Keep the exact pinned Rust 1.93.0 build and full Ubuntu Native workflow CI-authoritative.
+- [x] Use the host-pinned Rust 1.93.0 toolchain after removing only generated target caches: Core
+  `cargo check --workspace --locked --offline` passed, and Linux's non-GUI demo-provider suite
+  passed `166 passed; 0 failed; 7 ignored` with loopback proxy bypassed. The host GUI check remains
+  unavailable because `gtk4` and `graphene-gobject-1.0` development packages are absent; Native
+  CI remains authoritative for display-backed validation.
+- [x] Push Linux worker test commit `c03c7e2065c1a0f74f6326d9e5071ee3cbde6299` and Flatpak
+  source-pin commit `1c513e2e52236fce03a60548dbcab242c6878bed`. Native `30058395686`, Flatpak
+  `30058395689`, and Foundation `30058395669` all passed, including the cold-start Ollama test,
+  Flatpak sandbox smoke, checksums, and SBOM evidence.
 - [ ] Keep release `unreleased`; human/physical review, live providers, other clients, signing,
   rollback, and stable-release authorization remain open.
 

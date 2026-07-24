@@ -30,14 +30,23 @@ Assumption: this is disposable Debian trixie evidence with Rust 1.93.1 (the repo
   `a01177a9a1a3d84ac8e3de0cc509305f71494307134281ce42882a0e40e2dc02`; the SPDX 2.3 SBOM parsed
   with 234 packages. Release remains `unreleased`; human/physical, live-provider, cross-client,
   signing, rollback, and stable-release evidence remain open.
-- The pinned third-party Ollama fixture used `ollama/ollama:0.11.10` with `smollm:135m`; after
-  model download and warm-up, the exact ignored worker test passed `1 passed; 0 failed` without a
-  credential. A cold first invocation exceeded the fixture's five-second deadline, so no cold-start
-  performance claim is made.
+- The pinned third-party Ollama fixture used `ollama/ollama:0.11.10` with `smollm:135m`; the
+  test-only helper now grants a dedicated 30-second deadline for cold model startup. The exact
+  ignored worker test passed `1 passed; 0 failed` without a credential after the model was
+  downloaded, and no cold-start performance claim is made.
 - An exact Rust 1.93.0 Linux build was attempted in a disposable container. Rustup timed out
   fetching `channel-rust-1.93.0.toml.sha256` from both the official distribution endpoint and the
   configured Tuna mirror. This remains unavailable evidence; the disposable Rust 1.93.1 build and
   Ubuntu Native CI must not be conflated with a local 1.93.0 result.
+- After removing only generated target caches, the host-pinned Rust 1.93.0 toolchain passed Core
+  `cargo check --workspace --locked --offline`. Linux's non-GUI demo-provider suite passed
+  `166 passed; 0 failed; 7 ignored` with loopback proxy bypassed. The host GUI check remains
+  unavailable because `gtk4` and `graphene-gobject-1.0` development packages are absent; Native
+  CI is the authoritative GUI result.
+- Linux worker commit `c03c7e2065c1a0f74f6326d9e5071ee3cbde6299` and Flatpak source-pin commit
+  `1c513e2e52236fce03a60548dbcab242c6878bed` passed Native run `30058395686`, Flatpak run
+  `30058395689`, and Foundation run `30058395669`. Native completed all GTK, mTLS, portal,
+  accessibility, build, performance, checksum, and SBOM steps; Flatpak completed sandbox smoke.
 
 - Central coordination commit `7c4ffa8fe2fa77a24ae61635c9c130c65e22382b` passed workflow
   `30045831148`; Linux and PowerShell validation jobs completed successfully.
