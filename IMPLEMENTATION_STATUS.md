@@ -2,6 +2,22 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Core ABI status reconciliation
+
+Assumption: Core `3397eafb4a4a23cfbedb8d0b0c8b086dd34f5d6a` changes status documentation only; Linux
+continues to consume runtime pin `f5b818c3598d78e7cac30604577fa8057d380737`.
+
+- Core's ABI file-lease APIs cover bounded desktop/temporary/output paths, POSIX descriptors, Android
+  parcel descriptors, Windows handles, one-shot consumption, expiration/revocation, and cleanup.
+- Bounded FFI fuzz coverage includes malformed inputs, lifecycle/control sequences, valid loopback
+  commands, and stale opaque-handle use. Pinned local validation passed: storage `59 passed; 0 failed`
+  and FFI `22 passed`; fmt, check, strict Clippy, build, and cargo-deny also passed.
+- Core CI `30072627363`, Fuzz/ASAN `30072627365`, and Native SDK `30072627332` passed all hosted
+  Linux, Android, Apple, and Windows jobs.
+- Generated Swift/C++ projections, platform symbol bundles, SBOM/checksum release artifacts,
+  cross-client conformance, manual/physical review, signing, rollback, and stable-release evidence
+  remain open. Release status remains `unreleased`.
+
 ## 2026-07-24 — Linux-first Core `unix-none` rejection and GitHub triage
 
 Assumption: Core `f5b818c3598d78e7cac30604577fa8057d380737` preserves ABI 1 and Linux application

@@ -22,6 +22,21 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Core ABI status reconciliation
+
+Assumption: Core `3397eafb4a4a23cfbedb8d0b0c8b086dd34f5d6a` is a documentation-only correction on top
+of the Linux-consumed runtime `f5b818c3598d78e7cac30604577fa8057d380737`; the Linux pin and release
+manifest therefore remain unchanged.
+
+- [x] Correct the stale Core audit: ABI file-lease surfaces and bounded FFI sanitizer/fuzz targets
+  are implemented and tested; generated platform projections, package/distribution artifacts, and
+  cross-client conformance remain open.
+- [x] Re-run Core Rust 1.93.0 fmt/check/strict-Clippy/workspace-test/build/cargo-deny validation;
+  storage reports `59 passed; 0 failed` and FFI reports `22 passed`.
+- [x] Core CI `30072627363`, Fuzz/ASAN `30072627365`, and Native SDK `30072627332` passed all
+  hosted jobs (Linux, Android, Apple, and Windows).
+- [ ] Keep the release `unreleased`; do not change the Linux runtime pin or promote stable artifacts.
+
 ## 2026-07-24 — Linux-first Core `unix-none` rejection and GitHub triage
 
 Assumption: Core `f5b818c3598d78e7cac30604577fa8057d380737` preserves ABI 1 and Linux application

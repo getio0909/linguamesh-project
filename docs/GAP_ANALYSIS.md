@@ -5,6 +5,16 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 
 ## Latest Linux/Core checkpoint
 
+### Core ABI status reconciliation
+
+Core `3397eafb4a4a23cfbedb8d0b0c8b086dd34f5d6a` corrects a stale status entry without changing
+runtime or dependency pins. The current ABI file-lease and bounded FFI sanitizer/fuzz surfaces are
+implemented and covered by local tests and passing Core CI `30072627363`, Fuzz/ASAN `30072627365`,
+and Native SDK `30072627332` across Linux, Android, Apple, and Windows. Linux remains pinned
+to Core `f5b818c3598d78e7cac30604577fa8057d380737`. Generated platform projections, distribution
+artifacts, cross-client conformance, manual/physical review, signing, rollback, and stable-release
+evidence remain gaps, so release status stays `unreleased`.
+
 Assumption: Core `f5b818c3598d78e7cac30604577fa8057d380737` preserves ABI 1 and Linux application
 contracts while rejecting the bundled non-locking `unix-none` VFS before migrations; Linux
 `4612827d0ce78b9629fbbc24853677e18ee9d0a1` is a documentation/status-only descendant.
