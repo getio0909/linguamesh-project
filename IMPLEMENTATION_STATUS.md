@@ -36,6 +36,19 @@ third-party VFS behavior.
 - Release stays `unreleased`; broader VFS/power-loss, manual/physical accessibility, other
   clients, signing, rollback authorization, and stable-release approval remain open.
 
+## 2026-07-24 — Linux release-manifest pin alignment
+
+Assumption: central release metadata must point to the exact Linux packaging/status head already
+verified by local and hosted checks.
+
+- `release-manifest.toml` now pins the Linux component to
+  `cadc6cdbf714aa056d2cdf2c6c692169092ce02f`, matching the Flatpak source pin and branch head;
+  the superseded `e1a2ba9` reference is removed.
+- Workspace validation and `git diff --check` passed. Central commit `a0e4ad9` passed coordination
+  workflow `30122520200`.
+- Release remains `unreleased`; artifact production, signing, rollback authorization, and stable
+  release are unchanged.
+
 ## 2026-07-24 — Linux-first current-tree validation audit
 
 Assumption: re-running the reviewed heads verifies reproducibility only; it is not a substitute

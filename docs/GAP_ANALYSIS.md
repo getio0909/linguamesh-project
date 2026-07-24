@@ -27,6 +27,15 @@ only the post-publish pathname boundary;
 broader VFS, physical power-loss, manual/physical accessibility, other clients, signing, rollback,
 and stable-release evidence remain open.
 
+## Latest Linux release-manifest pin alignment
+
+Central `release-manifest.toml` now points the Linux component at the verified packaging/status
+head `cadc6cdbf714aa056d2cdf2c6c692169092ce02f`, matching the Flatpak pin and branch head rather
+than the superseded `e1a2ba9` reference. Workspace validation and diff checks passed; central commit
+`a0e4ad9` passed coordination workflow `30122520200`. This is a metadata consistency correction,
+not a stable-release or artifact claim; manual/physical accessibility, broader VFS/power-loss,
+other clients, signing, rollback, and stable-release evidence remain open.
+
 ## Latest Linux-first current-tree validation audit
 
 The reviewed Linux head `e1a2ba9130a198212098e93276e5d16bdfec8e3b` was revalidated without source

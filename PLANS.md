@@ -58,6 +58,18 @@ arbitrary third-party VFS coverage.
   accessibility, other clients, signing, rollback authorization, and stable-release approval
   remain open.
 
+## 2026-07-24 — Linux release-manifest pin alignment
+
+Assumption: the central Linux component revision must identify the exact verified packaging/status
+head so workspace and release metadata cannot silently lag the published checkpoint.
+
+- [x] Updated `release-manifest.toml` Linux `source_revision` from the superseded `e1a2ba9` head
+  to `cadc6cdbf714aa056d2cdf2c6c692169092ce02f`, matching the Flatpak pin and Linux branch.
+- [x] `bash tools/check-workspace.sh --require-repositories` and `git diff --check` passed;
+  central commit `a0e4ad9` passed coordination workflow `30122520200`.
+- [ ] Keep the release `unreleased`; this metadata correction does not add artifacts, signing,
+  rollback authorization, or stable-release evidence.
+
 ## 2026-07-24 — Linux-first current-tree validation audit
 
 Assumption: a clean revalidation of the reviewed Linux head is evidence that the existing
