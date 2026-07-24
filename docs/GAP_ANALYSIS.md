@@ -16,6 +16,16 @@ physical/alternate-VFS recovery, signing, rollback authorization, and stable rel
 Central pin synchronization commit `b2d1ae9dc425cafd359746ef75031dce9f9a9ea2` passed coordination
 workflow `30062468039` on Linux `89386679596` and PowerShell `89386679650`.
 
+Linux Core pin synchronization is now recorded at runtime/build head
+`449facf5aaf7fe79e0cea91ea9ec3934a9b6f8d4` and final evidence head
+`4b592e7f7b1e60545d5539a40a9a33edd9b86a09`. Core `b29067b…` and l10n `c2526b…` are consumed
+immutably; local Linux non-GUI checks passed with 166 demo-provider tests and 7 environment-gated
+ignores, while the host GTK development-package blocker remains explicit. Push and PR Native,
+Flatpak, and Foundation runs `30063415446`/`30063415485`/`30063415440` and
+`30063417561`/`30063417542`/`30063417551` all passed, including GTK/portal/Wayland/Orca,
+Flatpak sandbox, checksum, SBOM, and performance evidence. This is prerelease compatibility and
+provenance evidence only; the release remains `unreleased`.
+
 Core commit `5e22931d5772231b0a8183cbf05ba0cbda0dfebf` adds bounded C ABI `ffi_inputs` and
 `ffi_sequences` libFuzzer targets. Local pinned-nightly ASAN smokes passed 200 runs with 299 and
 2,326 coverage features and 29- and 47-file minimized corpora; Core CI `30061241968`, Fuzz/ASAN

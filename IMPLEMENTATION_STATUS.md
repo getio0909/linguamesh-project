@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux Core pin synchronization
+
+Assumption: Core `b29067b78d420c96f57d670d3dd860cba3abc703` is a fuzz/docs-only descendant of the
+Linux runtime baseline `8623b2c8829e4d9cf7299c74440dcfabb4e320db`; the pin refresh records the
+validated immutable checkout without changing Linux runtime behavior.
+
+- Linux runtime/build head `449facf5aaf7fe79e0cea91ea9ec3934a9b6f8d4` and final status/evidence head
+  `4b592e7f7b1e60545d5539a40a9a33edd9b86a09` now consume Core `b29067b…` and l10n `c2526b…`.
+- Local Linux evidence passed: localization sync and all three source audits, Flatpak metadata,
+  formatting, demo-provider all-target check, DOCS_RS strict Clippy, 85 no-default tests with one
+  ignored OCR fixture, 166 demo-provider tests with seven documented environment-gated ignores,
+  cargo-deny, Core runtime-source cleanliness, and diff checks. Native Clippy was attempted but is
+  blocked locally by missing `gtk4.pc` and `graphene-gobject-1.0`; GitHub Native is authoritative.
+- Linux push Native/Flatpak/Foundation runs `30063415446`/`30063415485`/`30063415440` (jobs
+  `89389470774`/`89389470967`/`89389471112`) and PR runs `30063417561`/`30063417542`/`30063417551`
+  (jobs `89389477016`/`89389477206`/`89389477005`) all passed. Release remains `unreleased`.
+- Human/physical review, live-provider account qualification, other-client parity, signed
+  artifacts, production rollback authorization, and stable-release authorization remain open.
+
 ## 2026-07-24 — Core valid-command FFI fuzz checkpoint
 
 Core commit `b29067b78d420c96f57d670d3dd860cba3abc703` adds `ffi_commands`, a bounded libFuzzer

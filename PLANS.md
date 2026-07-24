@@ -22,6 +22,24 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux Core pin synchronization
+
+Assumption: Core `b29067b78d420c96f57d670d3dd860cba3abc703` is a fuzz/docs-only descendant of the
+Linux runtime baseline; pin synchronization records compatibility provenance without claiming a
+new Linux runtime feature.
+
+- [x] Synchronize Linux Native workflow, Flatpak Core source, contributor guidance, architecture,
+  testing, release, and implementation-status documentation to Core `b29067b…` and l10n
+  `c2526b…`; preserve historical entries and keep release `unreleased`.
+- [x] Pass local Linux localization audits, Flatpak metadata validation, formatting, offline
+  demo-provider check, DOCS_RS Clippy, 85 no-default tests, 166 demo-provider tests, cargo-deny,
+  and Core runtime-source cleanliness checks; record the local GTK development-package blocker.
+- [x] Push Linux runtime/build head `449facf…` and final evidence head `4b592e7…`. Push and PR
+  Native/Flatpak/Foundation runs `30063415446`/`30063415485`/`30063415440` and
+  `30063417561`/`30063417542`/`30063417551` passed with jobs recorded in Linux status.
+- [ ] Keep human/physical review, other clients, signed artifacts, rollback authorization, and
+  stable release authorization open.
+
 ## 2026-07-24 — Core valid-command FFI fuzz checkpoint
 
 Assumption: the local `FakeProviderServer` is a deterministic loopback fixture; it proves the C ABI

@@ -16,7 +16,7 @@ and must not be promoted without the acceptance and authorization gates listed b
 | Android | `0.1.0-alpha.1` | `afe7a566bac77a16243f70295d17a4d9cab1151f` |
 | Windows | `0.0.0-dev` | `unreleased` |
 | macOS | `0.1.0-alpha.1` | `cad822c69dcf1ad20f8cab2151f407866a577420` |
-| Linux | `0.1.0-alpha.2` | `1c513e2e52236fce03a60548dbcab242c6878bed` |
+| Linux | `0.1.0-alpha.2` | `4b592e7f7b1e60545d5539a40a9a33edd9b86a09` |
 
 Contracts: ABI major `1`, protocol schema `0.1.0`, provider catalog `0.1.0`, and localization
 schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
@@ -25,9 +25,11 @@ schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
 
 No stable artifacts are published. Core Fuzz/ASAN run `30062160452` (job `89385804125`) passed
 protocol, document, bounded FFI input, FFI lifecycle, and valid loopback-command targets; Core CI
-`30062160464` and Native SDK run `30062161560` passed all four platform jobs. Linux Native run `30058395686` and Flatpak run `30058395689`
-generated and verified checksum/SBOM evidence and completed the Flatpak sandbox smoke; Foundation
-run `30058395669` passed repository validation. These remain CI artifacts, not signed releases.
+`30062160464` and Native SDK run `30062161560` passed all four platform jobs. Linux push Native,
+Flatpak, and Foundation runs `30063415446`/`30063415485`/`30063415440`, plus PR runs
+`30063417561`/`30063417542`/`30063417551`, generated and verified Linux checksum/SBOM evidence,
+completed the GTK/portal/Wayland/Orca gates and Flatpak sandbox smoke, and passed repository
+validation. These remain CI artifacts, not signed releases.
 
 ## Validation evidence
 
@@ -44,6 +46,9 @@ run `30058395669` passed repository validation. These remain CI artifacts, not s
 - Linux non-GUI demo-provider tests passed `166 passed; 0 failed; 7 ignored` with loopback proxy
   bypassed. Native CI is authoritative for the GTK/AT-SPI, portal, mTLS, build, performance,
   checksum, and SBOM gates because this host lacks GTK4/Graphene development packages.
+- Linux Core pin synchronization head `4b592e7f7b1e60545d5539a40a9a33edd9b86a09` passed all six
+  current-head Native/Flatpak/Foundation gates listed above; the runtime/build parent is
+  `449facf5aaf7fe79e0cea91ea9ec3934a9b6f8d4`.
 - Central workflow `30059904373` passed Linux and PowerShell validation for the synchronized
   coordination documents and release manifest.
 - The documented clean-bootstrap flow cloned all seven public repositories in a disposable
