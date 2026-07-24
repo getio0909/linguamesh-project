@@ -11,7 +11,7 @@ and must not be promoted without the acceptance and authorization gates listed b
 
 | Component | Version | Source revision |
 | --- | --- | --- |
-| Core | `0.1.0-alpha.2` | `6786754f4c42056b55e4d68780326a16eb6a4e4f` |
+| Core | `0.1.0-alpha.2` | `5e22931d5772231b0a8183cbf05ba0cbda0dfebf` |
 | Localization | `0.1.0` | `c2526bfb3f6ff57895bdc3eeed743e26c8783613` |
 | Android | `0.1.0-alpha.1` | `afe7a566bac77a16243f70295d17a4d9cab1151f` |
 | Windows | `0.0.0-dev` | `unreleased` |
@@ -23,18 +23,18 @@ schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
 
 ## Artifact provenance and checksums
 
-No stable artifacts are published. Core Fuzz/ASAN run `30060612978` (job `89381326908`) passed
-protocol, document, and bounded FFI input targets; Core CI `30060612966` and Native SDK run
-`30060612972` passed all four platform jobs. Linux Native run `30058395686` and Flatpak run `30058395689`
+No stable artifacts are published. Core Fuzz/ASAN run `30061241972` (job `89383142786`) passed
+protocol, document, bounded FFI input, and FFI lifecycle targets; Core CI `30061241968` and Native
+SDK run `30061241961` passed all four platform jobs. Linux Native run `30058395686` and Flatpak run `30058395689`
 generated and verified checksum/SBOM evidence and completed the Flatpak sandbox smoke; Foundation
 run `30058395669` passed repository validation. These remain CI artifacts, not signed releases.
 
 ## Validation evidence
 
 - Host-pinned Rust 1.93.0 Core check passed with `cargo check --workspace --locked --offline`.
-- Core FFI input ASAN smoke passed 200 local runs with 299 coverage features and a 29-file
-  minimized corpus. The target bounds input at 1 MiB, skips valid translation envelopes, and
-  asserts controlled malformed/unsupported result codes without provider/network work.
+- Core FFI ASAN smokes passed 200 local runs with 299 and 2,326 coverage features and 29- and
+  47-file minimized corpora. The targets bound input at 1 MiB, skip valid translation envelopes,
+  cover safe lifecycle/control sequences, and assert controlled results without provider/network work.
 - Host-pinned Rust 1.93.0 Core storage regression passed `55 passed; 0 failed` with
   `cargo +1.93.0 test -p linguamesh-storage --locked --offline`, covering WAL replay,
   abrupt-process recovery, busy-checkpoint retry, migrations, secure deletion, symlink rejection,

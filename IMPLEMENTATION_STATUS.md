@@ -4,17 +4,19 @@ Last updated: 2026-07-24
 
 ## 2026-07-24 — Core FFI fuzz and sanitizer checkpoint
 
-Core commit `6786754f4c42056b55e4d68780326a16eb6a4e4f` adds the bounded `ffi_inputs` libFuzzer
-target. It exercises malformed and unsupported C ABI envelopes through `lm_engine_submit`, skips
-valid translation envelopes to prevent provider/network work, and accepts only controlled result
-codes. Local pinned-nightly ASAN smoke passed 200 runs with 299 coverage features and a 29-file
-minimized corpus. Core CI `30060612966`, Fuzz/ASAN `30060612978` (job `89381326908`), and Native
-SDK `30060612972` (Windows `89381326909`, Android `89381326913`, Apple `89381326948`, Linux
-`89381326956`) all passed. Valid-command behavior, forged or stale raw-handle misuse, cross-client
-parity, signed artifacts, rollback authorization, and stable release remain open.
+Core commit `5e22931d5772231b0a8183cbf05ba0cbda0dfebf` adds bounded `ffi_inputs` and `ffi_sequences`
+libFuzzer targets. They exercise malformed/unsupported C ABI envelopes plus safe lifecycle/control
+sequences through `lm_engine_submit` and related calls, without provider/network work or destroying
+the active engine mid-sequence. Local pinned-nightly ASAN smokes passed 200 runs with 299 and 2,326
+coverage features and 29- and 47-file minimized corpora. Core CI `30061241968`, Fuzz/ASAN
+`30061241972` (job `89383142786`), and Native SDK `30061241961` (Windows `89383142743`, Android
+`89383142706`, Apple `89383142744`, Linux `89383142774`) all passed. Valid-command behavior,
+arbitrary raw-engine-pointer use-after-free, cross-client parity, signed artifacts, rollback
+authorization, and stable release remain open.
 
 Central commit `adab809ed7d265aac85e7cd53393d5b9ba0dfdef` passed coordination workflow
-`30060907288` with Linux job `89382183919` and PowerShell job `89382183959`.
+`30060907288` with Linux job `89382183919` and PowerShell job `89382183959`; this checkpoint's
+follow-up synchronization is validated after the Core pin update below.
 
 ## 2026-07-24 — Core storage durability regression
 

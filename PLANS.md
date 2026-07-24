@@ -27,10 +27,12 @@ Assumption: Planned files and commands are not evidence until they exist and com
 Assumption: malformed and unsupported C ABI inputs are the safe automated boundary; valid provider
 commands, forged raw handles, cross-client parity, and release qualification require separate gates.
 
-- [x] Add Core `ffi_inputs` libFuzzer coverage through `lm_engine_submit`, with a 1 MiB input cap,
-  provider/network-free handling of valid translation envelopes, and controlled result-code checks.
-- [x] Pass local pinned-nightly ASAN smoke (`200` runs, `299` coverage features, 29-file corpus),
-  Core CI `30060612966`, Fuzz/ASAN `30060612978`, and Native SDK `30060612972` across all four jobs.
+- [x] Add Core `ffi_inputs` and `ffi_sequences` libFuzzer coverage through `lm_engine_submit` and
+  lifecycle/control calls, with a 1 MiB input cap and provider/network-free handling of valid
+  translation envelopes.
+- [x] Pass local pinned-nightly ASAN smokes (`200` runs, `299`/`2,326` coverage features, 29-/47-file
+  corpora), Core CI `30061241968`, Fuzz/ASAN `30061241972`, and Native SDK `30061241961` across all
+  four jobs.
 - [x] Pin central commit `adab809ed7d265aac85e7cd53393d5b9ba0dfdef`; coordination workflow
   `30060907288` passed Linux `89382183919` and PowerShell `89382183959`.
 - [ ] Keep valid-command/raw-handle misuse fuzzing, signing, production rollback authorization,
