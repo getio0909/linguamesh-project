@@ -3,6 +3,22 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux post-publish SQLite sidecar no-follow regression
+
+Linux source/test head `41a452b4453697d41d1799ad654d331fb05482ff` adds
+`published_storage_does_not_follow_replaced_database_sidecars`, which replaces both visible SQLite
+sidecar pathnames after profile storage publication and requires either a fail-closed write or
+unchanged replacement bytes. Local formatting, all-target checking, strict Clippy, and the
+demo-provider suite (`168 passed; 7 ignored`) passed. The focused GUI binary remains linker-limited
+by missing GTK/GDK/Graphene symbols on this host. Packaging/status head
+`759a828f4db4efcd17dfc6b4e25aa3a35e57b1ac` repins Flatpak after the stale-pin metadata guard
+rejected the earlier source head before SDK build. Replacement push Native/Flatpak/Foundation
+`30127781035`/`30127780961`/`30127781067` and PR `30127783125`/`30127783122`/`30127783152` all
+passed.
+This narrows post-publish sidecar pathname behavior only; active replacement rejection, broader
+filesystem/VFS variants, physical power-loss, human/physical review, other clients, signing,
+rollback, and stable-release evidence remain open.
+
 ## Latest Linux preset loopback default alignment
 
 Linux code head `0af3b73598841c2a9f001546f2152324998cd036` now uses the Core-aligned HTTP loopback

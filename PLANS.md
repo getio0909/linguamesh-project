@@ -22,6 +22,27 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux post-publish SQLite sidecar no-follow regression
+
+Assumption: an already-published descriptor-bound profile connection must not write through a
+visible `-wal` or `-shm` pathname replaced after publication; this does not claim active replacement
+rejection, physical power-loss recovery, or arbitrary VFS behavior.
+
+- [x] Add `published_storage_does_not_follow_replaced_database_sidecars` to exercise both SQLite
+  sidecar pathnames after publication and require either a fail-closed write or unchanged replacement
+  bytes.
+- [x] Local formatting, GUI all-target checking, strict Clippy, and the Linux demo-provider suite
+  passed (`168 passed; 7 ignored`). The focused GUI binary remains linker-limited by missing
+  GTK/GDK/Graphene symbols on this host.
+- [x] The first Flatpak push/PR runs `30127637300`/`30127639383` rejected the stale source pin
+  before SDK build; packaging/status head `759a828f4db4efcd17dfc6b4e25aa3a35e57b1ac` now pins
+  the source-side regression. Replacement push Native/Flatpak/Foundation
+  `30127781035`/`30127780961`/`30127781067` and PR
+  `30127783125`/`30127783122`/`30127783152` all passed.
+- [ ] Keep active/runtime filesystem variants, physical power-loss, cross-client parity, live
+  provider qualification, human/physical review, signing, rollback authorization, and stable
+  release acceptance open.
+
 ## 2026-07-24 — Linux preset loopback default alignment
 
 Assumption: preset switching must recognize every Core-accepted HTTP loopback authority when the
