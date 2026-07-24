@@ -6,6 +6,14 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+Core commit `6786754f4c42056b55e4d68780326a16eb6a4e4f` adds a bounded C ABI `ffi_inputs` libFuzzer
+target. Local pinned-nightly ASAN smoke passed 200 runs with 299 coverage features and a 29-file
+minimized corpus; Core CI `30060612966`, Fuzz/ASAN `30060612978` (job `89381326908`), and Native
+SDK `30060612972` (Windows `89381326909`, Android `89381326913`, Apple `89381326948`, Linux
+`89381326956`) passed. This is malformed/unsupported-input evidence only; valid commands, raw-handle
+misuse, physical/alternate-VFS recovery, signing, rollback authorization, and stable release remain
+open.
+
 The host-pinned Rust 1.93.0 storage regression `cargo +1.93.0 test -p linguamesh-storage --locked
 --offline` passed 55 tests with 0 failures. It provides deterministic default-Unix-VFS evidence
 for WAL replay, abrupt process recovery, busy checkpoint retry, migrations, secure deletion,
@@ -303,7 +311,7 @@ qualified human/physical review, signing, rollback, and stable authorization rem
 | 4–5 — Providers and quality | Linux catalog, local models, model-source provenance labels, persisted Provider Hub health outcomes, routing, candidate-chain editing, one-shot fallback consent, request-level glossary protection, bounded TBX import, persistent Core schema 33 glossary libraries with GTK save/list/load/delete controls, chunking, history, memory, domain/tone/formality/audience presets, bounded regional-locale/script presets, bounded proxy transport settings and SecretRef authentication, bounded total/connection/streaming-idle timeout settings, additive custom PEM trust bundles, client-certificate SecretRef identities, and a pinned third-party Ollama daemon fixture have deterministic evidence | Cross-client parity, live-provider account/quota interoperability, provider-specific semantics |
 | 6 — Documents | Linux supports the bounded TXT/Markdown/HTML/JSON/CSV/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF slice plus an explicit image-only PDF OCR fixture | Native document workflows on the other clients and broader format acceptance |
 | 7 — Localization/accessibility | Generated packs, runtime switching, RTL, pseudo-locales, keyboard and headless AT-SPI/Orca checks exist | Qualified translation review, human screen-reader/visual review, other-client checks |
-| 8 — Hardening/release | Fuzzing, sanitizers, migrations, parser limits, checksums, SBOMs, performance evidence, Unix process-crash WAL recovery, controlled ENOSPC degradation, and a manifest-only rollback rehearsal exist | Physical VFS/power-loss evidence, alternate-VFS coverage, signing, production rollback authorization, stable release authorization |
+| 8 — Hardening/release | Protocol/document fuzzing, bounded C ABI malformed-input fuzzing, sanitizers, migrations, parser limits, checksums, SBOMs, performance evidence, Unix process-crash WAL recovery, controlled ENOSPC degradation, and a manifest-only rollback rehearsal exist | Valid-command/raw-handle misuse fuzzing, physical VFS/power-loss evidence, alternate-VFS coverage, signing, production rollback authorization, stable release authorization |
 
 ## Acceptance-scenario matrix
 

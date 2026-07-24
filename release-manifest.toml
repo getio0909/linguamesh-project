@@ -3,6 +3,7 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
+  "Core FFI malformed-input fuzz evidence is pinned at `6786754f4c42056b55e4d68780326a16eb6a4e4f`: the `ffi_inputs` AddressSanitizer target passed local 200-run coverage smoke and CI run `30060612978` job `89381326908`; stable Core CI `30060612966` and Native SDK `30060612972` passed Windows `89381326909`, Android `89381326913`, Apple `89381326948`, and Linux `89381326956`. Valid commands, raw-handle misuse, cross-client parity, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux-first 2026-07-24 pinned-toolchain and packaging evidence is recorded at Linux worker commit `c03c7e2065c1a0f74f6326d9e5071ee3cbde6299` and Flatpak source-pin commit `1c513e2e52236fce03a60548dbcab242c6878bed`: host Rust 1.93.0 Core check and Linux non-GUI demo-provider tests passed (`166 passed; 0 failed; 7 ignored`) with loopback proxy bypassed; Native `30058395686`, Flatpak `30058395689`, and Foundation `30058395669` passed, including the Ollama test's dedicated cold-start deadline, GTK/accessibility/portal/mTLS validation, Flatpak sandbox smoke, checksums, and SBOM evidence. The host GUI check lacks `gtk4`/`graphene-gobject-1.0` packages; cold-start performance, human/physical review, live providers, other clients, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux-first 2026-07-24 runtime evidence is recorded at central docs/status head `5ec26d1047ba032d8b5d3876ecd5343f3f1804de`: privileged document-portal and ENOSPC storage fixtures passed; Ubuntu 24.04 AT-SPI passed for en/zh-CN/ar/en-XA/ar-XB; Native Flatpak run `30052187036` produced bundle checksum `a01177a9a1a3d84ac8e3de0cc509305f71494307134281ce42882a0e40e2dc02`, an SPDX 2.3 SBOM with 234 packages, and GNOME 49 sandbox smoke passed; Ollama `ollama/ollama:0.11.10` with `smollm:135m` passed warm-start interoperability without a credential after a cold five-second timeout. Exact Rust 1.93.0 build, cold-start performance, human/physical review, other clients, signing, rollback, and stable release remain open; status stays `unreleased`.",
   "Linux-first mTLS client-authentication rejection is verified at runtime/test `7513d983011fdd81374cfb879b23647aef388f7e`, source-pin `deffb80df01cb9f6c76a8b46e0ad725080e07ea6`, and final status head `597ccc961f9530836f8cef4c9a12a64b5c0a311c`: a temporary endpoint with a different client-CA trust chain rejects the session-only certificate at the TLS handshake, while the trusted endpoint succeeds; unrelated server-CA and wrong-SAN rejection remain covered without secret-name leakage. Final status-head push Native/Flatpak/Foundation `30052187039`/`30052187036`/`30052187043` and PR `30052189474`/`30052189521`/`30052189488` passed. Enterprise interoperability, human review, other clients, signing, rollback, and stable release remain open; status stays `unreleased`.",
@@ -138,7 +139,7 @@ localization_schema_version = "1.0.0"
 [components.core]
 repository = "linguamesh-core"
 version = "0.1.0-alpha.2"
-source_revision = "8623b2c8829e4d9cf7299c74440dcfabb4e320db"
+source_revision = "6786754f4c42056b55e4d68780326a16eb6a4e4f"
 minimum_compatible_version = "0.1.0-alpha.2"
 artifacts = []
 

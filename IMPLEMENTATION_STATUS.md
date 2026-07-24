@@ -2,6 +2,17 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Core FFI fuzz and sanitizer checkpoint
+
+Core commit `6786754f4c42056b55e4d68780326a16eb6a4e4f` adds the bounded `ffi_inputs` libFuzzer
+target. It exercises malformed and unsupported C ABI envelopes through `lm_engine_submit`, skips
+valid translation envelopes to prevent provider/network work, and accepts only controlled result
+codes. Local pinned-nightly ASAN smoke passed 200 runs with 299 coverage features and a 29-file
+minimized corpus. Core CI `30060612966`, Fuzz/ASAN `30060612978` (job `89381326908`), and Native
+SDK `30060612972` (Windows `89381326909`, Android `89381326913`, Apple `89381326948`, Linux
+`89381326956`) all passed. Valid-command behavior, forged or stale raw-handle misuse, cross-client
+parity, signed artifacts, rollback authorization, and stable release remain open.
+
 ## 2026-07-24 — Core storage durability regression
 
 The host-pinned Rust 1.93.0 command `cargo +1.93.0 test -p linguamesh-storage --locked --offline`

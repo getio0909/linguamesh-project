@@ -22,6 +22,18 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Core FFI fuzz and sanitizer checkpoint
+
+Assumption: malformed and unsupported C ABI inputs are the safe automated boundary; valid provider
+commands, forged raw handles, cross-client parity, and release qualification require separate gates.
+
+- [x] Add Core `ffi_inputs` libFuzzer coverage through `lm_engine_submit`, with a 1 MiB input cap,
+  provider/network-free handling of valid translation envelopes, and controlled result-code checks.
+- [x] Pass local pinned-nightly ASAN smoke (`200` runs, `299` coverage features, 29-file corpus),
+  Core CI `30060612966`, Fuzz/ASAN `30060612978`, and Native SDK `30060612972` across all four jobs.
+- [ ] Keep valid-command/raw-handle misuse fuzzing, signing, production rollback authorization,
+  physical/alternate-VFS recovery, and stable release authorization open.
+
 ## 2026-07-24 — Core storage durability regression
 
 Assumption: the host-pinned Rust 1.93.0 storage run is deterministic Linux evidence for the
