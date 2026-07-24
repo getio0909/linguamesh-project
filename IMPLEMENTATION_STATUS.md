@@ -18,6 +18,9 @@ evidence.
   and Apple `89385808696` jobs all passed. Central commit `b2d1ae9dc425cafd359746ef75031dce9f9a9ea2`
   updated the Core pin and passed coordination workflow `30062468039` (Linux `89386679596`,
   PowerShell `89386679650`).
+- GitHub triage comments `5065656009` (central Issue #1), `5065656120` (Linux PR #1), and
+  `5065656205` (macOS PR #1) record the checkpoint. Both PRs remain Draft/Open and mergeable with
+  no actionable review threads; Issue #1 remains Open.
 - Raw engine-pointer use-after-free, cross-client parity, signed artifacts, rollback authorization,
   and stable release remain open; status stays `unreleased`.
 
