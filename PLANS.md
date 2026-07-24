@@ -79,6 +79,22 @@ evidence.
   prompt/accessibility review, other clients, signing, rollback authorization, and stable release
   acceptance open.
 
+## 2026-07-24 — Linux current-head Native evidence artifact verification
+
+Assumption: downloadable CI evidence can prove reproducible prerelease packaging inputs and
+checksums, but unsigned artifacts and machine-specific performance data do not authorize a stable
+release.
+
+- [x] Native push run `30132151011` produced unexpired artifact
+  `linguamesh-linux-native-evidence-502d107cf2f54b1d03c5cc734b67df0af5dd3c86` (artifact ID
+  `8611592743`). Its `SHA256SUMS` verified the native binary hash
+  `35c1878648dc81db3f474c24a0dbfa8fcd6bd0840fafef453ff686eeaadc52e9` and source archive hash
+  `9191f850cbde33d21775921ad524f8e12b426e1d8a8e205c532d9b7c789b7784`.
+- [x] The bundle's SPDX-2.3 SBOM contains 234 packages, the source archive contains 140 entries,
+  and the included performance file is explicitly machine-specific.
+- [ ] Keep signing, rollback authorization, distributable promotion, and stable-release acceptance
+  open; the bundle is unsigned prerelease evidence.
+
 ## 2026-07-24 — Linux current-head third-party Ollama interoperability
 
 Assumption: the pinned host-network Ollama daemon and model prove native local-model transport only;
