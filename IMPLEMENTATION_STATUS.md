@@ -52,6 +52,8 @@ documentation-only descendant does not move the functional pin or imply stable r
 - Functional Core pin `9e69d01cbae1ca0421923e059aa3252c4ecbe1be`, ABI/protocol versions, Linux pins,
   and release status were unchanged. Generated projections, cross-client conformance, signed
   artifacts, rollback authorization, and stable-release evidence remain open.
+- Hosted Core CI/Fuzz/ASAN/Native SDK workflows `30119497472`/`30119497508`/`30119497464` also
+  passed across Linux, Windows, Android, and Apple jobs.
 
 ## 2026-07-24 — Linux provider-form keyboard traversal completion
 

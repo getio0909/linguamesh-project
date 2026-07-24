@@ -71,6 +71,8 @@ documentation-only checkpoint must not change the functional Core pin or claim r
   locked offline workspace build; FFI, protocol, and storage groups reported 22, 5, and 60 passes.
 - [x] Push Core documentation head `c518c9b` without changing functional pin
   `9e69d01cbae1ca0421923e059aa3252c4ecbe1be`, ABI/protocol versions, Linux pins, or release status.
+- [x] Hosted Core CI/Fuzz/ASAN/Native SDK workflows `30119497472`/`30119497508`/`30119497464`
+  passed across Linux, Windows, Android, and Apple jobs.
 - [ ] Keep generated projections, cross-client conformance, signed artifacts, rollback
   authorization, and stable-release evidence open.
 

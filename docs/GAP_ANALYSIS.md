@@ -34,7 +34,9 @@ schema version 34, schema 33 stores glossary libraries, schema 34 stores provide
 and bounded DOCX/PPTX/XLSX/EPUB/PDF codecs are covered. Core diff, rustfmt, locked offline tests,
 and workspace build passed, including 22 FFI, 5 protocol, and 60 storage tests. The functional Core
 pin remains `9e69d01cbae1ca0421923e059aa3252c4ecbe1be`; generated projections, cross-client
-conformance, signing, rollback, and stable-release evidence remain open.
+conformance, signing, rollback, and stable-release evidence remain open. Hosted Core CI, Fuzz/ASAN,
+and Native SDK workflows `30119497472`, `30119497508`, and `30119497464` passed across Linux,
+Windows, Android, and Apple jobs.
 
 ## Latest Linux provider-form keyboard traversal completion
 
