@@ -67,8 +67,8 @@ toolchain, and container capability failures remain unverified rather than passi
   CI remains authoritative for display-backed validation.
 - [x] Push Linux worker test commit `c03c7e2065c1a0f74f6326d9e5071ee3cbde6299` and Flatpak
   source-pin commit `1c513e2e52236fce03a60548dbcab242c6878bed`. Native `30058395686`, Flatpak
-  `30058395689`, and Foundation `30058395669` all passed, including the cold-start Ollama test,
-  Flatpak sandbox smoke, checksums, and SBOM evidence.
+  `30058395689`, and Foundation `30058395669` all passed, including the Ollama test's dedicated
+  cold-start deadline, Flatpak sandbox smoke, checksums, and SBOM evidence.
 - [ ] Keep release `unreleased`; human/physical review, live providers, other clients, signing,
   rollback, and stable-release authorization remain open.
 
