@@ -3,6 +3,15 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+Core ABI 1 handle-lifetime hardening is now verified at Core
+`b54ab4ab7ebcd3a439678ead9c0af1e6b5c5dae8` and Linux `42efabc3746c405136f347de4206e2cc5a13dc98`.
+The registry uses monotonic opaque tokens and `Arc` state references, so stale, forged, repeated,
+and concurrent-destroy calls fail closed without dereferencing freed memory. Core Fuzz/ASAN
+`30064410428` (job `89392449201`), CI `30064410443`, Native SDK `30064410436`, and Linux push/PR
+Native, Flatpak, and Foundation runs all passed. This closes the arbitrary raw-engine-pointer
+use-after-free gap for the covered ABI entry points; cross-client worker coordination, live
+providers, human/physical review, signing, rollback authorization, and stable release remain open.
+
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 

@@ -22,6 +22,22 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Core ABI 1 handle-lifetime hardening
+
+Assumption: the public opaque `LmEngine *` type remains source-compatible when its value becomes a
+monotonic registry token; native callers still stop and join workers before destroy.
+
+- [x] Replace raw engine-pointer dereferences with an `Arc` registry and fail-closed stale,
+  forged, repeated, and concurrent-destroy handle behavior in Core `b54ab4a…`.
+- [x] Add the stale-handle regression and `ffi_handles` ASAN target; local FFI tests pass 22/22 and
+  the local 1,068-iteration smoke completes without crash or leak report.
+- [x] Push Core; CI `30064410443`, Fuzz/ASAN `30064410428`, and Native SDK `30064410436` passed,
+  including Fuzz job `89392449201` and Linux Native job `89392449213`.
+- [x] Repin Linux to `42efabc…`; push/PR Native, Flatpak, and Foundation runs
+  `30064750977`/`30064750908`/`30064750909` and `30064752313`/`30064752315`/`30064752308` passed.
+- [ ] Keep cross-client parity, human/physical review, signed artifacts, rollback authorization,
+  and stable release authorization open.
+
 ## 2026-07-24 — Linux Core pin synchronization
 
 Assumption: Core `b29067b78d420c96f57d670d3dd860cba3abc703` is a fuzz/docs-only descendant of the

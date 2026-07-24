@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Core ABI 1 handle-lifetime hardening
+
+Assumption: the C ABI remains source-compatible when its opaque `LmEngine *` value becomes a
+monotonic registry token; native callers still stop and join workers before destroy.
+
+- Core `b54ab4ab7ebcd3a439678ead9c0af1e6b5c5dae8` replaces raw engine-pointer dereferences with a
+  process-local `Arc` registry. Calls that already acquired state remain safe during concurrent
+  destroy; stale, forged, repeated, and concurrent-destroy handles fail closed without dereferencing
+  freed memory.
+- Core regression tests pass 22/22. The local pinned-nightly `ffi_handles` ASAN smoke completed
+  1,068 time-bounded iterations without a crash or leak report; the remote Fuzz/ASAN gate passed
+  job `89392449201` under run `30064410428`. Core CI `30064410443` and Native SDK `30064410436`
+  also passed, including Linux job `89392449213`.
+- Linux `42efabc3746c405136f347de4206e2cc5a13dc98` consumes the pin. Its local non-GUI checks pass
+  (`85 passed; 0 failed; 1 ignored` and `166 passed; 0 failed; 7 ignored`), and push/PR Native,
+  Flatpak, and Foundation runs all passed (`30064750977`/`30064750908`/`30064750909` and
+  `30064752313`/`30064752315`/`30064752308`). Release remains `unreleased`; cross-client parity,
+  human/physical review, signed artifacts, rollback authorization, and stable-release authorization
+  remain open.
+
 ## 2026-07-24 — Linux Core pin synchronization
 
 Assumption: Core `b29067b78d420c96f57d670d3dd860cba3abc703` is a fuzz/docs-only descendant of the

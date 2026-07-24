@@ -11,7 +11,7 @@ and must not be promoted without the acceptance and authorization gates listed b
 
 | Component | Version | Source revision |
 | --- | --- | --- |
-| Core | `0.1.0-alpha.2` | `b29067b78d420c96f57d670d3dd860cba3abc703` |
+| Core | `0.1.0-alpha.2` | `b54ab4ab7ebcd3a439678ead9c0af1e6b5c5dae8` |
 | Localization | `0.1.0` | `c2526bfb3f6ff57895bdc3eeed743e26c8783613` |
 | Android | `0.1.0-alpha.1` | `afe7a566bac77a16243f70295d17a4d9cab1151f` |
 | Windows | `0.0.0-dev` | `unreleased` |
@@ -23,11 +23,11 @@ schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
 
 ## Artifact provenance and checksums
 
-No stable artifacts are published. Core Fuzz/ASAN run `30062160452` (job `89385804125`) passed
+No stable artifacts are published. Core Fuzz/ASAN run `30064410428` (job `89392449201`) passed
 protocol, document, bounded FFI input, FFI lifecycle, and valid loopback-command targets; Core CI
-`30062160464` and Native SDK run `30062161560` passed all four platform jobs. Linux push Native,
-Flatpak, and Foundation runs `30063415446`/`30063415485`/`30063415440`, plus PR runs
-`30063417561`/`30063417542`/`30063417551`, generated and verified Linux checksum/SBOM evidence,
+`30064410443` and Native SDK run `30064410436` passed all four platform jobs. Linux push Native,
+Flatpak, and Foundation runs `30064750977`/`30064750908`/`30064750909`, plus PR runs
+`30064752313`/`30064752315`/`30064752308`, generated and verified Linux checksum/SBOM evidence,
 completed the GTK/portal/Wayland/Orca gates and Flatpak sandbox smoke, and passed repository
 validation. These remain CI artifacts, not signed releases.
 
@@ -35,9 +35,10 @@ validation. These remain CI artifacts, not signed releases.
 
 - Host-pinned Rust 1.93.0 Core check passed with `cargo check --workspace --locked --offline`.
 - Core FFI ASAN smokes passed locally: valid loopback commands completed 136 time-bounded
-  iterations with 10,653 coverage features and a 49-file corpus; malformed-input and lifecycle
-  targets passed 200 iterations each. The valid fixture uses no commercial credentials and does not
-  claim raw-pointer, live-provider, or cross-client coverage.
+  iterations with 10,653 coverage features, malformed-input and lifecycle targets passed 200 runs
+  each, and `ffi_handles` completed 1,068 time-bounded iterations without crash or leak report.
+  These fixtures use no commercial credentials and do not claim live-provider or cross-client
+  coverage.
 - Host-pinned Rust 1.93.0 Core storage regression passed `55 passed; 0 failed` with
   `cargo +1.93.0 test -p linguamesh-storage --locked --offline`, covering WAL replay,
   abrupt-process recovery, busy-checkpoint retry, migrations, secure deletion, symlink rejection,
@@ -46,7 +47,7 @@ validation. These remain CI artifacts, not signed releases.
 - Linux non-GUI demo-provider tests passed `166 passed; 0 failed; 7 ignored` with loopback proxy
   bypassed. Native CI is authoritative for the GTK/AT-SPI, portal, mTLS, build, performance,
   checksum, and SBOM gates because this host lacks GTK4/Graphene development packages.
-- Linux Core pin synchronization head `4b592e7f7b1e60545d5539a40a9a33edd9b86a09` passed all six
+- Linux Core pin synchronization head `42efabc3746c405136f347de4206e2cc5a13dc98` passed all six
   current-head Native/Flatpak/Foundation gates listed above; the runtime/build parent is
   `449facf5aaf7fe79e0cea91ea9ec3934a9b6f8d4`.
 - Central synchronization commit `a5dee2ad1f9e8039e9d9a1ad44225c5200b3362c` passed coordination
