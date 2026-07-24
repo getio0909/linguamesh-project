@@ -11,12 +11,12 @@ and must not be promoted without the acceptance and authorization gates listed b
 
 | Component | Version | Source revision |
 | --- | --- | --- |
-| Core | `0.1.0-alpha.2` | `01e228ca251252de331b285e5381cbb4fe0c30da` |
+| Core | `0.1.0-alpha.2` | `b1596ca8ffbdc809817b92fec29523a8b31576aa` |
 | Localization | `0.1.0` | `c2526bfb3f6ff57895bdc3eeed743e26c8783613` |
 | Android | `0.1.0-alpha.1` | `afe7a566bac77a16243f70295d17a4d9cab1151f` |
 | Windows | `0.0.0-dev` | `unreleased` |
 | macOS | `0.1.0-alpha.1` | `cad822c69dcf1ad20f8cab2151f407866a577420` |
-| Linux | `0.1.0-alpha.2` | `5904d2be68dee4ee8e02e137ba3c9ae9cf6568a4` |
+| Linux | `0.1.0-alpha.2` | `7c94dadd91106808002469d11fa8568f4038257f` |
 
 Contracts: ABI major `1`, protocol schema `0.1.0`, provider catalog `0.1.0`, and localization
 schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
@@ -62,6 +62,10 @@ validation. These remain CI artifacts, not signed releases.
   Native/Flatpak/Foundation `30067853996`/`30067853960`/`30067853957` and PR
   `30067852102`/`30067852064`/`30067852097`. This remains unsigned prerelease evidence; custom
   VFS, physical power-loss, signing, rollback, and stable-release evidence remain open.
+- Core `b1596ca8ffbdc809817b92fec29523a8b31576aa` adds the Linux-only negative
+  `unix-dotfile` VFS probe; it fails before migrations when WAL cannot be enabled and leaves no
+  schema tables. Linux `7c94dadd91106808002469d11fa8568f4038257f` passes all local non-GUI
+  validation; the six new GitHub workflows remain pending at this draft checkpoint.
 - The current handle-lifetime manifest synchronization commit `59c9cc4d16610d18559d2bab96c1518e242c0d7e`
   passed coordination workflow `30065102174` on Linux `89394395492` and PowerShell `89394395538`.
 - Central workflow `30059904373` passed Linux and PowerShell validation for the synchronized

@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux bundled VFS fail-closed probe and repin
+
+Assumption: Core must fail closed when a SQLite VFS cannot provide the required WAL journal mode;
+the bundled `unix-dotfile` probe is therefore negative compatibility evidence, while `unix-excl`
+remains the supported bundled alternate-VFS path.
+
+- Core `b1596ca8ffbdc809817b92fec29523a8b31576aa` adds
+  `unix_dotfile_vfs_fails_closed_without_required_wal`. The Linux-only test confirms that
+  `unix-dotfile` returns a persistence error before migrations and leaves zero schema tables, so
+  durability is not silently downgraded. Core's full workspace validation passed, including
+  `58 passed; 0 failed` in `linguamesh-storage`.
+- Linux `7c94dadd91106808002469d11fa8568f4038257f` consumes the Core pin. Local localization
+  audits, Flatpak metadata, format, check, Clippy, no-default tests (`85 passed; 1 ignored`),
+  demo-provider tests (`166 passed; 7 ignored`), and the exact Core-source-pin check passed.
+- The new Linux push/PR Native, Flatpak, and Foundation workflows are in progress; their run IDs
+  and results will be recorded here after completion. Release remains `unreleased`.
+- Custom/third-party VFS, physical power-loss, cross-client conformance, human/physical review,
+  signing, rollback, and stable-release evidence remain open.
+
 ## 2026-07-24 — Linux bundled alternate SQLite VFS checkpoint
 
 Assumption: SQLite's bundled `unix-excl` VFS is a representative Linux alternate VFS for the

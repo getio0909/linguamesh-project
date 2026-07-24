@@ -22,6 +22,24 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux bundled VFS fail-closed probe and repin
+
+Assumption: the bundled `unix-dotfile` VFS is useful as a negative compatibility probe because
+Core must reject any VFS that cannot provide the required WAL mode instead of silently weakening
+durability; `unix-excl` remains the supported bundled alternate-VFS path.
+
+- [x] Core `b1596ca8ffbdc809817b92fec29523a8b31576aa` adds
+  `unix_dotfile_vfs_fails_closed_without_required_wal`, proving rejection before migrations with
+  no schema tables created; the full workspace suite passes and storage reports `58 passed; 0 failed`.
+- [x] Repin Linux docs, Flatpak, and release evidence to
+  `7c94dadd91106808002469d11fa8568f4038257f`; local localization, metadata, format, check,
+  Clippy, no-default (`85 passed; 1 ignored`), demo-provider (`166 passed; 7 ignored`), and exact
+  Core-source-pin checks pass.
+- [ ] Verify the new Linux push/PR Native, Flatpak, and Foundation workflows and record their run
+  IDs in status, release evidence, and the open PR/Issue comments.
+- [ ] Keep custom/third-party VFS, physical power-loss, cross-client parity, human/physical review,
+  signing, rollback authorization, and stable-release acceptance open.
+
 ## 2026-07-24 — Linux bundled alternate SQLite VFS checkpoint
 
 Assumption: SQLite's bundled `unix-excl` VFS is a representative Linux alternate VFS for the
