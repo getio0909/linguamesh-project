@@ -5,14 +5,15 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 
 ## Latest Linux current-head third-party Ollama interoperability
 
-Linux status head `9b6fa11caae336e846519ece632f7f78b60c520e` passed the real
-`running_third_party_ollama_provider_translates_without_secret` test exactly once
+Linux documentation/status head `502d107cf2f54b1d03c5cc734b67df0af5dd3c86` records the real
+`running_third_party_ollama_provider_translates_without_secret` test executed against runtime
+ancestor `6a931c2cecef3ac90806fd9e4df1b33063af6a6a` exactly once
 (`1 passed; 0 failed; 0 ignored`) using pinned `ollama/ollama:0.11.10`, an isolated `smollm:135m`
 model volume, and a host-network temporary daemon. Native `/api/tags` discovery and `/api/chat`
 streaming completed without a credential. The temporary resources were removed. A Docker-bridge
 attempt failed with HTTP 500 after a proxy timeout to `registry.ollama.ai`; it is intentionally not
-counted. Push Native/Flatpak/Foundation `30131478211`/`30131478214`/`30131478238` and PR
-Native/Flatpak/Foundation `30131480664`/`30131480674`/`30131480660` all passed. GPU execution,
+counted. Push Native/Flatpak/Foundation `30132151011`/`30132151015`/`30132151100` and PR
+Native/Flatpak/Foundation `30132153160`/`30132153157`/`30132153164` all passed. GPU execution,
 quota/enterprise qualification, human/physical review, other clients, signing, rollback, and
 stable-release evidence remain open.
 

@@ -7,14 +7,15 @@ Last updated: 2026-07-24
 Assumption: a pinned host-network Ollama daemon and model prove native local-model transport only;
 they do not replace GPU, provider quota, enterprise account, or stable-release evidence.
 
-- Linux status head `9b6fa11caae336e846519ece632f7f78b60c520e` passed the real
-  `running_third_party_ollama_provider_translates_without_secret` test exactly once
+- Linux documentation/status head `502d107cf2f54b1d03c5cc734b67df0af5dd3c86` records the real
+  `running_third_party_ollama_provider_translates_without_secret` test executed against runtime
+  ancestor `6a931c2cecef3ac90806fd9e4df1b33063af6a6a`, exactly once
   (`1 passed; 0 failed; 0 ignored`) with `ollama/ollama:0.11.10` and isolated `smollm:135m`,
   exercising native `/api/tags` discovery and `/api/chat` streaming without a credential.
 - The temporary daemon, model volume, and container were removed. A separate Docker-bridge attempt
   returned HTTP 500 after a proxy timeout to `registry.ollama.ai`; it is not counted as evidence.
-- Push Native/Flatpak/Foundation `30131478211`/`30131478214`/`30131478238` and PR
-  Native/Flatpak/Foundation `30131480664`/`30131480674`/`30131480660` all passed for this
+- Push Native/Flatpak/Foundation `30132151011`/`30132151015`/`30132151100` and PR
+  Native/Flatpak/Foundation `30132153160`/`30132153157`/`30132153164` all passed for this
   packaging/status head.
 - Release remains `unreleased`; GPU/quota/enterprise qualification, human/physical review, other
   clients, signing, rollback, and stable-release evidence remain open.
