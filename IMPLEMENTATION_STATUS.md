@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux bounded temporary-file cleanup
+
+Assumption: the Linux privacy action removes only direct children of the system temporary directory
+with the LinguaMesh-owned `linguamesh-ocr-` or `.linguamesh-export-` prefixes; unrelated files and
+user-selected output directories remain outside this action.
+
+- Linux functional revision `1547485795e75c8b1a0fcffb16ef1b72f0374496` adds the localized native
+  confirmation, busy-state/OCR guard, bounded cleanup helper, item-count feedback, and focused
+  regression fixture. Flatpak pin revision `826c1e8` records the exact packaging source.
+- Localization revision `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c` supplies five catalog messages;
+  Linux regenerated PO/MO resources and all three localization audits pass. Local Rust 1.93.0
+  format, locked checks, strict Clippy, no-default tests (`85 passed; 1 ignored`), demo-provider
+  library tests (`166 passed; 7 ignored`), build, Flatpak metadata, and cargo-deny pass. The focused
+  GUI binary test compiles but local linking is blocked by incomplete host GTK runtime symbols;
+  Native CI is required for display-backed execution.
+- Central release components now pin Linux `826c1e8` and l10n `7fd2106`; release remains
+  `unreleased`. Hosted push/PR checks and the PR/Issue re-audit remain pending.
+
 ## 2026-07-24 — Final Linux CI evidence for the corrected Core pin
 
 Assumption: the Linux status head `26c88b026a9cf0de1ab585de979a0e2576df805c` is a documentation-only

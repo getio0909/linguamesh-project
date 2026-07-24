@@ -22,6 +22,24 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux bounded temporary-file cleanup
+
+Assumption: the Linux privacy action removes only direct children of the system temporary directory
+with LinguaMesh-owned `linguamesh-ocr-` or `.linguamesh-export-` prefixes; unrelated files and
+user-selected output directories remain outside its scope.
+
+- [x] Add the localized native confirmation, worker/OCR busy-state guard, bounded prefix cleanup,
+  count feedback, and focused regression fixture.
+- [x] Add five catalog messages at l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; regenerate
+  Linux PO/MO resources and pass localization, Flatpak, format, Clippy, test, build, and
+  cargo-deny checks. The focused GUI binary test is compiled but local GTK linking is blocked by
+  the host runtime; Native CI remains authoritative for display-backed execution.
+- [x] Push Linux functional commit `1547485795e75c8b1a0fcffb16ef1b72f0374496` and Flatpak pin
+  commit `826c1e8`; update central component pins while keeping release `unreleased`.
+- [ ] Complete hosted push/PR checks, re-audit PR #1 and Issue #1, and record their evidence.
+- [ ] Keep cross-client parity, physical/manual review, signing, rollback authorization, and
+  stable-release acceptance open.
+
 ## 2026-07-24 — Linux CI evidence documentation head
 
 Assumption: Linux `26c88b0` changes only status wording after the corrected Core pin was verified at
