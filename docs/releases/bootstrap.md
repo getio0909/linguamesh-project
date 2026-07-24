@@ -41,6 +41,8 @@ validation. These remain CI artifacts, not signed releases.
   localization, Flatpak, formatting, checks, Clippy, no-default (`85 passed; 1 ignored`), and
   demo-provider (`166 passed; 7 ignored`) suites; push and PR Native/Flatpak/Foundation runs
   `30071367773`/`30071367788`/`30071367816` and `30071369693`/`30071369679`/`30071369672` passed.
+  Central commit `d9d13945d59370a8bc0ca576a66c8b3fa5fd9468` passed coordination workflow
+  `30071892709` (Linux `89414323628`, PowerShell `89414323574`).
 
 - Host-pinned Rust 1.93.0 Core check passed with `cargo check --workspace --locked --offline`.
 - Core FFI ASAN smokes passed locally: valid loopback commands completed 136 time-bounded

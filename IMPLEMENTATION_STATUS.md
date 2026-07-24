@@ -20,6 +20,8 @@ Linux docs/status head `4612827d0ce78b9629fbbc24853677e18ee9d0a1` changes no run
 - Linux push Native/Flatpak/Foundation runs `30071367773`/`30071367788`/`30071367816` and PR
   runs `30071369693`/`30071369679`/`30071369672` passed. PR #1 remains Draft/Open/mergeable with
   no submitted reviews or unresolved inline threads; Issue #1 remains Open.
+- Central manifest/docs commit `d9d13945d59370a8bc0ca576a66c8b3fa5fd9468` passed coordination
+  workflow `30071892709` with Linux job `89414323628` and PowerShell job `89414323574`.
 - Release remains `unreleased`. Custom/third-party VFS, physical power-loss, cross-client parity,
   live-provider qualification, human/physical review, signing, rollback, and stable-release
   evidence remain open.

@@ -38,6 +38,8 @@ docs-only head `4612827d0ce78b9629fbbc24853677e18ee9d0a1` does not alter runtime
   `30071367773`/`30071367788`/`30071367816` and `30071369693`/`30071369679`/`30071369672`.
 - [x] Refresh Linux PR #1 and central Issue #1 evidence; retain Draft/Open and Open states and
   keep the release `unreleased`.
+- [x] Central manifest/docs commit `d9d13945…` passed coordination workflow `30071892709`
+  (Linux `89414323628`, PowerShell `89414323574`).
 - [ ] Keep custom/third-party VFS, physical power-loss, cross-client parity, human/physical
   review, signing, rollback authorization, and stable-release acceptance open.
 

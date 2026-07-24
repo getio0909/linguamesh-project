@@ -16,6 +16,8 @@ Clippy, workspace tests, build, and cargo-deny pass. Core CI/Fuzz/ASAN/Native SD
 locked checks, Clippy, no-default (`85 passed; 1 ignored`), and demo-provider (`166 passed; 7
 ignored`) validation pass; push/PR Native, Flatpak, and Foundation runs
 `30071367773`/`30071367788`/`30071367816` and `30071369693`/`30071369679`/`30071369672` pass.
+Central manifest/docs commit `d9d13945d59370a8bc0ca576a66c8b3fa5fd9468` passed coordination
+workflow `30071892709` with Linux `89414323628` and PowerShell `89414323574`.
 Custom/third-party VFS, physical power-loss, cross-client, live-provider, human/physical, signing,
 rollback, and stable-release evidence remain open; release stays `unreleased`.
 
