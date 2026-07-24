@@ -24,9 +24,12 @@ Assumption: this is disposable Debian trixie evidence with Rust 1.93.1 (the repo
   `label`-role mismatch is therefore recorded as a bridge-version difference, not a product
   failure. The binary came from the disposable Rust 1.93.1 build cache; exact pinned 1.93.0
   compilation remains CI-authoritative.
-- Flatpak smoke was not run because no produced bundle was available. Release remains
-  `unreleased`; human/physical, live-provider, cross-client, signing, rollback, and stable-release
-  evidence remain open.
+- The unexpired Flatpak bundle from Native CI run `30052187036` for Linux head
+  `597ccc961f9530836f8cef4c9a12a64b5c0a311c` passed the sandbox smoke on
+  `org.gnome.Platform/x86_64/49`. Its checksum matched the companion evidence artifact at
+  `a01177a9a1a3d84ac8e3de0cc509305f71494307134281ce42882a0e40e2dc02`; the SPDX 2.3 SBOM parsed
+  with 234 packages. Release remains `unreleased`; human/physical, live-provider, cross-client,
+  signing, rollback, and stable-release evidence remain open.
 
 - Central coordination commit `7c4ffa8fe2fa77a24ae61635c9c130c65e22382b` passed workflow
   `30045831148`; Linux and PowerShell validation jobs completed successfully.

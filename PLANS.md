@@ -47,8 +47,11 @@ toolchain, and container capability failures remain unverified rather than passi
   base family) against the actual Linux binary: English, Simplified Chinese, Arabic, `en-XA`,
   and `ar-XB` all passed. Debian trixie remains a known bridge-version difference, not a product
   failure; the binary was built in the disposable Rust 1.93.1 cache environment.
-- [ ] Keep Flatpak smoke open because no produced bundle was available for this checkpoint. The
-  exact pinned Rust 1.93.0 build and full Ubuntu Native workflow remain CI-authoritative.
+- [x] Download the unexpired Flatpak bundle from Native CI run `30052187036` for Linux head
+  `597ccc961f9530836f8cef4c9a12a64b5c0a311c`, verify its checksum against the matching evidence
+  artifact (`a01177a9a1a3d84ac8e3de0cc509305f71494307134281ce42882a0e40e2dc02`), parse the SPDX 2.3
+  SBOM (234 packages), and pass the sandbox smoke on GNOME runtime `org.gnome.Platform/x86_64/49`.
+- [ ] Keep the exact pinned Rust 1.93.0 build and full Ubuntu Native workflow CI-authoritative.
 - [ ] Keep release `unreleased`; human/physical review, live providers, other clients, signing,
   rollback, and stable-release authorization remain open.
 

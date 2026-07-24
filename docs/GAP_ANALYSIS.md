@@ -20,8 +20,11 @@ with `/dev/fuse`, `SYS_ADMIN`, and AppArmor isolation explicitly granted. The Ub
 container also passed the live AT-SPI inspector against the actual Linux binary for English,
 Simplified Chinese, Arabic, `en-XA`, and `ar-XB`. The earlier Debian trixie `label`-role mismatch
 is a bridge-version difference, not a product failure; the inspected binary came from the
-disposable Rust 1.93.1 build cache rather than the pinned 1.93.0 toolchain. Flatpak smoke still
-needs a produced bundle. These remaining boundaries do not justify a stable-release claim, and
+disposable Rust 1.93.1 build cache rather than the pinned 1.93.0 toolchain. The unexpired Flatpak
+bundle from Native run `30052187036` for Linux head `597ccc961f9530836f8cef4c9a12a64b5c0a311c`
+passed sandbox smoke on GNOME runtime `org.gnome.Platform/x86_64/49`; its checksum matched
+`a01177a9a1a3d84ac8e3de0cc509305f71494307134281ce42882a0e40e2dc02`, and its SPDX 2.3 SBOM parsed
+with 234 packages. These remaining boundaries do not justify a stable-release claim, and
 human/physical review, live providers, other clients, signing, rollback, and release authorization
 remain open.
 
