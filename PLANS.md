@@ -37,7 +37,9 @@ user-selected output directories remain outside its scope.
 - [x] Push Linux functional commit `1547485795e75c8b1a0fcffb16ef1b72f0374496`, workflow l10n-pin
   correction `7ce5c60`, and final status/Flatpak pin commit `8862390`; update central component
   pins while keeping release `unreleased`.
-- [ ] Complete hosted push/PR checks, re-audit PR #1 and Issue #1, and record their evidence.
+- [x] Complete hosted push/PR checks, re-audit PR #1 and Issue #1, and record evidence comments
+  PR `5068218195` and Issue `5068219903`; final checks passed under runs
+  `30081480916`/`30081480911`/`30081480918` and `30081484045`/`30081484101`/`30081484041`.
 - [ ] Keep cross-client parity, physical/manual review, signing, rollback authorization, and
   stable-release acceptance open.
 

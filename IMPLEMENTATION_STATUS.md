@@ -20,8 +20,12 @@ user-selected output directories remain outside this action.
   GUI binary test compiles but local linking is blocked by incomplete host GTK runtime symbols;
   Native CI is required for display-backed execution.
 - Central release components now pin Linux `886239079d12c798e685ea12f8ed605f938cf3be` and l10n
-  `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; release remains
-  `unreleased`. Hosted push/PR checks and the PR/Issue re-audit remain pending.
+  `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; release remains `unreleased`. Final hosted checks
+  passed: push Native/Flatpak/Foundation `30081480916`/`30081480911`/`30081480918` and PR
+  Native/Flatpak/Foundation `30081484045`/`30081484101`/`30081484041`. Central workflow
+  `30081554506` passed. GitHub re-audit found PR #1 Draft/Open/mergeable with zero reviews and no
+  unresolved threads, and Issue #1 Open; evidence comments are PR `5068218195` and Issue
+  `5068219903`.
 
 ## 2026-07-24 — Final Linux CI evidence for the corrected Core pin
 
