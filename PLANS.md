@@ -22,6 +22,25 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux registered custom VFS compatibility probe
+
+Assumption: the Linux client may use a host-registered SQLite VFS only when the Core storage
+contract remains intact; the new probe aliases the validated `unix-excl` callbacks and does not
+claim arbitrary third-party VFS or physical power-loss coverage.
+
+- [x] Add Core's Linux-only registered custom-VFS regression at
+  `9e69d01cbae1ca0421923e059aa3252c4ecbe1be`: schema migration, provider-profile persistence/reopen,
+  and the symlink/no-follow boundary all execute through the registered name.
+- [x] Pass Core local storage/full-workspace checks, strict Clippy, cargo-deny, CI/Fuzz/ASAN/Native
+  SDK `30097756099`/`30097756186`/`30097756137`.
+- [x] Repin Linux Native/Flatpak/docs at `402b97ac50bf62e89f9c27caedebff10d2ae7b8c` and pass
+  local synchronization/audits/format/check/Clippy/no-default (`85 passed; 1 ignored`)/demo-provider
+  (`166 passed; 7 ignored`)/cargo-deny checks plus push/PR Native, Flatpak, and Foundation runs
+  `30098393451`/`30098393429`/`30098393452` and `30098395935`/`30098395913`/`30098395889`.
+- [x] Synchronize central Core/Linux component pins and record the bounded evidence; retain release
+  status `unreleased` and leave arbitrary third-party VFS, physical/manual review, cross-client
+  parity, signing, rollback, and stable-release acceptance open.
+
 ## 2026-07-24 — macOS typed host-secret transport
 
 Assumption: macOS uses a session-only SecretRef and a non-secret Keychain account identifier; the

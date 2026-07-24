@@ -4,6 +4,19 @@ No compatible stable release train exists yet. The authoritative machine-readabl
 
 Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198`.
 
+### Linux registered custom VFS compatibility probe — 2026-07-24
+
+Linux head `402b97ac50bf62e89f9c27caedebff10d2ae7b8c` consumes Core
+`9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n
+`7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`. Core registers a distinct test VFS name over the
+validated `unix-excl` callbacks, migrates the schema, persists and reopens a provider profile, and
+retains the symlink/no-follow rejection. Hosted Core CI/Fuzz/ASAN/Native SDK
+`30097756099`/`30097756186`/`30097756137` passed. Linux local checks and push/PR Native, Flatpak,
+and Foundation runs `30098393451`/`30098393429`/`30098393452` and
+`30098395935`/`30098395913`/`30098395889` passed. This is registration/callback evidence only;
+arbitrary third-party VFS behavior, physical power loss, cross-client parity, manual review,
+signing, rollback, and stable-release evidence remain open.
+
 ### macOS typed host-secret transport — 2026-07-24
 
 macOS head `75b5bfe` consumes Core `b39dbdc2877a60c6666697cc0817f31225496cb2` at ABI major 1 /

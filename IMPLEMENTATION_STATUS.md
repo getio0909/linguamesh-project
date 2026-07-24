@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux registered custom VFS compatibility probe
+
+Assumption: the Linux client may consume a host-registered SQLite VFS only when Core's storage
+contract remains intact; this slice aliases the validated `unix-excl` callbacks and does not claim
+arbitrary third-party VFS or physical power-loss coverage.
+
+- Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` registers a distinct test VFS name and proves
+  schema migration, provider-profile persistence/reopen, and the symlink/no-follow rejection
+  through that registration path. Core local storage/full-workspace checks, strict Clippy,
+  cargo-deny, CI/Fuzz/ASAN/Native SDK `30097756099`/`30097756186`/`30097756137` passed.
+- Linux head `402b97ac50bf62e89f9c27caedebff10d2ae7b8c` consumes the exact Core/l10n pins in Native,
+  Flatpak, and documentation. Local synchronization/audits/format/check/Clippy/no-default
+  (`85 passed; 1 ignored`)/demo-provider (`166 passed; 7 ignored`)/cargo-deny checks passed.
+- Linux push/PR Native, Flatpak, and Foundation runs
+  `30098393451`/`30098393429`/`30098393452` and `30098395935`/`30098395913`/`30098395889`
+  passed. PR #1 remains Draft/Open/mergeable with zero reviews and no unresolved threads; Issue #1
+  remains Open. Release stays `unreleased`.
+
 ## 2026-07-24 — macOS typed host-secret transport checkpoint
 
 Assumption: macOS uses a session-scoped `SecretRef` and a non-secret Keychain account identifier;

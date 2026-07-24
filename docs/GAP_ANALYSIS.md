@@ -55,6 +55,20 @@ conformance, full client capabilities, and cross-client parity remain open. Rele
 
 ## Latest Linux/Core checkpoint
 
+### Linux registered custom VFS compatibility probe
+
+Linux head `402b97ac50bf62e89f9c27caedebff10d2ae7b8c` consumes Core
+`9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n
+`7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`. Core's Linux storage regression registers a distinct
+test VFS name over the validated `unix-excl` callbacks, runs schema migration and provider-profile
+persistence/reopen through that name, and rechecks the symlink/no-follow rejection. Core
+CI/Fuzz/ASAN/Native SDK `30097756099`/`30097756186`/`30097756137` and Linux push/PR Native,
+Flatpak, and Foundation `30098393451`/`30098393429`/`30098393452` and
+`30098395935`/`30098395913`/`30098395889` all passed. The probe is deterministic
+registration/callback evidence only; arbitrary third-party VFS implementations and physical
+power-loss recovery remain open, as do cross-client parity, manual review, signing, rollback, and
+stable release.
+
 ### Linux CI evidence documentation head
 
 Linux status head `26c88b026a9cf0de1ab585de979a0e2576df805c` is documentation-only after corrected
