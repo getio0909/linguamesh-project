@@ -4,13 +4,13 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
 The Linux-first alternate-VFS checkpoint is now verified at Core
-`fed6c138d398a69866512090ced3c4e062631c0d` and Linux
-`ab64b237f83f401389d5426e58eaadb092e12f17`. Core's Linux-only storage regressions exercise the
+`01e228ca251252de331b285e5381cbb4fe0c30da` and Linux
+`5904d2be68dee4ee8e02e137ba3c9ae9cf6568a4`. Core's Linux-only storage regressions exercise the
 bundled SQLite `unix-excl` VFS with `SQLITE_OPEN_NOFOLLOW`, schema/WAL/profile reopen behavior,
-process-crash WAL replay, and symbolic-link rejection. Core CI `30066150481`, Fuzz/ASAN
+process-crash WAL replay, and file/parent-path symbolic-link rejection. Core CI `30066150481`, Fuzz/ASAN
 `30066150469`, Native SDK `30066150422`, and all six Linux push/PR Native, Flatpak, and Foundation
-gates passed (`30067077382`/`30067077380`/`30067077394` and
-`30067079180`/`30067079189`/`30067079182`). This closes only the tested bundled VFS path;
+gates passed (`30067853996`/`30067853960`/`30067853957` and
+`30067852102`/`30067852064`/`30067852097`). This closes only the tested bundled VFS path;
 custom/third-party VFS, physical power-loss, cross-client, signing, rollback, and stable-release
 evidence remain open.
 

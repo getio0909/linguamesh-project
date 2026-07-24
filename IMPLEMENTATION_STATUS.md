@@ -8,17 +8,17 @@ Assumption: SQLite's bundled `unix-excl` VFS is a representative Linux alternate
 tested storage contract; custom/third-party VFS and physical power-loss behavior remain separate
 release gates.
 
-- Core `fed6c138d398a69866512090ced3c4e062631c0d` adds the Linux-only
+- Core `01e228ca251252de331b285e5381cbb4fe0c30da` adds the Linux-only
   `unix_exclusive_vfs_preserves_migrations_and_committed_profiles` and
   `unix_exclusive_vfs_wal_replay_survives_process_termination_after_commit` regressions. They
   open `unix-excl` with `SQLITE_OPEN_NOFOLLOW`, verify schema/WAL/profile recovery after reopen and
-  child-process abort, and reject a symbolic-link alias. Host-pinned full workspace/storage tests
+  child-process abort, and reject file and parent-path symbolic-link aliases. Host-pinned full workspace/storage tests
   passed, including `57 passed; 0 failed` for `linguamesh-storage`.
 - Core CI `30066150481`, Fuzz/ASAN `30066150469`, and Native SDK `30066150422` passed all jobs.
-- Linux `ab64b237f83f401389d5426e58eaadb092e12f17` consumes the Core pin. Local Linux audits,
+- Linux `5904d2be68dee4ee8e02e137ba3c9ae9cf6568a4` consumes the Core pin. Local Linux audits,
   checks, and tests passed (`85 passed; 1 ignored` and `166 passed; 7 ignored`); push Native,
-  Flatpak, Foundation `30067077382`/`30067077380`/`30067077394` and PR
-  `30067079180`/`30067079189`/`30067079182` all passed.
+  Flatpak, Foundation `30067853996`/`30067853960`/`30067853957` and PR
+  `30067852102`/`30067852064`/`30067852097` all passed.
 - Release remains `unreleased`; custom VFS, physical power-loss, cross-client, human/physical,
   signing, rollback, and stable-release evidence remain open.
 
@@ -28,10 +28,10 @@ Assumption: GitHub's authenticated review state is authoritative for the current
 state, while the local release manifest remains authoritative for the unreleased posture.
 
 - Linux PR #1 and its latest evidence comment now identify head
-  `ab64b237f83f401389d5426e58eaadb092e12f17`, Core `fed6c138d398a69866512090ced3c4e062631c0d`,
+  `5904d2be68dee4ee8e02e137ba3c9ae9cf6568a4`, Core `01e228ca251252de331b285e5381cbb4fe0c30da`,
   and passing push/PR Native, Flatpak, and Foundation runs
-  `30067077382`/`30067077380`/`30067077394` and
-  `30067079180`/`30067079189`/`30067079182`.
+  `30067853996`/`30067853960`/`30067853957` and
+  `30067852102`/`30067852064`/`30067852097`.
 - `gh` verification confirms PR #1 is Draft/Open/mergeable with no submitted reviews or unresolved
   inline threads. Central Issue #1 remains Open; no merge, stable promotion, or release action was
   taken.

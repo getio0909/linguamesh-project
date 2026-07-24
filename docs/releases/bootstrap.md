@@ -11,12 +11,12 @@ and must not be promoted without the acceptance and authorization gates listed b
 
 | Component | Version | Source revision |
 | --- | --- | --- |
-| Core | `0.1.0-alpha.2` | `fed6c138d398a69866512090ced3c4e062631c0d` |
+| Core | `0.1.0-alpha.2` | `01e228ca251252de331b285e5381cbb4fe0c30da` |
 | Localization | `0.1.0` | `c2526bfb3f6ff57895bdc3eeed743e26c8783613` |
 | Android | `0.1.0-alpha.1` | `afe7a566bac77a16243f70295d17a4d9cab1151f` |
 | Windows | `0.0.0-dev` | `unreleased` |
 | macOS | `0.1.0-alpha.1` | `cad822c69dcf1ad20f8cab2151f407866a577420` |
-| Linux | `0.1.0-alpha.2` | `ab64b237f83f401389d5426e58eaadb092e12f17` |
+| Linux | `0.1.0-alpha.2` | `5904d2be68dee4ee8e02e137ba3c9ae9cf6568a4` |
 
 Contracts: ABI major `1`, protocol schema `0.1.0`, provider catalog `0.1.0`, and localization
 schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
@@ -55,12 +55,12 @@ validation. These remain CI artifacts, not signed releases.
 - Central source-pin consistency commit `d17f47a9f85fce9583167560216ef333dd426247` aligned the
   manifest and this table to Linux `42efabc3746c405136f347de4206e2cc5a13dc98`; coordination
   workflow `30065425740` passed Linux `89395294587` and PowerShell `89395294630`.
-- Core `fed6c138d398a69866512090ced3c4e062631c0d` adds the Linux-only bundled `unix-excl` VFS
-  storage migrations, symlink, and process-crash WAL-replay regressions. Host-pinned storage tests
+- Core `01e228ca251252de331b285e5381cbb4fe0c30da` adds the Linux-only bundled `unix-excl` VFS
+  storage migrations, file/parent-path symlink, and process-crash WAL-replay regressions. Host-pinned storage tests
   passed `57 passed; 0 failed`; Core CI `30066150481`, Fuzz/ASAN `30066150469`, and Native SDK
-  `30066150422` all passed. Linux `ab64b237f83f401389d5426e58eaadb092e12f17` passed push
-  Native/Flatpak/Foundation `30067077382`/`30067077380`/`30067077394` and PR
-  `30067079180`/`30067079189`/`30067079182`. This remains unsigned prerelease evidence; custom
+  `30066150422` all passed. Linux `5904d2be68dee4ee8e02e137ba3c9ae9cf6568a4` passed push
+  Native/Flatpak/Foundation `30067853996`/`30067853960`/`30067853957` and PR
+  `30067852102`/`30067852064`/`30067852097`. This remains unsigned prerelease evidence; custom
   VFS, physical power-loss, signing, rollback, and stable-release evidence remain open.
 - The current handle-lifetime manifest synchronization commit `59c9cc4d16610d18559d2bab96c1518e242c0d7e`
   passed coordination workflow `30065102174` on Linux `89394395492` and PowerShell `89394395538`.
