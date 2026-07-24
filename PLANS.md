@@ -28,9 +28,11 @@ Assumption: the current Linux branch head `42efabc3746c405136f347de4206e2cc5a13d
 reviewed source for the Core b54 ABI handle-lifetime checkpoint; the earlier `4b592e7` commit is
 retained as historical status evidence, not as the current release-manifest source.
 
-- [ ] Align the central release manifest and Draft release table to Linux `42efabc…`.
-- [ ] Run workspace validation, commit, push, and verify the central Linux/PowerShell workflow.
-- [ ] Keep PR #1 Draft/Open, Issue #1 Open, and release status `unreleased`.
+- [x] Align the central release manifest and Draft release table to Linux
+  `42efabc3746c405136f347de4206e2cc5a13dc98`.
+- [x] Run workspace validation, commit `d17f47a9f85fce9583167560216ef333dd426247`, push, and
+  verify coordination workflow `30065425740` (Linux `89395294587`, PowerShell `89395294630`).
+- [x] Keep PR #1 Draft/Open, Issue #1 Open, and release status `unreleased`.
 
 ## 2026-07-24 — Core ABI 1 handle-lifetime hardening
 

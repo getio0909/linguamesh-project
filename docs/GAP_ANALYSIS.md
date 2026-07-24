@@ -37,6 +37,13 @@ provenance evidence only; the release remains `unreleased`.
 Central synchronization commit `a5dee2ad1f9e8039e9d9a1ad44225c5200b3362c` passed workflow
 `30063863934` on Linux `89390817246` and PowerShell `89390817242`.
 
+The later central source-pin consistency follow-up aligns `release-manifest.toml` and the Draft
+release record to current Linux head `42efabc3746c405136f347de4206e2cc5a13dc98` rather than the
+historical status-only head `4b592e7f7b1e60545d5539a40a9a33edd9b86a09`. Local workspace validation
+and `git diff --check` passed; central commit `d17f47a9f85fce9583167560216ef333dd426247` passed
+coordination workflow `30065425740` on Linux `89395294587` and PowerShell `89395294630`. The
+release remains `unreleased`.
+
 Core commit `5e22931d5772231b0a8183cbf05ba0cbda0dfebf` adds bounded C ABI `ffi_inputs` and
 `ffi_sequences` libFuzzer targets. Local pinned-nightly ASAN smokes passed 200 runs with 299 and
 2,326 coverage features and 29- and 47-file minimized corpora; Core CI `30061241968`, Fuzz/ASAN

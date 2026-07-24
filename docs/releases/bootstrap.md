@@ -52,6 +52,9 @@ validation. These remain CI artifacts, not signed releases.
   `449facf5aaf7fe79e0cea91ea9ec3934a9b6f8d4`.
 - Central synchronization commit `a5dee2ad1f9e8039e9d9a1ad44225c5200b3362c` passed coordination
   workflow `30063863934` on Linux `89390817246` and PowerShell `89390817242`.
+- Central source-pin consistency commit `d17f47a9f85fce9583167560216ef333dd426247` aligned the
+  manifest and this table to Linux `42efabc3746c405136f347de4206e2cc5a13dc98`; coordination
+  workflow `30065425740` passed Linux `89395294587` and PowerShell `89395294630`.
 - The current handle-lifetime manifest synchronization commit `59c9cc4d16610d18559d2bab96c1518e242c0d7e`
   passed coordination workflow `30065102174` on Linux `89394395492` and PowerShell `89394395538`.
 - Central workflow `30059904373` passed Linux and PowerShell validation for the synchronized

@@ -2,6 +2,19 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Central Linux source-pin consistency follow-up
+
+Assumption: Linux `42efabc3746c405136f347de4206e2cc5a13dc98` is the current reviewed source head;
+the earlier `4b592e7` commit remains historical status evidence only.
+
+- `release-manifest.toml` and `docs/releases/bootstrap.md` now identify Linux `42efabc…`, matching
+  the Core b54 handle-lifetime checkpoint and the six green Linux push/PR gates.
+- `bash tools/check-workspace.sh --require-repositories` and `git diff --check` passed locally.
+- Central commit `d17f47a9f85fce9583167560216ef333dd426247` passed coordination workflow
+  `30065425740` with Linux job `89395294587` and PowerShell job `89395294630`.
+- Linux PR #1 remains Draft/Open/mergeable and Issue #1 remains Open; release status remains
+  `unreleased`.
+
 ## 2026-07-24 — Core ABI 1 handle-lifetime hardening
 
 Assumption: the C ABI remains source-compatible when its opaque `LmEngine *` value becomes a
