@@ -32,7 +32,7 @@ are authoritative for this audit; no merge, release promotion, or stable claim i
   user-owned `AGENTS.md` changes in the central and macOS worktrees.
 - [x] Confirm Linux `8ab718a2174d65a6ec33a1b4bcc3d8a4c52db48b`, Core `c518c9bd1208e134fd2502857fcccebd8112cd42`,
   l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`, and central `e7511c6ae553d6144360309e20834e71dd3b4938`
-  are the current published heads; central coordination workflow `30134323483` passed.
+  were the published heads for this audit; central coordination workflow `30134323483` passed.
 - [x] Reconfirm Linux's six current-head Native/Flatpak/Foundation Push/PR gates are green and
   no new deterministic Linux implementation gap is evidenced by the current source, tests, or
   gap matrix.
