@@ -38,9 +38,9 @@ user-selected output directories remain outside its scope.
   correction `7ce5c60`, localization-test completion `e15f19b`, and consolidated status/Flatpak pin
   commit `e12ecf3`; update central component
   pins while keeping release `unreleased`.
-- [x] Complete hosted push/PR checks, re-audit PR #1 and Issue #1, and record final evidence
-  comments PR `5068303923` and Issue `5068305127`; pin-complete checks passed under runs
-  `30082200770`/`30082200768`/`30082200795` and `30082204230`/`30082204209`/`30082204280`.
+- [x] Complete hosted push/PR checks, re-audit PR #1 and Issue #1, and record consolidated final
+  evidence comments PR `5068392803` and Issue `5068394268`; checks passed under runs
+  `30082859631`/`30082859638`/`30082859637` and `30082862089`/`30082862013`/`30082862004`.
 - [ ] Keep cross-client parity, physical/manual review, signing, rollback authorization, and
   stable-release acceptance open.
 
