@@ -11,15 +11,16 @@ user-selected output directories remain outside this action.
 - Linux functional revision `1547485795e75c8b1a0fcffb16ef1b72f0374496` adds the localized native
   confirmation, busy-state/OCR guard, bounded cleanup helper, item-count feedback, and focused
   regression fixture. Workflow correction `7ce5c60e423f5489f7158ca77ba9cdc3547ddd22` aligns the
-  Native l10n checkout; final status/packaging revision `886239079d12c798e685ea12f8ed605f938cf3be`
-  records the exact Flatpak source pin after hosted verification.
+  Native l10n checkout; localization-test completion `e15f19b66b73dd0d146af769dbfd18ca139c7c65`
+  and final Flatpak pin revision `f1ab65f0607e64a95cf86e36a4745191ad010f61` complete the
+  reviewed source tree after hosted verification.
 - Localization revision `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c` supplies five catalog messages;
   Linux regenerated PO/MO resources and all three localization audits pass. Local Rust 1.93.0
   format, locked checks, strict Clippy, no-default tests (`85 passed; 1 ignored`), demo-provider
   library tests (`166 passed; 7 ignored`), build, Flatpak metadata, and cargo-deny pass. The focused
   GUI binary test compiles but local linking is blocked by incomplete host GTK runtime symbols;
   Native CI is required for display-backed execution.
-- Central release components now pin Linux `886239079d12c798e685ea12f8ed605f938cf3be` and l10n
+- Central release components now pin Linux `f1ab65f0607e64a95cf86e36a4745191ad010f61` and l10n
   `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; release remains `unreleased`. Final hosted checks
   passed: push Native/Flatpak/Foundation `30081480916`/`30081480911`/`30081480918` and PR
   Native/Flatpak/Foundation `30081484045`/`30081484101`/`30081484041`. Central workflow
