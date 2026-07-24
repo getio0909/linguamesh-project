@@ -10,14 +10,17 @@ user-selected output directories remain outside this action.
 
 - Linux functional revision `1547485795e75c8b1a0fcffb16ef1b72f0374496` adds the localized native
   confirmation, busy-state/OCR guard, bounded cleanup helper, item-count feedback, and focused
-  regression fixture. Flatpak pin revision `826c1e8` records the exact packaging source.
+  regression fixture. Workflow correction `7ce5c60e423f5489f7158ca77ba9cdc3547ddd22` aligns the
+  Native l10n checkout; Flatpak pin revision `08a28260db2be033984713a43cfc36e328eb3168` records
+  the final exact packaging source.
 - Localization revision `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c` supplies five catalog messages;
   Linux regenerated PO/MO resources and all three localization audits pass. Local Rust 1.93.0
   format, locked checks, strict Clippy, no-default tests (`85 passed; 1 ignored`), demo-provider
   library tests (`166 passed; 7 ignored`), build, Flatpak metadata, and cargo-deny pass. The focused
   GUI binary test compiles but local linking is blocked by incomplete host GTK runtime symbols;
   Native CI is required for display-backed execution.
-- Central release components now pin Linux `826c1e8` and l10n `7fd2106`; release remains
+- Central release components now pin Linux `08a28260db2be033984713a43cfc36e328eb3168` and l10n
+  `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; release remains
   `unreleased`. Hosted push/PR checks and the PR/Issue re-audit remain pending.
 
 ## 2026-07-24 — Final Linux CI evidence for the corrected Core pin
