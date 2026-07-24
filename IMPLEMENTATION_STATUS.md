@@ -13,11 +13,12 @@ without treating a test fixture as proof that a human screen reader listened to 
   `LINGUAMESH_TEST_ATSPI_STATUS_ERROR=1`. The fixture injects the fixed invalid-UTF-8 error through
   the production reducer, then checks localized status/error prefixes via AT-SPI name, description,
   or Text exports without printing content.
-- Flatpak/release-pin status head `749ff81766d5963827110411d77bb1714eae91cc` consumes the exact
-  runtime ancestor. Local formatting, GUI all-target check, Python/shell syntax, localization
+- Flatpak/release-pin status head `ec50565461b8a94311d297e054f8e6abd95fb130` is a documentation-only
+  descendant of runtime/package head `749ff81766d5963827110411d77bb1714eae91cc`; it consumes the
+  exact runtime ancestor. Local formatting, GUI all-target check, Python/shell syntax, localization
   audits, Flatpak metadata, focused worker test, full demo-provider suite (`173` tests, one OCR
-  fixture ignored), and diff checks passed. Hosted push Native `30115089469`, Flatpak
-  `30115089626`, and Foundation `30115089245` passed.
+  fixture ignored), and diff checks passed. Hosted push Native `30115826450`, Flatpak
+  `30115826498`, and Foundation `30115826518` passed.
 - Prior stale-pin and bridge-export failures (`30112710630`, `30113333688`, and earlier Native
   fixture runs) are superseded by the final evidence above. Local GUI linking remains host-limited;
   hosted Native is authoritative. Human Orca listening, visual/RTL manual review, physical

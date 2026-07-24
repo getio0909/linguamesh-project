@@ -9,8 +9,9 @@ Linux runtime/test head `8713bdc23b81263e1bdbc65e8d010ce57673877a` preserves pro
 `Status`/`Alert` roles and adds a test-only fixed invalid-UTF-8 state/error fixture. Standard
 `ROLE_LABEL` nodes are checked through AT-SPI name, description, or Text exports for localized
 status/error prefixes without printing arbitrary content. Flatpak/release-pin head
-`749ff81766d5963827110411d77bb1714eae91cc` and hosted push Native/Flatpak/Foundation
-`30115089469`/`30115089626`/`30115089245` passed. Human Orca listening, visual/RTL review,
+`ec50565461b8a94311d297e054f8e6abd95fb130` is a documentation-only descendant of runtime/package
+head `749ff81766d5963827110411d77bb1714eae91cc`; hosted push Native/Flatpak/Foundation
+`30115826450`/`30115826498`/`30115826518` passed. Human Orca listening, visual/RTL review,
 physical compositor/GPU coverage, other clients, signing, rollback, and stable release remain
 open.
 
