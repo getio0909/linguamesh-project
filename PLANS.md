@@ -32,10 +32,10 @@ status/error content, while a test-only fixture must not be reported as human sc
 - [x] Inspect AT-SPI name, description, and Text exports for localized status/error prefixes without
   printing arbitrary application content; retain GTK unit-role assertions.
 - [x] Push Linux runtime/test head `8713bdc23b81263e1bdbc65e8d010ce57673877a` and final
-  Flatpak/release-pin head `21ea284660aa23302127234abade2b1ba5fe79b7`.
+  Flatpak/release-pin head `749ff81766d5963827110411d77bb1714eae91cc`.
 - [x] Pass local formatting, GUI checks, localization/metadata/syntax checks, focused worker test,
   and the `173`-test demo-provider suite; hosted push Native/Flatpak/Foundation
-  `30114122907`/`30114122836`/`30114122881` passed.
+  `30115089469`/`30115089626`/`30115089245` passed.
 - [ ] Keep human Orca listening, visual/RTL review, physical compositor/GPU coverage, other-client
   parity, signing, rollback, and stable-release approval open; release remains `unreleased`.
 
