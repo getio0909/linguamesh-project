@@ -11,12 +11,12 @@ and must not be promoted without the acceptance and authorization gates listed b
 
 | Component | Version | Source revision |
 | --- | --- | --- |
-| Core | `0.1.0-alpha.2` | `b1596ca8ffbdc809817b92fec29523a8b31576aa` |
+| Core | `0.1.0-alpha.2` | `900b0a90113b75dd0f49e535900b9af8e75ef0f3` |
 | Localization | `0.1.0` | `c2526bfb3f6ff57895bdc3eeed743e26c8783613` |
 | Android | `0.1.0-alpha.1` | `afe7a566bac77a16243f70295d17a4d9cab1151f` |
 | Windows | `0.0.0-dev` | `unreleased` |
 | macOS | `0.1.0-alpha.1` | `cad822c69dcf1ad20f8cab2151f407866a577420` |
-| Linux | `0.1.0-alpha.2` | `7c94dadd91106808002469d11fa8568f4038257f` |
+| Linux | `0.1.0-alpha.2` | `4f4472ee9ef5ceef821301f4b2af71f54372174d` |
 
 Contracts: ABI major `1`, protocol schema `0.1.0`, provider catalog `0.1.0`, and localization
 schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
@@ -62,13 +62,13 @@ validation. These remain CI artifacts, not signed releases.
   Native/Flatpak/Foundation `30067853996`/`30067853960`/`30067853957` and PR
   `30067852102`/`30067852064`/`30067852097`. This remains unsigned prerelease evidence; custom
   VFS, physical power-loss, signing, rollback, and stable-release evidence remain open.
-- Core `b1596ca8ffbdc809817b92fec29523a8b31576aa` adds the Linux-only negative
+- Core `900b0a90113b75dd0f49e535900b9af8e75ef0f3` adds the Linux-only negative
   `unix-dotfile` VFS probe; it fails before migrations when WAL cannot be enabled and leaves no
-  schema tables. Linux `7c94dadd91106808002469d11fa8568f4038257f` passes all local non-GUI
-  validation. Core CI/Fuzz/ASAN/Native SDK `30068741565`/`30068741548`/`30068741551` and Linux
-  push Native/Flatpak/Foundation `30068869406`/`30068869443`/`30068869399` plus PR
-  `30068871374`/`30068871384`/`30068871377` all passed. Central coordination workflow
-  `30068951768` passed for commit `96a740b890ef9dcb5639688d606784dca94624ec`.
+  schema tables. Linux `4f4472ee9ef5ceef821301f4b2af71f54372174d` passes all local non-GUI
+  validation. Core CI/Fuzz/ASAN/Native SDK `30069351232`/`30069351157`/`30069351240` and Linux
+  push Native/Flatpak/Foundation `30069403841`/`30069403823`/`30069403845` plus PR
+  `30069406482`/`30069406504`/`30069406492` all passed. Central coordination will be recorded
+  after the manifest pin commit.
 - The current handle-lifetime manifest synchronization commit `59c9cc4d16610d18559d2bab96c1518e242c0d7e`
   passed coordination workflow `30065102174` on Linux `89394395492` and PowerShell `89394395538`.
 - Central workflow `30059904373` passed Linux and PowerShell validation for the synchronized

@@ -4,17 +4,17 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
 The Linux-first alternate-VFS checkpoint is now verified at Core
-`b1596ca8ffbdc809817b92fec29523a8b31576aa` and Linux
-`7c94dadd91106808002469d11fa8568f4038257f`. Core's Linux-only storage regressions exercise the
+`900b0a90113b75dd0f49e535900b9af8e75ef0f3` and Linux
+`4f4472ee9ef5ceef821301f4b2af71f54372174d`. Core's Linux-only storage regressions exercise the
 bundled SQLite `unix-excl` VFS with `SQLITE_OPEN_NOFOLLOW`, schema/WAL/profile reopen behavior,
-process-crash WAL replay, and file/parent-path symbolic-link rejection. Core CI `30068741565`, Fuzz/ASAN
-`30068741548`, Native SDK `30068741551`, and all six Linux push/PR Native, Flatpak, and Foundation
-gates passed (`30068869406`/`30068869443`/`30068869399` and
-`30068871374`/`30068871384`/`30068871377`). The bundled `unix-dotfile` VFS is also probed and
+process-crash WAL replay, and file/parent-path symbolic-link rejection. Core CI `30069351232`, Fuzz/ASAN
+`30069351157`, Native SDK `30069351240`, and all six Linux push/PR Native, Flatpak, and Foundation
+gates passed (`30069403841`/`30069403823`/`30069403845` and
+`30069406482`/`30069406504`/`30069406492`). The bundled `unix-dotfile` VFS is also probed and
 rejected before migrations when it cannot provide required WAL, with no schema tables created;
 Core does not silently downgrade durability. Central coordination commit
-`96a740b890ef9dcb5639688d606784dca94624ec` passed workflow `30068951768`. This closes only the
-tested bundled `unix-excl` path; custom/third-party VFS,
+The central manifest pin follow-up will record its own coordination workflow after this update.
+This closes only the tested bundled `unix-excl` path; custom/third-party VFS,
 physical power-loss, cross-client, signing, rollback, and stable-release evidence remain open.
 
 Core ABI 1 handle-lifetime hardening is now verified at Core

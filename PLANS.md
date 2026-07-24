@@ -28,17 +28,17 @@ Assumption: the bundled `unix-dotfile` VFS is useful as a negative compatibility
 Core must reject any VFS that cannot provide the required WAL mode instead of silently weakening
 durability; `unix-excl` remains the supported bundled alternate-VFS path.
 
-- [x] Core `b1596ca8ffbdc809817b92fec29523a8b31576aa` adds
+- [x] Core `900b0a90113b75dd0f49e535900b9af8e75ef0f3` adds
   `unix_dotfile_vfs_fails_closed_without_required_wal`, proving rejection before migrations with
   no schema tables created; the full workspace suite passes and storage reports `58 passed; 0 failed`.
 - [x] Repin Linux docs, Flatpak, and release evidence to
-  `7c94dadd91106808002469d11fa8568f4038257f`; local localization, metadata, format, check,
+  `4f4472ee9ef5ceef821301f4b2af71f54372174d`; local localization, metadata, format, check,
   Clippy, no-default (`85 passed; 1 ignored`), demo-provider (`166 passed; 7 ignored`), and exact
   Core-source-pin checks pass.
-- [x] Core CI/Fuzz/ASAN/Native SDK `30068741565`/`30068741548`/`30068741551` and Linux push
-  Native/Flatpak/Foundation `30068869406`/`30068869443`/`30068869399` plus PR
-  `30068871374`/`30068871384`/`30068871377` all pass. Central commit `96a740b890ef9dcb5639688d606784dca94624ec`
-  passed coordination workflow `30068951768`.
+- [x] Core CI/Fuzz/ASAN/Native SDK `30069351232`/`30069351157`/`30069351240` and Linux push
+  Native/Flatpak/Foundation `30069403841`/`30069403823`/`30069403845` plus PR
+  `30069406482`/`30069406504`/`30069406492` all pass. Central follow-up validation is recorded
+  after the manifest pin commit below.
 - [x] Record the same run evidence in the Draft PR #1 and open Issue #1 comments; both remain
   unmerged/open and release status remains `unreleased`.
 - [ ] Keep custom/third-party VFS, physical power-loss, cross-client parity, human/physical review,

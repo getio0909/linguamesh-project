@@ -8,20 +8,18 @@ Assumption: Core must fail closed when a SQLite VFS cannot provide the required 
 the bundled `unix-dotfile` probe is therefore negative compatibility evidence, while `unix-excl`
 remains the supported bundled alternate-VFS path.
 
-- Core `b1596ca8ffbdc809817b92fec29523a8b31576aa` adds
+- Core `900b0a90113b75dd0f49e535900b9af8e75ef0f3` adds
   `unix_dotfile_vfs_fails_closed_without_required_wal`. The Linux-only test confirms that
   `unix-dotfile` returns a persistence error before migrations and leaves zero schema tables, so
   durability is not silently downgraded. Core's full workspace validation passed, including
   `58 passed; 0 failed` in `linguamesh-storage`.
-- Linux `7c94dadd91106808002469d11fa8568f4038257f` consumes the Core pin. Local localization
+- Linux `4f4472ee9ef5ceef821301f4b2af71f54372174d` consumes the Core pin. Local localization
   audits, Flatpak metadata, format, check, Clippy, no-default tests (`85 passed; 1 ignored`),
   demo-provider tests (`166 passed; 7 ignored`), and the exact Core-source-pin check passed.
-- Core CI/Fuzz/ASAN/Native SDK `30068741565`/`30068741548`/`30068741551` and Linux push
-  Native/Flatpak/Foundation `30068869406`/`30068869443`/`30068869399` plus PR
-  `30068871374`/`30068871384`/`30068871377` all passed. Central commit
-  `96a740b890ef9dcb5639688d606784dca94624ec` passed coordination workflow `30068951768`.
-- PR #1 and Issue #1 evidence comments are refreshed; PR remains Draft/Open/mergeable, Issue #1
-  remains Open, and release remains `unreleased`.
+- Core CI/Fuzz/ASAN/Native SDK `30069351232`/`30069351157`/`30069351240` and Linux push
+  Native/Flatpak/Foundation `30069403841`/`30069403823`/`30069403845` plus PR
+  `30069406482`/`30069406504`/`30069406492` all passed. PR #1 and Issue #1 evidence comments
+  will be refreshed after the central manifest pin commit; release remains `unreleased`.
 - Custom/third-party VFS, physical power-loss, cross-client conformance, human/physical review,
   signing, rollback, and stable-release evidence remain open.
 
