@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux loopback routing locality alignment
+
+Assumption: Linux routing locality must match Core's accepted HTTP endpoint policy; HTTPS loopback
+is intentionally still treated as remote because Core's secure endpoint boundary is unchanged.
+
+- Linux code head `307bbbae8cf3275cd6c67ece166f5beb139e63c9` now classifies all loopback IPv4/IPv6
+  authorities with `IpAddr::is_loopback`, while rejecting remote hosts and HTTPS for local quality
+  scoring. The regression covers `127.0.0.2`, `[::1]`, `localhost`, HTTPS loopback, and remote hosts.
+- Local formatting, GUI all-target checking, strict Clippy, demo-provider tests (`167 passed;
+  7 ignored`), localization synchronization and audits, Flatpak metadata validation, and diff
+  checks passed. The focused GUI test binary is blocked by missing GTK/GDK/Graphene link symbols;
+  hosted Native ran the complete fixture matrix.
+- Final packaging/status head `1e60f3d09314cd1012c15c4901f83a915a4d431d` pins Flatpak to the code
+  head. Hosted push Native/Flatpak/Foundation `30123387021`/`30123386031`/`30123385852` and PR
+  `30123386232`/`30123386219`/`30123386225` all passed.
+- Release remains `unreleased`; broader VFS/power-loss, manual/physical accessibility, other
+  clients, signing, rollback authorization, and stable-release evidence remain open.
+
 ## 2026-07-24 — Linux-first continuation completion audit
 
 Assumption: current-tree automated checks prove reproducibility only and do not satisfy manual,

@@ -3,6 +3,7 @@ release_train = "bootstrap"
 status = "unreleased"
 global_goal_revision = "sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198"
 known_limitations = [
+  "Linux loopback routing locality is aligned with Core at code head `307bbbae8cf3275cd6c67ece166f5beb139e63c9`: validated HTTP authorities now classify all IPv4/IPv6 loopback addresses as local while HTTPS and non-loopback endpoints remain remote, with regression coverage for `127.0.0.2`, `[::1]`, `localhost`, HTTPS loopback, and remote hosts. Final packaging/status head `1e60f3d09314cd1012c15c4901f83a915a4d431d` pins Flatpak to the code head. Local checks passed; the focused GUI binary is linker-limited by missing host GTK/GDK/Graphene symbols, while hosted push/PR Native, Flatpak, and Foundation `30123387021`/`30123386031`/`30123385852` and `30123386232`/`30123386219`/`30123386225` passed. Manual/physical accessibility, broader VFS/power-loss, live-provider, other-client, signing, rollback, and stable-release evidence remain open; status stays `unreleased`.",
   "Central Linux release metadata now pins component `source_revision` to the verified packaging/status head `cadc6cdbf714aa056d2cdf2c6c692169092ce02f`, correcting the superseded `e1a2ba9` reference. Workspace validation and coordination workflow `30122520200` passed at central commit `a0e4ad9`; release remains `unreleased` without new artifact, signing, rollback, or stable-release evidence.",
   "Linux published-storage path replacement boundary is verified at source/test head `808e04502b257a8793c2d62a1bea9d068190b8f4` and packaging/status head `cadc6cd`: the already-published connection remains bound to the original database after the visible pathname is replaced, and replacement bytes remain untouched. Local validation and push Native/Flatpak/Foundation `30120734398`/`30120734313`/`30120734382` plus PR Native/Flatpak/Foundation `30120737229`/`30120737252`/`30120737224` all passed. Broader VFS/power-loss, manual/physical accessibility, other-client, signing, rollback, and stable-release evidence remain open; status stays `unreleased`.",
   "Linux-first continuation audit on 2026-07-24 revalidated Linux `e1a2ba9130a198212098e93276e5d16bdfec8e3b` and Core documentation head `c518c9bd1208e134fd2502857fcccebd8112cd42`: Linux formatting, GUI all-target check, strict Clippy, demo-provider tests (`166 passed; 7 ignored`), localization synchronization and 466-key/595-placeholder/visible-string audits, Flatpak metadata, Core locked offline tests/build, and central workspace validation passed. No new deterministic Linux gap was found; manual/physical accessibility, live-provider, broader VFS/power-loss, other-client, signing, rollback, and stable-release evidence remain open; status stays `unreleased`.",
@@ -191,6 +192,6 @@ artifacts = []
 [components.linux]
 repository = "linguamesh-linux"
 version = "0.1.0-alpha.2"
-source_revision = "cadc6cdbf714aa056d2cdf2c6c692169092ce02f"
+source_revision = "1e60f3d09314cd1012c15c4901f83a915a4d431d"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []

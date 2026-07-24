@@ -3,6 +3,21 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux loopback routing locality alignment
+
+Linux code head `307bbbae8cf3275cd6c67ece166f5beb139e63c9` now parses the validated HTTP authority
+and uses `IpAddr::is_loopback`, aligning routing quality classification with Core for all IPv4 and
+IPv6 loopback addresses. Regression coverage includes `127.0.0.2`, `[::1]`, `localhost`, HTTPS
+loopback, and remote hosts. Local formatting, GUI all-target checking, strict Clippy, 167 passing
+demo-provider tests with 7 ignored, localization audits, Flatpak metadata validation, and diff
+checks passed. The focused GUI test binary cannot link against the host's incomplete GTK/GDK/Graphene
+libraries; hosted Native provides the full fixture evidence. Final packaging/status head
+`1e60f3d09314cd1012c15c4901f83a915a4d431d` pins Flatpak to the code head, and push/PR Native,
+Flatpak, and Foundation runs `30123387021`/`30123386031`/`30123385852` and
+`30123386232`/`30123386219`/`30123386225` all passed. This closes only the deterministic locality
+classification gap; manual/physical accessibility, broader VFS/power-loss, live-provider,
+cross-client, signing, rollback, and stable-release evidence remain open.
+
 ## Latest Linux-first continuation completion audit
 
 Current Linux HEAD `e1a2ba9130a198212098e93276e5d16bdfec8e3b` passed formatting, GUI all-target

@@ -22,6 +22,26 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux loopback routing locality alignment
+
+Assumption: routing locality must follow Core's accepted endpoint policy so every IPv4/IPv6
+loopback address is local while HTTPS and non-loopback endpoints remain remote.
+
+- [x] Replaced Linux routing prefix checks with parsed HTTP authority classification using
+  `IpAddr::is_loopback`, preserving the Core HTTP-only boundary and adding regression coverage for
+  `127.0.0.2`, `[::1]`, `localhost`, HTTPS loopback, and remote hosts.
+- [x] Linux local formatting, GUI all-target checking, strict Clippy, demo-provider tests
+  (`167 passed; 7 ignored`), localization audits, Flatpak metadata validation, and diff checks
+  passed. The focused GUI test binary is linker-limited on this host by missing GTK/GDK/Graphene
+  symbols; hosted Native executed the full fixture matrix.
+- [x] Code head `307bbbae8cf3275cd6c67ece166f5beb139e63c9` is consumed by the Flatpak pin and final
+  packaging/status head `1e60f3d09314cd1012c15c4901f83a915a4d431d` records the host limitation.
+  Push Native/Flatpak/Foundation `30123387021`/`30123386031`/`30123385852` and PR
+  Native/Flatpak/Foundation `30123386232`/`30123386219`/`30123386225` all passed.
+- [ ] Keep the release `unreleased`; manual/physical accessibility, broader VFS/power-loss,
+  live-provider, other-client, signing, rollback authorization, and stable-release evidence remain
+  open.
+
 ## 2026-07-24 — Linux-first continuation completion audit
 
 Assumption: current-tree automated validation is evidence of reproducibility only; it cannot replace
