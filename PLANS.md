@@ -28,11 +28,13 @@ Assumption: SQLite's bundled `unix-excl` VFS is a representative Linux alternate
 tested storage contract; custom/third-party VFS and physical power-loss behavior remain separate
 release gates.
 
-- [x] Add Core's Linux-only `unix-excl` migration/WAL/profile-reopen/symlink-rejection regression
-  in `1c7440917379896a8c05d3f99a89eac4fcf073a3`; host-pinned storage tests pass `56/56`.
+- [x] Add Core's Linux-only `unix-excl` migration/WAL/profile-reopen/symlink-rejection and
+  process-crash WAL-replay regressions in `fed6c138d398a69866512090ced3c4e062631c0d`;
+  host-pinned storage tests pass `57/57`.
 - [x] Pass Core CI `30066150481`, Fuzz/ASAN `30066150469`, and Native SDK `30066150422`.
-- [x] Repin Linux docs, Flatpak, and release evidence to `834e944e278e86eaa3386f2b0ff39e1f4843ff32`;
-  push/PR Native, Flatpak, and Foundation runs all pass.
+- [x] Repin Linux docs, Flatpak, and release evidence to `ab64b237f83f401389d5426e58eaadb092e12f17`;
+  push Native/Flatpak/Foundation `30067077382`/`30067077380`/`30067077394` and PR
+  `30067079180`/`30067079189`/`30067079182` all pass.
 - [ ] Keep custom/third-party VFS, physical power-loss, cross-client parity, human/physical review,
   signing, rollback authorization, and stable-release acceptance open.
 
