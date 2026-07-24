@@ -28,7 +28,7 @@ Assumption: Linux `26c88b0` changes only status wording after the corrected Core
 `dfe30a2`; the runtime and compatibility pins remain unchanged.
 
 - [x] Record the corrected dfe30a2 push/PR Native, Flatpak, and Foundation evidence.
-- [ ] Finish the documentation-only descendant workflow set
+- [x] Finish the documentation-only descendant workflow set
   `30078731326`/`30078731415`/`30078731405` and `30078727061`/`30078727008`/`30078727028`.
 - [ ] Keep release `unreleased` until all required platform and stable-release evidence exists.
 

@@ -2,6 +2,18 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Final Linux CI evidence for the corrected Core pin
+
+Assumption: the Linux status head `26c88b026a9cf0de1ab585de979a0e2576df805c` is a documentation-only
+descendant of the verified runtime and CI correction; all hosted checks below use approved Core
+`77c6bf426ace65c6bd960120b253e10e59a70a13`.
+
+- Documentation-only push Native/Flatpak/Foundation runs `30078731326`/`30078731415`/`30078731405`
+  and PR Native/Flatpak/Foundation runs `30078727061`/`30078727008`/`30078727028` all passed.
+- The corrected runtime/CI head `dfe30a2618311a820451a4748e2acff49ffd2b93` also passed all six
+  Native/Flatpak/Foundation push and PR workflows. PR #1 remains Draft/Open/mergeable with no
+  submitted reviews; release remains `unreleased`.
+
 ## 2026-07-24 — Linux CI evidence documentation head
 
 Assumption: `26c88b026a9cf0de1ab585de979a0e2576df805c` is a documentation-only descendant of the
@@ -13,7 +25,7 @@ verified Linux CI pin correction; it does not change runtime code or the approve
   Native/Flatpak/Foundation `30078307212`/`30078307159`/`30078307167`.
 - Documentation-only descendant checks are push Native/Flatpak/Foundation
   `30078731326`/`30078731415`/`30078731405` and PR Native/Flatpak/Foundation
-  `30078727061`/`30078727008`/`30078727028`; Native/Flatpak were still running when recorded.
+  `30078727061`/`30078727008`/`30078727028`; all subsequently completed successfully.
 - Release remains `unreleased`; this status-only head does not promote a stable artifact.
 
 ## 2026-07-24 — Linux Native CI Core pin alignment
