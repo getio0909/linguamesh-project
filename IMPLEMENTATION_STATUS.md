@@ -2,6 +2,24 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Android persisted provider-profile metadata checkpoint
+
+Assumption: Android may retain bounded non-secret provider-profile metadata in DataStore until the
+generated Core wrapper exposes Core-owned profile persistence; credential bytes remain only in the
+Keystore-backed broker and are represented in DataStore by an opaque `secretRef`.
+
+- Android `df8320e1898981814fe3135bcd41024e5d2e006e` adds the DataStore repository, background
+  restore and Core re-registration, active-profile persistence, duplicate/oversize filtering, and
+  JVM coverage for restart-style restoration and the secret-reference-only boundary.
+- Local Foundation, l10n synchronization, debug/release builds, 18 debug and 18 release JVM tests,
+  instrumentation compilation, and debug/release lint passed with JDK 21 and Android SDK 36.
+- The Android l10n pin and workflow now use `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; the
+  staged AAR remains prior-pin provenance and is not treated as a clean Core rebuild.
+- Hosted Android workflow `30091714901` is running; its earlier superseded run `30091670253`
+  failed at the stale foundation l10n pin before build execution. Release remains `unreleased`.
+- Core-owned persistence, device restoration, document/background workflows, real-provider
+  credentials, signing, and stable-release evidence remain open.
+
 ## 2026-07-24 — Windows native reference slice checkpoint
 
 Assumption: Windows is a bounded prerelease reference slice; hosted build and unsigned MSIX

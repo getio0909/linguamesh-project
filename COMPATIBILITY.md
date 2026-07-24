@@ -4,6 +4,16 @@ No compatible stable release train exists yet. The authoritative machine-readabl
 
 Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198`.
 
+### Android persisted provider-profile metadata — 2026-07-24
+
+Android `df8320e1898981814fe3135bcd41024e5d2e006e` consumes Core ABI 1 and persists bounded
+non-secret provider-profile metadata in DataStore, restoring and re-registering profiles at
+startup while keeping credentials in the Android Keystore broker. Local debug/release builds,
+18-test JVM suites, instrumentation compilation, l10n synchronization, Foundation checks, and
+lint pass; hosted validation `30091714901` is in progress. This is an unreleased client
+checkpoint; Core-owned persistence, device restoration, document/background workflows, signing,
+and stable-release evidence remain open.
+
 ### Windows native reference slice — 2026-07-24
 
 Windows `d922b40c7db19aadebf77c2ea734ee5779ecc8ef` provides a C++20 state/event reference

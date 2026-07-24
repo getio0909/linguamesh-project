@@ -22,6 +22,22 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Android persisted provider-profile metadata
+
+Assumption: Android can persist only bounded non-secret profile metadata locally until the generated
+Core wrapper exposes Core-owned profile persistence; the Keystore broker remains the only credential
+store.
+
+- [x] Add DataStore encoding with duplicate/oversize rejection, active-profile metadata, and no
+  credential values.
+- [x] Restore profiles on a background dispatcher, re-register them with Core, and persist active
+  profile changes; add JVM coverage for restoration and secret-reference boundaries.
+- [x] Update the Android l10n revision/workflow to `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`;
+  local Foundation, l10n, debug/release build/test/lint, and instrumentation-compilation checks pass.
+- [ ] Complete hosted Android run `30091714901`, then record its result and synchronize manifests.
+- [ ] Keep Core-owned persistence, device/background/document flows, signing, rollback, and stable
+  release evidence open.
+
 ## 2026-07-24 — Windows native reference slice
 
 Assumption: this is a bounded Windows prerelease slice; portable behavior can be verified on Linux,
