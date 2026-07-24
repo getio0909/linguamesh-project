@@ -15,7 +15,9 @@ evidence.
   `ffi_sequences` smokes also passed 200 iterations each; Core FFI tests passed 20/20.
 - Core CI `30062160464` Rust job `89385822201`, Fuzz/ASAN `30062160452` job `89385804125`, and
   Native SDK `30062161560` Linux `89385808651`, Windows `89385808682`, Android `89385808659`,
-  and Apple `89385808696` jobs all passed. The central Core pin is updated in the release manifest.
+  and Apple `89385808696` jobs all passed. Central commit `b2d1ae9dc425cafd359746ef75031dce9f9a9ea2`
+  updated the Core pin and passed coordination workflow `30062468039` (Linux `89386679596`,
+  PowerShell `89386679650`).
 - Raw engine-pointer use-after-free, cross-client parity, signed artifacts, rollback authorization,
   and stable release remain open; status stays `unreleased`.
 

@@ -59,8 +59,9 @@ run `30058395669` passed repository validation. These remain CI artifacts, not s
 - Final Core pin synchronization commit `62085d82b4aa2fe7efd3e635e1f2868c9e66bf8d` passed
   coordination workflow `30061527364` (Linux `89383965632`, PowerShell `89383965670`).
 - Core valid-command pin `b29067b78d420c96f57d670d3dd860cba3abc703` passed Core CI
-  `30062160464`, Fuzz/ASAN `30062160452`, and Native SDK `30062161560`; the central synchronization
-  commit and coordination result will be recorded after this manifest update.
+  `30062160464`, Fuzz/ASAN `30062160452`, and Native SDK `30062161560`. Central synchronization
+  commit `b2d1ae9dc425cafd359746ef75031dce9f9a9ea2` passed coordination workflow `30062468039`
+  (Linux `89386679596`, PowerShell `89386679650`).
 
 ## Acceptance scenarios
 

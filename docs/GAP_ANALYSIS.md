@@ -13,6 +13,8 @@ and lifecycle targets passed 200 iterations each. Core CI `30062160464`, Fuzz/AS
 and Native SDK `30062161560` all passed, including Linux `89385808651`. This closes only the
 bounded loopback command path; raw-pointer use-after-free, live providers, cross-client parity,
 physical/alternate-VFS recovery, signing, rollback authorization, and stable release remain open.
+Central pin synchronization commit `b2d1ae9dc425cafd359746ef75031dce9f9a9ea2` passed coordination
+workflow `30062468039` on Linux `89386679596` and PowerShell `89386679650`.
 
 Core commit `5e22931d5772231b0a8183cbf05ba0cbda0dfebf` adds bounded C ABI `ffi_inputs` and
 `ffi_sequences` libFuzzer targets. Local pinned-nightly ASAN smokes passed 200 runs with 299 and

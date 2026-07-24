@@ -34,7 +34,8 @@ submit/event/buffer lifecycle without commercial credentials, live-provider beha
   iterations each. Core FFI unit tests passed 20/20 and locked/offline checks passed.
 - [x] Push Core `b29067b78d420c96f57d670d3dd860cba3abc703`; CI `30062160464`, Fuzz/ASAN
   `30062160452`, and Native SDK `30062161560` all passed, including Linux, Windows, Android, and
-  Apple jobs. Update the central Core source pin after these results.
+  Apple jobs. Update the central Core source pin in commit `b2d1ae9dc425cafd359746ef75031dce9f9a9ea2`;
+  coordination workflow `30062468039` passed Linux `89386679596` and PowerShell `89386679650`.
 - [ ] Keep raw engine-pointer use-after-free, cross-client parity, signing, production rollback
   authorization, physical/alternate-VFS recovery, and stable release authorization open.
 
