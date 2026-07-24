@@ -3,6 +3,13 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+The current-tree revalidation passed without changing source or dependency pins: Core's pinned
+Rust 1.93.0 fmt/check/strict-Clippy/workspace-test set is green, and Linux's localization audits,
+Flatpak metadata, formatting, all-target check, strict Clippy, no-default suite (`85 passed; 1
+ignored`), and demo-provider suite (`166 passed; 7 ignored`) are green. This confirms the existing
+Linux-first evidence but does not close custom/third-party VFS, physical power-loss, cross-client,
+live-provider, human/physical, signing, rollback, or stable-release boundaries.
+
 The Linux-first alternate-VFS checkpoint is now verified at Core
 `900b0a90113b75dd0f49e535900b9af8e75ef0f3` and Linux
 `4f4472ee9ef5ceef821301f4b2af71f54372174d`. Core's Linux-only storage regressions exercise the

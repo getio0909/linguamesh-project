@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Current-tree Linux/Core revalidation
+
+Assumption: this is reproducibility evidence for the published Linux-first heads, not a new
+runtime change or a stable-release qualification.
+
+- The authoritative task attachment was re-read before validation. Central `AGENTS.md` retains an
+  unrelated user-owned uncommitted edit; it was not overwritten or staged.
+- Core `900b0a90113b75dd0f49e535900b9af8e75ef0f3` passed pinned Rust 1.93.0 formatting, locked
+  offline workspace check, strict all-feature Clippy, and locked offline workspace tests; the
+  storage crate reported `58 passed; 0 failed`.
+- Linux `4f4472ee9ef5ceef821301f4b2af71f54372174d` passed localization synchronization, the
+  460-key/source, visible-string, and 578-placeholder audits, Flatpak metadata, formatting,
+  all-target check, strict Clippy, no-default tests (`85 passed; 1 ignored`), and demo-provider
+  tests (`166 passed; 7 ignored`).
+- No source, dependency, or manifest pin changed. Central, Core, and Linux remote heads still
+  match `a5eaf3d`, `900b0a9`, and `4f4472e`; release remains `unreleased`.
+- Custom/third-party VFS, physical power-loss, cross-client parity, live-provider qualification,
+  human/physical review, signing, rollback authorization, and stable-release evidence remain open.
+
 ## 2026-07-24 — Linux bundled VFS fail-closed probe and repin
 
 Assumption: Core must fail closed when a SQLite VFS cannot provide the required WAL journal mode;

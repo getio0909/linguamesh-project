@@ -22,6 +22,27 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Current-tree Linux/Core revalidation
+
+Assumption: a fresh offline revalidation of the already reviewed heads strengthens reproducibility
+but does not create a new component revision or close external release gates.
+
+- [x] Re-read the authoritative task attachment and verify the current central, Core, and Linux
+  worktrees before acting; the only central worktree change remains the user's uncommitted
+  `AGENTS.md` edit, which was preserved.
+- [x] Re-run Core `cargo +1.93.0 fmt --all -- --check`, locked offline workspace check, strict
+  all-feature Clippy, and locked offline workspace tests. All commands passed; storage reported
+  `58 passed; 0 failed`.
+- [x] Re-run Linux localization synchronization, 460-key/source, visible-string, and
+  578-placeholder audits; Flatpak metadata, formatting, all-target check, strict Clippy,
+  no-default tests (`85 passed; 1 ignored`), and demo-provider tests (`166 passed; 7 ignored`)
+  all passed.
+- [x] Confirm no source or dependency pin changed; current remote heads remain central `a5eaf3d`,
+  Core `900b0a9`, and Linux `4f4472e`.
+- [ ] Keep custom/third-party VFS, physical power-loss, cross-client parity, live-provider
+  qualification, human/physical review, signing, rollback authorization, and stable-release
+  acceptance open.
+
 ## 2026-07-24 — Linux bundled VFS fail-closed probe and repin
 
 Assumption: the bundled `unix-dotfile` VFS is useful as a negative compatibility probe because
