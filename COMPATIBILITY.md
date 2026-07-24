@@ -24,6 +24,15 @@ workflows, signing, rollback, cross-client conformance, and stable-release evide
 Central coordination workflow `30100580395` passed the synchronized manifest and documentation
 checks.
 
+### Linux Flatpak release-pin documentation alignment — 2026-07-24
+
+Linux head `920c0c5439fcfe5825fd6ecbe6d57158377c583d` corrects the release guide to the exact
+Flatpak source pin `af680cee7fd696d859debc896c1136ba002bda89` used by the packaging manifest. It
+is a documentation-only descendant of the registered Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be`
+checkpoint. Push Native/Flatpak/Foundation runs `30103724040`/`30103724131`/`30103723982` and PR
+Native/Flatpak/Foundation runs `30103720635`/`30103720724`/`30103720669` passed. No runtime
+contract changed; release remains `unreleased`.
+
 ### Linux contributor pin alignment — 2026-07-24
 
 Linux head `8d9a378d34e35e14a5618ad51b4787c616b7ae70` is a documentation-only descendant of the

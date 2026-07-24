@@ -16,7 +16,7 @@ and must not be promoted without the acceptance and authorization gates listed b
 | Android | `0.1.0-alpha.1` | `240afaeebe22dc13dea988591dbdd87aa233fc79` |
 | Windows | `0.0.0-dev` | `unreleased` |
 | macOS | `0.1.0-alpha.1` | `a039bcbd39c032fabb58adb389eec1e68ae9c2c6` |
-| Linux | `0.1.0-alpha.2` | `8d9a378d34e35e14a5618ad51b4787c616b7ae70` |
+| Linux | `0.1.0-alpha.2` | `920c0c5439fcfe5825fd6ecbe6d57158377c583d` |
 
 Contracts: ABI major `1`, protocol schema `0.1.0`, provider catalog `0.1.0`, and localization
 schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
@@ -46,8 +46,8 @@ validation. These remain CI artifacts, not signed releases.
   evidence remain open.
 
 - Current Linux-first VFS checkpoint uses Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and
-  Linux `8d9a378d34e35e14a5618ad51b4787c616b7ae70`. The head is a documentation-only contributor
-  pin correction. Core's registered custom-VFS regression
+  Linux `920c0c5439fcfe5825fd6ecbe6d57158377c583d`. The head is a documentation-only Flatpak
+  release-pin correction. Core's registered custom-VFS regression
   exercises a distinct name over validated `unix-excl` callbacks, migration, profile persistence/
   reopen, and symlink/no-follow rejection; the `unix-none` regression still fails closed before
   migrations with no schema tables. Core storage tests report `60 passed; 0 failed`; full Rust
@@ -55,7 +55,7 @@ validation. These remain CI artifacts, not signed releases.
   `30097756099`/`30097756186`/`30097756137` passed. Linux local validation passed localization,
   Flatpak, formatting, checks, Clippy, no-default (`85 passed; 1 ignored`), and demo-provider
   (`166 passed; 7 ignored`) suites; push and PR Native/Flatpak/Foundation runs
-  `30102784838`/`30102784832`/`30102784964` and `30102781098`/`30102781136`/`30102781145` passed.
+  `30103724040`/`30103724131`/`30103723982` and `30103720635`/`30103720724`/`30103720669` passed.
 
 - Host-pinned Rust 1.93.0 Core check passed with `cargo check --workspace --locked --offline`.
 - Core FFI ASAN smokes passed locally: valid loopback commands completed 136 time-bounded

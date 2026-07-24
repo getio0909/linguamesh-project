@@ -22,6 +22,19 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux Flatpak release-pin documentation alignment
+
+Assumption: the central release manifest should identify the latest verified Linux head even when
+the Flatpak source remains pinned to a reviewed ancestor; this checkpoint changes documentation only.
+
+- [x] Correct Linux `docs/releasing.md` to source pin
+  `af680cee7fd696d859debc896c1136ba002bda89` at Linux head
+  `920c0c5439fcfe5825fd6ecbe6d57158377c583d`.
+- [x] Pass push/PR Native, Flatpak, and Foundation runs
+  `30103724040`/`30103724131`/`30103723982` and `30103720635`/`30103720724`/`30103720669`.
+- [ ] Keep physical power-loss, manual review, cross-client parity, signing, rollback, and stable
+  release evidence open; release remains `unreleased`.
+
 ## 2026-07-24 — Linux contributor pin alignment
 
 Assumption: Linux contributor instructions must match the immutable Core revision consumed by the

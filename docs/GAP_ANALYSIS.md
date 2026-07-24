@@ -3,6 +3,15 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux Flatpak release-pin documentation alignment
+
+Linux head `920c0c5439fcfe5825fd6ecbe6d57158377c583d` corrects the release guide to the exact
+Flatpak source pin `af680cee7fd696d859debc896c1136ba002bda89` used by the packaging manifest.
+Push/PR Native, Flatpak, and Foundation runs `30103724040`/`30103724131`/`30103723982` and
+`30103720635`/`30103720724`/`30103720669` passed. This is documentation-only; physical power-loss,
+manual review, cross-client conformance, signing, rollback, and stable-release evidence remain
+open.
+
 ## Latest Linux contributor pin alignment
 
 Linux head `8d9a378d34e35e14a5618ad51b4787c616b7ae70` is a documentation-only descendant of the

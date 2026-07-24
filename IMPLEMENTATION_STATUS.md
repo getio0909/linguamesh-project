@@ -2,6 +2,19 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux Flatpak release-pin documentation alignment
+
+Assumption: the central release train must point at the latest verified Linux head while the
+Flatpak manifest continues to consume its reviewed source ancestor; this documentation-only
+descendant does not change the runtime or ABI contract.
+
+- Linux head `920c0c5439fcfe5825fd6ecbe6d57158377c583d` corrects `docs/releasing.md` to Flatpak
+  source pin `af680cee7fd696d859debc896c1136ba002bda89`.
+- Linux push/PR Native, Flatpak, and Foundation runs
+  `30103724040`/`30103724131`/`30103723982` and `30103720635`/`30103720724`/`30103720669` passed.
+- Release remains `unreleased`; physical power-loss, manual review, cross-client conformance,
+  signing, and rollback evidence remain open.
+
 ## 2026-07-24 — Linux contributor pin alignment
 
 Assumption: the Linux contributor guide must name the same immutable Core revision consumed by the
