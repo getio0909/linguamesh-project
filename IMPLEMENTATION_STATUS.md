@@ -15,6 +15,9 @@ UI evidence.
 - `bash tools/run-secret-service-prompt-test.sh` passed all four store/delete acceptance and
   dismissal tests exactly once. The persistent runner's library restart and worker onboarding tests
   passed before the host stopped at missing `xvfb-run`; its GTK flow is not claimed locally.
+- Push Native/Flatpak/Foundation `30130346330`/`30130346325`/`30130346308` and PR
+  Native/Flatpak/Foundation `30130348420`/`30130348432`/`30130348417` all passed for the hosted
+  security and display matrix.
 - Release remains `unreleased`; human prompt/accessibility review, live-provider qualification,
   other clients, signing, rollback, and stable-release evidence remain open.
 

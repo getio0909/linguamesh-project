@@ -11,7 +11,9 @@ tests exactly once. The persistent Secret Service runner also passed its library
 onboarding tests before stopping at the host's missing `xvfb-run`; the display-backed Remember/
 clear-form flow remains unverified locally. These results strengthen Linux prerelease security
 evidence only; live enterprise/provider interoperability, human prompt/accessibility review, other
-clients, signing, rollback, and stable-release evidence remain open.
+clients, signing, rollback, and stable-release evidence remain open. Push Native/Flatpak/Foundation
+`30130346330`/`30130346325`/`30130346308` and PR Native/Flatpak/Foundation
+`30130348420`/`30130348432`/`30130348417` all passed for the hosted security and display matrix.
 
 ## Latest Linux environment-gated fixture recheck
 

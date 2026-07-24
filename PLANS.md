@@ -72,6 +72,9 @@ evidence.
 - [x] `bash tools/run-secret-service-prompt-test.sh` passed all four store/delete prompt
   acceptance and dismissal tests exactly once. The persistent runner's library restart and worker
   onboarding tests also passed before its GTK step stopped at missing `xvfb-run`.
+- [x] Push Native/Flatpak/Foundation `30130346330`/`30130346325`/`30130346308` and PR
+  Native/Flatpak/Foundation `30130348420`/`30130348432`/`30130348417` all passed for the hosted
+  security and display matrix.
 - [ ] Keep the display-backed Secret Service flow, live enterprise/provider qualification, human
   prompt/accessibility review, other clients, signing, rollback authorization, and stable release
   acceptance open.
