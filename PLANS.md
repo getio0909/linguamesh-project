@@ -92,6 +92,8 @@ Linux-first checkpoint is a stable release.
 
 - [x] Add `docs/releases/bootstrap.md` with component pins, contract versions, CI provenance,
   known limitations, signing status, and a reversible manifest-only rollback procedure.
+- [x] Push the record at central commit `6168bd5e067e6839aa35fd7f16ec1834809573b0`; coordination
+  workflow `30059285976` passed Linux job `89377421652` and PowerShell job `89377421691`.
 - [ ] Keep the record Draft and release status `unreleased` until all four native clients,
   physical/qualified human review, signing, rollback rehearsal, and stable authorization pass.
 

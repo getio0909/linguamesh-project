@@ -80,6 +80,9 @@ outputs as unsigned CI artifacts, records known cross-client and physical/releas
 and documents a manifest-only rollback procedure. No tag, GitHub Release, signing, notarization,
 or stable publication was performed.
 
+- The record commit `6168bd5e067e6839aa35fd7f16ec1834809573b0` passed coordination workflow
+  `30059285976` (Linux `89377421652`, PowerShell `89377421691`).
+
 ## 2026-07-23 — Linux automation boundary audit
 
 Assumption: missing local GUI/portal dependencies are evidence limitations, not successful test
