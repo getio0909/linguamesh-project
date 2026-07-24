@@ -52,9 +52,8 @@ arbitrary third-party VFS coverage.
   demo-provider suite (`167 passed; 7 ignored`), localization synchronization and audits, Flatpak
   metadata validation, and diff checks. Linux source/test head is `808e045`; corrected Flatpak pin
   and status head is `cadc6cd`.
-- [x] Hosted push Native/Flatpak/Foundation `30120734398`/`30120734313`/`30120734382` passed;
-  PR Flatpak/Foundation `30120737252`/`30120737224` passed. PR Native `30120737229` was still
-  running at this update and is not treated as passed.
+- [x] Hosted push Native/Flatpak/Foundation `30120734398`/`30120734313`/`30120734382` and PR
+  Native/Flatpak/Foundation `30120737229`/`30120737252`/`30120737224` all passed.
 - [ ] Keep the release `unreleased`; broader VFS and power-loss evidence, manual/physical
   accessibility, other clients, signing, rollback authorization, and stable-release approval
   remain open.

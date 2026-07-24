@@ -31,9 +31,8 @@ third-party VFS behavior.
 - Local formatting, GUI all-target checking, strict Clippy, the demo-provider suite (`167 passed;
   7 ignored`), localization synchronization and audits, Flatpak metadata validation, and diff
   checks passed. Packaging/status head is `cadc6cd` with Flatpak pin `808e045`.
-- Hosted push Native/Flatpak/Foundation `30120734398`/`30120734313`/`30120734382` passed; PR
-  Flatpak/Foundation `30120737252`/`30120737224` passed. PR Native `30120737229` remained
-  `in_progress` at this update and is intentionally not claimed as passed.
+- Hosted push Native/Flatpak/Foundation `30120734398`/`30120734313`/`30120734382` and PR
+  Native/Flatpak/Foundation `30120737229`/`30120737252`/`30120737224` all passed.
 - Release stays `unreleased`; broader VFS/power-loss, manual/physical accessibility, other
   clients, signing, rollback authorization, and stable-release approval remain open.
 
