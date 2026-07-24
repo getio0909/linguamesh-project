@@ -22,6 +22,26 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux provider-form keyboard traversal completion
+
+Assumption: every visible, enabled provider-form control must remain reachable through the
+production Tab/Shift+Tab order, including security-sensitive fields and the non-mutating
+connection probe.
+
+- [x] Add the optional client-certificate identity and **Test connection** action to the
+  application-window Capture-phase provider traversal and keyboard probe; extend the Xvfb fixture
+  to require both controls without logging field contents.
+- [x] Pass local formatting, GUI all-target compilation, strict Clippy, localization synchronization
+  and three audits, Flatpak metadata validation, and the demo-provider suite (`166 passed; 7 ignored`).
+- [x] Correct the Flatpak source pin after the first metadata guard rejected the old pin
+  (`30117215386`/`30117219370`); final packaging/status head is `e1a2ba9130a198212098e93276e5d16bdfec8e3b`
+  with runtime source pin `195664199d1884c53940a4c78f2c15bd500ad8a3`.
+- [x] Hosted push Native/Flatpak/Foundation `30117422502`/`30117422386`/`30117422399` and PR
+  Native/Flatpak/Foundation `30117426489`/`30117426644`/`30117426431` passed, including keyboard,
+  AT-SPI, Orca, portal, and release-evidence steps.
+- [ ] Keep manual keyboard/accessibility review, physical compositor/GPU coverage, other-client
+  parity, signing, rollback, and stable-release approval open; release remains `unreleased`.
+
 ## 2026-07-24 — Linux runtime AT-SPI status/error export fixture
 
 Assumption: the GTK bridge's runtime tree is the authoritative automated boundary for localized

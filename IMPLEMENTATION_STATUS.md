@@ -2,6 +2,28 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux provider-form keyboard traversal completion
+
+Assumption: every visible, enabled provider-form control must remain reachable through the
+production Tab/Shift+Tab order, including security-sensitive fields and the non-mutating
+connection probe.
+
+- Linux `195664199d1884c53940a4c78f2c15bd500ad8a3` adds the optional client-certificate identity
+  and **Test connection** action to the explicit provider traversal. The keyboard probe and Xvfb
+  fixture require both controls and never log field contents.
+- Local formatting, GUI all-target compilation, strict Clippy, localization synchronization and
+  three audits, Flatpak metadata validation, and the demo-provider suite (`166 passed; 7 ignored`)
+  passed. The host lacks `xvfb-run`, `xdotool`, and GTK development/runtime packages, so the
+  display-backed result is hosted evidence.
+- The first Flatpak metadata guards `30117215386` and `30117219370` correctly rejected the stale
+  source pin; packaging/status head `e1a2ba9130a198212098e93276e5d16bdfec8e3b` pins runtime source
+  `195664199d1884c53940a4c78f2c15bd500ad8a3` and passes local metadata validation.
+- Hosted push Native/Flatpak/Foundation `30117422502`/`30117422386`/`30117422399` and PR
+  Native/Flatpak/Foundation `30117426489`/`30117426644`/`30117426431` passed, including the
+  keyboard focus, Arabic RTL, AT-SPI, Orca, portal, performance, checksum, and SBOM steps.
+- Manual keyboard/accessibility review, physical compositor/GPU coverage, other clients, signing,
+  rollback, and stable-release authorization remain open; release stays `unreleased`.
+
 ## 2026-07-24 — Linux runtime AT-SPI status/error export fixture
 
 Assumption: runtime accessibility evidence must observe the GTK bridge's exported label content

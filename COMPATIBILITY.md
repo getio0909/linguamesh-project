@@ -4,6 +4,16 @@ No compatible stable release train exists yet. The authoritative machine-readabl
 
 Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198`.
 
+### Linux provider-form keyboard traversal completion — 2026-07-24
+
+Linux runtime `195664199d1884c53940a4c78f2c15bd500ad8a3` includes the optional client-certificate
+identity and non-mutating **Test connection** action in the explicit Tab/Shift+Tab order. Final
+packaging/status head `e1a2ba9130a198212098e93276e5d16bdfec8e3b` pins that runtime in Flatpak.
+Hosted push/PR Native, Flatpak, and Foundation runs `30117422502`/`30117422386`/`30117422399` and
+`30117426489`/`30117426644`/`30117426431` passed. Manual accessibility, physical desktop,
+cross-client, signing, rollback, and stable-release evidence remain open; release stays
+`unreleased`.
+
 ### Linux runtime AT-SPI status/error export fixture — 2026-07-24
 
 Linux runtime/test head `8713bdc23b81263e1bdbc65e8d010ce57673877a` preserves production GTK

@@ -16,7 +16,7 @@ and must not be promoted without the acceptance and authorization gates listed b
 | Android | `0.1.0-alpha.1` | `240afaeebe22dc13dea988591dbdd87aa233fc79` |
 | Windows | `0.0.0-dev` | `unreleased` |
 | macOS | `0.1.0-alpha.1` | `a039bcbd39c032fabb58adb389eec1e68ae9c2c6` |
-| Linux | `0.1.0-alpha.2` | `ec50565461b8a94311d297e054f8e6abd95fb130` |
+| Linux | `0.1.0-alpha.2` | `e1a2ba9130a198212098e93276e5d16bdfec8e3b` |
 
 Contracts: ABI major `1`, protocol schema `0.1.0`, provider catalog `0.1.0`, and localization
 schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
@@ -70,6 +70,13 @@ validation. These remain CI artifacts, not signed releases.
   prefixes through AT-SPI name, description, or Text exports. Hosted push Native/Flatpak/Foundation
   `30115826450`/`30115826498`/`30115826518` passed. Human listening/visual review, physical
   compositor/GPU, other clients, signing, rollback, and stable-release evidence remain open.
+
+- Latest Linux keyboard traversal checkpoint uses runtime `195664199d1884c53940a4c78f2c15bd500ad8a3`
+  and packaging/status head `e1a2ba9130a198212098e93276e5d16bdfec8e3b`. It includes the optional
+  client-certificate identity and **Test connection** in the explicit provider Tab/Shift+Tab order.
+  Hosted push/PR Native, Flatpak, and Foundation runs `30117422502`/`30117422386`/`30117422399`
+  and `30117426489`/`30117426644`/`30117426431` passed. Manual accessibility, physical desktop,
+  cross-client, signing, rollback, and stable-release evidence remain open.
 
 - Host-pinned Rust 1.93.0 Core check passed with `cargo check --workspace --locked --offline`.
 - Core FFI ASAN smokes passed locally: valid loopback commands completed 136 time-bounded

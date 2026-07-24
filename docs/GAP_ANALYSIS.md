@@ -3,6 +3,17 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux provider-form keyboard traversal completion
+
+Linux runtime source `195664199d1884c53940a4c78f2c15bd500ad8a3` now includes the optional
+client-certificate identity and the non-mutating **Test connection** action in the explicit
+application-window Tab/Shift+Tab order. The keyboard probe and Xvfb fixture require both controls
+without logging field contents. Final packaging/status head `e1a2ba9130a198212098e93276e5d16bdfec8e3b`
+pins that runtime source in Flatpak. The initial stale-pin guards `30117215386`/`30117219370` are
+superseded by final push Native/Flatpak/Foundation `30117422502`/`30117422386`/`30117422399` and
+PR `30117426489`/`30117426644`/`30117426431`, all passed. Manual keyboard/accessibility review,
+physical compositor/GPU coverage, other clients, signing, rollback, and stable release remain open.
+
 ## Latest Linux runtime AT-SPI status/error export fixture
 
 Linux runtime/test head `8713bdc23b81263e1bdbc65e8d010ce57673877a` preserves production GTK
