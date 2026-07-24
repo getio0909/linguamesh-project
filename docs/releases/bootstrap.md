@@ -16,7 +16,7 @@ and must not be promoted without the acceptance and authorization gates listed b
 | Android | `0.1.0-alpha.1` | `240afaeebe22dc13dea988591dbdd87aa233fc79` |
 | Windows | `0.0.0-dev` | `unreleased` |
 | macOS | `0.1.0-alpha.1` | `a039bcbd39c032fabb58adb389eec1e68ae9c2c6` |
-| Linux | `0.1.0-alpha.2` | `e1a2ba9130a198212098e93276e5d16bdfec8e3b` |
+| Linux | `0.1.0-alpha.2` | `8ab718a2174d65a6ec33a1b4bcc3d8a4c52db48b` |
 
 Contracts: ABI major `1`, protocol schema `0.1.0`, provider catalog `0.1.0`, and localization
 schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
