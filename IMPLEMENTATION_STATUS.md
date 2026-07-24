@@ -2,6 +2,25 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux bundled alternate SQLite VFS checkpoint
+
+Assumption: SQLite's bundled `unix-excl` VFS is a representative Linux alternate VFS for the
+tested storage contract; custom/third-party VFS and physical power-loss behavior remain separate
+release gates.
+
+- Core `1c7440917379896a8c05d3f99a89eac4fcf073a3` adds the Linux-only
+  `unix_exclusive_vfs_preserves_migrations_and_committed_profiles` regression. It opens
+  `unix-excl` with `SQLITE_OPEN_NOFOLLOW`, verifies schema/WAL/profile recovery after reopen, and
+  rejects a symbolic-link alias. Host-pinned full workspace/storage tests passed, including
+  `56 passed; 0 failed` for `linguamesh-storage`.
+- Core CI `30066150481`, Fuzz/ASAN `30066150469`, and Native SDK `30066150422` passed all jobs.
+- Linux `834e944e278e86eaa3386f2b0ff39e1f4843ff32` consumes the Core pin. Local Linux audits,
+  checks, and tests passed (`85 passed; 1 ignored` and `166 passed; 7 ignored`); push Native,
+  Flatpak, Foundation `30066376731`/`30066376720`/`30066376735` and PR
+  `30066378288`/`30066378283`/`30066378287` all passed.
+- Release remains `unreleased`; custom VFS, physical power-loss, cross-client, human/physical,
+  signing, rollback, and stable-release evidence remain open.
+
 ## 2026-07-24 — GitHub PR and Issue triage refresh
 
 Assumption: GitHub's authenticated review state is authoritative for PR/Issue status, while the

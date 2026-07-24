@@ -11,12 +11,12 @@ and must not be promoted without the acceptance and authorization gates listed b
 
 | Component | Version | Source revision |
 | --- | --- | --- |
-| Core | `0.1.0-alpha.2` | `b54ab4ab7ebcd3a439678ead9c0af1e6b5c5dae8` |
+| Core | `0.1.0-alpha.2` | `1c7440917379896a8c05d3f99a89eac4fcf073a3` |
 | Localization | `0.1.0` | `c2526bfb3f6ff57895bdc3eeed743e26c8783613` |
 | Android | `0.1.0-alpha.1` | `afe7a566bac77a16243f70295d17a4d9cab1151f` |
 | Windows | `0.0.0-dev` | `unreleased` |
 | macOS | `0.1.0-alpha.1` | `cad822c69dcf1ad20f8cab2151f407866a577420` |
-| Linux | `0.1.0-alpha.2` | `42efabc3746c405136f347de4206e2cc5a13dc98` |
+| Linux | `0.1.0-alpha.2` | `834e944e278e86eaa3386f2b0ff39e1f4843ff32` |
 
 Contracts: ABI major `1`, protocol schema `0.1.0`, provider catalog `0.1.0`, and localization
 schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
@@ -55,6 +55,13 @@ validation. These remain CI artifacts, not signed releases.
 - Central source-pin consistency commit `d17f47a9f85fce9583167560216ef333dd426247` aligned the
   manifest and this table to Linux `42efabc3746c405136f347de4206e2cc5a13dc98`; coordination
   workflow `30065425740` passed Linux `89395294587` and PowerShell `89395294630`.
+- Core `1c7440917379896a8c05d3f99a89eac4fcf073a3` adds the Linux-only bundled `unix-excl` VFS
+  storage regression. Host-pinned storage tests passed `56 passed; 0 failed`; Core CI
+  `30066150481`, Fuzz/ASAN `30066150469`, and Native SDK `30066150422` all passed. Linux
+  `834e944e278e86eaa3386f2b0ff39e1f4843ff32` passed push Native/Flatpak/Foundation
+  `30066376731`/`30066376720`/`30066376735` and PR
+  `30066378288`/`30066378283`/`30066378287`. This remains unsigned prerelease evidence; custom
+  VFS, physical power-loss, signing, rollback, and stable-release evidence remain open.
 - The current handle-lifetime manifest synchronization commit `59c9cc4d16610d18559d2bab96c1518e242c0d7e`
   passed coordination workflow `30065102174` on Linux `89394395492` and PowerShell `89394395538`.
 - Central workflow `30059904373` passed Linux and PowerShell validation for the synchronized

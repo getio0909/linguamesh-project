@@ -3,6 +3,15 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+The Linux-first alternate-VFS checkpoint is now verified at Core
+`1c7440917379896a8c05d3f99a89eac4fcf073a3` and Linux
+`834e944e278e86eaa3386f2b0ff39e1f4843ff32`. Core's Linux-only storage regression exercises the
+bundled SQLite `unix-excl` VFS with `SQLITE_OPEN_NOFOLLOW`, schema/WAL/profile reopen behavior, and
+symbolic-link rejection. Core CI `30066150481`, Fuzz/ASAN `30066150469`, Native SDK `30066150422`,
+and all six Linux push/PR Native, Flatpak, and Foundation gates passed. This closes only the tested
+bundled VFS path; custom/third-party VFS, physical power-loss, cross-client, signing, rollback,
+and stable-release evidence remain open.
+
 Core ABI 1 handle-lifetime hardening is now verified at Core
 `b54ab4ab7ebcd3a439678ead9c0af1e6b5c5dae8` and Linux `42efabc3746c405136f347de4206e2cc5a13dc98`.
 The registry uses monotonic opaque tokens and `Arc` state references, so stale, forged, repeated,
@@ -350,7 +359,7 @@ qualified human/physical review, signing, rollback, and stable authorization rem
 | 4–5 — Providers and quality | Linux catalog, local models, model-source provenance labels, persisted Provider Hub health outcomes, routing, candidate-chain editing, one-shot fallback consent, request-level glossary protection, bounded TBX import, persistent Core schema 33 glossary libraries with GTK save/list/load/delete controls, chunking, history, memory, domain/tone/formality/audience presets, bounded regional-locale/script presets, bounded proxy transport settings and SecretRef authentication, bounded total/connection/streaming-idle timeout settings, additive custom PEM trust bundles, client-certificate SecretRef identities, and a pinned third-party Ollama daemon fixture have deterministic evidence | Cross-client parity, live-provider account/quota interoperability, provider-specific semantics |
 | 6 — Documents | Linux supports the bounded TXT/Markdown/HTML/JSON/CSV/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF slice plus an explicit image-only PDF OCR fixture | Native document workflows on the other clients and broader format acceptance |
 | 7 — Localization/accessibility | Generated packs, runtime switching, RTL, pseudo-locales, keyboard and headless AT-SPI/Orca checks exist | Qualified translation review, human screen-reader/visual review, other-client checks |
-| 8 — Hardening/release | Protocol/document fuzzing, bounded C ABI malformed-input, safe lifecycle, valid-command, and opaque-handle lifetime fuzzing, sanitizers, migrations, parser limits, checksums, SBOMs, performance evidence, Unix process-crash WAL recovery, controlled ENOSPC degradation, and a manifest-only rollback rehearsal exist | Physical VFS/power-loss evidence, alternate-VFS coverage, signing, production rollback authorization, stable release authorization |
+| 8 — Hardening/release | Protocol/document fuzzing, bounded C ABI malformed-input, safe lifecycle, valid-command, and opaque-handle lifetime fuzzing, sanitizers, migrations, parser limits, checksums, SBOMs, performance evidence, Unix process-crash WAL recovery, bundled `unix-excl` alternate-VFS regression, controlled ENOSPC degradation, and a manifest-only rollback rehearsal exist | Custom/third-party VFS and physical power-loss evidence, signing, production rollback authorization, stable release authorization |
 
 ## Acceptance-scenario matrix
 

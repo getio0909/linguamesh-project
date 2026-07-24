@@ -22,6 +22,20 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux bundled alternate SQLite VFS checkpoint
+
+Assumption: SQLite's bundled `unix-excl` VFS is a representative Linux alternate VFS for the
+tested storage contract; custom/third-party VFS and physical power-loss behavior remain separate
+release gates.
+
+- [x] Add Core's Linux-only `unix-excl` migration/WAL/profile-reopen/symlink-rejection regression
+  in `1c7440917379896a8c05d3f99a89eac4fcf073a3`; host-pinned storage tests pass `56/56`.
+- [x] Pass Core CI `30066150481`, Fuzz/ASAN `30066150469`, and Native SDK `30066150422`.
+- [x] Repin Linux docs, Flatpak, and release evidence to `834e944e278e86eaa3386f2b0ff39e1f4843ff32`;
+  push/PR Native, Flatpak, and Foundation runs all pass.
+- [ ] Keep custom/third-party VFS, physical power-loss, cross-client parity, human/physical review,
+  signing, rollback authorization, and stable-release acceptance open.
+
 ## 2026-07-24 — GitHub PR and Issue triage refresh
 
 Assumption: the authenticated GitHub state is authoritative for review status, while the
