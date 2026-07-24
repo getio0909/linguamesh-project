@@ -43,6 +43,20 @@ rejection, physical power-loss recovery, or arbitrary VFS behavior.
   provider qualification, human/physical review, signing, rollback authorization, and stable
   release acceptance open.
 
+## 2026-07-24 — Linux environment-gated fixture recheck
+
+Assumption: dedicated OCR and private-mount storage-fault runners are reproducible Linux
+prerelease evidence only; they cannot replace physical power-loss, arbitrary-VFS, live-provider,
+or human review gates.
+
+- [x] Run `bash tools/run-storage-fault-test.sh` on Linux head `759a828`; the private-mount
+  runtime write-fault regression passed exactly once (`1 passed; 0 failed; 0 ignored`).
+- [x] Run `bash tools/run-ocr-test.sh`; the generated image-only PDF fixture passed exactly once
+  (`1 passed; 0 failed; 0 ignored`) with ImageMagick, Poppler, and Tesseract.
+- [ ] Keep physical power-loss, broader VFS, live-provider qualification, cross-client parity,
+  human/physical accessibility, signing, rollback authorization, and stable release acceptance
+  open.
+
 ## 2026-07-24 — Linux preset loopback default alignment
 
 Assumption: preset switching must recognize every Core-accepted HTTP loopback authority when the

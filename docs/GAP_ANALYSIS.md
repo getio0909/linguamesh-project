@@ -3,6 +3,16 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux environment-gated fixture recheck
+
+Linux head `759a828f4db4efcd17dfc6b4e25aa3a35e57b1ac` passed the dedicated private-mount storage
+fault runner exactly once (`1 passed; 0 failed; 0 ignored`) and the generated image-only PDF OCR
+runner exactly once (`1 passed; 0 failed; 0 ignored`). These are reproducible Linux prerelease
+fixtures using the current host's mount namespace, ImageMagick, Poppler, and Tesseract. They
+strengthen session-only ENOSPC degradation and bounded OCR evidence only; physical power-loss,
+broader VFS, live-provider, human/physical accessibility, cross-client, signing, rollback, and
+stable-release evidence remain open.
+
 ## Latest Linux post-publish SQLite sidecar no-follow regression
 
 Linux source/test head `41a452b4453697d41d1799ad654d331fb05482ff` adds
