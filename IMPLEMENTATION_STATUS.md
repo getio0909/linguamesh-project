@@ -8,12 +8,16 @@ Assumption: the dedicated OCR and private-mount storage-fault runners are reprod
 prerelease evidence only; they do not claim physical power-loss recovery, arbitrary VFS behavior,
 or live-provider qualification.
 
-- Linux head `759a828f4db4efcd17dfc6b4e25aa3a35e57b1ac` passed
+- Linux status head `084ba101b07206aebd890258b3b61967eaf5fe15` (source/test head
+  `41a452b4453697d41d1799ad654d331fb05482ff`) passed
   `bash tools/run-storage-fault-test.sh` exactly once (`1 passed; 0 failed; 0 ignored`) in a
   private mount namespace, covering session-only degradation without false persistent commits.
 - The same head passed `bash tools/run-ocr-test.sh` exactly once
   (`1 passed; 0 failed; 0 ignored`) using generated image-only PDF input and the installed
   ImageMagick, Poppler, and Tesseract tools.
+- Push Native/Flatpak/Foundation `30128569544`/`30128569601`/`30128569644` and PR
+  Native/Flatpak/Foundation `30128571987`/`30128571985`/`30128572021` all passed. Central
+  coordination commit `6186540` passed workflow `30129028572`.
 - Release remains `unreleased`; physical power-loss, broader VFS, human/physical accessibility,
   live-provider, cross-client, signing, rollback, and stable-release evidence remain open.
 

@@ -5,9 +5,13 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 
 ## Latest Linux environment-gated fixture recheck
 
-Linux head `759a828f4db4efcd17dfc6b4e25aa3a35e57b1ac` passed the dedicated private-mount storage
+Linux status head `084ba101b07206aebd890258b3b61967eaf5fe15` (source/test head
+`41a452b4453697d41d1799ad654d331fb05482ff`) passed the dedicated private-mount storage
 fault runner exactly once (`1 passed; 0 failed; 0 ignored`) and the generated image-only PDF OCR
-runner exactly once (`1 passed; 0 failed; 0 ignored`). These are reproducible Linux prerelease
+runner exactly once (`1 passed; 0 failed; 0 ignored`). Push Native/Flatpak/Foundation
+`30128569544`/`30128569601`/`30128569644` and PR Native/Flatpak/Foundation
+`30128571987`/`30128571985`/`30128572021` all passed; central coordination `30129028572` passed
+for commit `6186540`. These are reproducible Linux prerelease
 fixtures using the current host's mount namespace, ImageMagick, Poppler, and Tesseract. They
 strengthen session-only ENOSPC degradation and bounded OCR evidence only; physical power-loss,
 broader VFS, live-provider, human/physical accessibility, cross-client, signing, rollback, and

@@ -49,10 +49,14 @@ Assumption: dedicated OCR and private-mount storage-fault runners are reproducib
 prerelease evidence only; they cannot replace physical power-loss, arbitrary-VFS, live-provider,
 or human review gates.
 
-- [x] Run `bash tools/run-storage-fault-test.sh` on Linux head `759a828`; the private-mount
+- [x] Run `bash tools/run-storage-fault-test.sh` on Linux status head `084ba10` (source/test head
+  `41a452b4`); the private-mount
   runtime write-fault regression passed exactly once (`1 passed; 0 failed; 0 ignored`).
 - [x] Run `bash tools/run-ocr-test.sh`; the generated image-only PDF fixture passed exactly once
   (`1 passed; 0 failed; 0 ignored`) with ImageMagick, Poppler, and Tesseract.
+- [x] Push Native/Flatpak/Foundation `30128569544`/`30128569601`/`30128569644` and PR
+  Native/Flatpak/Foundation `30128571987`/`30128571985`/`30128572021` all passed; central
+  coordination `30129028572` also passed for commit `6186540`.
 - [ ] Keep physical power-loss, broader VFS, live-provider qualification, cross-client parity,
   human/physical accessibility, signing, rollback authorization, and stable release acceptance
   open.
