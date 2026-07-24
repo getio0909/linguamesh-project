@@ -35,8 +35,12 @@ durability; `unix-excl` remains the supported bundled alternate-VFS path.
   `7c94dadd91106808002469d11fa8568f4038257f`; local localization, metadata, format, check,
   Clippy, no-default (`85 passed; 1 ignored`), demo-provider (`166 passed; 7 ignored`), and exact
   Core-source-pin checks pass.
-- [ ] Verify the new Linux push/PR Native, Flatpak, and Foundation workflows and record their run
-  IDs in status, release evidence, and the open PR/Issue comments.
+- [x] Core CI/Fuzz/ASAN/Native SDK `30068741565`/`30068741548`/`30068741551` and Linux push
+  Native/Flatpak/Foundation `30068869406`/`30068869443`/`30068869399` plus PR
+  `30068871374`/`30068871384`/`30068871377` all pass. Central commit `96a740b890ef9dcb5639688d606784dca94624ec`
+  passed coordination workflow `30068951768`.
+- [x] Record the same run evidence in the Draft PR #1 and open Issue #1 comments; both remain
+  unmerged/open and release status remains `unreleased`.
 - [ ] Keep custom/third-party VFS, physical power-loss, cross-client parity, human/physical review,
   signing, rollback authorization, and stable-release acceptance open.
 

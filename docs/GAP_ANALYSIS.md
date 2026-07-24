@@ -7,13 +7,14 @@ The Linux-first alternate-VFS checkpoint is now verified at Core
 `b1596ca8ffbdc809817b92fec29523a8b31576aa` and Linux
 `7c94dadd91106808002469d11fa8568f4038257f`. Core's Linux-only storage regressions exercise the
 bundled SQLite `unix-excl` VFS with `SQLITE_OPEN_NOFOLLOW`, schema/WAL/profile reopen behavior,
-process-crash WAL replay, and file/parent-path symbolic-link rejection. Core CI `30067774797`, Fuzz/ASAN
-`30067774823`, Native SDK `30067774805`, and all six Linux push/PR Native, Flatpak, and Foundation
-gates passed (`30067853996`/`30067853960`/`30067853957` and
-`30067852102`/`30067852064`/`30067852097`). The bundled `unix-dotfile` VFS is also probed and
+process-crash WAL replay, and file/parent-path symbolic-link rejection. Core CI `30068741565`, Fuzz/ASAN
+`30068741548`, Native SDK `30068741551`, and all six Linux push/PR Native, Flatpak, and Foundation
+gates passed (`30068869406`/`30068869443`/`30068869399` and
+`30068871374`/`30068871384`/`30068871377`). The bundled `unix-dotfile` VFS is also probed and
 rejected before migrations when it cannot provide required WAL, with no schema tables created;
-Core does not silently downgrade durability. The new Linux workflows for this repin are still
-pending. This closes only the tested bundled `unix-excl` path; custom/third-party VFS,
+Core does not silently downgrade durability. Central coordination commit
+`96a740b890ef9dcb5639688d606784dca94624ec` passed workflow `30068951768`. This closes only the
+tested bundled `unix-excl` path; custom/third-party VFS,
 physical power-loss, cross-client, signing, rollback, and stable-release evidence remain open.
 
 Core ABI 1 handle-lifetime hardening is now verified at Core

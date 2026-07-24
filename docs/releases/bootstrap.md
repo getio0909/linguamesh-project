@@ -65,7 +65,10 @@ validation. These remain CI artifacts, not signed releases.
 - Core `b1596ca8ffbdc809817b92fec29523a8b31576aa` adds the Linux-only negative
   `unix-dotfile` VFS probe; it fails before migrations when WAL cannot be enabled and leaves no
   schema tables. Linux `7c94dadd91106808002469d11fa8568f4038257f` passes all local non-GUI
-  validation; the six new GitHub workflows remain pending at this draft checkpoint.
+  validation. Core CI/Fuzz/ASAN/Native SDK `30068741565`/`30068741548`/`30068741551` and Linux
+  push Native/Flatpak/Foundation `30068869406`/`30068869443`/`30068869399` plus PR
+  `30068871374`/`30068871384`/`30068871377` all passed. Central coordination workflow
+  `30068951768` passed for commit `96a740b890ef9dcb5639688d606784dca94624ec`.
 - The current handle-lifetime manifest synchronization commit `59c9cc4d16610d18559d2bab96c1518e242c0d7e`
   passed coordination workflow `30065102174` on Linux `89394395492` and PowerShell `89394395538`.
 - Central workflow `30059904373` passed Linux and PowerShell validation for the synchronized
