@@ -22,6 +22,18 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Core storage durability regression
+
+Assumption: the host-pinned Rust 1.93.0 storage run is deterministic Linux evidence for the
+default SQLite Unix VFS; it does not substitute for alternate-VFS or physical power-loss testing.
+
+- [x] Run `cargo +1.93.0 test -p linguamesh-storage --locked --offline`: 55 tests passed, 0
+  failed, including WAL replay after writer disconnect and abrupt process termination, busy
+  checkpoint retry, schema migration, secure deletion, symlink rejection, and trusted-descriptor
+  path validation.
+- [x] Keep the documented boundary explicit: alternate SQLite VFS enforcement and physical
+  power-loss behavior remain unverified; no stable-release claim follows from this run.
+
 ## 2026-07-24 — Containerized Linux validation checkpoint
 
 Assumption: the disposable Debian trixie container is bounded Linux evidence only; its Rust

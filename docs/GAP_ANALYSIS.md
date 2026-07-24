@@ -6,6 +6,12 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 Assumption: Linux is the active implementation scope for the current checkpoint, while
 Android, Windows, and macOS evidence must still be completed before a stable release.
 
+The host-pinned Rust 1.93.0 storage regression `cargo +1.93.0 test -p linguamesh-storage --locked
+--offline` passed 55 tests with 0 failures. It provides deterministic default-Unix-VFS evidence
+for WAL replay, abrupt process recovery, busy checkpoint retry, migrations, secure deletion,
+symlink rejection, and trusted descriptor validation. Alternate SQLite VFS enforcement and
+physical power-loss behavior remain unverified and are still release blockers.
+
 The 2026-07-24 disposable Debian trixie checkpoint expands local Linux evidence without changing
 release posture. Under a non-root Xvfb/DBus session, the locked suite passed with library
 `168 passed; 0 failed; 16 ignored` and binary `30 passed; 0 failed; 21 ignored`; all 18 dedicated

@@ -2,6 +2,14 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Core storage durability regression
+
+The host-pinned Rust 1.93.0 command `cargo +1.93.0 test -p linguamesh-storage --locked --offline`
+passed 55 tests with 0 failures. The suite covers WAL replay after writer disconnect and abrupt
+process termination, busy-checkpoint retry, schema migration, secure deletion, symlink rejection,
+and trusted `/proc/self/fd/<fd>` descriptor validation. This is default-Unix-VFS evidence only;
+alternate VFS enforcement and physical power-loss behavior remain unverified.
+
 ## 2026-07-24 — Containerized Linux validation checkpoint
 
 Assumption: this is disposable Debian trixie evidence with Rust 1.93.1 (the repository pins
