@@ -79,6 +79,22 @@ evidence.
   prompt/accessibility review, other clients, signing, rollback authorization, and stable release
   acceptance open.
 
+## 2026-07-24 — Linux current-head third-party Ollama interoperability
+
+Assumption: the pinned host-network Ollama daemon and model prove native local-model transport only;
+they do not replace GPU, quota, enterprise account, or stable-release evidence.
+
+- [x] On Linux status head `9b6fa11`, run the real `running_third_party_ollama_provider_translates_without_secret`
+  test against `ollama/ollama:0.11.10` with isolated `smollm:135m`; `/api/tags` discovery and
+  `/api/chat` streaming passed exactly once (`1 passed; 0 failed; 0 ignored`) without a credential.
+- [x] Remove the temporary host-network daemon, model volume, and container. Keep the separate
+  Docker-bridge proxy timeout as a diagnostic failure rather than evidence.
+- [x] Linux push Native/Flatpak/Foundation `30131478211`/`30131478214`/`30131478238` and PR
+  Native/Flatpak/Foundation `30131480664`/`30131480674`/`30131480660` all passed the hosted
+  packaging and validation matrix for this status head.
+- [ ] Keep GPU/quota/enterprise qualification, human/physical review, other clients, signing,
+  rollback authorization, and stable release acceptance open.
+
 ## 2026-07-24 — Linux preset loopback default alignment
 
 Assumption: preset switching must recognize every Core-accepted HTTP loopback authority when the

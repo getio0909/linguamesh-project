@@ -3,6 +3,19 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux current-head third-party Ollama interoperability
+
+Linux status head `9b6fa11caae336e846519ece632f7f78b60c520e` passed the real
+`running_third_party_ollama_provider_translates_without_secret` test exactly once
+(`1 passed; 0 failed; 0 ignored`) using pinned `ollama/ollama:0.11.10`, an isolated `smollm:135m`
+model volume, and a host-network temporary daemon. Native `/api/tags` discovery and `/api/chat`
+streaming completed without a credential. The temporary resources were removed. A Docker-bridge
+attempt failed with HTTP 500 after a proxy timeout to `registry.ollama.ai`; it is intentionally not
+counted. Push Native/Flatpak/Foundation `30131478211`/`30131478214`/`30131478238` and PR
+Native/Flatpak/Foundation `30131480664`/`30131480674`/`30131480660` all passed. GPU execution,
+quota/enterprise qualification, human/physical review, other clients, signing, rollback, and
+stable-release evidence remain open.
+
 ## Latest Linux current-head security fixture recheck
 
 Linux status head `084ba101b07206aebd890258b3b61967eaf5fe15` passed all four client-certificate

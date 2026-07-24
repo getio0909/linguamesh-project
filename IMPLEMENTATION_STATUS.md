@@ -2,6 +2,23 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux current-head third-party Ollama interoperability
+
+Assumption: a pinned host-network Ollama daemon and model prove native local-model transport only;
+they do not replace GPU, provider quota, enterprise account, or stable-release evidence.
+
+- Linux status head `9b6fa11caae336e846519ece632f7f78b60c520e` passed the real
+  `running_third_party_ollama_provider_translates_without_secret` test exactly once
+  (`1 passed; 0 failed; 0 ignored`) with `ollama/ollama:0.11.10` and isolated `smollm:135m`,
+  exercising native `/api/tags` discovery and `/api/chat` streaming without a credential.
+- The temporary daemon, model volume, and container were removed. A separate Docker-bridge attempt
+  returned HTTP 500 after a proxy timeout to `registry.ollama.ai`; it is not counted as evidence.
+- Push Native/Flatpak/Foundation `30131478211`/`30131478214`/`30131478238` and PR
+  Native/Flatpak/Foundation `30131480664`/`30131480674`/`30131480660` all passed for this
+  packaging/status head.
+- Release remains `unreleased`; GPU/quota/enterprise qualification, human/physical review, other
+  clients, signing, rollback, and stable-release evidence remain open.
+
 ## 2026-07-24 — Linux current-head security fixture recheck
 
 Assumption: isolated HTTPS and Secret Service fixtures strengthen Linux prerelease evidence only;
