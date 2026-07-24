@@ -10,6 +10,14 @@ process termination, busy-checkpoint retry, schema migration, secure deletion, s
 and trusted `/proc/self/fd/<fd>` descriptor validation. This is default-Unix-VFS evidence only;
 alternate VFS enforcement and physical power-loss behavior remain unverified.
 
+## 2026-07-24 — Automated rollback rehearsal regression
+
+`tools/test-release-rollback.py` creates a disposable Git fixture, runs the manifest-only rollback
+rehearsal, and asserts that the manifest and repository files are unchanged. The host run passed
+with Python 3.13, and the test is wired into the central Linux validation job. It strengthens the
+rehearsal invariant only; production rollback authorization, signed-artifact rollback, alternate
+VFS, and physical power-loss behavior remain open.
+
 ## 2026-07-24 — Containerized Linux validation checkpoint
 
 Assumption: this is disposable Debian trixie evidence with Rust 1.93.1 (the repository pins

@@ -45,6 +45,9 @@ run `30058395669` passed repository validation. These remain CI artifacts, not s
 - Manifest rollback rehearsal passed with:
   `python3 tools/rehearse-release-rollback.py --component linux --target-revision
   597ccc961f9530836f8cef4c9a12a64b5c0a311c --repository ../linguamesh-linux`.
+- The disposable-fixture regression `python3 tools/test-release-rollback.py` passed and is part of
+  the central Linux validation workflow; it asserts that the rehearsal does not modify its
+  manifest or repository fixture.
 
 ## Acceptance scenarios
 

@@ -34,6 +34,18 @@ default SQLite Unix VFS; it does not substitute for alternate-VFS or physical po
 - [x] Keep the documented boundary explicit: alternate SQLite VFS enforcement and physical
   power-loss behavior remain unverified; no stable-release claim follows from this run.
 
+## 2026-07-24 — Automated rollback rehearsal regression
+
+Assumption: a temporary Git fixture can prove the rehearsal script's manifest-only invariant
+without standing in for production rollback authorization or physical storage recovery.
+
+- [x] Add `tools/test-release-rollback.py`, which creates a disposable Git repository, runs the
+  rollback rehearsal, and asserts that neither the manifest nor repository files change.
+- [x] Run `/home/wangtinghu/miniconda3/envs/py313/bin/python tools/test-release-rollback.py`; the
+  unittest passed, and the test is now part of the central Linux validation workflow.
+- [ ] Keep production rollback authorization, signed-artifact rollback, alternate VFS, and
+  physical power-loss behavior open.
+
 ## 2026-07-24 — Containerized Linux validation checkpoint
 
 Assumption: the disposable Debian trixie container is bounded Linux evidence only; its Rust

@@ -22,6 +22,8 @@ jobs:
           python-version: "3.12"
       - name: Validate manifests, documentation, and credential hygiene
         run: bash tools/check-workspace.sh
+      - name: Test manifest-only rollback rehearsal
+        run: python3 tools/test-release-rollback.py
 
   windows:
     name: PowerShell validation
