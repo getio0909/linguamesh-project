@@ -105,6 +105,8 @@ is the appropriate evidence for Scenario 19; it must not alter any existing chec
 - [x] Run the documented `git clone --depth=1` plus `GITHUB_OWNER=getio0909 tools/bootstrap.sh`
   flow in a temporary workspace. All seven repositories cloned and strict workspace, goal-pin,
   manifest, documentation-link, and credential-signature checks passed.
+- [x] Record the rerun in central commit `6d586e0a4f40327998850e86a38f5fe68f4b2b8b`; coordination
+  workflow `30059408522` passed Linux job `89377790156` and PowerShell job `89377790104`.
 - [ ] Keep commercial credentials, stable publication, and unsupported platform execution outside
   the default bootstrap acceptance path.
 

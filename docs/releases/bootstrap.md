@@ -33,7 +33,7 @@ run `30058395669` passed repository validation. These remain CI artifacts, not s
 - Linux non-GUI demo-provider tests passed `166 passed; 0 failed; 7 ignored` with loopback proxy
   bypassed. Native CI is authoritative for the GTK/AT-SPI, portal, mTLS, build, performance,
   checksum, and SBOM gates because this host lacks GTK4/Graphene development packages.
-- Central workflow `30059285976` passed Linux and PowerShell validation for the synchronized
+- Central workflow `30059408522` passed Linux and PowerShell validation for the synchronized
   coordination documents and release manifest.
 - The documented clean-bootstrap flow cloned all seven public repositories in a disposable
   workspace and passed strict workspace, goal-pin, manifest, link, and credential-signature checks.
