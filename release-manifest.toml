@@ -165,7 +165,7 @@ artifacts = []
 [components.windows]
 repository = "linguamesh-windows"
 version = "0.0.0-dev"
-source_revision = "unreleased"
+source_revision = "d922b40c7db19aadebf77c2ea734ee5779ecc8ef"
 minimum_compatible_core = "0.0.0-dev"
 artifacts = []
 

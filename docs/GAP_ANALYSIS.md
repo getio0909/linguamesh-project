@@ -3,6 +3,16 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Windows checkpoint
+
+Windows head `d922b40c7db19aadebf77c2ea734ee5779ecc8ef` passes the local Foundation and source
+boundary checks, CMake Release build, CTest (1/1), and hosted push run `30090288192`, including
+portable C++ plus WinUI/MSIX Debug and Release preparation; Foundation run `30090288187` also
+passed. The hosted job generated XAML/PRI resources and an unsigned MSIX layout. Windows UI
+runtime, UI automation, PasswordVault integration, accessibility, signing, generated Core-wrapper
+conformance, full client capabilities, and cross-client parity remain open. Release remains
+`unreleased`.
+
 ## Latest Linux/Core checkpoint
 
 ### Linux CI evidence documentation head

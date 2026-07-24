@@ -4,6 +4,16 @@ No compatible stable release train exists yet. The authoritative machine-readabl
 
 Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198`.
 
+### Windows native reference slice — 2026-07-24
+
+Windows `d922b40c7db19aadebf77c2ea734ee5779ecc8ef` provides a C++20 state/event reference
+surface, deterministic streaming/cancellation fixture, SecretRef-only credential boundary,
+PasswordVault adapter, and WinUI/XAML shell. Local Foundation/source checks, CMake Release,
+CTest (1/1), and hosted Windows validation pass (`30090288192`; Foundation `30090288187`),
+including unsigned Debug/Release MSIX preparation. UI runtime, UI automation, accessibility,
+generated Core-wrapper conformance, other-client parity, signing, and stable-release evidence
+remain open.
+
 ### Linux-first provider proxy authentication
 
 Core `cee5bd8abc5b35a50640c484bc4fbeedeb426745` adds schema 30 persistence for an optional

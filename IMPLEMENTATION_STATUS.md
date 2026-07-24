@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Windows native reference slice checkpoint
+
+Assumption: Windows is a bounded prerelease reference slice; hosted build and unsigned MSIX
+preparation are verified, while Windows-only runtime and release evidence remain open.
+
+- Windows head `d922b40c7db19aadebf77c2ea734ee5779ecc8ef` adds a C++20 `AppModel`, deterministic
+  fake bridge, SecretRef-only credential boundary, PasswordVault adapter, WinUI/XAML shell, and
+  portable reference tests. The fake bridge is network-free and credential-free.
+- Local Foundation/source-boundary checks, CMake Release build, CTest (1/1), and `git diff --check`
+  pass. Hosted Windows run `30090288192` passed portable C++ plus WinUI/MSIX Debug and Release
+  preparation; Foundation run `30090288187` passed.
+- The hosted job compiled and linked both configurations and generated XAML/PRI resources and an
+  unsigned MSIX layout. This does not claim Windows UI runtime, UI automation, Credential
+  Locker/Password Vault behavior, accessibility, signing, generated Core-wrapper conformance,
+  provider profiles, documents, routing, history, cross-client parity, or stable release.
+  Release stays `unreleased`.
+- GitHub audit comments recorded the checkpoint on Linux PR #1 (`5069506993`) and central Issue #1
+  (`5069508839`); PR #1 remains Draft/Open/mergeable with no reviews or unresolved threads, and
+  Issue #1 remains Open.
+
 ## 2026-07-24 — Linux bounded temporary-file cleanup
 
 Assumption: the Linux privacy action removes only direct children of the system temporary directory

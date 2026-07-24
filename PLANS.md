@@ -22,6 +22,23 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Windows native reference slice
+
+Assumption: this is a bounded Windows prerelease slice; portable behavior can be verified on Linux,
+while WinUI/MSIX and Windows-only integration require hosted Windows evidence.
+
+- [x] Add the C++20 `AppModel`, deterministic fake bridge, cancellation/partial-output behavior,
+  SecretRef-only credential boundary, PasswordVault adapter, WinUI/XAML shell, and IDL runtime class.
+- [x] Pass local Foundation/source checks, CMake Release build, CTest (1/1), and `git diff --check`.
+- [x] Push Windows head `d922b40c7db19aadebf77c2ea734ee5779ecc8ef`; hosted run `30090288192`
+  passed portable C++, WinUI Debug/Release, XAML/PRI generation, and unsigned MSIX preparation;
+  Foundation run `30090288187` passed.
+- [ ] Complete Windows UI runtime/automation, accessibility, PasswordVault, generated Core-wrapper
+  conformance, signing, and physical-device evidence; the hosted build proves packaging preparation
+  only.
+- [ ] Keep provider profiles, document workflows, routing, history, cross-client parity, signing,
+  rollback authorization, and stable-release acceptance open; release remains `unreleased`.
+
 ## 2026-07-24 — Linux bounded temporary-file cleanup
 
 Assumption: the Linux privacy action removes only direct children of the system temporary directory
