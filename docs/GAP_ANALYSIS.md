@@ -28,6 +28,11 @@ with 234 packages. These remaining boundaries do not justify a stable-release cl
 human/physical review, live providers, other clients, signing, rollback, and release authorization
 remain open.
 
+The pinned third-party Ollama fixture was also re-run with `ollama/ollama:0.11.10` and
+`smollm:135m`; after download and warm-up the exact ignored worker test passed `1 passed; 0 failed`
+without a credential. Its first cold invocation exceeded the five-second test deadline, so the
+result is warm-start interoperability evidence only and not a cold-start performance claim.
+
 The 2026-07-23 GitHub triage refresh confirms Linux PR #1 and macOS PR #1 are both Draft/Open and
 mergeable with their current checks successful, and neither has submitted reviews or unresolved
 inline threads. macOS Native `29765906044` and Foundation `29765906715`/`29765904969` passed;

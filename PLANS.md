@@ -51,6 +51,10 @@ toolchain, and container capability failures remain unverified rather than passi
   `597ccc961f9530836f8cef4c9a12a64b5c0a311c`, verify its checksum against the matching evidence
   artifact (`a01177a9a1a3d84ac8e3de0cc509305f71494307134281ce42882a0e40e2dc02`), parse the SPDX 2.3
   SBOM (234 packages), and pass the sandbox smoke on GNOME runtime `org.gnome.Platform/x86_64/49`.
+- [x] Re-run the pinned third-party Ollama interop fixture with `ollama/ollama:0.11.10` and
+  `smollm:135m`: after model download/warm-up, the exact ignored worker test passed `1 passed;
+  0 failed` without a credential. The first cold invocation exceeded the fixture's five-second
+  deadline, so this is warm-start interoperability evidence, not a cold-start latency claim.
 - [ ] Keep the exact pinned Rust 1.93.0 build and full Ubuntu Native workflow CI-authoritative.
 - [ ] Keep release `unreleased`; human/physical review, live providers, other clients, signing,
   rollback, and stable-release authorization remain open.

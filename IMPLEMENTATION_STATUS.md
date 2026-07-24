@@ -30,6 +30,10 @@ Assumption: this is disposable Debian trixie evidence with Rust 1.93.1 (the repo
   `a01177a9a1a3d84ac8e3de0cc509305f71494307134281ce42882a0e40e2dc02`; the SPDX 2.3 SBOM parsed
   with 234 packages. Release remains `unreleased`; human/physical, live-provider, cross-client,
   signing, rollback, and stable-release evidence remain open.
+- The pinned third-party Ollama fixture used `ollama/ollama:0.11.10` with `smollm:135m`; after
+  model download and warm-up, the exact ignored worker test passed `1 passed; 0 failed` without a
+  credential. A cold first invocation exceeded the fixture's five-second deadline, so no cold-start
+  performance claim is made.
 
 - Central coordination commit `7c4ffa8fe2fa77a24ae61635c9c130c65e22382b` passed workflow
   `30045831148`; Linux and PowerShell validation jobs completed successfully.
