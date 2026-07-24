@@ -40,6 +40,19 @@ release pin.
   integration, cross-client conformance, signed artifacts, rollback, and stable-release evidence
   remain open.
 
+## 2026-07-24 — Core storage and document documentation reconciliation
+
+Assumption: the current Core migration and codec implementation is authoritative; this
+documentation-only descendant does not move the functional pin or imply stable release readiness.
+
+- Core documentation head `c518c9b` now records SQLite schema version 34, schema 33 glossary
+  libraries, schema 34 provider-health metadata, and the bounded DOCX/PPTX/XLSX/EPUB/PDF codec set.
+- `git diff --check`, rustfmt, locked offline all-target/all-feature tests, and locked offline
+  workspace build passed. FFI, protocol, and storage groups reported 22, 5, and 60 passing tests.
+- Functional Core pin `9e69d01cbae1ca0421923e059aa3252c4ecbe1be`, ABI/protocol versions, Linux pins,
+  and release status were unchanged. Generated projections, cross-client conformance, signed
+  artifacts, rollback authorization, and stable-release evidence remain open.
+
 ## 2026-07-24 — Linux provider-form keyboard traversal completion
 
 Assumption: every visible, enabled provider-form control must remain reachable through the

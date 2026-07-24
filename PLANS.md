@@ -59,6 +59,21 @@ release pin or imply a stable release.
 - [ ] Keep generated projections, cross-client conformance, signed artifacts, rollback
   authorization, and stable-release evidence open.
 
+## 2026-07-24 — Core storage and document documentation reconciliation
+
+Assumption: current Core storage migrations and codec registrations are authoritative; this
+documentation-only checkpoint must not change the functional Core pin or claim release readiness.
+
+- [x] Reconcile Core architecture and testing documentation with schema version 34, schema 33
+  glossary libraries, schema 34 provider-health metadata, and the bounded DOCX/PPTX/XLSX/EPUB/PDF
+  codec set already present in the source tree.
+- [x] Pass Core `git diff --check`, rustfmt, locked offline all-target/all-feature tests, and
+  locked offline workspace build; FFI, protocol, and storage groups reported 22, 5, and 60 passes.
+- [x] Push Core documentation head `c518c9b` without changing functional pin
+  `9e69d01cbae1ca0421923e059aa3252c4ecbe1be`, ABI/protocol versions, Linux pins, or release status.
+- [ ] Keep generated projections, cross-client conformance, signed artifacts, rollback
+  authorization, and stable-release evidence open.
+
 ## 2026-07-24 — Linux provider-form keyboard traversal completion
 
 Assumption: every visible, enabled provider-form control must remain reachable through the

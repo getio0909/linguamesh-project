@@ -27,6 +27,15 @@ workspace tests, and locked offline build passed; the functional Core pin remain
 are unchanged. Generated typed projections, platform secure-storage integration, cross-client
 conformance, signing, rollback, and stable-release evidence remain open.
 
+## Latest Core storage and document documentation reconciliation
+
+Core documentation head `c518c9b` now matches the current implementation: SQLite migrations reach
+schema version 34, schema 33 stores glossary libraries, schema 34 stores provider-health metadata,
+and bounded DOCX/PPTX/XLSX/EPUB/PDF codecs are covered. Core diff, rustfmt, locked offline tests,
+and workspace build passed, including 22 FFI, 5 protocol, and 60 storage tests. The functional Core
+pin remains `9e69d01cbae1ca0421923e059aa3252c4ecbe1be`; generated projections, cross-client
+conformance, signing, rollback, and stable-release evidence remain open.
+
 ## Latest Linux provider-form keyboard traversal completion
 
 Linux runtime source `195664199d1884c53940a4c78f2c15bd500ad8a3` now includes the optional
