@@ -72,6 +72,14 @@ not constitute a stable-release decision.
 - Central commit `ae9dcee854dc74af0cf8414850145de39be11057` passed coordination workflow
   `30059016853` (Linux `89376633187`, PowerShell `89376633215`). Release remains `unreleased`.
 
+## 2026-07-24 — Draft release-train record
+
+Added `docs/releases/bootstrap.md` as a Draft-only record for the current Linux-first checkpoint.
+It enumerates the exact manifest pins and contracts, links CI provenance, labels checksum/SBOM
+outputs as unsigned CI artifacts, records known cross-client and physical/release limitations,
+and documents a manifest-only rollback procedure. No tag, GitHub Release, signing, notarization,
+or stable publication was performed.
+
 ## 2026-07-23 — Linux automation boundary audit
 
 Assumption: missing local GUI/portal dependencies are evidence limitations, not successful test

@@ -51,6 +51,10 @@ Linux head `1c513e2e52236fce03a60548dbcab242c6878bed`; central commit
 `ae9dcee854dc74af0cf8414850145de39be11057` passed coordination workflow `30059016853` on Linux
 and PowerShell. This synchronization does not change the `unreleased` posture.
 
+The Draft release-train record `docs/releases/bootstrap.md` now captures the same component pins,
+contract versions, CI provenance, unsigned-artifact status, known limitations, and manifest-only
+rollback procedure. It is documentation evidence only; it does not close the stable-release gate.
+
 The 2026-07-23 GitHub triage refresh confirms Linux PR #1 and macOS PR #1 are both Draft/Open and
 mergeable with their current checks successful, and neither has submitted reviews or unresolved
 inline threads. macOS Native `29765906044` and Foundation `29765906715`/`29765904969` passed;

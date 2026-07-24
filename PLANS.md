@@ -85,6 +85,16 @@ while the release train remains unreleased until every cross-client and qualific
 - [ ] Keep the release `unreleased`; no stable artifact or client merge is authorized by this
   manifest-only synchronization.
 
+## 2026-07-24 — Draft release-train record
+
+Assumption: a documented Draft record improves reproducibility without implying that the current
+Linux-first checkpoint is a stable release.
+
+- [x] Add `docs/releases/bootstrap.md` with component pins, contract versions, CI provenance,
+  known limitations, signing status, and a reversible manifest-only rollback procedure.
+- [ ] Keep the record Draft and release status `unreleased` until all four native clients,
+  physical/qualified human review, signing, rollback rehearsal, and stable authorization pass.
+
 ## 2026-07-23 — Linux automation boundary audit
 
 Assumption: the current Linux plan and gap matrix are authoritative for deciding whether another
