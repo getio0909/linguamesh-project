@@ -9,8 +9,9 @@ Android code head `535e4485ff555b04702c0390ca76428ff995d457` adds bounded DataSt
 non-secret provider-profile metadata, background restore and Core re-registration, active-profile
 selection persistence, and JVM coverage. Local Foundation, l10n sync, debug/release builds, 18
 debug/release JVM tests, instrumentation compilation, and debug/release lint passed. Status head
-`4b2093bc94b8016c5eca721a18b5f049ac7330d8` records hosted run `30091714901` as passed; the
-bounded-write follow-up is hosted as run `30092613918`. The superseded stale-pin run `30091670253`
+`8e0b898` records the final status after hosted run `30092613918` passed the bounded-write
+follow-up; the earlier status head `4b2093bc94b8016c5eca721a18b5f049ac7330d8` records hosted run
+`30091714901` as passed. The superseded stale-pin run `30091670253`
 failed before build execution. Core-owned persistence,
 device restoration, document and background workflows, real-provider credentials, signing, and
 stable release remain open. Central coordination workflow `30092269717` passed the synchronized

@@ -10,8 +10,9 @@ Android code head `535e4485ff555b04702c0390ca76428ff995d457` consumes Core ABI 1
 non-secret provider-profile metadata in DataStore, restoring and re-registering profiles at
 startup while keeping credentials in the Android Keystore broker. Local debug/release builds,
 18-test JVM suites, instrumentation compilation, l10n synchronization, Foundation checks, and
-lint pass; status head `4b2093bc94b8016c5eca721a18b5f049ac7330d8` records hosted validation
-`30091714901` as passed, and bounded-write follow-up run `30092613918` is in progress. This is an unreleased client
+lint pass; final status head `8e0b898` records hosted validation `30092613918` as passed (19 JVM
+tests per variant), while status head `4b2093bc94b8016c5eca721a18b5f049ac7330d8` records the
+earlier `30091714901` run. This is an unreleased client
 checkpoint; Core-owned persistence, device restoration, document/background workflows, signing,
 and stable-release evidence remain open. Central coordination workflow `30092269717` passed the
 synchronized manifest, compatibility, documentation, and credential-scan checks.

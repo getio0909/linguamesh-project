@@ -37,8 +37,9 @@ store.
 - [x] Complete hosted Android run `30091714901` (clean Core AAR provenance, debug/release builds,
   18 JVM tests per variant, instrumentation compilation, and debug/release lint), record status
   head `4b2093bc94b8016c5eca721a18b5f049ac7330d8`, and synchronize manifests.
-- [ ] Complete bounded-write follow-up run `30092613918` for Android head `535e448` before treating
-  the final status head as hosted-verified.
+- [x] Complete bounded-write follow-up run `30092613918` for Android head `535e448`; final status
+  head `8e0b898` records 19 JVM tests per variant and all debug/release, instrumentation, lint, and
+  Core AAR provenance gates as passed.
 - [x] Pass central coordination workflow `30092269717` for the synchronized Android checkpoint.
 - [ ] Keep Core-owned persistence, device/background/document flows, signing, rollback, and stable
   release evidence open.

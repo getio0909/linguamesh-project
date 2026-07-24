@@ -18,7 +18,8 @@ Keystore-backed broker and are represented in DataStore by an opaque `secretRef`
 - Android status head `4b2093bc94b8016c5eca721a18b5f049ac7330d8` records hosted workflow
   `30091714901`, which passed clean Core AAR provenance checks, debug/release builds, 18 JVM tests
   per variant, instrumentation compilation, and debug/release lint. The bounded-write follow-up is
-  hosted as run `30092613918`; the prior status-head run `30092193402` also passed. Its earlier
+  hosted as run `30092613918`; final status head `8e0b898` records the evidence and the prior
+  status-head run `30092193402` also passed. Its earlier
   superseded run `30091670253` failed at the stale foundation l10n pin before build execution.
   Release remains `unreleased`.
 - Central coordination workflow `30092269717` passed the synchronized manifest, compatibility,
