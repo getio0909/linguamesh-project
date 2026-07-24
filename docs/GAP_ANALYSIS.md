@@ -3,6 +3,18 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest macOS checkpoint
+
+macOS head `75b5bfe` consumes Core `b39dbdc2877a60c6666697cc0817f31225496cb2` and implements
+the ABI-1 typed host-secret exchange: a session-only `secret_ref` is carried in the translation
+command, a matching `secret_required` event is resolved through Keychain, and exactly one bounded
+response is sent through the generated Apple wrapper. Hosted macOS run `30095987188` passed Core
+XCFramework generation, strict Swift 6 concurrency, all 20 XCTest cases (including the credentialed
+loopback path), app assembly, and ad-hoc signing smoke. The superseded initialization failure
+`30095764844` is corrected in `c528bfc`. Local Swift/Xcode and manual accessibility evidence remain
+unavailable; generated typed Swift protocol projections, profile persistence, distribution signing,
+cross-client conformance, and stable-release evidence remain open.
+
 ## Latest Android checkpoint
 
 Android head `ab81a9b8b7c416c54e543968ef50723c8df0ee7b` consumes Core
@@ -14,8 +26,8 @@ incomplete NDK installation. Hosted run `30094317628` passed clean Core AAR prov
 release builds, 19 JVM tests per variant, instrumentation compilation, and debug/release lint;
 the superseded typed-event compile failure `30093907047` is recorded as corrected. Core-owned
 persistence, device restoration, document/background workflows, device Keystore execution,
-signing, and stable release remain open. Central coordination is pending this documentation sync.
-Central coordination workflow `30094924852` subsequently passed its Linux and PowerShell jobs.
+signing, and stable release remain open. Central coordination workflow `30094924852` passed its
+Linux and PowerShell jobs for the preceding Android synchronization.
 
 ### Prior Android metadata checkpoint
 

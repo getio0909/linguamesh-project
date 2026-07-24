@@ -2,6 +2,28 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — macOS typed host-secret transport checkpoint
+
+Assumption: macOS uses a session-scoped `SecretRef` and a non-secret Keychain account identifier;
+the generated Apple wrapper remains the ABI boundary while typed Swift protocol projections are
+not yet published.
+
+- macOS head `75b5bfe` carries the Core ABI 1 `secret_ref` command field, decodes the matching
+  `secret_required` event, resolves the injected Keychain `CredentialStore`, and sends one bounded
+  `host_secret_response` with explicit unavailable/storage-unavailable outcomes. Secret values are
+  not persisted, logged, or included in diagnostics. The loopback fixture requires the resolved
+  bearer value and the real-wrapper integration test covers the complete exchange.
+- Core is pinned to `b39dbdc2877a60c6666697cc0817f31225496cb2`. Hosted macOS run `30095987188`
+  passed Core XCFramework generation, generated wrapper tests, strict Swift 6 concurrency build,
+  all 20 XCTest cases, app-bundle assembly, and ad-hoc signing smoke. Superseded run `30095764844`
+  failed only on Swift definite initialization and was corrected in `c528bfc`.
+- Portable source/l10n checks and syntax parsing passed with the pinned l10n checkout; the Debian
+  host has no Swift/Xcode/Apple SDK, so local package/XCTest/signing and manual accessibility
+  evidence remain unavailable. Release stays `unreleased`.
+- GitHub audit: macOS PR #1 remains Draft/Open/mergeable with no submitted reviews or unresolved
+  threads; Linux PR #1 remains Draft/Open/mergeable with all six current checks green; central Issue
+  #1 remains Open. No merge or stable promotion was performed.
+
 ## 2026-07-24 — Android typed host-secret transport checkpoint
 
 Assumption: Android's Keystore-backed credential broker is the host for Core ABI 1's existing

@@ -4,6 +4,16 @@ No compatible stable release train exists yet. The authoritative machine-readabl
 
 Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198`.
 
+### macOS typed host-secret transport — 2026-07-24
+
+macOS head `75b5bfe` consumes Core `b39dbdc2877a60c6666697cc0817f31225496cb2` at ABI major 1 /
+protocol 1. The client carries a session-only `secret_ref`, resolves the matching Keychain account,
+and sends one bounded `host_secret_response` through the generated Apple wrapper. Hosted macOS run
+`30095987188` passed Core XCFramework generation, wrapper tests, strict Swift concurrency, 20 XCTest
+cases, app assembly, and ad-hoc signing smoke. Local Swift/Xcode and manual accessibility evidence
+remain unavailable; generated typed Swift protocol projections, profile persistence, distribution
+signing, rollback, cross-client conformance, and stable-release evidence remain open.
+
 ### Android typed host-secret transport — 2026-07-24
 
 Android head `ab81a9b8b7c416c54e543968ef50723c8df0ee7b` consumes Core

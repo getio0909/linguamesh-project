@@ -22,6 +22,22 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — macOS typed host-secret transport
+
+Assumption: macOS uses a session-only SecretRef and a non-secret Keychain account identifier; the
+generated Apple wrapper remains the ABI boundary until typed Swift protocol projections are
+published.
+
+- [x] Add the macOS `secret_ref` command field, matching `secret_required` decoder, bounded
+  `host_secret_response` encoder, and injected Keychain resolution path.
+- [x] Add loopback credentialed integration coverage and retain the no-secret logging/persistence
+  boundary.
+- [x] Pin macOS to `75b5bfe` and Core to `b39dbdc2877a60c6666697cc0817f31225496cb2`; hosted run
+  `30095987188` passed Core XCFramework, strict build, 20 XCTest cases, app packaging, and ad-hoc
+  signing smoke. The superseded `30095764844` initialization failure was corrected at `c528bfc`.
+- [ ] Keep generated Swift protocol projections, profile persistence, manual accessibility,
+  distribution signing, rollback, cross-client conformance, and stable-release evidence open.
+
 ## 2026-07-24 — Android typed host-secret transport
 
 Assumption: Android's Keystore-backed broker is the host for Core ABI 1's one-shot secret channel;
