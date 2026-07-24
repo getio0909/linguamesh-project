@@ -11,12 +11,12 @@ and must not be promoted without the acceptance and authorization gates listed b
 
 | Component | Version | Source revision |
 | --- | --- | --- |
-| Core | `0.1.0-alpha.2` | `f5b818c3598d78e7cac30604577fa8057d380737` |
-| Localization | `0.1.0` | `c2526bfb3f6ff57895bdc3eeed743e26c8783613` |
+| Core | `0.1.0-alpha.2` | `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` |
+| Localization | `0.1.0` | `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c` |
 | Android | `0.1.0-alpha.1` | `afe7a566bac77a16243f70295d17a4d9cab1151f` |
 | Windows | `0.0.0-dev` | `unreleased` |
 | macOS | `0.1.0-alpha.1` | `cad822c69dcf1ad20f8cab2151f407866a577420` |
-| Linux | `0.1.0-alpha.2` | `4612827d0ce78b9629fbbc24853677e18ee9d0a1` |
+| Linux | `0.1.0-alpha.2` | `402b97ac50bf62e89f9c27caedebff10d2ae7b8c` |
 
 Contracts: ABI major `1`, protocol schema `0.1.0`, provider catalog `0.1.0`, and localization
 schema `1.0.0`. The authoritative pins are in `release-manifest.toml`.
@@ -33,16 +33,16 @@ validation. These remain CI artifacts, not signed releases.
 
 ## Validation evidence
 
-- Current Linux-first VFS checkpoint uses Core `f5b818c3598d78e7cac30604577fa8057d380737` and
-  Linux `4612827d0ce78b9629fbbc24853677e18ee9d0a1`. Core's `unix-none` regression fails closed
-  before migrations with no schema tables; local storage tests report `59 passed; 0 failed`, and
-  the full Core check, Clippy, tests, build, and cargo-deny validation passed. Core CI/Fuzz/ASAN/
-  Native SDK runs `30070685571`/`30070685557`/`30070685594` passed. Linux local validation passed
-  localization, Flatpak, formatting, checks, Clippy, no-default (`85 passed; 1 ignored`), and
-  demo-provider (`166 passed; 7 ignored`) suites; push and PR Native/Flatpak/Foundation runs
-  `30071367773`/`30071367788`/`30071367816` and `30071369693`/`30071369679`/`30071369672` passed.
-  Central commit `d9d13945d59370a8bc0ca576a66c8b3fa5fd9468` passed coordination workflow
-  `30071892709` (Linux `89414323628`, PowerShell `89414323574`).
+- Current Linux-first VFS checkpoint uses Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and
+  Linux `402b97ac50bf62e89f9c27caedebff10d2ae7b8c`. Core's registered custom-VFS regression
+  exercises a distinct name over validated `unix-excl` callbacks, migration, profile persistence/
+  reopen, and symlink/no-follow rejection; the `unix-none` regression still fails closed before
+  migrations with no schema tables. Core storage tests report `60 passed; 0 failed`; full Rust
+  workspace checks, strict Clippy, cargo-deny, CI/Fuzz/ASAN/Native SDK
+  `30097756099`/`30097756186`/`30097756137` passed. Linux local validation passed localization,
+  Flatpak, formatting, checks, Clippy, no-default (`85 passed; 1 ignored`), and demo-provider
+  (`166 passed; 7 ignored`) suites; push and PR Native/Flatpak/Foundation runs
+  `30098393451`/`30098393429`/`30098393452` and `30098395935`/`30098395913`/`30098395889` passed.
 
 - Host-pinned Rust 1.93.0 Core check passed with `cargo check --workspace --locked --offline`.
 - Core FFI ASAN smokes passed locally: valid loopback commands completed 136 time-bounded
