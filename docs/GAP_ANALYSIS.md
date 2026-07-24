@@ -3,6 +3,18 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest continuation audit and GitHub triage
+
+The current published heads are central `4490433cedbebeef8daaa7f7e6f3d10ca03d28ed`, Linux
+`8ab718a2174d65a6ec33a1b4bcc3d8a4c52db48b`, Core `c518c9bd1208e134fd2502857fcccebd8112cd42`,
+and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; central workflow `30134013795` passed. The
+six Linux current-head Push/PR Native, Flatpak, and Foundation workflows are green, and the
+current source/tests reveal no additional deterministic Linux implementation slice. Linux PR #1
+and macOS PR #1 remain Draft/Open with no submitted reviews or inline review comments; central
+Issue #1 remains Open. This audit does not close physical power-loss, arbitrary third-party VFS,
+human/physical review, live-provider qualification, other-client parity, signing, rollback,
+distributable promotion, or stable-release gates; release remains `unreleased`.
+
 ## Latest Linux current-head local validation and hosted evidence
 
 Linux status head `8ab718a2174d65a6ec33a1b4bcc3d8a4c52db48b` passed local localization audits,

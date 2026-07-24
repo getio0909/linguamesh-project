@@ -22,6 +22,27 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux-first continuation audit and GitHub triage
+
+Assumption: the current worktrees, authenticated GitHub review state, and completed hosted checks
+are authoritative for this audit; no merge, release promotion, or stable claim is authorized.
+
+- [x] Re-read the task attachment and completely re-read `PROJECT_GOAL.md`, `AGENTS.md`, and
+  `PLANS.md`; confirm owner `getio0909`, all seven canonical repositories, and preserve the
+  user-owned `AGENTS.md` changes in the central and macOS worktrees.
+- [x] Confirm Linux `8ab718a2174d65a6ec33a1b4bcc3d8a4c52db48b`, Core `c518c9bd1208e134fd2502857fcccebd8112cd42`,
+  l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`, and central `4490433cedbebeef8daaa7f7e6f3d10ca03d28ed`
+  are the current published heads; central coordination workflow `30134013795` passed.
+- [x] Reconfirm Linux's six current-head Native/Flatpak/Foundation Push/PR gates are green and
+  no new deterministic Linux implementation gap is evidenced by the current source, tests, or
+  gap matrix.
+- [x] Recheck GitHub review state: Linux PR #1 and macOS PR #1 are Draft/Open with no submitted
+  reviews or inline review comments; central Issue #1 remains Open. No merge or stable promotion
+  was performed.
+- [ ] Keep physical power-loss, arbitrary third-party VFS, human/physical review, live-provider
+  qualification, other-client parity, signing, rollback authorization, distributable promotion,
+  and stable-release acceptance open; release remains `unreleased`.
+
 ## 2026-07-24 — Linux post-publish SQLite sidecar no-follow regression
 
 Assumption: an already-published descriptor-bound profile connection must not write through a

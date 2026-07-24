@@ -2,6 +2,26 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux-first continuation audit and GitHub triage
+
+Assumption: this audit records current evidence only; it does not convert hosted checks or
+automated fixtures into human, physical, cross-client, signing, rollback, or stable-release proof.
+
+- Re-read the task attachment and completely re-read `PROJECT_GOAL.md`, `AGENTS.md`, and `PLANS.md`.
+  Current repository heads are central `4490433cedbebeef8daaa7f7e6f3d10ca03d28ed`, Linux
+  `8ab718a2174d65a6ec33a1b4bcc3d8a4c52db48b`, Core `c518c9bd1208e134fd2502857fcccebd8112cd42`,
+  and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; central workflow `30134013795` passed.
+- All six Linux current-head Native/Flatpak/Foundation Push/PR workflows passed. The local Linux
+  and Core validation matrix is recorded above; no new deterministic Linux gap was found in the
+  implementation, tests, or gap analysis.
+- GitHub review triage found Linux PR #1 and macOS PR #1 Draft/Open with no submitted reviews or
+  inline review comments. Central Issue #1 remains Open. No merge or stable promotion was performed.
+- The central worktree retains only the user's pre-existing `AGENTS.md` modification; the macOS
+  worktree retains its user's `AGENTS.md` modification. Both were preserved and not staged.
+- Release remains `unreleased`; physical power-loss, arbitrary third-party VFS, human/physical
+  review, live-provider qualification, other-client parity, signing, rollback authorization,
+  distributable promotion, and stable-release evidence remain open.
+
 ## 2026-07-24 — Linux current-head local validation and hosted evidence
 
 Assumption: local and hosted Linux checks strengthen prerelease evidence only; missing physical,
