@@ -102,6 +102,9 @@ Added `tools/rehearse-release-rollback.py`. It validated that Linux commit
 output. This is deterministic manifest evidence only; physical VFS/power-loss behavior, signed
 artifact rollback, and production rollback authorization remain open.
 
+- Central commit `ac6a0dff7c54883891b482cedc42015b0a81954e` passed coordination workflow
+  `30059622064` (Linux `89378438634`, PowerShell `89378438650`).
+
 ## 2026-07-23 — Linux automation boundary audit
 
 Assumption: missing local GUI/portal dependencies are evidence limitations, not successful test

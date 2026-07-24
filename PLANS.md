@@ -120,6 +120,8 @@ to exercise physical power loss, signed artifact rollback, or production authori
   `unreleased`, and leaves repository files untouched.
 - [x] Run the rehearsal from the current workspace from Linux `1c513e2...` to previously verified
   `597ccc...`; it passed with English diagnostics and no checkout mutation.
+- [x] Push the rehearsal at central commit `ac6a0dff7c54883891b482cedc42015b0a81954e`; coordination
+  workflow `30059622064` passed Linux job `89378438634` and PowerShell job `89378438650`.
 - [ ] Keep physical VFS/power-loss behavior, signed artifact rollback, and production rollback
   authorization open.
 
