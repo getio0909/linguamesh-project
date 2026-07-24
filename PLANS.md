@@ -22,6 +22,16 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Central Linux source-pin consistency follow-up
+
+Assumption: the current Linux branch head `42efabc3746c405136f347de4206e2cc5a13dc98` is the
+reviewed source for the Core b54 ABI handle-lifetime checkpoint; the earlier `4b592e7` commit is
+retained as historical status evidence, not as the current release-manifest source.
+
+- [ ] Align the central release manifest and Draft release table to Linux `42efabc…`.
+- [ ] Run workspace validation, commit, push, and verify the central Linux/PowerShell workflow.
+- [ ] Keep PR #1 Draft/Open, Issue #1 Open, and release status `unreleased`.
+
 ## 2026-07-24 — Core ABI 1 handle-lifetime hardening
 
 Assumption: the public opaque `LmEngine *` type remains source-compatible when its value becomes a
