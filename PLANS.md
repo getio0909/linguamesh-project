@@ -36,7 +36,9 @@ Linux `b8bbfa865a0a9c1199c88ad88c15e9a3d490e5a2` carries the matching report and
   Native/Flatpak/Foundation `30074447292`/`30074447281`/`30074447301` and
   `30074449163`/`30074449164`/`30074449176`.
 - [x] Audit PR #1 and Issue #1: PR remains Draft/Open/mergeable with no reviews and Issue remains
-  Open. Synchronize central manifests and evidence, then retain the `unreleased` release status.
+  Open. Final evidence comments are Linux `5067323802` and central `5067324171`; central commit
+  `06ec6f27e763ff0beca26a5c1868352434b73d0c` passed coordination workflow `30075645168` with
+  Linux `89425665916` and PowerShell `89425665987`. Retain the `unreleased` release status.
 - [ ] Keep cross-client parity, live-provider, custom/third-party VFS, physical/manual review,
   signing, rollback authorization, and stable-release acceptance open.
 

@@ -19,6 +19,9 @@ source-pin update.
 - Linux push Native/Flatpak/Foundation `30074447292`/`30074447281`/`30074447301` and PR
   `30074449163`/`30074449164`/`30074449176` passed, including the rerun after the initial hosted
   package-install stall. PR #1 is Draft/Open/mergeable with zero reviews; Issue #1 is Open.
+- Final evidence comments are Linux `5067323802` and central `5067324171`; central commit
+  `06ec6f27e763ff0beca26a5c1868352434b73d0c` passed coordination workflow `30075645168` with
+  Linux job `89425665916` and PowerShell job `89425665987`.
 - Release remains `unreleased`. Cross-client parity, live-provider qualification, custom or
   third-party VFS, physical power-loss, manual/physical review, signing, rollback, and stable
   release evidence remain open.

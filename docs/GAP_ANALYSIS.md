@@ -18,7 +18,9 @@ formatting, check, Clippy, no-default (`85 passed; 1 ignored`), and demo-provide
 `30074447292`/`30074447281`/`30074447301` and `30074449163`/`30074449164`/`30074449176`
 passed. PR #1 remains Draft/Open/mergeable with no reviews; Issue #1 remains Open. Cross-client,
 live-provider, custom-VFS/power-loss, manual/physical, signing, rollback, and stable-release
-evidence remain gaps, so the release stays `unreleased`.
+evidence remain gaps, so the release stays `unreleased`. Final evidence comments are Linux
+`5067323802` and central `5067324171`; central coordination workflow `30075645168` passed with
+Linux job `89425665916` and PowerShell job `89425665987`.
 
 ### Core ABI status reconciliation
 
