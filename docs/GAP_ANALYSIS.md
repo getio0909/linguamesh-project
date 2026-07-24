@@ -3,6 +3,20 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest Linux current-head local validation and hosted evidence
+
+Linux status head `8ab718a2174d65a6ec33a1b4bcc3d8a4c52db48b` passed local localization audits,
+Flatpak metadata, formatting, locked offline checks, strict Clippy, no-default tests (`85 passed;
+1 ignored`), and demo-provider tests (`168 passed; 7 ignored`). Core's locked offline workspace
+tests passed 244 unit tests plus doc-test targets. Client-certificate, OCR, storage-fault, and
+Secret Service prompt fixtures passed locally. The document portal is unavailable locally because
+FUSE cannot mount the user document path; Xvfb/Weston are absent. Hosted push/PR Native, Flatpak,
+and Foundation runs `30133558944`/`30133558901`/`30133558885` and
+`30133561000`/`30133561001`/`30133561031` all passed. Native artifact `8612069642` is unexpired;
+its binary/source checksums, 234-package SPDX-2.3 SBOM, and 140-entry source archive were verified.
+Physical power-loss, arbitrary third-party VFS, human/physical review, other clients, signing,
+rollback authorization, distributable promotion, and stable-release evidence remain open.
+
 ## Latest Linux final current-head Native evidence artifact verification
 
 Linux documentation/status head `fd89f6e4e4c1d52b1634426005c7ff0ccf611e56` is published. Native

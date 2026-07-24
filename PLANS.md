@@ -79,6 +79,30 @@ evidence.
   prompt/accessibility review, other clients, signing, rollback authorization, and stable release
   acceptance open.
 
+## 2026-07-24 — Linux current-head local validation and hosted evidence
+
+Assumption: local and hosted Linux checks strengthen prerelease evidence only; missing physical,
+human, cross-client, signing, and stable-release conditions remain open.
+
+- [x] Linux status head `8ab718a2174d65a6ec33a1b4bcc3d8a4c52db48b` passed local localization audits,
+  Flatpak metadata, formatting, locked offline checks, strict Clippy, no-default tests
+  (`85 passed; 1 ignored`), and demo-provider tests (`168 passed; 7 ignored`). Core's locked offline
+  workspace tests passed 244 unit tests plus doc-test targets.
+- [x] Local client-certificate, OCR, storage-fault, and Secret Service prompt fixtures passed; the
+  document portal remains unavailable locally because FUSE cannot mount the user document path, and
+  Xvfb/Weston are absent.
+- [x] Native push/Flatpak/Foundation `30133558944`/`30133558901`/`30133558885` and PR
+  Native/Flatpak/Foundation `30133561000`/`30133561001`/`30133561031` all passed.
+- [x] Native push run `30133558944` produced unexpired artifact
+  `linguamesh-linux-native-evidence-8ab718a2174d65a6ec33a1b4bcc3d8a4c52db48b` (artifact ID
+  `8612069642`). `SHA256SUMS` verified binary hash
+  `35c1878648dc81db3f474c24a0dbfa8fcd6bd0840fafef453ff686eeaadc52e9` and source archive hash
+  `d8374e1c79d390c4b7b76795cc34e29fc6e5417ac78f6b50c09407b37948f605`; the bundle has an
+  SPDX-2.3 SBOM with 234 packages and a 140-entry source archive.
+- [ ] Keep physical power-loss, arbitrary third-party VFS, human/physical review, other clients,
+  signing, rollback authorization, distributable promotion, and stable-release acceptance open;
+  release remains `unreleased`.
+
 ## 2026-07-24 — Linux final current-head Native evidence artifact verification
 
 Assumption: downloadable CI evidence can prove reproducible prerelease packaging inputs and
