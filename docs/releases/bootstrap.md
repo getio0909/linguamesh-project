@@ -30,10 +30,15 @@ run `30058395669` passed repository validation. These remain CI artifacts, not s
 ## Validation evidence
 
 - Host-pinned Rust 1.93.0 Core check passed with `cargo check --workspace --locked --offline`.
+- Host-pinned Rust 1.93.0 Core storage regression passed `55 passed; 0 failed` with
+  `cargo +1.93.0 test -p linguamesh-storage --locked --offline`, covering WAL replay,
+  abrupt-process recovery, busy-checkpoint retry, migrations, secure deletion, symlink rejection,
+  and trusted descriptor validation. Alternate VFS and physical power-loss behavior remain
+  unverified.
 - Linux non-GUI demo-provider tests passed `166 passed; 0 failed; 7 ignored` with loopback proxy
   bypassed. Native CI is authoritative for the GTK/AT-SPI, portal, mTLS, build, performance,
   checksum, and SBOM gates because this host lacks GTK4/Graphene development packages.
-- Central workflow `30059622064` passed Linux and PowerShell validation for the synchronized
+- Central workflow `30059904373` passed Linux and PowerShell validation for the synchronized
   coordination documents and release manifest.
 - The documented clean-bootstrap flow cloned all seven public repositories in a disposable
   workspace and passed strict workspace, goal-pin, manifest, link, and credential-signature checks.
