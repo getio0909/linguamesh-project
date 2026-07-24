@@ -37,6 +37,9 @@ run `30058395669` passed repository validation. These remain CI artifacts, not s
   coordination documents and release manifest.
 - The documented clean-bootstrap flow cloned all seven public repositories in a disposable
   workspace and passed strict workspace, goal-pin, manifest, link, and credential-signature checks.
+- Manifest rollback rehearsal passed with:
+  `python3 tools/rehearse-release-rollback.py --component linux --target-revision
+  597ccc961f9530836f8cef4c9a12a64b5c0a311c --repository ../linguamesh-linux`.
 
 ## Acceptance scenarios
 
@@ -54,7 +57,7 @@ claimed. The repositories remain MIT-licensed and dependency/license checks pass
 
 Android, Windows, and macOS parity; live-provider account interoperability; human visual,
 translation, and screen-reader review; physical VFS/power-loss behavior; signed artifacts;
-rollback rehearsal; and stable-release authorization remain open. Release status stays
+production rollback authorization; and stable-release authorization remain open. Release status stays
 `unreleased`.
 
 ## Migration and rollback
@@ -62,7 +65,9 @@ rollback rehearsal; and stable-release authorization remain open. Release status
 This draft changes no persisted schema or public contract. To roll back this checkpoint, restore
 the previous verified Linux revision in `release-manifest.toml`, run `bash tools/check-workspace.sh`
 and the central workflow, then document the resulting source and CI revisions. Do not force-push,
-rewrite published history, or promote the rollback as stable without explicit authorization.
+rewrite published history, or promote the rollback as stable without explicit authorization. The
+manifest-only rehearsal verifies this transition in a temporary file; it does not authorize a
+production rollback or claim physical storage recovery.
 
 ## Signing and publication status
 

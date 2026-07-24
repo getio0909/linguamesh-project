@@ -110,6 +110,19 @@ is the appropriate evidence for Scenario 19; it must not alter any existing chec
 - [ ] Keep commercial credentials, stable publication, and unsupported platform execution outside
   the default bootstrap acceptance path.
 
+## 2026-07-24 — Manifest rollback rehearsal
+
+Assumption: a manifest-only rehearsal can verify the reversible pin transition without pretending
+to exercise physical power loss, signed artifact rollback, or production authorization.
+
+- [x] Add `tools/rehearse-release-rollback.py`; it verifies that the target Linux commit exists,
+  changes only the selected component revision in a temporary parsed manifest, preserves
+  `unreleased`, and leaves repository files untouched.
+- [x] Run the rehearsal from the current workspace from Linux `1c513e2...` to previously verified
+  `597ccc...`; it passed with English diagnostics and no checkout mutation.
+- [ ] Keep physical VFS/power-loss behavior, signed artifact rollback, and production rollback
+  authorization open.
+
 ## 2026-07-23 — Linux automation boundary audit
 
 Assumption: the current Linux plan and gap matrix are authoritative for deciding whether another

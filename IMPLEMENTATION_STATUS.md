@@ -93,6 +93,15 @@ validation passed. The temporary workspace was removed and the existing checkout
 - Central commit `6d586e0a4f40327998850e86a38f5fe68f4b2b8b` passed coordination workflow
   `30059408522` (Linux `89377790156`, PowerShell `89377790104`).
 
+## 2026-07-24 — Manifest rollback rehearsal
+
+Added `tools/rehearse-release-rollback.py`. It validated that Linux commit
+`597ccc961f9530836f8cef4c9a12a64b5c0a311c` exists, replaced only the current
+`[components.linux].source_revision` in a temporary TOML manifest, preserved `status =
+"unreleased"`, and left the checkout unchanged. The exact rehearsal passed with English console
+output. This is deterministic manifest evidence only; physical VFS/power-loss behavior, signed
+artifact rollback, and production rollback authorization remain open.
+
 ## 2026-07-23 — Linux automation boundary audit
 
 Assumption: missing local GUI/portal dependencies are evidence limitations, not successful test

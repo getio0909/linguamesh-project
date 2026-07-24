@@ -60,6 +60,13 @@ all seven public canonical repositories and passed strict workspace, goal-pin, m
 credential-signature validation. This strengthens clean-bootstrap evidence without changing the
 existing checkouts or claiming unsupported platform builds.
 
+The manifest-only rollback rehearsal `tools/rehearse-release-rollback.py` passed for the Linux pin
+transition from `1c513e2e52236fce03a60548dbcab242c6878bed` to previously verified
+`597ccc961f9530836f8cef4c9a12a64b5c0a311c`. It verified target commit existence, isolated the
+single revision change in a temporary parsed manifest, preserved `unreleased`, and made no checkout
+changes. This does not cover physical VFS/power-loss behavior, signed artifacts, or production
+rollback authorization.
+
 The 2026-07-23 GitHub triage refresh confirms Linux PR #1 and macOS PR #1 are both Draft/Open and
 mergeable with their current checks successful, and neither has submitted reviews or unresolved
 inline threads. macOS Native `29765906044` and Foundation `29765906715`/`29765904969` passed;
@@ -284,7 +291,7 @@ qualified human/physical review, signing, rollback, and stable authorization rem
 | 4–5 — Providers and quality | Linux catalog, local models, model-source provenance labels, persisted Provider Hub health outcomes, routing, candidate-chain editing, one-shot fallback consent, request-level glossary protection, bounded TBX import, persistent Core schema 33 glossary libraries with GTK save/list/load/delete controls, chunking, history, memory, domain/tone/formality/audience presets, bounded regional-locale/script presets, bounded proxy transport settings and SecretRef authentication, bounded total/connection/streaming-idle timeout settings, additive custom PEM trust bundles, client-certificate SecretRef identities, and a pinned third-party Ollama daemon fixture have deterministic evidence | Cross-client parity, live-provider account/quota interoperability, provider-specific semantics |
 | 6 — Documents | Linux supports the bounded TXT/Markdown/HTML/JSON/CSV/SRT/WebVTT/DOCX/PPTX/XLSX/EPUB/PDF slice plus an explicit image-only PDF OCR fixture | Native document workflows on the other clients and broader format acceptance |
 | 7 — Localization/accessibility | Generated packs, runtime switching, RTL, pseudo-locales, keyboard and headless AT-SPI/Orca checks exist | Qualified translation review, human screen-reader/visual review, other-client checks |
-| 8 — Hardening/release | Fuzzing, sanitizers, migrations, parser limits, checksums, SBOMs, performance evidence, Unix process-crash WAL recovery, and controlled ENOSPC degradation exist | Physical VFS/power-loss evidence, alternate-VFS coverage, signing, rollback rehearsal, stable release authorization |
+| 8 — Hardening/release | Fuzzing, sanitizers, migrations, parser limits, checksums, SBOMs, performance evidence, Unix process-crash WAL recovery, controlled ENOSPC degradation, and a manifest-only rollback rehearsal exist | Physical VFS/power-loss evidence, alternate-VFS coverage, signing, production rollback authorization, stable release authorization |
 
 ## Acceptance-scenario matrix
 
