@@ -5,6 +5,20 @@ Status: Linux-first prerelease audit, 2026-07-24. This document complements
 
 ## Latest Linux/Core checkpoint
 
+### Linux persisted document-job metadata deletion
+
+Linux status head `7d0970cc90a9170f6be59b2e75bad672e5ace0bf` adds a Core-backed worker delete
+command/event and a localized GTK confirmation for persisted document-job metadata and segment rows.
+Deletion is rejected while document work is active and successful deletion clears only the selected
+job association, leaving editor source/output buffers intact. Local localization, Flatpak, format,
+check, strict Clippy, no-default (`85 passed; 1 ignored`), demo-provider (`166 passed; 7 ignored`),
+build, and cargo-deny checks passed. Push Native/Flatpak/Foundation and PR Flatpak/Foundation runs
+`30077159723`/`30077159767`/`30077159771` and `30077157438`/`30077157429` passed; docs-only PR
+Native `30077157435` remains in progress at hosted dependency installation, while code-head PR
+Native `30076649572` passed the exact GTK matrix. PR #1 remains Draft/Open/mergeable and Issue #1 remains Open. Cross-client,
+physical/manual, custom-VFS/power-loss, signing, rollback, and stable-release gates remain open;
+release status stays `unreleased`.
+
 ### Explicit source-locale prompt and Linux pin
 
 Core `77c6bf426ace65c6bd960120b253e10e59a70a13` now forwards an optional explicit source locale

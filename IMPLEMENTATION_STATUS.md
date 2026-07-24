@@ -2,6 +2,32 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — Linux persisted document-job metadata deletion
+
+Assumption: Linux document-job deletion removes only the persisted snapshot and segment metadata;
+the source/output buffers already displayed in the editor remain untouched, and active jobs remain
+undeletable. This is a Linux-first prerelease checkpoint.
+
+- Linux status head `7d0970cc90a9170f6be59b2e75bad672e5ace0bf` records implementation commit
+  `99a446b0306ffa79dc67fa4d55460a3c60f0c237` and Flatpak source pin `99a446b0306ffa79dc67fa4d55460a3c60f0c237`.
+  The worker delete command/event is backed by Core storage, rejects deletion during active document
+  work, and clears only the selected job association after success.
+- GTK exposes a localized destructive confirmation. The worker regression
+  `document_job_list_and_delete_saved_job_for_queue_selection` proves one snapshot and its segments
+  disappear while another remains; the serialized GTK queue fixture checks one focusable delete
+  action per persisted row alongside the redacted report action.
+- Local Linux localization audits, Flatpak metadata, Rust 1.93.0 formatting, locked check, strict
+  Clippy, demo-provider tests (`166 passed; 7 ignored`), no-default tests (`85 passed; 1 ignored`),
+  demo-provider build, and cargo-deny passed. GTK host linking remains CI-backed because the host
+  lacks `gtk4.pc` and `graphene-gobject-1.0`.
+- Push Native/Flatpak/Foundation runs `30077159723`/`30077159767`/`30077159771` and PR
+  Flatpak/Foundation runs `30077157438`/`30077157429` passed for this status head. PR Native
+  `30077157435` is still in progress at hosted dependency installation; the equivalent code-head
+  PR Native run `30076649572` passed the exact GTK matrix, so no runtime code is unverified here.
+- PR #1 remains Draft/Open/mergeable with no submitted reviews; central Issue #1 remains Open.
+  Release remains `unreleased`; cross-client parity, live-provider qualification, physical/manual
+  review, signing, rollback, and stable-release evidence remain open.
+
 ## 2026-07-24 — Explicit source-locale prompt and Linux pin
 
 Assumption: Core `77c6bf426ace65c6bd960120b253e10e59a70a13` preserves ABI 1 and Linux contracts

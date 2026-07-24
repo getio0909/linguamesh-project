@@ -22,6 +22,24 @@ Assumption: This Debian x86_64 host is authoritative for Linux and portable Rust
 
 Assumption: Planned files and commands are not evidence until they exist and complete successfully.
 
+## 2026-07-24 — Linux persisted document-job metadata deletion
+
+Assumption: deleting a saved Linux document job deletes only persisted snapshot/segment metadata;
+active jobs are rejected and the editor source/output buffers remain unchanged.
+
+- [x] Add the Core-backed Linux worker delete command/event and reject deletion while document work
+  is active.
+- [x] Add the localized GTK confirmation, selected-job cleanup, focused worker/GTK regression
+  coverage, and Linux architecture/testing/release documentation.
+- [x] Pass local Linux localization, metadata, format, check, Clippy, test, build, and cargo-deny
+  validation; push status head `7d0970cc90a9170f6be59b2e75bad672e5ace0bf`.
+- [x] Pass push Native/Flatpak/Foundation and PR Flatpak/Foundation workflows
+  `30077159723`/`30077159767`/`30077159771` and `30077157438`/`30077157429`; the code-head PR
+  Native workflow `30076649572` also passed the exact GTK matrix.
+- [ ] Finish or document hosted dependency-install status for docs-only PR Native run `30077157435`.
+- [ ] Keep cross-client parity, physical/manual review, custom VFS and power-loss evidence,
+  signing, rollback authorization, and stable-release acceptance open.
+
 ## 2026-07-24 — Core explicit source-locale prompt and Linux pin
 
 Assumption: Core `77c6bf426ace65c6bd960120b253e10e59a70a13` keeps ABI 1 and Linux compatibility;
