@@ -21,6 +21,15 @@ workflow `30071892709` with Linux `89414323628` and PowerShell `89414323574`.
 Custom/third-party VFS, physical power-loss, cross-client, live-provider, human/physical, signing,
 rollback, and stable-release evidence remain open; release stays `unreleased`.
 
+## Core CLI acceptance revalidation
+
+The pinned Core CLI now has a fresh credential-free smoke record: the loopback fake provider
+discovered and selected `fake-translator`, streamed `你好，LinguaMesh！`, and completed. A second
+run selected `fake-slow-translator`, retained the first delta `你好`, and cancelled at the 320 ms
+deadline with the required terminal cancellation result. This strengthens Scenario 1 only; the
+cross-client, manual/physical, power-loss, signing, rollback, and stable-release boundaries remain
+open.
+
 The current-tree revalidation passed without changing source or dependency pins: Core's pinned
 Rust 1.93.0 fmt/check/strict-Clippy/workspace-test set is green, and Linux's localization audits,
 Flatpak metadata, formatting, all-target check, strict Clippy, no-default suite (`85 passed; 1

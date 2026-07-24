@@ -26,6 +26,21 @@ Linux docs/status head `4612827d0ce78b9629fbbc24853677e18ee9d0a1` changes no run
   live-provider qualification, human/physical review, signing, rollback, and stable-release
   evidence remain open.
 
+## 2026-07-24 — Core CLI acceptance revalidation
+
+Assumption: the pinned Core `f5b818c3598d78e7cac30604577fa8057d380737` is authoritative for this
+credential-free loopback smoke; it proves the reference CLI path only.
+
+- `cargo +1.93.0 run --locked -p linguamesh-cli --offline -- demo --text 'Hello, LinguaMesh'
+  --target zh-CN` discovered `fake-translator` and `fake-slow-translator`, selected the requested
+  model, streamed `你好，LinguaMesh！`, and completed successfully.
+- The same command with `--model fake-slow-translator --cancel-after-ms 320` retained the first
+  streamed delta `你好` and ended with `Translation cancelled.`; no credential or network service
+  outside the loopback fixture was used.
+- This revalidates Scenario 1 and the CLI cancellation path. Scenarios 2–20 remain globally
+  incomplete where they require all native clients, human/physical review, physical power-loss,
+  signing, rollback authorization, or a stable release; the release remains `unreleased`.
+
 ## 2026-07-24 — Current-tree Linux/Core revalidation
 
 Assumption: this is reproducibility evidence for the published Linux-first heads, not a new

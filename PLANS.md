@@ -43,6 +43,20 @@ docs-only head `4612827d0ce78b9629fbbc24853677e18ee9d0a1` does not alter runtime
 - [ ] Keep custom/third-party VFS, physical power-loss, cross-client parity, human/physical
   review, signing, rollback authorization, and stable-release acceptance open.
 
+## 2026-07-24 — Core CLI acceptance revalidation
+
+Assumption: the pinned Core `f5b818c3598d78e7cac30604577fa8057d380737` is the authoritative code
+for this smoke; the commands exercise only the credential-free loopback fake provider and do not
+claim cross-client or stable-release completion.
+
+- [x] Run the real CLI streaming demo with `fake-translator`: model discovery, deliberate selection,
+  streamed output `你好，LinguaMesh！`, and successful completion all passed.
+- [x] Run the slow-provider cancellation demo with `fake-slow-translator` and a 320 ms deadline:
+  partial output `你好` remained visible and the terminal result was `Translation cancelled.`
+- [x] Confirm both runs used no provider credential and the Core worktree remained clean.
+- [ ] Keep Scenarios 2–20 globally incomplete where the acceptance matrix requires other native
+  clients, manual review, physical power-loss, signing, rollback authorization, or stable release.
+
 ## 2026-07-24 — Current-tree Linux/Core revalidation
 
 Assumption: a fresh offline revalidation of the already reviewed heads strengthens reproducibility
