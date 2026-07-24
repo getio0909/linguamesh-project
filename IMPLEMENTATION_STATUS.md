@@ -2,6 +2,19 @@
 
 Last updated: 2026-07-24
 
+## 2026-07-24 — macOS Core VFS-descendant compatibility checkpoint
+
+Assumption: Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` preserves the macOS ABI-1 typed
+host-secret contract while adding Linux-only storage tests; macOS consumes the exact revision
+without depending on Linux VFS behavior.
+
+- macOS head `a039bcbd39c032fabb58adb389eec1e68ae9c2c6` pins Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be`
+  and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; the generated catalog remains byte-identical.
+- PR workflow `30101768570` rebuilt the exact Core XCFramework and passed generated wrapper tests,
+  strict Swift concurrency, unit/integration tests, app assembly, and ad-hoc signing smoke.
+- Release stays `unreleased`; device accessibility, profile persistence, document workflows,
+  distribution signing, rollback, cross-client conformance, and stable-release evidence remain open.
+
 ## 2026-07-24 — Android Core VFS-descendant compatibility checkpoint
 
 Assumption: Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` preserves the Android ABI-1 typed

@@ -38,6 +38,19 @@ behavior.
   signing, rollback, cross-client conformance, and stable-release evidence open; release remains
   `unreleased`.
 
+## 2026-07-24 — macOS Core VFS-descendant compatibility checkpoint
+
+Assumption: Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` preserves the macOS ABI-1 typed
+host-secret contract while adding Linux-only storage coverage; macOS does not depend on Linux VFS
+behavior.
+
+- [x] Repin macOS Core/l10n workflow and source checks to Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be`
+  and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`; push head `a039bcbd39c032fabb58adb389eec1e68ae9c2c6`.
+- [x] Pass macOS PR workflow `30101768570`: exact XCFramework, wrapper tests, strict Swift,
+  unit/integration tests, app bundle, and ad-hoc signing smoke.
+- [ ] Keep profile persistence, document workflows, manual accessibility, distribution signing,
+  rollback, cross-client conformance, and stable-release evidence open; release remains `unreleased`.
+
 ## 2026-07-24 — Linux registered custom VFS compatibility probe
 
 Assumption: the Linux client may use a host-registered SQLite VFS only when the Core storage

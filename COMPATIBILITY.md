@@ -4,6 +4,15 @@ No compatible stable release train exists yet. The authoritative machine-readabl
 
 Global goal revision: `sha256:11f9a65927aac7e57e2af119e9d21cc98e8d5a08b8a112a19ee1c47903e36198`.
 
+### macOS Core VFS-descendant compatibility checkpoint — 2026-07-24
+
+macOS head `a039bcbd39c032fabb58adb389eec1e68ae9c2c6` consumes Core
+`9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`.
+PR workflow `30101768570` rebuilt the exact XCFramework and passed generated wrapper tests, strict
+Swift concurrency, unit/integration tests, app assembly, and ad-hoc signing smoke. This confirms
+ABI/protocol 1 compatibility for the Linux-only Core descendant; device accessibility, document
+flows, distribution signing, rollback, cross-client conformance, and stable-release evidence remain open.
+
 ### Android Core VFS-descendant compatibility checkpoint — 2026-07-24
 
 Android head `240afae` consumes Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n

@@ -3,6 +3,15 @@
 Status: Linux-first prerelease audit, 2026-07-24. This document complements
 `PROJECT_GOAL.md`; it does not lower any acceptance requirement.
 
+## Latest macOS Core checkpoint
+
+macOS head `a039bcbd39c032fabb58adb389eec1e68ae9c2c6` consumes Core
+`9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`.
+PR workflow `30101768570` rebuilt and verified the exact XCFramework, generated wrapper tests,
+strict Swift concurrency, unit/integration tests, app assembly, and ad-hoc signing smoke. Device
+accessibility, profile persistence, documents, distribution signing, rollback, cross-client
+conformance, and stable-release evidence remain open.
+
 ## Latest Android checkpoint
 
 Android head `240afae` consumes Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n

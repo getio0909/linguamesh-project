@@ -15,7 +15,7 @@ and must not be promoted without the acceptance and authorization gates listed b
 | Localization | `0.1.0` | `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c` |
 | Android | `0.1.0-alpha.1` | `240afaeebe22dc13dea988591dbdd87aa233fc79` |
 | Windows | `0.0.0-dev` | `unreleased` |
-| macOS | `0.1.0-alpha.1` | `cad822c69dcf1ad20f8cab2151f407866a577420` |
+| macOS | `0.1.0-alpha.1` | `a039bcbd39c032fabb58adb389eec1e68ae9c2c6` |
 | Linux | `0.1.0-alpha.2` | `402b97ac50bf62e89f9c27caedebff10d2ae7b8c` |
 
 Contracts: ABI major `1`, protocol schema `0.1.0`, provider catalog `0.1.0`, and localization
@@ -32,6 +32,12 @@ completed the GTK/portal/Wayland/Orca gates and Flatpak sandbox smoke, and passe
 validation. These remain CI artifacts, not signed releases.
 
 ## Validation evidence
+
+- macOS head `a039bcbd39c032fabb58adb389eec1e68ae9c2c6` consumes Core
+  `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`.
+  PR workflow `30101768570` rebuilt the exact XCFramework and passed generated wrapper tests,
+  strict Swift concurrency, unit/integration tests, app assembly, and ad-hoc signing smoke. Device,
+  accessibility, distribution signing, and notarization remain open.
 
 - Android head `240afae` consumes Core `9e69d01cbae1ca0421923e059aa3252c4ecbe1be` and l10n
   `7fd210692bb269ef52f7453bfeb2b0f0759b1d4c`. Hosted workflow `30099769434` rebuilt and

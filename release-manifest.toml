@@ -175,7 +175,7 @@ artifacts = []
 [components.macos]
 repository = "linguamesh-macos"
 version = "0.1.0-alpha.1"
-source_revision = "75b5fbe445fc1189c79aca4af8c5132a8a9535ca"
+source_revision = "a039bcbd39c032fabb58adb389eec1e68ae9c2c6"
 minimum_compatible_core = "0.1.0-alpha.2"
 artifacts = []
 
