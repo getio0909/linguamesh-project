@@ -15,12 +15,15 @@ Service prompt/persistence, performance baseline, and debug/optimized builds pas
 container used Rust 1.93.1 rather than the pinned 1.93.0 and mounted source read-only with named
 cache volumes, so this is bounded supplementary evidence.
 
-AT-SPI role inspection remains unverified on this Debian image: the bridge exported button names
-as `label` roles, although the Orca focus fixture passed. The document portal and storage-fault
-fixtures remain unverified because Docker lacks `/dev/fuse` and the required mount capability;
-Flatpak smoke still needs a produced bundle. These limitations do not justify a stable-release
-claim, and human/physical review, live providers, other clients, signing, rollback, and release
-authorization remain open.
+The follow-up privileged-container run passed the document-portal lease and storage-fault fixtures
+with `/dev/fuse`, `SYS_ADMIN`, and AppArmor isolation explicitly granted. The Ubuntu 24.04 runtime
+container also passed the live AT-SPI inspector against the actual Linux binary for English,
+Simplified Chinese, Arabic, `en-XA`, and `ar-XB`. The earlier Debian trixie `label`-role mismatch
+is a bridge-version difference, not a product failure; the inspected binary came from the
+disposable Rust 1.93.1 build cache rather than the pinned 1.93.0 toolchain. Flatpak smoke still
+needs a produced bundle. These remaining boundaries do not justify a stable-release claim, and
+human/physical review, live providers, other clients, signing, rollback, and release authorization
+remain open.
 
 The 2026-07-23 GitHub triage refresh confirms Linux PR #1 and macOS PR #1 are both Draft/Open and
 mergeable with their current checks successful, and neither has submitted reviews or unresolved

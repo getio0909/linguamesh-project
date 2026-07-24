@@ -16,13 +16,17 @@ Assumption: this is disposable Debian trixie evidence with Rust 1.93.1 (the repo
   chooser, drag-and-drop, English/Arabic keyboard focus, headless Wayland, OCR, four mTLS cases,
   performance baseline, debug build, and optimized release build passed. Secret Service prompt,
   persistence, restart, locked-item, and cleanup fixtures also passed.
-- The local AT-SPI role inspector is not claimed as passed: on Debian trixie the bridge exported
-  expected button names as `label` roles; the Orca focus fixture passed. This is an environment
-  difference to reproduce on the pinned Ubuntu CI image before changing product code.
-- Document-portal lease and storage-fault fixtures remain unverified because the container lacks
-  `/dev/fuse` and the mount capability. Flatpak smoke was not run because no bundle was available.
-  Release remains `unreleased`; human/physical, live-provider, cross-client, signing, rollback,
-  and stable-release evidence remain open.
+- The document-portal lease and storage-fault fixtures passed in a disposable container with
+  `/dev/fuse`, `SYS_ADMIN`, and AppArmor isolation explicitly granted. The portal covered
+  add/map/grant/revoke/delete; the storage test covered ENOSPC degradation to session mode.
+- The live AT-SPI inspector passed against the actual Linux binary in an Ubuntu 24.04 runtime
+  container for English, Simplified Chinese, Arabic, `en-XA`, and `ar-XB`. Debian trixie's
+  `label`-role mismatch is therefore recorded as a bridge-version difference, not a product
+  failure. The binary came from the disposable Rust 1.93.1 build cache; exact pinned 1.93.0
+  compilation remains CI-authoritative.
+- Flatpak smoke was not run because no produced bundle was available. Release remains
+  `unreleased`; human/physical, live-provider, cross-client, signing, rollback, and stable-release
+  evidence remain open.
 
 - Central coordination commit `7c4ffa8fe2fa77a24ae61635c9c130c65e22382b` passed workflow
   `30045831148`; Linux and PowerShell validation jobs completed successfully.

@@ -40,12 +40,15 @@ toolchain, and container capability failures remain unverified rather than passi
 - [x] Re-run Secret Service persistence/prompt fixtures; store/delete, restart, locked-item, and
   cleanup cases passed. The Debian container also passed the notification daemon desktop-shell
   rendering fixture with generic, non-content payloads.
-- [ ] Keep AT-SPI role inspection explicitly unverified on this container: Debian trixie's GTK
-  bridge exposed the expected button names as `label` roles, while the Orca focus fixture passed.
-  Do not infer a product regression without reproducing on the pinned Ubuntu CI image.
-- [ ] Keep document-portal lease and storage-fault evidence open: Docker lacks `/dev/fuse` and
-  the mount namespace lacks the required capability. Flatpak smoke still requires a produced
-  bundle; no bundle was available for this checkpoint.
+- [x] Re-run the document-portal lease and storage-fault fixtures in a disposable container with
+  `/dev/fuse`, `SYS_ADMIN`, and AppArmor isolation explicitly granted: both passed, including
+  add/map/grant/revoke/delete and ENOSPC degradation to session mode.
+- [x] Reproduce the live AT-SPI inspector in an Ubuntu 24.04 runtime container (the Native CI
+  base family) against the actual Linux binary: English, Simplified Chinese, Arabic, `en-XA`,
+  and `ar-XB` all passed. Debian trixie remains a known bridge-version difference, not a product
+  failure; the binary was built in the disposable Rust 1.93.1 cache environment.
+- [ ] Keep Flatpak smoke open because no produced bundle was available for this checkpoint. The
+  exact pinned Rust 1.93.0 build and full Ubuntu Native workflow remain CI-authoritative.
 - [ ] Keep release `unreleased`; human/physical review, live providers, other clients, signing,
   rollback, and stable-release authorization remain open.
 
