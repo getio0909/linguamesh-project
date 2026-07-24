@@ -21,6 +21,8 @@ preparation are verified, while Windows-only runtime and release evidence remain
 - GitHub audit comments recorded the checkpoint on Linux PR #1 (`5069506993`) and central Issue #1
   (`5069508839`); PR #1 remains Draft/Open/mergeable with no reviews or unresolved threads, and
   Issue #1 remains Open.
+- Central coordination workflow `30090763017` passed Linux and PowerShell validation for this
+  documentation and manifest update.
 
 ## 2026-07-24 — Linux bounded temporary-file cleanup
 
