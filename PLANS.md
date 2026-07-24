@@ -39,6 +39,26 @@ by `PROJECT_GOAL.md`.
   physical accessibility, live-provider qualification, broader VFS/power-loss, other clients,
   signing, rollback authorization, and stable-release evidence remain incomplete.
 
+## 2026-07-24 — Linux published-storage path replacement boundary
+
+Assumption: once Linux profile storage is published, replacing the visible database pathname must
+not redirect the already-open connection; this regression does not claim physical power-loss or
+arbitrary third-party VFS coverage.
+
+- [x] Added `published_storage_does_not_follow_replaced_database_path` to move the original
+  database, install replacement bytes at the old pathname, write through published storage, and
+  verify the replacement remains untouched while the original connection remains usable.
+- [x] Linux local validation passed formatting, GUI all-target checking, strict Clippy, the full
+  demo-provider suite (`167 passed; 7 ignored`), localization synchronization and audits, Flatpak
+  metadata validation, and diff checks. Linux source/test head is `808e045`; corrected Flatpak pin
+  and status head is `cadc6cd`.
+- [x] Hosted push Native/Flatpak/Foundation `30120734398`/`30120734313`/`30120734382` passed;
+  PR Flatpak/Foundation `30120737252`/`30120737224` passed. PR Native `30120737229` was still
+  running at this update and is not treated as passed.
+- [ ] Keep the release `unreleased`; broader VFS and power-loss evidence, manual/physical
+  accessibility, other clients, signing, rollback authorization, and stable-release approval
+  remain open.
+
 ## 2026-07-24 — Linux-first current-tree validation audit
 
 Assumption: a clean revalidation of the reviewed Linux head is evidence that the existing

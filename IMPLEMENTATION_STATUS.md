@@ -18,6 +18,25 @@ physical, cross-client, signing, rollback-authorization, or stable-release requi
   broader VFS/power-loss evidence, other clients, signing, rollback authorization, and stable
   release remain open; release stays `unreleased`.
 
+## 2026-07-24 — Linux published-storage path replacement boundary
+
+Assumption: after profile storage is published, a later replacement of the visible database path
+must not redirect existing reads or writes; this does not claim physical power-loss or arbitrary
+third-party VFS behavior.
+
+- Linux source/test head `808e04502b257a8793c2d62a1bea9d068190b8f4` adds
+  `published_storage_does_not_follow_replaced_database_path`, which writes through the already
+  published connection after replacing the old pathname and verifies replacement bytes are not
+  touched.
+- Local formatting, GUI all-target checking, strict Clippy, the demo-provider suite (`167 passed;
+  7 ignored`), localization synchronization and audits, Flatpak metadata validation, and diff
+  checks passed. Packaging/status head is `cadc6cd` with Flatpak pin `808e045`.
+- Hosted push Native/Flatpak/Foundation `30120734398`/`30120734313`/`30120734382` passed; PR
+  Flatpak/Foundation `30120737252`/`30120737224` passed. PR Native `30120737229` remained
+  `in_progress` at this update and is intentionally not claimed as passed.
+- Release stays `unreleased`; broader VFS/power-loss, manual/physical accessibility, other
+  clients, signing, rollback authorization, and stable-release approval remain open.
+
 ## 2026-07-24 — Linux-first current-tree validation audit
 
 Assumption: re-running the reviewed heads verifies reproducibility only; it is not a substitute

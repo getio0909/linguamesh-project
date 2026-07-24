@@ -14,6 +14,19 @@ validation also passed. No new deterministic Linux gap was identified; manual/ph
 live-provider qualification, broader VFS/power-loss, other clients, signing, rollback authorization,
 and stable-release evidence remain open.
 
+## Latest Linux published-storage path replacement boundary
+
+Linux source/test head `808e04502b257a8793c2d62a1bea9d068190b8f4` adds a deterministic regression
+that opens profile storage, replaces the visible database pathname, writes through the already
+published connection, and proves the replacement bytes are untouched. Local formatting, GUI
+all-target checking, strict Clippy, 167 passing demo-provider tests with 7 ignored, localization
+audits, Flatpak metadata validation, and diff checks passed. Packaging/status head `cadc6cd` pins
+Flatpak to `808e045`. Push Native/Flatpak/Foundation `30120734398`/`30120734313`/`30120734382`
+and PR Flatpak/Foundation `30120737252`/`30120737224` passed; PR Native `30120737229` remained
+in progress when this record was written. This narrows only the post-publish pathname boundary;
+broader VFS, physical power-loss, manual/physical accessibility, other clients, signing, rollback,
+and stable-release evidence remain open.
+
 ## Latest Linux-first current-tree validation audit
 
 The reviewed Linux head `e1a2ba9130a198212098e93276e5d16bdfec8e3b` was revalidated without source
