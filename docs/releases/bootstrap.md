@@ -49,6 +49,8 @@ validation. These remain CI artifacts, not signed releases.
 - Linux Core pin synchronization head `4b592e7f7b1e60545d5539a40a9a33edd9b86a09` passed all six
   current-head Native/Flatpak/Foundation gates listed above; the runtime/build parent is
   `449facf5aaf7fe79e0cea91ea9ec3934a9b6f8d4`.
+- Central synchronization commit `a5dee2ad1f9e8039e9d9a1ad44225c5200b3362c` passed coordination
+  workflow `30063863934` on Linux `89390817246` and PowerShell `89390817242`.
 - Central workflow `30059904373` passed Linux and PowerShell validation for the synchronized
   coordination documents and release manifest.
 - The documented clean-bootstrap flow cloned all seven public repositories in a disposable

@@ -37,6 +37,8 @@ new Linux runtime feature.
 - [x] Push Linux runtime/build head `449facf…` and final evidence head `4b592e7…`. Push and PR
   Native/Flatpak/Foundation runs `30063415446`/`30063415485`/`30063415440` and
   `30063417561`/`30063417542`/`30063417551` passed with jobs recorded in Linux status.
+- [x] Central synchronization commit `a5dee2a…` passed coordination workflow `30063863934`
+  (Linux `89390817246`, PowerShell `89390817242`).
 - [ ] Keep human/physical review, other clients, signed artifacts, rollback authorization, and
   stable release authorization open.
 

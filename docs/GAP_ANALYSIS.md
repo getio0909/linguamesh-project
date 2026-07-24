@@ -25,6 +25,8 @@ Flatpak, and Foundation runs `30063415446`/`30063415485`/`30063415440` and
 `30063417561`/`30063417542`/`30063417551` all passed, including GTK/portal/Wayland/Orca,
 Flatpak sandbox, checksum, SBOM, and performance evidence. This is prerelease compatibility and
 provenance evidence only; the release remains `unreleased`.
+Central synchronization commit `a5dee2ad1f9e8039e9d9a1ad44225c5200b3362c` passed workflow
+`30063863934` on Linux `89390817246` and PowerShell `89390817242`.
 
 Core commit `5e22931d5772231b0a8183cbf05ba0cbda0dfebf` adds bounded C ABI `ffi_inputs` and
 `ffi_sequences` libFuzzer targets. Local pinned-nightly ASAN smokes passed 200 runs with 299 and

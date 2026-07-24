@@ -18,6 +18,8 @@ validated immutable checkout without changing Linux runtime behavior.
 - Linux push Native/Flatpak/Foundation runs `30063415446`/`30063415485`/`30063415440` (jobs
   `89389470774`/`89389470967`/`89389471112`) and PR runs `30063417561`/`30063417542`/`30063417551`
   (jobs `89389477016`/`89389477206`/`89389477005`) all passed. Release remains `unreleased`.
+- Central synchronization commit `a5dee2ad1f9e8039e9d9a1ad44225c5200b3362c` passed coordination
+  workflow `30063863934` with Linux job `89390817246` and PowerShell job `89390817242`.
 - Human/physical review, live-provider account qualification, other-client parity, signed
   artifacts, production rollback authorization, and stable-release authorization remain open.
 
